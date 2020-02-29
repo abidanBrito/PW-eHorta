@@ -2,10 +2,35 @@ body {
     background-image: url("../../../img/countryside.png");
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 .header {
     width: 100%;
     height: 60px;
     background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home {
+    width: 80px;
+    height: 60px;
+}
+
+.user_button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+.menu_button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
 }
 
 .caja_login {
@@ -14,8 +39,14 @@ body {
     height: 483px;
     margin: 100px auto;
     border-radius: 20px;
-    padding-left: 10px;
-    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    align-self: flex-start;
+    margin-left: 10px;
 }
 
 input {
@@ -34,16 +65,16 @@ input {
     justify-content: center;
     align-items: center;
     border-radius: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.boton_login {
+.login_button {
     width: 278px;
     height: 40px;
     background-color: rgba(15, 5, 76, 1);
     color: white;
     border-radius: 139px;
-    border: none;
-    cursor: pointer;
     box-shadow: 0 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -51,13 +82,10 @@ h4 {
     text-align: center;
 }
 
-.boton_contacto {
+.contact_button {
     width: 278px;
     height: 40px;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 139px;
-    border: none;
-    cursor: pointer;
     box-shadow: 0 2px rgba(0, 0, 0, 0.5);
-    margin-left: 11px;
 }
