@@ -24,6 +24,6 @@ $salida = array();
 $vista = 'json';
 $http_code = 404;
 // modelo
-include "modelos/$operacion-$recurso.php"; 
+include "models/$operacion-$recurso.php"; 
 // vista
-include "vistas/$vista.php"; 
+include "views/$vista.php"; 
