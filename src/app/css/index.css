@@ -1,0 +1,118 @@
+html {
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    background-color: #91b655;
+    margin: 0;
+}
+
+section {
+    padding-left: 20px;
+    margin: 10px;
+}
+
+main {
+    padding-left: 20px;
+}
+
+#brand img {
+    height: 45px;
+    padding-left: 10px;
+}
+
+.topbar {
+    width: 100%;
+    overflow: hidden;
+    background-color: #779446;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar div {
+    display: none;
+}
+
+.topbar .toggle .topbar #brand {
+    display: inline-block;
+}
+
+.topbar .link {
+    display: block;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    color: black;
+}
+
+.topbar .link:hover,
+.topbar .link:active {
+    color: white;
+    background: #b58a5c;
+}
+
+.topbar .brand {
+    width: 10em;
+    text-align: center;
+    padding: 1em;
+    color: white;
+}
+
+.topbar .toggle {
+    padding: 1em;
+    color: black;
+}
+
+@media (min-width: 48em) {
+    .topbar {
+        display: flex;
+    }
+
+    .topbar div {
+        display: flex;
+        flex: 1;
+    }
+
+    .topbar .link {
+        width: auto;
+    }
+}
+
+#site-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left-padding {
+    padding-left: 30px;
+}
+
+main,
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cta-button {
+    width: 10em;
+    text-align: center;
+    vertical-align: middle;
+    padding: 7px 24px;
+    border: 0px solid #ac730b;
+    border-radius: 36px;
+    background: #ffbd12;
+    text-decoration: none;
+}
