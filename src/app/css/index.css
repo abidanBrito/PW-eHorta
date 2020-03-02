@@ -3,17 +3,14 @@ html {
 }
 
 body {
-    background-color: #91b655;
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
+main,
 section {
-    padding-left: 20px;
-    margin: 10px;
-}
-
-main {
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
 #brand img {
@@ -24,7 +21,7 @@ main {
 .topbar {
     width: 100%;
     overflow: hidden;
-    background-color: #779446;
+    background-color: #b58a5c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +46,7 @@ main {
 .topbar .link:hover,
 .topbar .link:active {
     color: white;
-    background: #b58a5c;
+    background: #779446;
 }
 
 .topbar .brand {
@@ -60,37 +57,34 @@ main {
 }
 
 .topbar .toggle {
+    height: 1em;
+    width: 1em;
     padding: 1em;
     color: black;
 }
 
 @media (min-width: 48em) {
-    .topbar {
-        display: flex;
-    }
-
     .topbar div {
         display: flex;
         flex: 1;
+        align-items: center;
     }
 
     .topbar .link {
         width: auto;
     }
+    
+    #menu-toggle {
+        display: none;    
+    }
 }
 
-#site-footer {
-    width: 100%;
+#footer {
     position: absolute;
     bottom: 0;
+    width: 100%;
     background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#left-padding {
-    padding-left: 30px;
+    text-align: center;
 }
 
 main,
@@ -106,13 +100,18 @@ section {
     align-items: center;
 }
 
-#cta-button {
-    width: 10em;
+article {
+    display: flex;
+    align-content: center;
+}
+
+.button {
+    text-transform: uppercase;
     text-align: center;
-    vertical-align: middle;
     padding: 7px 24px;
-    border: 0px solid #ac730b;
+    border: 1px solid #ac730b;
     border-radius: 36px;
+    color: black;
     background: #ffbd12;
     text-decoration: none;
 }
