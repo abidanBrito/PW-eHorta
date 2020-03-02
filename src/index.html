@@ -6,33 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="app/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
     <title>e-Horta S.L. | Monitorización actividad agrícola</title>
 </head>
 
 <body>
-    <header class="header">
-        <a href="index.html"><img src="../img/logoGTI.svg" alt="Logo de la empresa"></a>
-        <button type="button" class="menu-button">Botón menú</button>
-        <nav id="nav-menu">
-            <ul>
-                <li class="active"><a href="index.html">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+    <header>
+        <nav class="topbar">
+            <a id="brand" href="index.html">
+                <img src="../img/logo_cropped.svg" alt="Brand logo">
+            </a>
+            <div id="topbar-menu">
+                <a class="link" href="#">Inicio</a>
+                <a class="link" href="#">Entrar</a>
+                <a class="link" href="#">Nosotros</a>
+                <a class="link" href="#">Contacto</a>
+                <a class="link" href="#">FAQs</a>
+            </div>
+            <a href="#" class="toggle" id="menu-toggle">
+                <img src="../img/bars-solid.svg" alt="Menu icon">
+            </a>
         </nav>
     </header>
 
-    <section class="welcome" role="banner" id="top">
-        <div class="header-text">
+    <section class="welcome" id="top" role="banner">
+        <div id="cta">
             <h1>Datalogger y sensores para cultivos</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolores.</p>
-            <a href="#">Botón CTA</a>
+            <button id="cta-button" type="submit">CONTACTAR</button>
         </div>
-        <a href="#service-details">Botón bajar</a>
     </section>
 
-    <main class="main-event" id="event">
+    <main id="event">
         <h2>Evento principal</h2>
         <p>
             Beatae distinctio est iste laboriosam libero minima nobis omnis quam quod rerum, sint sit veniam,
@@ -46,7 +52,7 @@
         <img src="../img/event.svg" alt="Imagen evento">
     </main>
 
-    <section class="service-details">
+    <section id="service-details">
         <h2>Más información</h2>
         <article>
             <p>
@@ -58,15 +64,11 @@
         </article>
     </section>
 
-    <footer class="site-footer" role="contentinfo">
-        <p>&copy; 2020 e-Horta | Todos los derechos reservados</p>
-        <nav>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </nav>
+    <a href="#top" class="go-to-top" class="left-padding">Botón subir</a>
+
+    <footer id="site-footer" role="contentinfo">
+        <p>&copy; 2020 e-Horta S.L. | Todos los derechos reservados</p>
     </footer>
-    <a href="#top" class="go-to-top">Botón subir</a>
 </body>
 
 </html>
