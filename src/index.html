@@ -6,36 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="app/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="app/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>e-Horta S.L. | Monitorización actividad agrícola</title>
 </head>
 
 <body>
     <header>
-        <nav class="topbar">
-            <a id="brand" href="index.html">
-                <img src="../img/logo_cropped.svg" alt="Brand logo">
+        <nav class="navbar">
+            <a id="logo" href="index.html">
+                <img src="../img/logo_v2.svg" alt="LOGO">
             </a>
-            <div id="topbar-menu">
-                <a class="link" href="#">Inicio</a>
-                <a class="link" href="#">Nosotros</a>
-                <a class="link" href="#">Contacto</a>
-                <a class="link" href="#">FAQs</a>
-                <a class="link" href="#">Iniciar sesión</a>
-                <a class="button" id="topbar-button" href="src/app/contact.html">Contactar</a>
+            <ul class="navbar-links">
+                <li>
+                    <a href="#">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#">Contacto</a>
+                </li>
+                <li>
+                    <a href="#">FAQs</a>
+                </li>
+                <li>
+                    <a href="#">Iniciar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <a id="navbar-button" class="drop-shadow" href="src/app/contact.html">Contactar</a>
+                <div class="menu-icon" class=" menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
             </div>
-            <a href="#" class="toggle" id="menu-toggle">
-                <img src="../img/bars-solid.svg" alt="Menu icon">
-            </a>
         </nav>
+
     </header>
 
     <section class="welcome" id="top" role="banner">
         <div id="cta">
             <h1>Datalogger y sensores para cultivos</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolores.</p>
-            <a class="button" href="src/app/contact.html">Contactar</a>
+            <a class="button" class="drop-shadow" href="src/app/contact.html">Contactar</a>
         </div>
     </section>
 
@@ -65,10 +77,14 @@
         </article>
     </section>
 
-    <a class="button" href="#top">Subir</a>
+    <a class="button" class="drop-shadow" href="#top">Subir</a>
+
+    <!-- Footer legal -->
     <footer id="footer" role="contentinfo">
-        <p>&copy; 2020 e-Horta S.L. | Todos los derechos reservados</p>
+        <p>&copy; 2020 Copyright e-Horta Inc.</p>
     </footer>
+
+    <script src="app/js/landing-page.js"></script>
 </body>
 
 </html>
