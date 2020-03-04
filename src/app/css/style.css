@@ -66,11 +66,9 @@ body {
     transition: all 0.25s ease;
 }
 
-/*
-.filter-white {
+.white-filter {
     filter: invert(76%) sepia(69%) saturate(4%) hue-rotate(35deg) brightness(101%) contrast(98%);
 }
-*/
 
 .navbar-links a:hover,
 .navbar-links a:active {
