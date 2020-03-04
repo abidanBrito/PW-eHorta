@@ -4,42 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="app/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
-    <title>e-Horta S.L. | Monitorización actividad agrícola</title>
+    <link rel="stylesheet" type="text/css" href="app/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>e-Horta | Soluciones hardware para actividad agrícola</title>
 </head>
 
 <body>
+    <!-- Top bar (navigation menu) -->
     <header>
-        <nav class="topbar">
-            <a id="brand" href="index.html">
-                <img src="../img/logo_cropped.svg" alt="Brand logo">
+        <nav class="navbar">
+            <!-- Corporative brand -->
+            <a id="logo" href="index.html">
+                <img src="../img/logo_v2.svg" alt="LOGO">
             </a>
-            <div id="topbar-menu">
-                <a class="link" href="#">Inicio</a>
-                <a class="link" href="#">Entrar</a>
-                <a class="link" href="#">Nosotros</a>
-                <a class="link" href="#">Contacto</a>
-                <a class="link" href="#">FAQs</a>
+            <!-- Menu options -->
+            <ul class="navbar-links">
+                <li>
+                    <a href="#">Iniciar sesión</a>
+                </li>
+                <li>
+                    <a href="#" id="navbar-contact">Contacto</a>
+                </li>
+                <li>
+                    <a href="#">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#">FAQs</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Top bar cta -->
+                <a id="navbar-button" class="button" class="drop-shadow" href="app/contact.html">Contáctanos</a>
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" class=" menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
             </div>
-            <a href="#" class="toggle" id="menu-toggle">
-                <img src="../img/bars-solid.svg" alt="Menu icon">
-            </a>
         </nav>
     </header>
 
-    <section class="welcome" id="top" role="banner">
-        <div id="cta">
-            <h1>Datalogger y sensores para cultivos</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolores.</p>
-            <button id="cta-button" type="submit">CONTACTAR</button>
+    <!-- Welcome banner -->
+    <section class="showcase" role="banner">
+        <div>
+            <h1>Mejora la producción y calidad de tu cosecha</h1>
+            <p>¡La agricultura del futuro ya está aquí!</p>
+            <a class="button" class="drop-shadow" href="app/contact.html">Ponte en contacto</a>
         </div>
     </section>
-
-    <main id="event">
-        <h2>Evento principal</h2>
+    
+    <!-- Provided services -->
+    <main id="services">
+        <h2>¿Qué ofrecemos?</h2>
         <p>
             Beatae distinctio est iste laboriosam libero minima nobis omnis quam quod rerum, sint sit veniam,
             veritatis!
@@ -52,23 +73,60 @@
         <img src="../img/event.svg" alt="Imagen evento">
     </main>
 
+    <!-- Sensors (magnitudes) -->
     <section id="service-details">
-        <h2>Más información</h2>
+        <h2>Datalogger y sensores</h2>
         <article>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quae dignissimos consectetur magnam!
-                Facere alias, necessitatibus incidunt eligendi aliquam neque voluptates! Dignissimos cupiditate id
-                dolorem odio cumque, qui atque rerum.
-            </p>
+            <p>Temperatura</p>
+            <img src="../img/temperature.svg" alt="Icono temperatura">
+        </article>
+        <article>
+            <p>Luminosidad</p>
+            <img src="../img/luminosity.svg" alt="Icono luminosidad">
+        </article>
+        <article>
+            <p>Salinidad</p>
+            <img src="../img/salinity.svg" alt="Icono salinidad">
+        </article>
+        <article>
+            <p>Humedad</p>
+            <img src="../img/humidity.svg" alt="Icono humedad">
+        </article>
+        <article>
+            <p>Precipitaciones</p>
+            <img src="../img/rainfall.svg" alt="Icono Precipitaciones">
+        </article>
+        <article>
+            <p>Presión barométrica y altitud</p>
+            <img src="../img/barometric_pressure.svg" alt="Presión barométrica">
+        </article>
+        <article>
+            <p>Recibidor GPS</p>
+            <img src="../img/gps.svg" alt="Icono GPS">
+        </article>
+        <article>
+            <p>Antirrobo</p>
             <img src="../img/sensor01.svg" alt="Imagen sensor">
         </article>
     </section>
+    
+    <!-- Reviews -->
+    <section id="service-details">
+        <h3>La opinión de nuestros usuarios</h3>
+        <article>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quae dignissimos consectetur magnam!
+            </p>
+        </article>
+    </section>
 
-    <a href="#top" class="go-to-top" class="left-padding">Botón subir</a>
-
-    <footer id="site-footer" role="contentinfo">
-        <p>&copy; 2020 e-Horta S.L. | Todos los derechos reservados</p>
+    <!-- Copyright -->
+    <footer id="footer" role="contentinfo">
+        <p>&copy; 2020 Copyright e-Horta Co.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="app/js/landing-page.js"></script>
 </body>
 
 </html>
