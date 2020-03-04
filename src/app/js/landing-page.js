@@ -13,7 +13,7 @@ const navSlider = () => {
         
         // Links fade in animation
         navBarLinks.forEach((link, index) => {
-            if(link.style.animation) {
+            if (link.style.animation) {
                 link.style.animation = '';
             }
             else {
