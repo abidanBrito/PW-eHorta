@@ -4,46 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>e-Horta S.L. | Iniciar Sesión</title>
 </head>
 
 <body class="main">
 
-    <section class="header">
-
-        <!-- Logo -->
-        <span class="header_left">
-            
-            <a href="../index.html"><img src="../../img/favicon.ico" alt="Logo GTI" class="home"></a>
-            
-        </span>
-
-        <!-- Menu and user mobile -->
-        <span class="header_right_mobile">
-        
-            <button type="button" class="user_button"><img src="../../img/user.svg" alt="user icon"></button>
-            <button type="button" class="menu_button"><img src="../../img/menu.svg" alt="menu button"></button>
-            <!-- 
-            TODO: menú desplegable que ocupa toda la pantalla y muestra en una columna las páginas: 
-            FAQ, Nosotros, Contáctanos, Iniciar Sesión 
-            -->
-        </span>
-
-        <!-- Menu and user desktop -->
-        <span class="header_right_desktop">
-           
-            <a href="" class="faq_button">FAQ</a>
-            <a href="" class="nosotros_button">Nosotros</a>
-            <a href="#" class="login_button_header">Iniciar sesión</a>
-            <a href="" class="contact_button_header">Contáctanos</a>
-            
-        </span>
-
-    </section>
+    <!-- Top bar (navigation menu) -->
+    <header>
+        <nav class="navbar">
+            <!-- Corporative brand -->
+            <a id="logo" class="white-filter" href="../index.html">
+                <img src="../../img/logo_v2.svg" alt="LOGO">
+            </a>
+            <!-- Menu options -->
+            <ul class="navbar-links">
+                <li>
+                    <a href="about.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="contact.html" id="navbar-contact">Contacto</a>
+                </li>
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" class="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+                <!-- Top bar cta -->
+                <a id="navbar-button" class="button" href="contact.html">Contáctanos</a>
+            </div>
+        </nav>
+    </header>
 
     <section class="caja_login">
 
@@ -51,20 +57,20 @@
             <input type="text" id="inputUser" name="user" placeholder="Usuario" required>
             <input type="password" id="inputKey" name="pass" placeholder="Contraseña" required>
 
-            <button type="submit" class="login_button">Enviar</button>
+            <button type="submit" class="login_button">ENTRAR</button>
         </form>
         <div id="error_msg">Error al iniciar sesión</div>
         <script src="js/sesion.js"></script>
-        <svg height="20px">
-       <line x1="0" y1="15" x2="300" y2="15" style="stroke:rgb(0,0,0);stroke-width:1"/>
-   </svg>
+        <div class="separator"></div>
 
         <!-- Contact button -->
         <h4>¿Aún no eres cliente?</h4>
-        <button type="button" class="contact_button" onclick="#">CONTÁCTANOS</button>
-
+        <a href="contact.html" class="contact_button">CONTÁCTANOS</a>
 
     </section>
+
+    <!-- Scripts -->
+    <script src="js/login_page.js"></script>
 
 </body>
 
