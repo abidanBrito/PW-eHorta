@@ -1,6 +1,7 @@
 <?php
+require_once 'acceso.php';
+
     session_start();
-    if(isset($_SESSION['registrado']) && $_SESSION['registrado'] == "sesion_registrada"){
         $sql = 'SELECT vendedores.nombre as nombreVendedor,
             vendedores.apellidos as apellidosVendedor,
             clientes.nombre as nombreCliente, ventas.*
@@ -32,7 +33,3 @@
         }
 
         $http_code = 200;
-}else{
-    http_response_code(401);
-    die('{"error": "Not authorized"}');
-}
