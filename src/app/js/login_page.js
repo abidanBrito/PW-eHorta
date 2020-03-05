@@ -1,4 +1,4 @@
-    const navSlider = () => {
+const navSlider = () => {
     const burgerIcon = document.querySelector('.menu-icon');
     const navBar = document.querySelector('.navbar-links');
     const navBarLinks = document.querySelectorAll('.navbar-links li');
@@ -6,7 +6,7 @@
     burgerIcon.addEventListener('click', () => {
         // Toggle navigation bar
         navBar.classList.toggle('navbar-active');
-                
+
         // Links fade in animation
         navBarLinks.forEach((link, index) => {
             if (link.style.animation) {
