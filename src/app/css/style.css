@@ -15,12 +15,13 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    min-height: 5vh;
+    min-height: 45px;
     overflow: hidden;
     background-color: #664b58;
 }
 
 #logo img {
+    display: flex;
     height: 2em;
     /* In case the logo is not found */
     letter-spacing: 4px;
@@ -49,6 +50,11 @@ body {
 }
 
 #navbar-contact {
+    display: none;
+}
+
+.login-icon img {
+    height: 1.5em;
     display: none;
 }
 
@@ -88,7 +94,7 @@ article {
 }
 
 .showcase {
-    background-image: url(../../../img/landing_pic_v3.jpg);
+    background-image: url(../../../img/landing_banner.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
