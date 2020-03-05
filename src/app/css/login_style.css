@@ -13,79 +13,6 @@ body {
     display: flex;
 }
 
-
-/* Header for mobile */
-
-@media only screen and (max-width: 600px) {
-    /* Hide desktop buttons */
-    .header_right_desktop {
-        visibility: collapse;
-    }
-    .header_left {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-    .header_right_mobile {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-}
-
-
-/* Header for desktop */
-
-@media only screen and (min-width: 600px) {
-    /* Hide menu and user button */
-    .header_right_mobile {
-        visibility: collapse;
-    }
-    .header_right_desktop {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-    .faq_button {
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 5px;
-        color: white;
-    }
-    .nosotros_button {
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 5px;
-        color: white;
-    }
-    .login_button_header {
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 5px;
-        color: white;
-    }
-    .contact_button_header {
-        text-align: center;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 5px;
-        padding: 1rem;
-        background-color: rgba(112, 182, 3, 1);
-        color: white;
-        border-radius: 139px;
-        box-shadow: 0 2px rgba(0, 0, 0, 0.5);
-    }
-}
-
 button {
     border: none;
     cursor: pointer;
@@ -153,12 +80,17 @@ input:focus {
     background-color: mediumpurple;
     color: white;
     border-radius: 139px;
+    font-size: 20px;
 }
 
 .contact_button {
     width: 278px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: white;
     border-radius: 139px;
     border: 1px grey solid;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
