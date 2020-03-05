@@ -126,6 +126,7 @@ body {
     margin-left: 3px;
     margin-right: 3px;
     margin-top: 5px;
+        filter: invert(25%) sepia(69%) saturate(4%) hue-rotate(35deg) brightness(100%) contrast(98%);
 }
 
 .footer-icon {
