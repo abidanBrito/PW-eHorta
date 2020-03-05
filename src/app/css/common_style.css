@@ -168,6 +168,10 @@ body {
     .navbar-links li {
         opacity: 0;
     }
+    
+    .navbar-links li a {
+        padding: 0;
+    }
 
     .menu-icon,
     #login-icon {
