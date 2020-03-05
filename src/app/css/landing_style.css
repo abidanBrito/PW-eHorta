@@ -25,7 +25,7 @@ article {
 
 .showcase div {
     height: 100vh;
-    width: 45vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,8 +76,8 @@ article {
     margin-right: 0.5rem;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 48em) {
     .showcase div {
-        width: 90%;
+        width: 500px;
     }
 }
