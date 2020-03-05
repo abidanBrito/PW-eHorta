@@ -4,46 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/contact_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>e-Horta S.L. | Contacto</title>
 </head>
 
 <body class="main">
 
-    <section class="header">
-
-        <!-- Logo -->
-        <span class="header_left">
-            
-            <a href="../index.html"><img src="../../img/favicon.ico" alt="Logo GTI" class="home"></a>
-            
-        </span>
-
-        <!-- Menu and user mobile -->
-        <span class="header_right_mobile">
-        
-            <button type="button" class="user_button"><img src="../../img/user.svg" alt="user icon"></button>
-            <button type="button" class="menu_button"><img src="../../img/menu.svg" alt="menu button"></button>
-            <!-- 
-            TODO: menú desplegable que ocupa toda la pantalla y muestra en una columna las páginas: 
-            FAQ, Nosotros, Contáctanos, Iniciar Sesión 
-            -->
-        </span>
-
-        <!-- Menu and user desktop -->
-        <span class="header_right_desktop">
-           
-            <a href="" class="faq_button">FAQ</a>
-            <a href="" class="nosotros_button">Nosotros</a>
-            <a href="#" class="login_button_header">Iniciar sesión</a>
-            <a href="" class="contact_button_header">Contáctanos</a>
-            
-        </span>
-
-    </section>
+    <!-- Top bar (navigation menu) -->
+    <header>
+        <nav class="navbar">
+            <!-- Corporative brand -->
+            <a id="logo" class="white-filter" href="index.html">
+                <img src="../../img/logo_v2.svg" alt="LOGO">
+            </a>
+            <!-- Menu options -->
+            <ul class="navbar-links">
+                <li>
+                    <a href="about.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="faqs.html">FAQs</a>
+                </li>
+                <li>
+                    <a href="contact.html" id="navbar-contact">Contacto</a>
+                </li>
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Login icon -->
+                <a id="login-icon" class="white-filter" href="login.html">
+                    <img src="../../img/login.svg" alt="LOGIN">
+                </a>
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" class="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <section class="contact_box">
         
@@ -55,9 +63,7 @@
             <button type="submit" class="contact_button">ENVIAR</button>
         </form>
 
-        <svg height="20px">
-       <line x1="0" y1="15" x2="300" y2="15" style="stroke:rgb(0,0,0);stroke-width:1"/>
-   </svg>
+       <div class="separator"></div>
 
         <!-- Contact button -->
         <h4>¿Ya eres cliente?</h4>
@@ -65,5 +71,10 @@
 
 
     </section>
+    
+    <!-- Scripts -->
+    <script src="js/landing-page.js"></script>
 
 </body>
+
+</html>
