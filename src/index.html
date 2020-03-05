@@ -9,6 +9,7 @@
     <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="app/css/landing_style.css">
+    <link rel="stylesheet" type="text/css" href="app/css/common_style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>e-Horta | Soluciones hardware para actividad agrícola</title>
 </head>
@@ -24,30 +25,31 @@
             <!-- Menu options -->
             <ul class="navbar-links">
                 <li>
-                    <a href="app/login.html">Iniciar sesión</a>
+                    <a href="app/faqs.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="app/about.html">FAQs</a>
                 </li>
                 <li>
                     <a href="app/contact.html" id="navbar-contact">Contacto</a>
                 </li>
                 <li>
-                    <a href="app/about.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="app/faqs.html">FAQs</a>
+                    <a href="app/login.html">Iniciar sesión</a>
                 </li>
             </ul>
             <div class="navbar-right">
-                <a class="login-icon" class="white-filter" href="app/login.html">
+                <!-- Login icon -->
+                <a id="login-icon" class="white-filter" href="app/login.html">
                     <img src="../img/login.svg" alt="LOGIN">
                 </a>
-                <!-- Top bar cta -->
-                <a id="navbar-button" class="button" class="drop-shadow" href="app/contact.html">Contáctanos</a>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" class=" menu-toggle">
                     <div class="line-top"></div>
                     <div class="line-mid"></div>
                     <div class="line-bot"></div>
                 </div>
+                <!-- Top bar cta -->
+                <a id="navbar-button" class="button" class="drop-shadow" href="app/contact.html">Contáctanos</a>
             </div>
         </nav>
     </header>
@@ -124,8 +126,13 @@
     </section>
 
     <!-- Copyright -->
-    <footer id="footer" role="contentinfo">
-        <p>&copy; 2020 Copyright e-Horta Co.</p>
+    <footer class="footer" role="contentinfo">
+        <div class="copy">&copy; 2020 Copyright e-Horta Co.</div>
+        <div class="properties">
+            <p class="properties"><img src="../img/telephone.svg" alt="Teléfono" class="footer-icon"> 6749545097</p>
+            <p class="properties"><img src="../img/fax.svg" alt="Fax" class="footer-icon"> 9613104058</p>
+            <p class="properties"><img src="../img/email.svg" alt="email" class="footer-icon"> eHorta@business.com</p>
+        </div>
     </footer>
 
     <!-- Scripts -->
