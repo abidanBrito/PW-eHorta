@@ -74,6 +74,13 @@ input:focus {
     display: none;
 }
 
+.separator {
+    width: 160px;
+    height: 2px;
+    background-color: grey;
+    margin-top: 25px;
+}
+
 .login_button {
     width: 278px;
     height: 40px;
