@@ -1,13 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/contact_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>e-Horta S.L. | Contacto</title>
 </head>
 
-<body>
-    <h1>Esta es la página "Contacto"</h1>
-</body>
+<body class="main">
 
-</html>
+    <section class="header">
+
+        <!-- Logo -->
+        <span class="header_left">
+            
+            <a href="../index.html"><img src="../../img/favicon.ico" alt="Logo GTI" class="home"></a>
+            
+        </span>
+
+        <!-- Menu and user mobile -->
+        <span class="header_right_mobile">
+        
+            <button type="button" class="user_button"><img src="../../img/user.svg" alt="user icon"></button>
+            <button type="button" class="menu_button"><img src="../../img/menu.svg" alt="menu button"></button>
+            <!-- 
+            TODO: menú desplegable que ocupa toda la pantalla y muestra en una columna las páginas: 
+            FAQ, Nosotros, Contáctanos, Iniciar Sesión 
+            -->
+        </span>
+
+        <!-- Menu and user desktop -->
+        <span class="header_right_desktop">
+           
+            <a href="" class="faq_button">FAQ</a>
+            <a href="" class="nosotros_button">Nosotros</a>
+            <a href="#" class="login_button_header">Iniciar sesión</a>
+            <a href="" class="contact_button_header">Contáctanos</a>
+            
+        </span>
+
+    </section>
+
+    <section class="contact_box">
+        
+        <form method="POST" onsubmit="enviar(event)" id="formKey">
+            <input type="text" id="inputName" name="name" placeholder="Nombre" required>
+            <input type="text" id="inputMail" name="mail" placeholder="E-mail" required>
+            <input type="text" id="inputPhone" name="phone" placeholder="Teléfono" required>
+
+            <button type="submit" class="contact_button">ENVIAR</button>
+        </form>
+
+        <svg height="20px">
+       <line x1="0" y1="15" x2="300" y2="15" style="stroke:rgb(0,0,0);stroke-width:1"/>
+   </svg>
+
+        <!-- Contact button -->
+        <h4>¿Ya eres cliente?</h4>
+        <a href="login.html" class="login_button">INICIAR SESIÓN</a>
+
+
+    </section>
+
+</body>
