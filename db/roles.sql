@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-02-2020 a las 18:11:02
+-- Tiempo de generación: 05-03-2020 a las 16:10:14
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `usuarios_bbdd`
+-- Base de datos: `users_db`
 --
 
 -- --------------------------------------------------------
@@ -30,14 +30,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(16) NOT NULL
+  `name` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `roles` (`id`, `nombre`) VALUES
+INSERT INTO `roles` (`id`, `name`) VALUES
 (1, 'cliente'),
 (2, 'admin'),
 (3, 'cliente-admin'),
