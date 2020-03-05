@@ -1,9 +1,9 @@
 <?php
 
-    if((isset($_POST['key']) && $_POST['key'] !== '' )&&(isset($_POST['user']) && $_POST['user'] !== '' )){
+    if((isset($_POST['pass']) && $_POST['pass'] !== '' )&&(isset($_POST['user']) && $_POST['user'] !== '' )){
        
         $user = $_POST['user'];
-        $key = $_POST['key'];
+        $key = $_POST['pass'];
         
         //$sql = "SELECT * FROM `users` WHERE email = $user AND  password = $key";
         $sql = "SELECT
@@ -24,7 +24,7 @@
        // var_dump($array_sql);
 
        
-        if(isset($res)){
+        if(mysqli_num_rows($res)>0){
             session_start();
             
             $_SESSION['registrado'] = "sesion_registrada";
