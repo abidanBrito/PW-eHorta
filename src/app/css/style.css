@@ -152,8 +152,7 @@ article {
 /* Mobile topbar menu */
 @media (max-width: 48em) {
     body {
-        max-width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     #navbar-contact {
