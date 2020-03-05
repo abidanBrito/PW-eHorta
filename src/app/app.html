@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="js/sesion.js"></script>
+</head>
+
+<body>
+    <h1>FELICIDADES, ESTÁS REGISTRADO</h1>
+    <h2>Si no has entrado mediante el formulario, no deberías estar aquí</h2>
+ <a href="javascript:fetch('../api/v1.0/sesion', {method: 'delete'}).then(res => {
+                if (res.status == 200) {location.href = '../index.html' } else { } })">Cerrar sesión</a> </body>
+
+</html>

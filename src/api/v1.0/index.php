@@ -1,7 +1,6 @@
 <?php
-require_once '../includes/connect.php'; // Conexion a la BBDD ** Falta por configurar**
+require_once '../includes/connect.php';
 define('API_VERSION', 'v1.0');
-
 /***************************
 1.‐ Parsear la URL...
 ***************************/
@@ -24,6 +23,6 @@ $salida = array();
 $vista = 'json';
 $http_code = 404;
 // modelo
-include "models/$operacion-$recurso.php"; 
+include "models/$operacion-$recurso.php";
 // vista
-include "views/$vista.php"; 
+include "views/$vista.php";

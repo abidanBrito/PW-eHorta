@@ -1,17 +1,47 @@
 <?php
 
-    if(isset($_POST['key']) && $_POST['key'] !== '' ){
+    if((isset($_POST['key']) && $_POST['key'] !== '' )&&(isset($_POST['user']) && $_POST['user'] !== '' )){
+       
+        $user = $_POST['user'];
         $key = $_POST['key'];
-        if($key == "key"){
+        
+        //$sql = "SELECT * FROM `users` WHERE email = $user AND  password = $key";
+        $sql = "SELECT
+    users.id,
+    users.email,
+    users.name,
+    users.roleId,
+    roles.name
+        FROM
+    users,
+    roles
+        WHERE
+    users.email = '$user' AND users.roleId = roles.id AND users.password = '$key'";
+
+        $res = mysqli_query($conn, $sql);
+
+        $array_sql = mysqli_fetch_assoc($res);
+       // var_dump($array_sql);
+
+       
+        if(isset($res)){
             session_start();
+            
             $_SESSION['registrado'] = "sesion_registrada";
-            $http_code = 200;   //ALl right
+            $_SESSION["user_id"]= $array_sql["id"];
+           // var_dump($_SESSION["user_id"]);
+
+            $_SESSION["user_email"]=$array_sql["email"];
+            $_SESSION["user_name"]=$array_sql["name"];
+            $_SESSION["user_roleId"]=$array_sql["roleId"];
+
+        //var_dump( $_SESSION["user_email"]);
+
+        
+            $http_code = 200;   //Todo okey            
         }else{
-            $http_code = 401;   // No all right
+            $http_code = 401;   // Unauthorized
         }
     }else{
-        $http_code = 400; //Mal formulada
+        $http_code = 400; //Petición mal formulada
     }
-
-
-    
