@@ -118,13 +118,15 @@ body {
 
     .navbar {
         justify-content: space-between;
+        width: 100%;
+        position: fixed;
     }
 
     .navbar-links {
         flex-direction: column;
         position: fixed;
-        width: 100%;
         height: 100%;
+        width: 100%;
         top: 45px;
         background-color: #664b58;
         justify-content: center;
@@ -153,7 +155,7 @@ body {
 .navbar-active {
     transform: translateX(0%);
     transition: transform 0.25s ease-in;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .login-hide {
