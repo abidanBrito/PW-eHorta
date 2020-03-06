@@ -7,6 +7,8 @@
 /* -- SECTIONS -- */
 main,
 section {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px;
 }
 
@@ -25,12 +27,12 @@ article {
 
 .showcase div {
     height: 100vh;
-    width: 85vw;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px;
+    padding: 50px;
 }
 
 .showcase h1 {
@@ -41,4 +43,155 @@ article {
     font-size: 20px;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+#services {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.services-info,
+.datalogger-info {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.services-info h2 {
+    margin: 15px;
+}
+
+#services div {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+#services-01 {
+    justify-content: flex-end;
+    height: 20rem;
+    margin-top: 40px;
+}
+
+#services-02 {
+    justify-content: flex-start;
+    height: 20rem;
+    margin-top: 40px;
+}
+
+#services div ul li {
+    padding: 20px;
+    list-style: none;
+}
+
+#services-01 ul {
+    margin-right: 5rem;
+}
+
+#services-02 ul {
+    margin-left: 5rem;
+}
+
+#services div img {
+    max-height: 20rem;
+    width: auto;
+}
+
+#button-services,
+#button-datalogger {
+    display: inherit;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#datalogger {
+    display: flex;
+}
+
+.magnitudes-list {
+    display: inline-flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.magnitudes-list-02 {
+    display: inline-flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hideout-images {
+    display: none;
+}
+
+
+/* -- FOOTER -- */
+.footer {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(80, 80, 80);
+    list-style: none;
+    letter-spacing: 2px;
+    color: #dddddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.properties {
+    display: flex;
+    justify-content: space-between;
+}
+
+.properties div {
+    display: inline-flex;
+    align-items: center;
+}
+
+.properties div img {
+    filter: invert(76%) sepia(69%) saturate(4%) hue-rotate(35deg) brightness(101%) contrast(98%);
+}
+
+.footer-icon {
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
+/* -- MEDIA QUERYS -- */
+/* -- Mobile -- */
+@media (max-width: 48em) {
+
+    .showcase h1 {
+        font-size: 30px;
+    }
+
+    .showcase div {
+        width: 90%;
+    }
+
+    .showcase a {
+        font-size: 12px;
+    }
+
+    .properties {
+        justify-content: center;
+    }
+
+    #footer-tlf {
+        display: none;
+    }
+
+    #footer-email {
+        display: none;
+    }
+
+    #services img {
+        display: none;
+    }
+
 }
