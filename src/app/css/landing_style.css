@@ -77,7 +77,28 @@ article {
 }
 
 @media (max-width: 48em) {
+
+    .showcase h1 {
+        font-size: 30px;
+    }
+
     .showcase div {
-        width: 500px;
+        width: 90%;
+    }
+
+    .showcase a {
+        font-size: 12px;
+    }
+    
+    .properties {
+        justify-content: center;
+    }
+    
+    #footer-tlf {
+        display: none;
+    }
+
+    #footer-email {
+        display: none;
     }
 }

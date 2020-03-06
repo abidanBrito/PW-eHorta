@@ -110,7 +110,6 @@ body {
 @media (max-width: 48rem) {
     body {
         min-height: 550px;
-        overflow: hidden;
     }
 
     #navbar-contact {
@@ -131,7 +130,6 @@ body {
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
-        transition: transform 0.25s ease-in;
     }
 
     .navbar-links li {
@@ -154,6 +152,8 @@ body {
 
 .navbar-active {
     transform: translateX(0%);
+    transition: transform 0.25s ease-in;
+    overflow: hidden;
 }
 
 .login-hide {
