@@ -88,6 +88,7 @@ input:focus {
     color: white;
     border-radius: 139px;
     font-size: 20px;
+    margin-top: 10px;
 }
 
 .contact_button {
