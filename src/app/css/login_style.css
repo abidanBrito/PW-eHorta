@@ -74,6 +74,16 @@ input:focus {
     display: none;
 }
 
+#access_msg {
+    width: 213px;
+    height: 35px;
+    color: rgba(109, 0, 14, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: none;
+}
+
 .separator {
     width: 160px;
     height: 2px;
