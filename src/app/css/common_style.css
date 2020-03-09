@@ -4,13 +4,13 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* -- NAVIGATION BAR -- */
 .navbar {
     max-width: 100%;
-    height: 45px;
+    height: 50px;
     margin: 0 auto;
     overflow: hidden;
     background-color: #664b58;
@@ -95,6 +95,7 @@ body {
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
+    letter-spacing: 1px;
     font-weight: bold;
     border-radius: 20px;
     padding: 7px 24px;
@@ -104,41 +105,12 @@ body {
     color: #121212;
 }
 
-/* -- FOOTER -- */
-.footer {
-    width: 100%;
-    height: 50px;
-    background-color: rgb(80, 80, 80);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    list-style: none;
-    letter-spacing: 2px;
-    color: #dddddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.properties {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 3px;
-    margin-right: 3px;
-    margin-top: 5px;
-}
-
-.footer-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-}
-
 /* -- MEDIA QUERYS -- */
 /* Mobile topbar menu */
-@media (max-width: 48em) {
+@media (max-width: 48rem) {
     body {
         min-height: 550px;
+        overflow-x: hidden;
     }
 
     #navbar-contact {
@@ -151,21 +123,22 @@ body {
 
     .navbar-links {
         flex-direction: column;
-        width: 100%;
-        position: absolute;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
         background-color: #664b58;
-        height: 95vh;
-        top: 45px;
-        justify-content: space-around;
-        padding: 100px;
-        margin-bottom: 45px;
+        justify-content: center;
         align-items: center;
         transform: translateX(100%);
-        transition: transform 0.25s ease-in;
     }
 
     .navbar-links li {
         opacity: 0;
+    }
+
+    .navbar-links li a {
+        margin: 5px;
     }
 
     .menu-icon,
@@ -180,6 +153,8 @@ body {
 
 .navbar-active {
     transform: translateX(0%);
+    transition: transform 0.25s ease-in;
+    overflow-y: hidden;
 }
 
 .login-hide {

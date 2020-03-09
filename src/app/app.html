@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">    <title>Inicio</title>
     <script src="js/restringir_acceso.js"></script>
 </head>
 
@@ -13,7 +12,7 @@
     <h2>Si no has entrado mediante el formulario, no deberías estar aquí</h2>
     <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
         function(respuesta) {
-            if (respuesta.status == 200) location.href = '../index.html';
+            if (respuesta.status == 200) location.href = '../../index.html';
         })">Cerrar sesión</a> </body>
 
 </html>
