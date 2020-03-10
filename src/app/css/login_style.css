@@ -1,16 +1,26 @@
 body {
-    background-color: white;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+/* Mobile version */
+@media (max-width: 48rem) {
+  body {
+    
+  }
 }
 
-.header {
-    width: 100%;
-    height: 60px;
-    background-color: purple;
-    top: 0;
-    position: static;
-    display: flex;
+/* Desktop version */
+@media (min-width: 48rem) {
+  body {
+    background-image: url(../../img/background_doublev2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
 }
 
 button {
@@ -45,6 +55,10 @@ button {
     text-align: center;
 }
 
+h1 {
+    margin: 5px;
+}
+
 h2 {
     margin-left: 10px;
 }
@@ -67,6 +81,16 @@ input:focus {
 #error_msg {
     width: 213px;
     height: 35px;
+    color: rgba(130, 0, 14, 1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: none;
+}
+
+#access_msg {
+    width: 213px;
+    height: 35px;
     color: rgba(109, 0, 14, 1);
     margin-top: 10px;
     margin-bottom: 10px;
@@ -85,19 +109,21 @@ input:focus {
 }
 
 .separator {
-    width: 160px;
+    width: 50%;
     height: 2px;
     background-color: grey;
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 .login_button {
     width: 278px;
     height: 40px;
-    background-color: mediumpurple;
+    background-color: #E0A942;
     color: white;
     border-radius: 139px;
     font-size: 20px;
+    margin-top: 20px;
 }
 
 .contact_button {
