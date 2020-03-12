@@ -58,19 +58,20 @@
         <form method="POST" onsubmit="enviar(event)" id="formKey">
             <input type="text" id="inputUser" name="user" placeholder="Correo" required>
             <input type="password" id="inputKey" name="pass" placeholder="Contraseña" required>
+            
+            <div id="error_msg">Error al iniciar sesión</div>
 
             <button type="submit" class="login_button">ENTRAR A MI PERFIL</button>
         </form>
         
-        <div id="error_msg">Error al iniciar sesión</div>
         <div id="access_msg">Ha ocurrido un error. Por favor, inicie sesión</div>
         <script src="js/sesion.js"></script>
         
         <div class="separator"></div>
 
         <!-- Contact button -->
-        <h4>¿Aún no eres cliente?</h4>
-        <a href="contact.html" class="contact_button">CONTÁCTANOS</a>
+        <h4>¿Aún no eres cliente? <a href="contact.html" class="contacto">Contáctanos</a></h4>
+        
 
     </section>
 

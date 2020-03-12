@@ -16,7 +16,7 @@ body {
 /* Desktop version */
 @media (min-width: 48rem) {
   body {
-    background-image: url(../../img/background_doublev2.png);
+    background-image: url(../../img/flores_recta.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -57,10 +57,11 @@ button {
 
 h1 {
     margin: 5px;
+    color: white;
 }
 
-h2 {
-    margin-left: 10px;
+h4 {
+    color: white;
 }
 
 input {
@@ -71,7 +72,9 @@ input {
     padding-left: 10px;
     padding-right: 10px;
     border: 0;
-    border-bottom: 2px solid grey;
+    border-bottom: 4px solid grey;
+    background-color: transparent;
+    color: white;
 }
 
 input:focus {
@@ -85,17 +88,7 @@ input:focus {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
-    display: none;
-}
-
-#access_msg {
-    width: 213px;
-    height: 35px;
-    color: rgba(109, 0, 14, 1);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    display: none;
+    visibility: hidden;
 }
 
 #access_msg {
@@ -123,17 +116,8 @@ input:focus {
     color: white;
     border-radius: 139px;
     font-size: 20px;
-    margin-top: 20px;
 }
 
-.contact_button {
-    width: 278px;
-    background-color: white;
-    border-radius: 139px;
-    border: 1px grey solid;
-    font-size: 20px;
-    text-decoration: none;
-    margin: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.contacto {
+    color: lightgreen;
 }
