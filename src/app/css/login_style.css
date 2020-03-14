@@ -80,25 +80,18 @@ input {
 input:focus {
     border-color: mediumpurple;
 }
+input:error {
+    border-color: red;
+}
 
 #error_msg {
     width: 213px;
     height: 35px;
-    color: rgba(130, 0, 14, 1);
+    color: red;
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
     visibility: hidden;
-}
-
-#access_msg {
-    width: 213px;
-    height: 35px;
-    color: rgba(109, 0, 14, 1);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-    display: none;
 }
 
 .separator {
@@ -116,6 +109,7 @@ input:focus {
     color: white;
     border-radius: 139px;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .contacto {
