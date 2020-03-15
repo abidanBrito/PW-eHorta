@@ -1,3 +1,13 @@
+<!-- ----------------------------------------------------------------
+*    AUTHOR:         Abidan Brito Clavijo
+*    FILE:           contact.html    
+*    DATE:           13/03/2020
+*    STATE:          DONE
+*    FUNCTIONALITY:  ...
+*    ----------------------------------------------------------------
+*    NOTICE: Copyright (c) 2020 Abidan Brito Calvijo
+*    ---------------------------------------------------------------- -->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,74 +17,75 @@
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
-    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/contact_style.css">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | Contacto</title>
+    <title>e-Horta | Soluciones hardware para actividad agrícola</title>
 </head>
 
-<body class="main">
-
-    <!-- Top bar (navigation menu) -->
-    <header>
-        <nav class="navbar">
+<body>
+    <div class="container">
+        <!-- Top bar -->
+        <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="../../index.html">
-                <img src="../../img/logo_v2.svg" alt="LOGO">
+            <a id="logo" class="white-filter" href="index.html">
+                <img src="img/logo_v2.svg" alt="LOGO">
             </a>
-            <!-- Menu options -->
-            <ul class="navbar-links">
-                <li>
-                    <a href="about.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="faqs.html">FAQs</a>
-                </li>
-                <li>
-                    <a href="../../index.html" id="navbar-contact">Inicio</a>
-                </li>
-                <li>
-                    <a href="login.html">Iniciar sesión</a>
-                </li>
-            </ul>
+            <nav class="navbar">
+                <!-- Navigation menu -->
+                <ul class="navbar-links">
+                    <li>
+                        <a href="about.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="faqs.html">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="../index.html" id="navbar-contact">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </nav>
             <div class="navbar-right">
                 <!-- Login icon -->
                 <a id="login-icon" class="white-filter" href="login.html">
-                    <img src="../../img/login.svg" alt="LOGIN">
+                    <img src="img/user.svg" alt="LOGIN">
                 </a>
                 <!-- Mobile menu icon -->
-                <div class="menu-icon" class="menu-toggle">
+                <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
                     <div class="line-mid"></div>
                     <div class="line-bot"></div>
                 </div>
             </div>
-        </nav>
-    </header>
+        </header>
 
-    <section class="contact_box">
-        
-        <form method="POST" onsubmit="enviar(event)" id="formKey">
-            <input type="text" id="inputName" name="name" placeholder="Nombre" required>
-            <input type="text" id="inputMail" name="mail" placeholder="E-mail" required>
-            <input type="text" id="inputPhone" name="phone" placeholder="Teléfono" required>
+        <main>
+            <aside class="contact-details">
+                <div id="tlf">
+                    <img src="" alt="">
+                    <h1></h1>
+                </div>
+                <p></p>
+                <div id="email">
+                    <img src="" alt="">
+                    <h1></h1>
+                </div>
+                <p></p>
+            </aside>
 
-            <button type="submit" class="contact_button">ENVIAR</button>
-        </form>
+            <div id="map">Map goes here...</div>
+        </main>
+    </div>
 
-       <div class="separator"></div>
-
-        <!-- Contact button -->
-        <h4>¿Ya eres cliente?</h4>
-        <a href="login.html" class="login_button">INICIAR SESIÓN</a>
-
-
-    </section>
-    
     <!-- Scripts -->
     <script src="js/landing_page.js"></script>
-
+    <script src="js/map_contact_page.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer></script>
 </body>
 
 </html>

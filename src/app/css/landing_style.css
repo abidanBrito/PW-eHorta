@@ -19,7 +19,7 @@ article {
 }
 
 .showcase {
-    background-image: url(../../../img/landing_banner.jpg);
+    background-image: url(../../img/backdrop.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -27,12 +27,12 @@ article {
 
 .showcase div {
     height: 100vh;
-    width: 60vw;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: 50px;
+    padding: 40px;
 }
 
 .showcase h1 {
