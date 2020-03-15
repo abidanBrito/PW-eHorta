@@ -1,3 +1,12 @@
+<!-- ----------------------------------------------------------------
+*    AUTHOR:         Abidan Brito Clavijo
+*    FILE:           index.html    
+*    DATE:           13/03/2020
+*    STATE:          DONE
+*    ----------------------------------------------------------------
+*    NOTICE: Copyright (c) 2020 Abidan Brito Calvijo
+*    ---------------------------------------------------------------- -->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,148 +19,60 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="app/css/landing_style.css">
     <link rel="stylesheet" type="text/css" href="app/css/common_style.css">
+    <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta | Soluciones hardware para actividad agrícola</title>
 </head>
 
 <body>
-    <!-- Top bar (navigation menu) -->
-    <header>
-        <nav class="navbar">
+    <div class="container">
+        <!-- Top bar -->
+        <header>
             <!-- Corporative brand -->
             <a id="logo" class="white-filter" href="index.html">
-                <img src="img/logo_v2.svg" alt="LOGO">
+                <img src="app/img/logo_v2.svg" alt="LOGO">
             </a>
-            <!-- Menu options -->
-            <ul class="navbar-links">
-                <li>
-                    <a href="app/about.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="app/faqs.html">FAQs</a>
-                </li>
-                <li>
-                    <a href="app/contact.html" id="navbar-contact">Contacto</a>
-                </li>
-                <li>
-                    <a href="app/login.html">Iniciar sesión</a>
-                </li>
-            </ul>
-            <div class="navbar-right">
-                <!-- Login icon -->
-                <a id="login-icon" class="white-filter" href="app/login.html">
-                    <img src="img/login.svg" alt="LOGIN">
-                </a>
-                <!-- Mobile menu icon -->
-                <div class="menu-icon" class="menu-toggle">
-                    <div class="line-top"></div>
-                    <div class="line-mid"></div>
-                    <div class="line-bot"></div>
+            <nav class="navbar">
+                <!-- Navigation menu -->
+                <ul class="navbar-links">
+                    <li>
+                        <a href="app/about.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="app/faqs.html">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="app/contact.html" id="navbar-contact">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="app/login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <div class="navbar-right">
+                    <!-- Login icon -->
+                    <a id="login-icon" class="white-filter" href="app/login.html">
+                        <img src="app/img/user.svg" alt="LOGIN">
+                    </a>
+                    <!-- Mobile menu icon -->
+                    <div class="menu-icon" id="menu-toggle">
+                        <div class="line-top"></div>
+                        <div class="line-mid"></div>
+                        <div class="line-bot"></div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <!-- Welcome banner -->
-    <section class="showcase" role="banner">
-        <div>
-            <h1>Mejora la producción y calidad de tu cosecha</h1>
-            <p>¡La agricultura del futuro ha llegado!</p>
-            <a class="button" href="app/contact.html">Ponte en contacto</a>
-        </div>
-    </section>
-
-    <!-- Provided services -->
-    <main id="services">
-        <article class="services-info">
-            <h2>NUESTRA APLICACIÓN</h2>
-            <p>Controla el estado de tus parcelas desde cualquier lugar y en tiempo real.</p>
-            <p>¡Disfruta de una gran variedad de funcionalidades!</p>
-        </article>
-        <div id="services-01">
-            <img class="hideout-images" src="img/grafica.png" alt="Imagen gráfica">
-            <ul>
-                <li>
-                    <h3>Diversidad de gráficas</h3>
-                </li>
-                <li>
-                    <h3>Mapa de geoposicionamiento</h3>
-                </li>
-                <li>
-                    <h3>Alertas meteorológicas</h3>
-                </li>
-            </ul>
-        </div>
-        <div id="services-02">
-            <ul>
-                <li>
-                    <h3>Notificaciones personalizables</h3>
-                </li>
-                <li>
-                    <h3>Registro histórico de datos</h3>
-                </li>
-                <li>
-                    <h3>Control remoto de sondas</h3>
-                </li>
-            </ul>
-            <img class="hideout-images" src="img/geolocalization.png" alt="Imagen geolocalización">
-        </div>
-        <a id="button-services" class="button" href="app/contact.html">Ponte en contacto</a>
-    </main>
-
-    <!-- Sensors (magnitudes) -->
-    <section id="datalogger">
-        <article class="datalogger-info">
-            <h2>DATALOGGER</h2>
-            <p>Analiza magnitudes de ambiente de manera aislada o global.</p>
-            <p>¡Control sobre tus cultivos!</p>
-        </article>
-        <div>
-            <ul class="magnitudes-list">
-                <li>
-                    <img src="img/datalogger/temperature.svg" alt="Icono temperatura">
-                    <h3>Temperatura</h3>
-                </li>
-                <li>
-                    <img src="img/datalogger/luminosity.svg" alt="Icono luminosidad">
-                    <h3>Luminosidad</h3>
-                </li>
-                <li>
-                    <img src="img/datalogger/salinity.svg" alt="Icono salinidad">
-                    <h3>Salinidad</h3>
-                </li>
-                <li>
-                    <img src="img/datalogger/humidity.svg" alt="Icono humedad">
-                    <h3>Humedad</h3>
-                </li>
-                <li>
-                    <img src="img/datalogger/rainfall.svg" alt="Icono precipitaciones">
-                    <h3>Precipitaciones</h3>
-                </li>
-            </ul>
-            <img class="hideout-images" src="img/ehorta_datalogger.png" alt="Foto datalogger">
-        </div>
-        <a id="button-datalogger" class="button" href="app/contact.html">Ponte en contacto</a>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <article class="properties">
-            <div id="footer-tlf">
-                <img src="img/footer/telephone.svg" alt="tlf" class="footer-icon">
-                <p class="properties">674-95-45-097</p>
-            </div>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
             <!-- Copyright -->
-            <div class="copy">&copy; 2020 Copyright e-Horta Co.</div>
-            <div id="footer-email">
-                <img src="img/footer/email.svg" alt="email" class="footer-icon">
-                <p class="properties">e-Horta@business.com</p>
-            </div>
-        </article>
-    </footer>
+            <p id="copy">&copy; 2020 Copyright e-Horta Co.</p>
+        </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="app/js/landing_page.js"></script>
 </body>
 
 </html>
+

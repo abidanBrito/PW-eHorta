@@ -1,3 +1,12 @@
+<!-- ----------------------------------------------------------------
+*    AUTHOR:         Abidan Brito Clavijo
+*    FILE:           access_error.html    
+*    DATE:           13/03/2020
+*    STATE:          DONE
+*    ----------------------------------------------------------------
+*    NOTICE: Copyright (c) 2020 Abidan Brito Calvijo
+*    ---------------------------------------------------------------- -->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,54 +16,63 @@
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
-    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/landing_style.css">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | Iniciar Sesión</title>
+    <title>e-Horta | 401</title>
 </head>
 
-<body class="main">
-
-    <!-- Top bar (navigation menu) -->
-    <header>
-        <nav class="navbar">
+<body>
+    <div class="container">
+        <!-- Top bar -->
+        <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="../../index.html">
-                <img src="../../img/logo_v2.svg" alt="LOGO">
+            <a id="logo" class="white-filter" href="index.html">
+                <img src="img/logo_v2.svg" alt="LOGO">
             </a>
-            <!-- Menu options -->
-            <ul class="navbar-links">
-                <li>
-                    <a href="about.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="faqs.html">FAQs</a>
-                </li>
-                <li>
-                    <a href="contact.html" id="navbar-contact">Contacto</a>
-                </li>
-                <li>
-                    <a href="../../index.html">Inicio</a>
-                </li>
-            </ul>
-            <div class="navbar-right">
-                <!-- Mobile menu icon -->
-                <div class="menu-icon" class="menu-toggle">
-                    <div class="line-top"></div>
-                    <div class="line-mid"></div>
-                    <div class="line-bot"></div>
+            <nav class="navbar">
+                <!-- Navigation menu -->
+                <ul class="navbar-links">
+                    <li>
+                        <a href="about.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="faqs.html">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" id="navbar-contact">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <div class="navbar-right">
+                    <!-- Login icon -->
+                    <a id="login-icon" class="white-filter" href="login.html">
+                        <img src="img/user.svg" alt="LOGIN">
+                    </a>
+                    <!-- Mobile menu icon -->
+                    <div class="menu-icon" id="menu-toggle">
+                        <div class="line-top"></div>
+                        <div class="line-mid"></div>
+                        <div class="line-bot"></div>
+                    </div>
                 </div>
-                <!-- Top bar cta -->
-                <a id="navbar-button" class="button" href="contact.html">Contáctanos</a>
-            </div>
-        </nav>
-    </header>
-    <section style="text-align: center;  ">
-        <h1>Error 401. No autorizado</h1>
-        <p>Por favor, inicie sesión <a href="login.html">aquí</a></p>
-    </section>
+            </nav>
+        </header>
 
+        <main style="text-align: center; margin-top: 50px;">
+            <h1>Error 401 - Acceso no autorizado.</h1>
+            <p style="margin-top: 20px;">
+                Por favor, inicie sesión <a href="login.html" style="text-decoration: none;">aquí.</a>
+            </p>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/landing_page.js"></script>
 </body>
 
 </html>
