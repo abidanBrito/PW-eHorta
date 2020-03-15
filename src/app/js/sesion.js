@@ -7,7 +7,7 @@ function enviar(evento) {
         if (respuesta.status == 200) {
             location.href = 'app.html';
         } else {
-            document.getElementById("error_msg").style.display = "block";
+            document.getElementById("error_msg").style.visibility = "visible";
         }
     })
 }
