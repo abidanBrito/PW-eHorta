@@ -1,0 +1,45 @@
+.container {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact-details {
+    height: 500px;
+    width: 500px;
+    border: solid 1px black;
+    margin-right: 20px;
+}
+
+#map {
+    height: 700px;
+    width: 800px;
+    border-radius: 10px;
+}
+
+/* ------------------ */
+/* -- MEDIA QUERYS -- */
+/* ------------------ */
+/* Ground truth for testing -> Samsung Galaxy S9 */
+@media screen and (max-width: 740px) {
+    .contact-details {
+        height: 250px;
+        width: 300px;
+        margin-bottom: 50px;
+    }
+    
+    #map {
+        height: 300px;
+        width: 300px;
+    }
+    
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+}
