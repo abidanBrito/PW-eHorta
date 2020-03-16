@@ -15,7 +15,7 @@ body {
 /* Desktop version */
 @media (min-width: 48rem) {
     body {
-        background-image: url(img/flores_recta.png);
+        background-image: url(../img/flores_recta.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-attachment: fixed;
@@ -55,13 +55,8 @@ button {
 }
 
 h1 {
-    margin: 5px;
-<<<<<<< Updated upstream
     font-size: 35px;
-    color: gray;
     margin: 15px;
-=======
->>>>>>> Stashed changes
 }
 
 input {
@@ -116,11 +111,7 @@ input:error {
 }
 
 .contacto {
-<<<<<<< Updated upstream
     color: orange;
     text-decoration: none;
 }
-=======
-    color: mediumpurple;
-}
->>>>>>> Stashed changes
+
