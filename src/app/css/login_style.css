@@ -46,11 +46,12 @@ button {
 
 .caja_login {
     width: 300px;
-    height: 483px;
-    margin: 100px auto;
+    height: calc(100vh - 45px);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -114,4 +115,3 @@ input:error {
     color: orange;
     text-decoration: none;
 }
-
