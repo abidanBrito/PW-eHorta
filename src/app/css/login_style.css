@@ -56,9 +56,12 @@ button {
 
 h1 {
     margin: 5px;
+<<<<<<< Updated upstream
     font-size: 35px;
     color: gray;
     margin: 15px;
+=======
+>>>>>>> Stashed changes
 }
 
 input {
@@ -69,7 +72,7 @@ input {
     padding-left: 10px;
     padding-right: 10px;
     border: 0;
-    border-bottom: 4px solid grey;
+    border-bottom: 3px solid grey;
     background-color: transparent;
 }
 
@@ -113,6 +116,11 @@ input:error {
 }
 
 .contacto {
+<<<<<<< Updated upstream
     color: orange;
     text-decoration: none;
 }
+=======
+    color: mediumpurple;
+}
+>>>>>>> Stashed changes
