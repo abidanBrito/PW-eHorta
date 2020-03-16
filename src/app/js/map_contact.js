@@ -23,9 +23,10 @@ function initMap() {
         document.getElementById('map'), {
             zoom: 18,
             tilt: 0,
-            rotateControl: false,
             center: epsg,
-            mapTypeId: 'roadmap'
+            mapTypeId: 'roadmap',
+            rotateControl: false,
+            mapTypeControl: false
         });
 
     // Place a marker on top of EPSG
