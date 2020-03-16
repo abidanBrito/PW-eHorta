@@ -41,7 +41,7 @@ main {
 
 #tlf img,
 #email img {
-    max-width: 2rem;
+    max-width: 1.5rem;
     margin-right: 20px;
 }
 
@@ -62,10 +62,35 @@ main {
 /* ------------------ */
 /* Ground truth for testing -> Samsung Galaxy S9 */
 @media screen and (max-width: 740px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hide {
+        display: none;
+    }
+    
+    h1 {
+    letter-spacing: 3px;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 40px;
+}
+    
+    #tlf,
+    #email {
+        font-size: 1rem;
+    }
+
+    #tlf img,
+    #email img {
+        max-width: 1rem;
+        margin-right: 10px;
+    }
+
     .contact-details {
-        height: 250px;
-        width: 300px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     #map {
@@ -73,8 +98,5 @@ main {
         width: 300px;
     }
 
-    main {
-        flex-direction: column;
-        align-items: center;
-    }
+
 }
