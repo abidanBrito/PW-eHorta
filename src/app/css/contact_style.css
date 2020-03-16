@@ -70,14 +70,12 @@ main {
     .hide {
         display: none;
     }
-    
+
     h1 {
-    letter-spacing: 3px;
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 40px;
-}
-    
+        font-size: 2rem;
+        margin-top: 40px;
+    }
+
     #tlf,
     #email {
         font-size: 1rem;
@@ -97,6 +95,4 @@ main {
         height: 300px;
         width: 300px;
     }
-
-
 }
