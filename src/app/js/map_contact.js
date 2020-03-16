@@ -1,6 +1,6 @@
 /* ----------------------------------------------------------------
  *   AUTHOR:         Abidan Brito Clavijo
- *   FILE:           map_contact.js  
+ *   FILE:           map_contact.js
  *   DATE:           16/03/2020
  *   STATE:          DONE
  *   ----------------------------------------------------------------
@@ -22,12 +22,11 @@ function initMap() {
     let map = new google.maps.Map(
         document.getElementById('map'), {
             zoom: 18,
+            tilt: 0,
+            rotateControl: false,
             center: epsg,
-            mapTypeId: 'hybrid'
+            mapTypeId: 'roadmap'
         });
-
-    // Top down view
-    map.setTilt(0);
 
     // Place a marker on top of EPSG
     let marker = new google.maps.Marker({
@@ -36,7 +35,7 @@ function initMap() {
     });
 
     infoWindow = new google.maps.InfoWindow();
-    
+
     // Info window  on click
     marker.addListener('click', function () {
         openInfoWindow("<h3>UPV - Escuela Politécnica Superior de Gandia</h3> C/ Paranimf, 1, Edificio F <br> 46730 Grau de Gandia, Valencia, España", marker);
