@@ -1,13 +1,76 @@
+<!-- ----------------------------------------------------------------
+*    AUTHOR:         Abidan Brito Clavijo
+*    FILE:           about.html    
+*    DATE:           13/03/2020
+*    STATE:          WIP
+*    ----------------------------------------------------------------
+*    NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
+*    ---------------------------------------------------------------- -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet, favicon and font -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>e-Horta | 401</title>
 </head>
 
 <body>
-    <h1>Esta es la página "Nosotros"</h1>
+    <div class="container">
+        <!-- Top bar -->
+        <header>
+            <!-- Corporative brand -->
+            <a id="logo" class="white-filter" href="../index.html">
+                <img src="img/logo_v2.svg" alt="LOGO">
+            </a>
+            <nav class="navbar">
+                <!-- Navigation menu -->
+                <ul class="navbar-links">
+                    <li>
+                        <a href="faqs.html">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" id="navbar-contact">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="../index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <div class="navbar-right">
+                    <!-- Login icon -->
+                    <a id="login-icon" class="white-filter" href="login.html">
+                        <img src="img/user.svg" alt="LOGIN">
+                    </a>
+                    <!-- Mobile menu icon -->
+                    <div class="menu-icon" id="menu-toggle">
+                        <div class="line-top"></div>
+                        <div class="line-mid"></div>
+                        <div class="line-bot"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main style="text-align: center; margin-top: 50px;">
+            <h1>¿QUIÉNES SOMOS?</h1>
+            <p style="margin-top: 20px;">Somos un grupo de estudiantes del grado en Tecnologías Interactivas, 
+            de la Escuela Superior Politécnica de Gandía. Nuestra misión es...</p>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

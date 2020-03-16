@@ -1,11 +1,10 @@
 /* ----------------------------------------------------------------
 *   AUTHOR:         Abidan Brito Clavijo
 *   FILE:           common_style.css    
-*   DATE:           13/03/2020
+*   DATE:           16/03/2020
 *   STATE:          DONE
-*   FUNCTIONALITY:  ...
 *   ----------------------------------------------------------------
-*   NOTICE: Copyright (c) 2020 Abidan Brito Calvijo
+*   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
 *   ---------------------------------------------------------------- */
 
 /* --------------------------- */
@@ -178,6 +177,7 @@ header {
 
 /* Control classes */
 .navbar-active {
+    z-index: 1;
     transform: translateX(0%);
     transition: transform 0.25s ease-in;
     overflow-y: hidden;
