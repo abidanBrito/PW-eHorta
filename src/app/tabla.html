@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas</title>
+
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            line-height: 1.25;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+
+
+        @media screen and (max-width: 600px) { /*max 600px*/
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <section>
+      
+            <table>
+                <caption>Parcelas</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Empresa</th> <!---especifica que son columnas--->
+                        <th scope="col">Nombre Parcela</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><!----Datos 1-->
+                        <td data-label="Empresa"><a href=""> MejorEmpresa</a></td>
+                        <td data-label="Nombre Parcela">Parcela 1</td> 
+                        <td data-label="Email">Sanj@gmail.com</td>
+                        <td data-label="Fecha">03/01/2020 </td>
+                    </tr>
+                    <tr><!----Datos 2-->
+                        <td data-label="Empresa"><a href="">Misma empresa</a></td>
+                        <td data-label="Nombre Parcela">Parcela 2</td>
+                        <td data-label="Email">pedro@gmail.com</td>
+                        <td data-label="Fecha">03/31/2020</td>
+                    </tr>
+                    <tr><!----Datos 3-->
+                        <td data-label="Empresa"><a href="">Empresa</a></td>
+                        <td data-label="Nombre Parcela">Parcela 3</td>
+                        <td data-label="Email">juanjo@gmail.com</td>
+                        <td data-label="Fecha">03/01/2020</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+    </section>
+
+</body></html>
