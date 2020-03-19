@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2020 a las 10:28:36
+-- Tiempo de generación: 19-03-2020 a las 18:27:40
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -57,7 +57,9 @@ CREATE TABLE `plots` (
 --
 
 INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
-(1, 'Naranjos Paterna', 39.497875, -0.441465);
+(1, 'Naranjos Paterna', 39.497875, -0.441465),
+(2, 'Manzanos Bétera', -0.470384, 39.593231),
+(4, 'Granja Norte', -0.385436, 33.357462);
 
 -- --------------------------------------------------------
 
@@ -150,7 +152,10 @@ CREATE TABLE `users-plots` (
 --
 
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
-(9, 1);
+(9, 1),
+(9, 2),
+(6, 4),
+(6, 4);
 
 --
 -- Índices para tablas volcadas
@@ -217,7 +222,7 @@ ALTER TABLE `measurements`
 -- AUTO_INCREMENT de la tabla `plots`
 --
 ALTER TABLE `plots`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `positions`
