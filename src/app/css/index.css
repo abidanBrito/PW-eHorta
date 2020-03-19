@@ -20,9 +20,8 @@ section {
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 90px;
 }
 
@@ -31,10 +30,6 @@ section {
 }
 
 #showcase div {
-    display: flex;
-}
-
-#showcase div div {
     width: 700px;
     display: flex;
     flex-direction: column;
@@ -61,8 +56,28 @@ section {
     font-size: 24px;
 }
 
-#scroll-down img {
-    width: 2.5rem;
+
+#scroll-down02 {
+    position: absolute;
+    top: 190vh;
+}
+
+#scroll-down03 {
+    position: absolute;
+    top: 290vh;
+}
+
+#scroll-down04 {
+    position: absolute;
+    top: 380vh;
+    transform: rotate(180deg);
+}
+
+#scroll-down01 img,
+#scroll-down02 img,
+#scroll-down03 img,
+#scroll-down04 img {
+    width: 3rem;
 }
 
 #services {
@@ -70,6 +85,54 @@ section {
     flex-direction: column;
     align-items: center;
     padding-top: 90px;
+}
+
+#services-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#services-content article {
+    width: 250px;
+    text-align: center;
+}
+
+#services-content article img {
+    height: 70px;
+}
+
+.magnitudes {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.magnitudes div {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.boxes {
+    width: 180px;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes img {
+    max-height: 60%;
+    padding: 3px;
 }
 
 #datalogger {
@@ -99,9 +162,14 @@ section {
 
     #showcase {
         flex-direction: column-reverse;
+        justify-content: flex-end;
         background-image: none;
         background-color: #272b25;
         padding-top: 80px;
+    }
+
+    #showcase div {
+        padding: 35px;
     }
 
     #showcase h1 {
@@ -123,5 +191,20 @@ section {
 
     .hide {
         display: none;
+    }
+
+    #scroll-down01 img,
+    #scroll-down02 img,
+    #scroll-down03 img,
+    #scroll-down04 img {
+        width: 2rem;
+    }
+
+    #scroll-down04 {
+        top: 379vh;
+    }
+
+    #services-content {
+        flex-direction: column;
     }
 }

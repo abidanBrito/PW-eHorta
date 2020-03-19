@@ -39,7 +39,7 @@ function initMap() {
 
     // Info window  on click
     marker.addListener('click', function () {
-        openInfoWindow("<h3>UPV - Escuela Politécnica Superior de Gandia</h3> C/ Paranimf, 1, Edificio F <br> 46730 Grau de Gandia, Valencia, España", marker);
+        openInfoWindow("<h4>UPV - Escuela Politécnica Superior de Gandia</h4> C/ Paranimf, 1, Edificio F <br> 46730 Grau de Gandia, Valencia, España", marker);
     });
 }
 
