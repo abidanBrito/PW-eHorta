@@ -1,0 +1,104 @@
+.container {
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    letter-spacing: 3px;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 95px;
+}
+
+main {
+    height: calc(100vh - 90px - 93px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.contact-details p {
+    margin-bottom: 20px;
+}
+
+#tlf,
+#email {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+#tlf img,
+#email img {
+    max-width: 1.5rem;
+    margin-right: 20px;
+}
+
+#tlf a,
+#email a {
+    color: orange;
+    text-decoration: none !important;
+}
+
+#map {
+    height: 450px;
+    width: 750px;
+    border-radius: 10px;
+}
+
+/* ------------------ */
+/* -- MEDIA QUERYS -- */
+/* ------------------ */
+/* Ground truth for testing -> Samsung Galaxy S9 */
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 85px;
+    }
+
+    #tlf,
+    #email {
+        font-size: 1rem;
+    }
+
+    #tlf img,
+    #email img {
+        max-width: 1rem;
+        margin-right: 10px;
+    }
+
+    .contact-details {
+        margin-bottom: 40px;
+    }
+
+    #map {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .footer {
+        display: none;
+    }   
+}

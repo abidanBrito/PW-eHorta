@@ -2,9 +2,9 @@
 *    AUTHOR:         Abidan Brito Clavijo
 *    FILE:           contact.html    
 *    DATE:           13/03/2020
-*    STATE:          DONE
+*    STATE:          WIP
 *    ----------------------------------------------------------------
-*    NOTICE: Copyright (c) 2020 Abidan Brito Calvijo
+*    NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
 *    ---------------------------------------------------------------- -->
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | Soluciones hardware para actividad agrícola</title>
+    <title>e-Horta | Contacto</title>
 </head>
 
 <body>
@@ -63,27 +63,39 @@
             </nav>
         </header>
 
+        <h1>CONTACTO</h1>
         <main>
             <aside class="contact-details">
                 <div id="tlf">
-                    <img src="" alt="">
-                    <h1></h1>
+                    <img src="img/contact/telephone.svg" alt="Tlf icon">
+                    <a href="tel:633940482">
+                        <h3>(+34) 633 94 04 82</h3>
+                    </a>
                 </div>
-                <p></p>
-                <div id="email">
-                    <img src="" alt="">
-                    <h1></h1>
-                </div>
-                <p></p>
-            </aside>
+                <p class="hide">Atención personalizada de lunes a viernes de 8:00 a 16:00 h.</p>
 
-            <div id="map">Map goes here...</div>
+                <div id="email">
+                    <img src="img/contact/email.svg" alt="Email icon">
+                    <a href="mailto:gti.ehorta@gmail.com">
+                        <h3>gti.ehorta@gmail.com</h3>
+                    </a>
+                </div>
+                <p class="hide">Haznos llegar tus comentarios, dudas y sugerencias.</p>
+            </aside>
+            <div id="map"></div>
         </main>
+        
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <!-- Copyright -->
+            <p id="copy">&copy; 2020 Copyright e-Horta Co.</p>
+        </footer>
     </div>
 
     <!-- Scripts -->
-    <script src="js/landing_page.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/map_contact.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap"></script>
 </body>
 
 </html>
