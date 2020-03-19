@@ -5,6 +5,7 @@ body {
     position: fixed;
     overflow-y: scroll;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Mobile version */
@@ -49,6 +50,7 @@ button {
     height: calc(100vh - 45px);
     margin: 0 auto;
     display: flex;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
