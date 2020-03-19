@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-03-2020 a las 18:27:40
+-- Tiempo de generación: 19-03-2020 a las 21:51:38
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -48,18 +48,17 @@ CREATE TABLE `measurements` (
 CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `longitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
+INSERT INTO `plots` (`id`, `name`, `latitude`, `longitude`) VALUES
 (1, 'Naranjos Paterna', 39.497875, -0.441465),
-(2, 'Manzanos Bétera', -0.470384, 39.593231),
-(4, 'Granja Norte', -0.385436, 33.357462);
+(2, 'Limoneros Alzira', 39.1388436, -0.5051008);
 
 -- --------------------------------------------------------
 
@@ -70,9 +69,18 @@ INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
 CREATE TABLE `positions` (
   `id` int(11) NOT NULL,
   `plot` int(11) NOT NULL,
-  `longitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `positions`
+--
+
+INSERT INTO `positions` (`id`, `plot`, `latitude`, `longitude`) VALUES
+(1, 1, 39.497875, -0.441465),
+(2, 1, 39.495059, -0.446381),
+(3, 1, 39.495623, -0.446381);
 
 -- --------------------------------------------------------
 
@@ -153,9 +161,7 @@ CREATE TABLE `users-plots` (
 
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
 (9, 1),
-(9, 2),
-(6, 4),
-(6, 4);
+(9, 2);
 
 --
 -- Índices para tablas volcadas
@@ -222,13 +228,13 @@ ALTER TABLE `measurements`
 -- AUTO_INCREMENT de la tabla `plots`
 --
 ALTER TABLE `plots`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `probes`
