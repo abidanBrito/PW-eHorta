@@ -65,28 +65,42 @@
 
         <!-- Welcome section -->
         <section id="showcase" role="banner">
+            <img src="app/img/plant_image.png" alt="Plant image">
             <div>
-                <img src="app/img/plant_image.png" alt="Plant image">
-                <div>
-                    <h1>e-Horta</h1>
-                    <p>¡La agricultura del futuro ha llegado!</p>
-                    <div id="cta-button">
-                        <a class="button" href="#services">Conócenos</a>
-                    </div>
+                <h1>e-Horta</h1>
+                <p>¡La agricultura del futuro ha llegado!</p>
+                <div id="cta-button">
+                    <a class="button" href="#services">Conócenos</a>
                 </div>
             </div>
-
-            <div id="scroll-down">
-                <a class="white-filter" href="#services">
-                    <img src="app/img/down-arrow.svg" alt="Scroll down">
-                </a>
-            </div>
         </section>
+
 
         <main id="services">
             <h2>¿Qué ofrecemos?</h2>
             <p class="hide">¡Disfruta de una gran variedad de funcionalidades!</p>
-            <a id="scroll-down" class="white-filter" href="#services">
+
+            <div id="services-content">
+                <article>
+                    <h3>Sencillo</h3>
+                    <p>Con un diseño conciso e intuitivo, para
+                        una mejor experience de usuario.</p>
+                    <img src="app/img/blank_square.svg" alt="Blank image">
+                </article>
+                <article>
+                    <h3>Rápido</h3>
+                    <p>Revisa los datos desde nuestra aplicación en cualquier momento.</p>
+                    <img src="app/img/blank_square.svg" alt="Blank image">
+                </article>
+                <article>
+                    <h3>Multiplataforma</h3>
+                    <p>Accede a la aplicación desde
+                        cualquier dispositivo.</p>
+                    <img src="app/img/blank_square.svg" alt="Blank image">
+                </article>
+            </div>
+
+            <a id="scroll-down02" class="hide" href="#datalogger">
                 <img src="app/img/down-arrow.svg" alt="Scroll down">
             </a>
         </main>
@@ -94,7 +108,54 @@
         <section id="datalogger">
             <h2>Datalogger</h2>
             <p class="hide">¡Control total sobre tus cultivos!</p>
-            <a id="scroll-down" class="white-filter" href="#services">
+
+            <div class="magnitudes">
+                <div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/temperature.svg" alt="">
+                        <h3>Temperatura</h3>
+                    </div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/luminosity.svg" alt="">
+                        <h3>Luminosidad</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/salinity.svg" alt="">
+                        <h3>Salinidad</h3>
+                    </div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/humidity.svg" alt="">
+                        <h3>Humedad</h3>
+                    </div>
+                </div>
+
+                <div class="hide">
+                    <div class="boxes">
+                        <img src="app/img/datalogger/barometric_pressure.svg" alt="">
+                        <h3>Presión</h3>
+                    </div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/rainfall.svg" alt="">
+                        <h3>Precipitaciones</h3>
+                    </div>
+                </div>
+
+                <div class="hide">
+                    <div class="boxes">
+                        <img src="app/img/datalogger/gps.svg" alt="">
+                        <h3>GPS</h3>
+                    </div>
+                    <div class="boxes">
+                        <img src="app/img/datalogger/antitheft.svg" alt="">
+                        <h3>Antirrobo</h3>
+                    </div>
+                </div>
+            </div>
+
+            <a id="scroll-down03" class="hide" href="#reviews">
                 <img src="app/img/down-arrow.svg" alt="Scroll down">
             </a>
         </section>
@@ -102,8 +163,8 @@
         <section id="reviews">
             <h2>Reseñas</h2>
             <p class="hide">¡Descubre la opinión de nuestros usuarios!</p>
-            <a id="scroll-up" class="white-filter" href="#showcase">
-                <img src="app/img/down-arrow.svg" alt="Scroll up">
+            <a id="scroll-down04" class="hide" href="#showcase">
+                <img src="app/img/down-arrow.svg" alt="Scroll down">
             </a>
         </section>
 
