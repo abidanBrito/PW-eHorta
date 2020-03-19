@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,9 +10,22 @@
 <body>
     <h1>FELICIDADES, ESTÁS REGISTRADO</h1>
     <h2>Si no has entrado mediante el formulario, no deberías estar aquí</h2>
+
+    <!-- Aqui va la lista o cosa donde tienen que mostrarse los datos-->
+    <p id="text"></p>
+
+    <!-- Se inicializa el archivo JavaScript -->
+    <script src = "js/plots_list.js"></script>
+    <script>
+        // "text" es la id del objeto donde se muestran los datos
+        ViewPlotsList.prepare("text");
+        // Se inicializa el controlador
+        PlotsController.init();
+    </script>
+
     <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
         function(respuesta) {
-            if (respuesta.status == 200) location.href = '../../index.html';
+            if (respuesta.status == 200) location.href = 'login.html';
         })">Cerrar sesión</a> </body>
 
 </html>
