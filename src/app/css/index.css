@@ -1,7 +1,15 @@
+/* ----------------------------------------------------------------
+*   AUTHOR:         Abidan Brito Clavijo
+*   FILE:           common_style.css    
+*   DATE:           17/03/2020
+*   STATE:          DONE
+*   ----------------------------------------------------------------
+*   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
+*   ---------------------------------------------------------------- */
+
 .container {
     height: 100%;
     width: 100%;
-
 }
 
 /* -------------- */
@@ -43,6 +51,24 @@ section {
     font-size: 90px;
     letter-spacing: 3px;
     color: #dddddd;
+}
+
+h2 {
+    font-size: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+#slogan01,
+#slogan02,
+#slogan03 {
+    font-size: 24px;
 }
 
 #showcase p {
@@ -87,7 +113,8 @@ section {
     padding-top: 90px;
 }
 
-#services-content {
+#services-content,
+#reviews-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -96,43 +123,16 @@ section {
 }
 
 #services-content article {
-    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    width: 280px;
 }
 
 #services-content article img {
-    height: 70px;
-}
-
-.magnitudes {
-    height: 80%;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.magnitudes div {
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.boxes {
-    width: 180px;
-    height: 120px;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxes img {
-    max-height: 60%;
-    padding: 3px;
+    margin: 40px;
+    height: 100px;
 }
 
 #datalogger {
@@ -142,6 +142,43 @@ section {
     padding-top: 90px;
 }
 
+#datalogger-more {
+    display: none;
+}
+
+.magnitudes {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.magnitudes div {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.boxes {
+    width: 210px;
+    height: 150px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 1px #959595;
+    padding: 10px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.boxes img {
+    max-height: 60%;
+    padding: 3px;
+}
+
 #reviews {
     height: calc(100vh - 90px);
     display: flex;
@@ -149,62 +186,38 @@ section {
     align-items: center;
 }
 
-/* ------------------ */
-/* -- MEDIA QUERYS -- */
-/* ------------------ */
-/* Ground truth for testing -> Samsung Galaxy S9 */
-@media screen and (max-width: 740px) {
+.user-review {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    align-items: center;
+}
 
-    section,
-    main {
-        padding: 40px;
-    }
+.user {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 20px;
+}
 
-    #showcase {
-        flex-direction: column-reverse;
-        justify-content: flex-end;
-        background-image: none;
-        background-color: #272b25;
-        padding-top: 80px;
-    }
+.user img {
+    max-height: 100%;
+    margin-right: 20px;
+    border: 2px solid #9e51b8;
+    border-radius: 35px;
+}
 
-    #showcase div {
-        padding: 35px;
-    }
+.user p {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
 
-    #showcase h1 {
-        font-size: 45px;
-        letter-spacing: 3px;
-    }
-
-    #showcase p {
-        font-size: 20px;
-    }
-
-    #showcase img {
-        max-height: 250px;
-    }
-
-    .button {
-        font-size: 20px;
-    }
-
-    .hide {
-        display: none;
-    }
-
-    #scroll-down01 img,
-    #scroll-down02 img,
-    #scroll-down03 img,
-    #scroll-down04 img {
-        width: 2rem;
-    }
-
-    #scroll-down04 {
-        top: 379vh;
-    }
-
-    #services-content {
-        flex-direction: column;
-    }
+.review {
+    width: 370px;
+    color: gray;
+    font-size: 20px;
+    font-style: italic;
+    text-align: justify;
 }
