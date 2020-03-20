@@ -7,12 +7,9 @@ function enviar(evento) {
         if (respuesta.status == 200) {
             location.href = 'app.html';
         } else {
-<<<<<<< Updated upstream
             document.getElementById("error_msg").style.visibility = "visible";
-=======
             location.href = 'error.html';
             document.getElementById("error_msg").style.display = "block";
->>>>>>> Stashed changes
         }
     })
 }
