@@ -17,11 +17,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="app/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="app/css/index.css">
     <link rel="stylesheet" type="text/css" href="app/css/common_style.css">
+    <link rel="stylesheet" type="text/css" href="app/css/index.css">
+    <link rel="stylesheet" type="text/css" href="app/css/index_mobile.css">
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | Soluciones hardware para actividad agrícola</title>
+    <title>e-Horta | Agricultura digital</title>
 </head>
 
 <body>
@@ -75,28 +76,27 @@
             </div>
         </section>
 
-
         <main id="services">
             <h2>¿Qué ofrecemos?</h2>
-            <p class="hide">¡Disfruta de una gran variedad de funcionalidades!</p>
+            <p id="slogan01" class="hide">¡Disfruta de una gran variedad de funcionalidades!</p>
 
             <div id="services-content">
                 <article>
                     <h3>Sencillo</h3>
                     <p>Con un diseño conciso e intuitivo, para
                         una mejor experience de usuario.</p>
-                    <img src="app/img/blank_square.svg" alt="Blank image">
+                    <img src="app/img/services/simple.svg" alt="Blank image">
                 </article>
                 <article>
                     <h3>Rápido</h3>
                     <p>Revisa los datos desde nuestra aplicación en cualquier momento.</p>
-                    <img src="app/img/blank_square.svg" alt="Blank image">
+                    <img src="app/img/services/speed.svg" alt="Blank image">
                 </article>
                 <article>
                     <h3>Multiplataforma</h3>
                     <p>Accede a la aplicación desde
                         cualquier dispositivo.</p>
-                    <img src="app/img/blank_square.svg" alt="Blank image">
+                    <img src="app/img/services/device.svg" alt="Blank image">
                 </article>
             </div>
 
@@ -107,7 +107,7 @@
 
         <section id="datalogger">
             <h2>Datalogger</h2>
-            <p class="hide">¡Control total sobre tus cultivos!</p>
+            <p id="slogan02" class="hide">¡Control total sobre tus cultivos!</p>
 
             <div class="magnitudes">
                 <div>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
 
-                <div class="hide">
+                <div>
                     <div class="boxes">
                         <img src="app/img/datalogger/gps.svg" alt="">
                         <h3>GPS</h3>
@@ -154,7 +154,6 @@
                     </div>
                 </div>
             </div>
-
             <a id="scroll-down03" class="hide" href="#reviews">
                 <img src="app/img/down-arrow.svg" alt="Scroll down">
             </a>
@@ -162,7 +161,31 @@
 
         <section id="reviews">
             <h2>Reseñas</h2>
-            <p class="hide">¡Descubre la opinión de nuestros usuarios!</p>
+            <p id="slogan03" class="hide">¡Descubre la opinión de nuestros usuarios!</p>
+
+            <div id="reviews-container">
+                <div class="user-review">
+                    <div class="user">
+                        <img src="app/img/users_profiles/jubilado.png" alt="Usuario 01">
+                        <p>Matías Pérez Nieto</p>
+                    </div>
+                    <p class="review">"e-Horta reduce costes y horas de trabajo, optimizando las técnicas de cultivo."</p>
+                </div>
+                <div class="user-review">
+                    <div class="user">
+                        <img src="app/img/users_profiles/autonomo.png" alt="Usuario 02">
+                        <p>Joaquín Armas Sosa</p>
+                    </div>
+                    <p class="review">"Ha sido todo un descubrimiento. En un año ha mejorado la producción un 15%."</p>
+                </div>
+                <div class="user-review">
+                    <div class="user">
+                        <img src="app/img/users_profiles/activista.png" alt="Usuario 03">
+                        <p>María Jesús Blanco</p>
+                    </div>
+                    <p class="review">"Gracias a esta app puedo gestionar mis tierras desde cualquier sitio."</p>
+                </div>
+            </div>
             <a id="scroll-down04" class="hide" href="#showcase">
                 <img src="app/img/down-arrow.svg" alt="Scroll down">
             </a>
