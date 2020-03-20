@@ -16,13 +16,13 @@
     box-sizing: border-box;
 }
 
-
 html,
 body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-    
-    /* -- SCROLLING -- */
+    background-color: #f8f8f8;
+
+    /* -- SMOOTH SCROLL + SNAP -- */
     scrollbar-color: gray rgb(30, 30, 30) !important;
     scrollbar-width: thin !important;
     scroll-behavior: smooth;
