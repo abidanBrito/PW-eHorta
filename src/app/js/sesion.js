@@ -4,12 +4,13 @@ function enviar(evento) {
         method: 'post',
         body: new FormData(document.getElementById('formKey')),
         credentials: "same-origin"
-    }).then(function (respuesta) {
+    }).then(function(respuesta) {
         if (respuesta.status == 200) {
             location.href = 'app.html';
         } else {
             document.getElementById("error_msg").style.visibility = "visible";
+            location.href = 'access_error.html';
+            document.getElementById("error_msg").style.display = "block";
         }
     })
 }
-
