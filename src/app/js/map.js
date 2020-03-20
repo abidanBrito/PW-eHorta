@@ -1,15 +1,8 @@
 function initMap(centerPos) {
-    console.log(centerPos)
-    if (centerPos == undefined || centerPos == 1) {
-        centerPos = new google.maps.LatLng(39.497875, -0.441465)
-    } else {
-        centerPos = new google.maps.LatLng(39.1388436, -0.5051008)
-
-    }
     // The location of the initial zone in the map
     var options = {
         zoom: 15,
-        center: centerPos,
+        center: { lat: 39.497875, lng: -0.441465 },
         mapTypeId: 'hybrid',
         styles: [{
                 featureType: 'poi',

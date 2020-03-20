@@ -2,17 +2,14 @@ function enviar(evento) {
     evento.preventDefault();
     fetch('../api/v1.0/sesion', {
         method: 'post',
-        body: new FormData(document.getElementById('formKey'))
+        body: new FormData(document.getElementById('formKey')),
+        credentials: "same-origin"
     }).then(function (respuesta) {
         if (respuesta.status == 200) {
             location.href = 'app.html';
         } else {
-<<<<<<< Updated upstream
             document.getElementById("error_msg").style.visibility = "visible";
-=======
-            location.href = 'error.html';
-            document.getElementById("error_msg").style.display = "block";
->>>>>>> Stashed changes
         }
     })
 }
+

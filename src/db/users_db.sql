@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-03-2020 a las 21:51:38
+-- Tiempo de generación: 20-03-2020 a las 10:48:42
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -48,17 +48,21 @@ CREATE TABLE `measurements` (
 CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL
+  `longitude` double NOT NULL,
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `latitude`, `longitude`) VALUES
-(1, 'Naranjos Paterna', 39.497875, -0.441465),
-(2, 'Limoneros Alzira', 39.1388436, -0.5051008);
+INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
+(3, 'A', 2, 1),
+(4, 'Parcela canaria', 3, 2),
+(5, 'ABC', 456, 123),
+(6, 'AC DC', 654, 987),
+(7, 'Test 1', -4324, 5332),
+(8, 'Parcela canaria', -16.5572099, 28.4091494);
 
 -- --------------------------------------------------------
 
@@ -69,18 +73,9 @@ INSERT INTO `plots` (`id`, `name`, `latitude`, `longitude`) VALUES
 CREATE TABLE `positions` (
   `id` int(11) NOT NULL,
   `plot` int(11) NOT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL
+  `longitude` double NOT NULL,
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `positions`
---
-
-INSERT INTO `positions` (`id`, `plot`, `latitude`, `longitude`) VALUES
-(1, 1, 39.497875, -0.441465),
-(2, 1, 39.495059, -0.446381),
-(3, 1, 39.495623, -0.446381);
 
 -- --------------------------------------------------------
 
@@ -160,8 +155,9 @@ CREATE TABLE `users-plots` (
 --
 
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
-(9, 1),
-(9, 2);
+(1, 6),
+(1, 7),
+(1, 8);
 
 --
 -- Índices para tablas volcadas
@@ -228,13 +224,13 @@ ALTER TABLE `measurements`
 -- AUTO_INCREMENT de la tabla `plots`
 --
 ALTER TABLE `plots`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `probes`
@@ -286,8 +282,8 @@ ALTER TABLE `users`
 -- Filtros para la tabla `users-plots`
 --
 ALTER TABLE `users-plots`
-  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`),
-  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

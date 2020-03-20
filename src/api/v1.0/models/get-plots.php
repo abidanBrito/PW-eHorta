@@ -5,7 +5,7 @@ require_once 'acceso.php';
 
     $user = $_SESSION["user_id"];
 
-    $sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`  FROM `plots` INNER JOIN `users-plots` WHERE `plots`.`id` = `users-plots`.`plot` AND `users-plots`.`user` = '$user'";
+    $sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`, `plots`.`id` FROM `plots` INNER JOIN `users-plots` WHERE `plots`.`id` = `users-plots`.`plot` AND `users-plots`.`user` = $user";
     
     $res = mysqli_query($conn, $sql);
 

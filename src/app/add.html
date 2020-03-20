@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet, favicon and font -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>e-Horta | Nueva Parcela</title>
+</head>
+
+<body class="main">
+
+    <!-- Top bar (navigation menu) -->
+    <header>
+        <nav class="navbar">
+            <!-- Corporative brand -->
+            <a id="logo" class="white-filter" href="../index.html">
+                <img src="../img/logo_v2.svg" alt="LOGO">
+            </a>
+            <!-- Menu options -->
+            <ul class="navbar-links">
+                <li>
+                    <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
+        function(respuesta) {
+            if (respuesta.status == 200) location.href = 'login.html';
+        })">Cerrar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" class="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="caja_login">
+        
+        <h2>Introduce los datos de la parcela</h2>
+
+        <div class="separator"></div>
+       
+        <form method="POST" onsubmit="anyadir(event)" id="formField">
+            <input type="text" name="name" placeholder="Nombre de la parcela" required>
+            <!--<input type="text" name="type" placeholder="Cultivo" required>-->
+            <input type="text" name="latitude" placeholder="Latitud">
+            <input type="text" name="longitude" placeholder="Longitud">
+            
+
+            <button type="submit" class="login_button">Crear parcela</button>
+        </form>
+        
+        <div id="error_msg">Ha ocurrido un error.</div>
+        <div id="access_msg">Ha ocurrido un error.</div>
+        <script src="js/add.js"></script>
+        
+        <div class="separator"></div>
+
+        <!-- Contact button -->
+        <a href="app.html" class="contact_button">Volver</a>
+
+    </section>
+
+</body>
+
+</html>
