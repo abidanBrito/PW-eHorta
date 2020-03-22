@@ -27,7 +27,7 @@ let ViewPlotsList = {
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
             //this.text.innerHTML += "<li><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + "</a><button style='float:right;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></li>";
             
-            this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa"><a href="">' + "Empresa" + '</a></td><td data-label="Nombre Parcela">' + `${plot.name}` + '</td>' + "</a><button style='float:right;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></tr>"
+            this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa">' + "Empresa" + '</a></td><td data-label="Nombre Parcela">'+ "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</td>' + "</a><button style='float:right;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></tr>"
         })
     }
 };
