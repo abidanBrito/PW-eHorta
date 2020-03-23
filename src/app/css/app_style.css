@@ -9,55 +9,43 @@
     margin-right: 4.3125em;
 }
 
+#map_tabla {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-top: 5.25em;
+    margin-right: 4.3125em;
+
+}
+
+/*map
+  
+            this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa">' + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+
+
+*/
+
+#map {
+    width: 80em;
+    height: 34em;
+    border: solid white;
+    margin-left: 0.5em;
+
+}
+
+#graphic_dates {
+    display: flex;
+    width: 1000;
+
+}
+
 #user-options {
     display: flex;
     align-items: flex-end;
     width: fit-content;
 }
 
-
-/*map*/
-
-#map {
-    width: 48em;
-    height: 64vh;
-    border: solid white;
-}
-
-
-/*See other fields menu*/
-
-.menu {
-    background-color: grey;
-    flex-direction: row;
-    width: 26.1875em;
-    max-height: 64vh;
-}
-
-.menu img {
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    display: none;
-    width: 1.2rem;
-    height: 1.2rem;
-}
-
-.menu strong {
-    font-size: 1.8rem;
-    padding: 1rem;
-}
-
-.menu ul {
-    max-height: 54vh;
-    overflow: auto;
-    list-style: none;
-    display: block;
-}
-
-.menu ul a {
-    text-decoration: none;
-    color: black;
-}
 
 
 /*Graph*/
@@ -107,6 +95,7 @@
 
 /*Graph data*/
 
+
 #humidity {
     display: none;
     border: 1px solid olive;
@@ -132,61 +121,166 @@
     border: 1px solid yellow;
 }
 
+/*Talbe data*/
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-left: 3em;
+    padding: 0;
+    width: 26.1875em;
+    max-height: 64vh;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    /*max 600px*/
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
 
 /*Mobile version*/
 
 @media (max-width: 48rem) {
+
     /*general*/
     #app {
         flex-direction: column;
         margin-left: 1.1875em;
         margin-top: 1.125em;
     }
+
     /*map*/
-    #map {
-        width: 20rem;
-        height: 11.9375rem;
+
+    #map_tabla {
+        flex-direction: column;
+        margin-left: inherit;
+        margin-right: inherit;
+
+        margin-top: 3em;
     }
+
+    #map {
+        width: 30rem;
+        height: 20rem;
+    }
+
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
+
     .menu img {
         display: inline-block;
     }
+
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
+
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
+
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
+
     .dates input {
         font-size: 0.73rem;
     }
+
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
+
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
+
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
         margin: 0px;
         padding: 0px;
     }
+
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
