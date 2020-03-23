@@ -11,6 +11,8 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
+
+
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
     <script src="js/restringir_acceso.js"></script>
@@ -50,21 +52,32 @@
             </div>
         </nav>
     </header>
-    <div id="app">
-        <section class="menu">
-            <img src="img/arrow_down.svg" alt="arrow down">
-            <span><strong>Ver otros campos</strong></span>
-            <ul id="fields">
-                <script src="js/plots_list.js"></script>
-                <script>
-                    // "text" es la id del objeto donde se muestran los datos
-                    ViewPlotsList.prepare("fields");
-                    // Se inicializa el controlador
-                    PlotsController.init();
-                </script>
-                
-            </ul>
-        </section>
+    <div id="map_tabla">
+        <table>
+            <caption>Parcelas</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Parcela</th>
+                    <!---especifica que son columnas--->
+                    <th scope="col">Acción</th>
+
+                </tr>
+            </thead>
+            <tbody id="fields">
+
+            </tbody>
+        </table>
+
+        <script src="js/plots_list.js"></script>
+        <script>
+            // "text" es la id del objeto donde se muestran los datos
+            ViewPlotsList.prepare("fields");
+            // Se inicializa el controlador
+            PlotsController.init();
+
+        </script>
+
+
         <section id="map">
             <script src="js/map.js"></script>
             <script src="js/delete.js"></script>
@@ -72,6 +85,7 @@
             </script>
         </section>
     </div>
+    <!------------------------>
     <div id="app">
         <section class="dates">
             <input placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
@@ -85,6 +99,7 @@
                 <div id="pressure" class="data">Gráfica presión</div>
                 <script>
                     document.getElementById("humidity").style.display = "block";
+
                 </script>
             </section>
         </section>

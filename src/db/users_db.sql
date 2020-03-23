@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2020 a las 10:48:42
+-- Tiempo de generación: 23-03-2020 a las 11:08:13
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -57,12 +57,9 @@ CREATE TABLE `plots` (
 --
 
 INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
-(3, 'A', 2, 1),
-(4, 'Parcela canaria', 3, 2),
-(5, 'ABC', 456, 123),
-(6, 'AC DC', 654, 987),
-(7, 'Test 1', -4324, 5332),
-(8, 'Parcela canaria', -16.5572099, 28.4091494);
+(1, 'Naranjos Paterna', -0.441465, 39.497875),
+(2, 'Manzanos Bétera', -0.470384, 39.593231),
+(4, 'Granja Norte', 0, -0.470384);
 
 -- --------------------------------------------------------
 
@@ -155,9 +152,10 @@ CREATE TABLE `users-plots` (
 --
 
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
-(1, 6),
-(1, 7),
-(1, 8);
+(9, 1),
+(9, 2),
+(6, 4),
+(6, 4);
 
 --
 -- Índices para tablas volcadas
@@ -224,7 +222,7 @@ ALTER TABLE `measurements`
 -- AUTO_INCREMENT de la tabla `plots`
 --
 ALTER TABLE `plots`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `positions`
@@ -282,8 +280,8 @@ ALTER TABLE `users`
 -- Filtros para la tabla `users-plots`
 --
 ALTER TABLE `users-plots`
-  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`),
+  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
