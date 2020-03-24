@@ -25,11 +25,8 @@ let ViewPlotsList = {
         data.forEach((plot) => {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
-            //this.text.innerHTML += "<li><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + "</a><button style='float:right;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></li>";
             
-           /* this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa">' + "Empresa" + '</a></td><td data-label="Nombre Parcela">'+ "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</td>' + "</a><button style='float:right;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></tr>"*/
-            
-              this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa">' + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+            this.text.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
         })
     }
 };

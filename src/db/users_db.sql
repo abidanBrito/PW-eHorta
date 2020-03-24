@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 11:08:13
+-- Tiempo de generación: 24-03-2020 a las 18:44:00
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -74,6 +74,14 @@ CREATE TABLE `positions` (
   `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `positions`
+--
+
+INSERT INTO `positions` (`id`, `plot`, `longitude`, `latitude`) VALUES
+(1, 1, -0.441462, 39.497727),
+(2, 1, -0.441504, 39.498005);
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +92,14 @@ CREATE TABLE `probes` (
   `position` int(11) NOT NULL,
   `serial` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `probes`
+--
+
+INSERT INTO `probes` (`position`, `serial`) VALUES
+(1, 1),
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -157,6 +173,19 @@ INSERT INTO `users-plots` (`user`, `plot`) VALUES
 (6, 4),
 (6, 4);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vertex`
+--
+
+CREATE TABLE `vertex` (
+  `id` int(11) NOT NULL,
+  `plot` int(11) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Índices para tablas volcadas
 --
@@ -209,6 +238,12 @@ ALTER TABLE `users-plots`
   ADD KEY `user_set` (`user`);
 
 --
+-- Indices de la tabla `vertex`
+--
+ALTER TABLE `vertex`
+  ADD KEY `vertex-plot` (`plot`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -228,13 +263,13 @@ ALTER TABLE `plots`
 -- AUTO_INCREMENT de la tabla `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `probes`
 --
 ALTER TABLE `probes`
-  MODIFY `serial` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `serial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -282,6 +317,12 @@ ALTER TABLE `users`
 ALTER TABLE `users-plots`
   ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`),
   ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`);
+
+--
+-- Filtros para la tabla `vertex`
+--
+ALTER TABLE `vertex`
+  ADD CONSTRAINT `vertex-plot` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
