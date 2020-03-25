@@ -1,21 +1,20 @@
 /*General*/
 
 #app {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    margin-left: 2.375em;
+   
+    flex-direction: row;
+    margin-left:4em;
     margin-top: 2.25em;
-    margin-right: 4.3125em;
+    margin-right: 4em;
 }
 
 #map_tabla {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    margin-left: 0em;
+    margin-left: 4em;
     margin-top: 5.25em;
-    margin-right: 4.3125em;
+    margin-right: 4em;
 
 }
 
@@ -28,31 +27,30 @@
 
 #tab {
     overflow: scroll;
-    width: 500px;
-    height: 500px;
-
+    min-width: 200px;
+    width: 320px;
+    height: 400px;
+    margin-left: 2em;
 }
 
 #map {
-    width: 50em;
-    height: 20em;
+    width: 100em;
+    height: 25em;
     border: solid white;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-
 
 }
 
 #graphic_dates {
     display: flex;
-    width: 1000;
+    
+    border: solid black;
+
 
 }
 
 #user-options {
     display: flex;
-    align-items: flex-end;
-    width: fit-content;
+    align-items: center;
 }
 
 
@@ -61,7 +59,9 @@
 
 .dates {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    height: 420px;
+    width: 1230px;
 }
 
 .dates input {
@@ -72,12 +72,13 @@
 }
 
 .data {
-    width: 77.8125rem;
-    height: 26.875rem;
+    height: 13em;
+    width: 13000px;
+    margin-left: 0em;
 }
 
 
-/*Buttons*/
+/*Buttons/*/
 
 #button {
     display: flex;
@@ -102,7 +103,7 @@
 }
 
 
-/*Graph data*/
+/*Graph data/*/
 
 
 #humidity {
@@ -134,15 +135,14 @@
 
 table {
     overflow: scroll;
-
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin-left: 0.5em;
     margin-right: 0.5em;
 
     /* padding: 0; */
-    width: 30em;
-    max-height: 64vh;
+    width: 150px;
+    max-height: 320px;
     table-layout: fixed;
 }
 
@@ -174,12 +174,14 @@ table th {
 
 }
 
+.delete-button {
+    display: none;
+}
+
+/*FALTA QUE AL PULSAR EL LINK SE VISUALICE EL BUTTON*/
+
 @media screen and (max-width: 600px) {
-    #tab {
-        display: none;
 
-
-    }
 
     /*max 600px*/
     table {
@@ -234,6 +236,11 @@ table th {
 /*Mobile version*/
 
 @media (max-width: 48rem) {
+    #tab {
+        display: none;
+
+
+    }
 
     /*general*/
     #app {
