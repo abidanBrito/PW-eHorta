@@ -15,7 +15,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
-    <script src="js/restringir_acceso.js"></script>
+    <!--<script src="js/restringir_acceso.js"></script>-->
 </head>
 
 <body class="main">
@@ -52,14 +52,23 @@
             </div>
         </nav>
     </header>
+       
     <div id="map_tabla">
+        <select class="select-css">
+
+            <option selected="yes">Seleccione parcela...</option>
+           <!-- <option>Parcela1</option> -->
+
+        </select>
+        <div id="tab">
         <table>
-            <caption>Parcelas</caption>
+
+            <caption>Parcelas <button>Añadir</button></caption>
             <thead>
                 <tr>
-                    <th scope="col">Parcela</th>
+                  <!--  <th scope="col"></th>-->
                     <!---especifica que son columnas--->
-                    <th scope="col">Acción</th>
+                 
 
                 </tr>
             </thead>
@@ -67,6 +76,7 @@
 
             </tbody>
         </table>
+        </div>
 
         <script src="js/plots_list.js"></script>
         <script>
@@ -104,14 +114,14 @@
             </section>
         </section>
     </div>
-    <div id="button">
+    <!-- <div id="button">
         <button class="buttons" onclick="data_filter('humidity')"><img src="img/datalogger/humidity.svg" alt="humidity"></button>
         <button class="buttons" onclick="data_filter('salinity')"><img src="img/datalogger/salinity.svg" alt="salinity"></button>
         <button class="buttons" onclick="data_filter('rainfall')"><img src="img/datalogger/rainfall.svg" alt="rainfall"></button>
         <button class="buttons" onclick="data_filter('temperature')"><img src="img/datalogger/temperature.svg" alt="temperature"></button>
         <button class="buttons" onclick="data_filter('pressure')"><img src="img/datalogger/barometric_pressure.svg" alt="barometric pressure"></button>
         <script src="js/data_filter.js"></script>
-    </div>
+    </div>-->
 </body>
 
 </html>
