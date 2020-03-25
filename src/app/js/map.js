@@ -38,7 +38,7 @@ function centerPlot(selectedPlot) {
         console.log(lati + "," + long)
         // Modificamos el mapa para centrarlo en la parcela
         let options = {
-            zoom: 15,
+            zoom: 18,
             center: { lat: lati, lng: long },
             mapTypeId: 'hybrid',
             styles: [{
@@ -53,10 +53,10 @@ function centerPlot(selectedPlot) {
         };
         // The map, centered at options
         let map = new google.maps.Map(document.getElementById('map'), options);
-        // The markers, positioned at options
-        addMarkers(map);
         // The polygons, around the markers
         addPaths(map);
+        // Show the probes markers
+        showPositions(rightPlot.id, map);
     })
 }
 
@@ -92,4 +92,31 @@ function addMarkers(map) {
             });
         })
     });
+}
+
+function showPositions(selectedPlot, map) {
+    // Recoge todas las posiciones de la base de datos
+    fetch('../api/v1.0/positions').then(function(data) {
+        return data.json();
+    }).then(function(dataJson) {
+        
+        let plotPositions = [];
+        
+        // Guarda en un array las posiciones de la parcela seleccionada y los muestra como marcadores
+        dataJson.forEach((pos) => {
+            if(`${pos.plot}` == selectedPlot) {
+                plotPositions.push(pos);
+                // Se guarda la posición
+                let newPos = new google.maps.LatLng(`${pos.latitude}`, `${pos.longitude}`)
+                // Se crean los marcadores
+                let marker = new google.maps.Marker({
+                    position: newPos,
+                    map: map,
+                    animation: google.maps.Animation.DROP
+                });
+            }
+        })
+        
+        console.log(plotPositions);
+    })
 }

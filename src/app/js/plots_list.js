@@ -26,7 +26,11 @@ let ViewPlotsList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
             
+<<<<<<< HEAD
             this.text.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button class = 'delete-button' style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+=======
+            this.text.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+>>>>>>> develop
         })
     }
 };
