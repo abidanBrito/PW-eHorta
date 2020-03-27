@@ -1,21 +1,20 @@
 /*General*/
 
 #app {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    margin-left: 2.375em;
+   
+    flex-direction: row;
+    margin-left:4em;
     margin-top: 2.25em;
-    margin-right: 4.3125em;
+    margin-right: 4em;
 }
 
 #map_tabla {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    margin-left: auto;
+    justify-content: center;
+    margin-left: 4em;
     margin-top: 5.25em;
-    margin-right: 4.3125em;
+    margin-right: 4em;
 
 }
 
@@ -26,24 +25,32 @@
 
 */
 
+#tab {
+    overflow: scroll;
+    min-width: 200px;
+    width: 320px;
+    height: 400px;
+    margin-left: 2em;
+}
+
 #map {
-    width: 80em;
-    height: 34em;
+    width: 100em;
+    height: 25em;
     border: solid white;
-    margin-left: 0.5em;
 
 }
 
 #graphic_dates {
     display: flex;
-    width: 1000;
+    
+    border: solid black;
+
 
 }
 
 #user-options {
     display: flex;
-    align-items: flex-end;
-    width: fit-content;
+    align-items: center;
 }
 
 
@@ -52,7 +59,9 @@
 
 .dates {
     font-size: 32px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    height: 420px;
+    width: 1230px;
 }
 
 .dates input {
@@ -63,12 +72,13 @@
 }
 
 .data {
-    width: 77.8125rem;
-    height: 26.875rem;
+    height: 13em;
+    width: 13000px;
+    margin-left: 0em;
 }
 
 
-/*Buttons*/
+/*Buttons/*/
 
 #button {
     display: flex;
@@ -93,7 +103,7 @@
 }
 
 
-/*Graph data*/
+/*Graph data/*/
 
 
 #humidity {
@@ -124,12 +134,15 @@
 /*Talbe data*/
 
 table {
+    overflow: scroll;
     border: 1px solid #ccc;
     border-collapse: collapse;
-    margin-left: 3em;
-    padding: 0;
-    width: 26.1875em;
-    max-height: 64vh;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+
+    /* padding: 0; */
+    width: 150px;
+    max-height: 320px;
     table-layout: fixed;
 }
 
@@ -156,13 +169,27 @@ table th {
     text-transform: uppercase;
 }
 
+.select-css {
+    display: none;
 
+}
+
+.delete-button {
+    display: none;
+}
+
+/*FALTA QUE AL PULSAR EL LINK SE VISUALICE EL BUTTON*/
 
 @media screen and (max-width: 600px) {
 
+
     /*max 600px*/
     table {
+
         border: 0;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+
     }
 
     table caption {
@@ -209,6 +236,11 @@ table th {
 /*Mobile version*/
 
 @media (max-width: 48rem) {
+    #tab {
+        display: none;
+
+
+    }
 
     /*general*/
     #app {
@@ -227,6 +259,65 @@ table th {
         margin-top: 3em;
     }
 
+    table {
+        display: none !important;
+
+        border: 0;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+
+    }
+
+    /*----------------------------------------*/
+    .select-css {
+        display: block;
+        font-size: 16px;
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
+        color: #444;
+        line-height: 1.3;
+        padding: .4em 1.4em .3em .8em;
+        width: 29.5em;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: .5em;
+        border: 1px solid #aaa;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
+        border-radius: .3em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        /*quitar la flecha por defecto*/
+        appearance: none;
+        background-color: #fff;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+            linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+    }
+
+    .select-css::-ms-expand {
+        display: none;
+    }
+
+    .select-css:hover {
+        border-color: #888;
+    }
+
+    .select-css:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        /*color azul para sombra*/
+        color: #222;
+        outline: none;
+    }
+
+    .select-css option {
+        font-weight: normal;
+    }
+
+    /*-----------------------------------/*/
     #map {
         width: 30rem;
         height: 20rem;
