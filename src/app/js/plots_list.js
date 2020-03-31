@@ -28,11 +28,7 @@ let ViewPlotsList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
             
-<<<<<<< Updated upstream
-            this.table.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>";
-=======
-            this.text.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empres">' + "<input id = 'checkboxId' type='checkbox' style='margin:5px;'id='cbox' value='checkbox'><a class='links_parcelas' href='javascript:centerPlot(" + `${plot.id}` + ")'id='plot_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>'+ "<a class = 'edit-button'  href='#Editar.html' title='Editar' ><img src='img/edit.png' width='15' height='15'/></a></td></tr>"
->>>>>>> Stashed changes
+            this.table.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empres">' + "<input id = 'checkboxId' type='checkbox' style='margin:5px;'id='cbox' value='checkbox'><a class='links_parcelas' href='javascript:centerPlot(" + `${plot.id}` + ")'id='plot_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>'+ "<a class = 'edit-button'  href='#Editar.html' title='Editar' ><img src='img/edit.png' width='15' height='15'/></a></td></tr>"
             
             this.selector.innerHTML += "<option value=" + '"' + "javascript:centerPlot(" + `${plot.id}` + ")" + '"' + ">" + `${plot.name}` + "</option>";
         })
