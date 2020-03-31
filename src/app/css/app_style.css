@@ -383,15 +383,15 @@ table th {
         background-size: .65em auto, 100%;
     }
 
-    .select-css::-ms-expand {
+    #select-css::-ms-expand {
         display: none;
     }
 
-    .select-css:hover {
+    #select-css:hover {
         border-color: #888;
     }
 
-    .select-css:focus {
+    #select-css:focus {
         border-color: #aaa;
         box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
         box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -400,7 +400,7 @@ table th {
         outline: none;
     }
 
-    .select-css option {
+    #select-css option {
         font-weight: normal;
     }
 
