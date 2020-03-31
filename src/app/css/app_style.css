@@ -219,7 +219,7 @@ table th {
     text-transform: uppercase;
 }
 
-.select-css {
+#select-css {
     display: none;
 
 }
@@ -356,7 +356,7 @@ table th {
     }
 
     /*----------------------------------------*/
-    .select-css {
+    #select-css {
         display: block;
         font-size: 16px;
         font-family: 'Arial', sans-serif;
