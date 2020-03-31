@@ -11,14 +11,16 @@ let PlotsModel = {
             this.data = jsonData;
             // Se representa
             ViewPlotsList.represent(data);
-        }) 
+        })
     }
 };
 
 let ViewPlotsList = {
-    text: {},
-    prepare: function(selectId) {
-        this.text = document.getElementById(selectId);
+    table: {},
+    selector: {},
+    prepare: function(tableId, selectId) {
+        this.table = document.getElementById(tableId);
+        this.selector = document.getElementById(selectId);
     },
     represent: function(data) {
         // Esto recorre cada campo recibido y hace la misma accion para cada uno
@@ -26,7 +28,9 @@ let ViewPlotsList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
             
-            this.text.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+            this.table.innerHTML += "<tr>" + '<td data-label="Empresa">' + "<a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>";
+            
+            this.selector.innerHTML += "<option value=" + '"' + "javascript:centerPlot(" + `${plot.id}` + ")" + '"' + ">" + `${plot.name}` + "</option>";
         })
     }
 };
