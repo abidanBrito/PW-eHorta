@@ -11,8 +11,8 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">
-
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -56,14 +56,18 @@
     </header>
        
     <div id="map_tabla">
-    
-            <div id="div_h2"><div id="div_h2buttons"><h2>MIS CAMPOS </h2> <button style="opacity:0;">Añadir</button>  <button>Añadir</button><a class = 'delete-button'  href='#' title='Eliminar' margin='50px'><img src='img/delete.png'  width='30' height='30'/></a></div>
+        <select id="select-css" onchange="location = this.value;">
+
+            <option selected="selected">Seleccione parcela...</option>
+
+        </select>
         <div id="tab">
         <table>
 
+            <caption>Parcelas <button>Añadir</button></caption>
             <thead>
                 <tr>
-                  <!-- <th scope="col">rewrt</th>*/-->
+                    <!--  <th scope="col"></th>-->
                     <!---especifica que son columnas--->
                  
 
@@ -72,18 +76,13 @@
             <tbody id="fields">
 
             </tbody>
-        </table></div>
+        </table>
         </div>
-    <select class="select-css">
 
-            <option selected="yes">Seleccione parcela...</option>
-           <!-- <option>Parcela1</option> -->
-
-        </select>
         <script src="js/plots_list.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
-            ViewPlotsList.prepare("fields");
+            ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
 
@@ -97,23 +96,20 @@
             </script>
         </section>
     </div>
+    
     <!------------------------>
     <div id="app">
         <section class="dates">
             <input placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <strong>|</strong>
             <input placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-            <section class="data">
-                <div id="humidity" class="data">Gráfica humedad</div>
-                <div id="salinity" class="data">Gráfica salinidad</div>
-                <div id="rainfall" class="data">Gráfica lluvia</div>
-                <div id="temperature" class="data">Gráfica temperatura</div>
-                <div id="pressure" class="data">Gráfica presión</div>
-                <script>
-                    document.getElementById("humidity").style.display = "block";
-
-                </script>
-            </section>
+            
+            <div class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+            
+            <script id="graphic_script" src=js/graphic-data.js></script>
+            
         </section>
     </div>
     <!-- <div id="button">
