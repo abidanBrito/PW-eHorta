@@ -11,6 +11,8 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -54,19 +56,14 @@
     </header>
        
     <div id="map_tabla">
-        <select class="select-css">
-
-            <option selected="yes">Seleccione parcela...</option>
-           <!-- <option>Parcela1</option> -->
-
-        </select>
+    
+            <div id="div_h2"><div id="div_h2buttons"><h2>MIS CAMPOS </h2> <button style="opacity:0;">Añadir</button>  <button>Añadir</button><a class = 'delete-button'  href='#' title='Eliminar' margin='50px'><img src='img/delete.png'  width='30' height='30'/></a></div>
         <div id="tab">
         <table>
 
-            <caption>Parcelas <button>Añadir</button></caption>
             <thead>
                 <tr>
-                  <!--  <th scope="col"></th>-->
+                  <!-- <th scope="col">rewrt</th>*/-->
                     <!---especifica que son columnas--->
                  
 
@@ -75,9 +72,14 @@
             <tbody id="fields">
 
             </tbody>
-        </table>
+        </table></div>
         </div>
+    <select class="select-css">
 
+            <option selected="yes">Seleccione parcela...</option>
+           <!-- <option>Parcela1</option> -->
+
+        </select>
         <script src="js/plots_list.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos

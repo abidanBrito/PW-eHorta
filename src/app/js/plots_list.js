@@ -11,7 +11,7 @@ let PlotsModel = {
             this.data = jsonData;
             // Se representa
             ViewPlotsList.represent(data);
-        })
+        }) 
     }
 };
 
