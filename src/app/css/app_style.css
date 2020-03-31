@@ -1,11 +1,16 @@
 /*General*/
 
 #app {
-   
+
     flex-direction: row;
-    margin-left:4em;
+    margin-left: 4em;
     margin-top: 2.25em;
     margin-right: 4em;
+}
+
+.tab_and_head {
+    display: flex;
+    flex-direction: column
 }
 
 #map_tabla {
@@ -18,42 +23,70 @@
 
 }
 
-/*map
-  
-            this.text.innerHTML += "<tr><a href='javascript:centerPlot(" + `${plot.id}` + ")'>" + '<td data-label="Empresa">' + `${plot.name}` + '</a></td><td data-label="Nombre Parcela">'+ "<button style='float:center;' type='button' onclick='borrar(" + `${plot.id}` + ")'>Borrar</button></td></tr>"
+#div_h2 {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
 
 
-*/
+}
+
+#div_h2 h2 {
+    display: flex;
+    align-self: flex-start;
+
+}
+
+#div_h2 a {
+    display: flex;
+    align-items: flex-end;
+
+}
+
+
+
+
+#div_h2buttons {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: flex-end;
+}
+
+
 
 #tab {
-    overflow: scroll;
+    overflow-y: scroll;
     min-width: 200px;
-    width: 320px;
-    height: 400px;
+    display: flex;
+    align-self: center;
+    width: 300px;
+    height: 370px;
     margin-left: 2em;
+    margin-right: 2em;
+    overflow-x: hidden;
+
 }
 
 #map {
     width: 100em;
     height: 25em;
     border: solid white;
+    border-radius: 10px;
+    margin-right: 2em;
+
 
 }
 
 #graphic_dates {
     display: flex;
-    
     border: solid black;
-
-
 }
 
 #user-options {
     display: flex;
     align-items: center;
 }
-
-
 
 /*Graph*/
 
@@ -77,6 +110,10 @@
     margin-left: 0em;
 }
 
+.links_parcelas {
+    text-decoration: none;
+    color: #000000;
+}
 
 /*Buttons/*/
 
@@ -134,63 +171,82 @@
 /*Talbe data*/
 
 table {
-    overflow: scroll;
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
 
+    /* border: 1px solid #ccc;*/
     /* padding: 0; */
-    width: 150px;
-    max-height: 320px;
-    table-layout: fixed;
+    margin: 5px;
+    width: 250em;
+    height: auto;
+
+
+
 }
 
-table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
-}
 
 table tr {
+
     background-color: #f8f8f8;
-    border: 1px solid #ddd;
     padding: .35em;
 }
 
 table th,
 table td {
     padding: .625em;
-    text-align: center;
+
+    border: none;
 }
 
+table input {
+    visibility: hidden;
+}
+
+table tr:hover .delete-button {}
+
+table tr:hover .edit-button {
+    opacity: 0.7;
+
+}
+
+.content_row:hover {
+    background: rgba(179, 147, 162, 0.8);
+}
+
+
 table th {
+
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
 }
 
-.select-css {
+#select-css {
     display: none;
 
 }
 
 .delete-button {
-    display: none;
+    display: inline;
 }
 
-/*FALTA QUE AL PULSAR EL LINK SE VISUALICE EL BUTTON*/
+.delete-button:active input {
+    visibility: visible;
+}
+
+.edit-button {
+    opacity: 0;
+}
 
 @media screen and (max-width: 600px) {
 
 
-    /*max 600px*/
+    /*max 600px
     table {
 
         border: 0;
         margin-left: 0.5em;
         margin-right: 0.5em;
 
-    }
+    }*/
 
     table caption {
         font-size: 1.3em;
@@ -208,13 +264,13 @@ table th {
     }
 
     table tr {
-        border-bottom: 3px solid #ddd;
+        border: none;
         display: block;
         margin-bottom: .625em;
     }
 
     table td {
-        border-bottom: 1px solid #ddd;
+        border: none;
         display: block;
         font-size: .8em;
         text-align: right;
@@ -233,30 +289,61 @@ table th {
 }
 
 
-/*Mobile version*/
+/*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 48rem) {
+    .edit-button {
+        opacity: 100;
+    }
+
     #tab {
         display: none;
+    }
 
-
+    #map {
+        width: auto;
+        max-width: 600px;
+        height: 17em;
+        border: solid white;
+        border-radius: 10px;
     }
 
     /*general*/
     #app {
         flex-direction: column;
-        margin-left: 1.1875em;
-        margin-top: 1.125em;
+        margin-left: 3em;
+
+    }
+
+    #div_h2 {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #div_h2 h2 {
+        align-self: center;
+
+    }
+
+    #div_h2buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5px;
     }
 
     /*map*/
 
     #map_tabla {
         flex-direction: column;
-        margin-left: inherit;
-        margin-right: inherit;
+        margin-left: 2em;
+
+        margin-right: 2em;
 
         margin-top: 3em;
+
+
     }
 
     table {
@@ -269,7 +356,7 @@ table th {
     }
 
     /*----------------------------------------*/
-    .select-css {
+    #select-css {
         display: block;
         font-size: 16px;
         font-family: 'Arial', sans-serif;
@@ -296,15 +383,15 @@ table th {
         background-size: .65em auto, 100%;
     }
 
-    .select-css::-ms-expand {
+    #select-css::-ms-expand {
         display: none;
     }
 
-    .select-css:hover {
+    #select-css:hover {
         border-color: #888;
     }
 
-    .select-css:focus {
+    #select-css:focus {
         border-color: #aaa;
         box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
         box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -313,15 +400,11 @@ table th {
         outline: none;
     }
 
-    .select-css option {
+    #select-css option {
         font-weight: normal;
     }
 
     /*-----------------------------------/*/
-    #map {
-        width: 30rem;
-        height: 20rem;
-    }
 
     /*see other fields*/
     .menu {

@@ -11,11 +11,14 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
-    <!--<script src="js/restringir_acceso.js"></script>-->
+    <script src="js/restringir_acceso.js"></script>
 </head>
 
 <body class="main">
@@ -52,36 +55,46 @@
             </div>
         </nav>
     </header>
-       
+
     <div id="map_tabla">
-        <select class="select-css">
+        <div id="tab_and_head">
+            <div id="div_h2">
+                <h2>MIS CAMPOS </h2>
+                <div id="div_h2buttons">
+                    <a class='edit-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
-            <option selected="yes">Seleccione parcela...</option>
-           <!-- <option>Parcela1</option> -->
+                    <a class='delete-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
 
-        </select>
-        <div id="tab">
-        <table>
+                    <a class='add-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a></div>
+            </div>
 
-            <caption>Parcelas <button>Añadir</button></caption>
-            <thead>
-                <tr>
-                  <!--  <th scope="col"></th>-->
-                    <!---especifica que son columnas--->
-                 
 
-                </tr>
-            </thead>
-            <tbody id="fields">
+            <div id="tab">
+                <table>
 
-            </tbody>
-        </table>
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">rewrt</th>*/-->
+                            <!---especifica que son columnas--->
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="fields">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
+            <select id="select-css" onchange="location = this.value;">
 
+                <option selected="selected">Seleccione parcela...</option>
+
+            </select>
         <script src="js/plots_list.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
-            ViewPlotsList.prepare("fields");
+            ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
 
@@ -96,22 +109,19 @@
         </section>
     </div>
     <!------------------------>
+    <!------------------------>
     <div id="app">
         <section class="dates">
             <input placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <strong>|</strong>
             <input placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-            <section class="data">
-                <div id="humidity" class="data">Gráfica humedad</div>
-                <div id="salinity" class="data">Gráfica salinidad</div>
-                <div id="rainfall" class="data">Gráfica lluvia</div>
-                <div id="temperature" class="data">Gráfica temperatura</div>
-                <div id="pressure" class="data">Gráfica presión</div>
-                <script>
-                    document.getElementById("humidity").style.display = "block";
 
-                </script>
-            </section>
+            <div class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+
+            <script id="graphic_script" src=js/graphic-data.js></script>
+
         </section>
     </div>
     <!-- <div id="button">
