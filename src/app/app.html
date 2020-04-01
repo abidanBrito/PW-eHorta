@@ -25,32 +25,38 @@
     <!-- Top bar (navigation menu) -->
     <header>
         <!-- Corporative brand -->
+        <a id="logo" class="white-filter" href="../index.html">
+            <img src="img/logo_v2.svg" alt="LOGO">
+        </a>
+
         <nav class="navbar">
-            <a id="logo" class="white-filter" href="../index.html">
-                <img src="img/logo_v2.svg" alt="LOGO">
-            </a>
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="add.html">Añadir campo</a>
+                    <a href="#">Mi cuenta</a>
+                </li>
+                <li>
+                    <a href="#">Notificaciones</a>
+                </li>
+                <li>
+                    <a href="../index.html" id="navbar-contact">Inicio</a>
                 </li>
                 <li>
                     <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
-        function(respuesta) {
-            if (respuesta.status == 200) location.href = '../index.html';
-        })">Cerrar sesión</a>
+                    function(respuesta) {
+                        if (respuesta.status == 200) location.href = '../index.html';
+                    })">Cerrar sesión</a>
                 </li>
             </ul>
             <div class="navbar-right">
-                <!-- Mobile navbar -->
+                <a id="login-icon" class="white-filter" style="display: none;" href="app/login.html">
+                    <img src="app/img/user.svg" alt="LOGIN">
+                </a>
+                <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
-
-                    <a href="add.html" class="white-filter" style="text-decoration:none;">Añadir campo</a>
-
-                    <a style="text-decoration: none;" href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
-        function(respuesta) {
-            if (respuesta.status == 200) location.href = '../index.html';
-        })" class="white-filter mobile-navbar-link">Cerrar sesión</a>
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
                 </div>
             </div>
         </nav>
@@ -63,9 +69,14 @@
                 <div id="div_h2buttons">
                     <a class='edit-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
-                    <a class='delete-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
+                    <button class='delete-button' onclick="showCheckbox()" id="delete">
+                        <img src='img/delete.png' width='30' height='30'/></button>
+                    <button onclick=" borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
 
-                    <a class='add-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a></div>
+                    <button class='add-button' onclick="javascript:location.href('add.html')" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a>
+                    <script src="js/delete.js"></script>
+                    <script src="js/checkbox_list.js"></script>
+                </div>
             </div>
 
 
@@ -86,9 +97,9 @@
                 </table>
             </div>
         </div>
-            <select id="select-css" onchange="location = this.value;">
+        <select id="select-css" onchange="location = this.value;">
 
-                <option selected="#" disable selected hidden>Seleccione parcela...</option>
+            <option selected="#" disable selected hidden>Seleccione parcela...</option>
 
             </select>
         <script src="js/plots_list.js"></script>
@@ -97,7 +108,6 @@
             ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
-
         </script>
 
 
@@ -126,12 +136,13 @@
     </div>
     <!-- <div id="button">
         <button class="buttons" onclick="data_filter('humidity')"><img src="img/datalogger/humidity.svg" alt="humidity"></button>
-        <button class="buttons" onclick="data_filter('salinity')"><img src="img/datalogger/salinity.svg" alt="salinity"></button>
-        <button class="buttons" onclick="data_filter('rainfall')"><img src="img/datalogger/rainfall.svg" alt="rainfall"></button>
-        <button class="buttons" onclick="data_filter('temperature')"><img src="img/datalogger/temperature.svg" alt="temperature"></button>
-        <button class="buttons" onclick="data_filter('pressure')"><img src="img/datalogger/barometric_pressure.svg" alt="barometric pressure"></button>
-        <script src="js/data_filter.js"></script>
-    </div>-->
+                    <button class="buttons" onclick="data_filter('salinity')"><img src="img/datalogger/salinity.svg" alt="salinity"></button>
+                    <button class="buttons" onclick="data_filter('rainfall')"><img src="img/datalogger/rainfall.svg" alt="rainfall"></button>
+                    <button class="buttons" onclick="data_filter('temperature')"><img src="img/datalogger/temperature.svg" alt="temperature"></button>
+                    <button class="buttons" onclick="data_filter('pressure')"><img src="img/datalogger/barometric_pressure.svg" alt="barometric pressure"></button>
+                    <script src="js/data_filter.js"></script>
+                </div>-->
+                <script src="js/navbar.js"></script>
 </body>
 
 </html>

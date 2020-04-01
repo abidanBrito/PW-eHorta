@@ -1,11 +1,11 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Abidan Brito Clavijo
-*   FILE:           navbar.js
-*   DATE:           16/03/2020
-*   STATE:          DONE
-*   ----------------------------------------------------------------
-*   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
-*   ---------------------------------------------------------------- */
+ *   AUTHOR:         Abidan Brito Clavijo
+ *   FILE:           navbar.js
+ *   DATE:           16/03/2020
+ *   STATE:          DONE
+ *   ----------------------------------------------------------------
+ *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
+ *   ---------------------------------------------------------------- */
 const navSlider = () => {
     const burgerIcon = document.querySelector('.menu-icon');
     const navBar = document.querySelector('.navbar-links');
@@ -21,7 +21,7 @@ const navSlider = () => {
         navBar.classList.toggle('navbar-active');
 
         // Hide login icon
-        if(page != 'login.html') {
+        if (page != 'login.html') {
             loginIcon.classList.toggle('login-hide');
         }
 
@@ -29,8 +29,7 @@ const navSlider = () => {
         navBarLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
-            }
-            else {
+            } else {
                 link.style.animation = `navbarLinkFade 0.5s ease forwards ${index / 4 + 0.1}s`;
             }
         });

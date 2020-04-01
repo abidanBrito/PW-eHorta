@@ -1,11 +1,22 @@
 /*General*/
 
 #app {
-
     flex-direction: row;
     margin-left: 4em;
     margin-top: 2.25em;
     margin-right: 4em;
+}
+
+#user-options {
+    background-color: #664b58;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    border: none;
+}
+
+option a:hover {
+    color: rgb(224, 169, 66);
 }
 
 .tab_and_head {
@@ -20,31 +31,23 @@
     margin-left: 4em;
     margin-top: 5.25em;
     margin-right: 4em;
-
 }
 
 #div_h2 {
     display: flex;
     flex-direction: row;
     align-self: center;
-
-
 }
 
 #div_h2 h2 {
     display: flex;
     align-self: flex-start;
-
 }
 
 #div_h2 a {
     display: flex;
     align-items: flex-end;
-
 }
-
-
-
 
 #div_h2buttons {
     display: flex;
@@ -53,7 +56,11 @@
     align-items: flex-end;
 }
 
-
+#div_h2buttons button {
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+}
 
 #tab {
     overflow-y: scroll;
@@ -65,7 +72,6 @@
     margin-left: 2em;
     margin-right: 2em;
     overflow-x: hidden;
-
 }
 
 #map {
@@ -74,8 +80,6 @@
     border: solid white;
     border-radius: 10px;
     margin-right: 2em;
-
-
 }
 
 #graphic_dates {
@@ -83,10 +87,6 @@
     border: solid black;
 }
 
-#user-options {
-    display: flex;
-    align-items: center;
-}
 
 /*Graph*/
 
@@ -115,6 +115,7 @@
     color: #000000;
 }
 
+
 /*Buttons/*/
 
 #button {
@@ -142,7 +143,6 @@
 
 /*Graph data/*/
 
-
 #humidity {
     display: none;
     border: 1px solid olive;
@@ -168,23 +168,18 @@
     border: 1px solid yellow;
 }
 
-/*Talbe data*/
+
+/*Table data*/
 
 table {
-
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
     margin: 5px;
     width: 250em;
     height: auto;
-
-
-
 }
 
-
 table tr {
-
     background-color: #f8f8f8;
     padding: .35em;
 }
@@ -192,28 +187,25 @@ table tr {
 table th,
 table td {
     padding: .625em;
-
     border: none;
 }
 
 table input {
-    visibility: hidden;
+    display: none;
+    margin-right: 5px;
 }
 
 table tr:hover .delete-button {}
 
 table tr:hover .edit-button {
     opacity: 0.7;
-
 }
 
 .content_row:hover {
     background: rgba(179, 147, 162, 0.8);
 }
 
-
 table th {
-
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -221,7 +213,6 @@ table th {
 
 #select-css {
     display: none;
-
 }
 
 .delete-button {
@@ -237,8 +228,6 @@ table th {
 }
 
 @media screen and (max-width: 600px) {
-
-
     /*max 600px
     table {
 
@@ -247,11 +236,9 @@ table th {
         margin-right: 0.5em;
 
     }*/
-
     table caption {
         font-size: 1.3em;
     }
-
     table thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -262,27 +249,23 @@ table th {
         position: absolute;
         width: 1px;
     }
-
     table tr {
         border: none;
         display: block;
         margin-bottom: .625em;
     }
-
     table td {
         border: none;
         display: block;
         font-size: .8em;
         text-align: right;
     }
-
     table td::before {
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
     }
-
     table td:last-child {
         border-bottom: 0;
     }
@@ -295,11 +278,9 @@ table th {
     .edit-button {
         opacity: 100;
     }
-
     #tab {
         display: none;
     }
-
     #map {
         width: auto;
         max-width: 600px;
@@ -307,54 +288,37 @@ table th {
         border: solid white;
         border-radius: 10px;
     }
-
     /*general*/
     #app {
         flex-direction: column;
         margin-left: 3em;
-
     }
-
     #div_h2 {
         display: flex;
         flex-direction: column;
-
     }
-
     #div_h2 h2 {
         align-self: center;
-
     }
-
     #div_h2buttons {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5px;
     }
-
     /*map*/
-
     #map_tabla {
         flex-direction: column;
         margin-left: 2em;
-
         margin-right: 2em;
-
         margin-top: 3em;
-
-
     }
-
     table {
         display: none !important;
-
         border: 0;
         margin-left: 0.5em;
         margin-right: 0.5em;
-
     }
-
     /*----------------------------------------*/
     #select-css {
         display: block;
@@ -376,21 +340,17 @@ table th {
         /*quitar la flecha por defecto*/
         appearance: none;
         background-color: #fff;
-        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-            linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
         background-repeat: no-repeat, repeat;
         background-position: right .7em top 50%, 0 0;
         background-size: .65em auto, 100%;
     }
-
     #select-css::-ms-expand {
         display: none;
     }
-
     #select-css:hover {
         border-color: #888;
     }
-
     #select-css:focus {
         border-color: #aaa;
         box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
@@ -399,62 +359,50 @@ table th {
         color: #222;
         outline: none;
     }
-
     #select-css option {
         font-weight: normal;
     }
-
     /*-----------------------------------/*/
-
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
-
     .menu img {
         display: inline-block;
     }
-
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
-
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
-
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
-
     .dates input {
         font-size: 0.73rem;
     }
-
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
-
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
-
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
         margin: 0px;
         padding: 0px;
     }
-
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
