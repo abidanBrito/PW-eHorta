@@ -90,29 +90,44 @@ option a:hover {
 
 /*Graph*/
 
-.dates {
-    font-size: 32px;
-    margin-bottom: 0px;
-    height: 420px;
-    width: 1230px;
+#dates {
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
-.dates input {
+#dates input {
     font-size: 20px;
-    width: 10.25em;
-    height: 2.375em;
-    margin: inherit;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border: 0;
+    border-bottom: 3px solid grey;
+    background-color: transparent;
+}
+#dates input:focus {
+    border-color: mediumpurple;
 }
 
-.data {
-    height: 13em;
-    width: 13000px;
-    margin-left: 0em;
+.bar {
+    width: 3px;
+    height: 40px;
+    margin: 10px;
+    background-color: black;
 }
 
-.links_parcelas {
-    text-decoration: none;
-    color: #000000;
+
+#positionNumber {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.chart-container {
+    width: 100%;
+    height: 600px;
 }
 
 
@@ -141,6 +156,9 @@ option a:hover {
 }
 
 
+<<<<<<< HEAD
+/*Talbe data*/
+=======
 /*Graph data/*/
 
 #humidity {
@@ -177,6 +195,10 @@ table {
     margin: 5px;
     width: 250em;
     height: auto;
+}
+.links_parcelas {
+    text-decoration: none;
+    color: #000000;
 }
 
 table tr {
@@ -288,11 +310,58 @@ table th {
         border: solid white;
         border-radius: 10px;
     }
+    /*app*/
     /*general*/
+>>>>>>> develop
     #app {
+        display: flex;
         flex-direction: column;
-        margin-left: 3em;
+        justify-content: center;
     }
+    #dates {
+        margin-bottom: 5px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #dates input {
+        font-size: 15px;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+    }
+    #dates input:focus {
+        border-color: mediumpurple;
+    }
+    .bar {
+    
+        width: 3px;
+        margin: 10px;
+        height: 40px;
+        background-color: black;
+    }
+    
+    
+    #positionNumber {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    .chart-container {
+        width: 100%;
+        height: 600px;
+    }
+    
+    /*general*/
+    
+
     #div_h2 {
         display: flex;
         flex-direction: column;

@@ -20,6 +20,8 @@ function initMap() {
     addMarkers(map);
     // The polygons, around the markers
     addPaths(map);
+    // Refresca la gráfica
+    refreshGraphScript();
 }
 
 function centerPlot(selectedPlot) {
@@ -84,11 +86,13 @@ function addPaths(map) {
 function addMarkers(map) {
     fetch('../api/v1.0/plots').then(function(j) { return j.json() }).then(function(pos) {
         pos.forEach((plot) => {
-            let newPos = new google.maps.LatLng(`${plot.latitude}`, `${plot.longitude}`)
+            let newPos = new google.maps.LatLng(`${plot.latitude}`, `${plot.longitude}`);
+            
             let marker = new google.maps.Marker({
                 position: newPos,
                 map: map,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                title: `${plot.name}`
             });
         })
     });
@@ -99,7 +103,6 @@ function showPositions(selectedPlot, map) {
     fetch('../api/v1.0/positions').then(function(data) { 
         return data.json(); 
     }).then(function(dataJson) { 
-        console.log(dataJson);
         let plotPositions = []; 
          
         // Guarda en un array las posiciones de la parcela seleccionada y los muestra como marcadores 
@@ -112,11 +115,28 @@ function showPositions(selectedPlot, map) {
                 let marker = new google.maps.Marker({ 
                     position: newPos, 
                     map: map, 
-                    animation: google.maps.Animation.DROP 
-                }); 
+                    animation: google.maps.Animation.DROP,
+                    title: `${pos.id}`
+                });
+                marker.addListener('click', function() {
+                    // Pone el marcador en marcado
+                    document.getElementById('selectedProbe').innerHTML = this.title;
+                    // Refresca la gráfica
+                    refreshGraphScript();
+                });
             } 
         }) 
          
         console.log(plotPositions); 
     }) 
+}
+
+function refreshGraphScript(){
+    
+    let script = document.createElement("script");
+    script.src = 'js/graphic-data.js';
+    console.log("Script created");
+    
+    document.head.appendChild(script);
+    script.parentNode.removeChild(script);
 }

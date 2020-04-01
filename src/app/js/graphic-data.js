@@ -1,13 +1,20 @@
-//Obtener los datos del servidor
+//Obtener las medidas del servidor
 fetch('../db/measurements.json').then(function (r) {
-    console.log(r);
     return r.json();
 }).then(function (j) {
-    // procesar los datos
-    dataProcess(j);
+    // Get selected position
+    let probe = document.getElementById('selectedProbe');
+    let id = parseInt(probe.textContent);
+    
+    // Get start and end dates
+    let startDate = document.getElementById('startDate').value;
+    let endDate = document.getElementById('endDate').value;
+    
+    dataProcess(j, id, startDate, endDate);
+    
 });
 
-function dataProcess(data) {
+function dataProcess(data, positionId, startDate, endDate) {
     console.log("Graphic started");
     data = data.sort(function (a, b) {
         if (a.datetime < b.datetime) return -1;
@@ -15,7 +22,28 @@ function dataProcess(data) {
         return 0;
     });
 
-    console.log(data);
+    console.log(positionId);
+    
+    console.log(startDate);
+    console.log(endDate);
+    
+    // Default dates
+    if(endDate == null) {
+        endDate = '2040-03-22';
+    }
+    if(startDate == null) {
+        startDate = '2000-01-01'
+    }
+    
+    // filter only the data from de selected position
+    let posData = [];
+    data.forEach(function (dataJson) {
+        if(dataJson.position == positionId && dataJson.datetime > startDate && dataJson.datetime < endDate) {
+            posData.push(dataJson);
+        }
+    });
+    
+    console.log(posData);
 
     // recorrer los datos
     let times = [];
@@ -24,7 +52,7 @@ function dataProcess(data) {
     let humidity = [];
     let luminosity = [];
     let temperature = [];
-    data.forEach(function (dataJson) {
+    posData.forEach(function (dataJson) {
         let i = times.indexOf(dataJson.fecha);
         // Si es -1 es que no existe en el array y por tanto lo creamos tanto en fechas como totales.
         if(i < 0) {
@@ -55,7 +83,7 @@ function dataProcess(data) {
     CrearGrafica();
 }
 
-let datos = {
+var datos = {
     // 0 = salinity
     // 1 = rain
     // 2 = humidty
@@ -130,7 +158,7 @@ let datos = {
     ]
 };
 
-let opciones = {
+var opciones = {
     scales: {
         yAxes: [{
             //los datos se apilan y se suman entre ellos
@@ -151,15 +179,19 @@ let opciones = {
         titleAlign: 'center',
         bodyFontColor: '#333',
         borderColor: '#666',
-        borderWidth: 1,}
+        borderWidth: 1,
+    },
+    responsive: true,
+    maintainAspectRatio: false
     
 };
 
 function CrearGrafica() {
     let ctx = document.getElementById('chart');
-    let miGrafica = new Chart(ctx, {
+    let chart = new Chart(ctx, {
         type: 'line',
         data: datos,
         options: opciones
     });
+    chart.update();
 }

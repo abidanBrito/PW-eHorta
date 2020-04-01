@@ -121,28 +121,23 @@
     <!------------------------>
     <!------------------------>
     <div id="app">
-        <section class="dates">
-            <input placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
-            <strong>|</strong>
-            <input placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-
-            <div class="chart-container">
-                <canvas id="chart"></canvas>
-            </div>
-
-            <script id="graphic_script" src=js/graphic-data.js></script>
-
+        <section id="dates">
+            <input id='startDate' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <div class="bar"></div>
+            <input id='endDate' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
         </section>
+        <script src="js/date-selector.js"></script>
+        <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic-data.js-->
+        <div id="positionNumber">
+           <span>Número de la posición: </span>
+           <span id="selectedProbe"></span>
+        </div>
+            
+            
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
     </div>
-    <!-- <div id="button">
-        <button class="buttons" onclick="data_filter('humidity')"><img src="img/datalogger/humidity.svg" alt="humidity"></button>
-                    <button class="buttons" onclick="data_filter('salinity')"><img src="img/datalogger/salinity.svg" alt="salinity"></button>
-                    <button class="buttons" onclick="data_filter('rainfall')"><img src="img/datalogger/rainfall.svg" alt="rainfall"></button>
-                    <button class="buttons" onclick="data_filter('temperature')"><img src="img/datalogger/temperature.svg" alt="temperature"></button>
-                    <button class="buttons" onclick="data_filter('pressure')"><img src="img/datalogger/barometric_pressure.svg" alt="barometric pressure"></button>
-                    <script src="js/data_filter.js"></script>
-                </div>-->
-                <script src="js/navbar.js"></script>
 </body>
 
 </html>
