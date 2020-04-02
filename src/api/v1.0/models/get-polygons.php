@@ -16,10 +16,6 @@ $user = $_SESSION["user_id"];
 // Define SQL query
 $sql = "SELECT `vertex`.`id`, `vertex`.`plot`, `vertex`.`latitude`, `vertex`.`longitude` 
 FROM `vertex`"; 
-/*INNER JOIN `users-plots` 
-WHERE `vertex`.`plot` = `users-plots`.`plot` 
-AND `users-plots`.`user` = $user";
-*/
 
 // Send SQL query to the active database
 $res = mysqli_query($conn, $sql);
