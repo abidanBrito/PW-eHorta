@@ -59,7 +59,9 @@ CREATE TABLE `plots` (
 INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
 (1, 'Naranjos Paterna', -0.441465, 39.497875),
 (2, 'Manzanos Bétera', -0.470384, 39.593231),
-(4, 'Granja Norte', 0, -0.470384);
+(3, 'Gavia #1', -14.019314, 28.494176),
+(4, 'Gavia #2', -14.019035, 28.493408),
+(5, 'Granja Norte', 0, -0.470384);;
 
 -- --------------------------------------------------------
 
@@ -80,7 +82,9 @@ CREATE TABLE `positions` (
 
 INSERT INTO `positions` (`id`, `plot`, `longitude`, `latitude`) VALUES
 (1, 1, -0.441462, 39.497727),
-(2, 1, -0.441504, 39.498005);
+(2, 1, -0.441504, 39.498005),
+(3, 3, -14.019314, 28.494176),
+(4, 4, -14.019035, 28.493408);
 
 -- --------------------------------------------------------
 
@@ -150,7 +154,8 @@ INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `roleId`) VAL
 (6, 'Marcelo', 'Fernández', 'marcelofernandez@gmail.com', 'marcelofernandez', 4),
 (7, 'Juana', 'Ramírez', 'juanaramirez@gmail.com', 'juanaramirez', 1),
 (8, 'Manuela', 'Sánchez', 'manuelasanchez@gmail.com', 'manuelasanchez', 3),
-(9, 'meowth', '', 'gato@gmail.com', 'miau', 1);
+(9, 'meowth', '', 'gato@gmail.com', 'miau', 1),
+(10, 'root', 'Abidán', 'admin', 'pass', 1);
 
 -- --------------------------------------------------------
 
@@ -170,8 +175,9 @@ CREATE TABLE `users-plots` (
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
 (9, 1),
 (9, 2),
-(6, 4),
-(6, 4);
+(10, 3),
+(10, 4),
+(6, 5);
 
 -- --------------------------------------------------------
 
@@ -187,8 +193,25 @@ CREATE TABLE `vertex` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Índices para tablas volcadas
+-- Volcado de datos para la tabla `users-plots`
 --
+
+INSERT INTO `vertex` (`id`, `plot`, `latitude`, `longitude`) VALUES
+-- Gavia #1
+(1, 3, 28.494433, -14.019011),
+(2, 3, 28.494207, -14.019575),
+(3, 3, 28.494080, -14.019704),
+(4, 3, 28.493858, -14.019565),
+(5, 3, 28.494056, -14.019270),
+(6, 3, 28.494216, -14.018916),
+
+-- Gavia #2
+(7, 4, 28.492835, -14.019104),
+(8, 4, 28.493288, -14.018895),
+(3, 4, 28.493618, -14.018600),
+(10, 4, 28.493773, -14.018755),
+(11, 4, 28.493537, -14.019318),
+(12, 4, 28.493480, -14.019356);
 
 --
 -- Indices de la tabla `measurements`
