@@ -1,5 +1,5 @@
 //Obtener las medidas del servidor
-fetch('../db/measurements.json').then(function (r) {
+fetch('../api/v1.0/measurements').then(function (r) {
     return r.json();
 }).then(function (j) {
     // Get selected position

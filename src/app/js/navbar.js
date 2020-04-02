@@ -6,6 +6,7 @@
  *   ----------------------------------------------------------------
  *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
  *   ---------------------------------------------------------------- */
+
 const navSlider = () => {
     const burgerIcon = document.querySelector('.menu-icon');
     const navBar = document.querySelector('.navbar-links');
