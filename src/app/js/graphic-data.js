@@ -24,16 +24,19 @@ function dataProcess(data, positionId, startDate, endDate) {
 
     console.log(positionId);
     
+    // Default dates
+    if(endDate == "") {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        endDate = today;
+    }
+    
     console.log(startDate);
     console.log(endDate);
-    
-    // Default dates
-    if(endDate == null) {
-        endDate = '2040-03-22';
-    }
-    if(startDate == null) {
-        startDate = '2000-01-01'
-    }
     
     // filter only the data from de selected position
     let posData = [];
@@ -170,8 +173,7 @@ var opciones = {
         align: 'center',
     },
     title: {
-        display: true,
-        text: 'Sonda'
+        display: false
     },
     tooltips: {
         backgroundColor: '#fff',
