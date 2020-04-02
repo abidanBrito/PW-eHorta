@@ -39,6 +39,17 @@ CREATE TABLE `measurements` (
   `temperature` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `measurements` (`id`, `position`, `datetime`, `salinity`, `rain`, `humidity`, `luminosity`, `temperature`) VALUES
+(1, 3, '2020-03-22 10:39:41', 56, 5, 68, 72, 23),
+(2, 3, '2020-03-22 12:00:24', 47, 4, 61, 84, 25),
+(3, 3, '2020-03-23 08:15:10', 35, 0, 55, 85, 18),
+(4, 3, '2020-03-23 11:24:38', 37, 2, 46, 89, 21),
+(5, 4, '2020-03-20 06:00:00', 56, 0, 55, 72, 13),
+(6, 4, '2020-03-20 08:00:00', 47, 3, 50, 84, 17),
+(7, 4, '2020-03-20 10:00:00', 40, 2, 48, 85, 21),
+(8, 4, '2020-03-20 12:00:00', 38, 4, 46, 89, 23),
+(8, 4, '2020-03-20 14:00:00', 42, 0, 33, 89, 27);
+
 -- --------------------------------------------------------
 
 --
@@ -155,7 +166,7 @@ INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `roleId`) VAL
 (7, 'Juana', 'Ramírez', 'juanaramirez@gmail.com', 'juanaramirez', 1),
 (8, 'Manuela', 'Sánchez', 'manuelasanchez@gmail.com', 'manuelasanchez', 3),
 (9, 'meowth', '', 'gato@gmail.com', 'miau', 1),
-(10, 'root', 'Abidán', 'admin', 'pass', 1);
+(10, 'Abidán', 'Brito', 'abidan', 'brito', 1);
 
 -- --------------------------------------------------------
 
