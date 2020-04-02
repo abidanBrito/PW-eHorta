@@ -11,14 +11,14 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-
+    
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
     <script src="js/restringir_acceso.js"></script>
+    <script src="js/delete-sesion.js"></script>
 </head>
 
 <body class="main">
@@ -33,25 +33,19 @@
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="#">Mi cuenta</a>
+                   <a href="../index.html" id="navbar-contact">Inicio</a>
                 </li>
                 <li>
                     <a href="#">Notificaciones</a>
                 </li>
                 <li>
-                    <a href="../index.html" id="navbar-contact">Inicio</a>
+                    <a href="#">Mi cuenta</a>
                 </li>
                 <li>
-                    <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
-                    function(respuesta) {
-                        if (respuesta.status == 200) location.href = '../index.html';
-                    })">Cerrar sesión</a>
+                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
                 </li>
             </ul>
             <div class="navbar-right">
-                <a id="login-icon" class="white-filter" style="display: none;" href="app/login.html">
-                    <img src="app/img/user.svg" alt="LOGIN">
-                </a>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -70,10 +64,11 @@
                     <a class='edit-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
                     <button class='delete-button' onclick="showCheckbox()" id="delete">
-                        <img src='img/delete.png' width='30' height='30'/></button>
-                    <button onclick=" borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
+                    <img src='img/delete.png' width='30' height='30'/></button>
+                    <button onclick="borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
 
-                    <button class='add-button' onclick="javascript:location.href('add.html')" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a>
+                    <button class='add-button' onclick="javascript:location.href('add.html')" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
+                    </button>
                     <script src="js/delete.js"></script>
                     <script src="js/checkbox_list.js"></script>
                 </div>
@@ -87,8 +82,6 @@
                         <tr>
                             <!-- <th scope="col">rewrt</th>*/-->
                             <!---especifica que son columnas--->
-
-
                         </tr>
                     </thead>
                     <tbody id="fields">
@@ -97,7 +90,7 @@
                 </table>
             </div>
         </div>
-        <select id="select-css" onchange="location = this.value;">
+        <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
 
             <option selected="#" disable selected hidden>Seleccione parcela...</option>
 
@@ -138,6 +131,9 @@
             <canvas id="chart"></canvas>
         </div>
     </div>
+    <!-- Scripts -->
+    <script src="js/navbar.js"></script>
+    
 </body>
 
 </html>

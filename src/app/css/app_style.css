@@ -119,7 +119,7 @@ option a:hover {
 
 
 #positionNumber {
-    margin-top: 20px;
+    margin: 20px;
     display: flex;
     flex-direction: row;
     
