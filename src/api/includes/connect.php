@@ -2,7 +2,7 @@
 /* ----------------------------------------------------------------
 *   AUTHOR:         Abidan Brito Clavijo
 *   FILE:           connect.php
-*   DATE:           06/03/2020
+*   DATE:           28/03/2020
 *   STATE:          DONE
 *   ----------------------------------------------------------------
 *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
