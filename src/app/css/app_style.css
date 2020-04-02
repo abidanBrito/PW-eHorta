@@ -1,11 +1,22 @@
 /*General*/
 
 #app {
-
     flex-direction: row;
     margin-left: 4em;
     margin-top: 2.25em;
     margin-right: 4em;
+}
+
+#user-options {
+    background-color: #664b58;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    border: none;
+}
+
+option a:hover {
+    color: rgb(224, 169, 66);
 }
 
 .tab_and_head {
@@ -20,31 +31,23 @@
     margin-left: 4em;
     margin-top: 5.25em;
     margin-right: 4em;
-
 }
 
 #div_h2 {
     display: flex;
     flex-direction: row;
     align-self: center;
-
-
 }
 
 #div_h2 h2 {
     display: flex;
     align-self: flex-start;
-
 }
 
 #div_h2 a {
     display: flex;
     align-items: flex-end;
-
 }
-
-
-
 
 #div_h2buttons {
     display: flex;
@@ -53,7 +56,11 @@
     align-items: flex-end;
 }
 
-
+#div_h2buttons button {
+    background-color: transparent;
+    border: none;
+    margin-left: 5px;
+}
 
 #tab {
     overflow-y: scroll;
@@ -65,7 +72,6 @@
     margin-left: 2em;
     margin-right: 2em;
     overflow-x: hidden;
-
 }
 
 #map {
@@ -74,9 +80,6 @@
     border: solid white;
     border-radius: 10px;
     margin-right: 2em;
-    min-width: 100px;
-
-
 }
 
 #graphic_dates {
@@ -84,37 +87,49 @@
     border: solid black;
 }
 
-#user-options {
+
+/*Graph*/
+
+#dates {
+    margin-bottom: 5px;
+    width: 100%;
     display: flex;
     align-items: center;
 }
 
-/*Graph*/
-
-.dates {
-    font-size: 32px;
-    margin-bottom: 0px;
-    height: 420px;
-    width: 1230px;
-}
-
-.dates input {
+#dates input {
     font-size: 20px;
-    width: 10.25em;
-    height: 2.375em;
-    margin: inherit;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border: 0;
+    border-bottom: 3px solid grey;
+    background-color: transparent;
+}
+#dates input:focus {
+    border-color: mediumpurple;
 }
 
-.data {
-    height: 13em;
-    width: 13000px;
-    margin-left: 0em;
+.bar {
+    width: 3px;
+    height: 40px;
+    margin: 10px;
+    background-color: black;
 }
 
-.links_parcelas {
-    text-decoration: none;
-    color: #000000;
+
+#positionNumber {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    
 }
+
+.chart-container {
+    width: 100%;
+    height: 600px;
+}
+
 
 /*Buttons/*/
 
@@ -141,8 +156,10 @@
 }
 
 
+<<<<<<< HEAD
+/*Talbe data*/
+=======
 /*Graph data/*/
-
 
 #humidity {
     display: none;
@@ -169,23 +186,22 @@
     border: 1px solid yellow;
 }
 
-/*Talbe data*/
+
+/*Table data*/
 
 table {
-
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
     margin: 5px;
     width: 250em;
     height: auto;
-
-
-
+}
+.links_parcelas {
+    text-decoration: none;
+    color: #000000;
 }
 
-
 table tr {
-
     background-color: #f8f8f8;
     padding: .35em;
 }
@@ -193,28 +209,25 @@ table tr {
 table th,
 table td {
     padding: .625em;
-
     border: none;
 }
 
 table input {
-    visibility: hidden;
+    display: none;
+    margin-right: 5px;
 }
 
 table tr:hover .delete-button {}
 
 table tr:hover .edit-button {
     opacity: 0.7;
-
 }
 
 .content_row:hover {
     background: rgba(179, 147, 162, 0.8);
 }
 
-
 table th {
-
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -222,7 +235,6 @@ table th {
 
 #select-css {
     display: none;
-
 }
 
 .delete-button {
@@ -237,78 +249,7 @@ table th {
     opacity: 0;
 }
 
-/* =========================POPUP========================= */{}
-.form-popup {
-    display: none;
-    flex-flow: column;
-    position: inline;
-     z-index: 9;
-      }
-
-.form-container {
-    display: flex;
-    flex-flow: column;
-    min-width: 110px;
-    padding: 10px;
-    align-items: center;
-    margin-right: 5px;
-    background-color: white;
-       border: 3px solid #f1f1f1;
-    border-radius: 10px;
-}
-
-/* Full-width input fields */
-.form-container input[type=text] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: 1px;
-    border-radius: 10px;
-
-    background: #f1f1f1;
-}
-
-/* cuando presionas input */
-.form-container input[type=text]:focus {
-    background-color: #f1f1f1;
-    outline: none;
-}
-
-
-.form-container .btn {
-    background-color: #664b58;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 20px;
-
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-    background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover,
-.open-button:hover {
-    opacity: 1;
-}
-  .form-popup img{
-
-    width: 40px;
-    height: 40px;
-    margin-left: 110px;
-} 
-}/* =========================POPUP========================= */
-
 @media screen and (max-width: 600px) {
-
-
     /*max 600px
     table {
 
@@ -317,11 +258,9 @@ table th {
         margin-right: 0.5em;
 
     }*/
-
     table caption {
         font-size: 1.3em;
     }
-
     table thead {
         border: none;
         clip: rect(0 0 0 0);
@@ -332,32 +271,27 @@ table th {
         position: absolute;
         width: 1px;
     }
-
     table tr {
         border: none;
         display: block;
         margin-bottom: .625em;
     }
-
     table td {
         border: none;
         display: block;
         font-size: .8em;
         text-align: right;
     }
-
     table td::before {
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
     }
-
     table td:last-child {
         border-bottom: 0;
     }
 }
-
 
 
 /*-----------------------------------Mobile version--------------------------------------*/
@@ -366,75 +300,106 @@ table th {
     .edit-button {
         opacity: 100;
     }
-
     #tab {
         display: none;
     }
-
     #map {
         width: auto;
         max-width: 600px;
         height: 17em;
         border: solid white;
         border-radius: 10px;
-            margin-right: 0em;
-
     }
-
+    /*app*/
     /*general*/
+>>>>>>> develop
     #app {
+        display: flex;
         flex-direction: column;
-        margin-left: 3em;
-
+        justify-content: center;
     }
+    #dates {
+        margin-bottom: 5px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #dates input {
+        font-size: 15px;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+    }
+    #dates input:focus {
+        border-color: mediumpurple;
+    }
+    .bar {
+    
+        width: 3px;
+        margin: 10px;
+        height: 40px;
+        background-color: black;
+    }
+    
+    
+    #positionNumber {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    .chart-container {
+        width: 100%;
+        height: 600px;
+    }
+    
+    /*general*/
+    
 
     #div_h2 {
         display: flex;
         flex-direction: column;
-
     }
-
     #div_h2 h2 {
         align-self: center;
-
     }
-
     #div_h2buttons {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5px;
     }
-
     /*map*/
-
     #map_tabla {
         flex-direction: column;
         margin-left: 2em;
-
         margin-right: 2em;
-
         margin-top: 3em;
-
-
     }
-
     table {
         display: none !important;
-
         border: 0;
         margin-left: 0.5em;
         margin-right: 0.5em;
-
     }
-
     /*----------------------------------------*/
     #select-css {
         display: block;
+        font-size: 16px;
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
         color: #444;
         line-height: 1.3;
         padding: .4em 1.4em .3em .8em;
+        width: 29.5em;
         max-width: 100%;
+        box-sizing: border-box;
         margin: .5em;
         border: 1px solid #aaa;
         box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
@@ -444,21 +409,17 @@ table th {
         /*quitar la flecha por defecto*/
         appearance: none;
         background-color: #fff;
-        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-            linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
         background-repeat: no-repeat, repeat;
         background-position: right .7em top 50%, 0 0;
         background-size: .65em auto, 100%;
     }
-
     #select-css::-ms-expand {
         display: none;
     }
-
     #select-css:hover {
         border-color: #888;
     }
-
     #select-css:focus {
         border-color: #aaa;
         box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
@@ -467,74 +428,53 @@ table th {
         color: #222;
         outline: none;
     }
-
     #select-css option {
         font-weight: normal;
     }
-
     /*-----------------------------------/*/
-
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
-
     .menu img {
         display: inline-block;
     }
-
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
-
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
-
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
-
     .dates input {
         font-size: 0.73rem;
     }
-
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
-
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
-
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
         margin: 0px;
         padding: 0px;
     }
-
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
-
-  .form-popup img{
-
-    width: 40px;
-    height: 40px;
-    margin-left: 330px;
-}  
-      
-
 }

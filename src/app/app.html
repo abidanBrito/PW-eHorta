@@ -18,40 +18,45 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
-    <!--script src="js/restringir_acceso.js"></script-->
-
+    <script src="js/restringir_acceso.js"></script>
 </head>
 
 <body class="main">
     <!-- Top bar (navigation menu) -->
     <header>
         <!-- Corporative brand -->
+        <a id="logo" class="white-filter" href="../index.html">
+            <img src="img/logo_v2.svg" alt="LOGO">
+        </a>
+
         <nav class="navbar">
-            <a id="logo" class="white-filter" href="../index.html">
-                <img src="img/logo_v2.svg" alt="LOGO">
-            </a>
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="add.html">Añadir campo</a>
+                    <a href="#">Mi cuenta</a>
+                </li>
+                <li>
+                    <a href="#">Notificaciones</a>
+                </li>
+                <li>
+                    <a href="../index.html" id="navbar-contact">Inicio</a>
                 </li>
                 <li>
                     <a href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
-        function(respuesta) {
-            if (respuesta.status == 200) location.href = '../index.html';
-        })">Cerrar sesión</a>
+                    function(respuesta) {
+                        if (respuesta.status == 200) location.href = '../index.html';
+                    })">Cerrar sesión</a>
                 </li>
             </ul>
             <div class="navbar-right">
-                <!-- Mobile navbar -->
+                <a id="login-icon" class="white-filter" style="display: none;" href="app/login.html">
+                    <img src="app/img/user.svg" alt="LOGIN">
+                </a>
+                <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
-
-                    <a href="add.html" class="white-filter" style="text-decoration:none;">Añadir campo</a>
-
-                    <a style="text-decoration: none;" href="javascript:fetch('../api/v1.0/sesion', { method: 'delete' }).then(
-        function(respuesta) {
-            if (respuesta.status == 200) location.href = '../index.html';
-        })" class="white-filter mobile-navbar-link">Cerrar sesión</a>
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
                 </div>
             </div>
         </nav>
@@ -62,11 +67,16 @@
             <div id="div_h2">
                 <h2>MIS CAMPOS </h2>
                 <div id="div_h2buttons">
-                    <a class='edit-button' href="javascript:openForm();" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
+                    <a class='edit-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
-                    <a class='delete-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
+                    <button class='delete-button' onclick="showCheckbox()" id="delete">
+                        <img src='img/delete.png' width='30' height='30'/></button>
+                    <button onclick=" borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
 
-                    <a class='add-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a></div>
+                    <button class='add-button' onclick="javascript:location.href('add.html')" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a>
+                    <script src="js/delete.js"></script>
+                    <script src="js/checkbox_list.js"></script>
+                </div>
             </div>
 
 
@@ -75,6 +85,10 @@
 
                     <thead>
                         <tr>
+                            <!-- <th scope="col">rewrt</th>*/-->
+                            <!---especifica que son columnas--->
+
+
                         </tr>
                     </thead>
                     <tbody id="fields">
@@ -87,37 +101,13 @@
 
             <option selected="#" disable selected hidden>Seleccione parcela...</option>
 
-        </select>
-
-        <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
-            <form action="/action_page.php" class="form-container">
-                <div style="display: flex;">
-                
-                    <a href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-   
-                </div>
-              
-                <label for="coordenada-X"><b>Coordenada-X</b></label>
-                <input type="text" placeholder="Coordenada-X" name="coordenada-X">
-
-                <label for="coordenada-Y"><b>Coordenada-Y</b></label>
-                <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
-
-                <label for="name"><b>Nombre</b></label>
-                <input type="text" placeholder="Nombre parcela" name="name">
-
-                <button type="submit" class="btn">Aplicar</button>
-                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-            </form>
-        </div>
-
+            </select>
         <script src="js/plots_list.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
             ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
-
         </script>
 
 
@@ -129,36 +119,25 @@
         </section>
     </div>
     <!------------------------>
-
-    <script>
-        function openForm() {
-            document.getElementById("myForm").style.display = "flex";
-            document.getElementById("myForm").style.flex.flow = "column";
-
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
-
-    </script>
     <!------------------------>
     <div id="app">
-        <section class="dates">
-            <input placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
-            <strong>|</strong>
-            <input placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-
-            <div class="chart-container">
-                <canvas id="chart"></canvas>
-            </div>
-
-            <script id="graphic_script" src=js/graphic-data.js></script>
-
+        <section id="dates">
+            <input id='startDate' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <div class="bar"></div>
+            <input id='endDate' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
         </section>
+        <script src="js/date-selector.js"></script>
+        <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic-data.js-->
+        <div id="positionNumber">
+           <span>Número de la posición: </span>
+           <span id="selectedProbe"></span>
+        </div>
+            
+            
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
     </div>
-
-
 </body>
 
 </html>
