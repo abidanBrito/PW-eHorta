@@ -11,9 +11,13 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
+    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">
+    <link rel="stylesheet" type="text/css" href="css/table_style.css">
+
+
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-    
+
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta</title>
@@ -33,7 +37,7 @@
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                   <a href="../index.html" id="navbar-contact">Inicio</a>
+                    <a href="../index.html" id="navbar-contact">Inicio</a>
                 </li>
                 <li>
                     <a href="#">Notificaciones</a>
@@ -61,19 +65,46 @@
             <div id="div_h2">
                 <h2>MIS CAMPOS </h2>
                 <div id="div_h2buttons">
-                    <a class='edit-button' href="javascript:document.getElementById('checkboxId').style.display='inline'" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
+                    <a class='edit-button' href='javascript:openForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
                     <button class='delete-button' onclick="showCheckbox()" id="delete">
-                    <img src='img/delete.png' width='30' height='30'/></button>
+                        <img src='img/delete.png' width='30' height='30' /></button>
                     <button onclick="borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
 
-                    <button class='add-button' onclick="javascript:location.href('add.html')" title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
+                    <button class='add-button' onclick='javascript:openForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
                     </button>
-                    <script src="js/delete.js"></script>
-                    <script src="js/checkbox_list.js"></script>
+
                 </div>
             </div>
+            <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
 
+                <option selected="#" disable selected hidden>Seleccione parcela...</option>
+
+            </select>
+            <!-- EMPIEZA POP UP AÑADIR PARCELA -->
+
+            <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
+                <form action="/action_page.php" class="form-container">
+                    <div>
+
+                        <a href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+
+                    </div>
+                    <label for="name"><b>Nombre</b></label>
+                    <input type="text" placeholder="Nombre parcela" name="name">
+
+                    <label for="coordenada-X"><b>Coordenada-X</b></label>
+                    <input type="text" placeholder="Coordenada-X" name="coordenada-X">
+
+                    <label for="coordenada-Y"><b>Coordenada-Y</b></label>
+                    <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
+
+                    <button type="submit" class="btn">Aplicar</button>
+                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+                </form>
+            </div>
+
+            <!-- Acaba POP UP  -->
 
             <div id="tab">
                 <table>
@@ -90,17 +121,14 @@
                 </table>
             </div>
         </div>
-        <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
 
-            <option selected="#" disable selected hidden>Seleccione parcela...</option>
-
-            </select>
         <script src="js/plots_list.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
             ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
+
         </script>
 
 
@@ -110,7 +138,9 @@
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
             </script>
         </section>
+
     </div>
+
     <!------------------------>
     <!------------------------>
     <div id="app">
@@ -122,18 +152,22 @@
         <script src="js/date-selector.js"></script>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic-data.js-->
         <div id="positionNumber">
-           <span>Número de la posición: </span>
-           <span id="selectedProbe"></span>
+            <span>Número de la posición: </span>
+            <span id="selectedProbe"></span>
         </div>
-            
-            
+
+
         <div class="chart-container">
             <canvas id="chart"></canvas>
         </div>
     </div>
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
-    
+    <script src="js/pop-manager.js"></script>
+    <script src="js/delete.js"></script>
+    <script src="js/checkbox_list.js"></script>
+
+
 </body>
 
 </html>

@@ -19,11 +19,6 @@ option a:hover {
     color: rgb(224, 169, 66);
 }
 
-.tab_and_head {
-    display: flex;
-    flex-direction: column
-}
-
 #map_tabla {
     display: flex;
     flex-direction: row-reverse;
@@ -33,51 +28,11 @@ option a:hover {
     margin-right: 4em;
 }
 
-#div_h2 {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-}
-
-#div_h2 h2 {
-    display: flex;
-    align-self: flex-start;
-}
-
-#div_h2 a {
-    display: flex;
-    align-items: flex-end;
-}
-
-#div_h2buttons {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    align-items: flex-end;
-}
-
-#div_h2buttons button {
-    background-color: transparent;
-    border: none;
-    margin-left: 5px;
-}
-
-#tab {
-    overflow-y: scroll;
-    min-width: 200px;
-    display: flex;
-    align-self: center;
-    width: 300px;
-    height: 370px;
-    margin-left: 2em;
-    margin-right: 2em;
-    overflow-x: hidden;
-}
 
 #map {
     width: 100em;
     height: 25em;
-    border: solid white;
+box-shadow: 0px 0px 5px 1px #959595;
     border-radius: 10px;
     margin-right: 2em;
 }
@@ -187,122 +142,16 @@ option a:hover {
 }
 
 
-/*Table data*/
-
-table {
-    /* border: 1px solid #ccc;*/
-    /* padding: 0; */
-    margin: 5px;
-    width: 250em;
-    height: auto;
-}
-.links_parcelas {
-    text-decoration: none;
-    color: #000000;
-}
-
-table tr {
-    background-color: #f8f8f8;
-    padding: .35em;
-}
-
-table th,
-table td {
-    padding: .625em;
-    border: none;
-}
-
-table input {
-    display: none;
-    margin-right: 5px;
-}
-
-table tr:hover .delete-button {}
-
-table tr:hover .edit-button {
-    opacity: 0.7;
-}
-
-.content_row:hover {
-    background: rgba(179, 147, 162, 0.8);
-}
-
-table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
 
 #select-css {
     display: none;
-}
-
-.delete-button {
-    display: inline;
-}
-
-.delete-button:active input {
-    visibility: visible;
-}
-
-.edit-button {
-    opacity: 0;
-}
-
-@media screen and (max-width: 600px) {
-    /*max 600px
-    table {
-
-        border: 0;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-
-    }*/
-    table caption {
-        font-size: 1.3em;
-    }
-    table thead {
-        border: none;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-    table tr {
-        border: none;
-        display: block;
-        margin-bottom: .625em;
-    }
-    table td {
-        border: none;
-        display: block;
-        font-size: .8em;
-        text-align: right;
-    }
-    table td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    table td:last-child {
-        border-bottom: 0;
-    }
 }
 
 
 /*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 48rem) {
-    .edit-button {
-        opacity: 100;
-    }
-    #tab {
-        display: none;
-    }
+ 
     #map {
         width: auto;
         max-width: 600px;
@@ -361,32 +210,11 @@ table th {
     
     /*general*/
     
-
-    #div_h2 {
-        display: flex;
-        flex-direction: column;
-    }
-    #div_h2 h2 {
-        align-self: center;
-    }
-    #div_h2buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 5px;
-    }
-    /*map*/
     #map_tabla {
         flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
         margin-top: 3em;
-    }
-    table {
-        display: none !important;
-        border: 0;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
     }
     /*----------------------------------------*/
     #select-css {
@@ -397,8 +225,7 @@ table th {
         color: #444;
         line-height: 1.3;
         padding: .4em 1.4em .3em .8em;
-        width: 29.5em;
-        max-width: 100%;
+        width: 100%;
         box-sizing: border-box;
         margin: .5em;
         border: 1px solid #aaa;
