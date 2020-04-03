@@ -3,8 +3,6 @@
 *   FILE:           map.js
 *   DATE:           25/03/2020
 *   STATE:          WIP
-*   ----------------------------------------------------------------
-*   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
 *   ---------------------------------------------------------------- */
 
 function initMap() {
@@ -39,7 +37,7 @@ function initMap() {
     addMarkers(map);
 
 	// The polygons, around the markers
-	addPaths(map);
+	drawTerrain(map);
 
     // Refresh/update graph
     refreshGraphScript();

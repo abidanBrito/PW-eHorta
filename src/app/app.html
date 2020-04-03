@@ -63,7 +63,7 @@
     <div id="map_tabla">
         <div id="tab_and_head">
             <div id="div_h2">
-                <h2>MIS CAMPOS </h2>
+                <h2>PARCELAS</h2>
                 <div id="div_h2buttons">
                     <a class='edit-button' href='javascript:openForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
@@ -73,7 +73,6 @@
 
                     <button class='add-button' onclick='javascript:openForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
                     </button>
-
                 </div>
             </div>
             <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
@@ -86,9 +85,7 @@
             <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container">
                     <div>
-
                         <a href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-
                     </div>
                     <label for="name"><b>Nombre</b></label>
                     <input type="text" placeholder="Nombre parcela" name="name">
