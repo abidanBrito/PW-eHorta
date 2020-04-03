@@ -71,13 +71,27 @@
     }
 
     #services-content {
-        flex-direction: column;
-        margin-top: 10px;
+        height: 100%;
     }
 
-    #services-content article img {
-        margin: 20px;
+    #benefits {
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    #benefits article img {
+        margin-top: 15px;
+        margin-bottom: 30px;
         height: 40px;
+    }
+    
+    #cta-contact {
+        margin: 10px auto;
+    }
+
+    #cta-contact a {
+        font-size: 12px;
     }
 
     #reviews-container {
