@@ -85,9 +85,7 @@ box-shadow: 0px 0px 5px 1px #959595;
     height: 600px;
 }
 
-
 /*Buttons/*/
-
 #button {
     display: flex;
     justify-content: space-around;
@@ -111,11 +109,7 @@ box-shadow: 0px 0px 5px 1px #959595;
 }
 
 
-<<<<<<< HEAD
-/*Talbe data*/
-=======
-/*Graph data/*/
-
+/*Graph data*/
 #humidity {
     display: none;
     border: 1px solid olive;
@@ -141,27 +135,31 @@ box-shadow: 0px 0px 5px 1px #959595;
     border: 1px solid yellow;
 }
 
-
-
 #select-css {
     display: none;
 }
 
+td a {
+    text-decoration: none;
+    color: black;
+}
 
 /*-----------------------------------Mobile version--------------------------------------*/
-
 @media (max-width: 48rem) {
- 
-    #map {
-        width: auto;
-        max-width: 600px;
-        height: 17em;
-        border: solid white;
-        border-radius: 10px;
+    
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
-    /*app*/
-    /*general*/
->>>>>>> develop
+
+    #map {
+        width: 100%;
+        max-width: 600px;
+        height: 13em;
+        border-radius: 10px;
+        margin-top: 40px;
+    }
+
     #app {
         display: flex;
         flex-direction: column;
@@ -176,9 +174,9 @@ box-shadow: 0px 0px 5px 1px #959595;
     }
 
     #dates input {
-        font-size: 15px;
+        font-size: 14px;
         width: 120px;
-        height: 40px;
+        height: 20px;
         text-align: center;
         border: 0;
         border-bottom: 3px solid grey;
@@ -191,7 +189,7 @@ box-shadow: 0px 0px 5px 1px #959595;
     
         width: 3px;
         margin: 10px;
-        height: 40px;
+        height: 20px;
         background-color: black;
     }
     
@@ -258,7 +256,7 @@ box-shadow: 0px 0px 5px 1px #959595;
     #select-css option {
         font-weight: normal;
     }
-    /*-----------------------------------/*/
+    /*-----------------------------------*/
     /*see other fields*/
     .menu {
         width: 20rem;
