@@ -11,7 +11,8 @@ function initMap() {
     // Initial map settings
 	let options = {
 		center: { lat: 36.052448, lng: -1.7467878 }, // Map center coordinates
-		zoom: 4,
+        zoom: 4,
+        tilt: 0,
 		mapTypeId: 'satellite',
 		styles: [
 			// Hide museums, monuments, etc.
@@ -25,7 +26,8 @@ function initMap() {
 				featureType: 'transit',
 				stylers: [ { visibility: 'off' } ]
 			}
-		],
+        ],
+        rotateControl: false,
 		mapTypeControl: false,
 		streetViewControl: false
     };
@@ -61,6 +63,7 @@ function centerPlot(selectedPlot) {
 		// New map settings (centered around the field)
         let options = {
             zoom: 18,
+            tilt: 0,
             center: { lat: lati, lng: long },
             mapTypeId: 'satellite',
             styles: [
@@ -75,7 +78,10 @@ function centerPlot(selectedPlot) {
                     featureType: 'transit',
                     stylers: [{ visibility: "off" }]
                 }
-            ]
+            ],
+            rotateControl: false,
+            mapTypeControl: false,
+            streetViewControl: false
         };
 
         // Apply new settings to the map
