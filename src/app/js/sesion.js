@@ -9,7 +9,6 @@ function enviar(evento) {
             location.href = 'app.html';
         } else {
             document.getElementById("error_msg").style.visibility = "visible";
-            location.href = 'access_error.html';
             document.getElementById("error_msg").style.display = "block";
         }
     })
