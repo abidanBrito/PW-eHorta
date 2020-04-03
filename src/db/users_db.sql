@@ -70,9 +70,9 @@ CREATE TABLE `plots` (
 INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
 (1, 'Naranjos Paterna', -0.441465, 39.497875),
 (2, 'Manzanos Bétera', -0.470384, 39.593231),
-(3, 'Gavia #1', -14.019314, 28.494176),
-(4, 'Gavia #2', -14.019035, 28.493408),
-(5, 'Granja Norte', 0, -0.470384);;
+(3, 'Gavia de Isidro', -14.019314, 28.494176),
+(4, 'Gavia de Guzmán', -14.019035, 28.493408),
+(5, 'Granja Norte', 0, -0.470384);
 
 -- --------------------------------------------------------
 
