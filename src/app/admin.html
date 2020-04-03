@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    //<link rel="stylesheet" type="text/css" href="css/admin_style.css">
+    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">
+    
+    <title>Document</title>
+    <script src="js/restringir_acceso_admin.js"></script>
+</head>
+<body>
+<!-- Top bar (navigation menu) -->
+<header>
+    <!-- Corporative brand -->
+    <a id="logo" class="white-filter" href="../index.html">
+        <img src="img/logo_v2.svg" alt="LOGO">
+    </a>
+
+    <nav class="navbar">
+        <!-- Navigation menu -->
+        <ul class="navbar-links">
+            <li>
+                <a href="../index.html" id="navbar-contact">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Notificaciones</a>
+            </li>
+            <li>
+                <a href="#">Mi cuenta</a>
+            </li>
+            <li>
+                <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <!-- Mobile menu icon -->
+            <div class="menu-icon" id="menu-toggle">
+                <div class="line-top"></div>
+                <div class="line-mid"></div>
+                <div class="line-bot"></div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="pagina">
+
+<h2 id="inicio">Bienvenido Admin</h2>
+
+           
+<div id="tablas">
+       
+        <div id="tab_and_head">
+            <div id="div_h2">
+                <h2>CLIENTES: </h2>
+                <div id="div_h2buttons">
+                    <a id="deleteUsers" class='delete-button' href="javascript:showCheckboxAdminClients()" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
+
+                    <a href="#" style="display: none;" id="trashUsers"><img src="img/trash.svg" alt="Delete users" width='30' height='30'></a>
+                    <a class='edit-button' href='javascript:openUserForm()' id="NoImage" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' class='NoImage'/></a>
+
+                    <a class='add-button' href='javascript:openUseraddForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a></div>
+            </div>
+            <div id="tab" style="overflow-y: hidden;">
+               
+                <table>
+                    <tbody id="users">
+
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+        <select id="select-css-users" onchange="location = this.value;">
+
+                <option selected="selected">Seleccione usuario...</option>
+
+            </select>
+        <script src="js/users_list.js"></script>
+        <script>
+            // "text" es la id del objeto donde se muestran los datos
+            ViewUsersList.prepare("users", "select-css-users");
+            // Se inicializa el controlador
+            UsersController.init();
+
+        </script>
+       
+        <div id="tab_and_head">
+            <div id="div_h2">
+                <h2>PARCELAS: </h2>
+                <div id="div_h2buttons">
+                    
+                    <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img src='img/delete.png' width='30' height='30' id = "deletePlots"/></a>
+                    <a href="javascript:borrarVariosPlot()" style="display: none;" id="trashPlots"><img src="img/trash.svg" alt="Delete plots"></a>
+                    <a class='edit-button' href='javascript:openFieldForm()'id="NoImage"  title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' class='NoImage'/></a>
+
+                    <a class='add-button' href='javascript:openFieldaddForm()' title='AÑADIR' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a></div>
+            </div>
+
+
+            <div id="tab" style="overflow-y: hidden;">
+               
+                <table>
+                    <tbody id="fields">
+
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+        <select id="select-css-fields" onchange="location = this.value;">
+
+                <option selected="selected">Seleccione parcela...</option>
+
+            </select>
+        <script src="js/all_plots_list.js"></script>
+        <script>
+            // "text" es la id del objeto donde se muestran los datos
+            ViewAllPlotsList.prepare("fields", "select-css-fields");
+            // Se inicializa el controlador
+            AllPlotsController.init();
+        </script>
+        
+        <div class="form-popup" id="fieldForm" style="border-radius: 15px;margin-left: 10px;">
+            <form action="/action_page.php" class="form-container">
+                <div style="display: flex;   justify-content: flex-end;">
+
+                    <a href='javascript:closeFieldForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+
+                </div>
+                <label for="name"><b>Nombre</b></label>
+                <input type="text" placeholder="Nombre parcela" name="name">
+
+                <label for="coordenada-X"><b>Coordenada-X</b></label>
+                <input type="text" placeholder="Coordenada-X" name="coordenada-X">
+
+                <label for="coordenada-Y"><b>Coordenada-Y</b></label>
+                <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
+
+                <button type="submit" class="btn">Aplicar</button>
+                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+            </form>
+        </div>
+        <div class="form-popup" id="fieldAddForm" style="border-radius: 15px;margin-left: 10px;">
+            <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir(event)" id="formField">
+                <div style="display: flex;   justify-content: flex-end;">
+
+                    <a href='javascript:closeFieldaddForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+
+                </div>
+                
+                <label for="name"><b>Nombre</b></label>
+                <input type="text" name="name" placeholder="Nombre de la parcela" required>
+                
+                <input type="text" name="latitude" placeholder="Latitud" required>
+                
+                <input type="text" name="longitude" placeholder="Longitud" required>
+                
+                <button type="submit" class="btn">Crear parcela</button>
+                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+            </form>
+            <div id="error_msg">Vuelva a introducir los datos.</div>
+            <script src="js/add.js"></script>
+        </div>
+        <div class="form-popup" id="userForm" style="border-radius: 15px;margin-left: 10px;">
+            <form action="/action_page.php" class="form-container">
+                <div style="display: flex;   justify-content: flex-end;">
+
+                    <a href='javascript:closeUserForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+
+                </div>
+                
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="surname" placeholder="Apellido">
+                <input type="text" name="email" placeholder="Correo" required>
+                <input type="password" name="pass" placeholder="Contraseña" required>
+            
+                <button type="submit" class="btn">Modificar usuario</button>
+                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+            </form>
+        </div>
+        <div class="form-popup" id="useraddForm" style="border-radius: 15px;margin-left: 10px;">
+            <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir_usuario(event)" id="formUser">
+                <div style="display: flex;   justify-content: flex-end;">
+
+                    <a href='javascript:closeUseraddForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+
+                </div>  
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="text" name="surname" placeholder="Apellido">
+            <input type="text" name="email" placeholder="Correo" required>
+            <input type="password" name="pass" placeholder="Contraseña" required>
+            
+            <select id="rol" name="rolList">
+            <option value="1">Cliente</option>
+            <option value="3">Cliente-Admin</option>
+            <option value="4">Técnico</option>
+            </select>
+            
+            <button type="submit" class="btn">Crear usuario</button>
+                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+            </form>
+            <div id="error_msg">Vuelva a introducir los datos.</div>
+            <script src="js/add.js"></script>
+     </div>
+        
+        <script src="js/pop-manager.js"></script>
+        <script src="js/delete.js"></script>
+</div>
+</div>                                
+</body>
+</html>
