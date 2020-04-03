@@ -166,7 +166,8 @@ INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `roleId`) VAL
 (7, 'Juana', 'Ramírez', 'juanaramirez@gmail.com', 'juanaramirez', 1),
 (8, 'Manuela', 'Sánchez', 'manuelasanchez@gmail.com', 'manuelasanchez', 3),
 (9, 'meowth', '', 'gato@gmail.com', 'miau', 1),
-(10, 'Abidán', 'Brito', 'abidan', 'brito', 1);
+(10, 'Abidán', 'Brito', 'abidan', 'brito', 1),
+(11, 'Abidán', 'Brito', 'admin', 'admin', 2);
 
 -- --------------------------------------------------------
 
