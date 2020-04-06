@@ -1,6 +1,0 @@
-[
-{"id":"1","position":"1","datetime":"2020-03-22 10:39:41","salinity":"56","rain":"5","humidity":"68","luminosity":"72","temperature":"15"},
-{"id":"2","position":"1","datetime":"2020-03-23 11:39:42","salinity":"56","rain":"5","humidity":"66","luminosity":"87","temperature":"16"},
-{"id":"3","position":"1","datetime":"2020-03-24 12:39:42","salinity":"45","rain":"5","humidity":"44","luminosity":"88","temperature":"14"},
-{"id":"4","position":"1","datetime":"2020-03-25 13:39:42","salinity":"45","rain":"5","humidity":"44","luminosity":"88","temperature":"14"}
-]
