@@ -22,7 +22,7 @@ const navSlider = () => {
         navBar.classList.toggle('navbar-active');
 
         // Hide login icon
-        if (page != 'login.html' && page != 'app.html') {
+        if (page != 'login.html' && page != 'app.html' && page != 'admin.html') {
             loginIcon.classList.toggle('login-hide');
         }
 

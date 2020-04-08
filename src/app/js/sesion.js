@@ -12,7 +12,7 @@ function enviar(evento) {
         else{
             document.getElementById("error_msg").style.visibility = "visible";
         } 
-    }).then(function(jsonData) {
+    }).then(function(jsonData)  {
         
             if( jsonData[0] == "1" ){
                 location.href = 'app.html';

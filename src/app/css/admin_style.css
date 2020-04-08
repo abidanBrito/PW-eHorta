@@ -1,21 +1,28 @@
-        
-        #NoImage{
-        
-            visibility: hidden;
-        }
-
-        .nocheckbox{
+        #select-css-users,
+        #select-css-fields{
             display: none;
         }
-
-                #select-css-users,
-                #select-css-fields{
-                display: none;
-            }
     
         a{
             color: black;
             text-decoration: none;
+        }
+
+        option a:hover {
+            color: rgb(224, 169, 66);
+        }
+
+        table tr:hover .delete-button {}
+
+        table tr:hover .edit-button {
+            opacity: 0.7;
+            visibility: visible;
+            cursor: pointer;
+
+        }
+
+        .content_row:hover {
+            background: rgba(179, 147, 162, 0.8);
         }
 
         h2{
@@ -41,7 +48,7 @@
             justify-content: space-between;
             width: 70%;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 80px;
         }
         table{
             display: flex;
@@ -68,7 +75,6 @@
             border-style: solid;
             border-color: lightgrey;
             height: 40px;
-            
         }
         .buttons{
             display: flex;
@@ -87,19 +93,16 @@
         tr{
            width: 100%;
             display: flex;
-            justify-content: center;
             background-color: #f8f8f8;
             border: 1px solid #ddd;
-            padding: .35em;
+            justify-content: space-between;
+            padding-left: 150px;
+            padding-right: 50px;
         }
         .eliminar{
             margin-bottom: 2px;
         }
         @media(max-width: 740px) {
-    #NoImage{
-        visibility: visible;
-    }
-            
             /*-----------------SELECT CSS-----------------------*/
     #select-css-users,
     #select-css-fields{
@@ -127,9 +130,9 @@
         background-position: right .7em top 50%, 0 0;
         background-size: .65em auto, 100%;
     }
-            #tab_and_head{
-                margin-top: 200px;
-            }
+    #tab_and_head{
+        margin-top: 200px;
+    }
     #select-css-users::-ms-expand {
         display: none;
     }
@@ -172,18 +175,15 @@
         font-weight: normal;
     }
             
-            .pagina{
-                display: block;
-               
-                height: auto;
-               
-            }
-            #tablas{
-                display: block;
-               
-                height: auto;
-            }
-            table{
-            display: none;}
-        
-        }
+    .pagina{
+        display: block;       
+        height: auto;
+    }
+    #tablas{
+        display: block;   
+        height: auto;
+    }
+    table{
+        display: none;
+    }
+}
