@@ -20,7 +20,7 @@ function initMap() {
 
     // Center map around EPSG
     let map = new google.maps.Map(
-        document.getElementById('map'), {
+        document.getElementById('mapContact'), {
             zoom: 18,
             tilt: 0,
             center: epsg,
@@ -38,7 +38,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow();
 
     // Info window  on click
-    marker.addListener('click', function () {
+    marker.addListener('click', function() {
         openInfoWindow("<h4>UPV - Escuela Politécnica Superior de Gandia</h4> C/ Paranimf, 1, Edificio F <br> 46730 Grau de Gandia, Valencia, España", marker);
     });
 }

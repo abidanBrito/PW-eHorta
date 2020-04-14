@@ -7,13 +7,28 @@
 *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
 *   ---------------------------------------------------------------- */
 
+
 /* --------------------------- */
+
+
 /* -- INITIAL CONFIGURATION -- */
+
+
 /* --------------------------- */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+
+.paginaActual {
+    color: #dddddd;
+    margin-top: 7px;
+}
+
+.lineaActual {
+    margin-top: 5px;
 }
 
 html,
@@ -21,7 +36,6 @@ body {
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     background-color: #f8f8f8;
-
     /* -- SMOOTH SCROLL + SNAP -- */
     scrollbar-color: gray rgb(30, 30, 30) !important;
     scrollbar-width: thin !important;
@@ -29,9 +43,15 @@ body {
     scroll-snap-type: y mandatory;
 }
 
+
 /* ------------- */
+
+
 /* -- TOP BAR -- */
+
+
 /* ------------- */
+
 header {
     position: fixed;
     top: 0;
@@ -51,7 +71,9 @@ header {
     width: 2rem;
 }
 
+
 /* Navigation menu */
+
 .navbar {
     display: flex;
     overflow: hidden;
@@ -78,7 +100,9 @@ header {
     color: rgb(224, 169, 66);
 }
 
+
 /* Login & burger icons */
+
 .navbar-right {
     display: none;
     align-items: center;
@@ -100,9 +124,15 @@ header {
     transition: all 0.25s ease;
 }
 
+
 /* ------------ */
+
+
 /* -- FOOTER -- */
+
+
 /* ------------ */
+
 .footer {
     width: 100%;
     height: 45px;
@@ -117,9 +147,15 @@ header {
     filter: invert(76%) sepia(69%) saturate(4%) hue-rotate(35deg) brightness(101%) contrast(98%);
 }
 
+
 /* --------------------- */
+
+
 /* -- BUTTON TEMPLATE -- */
+
+
 /* --------------------- */
+
 .button {
     text-transform: uppercase;
     text-align: center;
@@ -134,17 +170,24 @@ header {
     color: #121212;
 }
 
+
 /* ------------------ */
+
+
 /* -- MEDIA QUERYS -- */
+
+
 /* ------------------ */
+
+
 /* Ground truth for testing -> Samsung Galaxy S9 */
+
 @media screen and (max-width: 740px) {
     body {
         min-height: 550px;
         overflow-x: hidden;
         /* Hide scrollbars */
     }
-
     .navbar-links {
         position: absolute;
         right: 0px;
@@ -157,29 +200,26 @@ header {
         background-color: #664b58;
         transform: translateX(100%);
     }
-
     .navbar-links li {
         opacity: 0;
     }
-
     .navbar-links li a {
         padding-left: 0px;
         margin: 1.5rem;
-
     }
-
     .navbar-right {
         display: flex;
         margin: 0px;
         padding: 0px;
     }
-
     #login-icon {
         display: block;
     }
 }
 
+
 /* Control classes */
+
 .navbar-active {
     z-index: 1;
     transform: translateX(0%);
@@ -191,20 +231,23 @@ header {
     opacity: 0;
 }
 
+
 /* Menu item fade-in animation */
+
 @keyframes navbarLinkFade {
     from {
         opacity: 0;
         transform: translateX(50px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
+
 /* Burger transformation animation */
+
 .menu-toggle .line-top {
     transform: rotate(-45deg) translate(-5px, 5px);
 }

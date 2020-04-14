@@ -1,4 +1,4 @@
-body {
+.bodyLogin {
     margin: 0;
     height: 100%;
     width: 100%;
@@ -8,24 +8,23 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
 /* Mobile version */
+
 @media (max-width: 48rem) {
-    body {}
+    .bodyLogin {}
 }
 
+
 /* Desktop version */
+
 @media (min-width: 48rem) {
-    body {
+    .bodyLogin {
         background-image: url(../img/flores_recta.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-attachment: fixed;
     }
-}
-
-button {
-    border: none;
-    cursor: pointer;
 }
 
 .home {
@@ -57,12 +56,12 @@ button {
     text-align: center;
 }
 
-h1 {
+.h1Login {
     font-size: 35px;
     margin: 15px;
 }
 
-input {
+.inputLogin {
     width: 278px;
     height: 43px;
     font-size: 25px;
@@ -74,11 +73,11 @@ input {
     background-color: transparent;
 }
 
-input:focus {
+.inputLogin:focus {
     border-color: mediumpurple;
 }
 
-input:error {
+.inputLogin:error {
     border-color: red;
 }
 
@@ -111,9 +110,11 @@ input:error {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
 }
 
-.contacto {
+.contactUs {
     color: orange;
     text-decoration: none;
 }

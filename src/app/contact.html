@@ -16,9 +16,11 @@
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!--<link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/contact_style.css">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">-->
+
+    <link rel="stylesheet" type="text/css" href="css/general.css">
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta | Contacto</title>
@@ -36,13 +38,16 @@
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
+                        <a href="../index.html" id="navbar-contact">Inicio</a>
+                    </li>
+                    <li>
                         <a href="about.html">Nosotros</a>
                     </li>
                     <li>
                         <a href="faqs.html">FAQs</a>
                     </li>
                     <li>
-                        <a href="../index.html" id="navbar-contact">Inicio</a>
+                        <a class="paginaActual" href="#">Contacto<hr size="2" class="lineaActual"></a>
                     </li>
                     <li>
                         <a href="login.html">Iniciar sesión</a>
@@ -63,8 +68,8 @@
             </nav>
         </header>
 
-        <h1>CONTACTO</h1>
-        <main>
+        <h1 class="h1Contact">CONTACTO</h1>
+        <main class="mainContact">
             <aside class="contact-details">
                 <div id="tlf">
                     <img src="img/contact/telephone.svg" alt="Tlf icon">
@@ -82,11 +87,11 @@
                 </div>
                 <p class="hide">Haznos llegar tus comentarios, dudas y sugerencias.</p>
             </aside>
-            <div id="map"></div>
+            <div id="mapContact"></div>
         </main>
-        
+
         <!-- Footer -->
-        <footer class="footer" role="contentinfo">
+        <footer class="footerContact" role="contentinfo">
             <!-- Copyright -->
             <p id="copy">&copy; 2020 Copyright e-Horta Co.</p>
         </footer>

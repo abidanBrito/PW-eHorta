@@ -28,7 +28,7 @@ let ViewUsersList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
 
-            this.table.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empresa">' + "<input type='checkbox' name='checkUsers' style='margin:5px;' value='" + `${user.id}` + "' /><a class='links_usuarios' 'id='user_" + `${user.id}` + "'>" + `${user.name}` + '</td><td></a>' + "<a class='edit-button' href='javascript:openUserForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30'/></a></td></tr>"
+            this.table.innerHTML += "<tr class='content_row admintr'>" + '<td  data-label="Empresa">' + "<input type='checkbox' name='checkUsers' style='margin:5px;' value='" + `${user.id}` + "' /><a class='links_usuarios' 'id='user_" + `${user.id}` + "'>" + `${user.name}` + '</td><td></a>' + "<a class='edit-button' href='javascript:openUserForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30'/></a></td></tr>"
 
             this.selector.innerHTML += "<option value=" + '"' + `${user.id}` + '"' + ">" + `${user.name}` + "</option>";
 

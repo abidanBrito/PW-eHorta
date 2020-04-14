@@ -9,11 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">
-    <link rel="stylesheet" type="text/css" href="css/app_style.css">
-    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">
-    <link rel="stylesheet" type="text/css" href="css/table_style.css">
-
+    <!--<link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <link rel="stylesheet" type="text/css" href="un/css/app_style.css">
+    <link rel="stylesheet" type="text/css" href="un/css/popup_Style.css">
+    <link rel="stylesheet" type="text/css" href="un/css/table_style.css">-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/general.css">
 
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
@@ -43,6 +44,9 @@
                     <a href="#">Notificaciones</a>
                 </li>
                 <li>
+                    <a href="faqs.html" id="navbar-contact">FAQs</a>
+                </li>
+                <li>
                     <a href="#">Mi cuenta</a>
                 </li>
                 <li>
@@ -61,15 +65,15 @@
     </header>
 
     <div id="map_tabla">
-        <div id="tab_and_head">
-            <div id="div_h2">
+        <div id="tab_and_head_user">
+            <div id="div_h2_user">
                 <h2>PARCELAS</h2>
-                <div id="div_h2buttons">
+                <div id="div_h2buttons_user">
                     <a class='edit-button' href='javascript:openForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
 
                     <a class='delete-button' onclick="showCheckbox()" id="delete" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
-                    <button onclick="borrarVarios() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></button>
-                    
+                    <a href="javascript:borrarVariosPlotAppVersion() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></a>
+
                     <button class='add-button' onclick='javascript:openForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
                     </button>
                 </div>
@@ -103,7 +107,7 @@
             <!-- Acaba POP UP  -->
 
             <div id="tab">
-                <table>
+                <table class="userTable">
 
                     <thead>
                         <tr>
@@ -124,7 +128,6 @@
             ViewPlotsList.prepare("fields", "select-css");
             // Se inicializa el controlador
             PlotsController.init();
-
         </script>
 
 

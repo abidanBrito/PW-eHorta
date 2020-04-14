@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/admin_style.css">
     <link rel="stylesheet" type="text/css" href="css/admin_table_style.css">
-    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">
+    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">-->
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/general.css">
+
 
     <title>Document</title>
     <script src="js/restringir_acceso_admin.js"></script>
@@ -34,6 +37,9 @@
                     <a href="#">Notificaciones</a>
                 </li>
                 <li>
+                    <a href="faqs.html" id="navbar-contact">FAQs</a>
+                </li>
+                <li>
                     <a href="#">Mi cuenta</a>
                 </li>
                 <li>
@@ -58,21 +64,21 @@
 
         <div id="tablas">
 
-            <div id="tab_and_head">
-                <div id="div_h2">
+            <div id="tab_and_head_admin">
+                <div id="div_h2Admin">
                     <h2>CLIENTES: </h2>
-                    <div id="div_h2buttons">
-                        <a id="deleteUsers" class='delete-button' href="javascript:showCheckboxAdminClients()" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
+                    <div id="div_h2AdminButtons">
+                        <a id="deleteUsers" class='delete-button' href="javascript:showCheckboxAdminClients()" title='Eliminar' margin='50px'><img class="imgAdmin" src='img/delete.png' width='30' height='30' /></a>
 
-                        <a href="javascript:borrarVariosUser()" style="display: none;" id="trashUsers"><img src="img/trash.svg" alt="Delete users" width='30' height='30'></a>
-                        <a class='edit-button' href='javascript:openUserForm()' id="NoImage" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
+                        <a href="javascript:borrarVariosUser()" style="display: none;" id="trashUsers"><img class="imgAdmin" src="img/trash.svg" alt="Delete users" width='30' height='30'></a>
+                        <a class='edit-button' href='javascript:openUserForm()' id="NoImage" title='Editar' margin='50px'><img class="imgAdmin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
 
-                        <a class='add-button' href='javascript:openUseraddForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a>
+                        <a class='add-button' href='javascript:openUseraddForm()' title='Añadir' margin='50px'><img class="imgAdmin" src='img/add.PNG' width='30' height='30' /></a>
                     </div>
                 </div>
-                <div id="tab" style="overflow-y: hidden;">
+                <div id="tabAdmin" style="overflow-y: hidden;">
 
-                    <table>
+                    <table class="adminTable">
                         <tbody id="users">
 
                         </tbody>
@@ -93,23 +99,23 @@
                 UsersController.init();
             </script>
 
-            <div id="tab_and_head">
-                <div id="div_h2">
+            <div id="tab_and_head_admin">
+                <div id="div_h2Admin">
                     <h2>PARCELAS: </h2>
-                    <div id="div_h2buttons">
+                    <div id="div_h2AdminButtons">
 
-                        <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img src='img/delete.png' width='30' height='30' id="deletePlots" /></a>
-                        <a href="javascript:borrarVariosPlot()" style="display: none;" id="trashPlots"><img src="img/trash.svg" alt="Delete plots"></a>
-                        <a class='edit-button' href='javascript:openFieldForm()' id="NoImage" title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
+                        <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img class="imgAdmin" src='img/delete.png' width='30' height='30' id="deletePlots" /></a>
+                        <a href="javascript:borrarVariosPlot()" style="display: none;" id="trashPlots"><img class="imgAdmin" src="img/trash.svg" alt="Delete plots"></a>
+                        <a class='edit-button' href='javascript:openFieldForm()' id="NoImage" title='Editar' margin='50px'><img class="imgAdmin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
 
-                        <a class='add-button' href='javascript:openFieldaddForm()' title='AÑADIR' margin='50px'><img src='img/add.PNG' width='30' height='30' /></a>
+                        <a class='add-button' href='javascript:openFieldaddForm()' title='AÑADIR' margin='50px'><img class="imgAdmin" src='img/add.PNG' width='30' height='30' /></a>
                     </div>
                 </div>
 
 
-                <div id="tab" style="overflow-y: hidden;">
+                <div id="tabAdmin" style="overflow-y: hidden;">
 
-                    <table>
+                    <table class="adminTable">
                         <tbody id="fields">
 
                         </tbody>

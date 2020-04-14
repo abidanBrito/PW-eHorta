@@ -43,7 +43,7 @@
             document.getElementById("myForm").style.display = "flex";
             document.getElementById("myForm").style.flex.flow = "column";
             document.getElementById("tab").style.display = "none";
-            document.getElementById("div_h2").style.display = "none";
+            document.getElementById("div_h2_user").style.display = "none";
 
 
 
@@ -52,7 +52,7 @@
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
             document.getElementById("tab").style.display = "flex";
-            document.getElementById("div_h2").style.display = "flex";
+            document.getElementById("div_h2_user").style.display = "flex";
             location.reload();
 
 
