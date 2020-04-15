@@ -14,7 +14,7 @@ let AllPlotsModel = {
         })
     }
 };
-
+/*
 let ViewAllPlotsList = {
     text: {},
     selector: {},
@@ -32,6 +32,28 @@ let ViewAllPlotsList = {
 
             this.text.innerHTML += "<tr class='content_row admintr'><td data-label='Empresa'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='links_usuarios' 'id='user_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' class='NoImage'/></a></td></tr>"
 
+            this.selector.innerHTML += "<option value=" + '"' + `${plot.id}` + '"' + ">" + `${plot.name}` + "</option>";
+        })
+    }
+};
+*/
+let ViewAllPlotsList = {
+    text: {},
+    selector: {},
+    prepare: function(tableId, selectId) {
+        this.text = document.getElementById(tableId);
+        if(selectId != ""){
+            this.selector = document.getElementById(selectId);
+        } 
+    },
+    represent: function(data) {
+        // Esto recorre cada campo recibido y hace la misma accion para cada uno
+        data.forEach((plot) => {
+            // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
+            // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
+            
+            this.text.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empresa">' + "<input type='checkbox' style='margin:5px; class='nocheckbox' name='checkPlots' value='" + `${plot.id}` + "'><a class='links_usuarios' 'id='user_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "</td></tr>"
+            
             this.selector.innerHTML += "<option value=" + '"' + `${plot.id}` + '"' + ">" + `${plot.name}` + "</option>";
         })
     }
