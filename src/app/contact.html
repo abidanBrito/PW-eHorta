@@ -1,33 +1,29 @@
 <!-- ----------------------------------------------------------------
 *    AUTHOR:         Abidan Brito Clavijo
-*    FILE:           contact.html    
-*    DATE:           13/03/2020
+*    FILE:           contact.html
+*    DATE:           16/04/2020
 *    STATE:          DONE
-*    ----------------------------------------------------------------
-*    NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
 *    ---------------------------------------------------------------- -->
-
+ 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+    <!-- Default character set -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Stylesheet, favicon and font -->
-    <!--<link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/contact_style.css">
-    <link rel="stylesheet" type="text/css" href="css/common_style.css">-->
-
-    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <!-- Stylesheet and favicon -->
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>e-Horta | Contacto</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-contact">
         <!-- Top bar -->
         <header>
             <!-- Corporative brand -->
@@ -38,7 +34,7 @@
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
-                        <a href="../index.html" id="navbar-contact">Inicio</a>
+                        <a href="../index.html">Inicio</a>
                     </li>
                     <li>
                         <a href="about.html">Nosotros</a>
@@ -47,7 +43,8 @@
                         <a href="faqs.html">FAQs</a>
                     </li>
                     <li>
-                        <a class="paginaActual" href="#">Contacto<hr size="2" class="lineaActual"></a>
+                        <a href="#">Contacto</a>
+                        <div id="current-page"></div>
                     </li>
                     <li>
                         <a href="login.html">Iniciar sesión</a>
@@ -68,9 +65,10 @@
             </nav>
         </header>
 
-        <h1 class="h1Contact">CONTACTO</h1>
-        <main class="mainContact">
+        <h1 class="h1-contact">CONTACTO</h1>
+        <main class="main-contact">
             <aside class="contact-details">
+                <!-- Tlf number link -->
                 <div id="tlf">
                     <img src="img/contact/telephone.svg" alt="Tlf icon">
                     <a href="tel:633940482">
@@ -79,6 +77,7 @@
                 </div>
                 <p class="hide">Atención personalizada de lunes a viernes de 8:00 a 16:00 h.</p>
 
+                <!-- Email address link -->
                 <div id="email">
                     <img src="img/contact/email.svg" alt="Email icon">
                     <a href="mailto:gti.ehorta@gmail.com">
@@ -87,14 +86,9 @@
                 </div>
                 <p class="hide">Haznos llegar tus comentarios, dudas y sugerencias.</p>
             </aside>
-            <div id="mapContact"></div>
+            <!-- Map container (Google Maps) -->
+            <div id="map-contact"></div>
         </main>
-
-        <!-- Footer -->
-        <footer class="footerContact" role="contentinfo">
-            <!-- Copyright -->
-            <p id="copy">&copy; 2020 Copyright e-Horta Co.</p>
-        </footer>
     </div>
 
     <!-- Scripts -->
