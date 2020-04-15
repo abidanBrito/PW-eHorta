@@ -1,16 +1,16 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:         Abidan Brito Clavijo
- *   FILE:           map_contact.js
- *   DATE:           16/03/2020
- *   STATE:          DONE
- *   ----------------------------------------------------------------
- *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
- *   ---------------------------------------------------------------- */
+*   AUTHOR:         Abidan Brito Clavijo
+*   FILE:           map_contact.js
+*   DATE:           16/03/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */
 
 let map;
 let infoWindow;
 
-// This function initializes and adds the map
+/**
+ * This function initializes and adds the map
+ */
 function initMap() {
     // EPSG location
     let epsg = {
@@ -35,6 +35,7 @@ function initMap() {
         map: map
     });
 
+    // New information window (pop-up)
     infoWindow = new google.maps.InfoWindow();
 
     // Info window  on click
@@ -43,7 +44,12 @@ function initMap() {
     });
 }
 
-// This function creates an opens an info window
+/**
+ * This function creates and opens an info window
+ * 
+ * @param content 
+ * @param position 
+ */
 function openInfoWindow(content, position) {
     infoWindow.setContent(content);
     infoWindow.open(map, position);
