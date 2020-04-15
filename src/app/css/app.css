@@ -1,12 +1,3 @@
-/* ----------------------------------------------------------------
-*   AUTHOR:         Daniel Burruchaga Sola (original author)
-*                   Abidan Brito Clavijo (fixes)
-*   FILE:           app_style.css    
-*   DATE:           03/04/2020
-*   STATE:          WIP
-*   ---------------------------------------------------------------- */
-
-
 /* ------------------ */
 
 
@@ -27,7 +18,7 @@
 #app {
     flex-direction: row;
     margin-left: 4em;
-    margin-top: 2.25em;
+    margin-top: 1.5em;
     margin-right: 4em;
 }
 
@@ -103,7 +94,6 @@ option a:hover {
 }
 
 #positionNumber {
-    margin: 20px;
     display: flex;
     flex-direction: row;
 }
@@ -171,7 +161,6 @@ option a:hover {
     display: flex;
     flex-direction: row;
     align-self: center;
-    justify-content: center;
 }
 
 #div_h2_user h2 {
@@ -571,53 +560,102 @@ h2 {
         margin-top: 20px;
         margin-bottom: 10px;
     }
+
     #map {
+        display: none;
         width: 100%;
-        max-width: 600px;
-        height: 13em;
-        border-radius: 10px;
-        margin-top: 40px;
+        height: 550px;
+        margin-top: 10px;
     }
+
     #app {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-left: 2em;
+        margin-right: 2em;
     }
+
     #dates {
         margin-bottom: 5px;
-        width: 100%;
         align-items: center;
         display: flex;
-        justify-content: center;
+        flex-direction: row;
     }
+
     #dates input {
-        font-size: 14px;
-        width: 120px;
-        height: 20px;
+        font-size: 12px;
+        width: 100px;
+        height: 30px;
         text-align: center;
         border: 0;
         border-bottom: 3px solid grey;
         background-color: transparent;
     }
+
     #dates input:focus {
-        border-color: mediumpurple;
+        border-color: #664B58;
     }
+    
+    #dates #open_map {
+        width: 60px;
+        height: 30px;
+        margin-left: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+    
+    #dates #open_map img {
+        width: 42px;
+        height: 33px;
+    }
+
     .bar {
         width: 3px;
         margin: 10px;
         height: 20px;
         background-color: black;
     }
+    
+    
     #positionNumber {
-        margin-top: 20px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 13px;
         display: flex;
         flex-direction: row;
+        color: #333333;
+        
     }
+    
     .chart-container {
         width: 100%;
-        height: 600px;
+        height: 430px;
     }
+    
+    /*botones medidas*/
+    
+    #measurements {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .measure_btn {
+        width: 41px;
+        height: 41px;
+        border-radius: 100%;
+        border: 1px solid #757575;
+    }
+    
+    .measure_btn img {
+        width: 33px;
+        height: 33px;
+    }
+    
     /*general*/
+    
     #map_tabla {
         flex-direction: column;
         margin-left: 2em;

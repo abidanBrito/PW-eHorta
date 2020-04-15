@@ -2,6 +2,12 @@
 fetch('../api/v1.0/measurements').then(function (r) {
     return r.json();
 }).then(function (j) {
+    // Open the graph and close the map
+    let graph = document.getElementById("app");
+    graph.style.display = "block";
+    let map = document.getElementById("map");
+    map.style.display = "none";
+    
     // Get selected position
     let probe = document.getElementById('selectedProbe');
     let id = parseInt(probe.textContent);
@@ -166,11 +172,15 @@ var opciones = {
         yAxes: [{
             //los datos se apilan y se suman entre ellos
             stacked: false
+        }],
+        xAxes: [{
+                ticks: {
+                    display: false //this will remove only the label
+                }
         }]
     },
     legend: {
-        position: 'bottom',
-        align: 'center',
+        display: false
     },
     title: {
         display: false
