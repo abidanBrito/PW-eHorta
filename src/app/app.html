@@ -9,12 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Stylesheet, favicon and font -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
-    <!--<link rel="stylesheet" type="text/css" href="css/common_style.css">
-    <link rel="stylesheet" type="text/css" href="un/css/app_style.css">
-    <link rel="stylesheet" type="text/css" href="un/css/popup_Style.css">
-    <link rel="stylesheet" type="text/css" href="un/css/table_style.css">-->
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/app-style.css">
 
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
@@ -64,19 +60,12 @@
         </nav>
     </header>
 
-    <div id="map_tabla">
-        <div id="tab_and_head_user">
-            <div id="div_h2_user">
-                <h2>PARCELAS</h2>
-                <div id="div_h2buttons_user">
-                    <a class='edit-button' href='javascript:openForm()' title='Editar' margin='50px'><img src='img/edit.PNG' width='30' height='30' /></a>
-
-                    <a class='delete-button' onclick="showCheckbox()" id="delete" title='Eliminar' margin='50px'><img src='img/delete.png' width='30' height='30' /></a>
-                    <a href="javascript:borrarVariosPlotAppVersion() " id="trash" name="delete" style="display: none;"><img src="img/trash.svg" alt="delete" width='30' height='30'></a>
-
-                    <button class='add-button' onclick='javascript:openForm()' title='Añadir' margin='50px'><img src='img/add.PNG' width='30' height='30'>
-                    </button>
-                </div>
+    <div id="map-table">
+        <div id="tab-head-user">
+            <div id="username">
+               <!-- user será el nombre del usuario de la sesion -->
+                <h2>Bienvenido [user]</h2>
+                
             </div>
             <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
 
@@ -107,7 +96,7 @@
             <!-- Acaba POP UP  -->
 
             <div id="tab">
-                <table class="userTable">
+                <table class="user-table">
 
                     <thead>
                         <tr>
@@ -143,28 +132,44 @@
     <!------------------------>
     <!------------------------>
     <div id="app">
+       <!-- Selectores de fechas -->
         <section id="dates">
             <input id='startDate' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <div class="bar"></div>
             <input id='endDate' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+           
+           <!-- Boton para abrir el mapa -->
+            <button id="open_map" onclick="openMap()"><img src="img/mapa.svg" alt="icono mapa"></button>
+            
         </section>
         <script src="js/date-selector.js"></script>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic-data.js-->
-        <div id="positionNumber">
+        <div id="position-number">
             <span>Número de la posición: </span>
             <span id="selectedProbe"></span>
         </div>
 
-
+        <!-- Gráfica -->
         <div class="chart-container">
             <canvas id="chart"></canvas>
         </div>
+        
+        <!-- Botones -->
+        <section id="measurements">
+            <button class="measure_btn"><img src="img/datalogger/humidity.svg" alt="botón humedad"></button>
+            <button class="measure_btn"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></button>
+            <button class="measure_btn"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></button>
+            <button class="measure_btn"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></button>
+            <button class="measure_btn"><img src="img/datalogger/salt.svg" alt="botón salinidad"></button>
+        </section>
+        
     </div>
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
     <script src="js/pop-manager.js"></script>
     <script src="js/delete.js"></script>
     <script src="js/checkbox_list.js"></script>
+    <script src="js/map_open.js"></script>
 
 
 </body>
