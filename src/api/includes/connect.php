@@ -1,4 +1,11 @@
 <?php
+/* ----------------------------------------------------------------
+*   AUTHOR:         Abidan Brito
+*   FILE:           connect.php
+*   DATE:           16/04/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */ 
+
 // Database access credentials
 $serverName = "localhost";
 $userName = "abricla_admin";

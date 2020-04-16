@@ -1,4 +1,11 @@
 <?php
+/* ----------------------------------------------------------------
+*   AUTHOR:         Daniel Burruchaga, Abidan Brito
+*   FILE:           index.php
+*   DATE:           16/04/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */ 
+
 // Connect to database
 require_once '../includes/connect.php';
 

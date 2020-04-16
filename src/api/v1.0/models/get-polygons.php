@@ -1,4 +1,11 @@
 <?php
+/* ----------------------------------------------------------------
+*   AUTHOR:         Abidan Brito
+*   FILE:           get-polygons.php
+*   DATE:           16/04/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */ 
+
 // Resume session
 require_once 'access.php';
 
