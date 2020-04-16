@@ -34,7 +34,7 @@ option a:hover {
     color: rgb(224, 169, 66);
 }
 
-#map_tabla {
+#map-table {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -50,12 +50,6 @@ option a:hover {
     border-radius: 10px;
     margin-right: 2em;
 }
-
-#graphic_dates {
-    display: flex;
-    border: solid black;
-}
-
 
 /* ------------------ */
 
@@ -93,7 +87,7 @@ option a:hover {
     background-color: black;
 }
 
-#positionNumber {
+#position-number {
     display: flex;
     flex-direction: row;
 }
@@ -152,38 +146,20 @@ option a:hover {
 
 /**/
 
-.tab_and_head_user {
+.tab-head-user {
     display: flex;
     flex-direction: column
 }
 
-#div_h2_user {
+#username {
     display: flex;
     flex-direction: row;
     align-self: center;
 }
 
-#div_h2_user h2 {
+#username h2 {
     display: flex;
     align-self: flex-start;
-}
-
-#div_h2_user a {
-    display: flex;
-    align-items: flex-end;
-}
-
-#div_h2buttons_user {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    align-items: flex-end;
-}
-
-#div_h2buttons_user button {
-    background-color: transparent;
-    border: none;
-    margin-left: 10px;
 }
 
 #tab {
@@ -198,7 +174,7 @@ option a:hover {
     overflow-x: hidden;
 }
 
-.userTable {
+.user-table {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
     margin: 5px;
@@ -206,34 +182,34 @@ option a:hover {
     height: auto;
 }
 
-.userTable tr {
+.user-table tr {
     background-color: #f8f8f8;
     padding: .35em;
 }
 
-.userTable th,
-.userTable td {
+.user-table th,
+.user-table td {
     padding: .625em;
     border: none;
 }
 
-.userTable input {
+.user-table input {
     visibility: hidden;
 }
 
-.userTable tr:hover .delete-button {}
+.user-table tr:hover .delete-button {}
 
-.userTable tr:hover .edit-button {
+.user-table tr:hover .edit-button {
     opacity: 0.7;
     visibility: visible;
     cursor: pointer;
 }
 
-.content_row:hover {
+.content-row:hover {
     background: rgba(179, 147, 162, 0.8);
 }
 
-.userTable th {
+.user-table th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -266,7 +242,7 @@ td a {
     display: none;
 }
 
-a .imgAdmin {
+a .img-admin {
     color: black;
     text-decoration: none;
 }
@@ -275,15 +251,15 @@ option a:hover {
     color: rgb(224, 169, 66);
 }
 
-.adminTable tr:hover .delete-button {}
+.admin-table tr:hover .delete-button {}
 
-.adminTable tr:hover .edit-button {
+.admin-table tr:hover .edit-button {
     opacity: 0.7;
     visibility: visible;
     cursor: pointer;
 }
 
-.content_row:hover {
+.content-row:hover {
     background: rgba(179, 147, 162, 0.8);
 }
 
@@ -292,22 +268,22 @@ h2 {
     text-align: center;
 }
 
-#div_h2Admin {
+#div-h2-admin {
     display: flex;
     justify-content: space-between;
 }
 
-#inicio {
+#start {
     display: flex;
     justify-content: center;
     font-size: 50px;
 }
 
-.pagina {
+.page {
     margin-top: 80px;
 }
 
-#tablas {
+#tables {
     display: flex;
     justify-content: space-between;
     width: 70%;
@@ -315,7 +291,7 @@ h2 {
     margin-top: 80px;
 }
 
-.adminTable {
+.admin-table {
     display: flex;
     flex-direction: row;
     background-color: whitesmoke;
@@ -348,11 +324,11 @@ h2 {
     width: 25%;
 }
 
-.imgAdmin {
+.img-admin {
     width: 30px;
 }
 
-.adminTable tbody {
+.admin-table tbody {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -372,35 +348,35 @@ h2 {
 
 /* ------------------ */
 
-.tab_and_head_admin {
+.tab-head-admin {
     display: flex;
     flex-direction: column
 }
 
-#div_h2Admin h2 {
+#div-h2-admin h2 {
     display: flex;
     align-self: flex-start;
 }
 
-#div_h2Admin a {
+#div-h2-admin a {
     display: flex;
     align-items: flex-end;
 }
 
-#div_h2AdminButtons {
+#div-h2-admin-buttons {
     display: flex;
     flex-direction: row;
     align-content: space-between;
     align-items: flex-end;
 }
 
-#div_h2AdminButtons button {
+#div-h2-admin-buttons button {
     background-color: transparent;
     border: none;
     margin-left: 10px;
 }
 
-#tabAdmin {
+#tab-admin {
     overflow-y: scroll;
     min-width: 200px;
     display: flex;
@@ -410,7 +386,7 @@ h2 {
     overflow-x: hidden;
 }
 
-.adminTable {
+.admin-table {
     border: 1px solid #ccc;
     padding: 0;
     margin-top: 5px;
@@ -418,7 +394,7 @@ h2 {
     height: auto;
 }
 
-.adminTable tr {
+.admin-table tr {
     background-color: #f8f8f8;
     padding: .35em;
 }
@@ -433,29 +409,29 @@ h2 {
     padding-right: 50px;
 }
 
-.adminTable th,
-.adminTable td {
+.admin-table th,
+.admin-table td {
     padding: .625em;
     border: none;
 }
 
-.adminTable input {
+.admin-table input {
     visibility: hidden;
 }
 
-.adminTable tr:hover .delete-button {}
+.admin-table tr:hover .delete-button {}
 
-.adminTable tr:hover .edit-button {
+.admin-table tr:hover .edit-button {
     opacity: 0.7;
     visibility: visible;
     cursor: pointer;
 }
 
-.content_row:hover {
+.content-row:hover {
     background: rgba(179, 147, 162, 0.8);
 }
 
-.adminTable th {
+.admin-table th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -597,7 +573,7 @@ h2 {
         border-color: #664B58;
     }
     
-    #dates #open_map {
+    #dates #open-map {
         width: 60px;
         height: 30px;
         margin-left: auto;
@@ -606,7 +582,7 @@ h2 {
         background-color: transparent;
     }
     
-    #dates #open_map img {
+    #dates #open-map img {
         width: 42px;
         height: 33px;
     }
@@ -642,21 +618,21 @@ h2 {
         justify-content: space-between;
     }
     
-    .measure_btn {
+    .measure-btn {
         width: 41px;
         height: 41px;
         border-radius: 100%;
         border: 1px solid #757575;
     }
     
-    .measure_btn img {
+    .measure-btn img {
         width: 33px;
         height: 33px;
     }
     
     /*general*/
     
-    #map_tabla {
+    #map-table {
         flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
@@ -777,7 +753,7 @@ h2 {
         background-position: right .7em top 50%, 0 0;
         background-size: .65em auto, 100%;
     }
-    #tab_and_head {
+    #tab-head {
         margin-top: 200px;
     }
     #select-css-users::-ms-expand {
@@ -835,21 +811,21 @@ h2 {
     #tab {
         display: none;
     }
-    #div_h2 {
+    #div-h2 {
         display: flex;
         flex-direction: column;
     }
-    #div_h2 h2 {
+    #div-h2 h2 {
         align-self: center;
     }
-    #div_h2buttons {
+    #div-h2-buttons {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5px;
     }
     table {
-        display: none !important;
+        display: none;
         border: 0;
         margin-left: 0.5em;
         margin-right: 0.5em;
@@ -869,26 +845,5 @@ h2 {
         visibility: visible;
         cursor: pointer;
     }
-    #tab {
-        display: none;
-    }
-    #div_h2 {
-        display: flex;
-        flex-direction: column;
-    }
-    #div_h2 h2 {
-        align-self: center;
-    }
-    #div_h2buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 5px;
-    }
-    .userTable {
-        display: none !important;
-        border: 0;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-    }
+    
 }
