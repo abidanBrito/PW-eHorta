@@ -57,17 +57,17 @@
         </nav>
     </header>
 
-    <div class="pagina">
+    <div class="page">
 
-        <h2 id="inicio">Bienvenido Admin</h2>
+        <h2 id="start">Bienvenido Admin</h2>
 
 
-        <div id="tablas">
+        <div id="tables">
 
-            <div id="tab_and_head_admin">
-                <div id="div_h2Admin">
+            <div id="tab-head-admin">
+                <div id="div-h2-admin">
                     <h2>CLIENTES: </h2>
-                    <div id="div_h2AdminButtons">
+                    <div id="div-h2-adminButtons">
                         <a id="deleteUsers" class='delete-button' href="javascript:showCheckboxAdminClients()" title='Eliminar' margin='50px'><img class="imgAdmin" src='img/delete.png' width='30' height='30' /></a>
 
                         <a href="javascript:borrarVariosUser()" style="display: none;" id="trashUsers"><img class="imgAdmin" src="img/trash.svg" alt="Delete users" width='30' height='30'></a>
@@ -100,22 +100,22 @@
             </script>
 
             <div id="tab_and_head_admin">
-                <div id="div_h2Admin">
+                <div id="div-h2-admin">
                     <h2>PARCELAS: </h2>
-                    <div id="div_h2AdminButtons">
+                    <div id="div-h2-admin-buttons">
 
-                        <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img class="imgAdmin" src='img/delete.png' width='30' height='30' id="deletePlots" /></a>
-                        <a href="javascript:borrarVariosPlot()" style="display: none;" id="trashPlots"><img class="imgAdmin" src="img/trash.svg" alt="Delete plots"></a>
-                        <a class='edit-button' href='javascript:openFieldForm()' id="NoImage" title='Editar' margin='50px'><img class="imgAdmin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
+                        <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img class="img-admin" src='img/delete.png' width='30' height='30' id="deletePlots" /></a>
+                        <a href="javascript:borrarVariosPlot()" style="display: none;" id="trash-plots"><img class="imgAdmin" src="img/trash.svg" alt="Delete plots"></a>
+                        <a class='edit-button' href='javascript:openFieldForm()' id="NoImage" title='Editar' margin='50px'><img class="img-admin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
 
                         <a class='add-button' href='javascript:openFieldaddForm()' title='AÑADIR' margin='50px'><img class="imgAdmin" src='img/add.PNG' width='30' height='30' /></a>
                     </div>
                 </div>
 
 
-                <div id="tabAdmin" style="overflow-y: hidden;">
+                <div id="tab-admin" style="overflow-y: hidden;">
 
-                    <table class="adminTable">
+                    <table class="admin-table">
                         <tbody id="fields">
 
                         </tbody>
@@ -156,7 +156,7 @@
                     <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
                 </form>
             </div>
-            <div class="form-popup" id="fieldAddForm" style="border-radius: 15px;margin-left: 10px;">
+            <div class="form-popup" id="field-add-form" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir(event)" id="formField">
                     <div style="display: flex;   justify-content: flex-end;">
 
@@ -174,10 +174,10 @@
                     <button type="submit" class="btn">Crear parcela</button>
                     <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
                 </form>
-                <div id="error_msg">Vuelva a introducir los datos.</div>
+                <div id="error-msg">Vuelva a introducir los datos.</div>
 
             </div>
-            <div class="form-popup" id="userForm" style="border-radius: 15px;margin-left: 10px;">
+            <div class="form-popup" id="user-form" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container">
                     <div style="display: flex;   justify-content: flex-end;">
 
@@ -194,7 +194,7 @@
                     <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
                 </form>
             </div>
-            <div class="form-popup" id="useraddForm" style="border-radius: 15px;margin-left: 10px;">
+            <div class="form-popup" id="user-add-form" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir_usuario(event)" id="formUser">
                     <div style="display: flex;   justify-content: flex-end;">
 
@@ -215,7 +215,7 @@
                     <button type="submit" class="btn">Crear usuario</button>
                     <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
                 </form>
-                <div id="error_msg">Vuelva a introducir los datos.</div>
+                <div id="error-msg">Vuelva a introducir los datos.</div>
             </div>
         </div>
     </div>
