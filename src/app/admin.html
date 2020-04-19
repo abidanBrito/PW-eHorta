@@ -47,7 +47,7 @@ Posee:
 
 
     <title>Document</title>
-     <script src="js/restringir_acceso_admin.js"></script>
+    <script src="js/restringir_acceso_admin.js"></script>
     <script src="js/delete-sesion.js"></script>
     <script src="js/all_plots_list.js"></script>
     <script src="js/users_list.js"></script>
@@ -90,6 +90,7 @@ Posee:
     </header>
 
     <div class="pagina">
+        <!--EMPIEZA LA PAGINA DE ADMIN-->
 
         <h2 id="admin_h2">Bienvenido Admin</h2>
         <div id="buttons_div">
@@ -100,7 +101,7 @@ Posee:
 
                 <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
 -->
-
+                <!--FILTRO CLIENTES / PARCELAS-->
 
                 <a id="admin_a" href='javascript:userEnab_mapDisab()'>
                     <img class="admin_img" src="img/user_Admin_button.png" id="button_user_filter" style="display: none;" alt="Usuarios">
@@ -114,12 +115,14 @@ Posee:
 
             </form>
             <div class="input-group" id="search_pc" style="">
+                <!--Barra de busqueda PC-->
                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;">
                 <div class="input-group-append">
                     <button class="btn" type="button" style="background-color: #AC859C"><img class="admin_img" src="img/search.svg" alt=""></button>
                 </div>
             </div>
             <div id="div_add_del" style="">
+                <!--BOTONES AÑADIR ELIMINAR-->
                 <button class="buttons_Add_del" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;">Añadir Cliente</button>
                 <button class="buttons_Add_del" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%; display: none;">Añadir Parcela</button>
                 <button class="buttons_Add_del" style="">Eliminar</button>
@@ -127,6 +130,7 @@ Posee:
         </div>
 
         <div class="input-group" id="search_mobile">
+            <!--Barra de busqueda movil-->
             <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;">
             <div class="input-group-append">
                 <button class="btn" type="button" style="background-color: #AC859C"><img class="admin_img" src="img/search.svg" alt=""></button>
@@ -159,7 +163,7 @@ Posee:
             </div>
 
             <script>
-                /* ESTO DEBERIA ESTAR DENTRO DEL ARCHIVO POP UP MANAGER PERO NO SE EXACTAMENTE QUE HAY EN ESE ARCHIVO PD: LUIS CREO QUE LO HICISTE ECHALE UN OJO SI PUEDES*/
+                /* ESTO DEBERIA ESTAR DENTRO DEL ARCHIVO POP UP MANAGER PERO NO SE EXACTAMENTE QUE HAY EN ESE ARCHIVO */
                 function openForm() {
                     document.getElementById("myForm").style.display = "flex";
                     document.getElementById("myForm").style.flex.flow = "row";
@@ -174,21 +178,21 @@ Posee:
                 }
 
             </script>
-            <!-- Acaba POP UP  -->
-            <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
+            <!-- Acaba POP UP        <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL --> -->
 
-            <table class="table" id="admin_table">  
+            <!-- TABLA ADMIN -->
+            <table class="table" id="admin_table">
 
                 <tbody>
                     <tr>
                         <th scope="row">
                             <img src="img/user.svg" alt="Usuario" style="width: 15px;height: 15px;"></th>
-                        <td style="display: flex;justify-content: center;"><a  id="admin_a"href="#">Mark</a> </td>
+                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Mark</a> </td>
                         <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img" src="img/edit.PNG" alt="Editar" style=""></a></td>
                     </tr>
                     <tr>
                         <th scope="row"> <img src="img/mapi.png" alt="Parcela" style="width: 15px;height: 15px;"></th>
-                        <td style="display: flex;justify-content: center;"><a  id="admin_a" href="#">Parcela del parguela de Mark</a>
+                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Parcela del parguela de Mark</a>
 
                         </td>
                         <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img " src="img/edit.PNG" alt="Editar"></a></td>
@@ -197,6 +201,7 @@ Posee:
                     </tr>
                 </tbody>
             </table>
+            <!-- ACABA TABLA -->
         </div>
     </div>
     <!-- Scripts -->
@@ -207,32 +212,7 @@ Posee:
     <script src="js/navbar.js"></script>
     <script src="js/checkbox_list.js"></script>
     <script src="js/add.js"></script>
-    <script>
-        function userEnab_mapDisab() {
-
-            document.getElementById("button_user_filter").style.display = "none";
-            document.getElementById("button_user_filter_activated").style.display = "initial";
-
-            document.getElementById("button_map_filter").style.display = "initial";
-            document.getElementById("button_map_filter_activated").style.display = "none";
-
-            document.getElementById("button_Add_customer").style.display = "initial";
-            document.getElementById("button_Add_plot").style.display = "none";
-
-        }
-
-        function userDisab_mapEnab() {
-
-            document.getElementById("button_user_filter").style.display = "initial";
-            document.getElementById("button_user_filter_activated").style.display = "none";
-
-            document.getElementById("button_map_filter").style.display = "none";
-            document.getElementById("button_map_filter_activated").style.display = "initial";
-
-            document.getElementById("button_Add_customer").style.display = "none";
-            document.getElementById("button_Add_plot").style.display = "initial";
-        }
-
+    <script src="js/admin.js">
     </script>
 
 </body>
