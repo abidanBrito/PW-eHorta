@@ -73,7 +73,7 @@
             </select>
             <!-- EMPIEZA POP UP AÑADIR PARCELA -->
 
-            <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
+            <div class="form-popup" id="my-form" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container">
                     <div>
                         <a href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
@@ -131,21 +131,21 @@
     <!------------------------>
     <!------------------------>
     <div id="app">
-       <!-- Selectores de fechas -->
-        <section id="dates">
-            <input id='startDate' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+       <!-- Selectores de fechas móvil-->
+        <section id="dates-mobile">
+            <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <div class="bar"></div>
-            <input id='endDate' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+            <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
            
            <!-- Boton para abrir el mapa -->
-            <button id="open_map" onclick="openMap()"><img src="img/mapa.svg" alt="icono mapa"></button>
+            <button id="open-map" onclick="openMap()"><img src="img/mapa.svg" alt="icono mapa"></button>
             
         </section>
         <script src="js/date-selector.js"></script>
-        <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic-data.js-->
+        <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
         <div id="position-number">
             <span>Número de la posición: </span>
-            <span id="selectedProbe"></span>
+            <span id="selected-probe"></span>
         </div>
 
         <!-- Gráfica -->
@@ -153,14 +153,32 @@
             <canvas id="chart"></canvas>
         </div>
         
-        <!-- Botones -->
-        <section id="measurements">
-            <button class="measure_btn"><img src="img/datalogger/humidity.svg" alt="botón humedad"></button>
-            <button class="measure_btn"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></button>
-            <button class="measure_btn"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></button>
-            <button class="measure_btn"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></button>
-            <button class="measure_btn"><img src="img/datalogger/salt.svg" alt="botón salinidad"></button>
+        <section id="desktop-controls">
+        <!-- Selectores de fechas desktop-->
+            <div id="dates">
+                <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+                <div class="bar"></div>
+                <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+            </div>
+            
+            <!-- Botones movil -->
+            <div id="measurements">
+                <button class="measure-btn"><img src="img/datalogger/humidity.svg" alt="botón humedad">Humedad</button>
+                <button class="measure-btn"><img src="img/datalogger/temperature.svg" alt="botón temperatura">Temperatura</button>
+                <button class="measure-btn"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad">Luminosidad</button>
+                <button class="measure-btn"><img src="img/datalogger/rainfall.svg" alt="botón lluvia">Precipitación</button>
+                <button class="measure-btn"><img src="img/datalogger/salinity.svg" alt="botón salinidad">Salinidad</button>
+            </div>
         </section>
+            
+        <!-- Botones movil -->
+        <div id="measurements-mobile">
+            <button class="measure-btn"><img src="img/datalogger/humidity.svg" alt="botón humedad"></button>
+            <button class="measure-btn"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></button>
+            <button class="measure-btn"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></button>
+            <button class="measure-btn"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></button>
+            <button class="measure-btn"><img src="img/datalogger/salinity.svg" alt="botón salinidad"></button>
+        </div>
         
     </div>
     <!-- Scripts -->
@@ -168,7 +186,6 @@
     <script src="js/pop-manager.js"></script>
     <script src="js/delete.js"></script>
     <script src="js/checkbox_list.js"></script>
-    <script src="js/map_open.js"></script>
 </body>
 
 </html>
