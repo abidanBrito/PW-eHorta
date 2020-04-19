@@ -1,8 +1,8 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Luis Belloch, Daniel Burruchaga, Pablo Enguix, Jorge Grau
-*   FILE:           app_style.css
+*   AUTHOR:         Abidan Brito, Luis Belloch, Jorge Grau , Daniel Burruchaga 
+*   FILE:           common_style.css
 *   DATE:           16/04/2020
-*   STATE:          WIP
+*   STATE:          DONE
 *  ---------------------------------------------------------------- */ 
 
 /* ------------------ */
@@ -22,20 +22,15 @@
 
 /* ------------------ */
 
-:root {
-    --principal-color: #664B58;
-}
-
 #app {
-    display: block;
     flex-direction: row;
     margin-left: 4em;
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-right: 4em;
 }
 
 #user-options {
-    background-color: var(--principal-color);
+    background-color: #664b58;
     color: #ccc;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -71,27 +66,17 @@ option a:hover {
 
 /* ------------------ */
 
-/* Los selectores de fechas tienen un orden distinto en movil y ordenador */
-#desktop-controls {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-#dates-mobile {
-    display: none;
-}
-
 #dates {
-    display: block;
     margin-bottom: 5px;
+    width: 100%;
     display: flex;
     align-items: center;
 }
 
 #dates input {
-    font-size: 21px;
-    width: 143px;
-    height: 68px;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
     text-align: center;
     border: 0;
     border-bottom: 3px solid grey;
@@ -109,50 +94,14 @@ option a:hover {
     background-color: black;
 }
 
-/* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
-/* Botones de medidas en ordenador */
-#measurements {
-    display: block;
-    width: 100%;
-    display: flex;
-    margin-top: 6px;
-    margin-left: 100px;
-    margin-right: 150px;
-    justify-content: space-between;
-}
-/* Botones de medidas en móvil */
-#measurements-mobile {
-    display: none;
-}
-/* Incluye icono y texto */
-.measure-btn {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 100%;
-    border: 1px solid #757575;
-    background-color: transparent;
-    font-family: 'Roboto', sans-serif;
-}
-    
-.measure-btn img {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 75%;
-    height: 75%;
-}
-
 #position-number {
     display: flex;
-    margin-bottom: 1em;
     flex-direction: row;
 }
 
 .chart-container {
     width: 100%;
-    height: 500px;
+    height: 600px;
 }
 
 
@@ -190,7 +139,7 @@ option a:hover {
     display: none;
 }
 
-.td-user a {
+.tdUser a {
     text-decoration: none;
     color: black;
 }
@@ -208,7 +157,7 @@ option a:hover {
     display: flex;
     flex-direction: column
 }
-/* Nombre del usuario */
+
 #username {
     display: flex;
     flex-direction: row;
@@ -236,6 +185,7 @@ option a:hover {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
     margin: 5px;
+    width: 250em;
     height: auto;
 }
 
@@ -294,220 +244,269 @@ td a {
 
 /* ------------------ */
 
-#select-css-users,
-#select-css-fields {
-    display: none;
-}
+#
 
-a .img-admin {
-    color: black;
-    text-decoration: none;
-}
+/* ADMIN PAGE.html */
 
-option a:hover {
-    color: rgb(224, 169, 66);
-}
+        #select-css-users,
+        #select-css-fields {
+            display: none;
+        }
 
-.admin-table tr:hover .delete-button {}
+        .pagina {
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 75px;
 
-.admin-table tr:hover .edit-button {
-    opacity: 0.7;
-    visibility: visible;
-    cursor: pointer;
-}
-
-.content-row:hover {
-    background: rgba(179, 147, 162, 0.8);
-}
-
-h2 {
-    font-size: 22px;
-    display: flex;
-    text-align: center;
-}
-
-#div-h2-admin {
-    display: flex;
-    justify-content: space-between;
-}
-
-#start {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-}
-
-.page {
-    margin-top: 80px;
-}
-
-#tables {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: auto;
-    margin-top: 80px;
-}
-
-.admin-table {
-    display: flex;
-    flex-direction: row;
-    background-color: whitesmoke;
-    width: 500px;
-    flex-wrap: wrap;
-    height: auto;
-    overflow: scroll;
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-#text {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 0px;
-    border-bottom: 1px;
-    border-style: solid;
-    border-color: lightgrey;
-    height: 40px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 25%;
-}
-
-.img-admin {
-    width: 30px;
-}
-
-.admin-table tbody {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-.eliminar {
-    margin-bottom: 2px;
-}
+        }
 
 
-/* ------------------ */
+        .admin_img {
+            width: 45px;
+            margin-left: 2px;
+        }
+
+        .edit_button {
+            visibility: hidden;
+            cursor: none;
+            justify-content: flex-end;
+        }
+
+        .edit_button_img {
+
+            width: 30px;
+        }
+
+        #buttons_div {
+            display: flex;
+        }
+
+        .buttons_Add_del {
+            height: 25px;
+            width: 115px;
+            justify-content: flex-end;
+            align-self: center;
+
+            background-color: #CEAD3C;
+            border: none;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 15px;
+            cursor: pointer;
 
 
-/* -- Tablas de admin.html -- */
+        }
+
+        .buttons_Add_del:hover {
+            color: white;
+
+        }
+
+        input-group {
+            margin-left: 20px;
+            margin-right: 20px;
+
+        }
 
 
-/* ------------------ */
+        #search_mobile {
+            display: none;
+        }
 
-.tab-head-admin {
-    display: flex;
-    flex-direction: column
-}
+        #search_pc {
+            display: flex;
+            min-width: 250px;
 
-#div-h2-admin h2 {
-    display: flex;
-    align-self: flex-start;
-}
+        }
 
-#div-h2-admin a {
-    display: flex;
-    align-items: flex-end;
-}
+        #admin_table {
+            border: 1px solid #ccc;
+            padding: 0;
+            margin-top: 5px;
+            width: 250em;
+            height: auto;
+            margin-right: 500px;
 
-#div-h2-admin-buttons {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    align-items: flex-end;
-}
 
-#div-h2-admin-buttons button {
-    background-color: transparent;
-    border: none;
-    margin-left: 10px;
-}
+        }
 
-#tab-admin {
-    overflow-y: scroll;
-    min-width: 200px;
-    display: flex;
-    align-self: center;
-    width: 400px;
-    max-height: 500px;
-    overflow-x: hidden;
-}
+        #admin_table tr {
+            background-color: #f8f8f8;
+            padding: .35em;
+        }
 
-.admin-table {
-    border: 1px solid #ccc;
-    padding: 0;
-    margin-top: 5px;
-    width: 250em;
-    height: auto;
-}
+        #admin_table th,
+        #admin_table td {
+            padding: .625em;
+            border: none;
+        }
 
-.admin-table tr {
-    background-color: #f8f8f8;
-    padding: .35em;
-}
+        #admin_table input {
+            visibility: hidden;
+        }
 
-.admintr {
-    width: 100%;
-    display: flex;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    justify-content: space-between;
-    padding-left: 150px;
-    padding-right: 50px;
-}
 
-.admin-table th,
-.admin-table td {
-    padding: .625em;
-    border: none;
-}
+        #admin_table tr:focus-within {
+            background: rgba(179, 147, 162, 0.8);
+        }
 
-.admin-table input {
-    visibility: hidden;
-}
+       #admin_table  tr:focus-within .edit_button {
+            opacity: 0.7;
+            visibility: visible;
+            cursor: pointer;
 
-.admin-table tr:hover .delete-button {}
+        }
 
-.admin-table tr:hover .edit-button {
-    opacity: 0.7;
-    visibility: visible;
-    cursor: pointer;
-}
+        #admin_table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
 
-.content-row:hover {
-    background: rgba(179, 147, 162, 0.8);
-}
+        .delete-button {
+            display: inline;
+        }
 
-.admin-table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
+        .delete-button:active input {
+            visibility: visible;
+        }
 
-.delete-button {
-    display: inline;
-}
 
-.delete-button:active input {
-    visibility: visible;
-}
 
-.edit-button {
-    visibility: hidden;
-    cursor: none;
-}
+        #form_filter {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            margin-right: 20px;
 
+        }
+
+        #buttons_div {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        #div_add_del {
+
+            display: flex;
+            align-self: center;
+            flex-direction: row;
+            margin-left: 20px;
+            align-self: auto;
+        }
+
+        #admin_p {
+            margin-right: 10px;
+            font-weight: bold;
+            margin-right: 5px;
+
+        }
+
+        #admin_a {
+            color: black;
+            text-decoration: none;
+        }
+
+       #admin_h2  {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /*-----------------------------------Mobile version ADMIN--------------------------------------*/
+
+        @media (max-width: 48rem) {
+                {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #div_add_del {
+                display: flex;
+                flex-direction: row;
+                margin-left: 3px;
+                margin-bottom: 10px;
+            }
+
+            #form_filter {
+                display: flex;
+                flex-direction: row;
+                margin-right: 0px;
+
+            }
+
+            #search_mobile {
+                display: flex;
+            }
+
+            #search_pc {
+                display: none;
+            }
+
+            .edit_button {
+                visibility: hidden;
+                cursor: none;
+            }
+
+
+            .pagina {
+                margin-left: 0.2em;
+                margin-right: 0.2em;
+
+            }
+
+            #admin_table tr:active .edit_button {
+                opacity: 0.7;
+                visibility: visible;
+                cursor: pointer;
+
+            }
+
+            .content_row:active {
+                background: rgba(179, 147, 162, 0.8);
+            }
+    
+            .buttons_Add_del {
+                margin-bottom: 5px;
+                font-size: 12px;
+                width: 7em;
+            }
+
+            #admin_p {
+                font-size: 15px;
+            }
+        }
+/*Resolver problemas para resoluciones mas bajas */
+
+        @media (max-width: 339px) { 
+            #div_add_del {
+                display: flex;
+                flex-direction: column;
+                margin-left: 0px;
+                margin-bottom: 10px;
+            }
+
+            #admin_p {
+                margin-bottom: 0px;
+            }
+
+            #form_filter {
+                display: flex;
+                flex-direction: column;
+                margin-right: 0px;
+
+            }
+
+            .buttons_Add_del {
+                margin-bottom: 5px;
+                font-size: 12px;
+                width: 80px;
+            }
+        }
 
 /* =========================POPUP========================= */
 
@@ -551,7 +550,7 @@ h2 {
 }
 
 .form-container .btn {
-    background-color: var(--principal-color);
+    background-color: #664b58;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -590,44 +589,34 @@ h2 {
 /*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 48rem) {
-    
     h2 {
         margin-top: 20px;
         margin-bottom: 10px;
     }
 
     #map {
+        display: none;
         width: 100%;
         height: 550px;
         margin-top: 10px;
     }
-    
-    #desktop-controls {
-        display: none;
-    }
 
     #app {
         display: flex;
-        display: none;
         flex-direction: column;
         justify-content: center;
         margin-left: 2em;
         margin-right: 2em;
     }
-    
-    #dates {
-        display: none;
-    }
 
-    #dates-mobile {
-        display: block;
+    #dates {
         margin-bottom: 5px;
         align-items: center;
         display: flex;
         flex-direction: row;
     }
 
-    #dates-mobile input {
+    #dates input {
         font-size: 12px;
         width: 100px;
         height: 30px;
@@ -637,12 +626,11 @@ h2 {
         background-color: transparent;
     }
 
-    #dates-mobile input:focus {
-        border-color: var(--principal-color);
+    #dates input:focus {
+        border-color: #664B58;
     }
     
-    #dates-mobile #open-map {
-        display: block;
+    #dates #open-map {
         width: 60px;
         height: 30px;
         margin-left: auto;
@@ -651,7 +639,7 @@ h2 {
         background-color: transparent;
     }
     
-    #dates-mobile #open-map img {
+    #dates #open-map img {
         width: 42px;
         height: 33px;
     }
@@ -677,13 +665,11 @@ h2 {
     .chart-container {
         width: 100%;
         height: 430px;
-        margin-top: 1em;
-        margin-bottom: 1em;
     }
     
     /*botones medidas*/
     
-    #measurements-mobile {
+    #measurements {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -694,7 +680,6 @@ h2 {
         height: 41px;
         border-radius: 100%;
         border: 1px solid #757575;
-        background-color: transparent;
     }
     
     .measure-btn img {
@@ -796,113 +781,7 @@ h2 {
         height: 1.6875rem;
         margin: 0 auto;
     }
-    /* ------------------ */
-    /* -- ADMIN.HTML -- */
-    /* ------------------ */
-    #select-css-users,
-    #select-css-fields {
-        display: block;
-        font-size: 16px;
-        font-family: 'Arial', sans-serif;
-        font-weight: 400;
-        color: #444;
-        line-height: 1.3;
-        padding: .4em 1.4em .3em .8em;
-        width: 29.5em;
-        max-width: 100%;
-        box-sizing: border-box;
-        margin: .5em;
-        border: 1px solid #aaa;
-        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
-        border-radius: .3em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        /*quitar la flecha por defecto*/
-        appearance: none;
-        background-color: #fff;
-        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
-        background-repeat: no-repeat, repeat;
-        background-position: right .7em top 50%, 0 0;
-        background-size: .65em auto, 100%;
-    }
-    #tab-head {
-        margin-top: 200px;
-    }
-    #select-css-users::-ms-expand {
-        display: none;
-    }
-    #select-css-fields::-ms-expand {
-        display: none;
-    }
-    #select-css-users:hover {
-        border-color: #888;
-    }
-    #select-css-fields:hover {
-        border-color: #888;
-    }
-    #select-css-users:focus {
-        border-color: #aaa;
-        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-        box-shadow: 0 0 0 3px -moz-mac-focusring;
-        /*color azul para sombra*/
-        color: #222;
-        outline: none;
-    }
-    #select-css-fields:focus {
-        border-color: #aaa;
-        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-        box-shadow: 0 0 0 3px -moz-mac-focusring;
-        /*color azul para sombra*/
-        color: #222;
-        outline: none;
-    }
-    #select-css-users option {
-        font-weight: normal;
-    }
-    #select-css-fields option {
-        font-weight: normal;
-    }
-    .pagina {
-        display: block;
-        height: auto;
-    }
-    #tablas {
-        display: block;
-        height: auto;
-    }
-    .adminTable {
-        display: none;
-    }
-    /*-----------------------*/
-    /*Table*/
-    /*-----------------------*/
-    .edit-button {
-        visibility: visible;
-        cursor: pointer;
-    }
-    #tab {
-        display: none;
-    }
-    #div-h2 {
-        display: flex;
-        flex-direction: column;
-    }
-    #div-h2 h2 {
-        align-self: center;
-    }
-    #div-h2-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 5px;
-    }
-    table {
-        display: none;
-        border: 0;
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-    }
-    /*-------------------------*/
+       /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
     .form-popup img {
@@ -910,12 +789,4 @@ h2 {
         height: 40px;
         margin-left: 10em;
     }
-    /**/
-    /**/
-    /**/
-    .edit-button {
-        visibility: visible;
-        cursor: pointer;
-    }
-    
-}
+  
