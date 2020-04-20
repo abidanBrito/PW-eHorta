@@ -1,14 +1,14 @@
-document.getElementById('endDate').onchange=function() {
+document.getElementsById('end-date').onchange=function() {
     refreshGraphScript();
 }
-document.getElementById('startDate').onchange=function() {
+document.getElementsById('start-date').onchange=function() {
     refreshGraphScript();
 }
 
 function refreshGraphScript(){
     
     let script = document.createElement("script");
-    script.src = 'js/graphic-data.js';
+    script.src = 'js/graphic_data.js';
     console.log("Script created");
     
     document.head.appendChild(script);
