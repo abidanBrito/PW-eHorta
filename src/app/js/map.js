@@ -101,8 +101,6 @@ function centerPlot(selectedPlot) {
  * @param selectedPlotID
  */
 function drawTerrain(map, selectedPlotID = null) {
-    // Log trace
-    console.log(selectedPlotID);
 
     fetch('../api/v1.0/polygons')
         .then(function (response) {
@@ -142,25 +140,6 @@ function drawTerrain(map, selectedPlotID = null) {
         });
 }
 
-/*
-function addMarkers(map) {
-    fetch('../api/v1.0/plots').then(function (j) {
-        return j.json()
-    }).then(function (pos) {
-        pos.forEach((plot) => {
-            let newPos = new google.maps.LatLng(`${plot.latitude}`, `${plot.longitude}`);
-
-            let marker = new google.maps.Marker({
-                position: newPos,
-                map: map,
-                animation: google.maps.Animation.DROP,
-                title: `${plot.name}`
-            });
-        })
-    });
-}
-*/
-
 function showPositions(selectedPlot, map) {
     // Recoge todas las posiciones de la base de datos
     fetch('../api/v1.0/positions').then(function (data) {
@@ -184,7 +163,7 @@ function showPositions(selectedPlot, map) {
 
                 marker.addListener('click', function () {
                     // Pone el marcador en marcado
-                    document.getElementById('selectedProbe').innerHTML = this.title;
+                document.getElementById('selected-probe').innerHTML = this.title;
                     // Refresca la gráfica
                     refreshGraphScript();
                 });
