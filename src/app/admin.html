@@ -47,7 +47,7 @@ Posee:
 
 
     <title>Document</title>
-    <script src="js/restringir_acceso_admin.js"></script>
+    <!--<script src="js/restringir_acceso_admin.js"></script>-->
     <script src="js/delete-sesion.js"></script>
     <script src="js/all_plots_list.js"></script>
     <script src="js/users_list.js"></script>
@@ -131,9 +131,9 @@ Posee:
 
         <div class="input-group" id="search_mobile">
             <!--Barra de busqueda movil-->
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;">
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 30px;">
             <div class="input-group-append">
-                <button class="btn" type="button" style="background-color: #AC859C"><img class="admin_img" src="img/search.svg" alt=""></button>
+                <button class="btn" type="button" style="background-color: #AC859C; width: 50px; height: 30px;"><img class="admin_img_search" src="img/search.svg" alt="" style="width: 25px; justify-content: center;"></button>
             </div>
         </div>
 
@@ -175,12 +175,12 @@ Posee:
                 }
 
             </script>
-            <!-- Acaba POP UP        <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL --> 
+            <!-- Acaba POP UP        ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
 
             <!-- TABLA ADMIN -->
             <table class="table" id="admin_table">
 
-                <tbody>
+                <tbody id="fields">
                     <tr>
                         <th scope="row">
                             <img src="img/user.svg" alt="Usuario" style="width: 15px;height: 15px;"></th>
@@ -198,6 +198,7 @@ Posee:
                     </tr>
                 </tbody>
             </table>
+
             <!-- ACABA TABLA -->
         </div>
     </div>
@@ -211,7 +212,14 @@ Posee:
     <script src="js/add.js"></script>
     <script src="js/admin.js">
     </script>
+    <script src="js/plots_list.js"></script>
+    <script>
+        // "text" es la id del objeto donde se muestran los datos
+        ViewPlotsList.prepare("fields");
+        // Se inicializa el controlador
+        PlotsController.init();
 
+    </script>
 </body>
 
 </html>
