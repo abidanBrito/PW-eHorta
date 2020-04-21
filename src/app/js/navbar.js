@@ -3,8 +3,6 @@
  *   FILE:           navbar.js
  *   DATE:           16/03/2020
  *   STATE:          DONE
- *   ----------------------------------------------------------------
- *   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
  *   ---------------------------------------------------------------- */
 
 const navSlider = () => {
@@ -31,7 +29,7 @@ const navSlider = () => {
             if (link.style.animation) {
                 link.style.animation = '';
             } else {
-                link.style.animation = `navbarLinkFade 0.5s ease forwards ${index / 4 + 0.1}s`;
+                link.style.animation = `navbarLinkFade 0.5s ease forwards ${index / 6 + 0.2}s`;
             }
         });
 

@@ -1,16 +1,17 @@
 <?php
+// Resume session
+require_once 'access.php';
 
-// Gets access to globals
-require_once 'acceso.php';
+// Define SQL query
+$sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`, `plots`.`id` FROM `plots`";
 
-    $user = $_SESSION["user_id"];
+// Send SQL query to the active database    
+$res = mysqli_query($conn, $sql);
 
-    $sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`, `plots`.`id` FROM `plots`";
+while($row = mysqli_fetch_assoc($res)) {
+    array_push($output, $row);
+}
     
-    $res = mysqli_query($conn, $sql);
-
-    while($row = mysqli_fetch_assoc($res)) {
-        array_push($salida, $row);
-    }
-    
-    $http_code = 200;
+// Successful HTTP request
+$http_code = 200;
+?>

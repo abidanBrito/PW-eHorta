@@ -1,6 +1,6 @@
 <?php
 
-require_once 'acceso.php';
+require_once 'access.php';
 
 $id = $_POST['id'];
 $sql = "DELETE FROM plots WHERE id=$id";

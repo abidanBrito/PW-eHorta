@@ -1,17 +1,13 @@
 <?php
 /* ----------------------------------------------------------------
-*   AUTHOR:         Abidan Brito Clavijo
+*   AUTHOR:         Abidan Brito
 *   FILE:           get-measurements.php
-*   DATE:           01/04/2020
+*   DATE:           16/04/2020
 *   STATE:          DONE
-*   ----------------------------------------------------------------
-*   NOTICE: Copyright (c) 2020 Abidan Brito Clavijo
-*   ---------------------------------------------------------------- */
+*  ---------------------------------------------------------------- */ 
 
-require_once 'acceso.php';
-
-// Get current user
-$user = $_SESSION["user_id"];
+// Resume session
+require_once 'access.php';
 
 // Define SQL query
 $sql = "SELECT `measurements`.`id`, `measurements`.`position`, `measurements`.`datetime`, `measurements`.`salinity`, 
@@ -22,7 +18,9 @@ FROM `measurements`";
 $res = mysqli_query($conn, $sql);
 
 while($row = mysqli_fetch_assoc($res)) {
-    array_push($salida, $row);
+    array_push($output, $row);
 }
     
+// Successful HTTP request
 $http_code = 200;
+?>

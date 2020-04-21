@@ -1,15 +1,49 @@
+<!-- 
+    AUTHOR: DANIEL BURRUCHAGA SOLA
+    FILE: admin.html
+    DATE: 16/04/20
+    STATE: DONE 
+
+
+
+Admin page, esta página sirve para poder editar los clientes y sus parcelas, también
+puede añadir nuev@s de estos dos y eliminar estos.
+
+Posee:
+    Dos links que harán la funcion de filtrado de la busqueda entre dividiendo entre parcelas
+    y clientes. 
+
+    Un buscador con un botón de "submit" desde el cual se procederá con la busqueda.
+    
+    Dos botones, Añadir / Eliminar 
+         Al hacer click en Añadir se abrirá un pop Up con un selector de cliente/ parcela y dependiendo cual esté activo visualizará la opción de añadir de uno u otro respectivamente.
+         Al hacer click en Eliminar se visualizarán las checkbox para permitir eliminar varias opciones de una.
+    
+     
+    La opción de editar se visualiza al costado derecho del nombre, desde el cual se podrá
+    editar el nombre, coordenadas. 
+    
+    Al hacer click en un cliente debe ir a su panel_Hero respectivo.¿?
+    Al hacer click en una parcela debe ir a su panel_Hero respectivo.¿?
+     
+-->
+
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
+    <!--BootsTrap 4-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--Css Link-->
+
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
-    <!--<link rel="stylesheet" type="text/css" href="css/common_style.css">
-    <link rel="stylesheet" type="text/css" href="css/admin_style.css">
-    <link rel="stylesheet" type="text/css" href="css/admin_table_style.css">
-    <link rel="stylesheet" type="text/css" href="css/popup_Style.css">-->
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/app_style.css">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
 
 
     <title>Document</title>
@@ -17,6 +51,7 @@
     <script src="js/delete-sesion.js"></script>
     <script src="js/all_plots_list.js"></script>
     <script src="js/users_list.js"></script>
+    <script src="js/pop-manager.js"></script>
 </head>
 
 <body>
@@ -37,9 +72,6 @@
                     <a href="#">Notificaciones</a>
                 </li>
                 <li>
-                    <a href="faqs.html" id="navbar-contact">FAQs</a>
-                </li>
-                <li>
                     <a href="#">Mi cuenta</a>
                 </li>
                 <li>
@@ -58,89 +90,62 @@
     </header>
 
     <div class="pagina">
+        <!--EMPIEZA LA PAGINA DE ADMIN-->
 
-        <h2 id="inicio">Bienvenido Admin</h2>
+        <h2 id="admin_h2">Bienvenido Admin</h2>
+        <div id="buttons_div">
+            <form id="form_filter" style="">
+                <p id="admin_p" style="">Gestionar</p>
 
+                <!--<input type="image" id="button_user_filter" href='javascript:userEnab_mapDisab()' style="display: none;"src="img/user_Admin_button_ACTIVATED.png" alt="Submit" width="45" height="">
 
-        <div id="tablas">
+                <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
+-->
+                <!--FILTRO CLIENTES / PARCELAS-->
 
-            <div id="tab_and_head_admin">
-                <div id="div_h2Admin">
-                    <h2>CLIENTES: </h2>
-                    <div id="div_h2AdminButtons">
-                        <a id="deleteUsers" class='delete-button' href="javascript:showCheckboxAdminClients()" title='Eliminar' margin='50px'><img class="imgAdmin" src='img/delete.png' width='30' height='30' /></a>
+                <a id="admin_a" href='javascript:userEnab_mapDisab()'>
+                    <img class="admin_img" src="img/user_Admin_button.png" id="button_user_filter" style="display: none;" alt="Usuarios">
+                    <img class="admin_img" src="img/user_Admin_button_ACTIVATED.png" id="button_user_filter_activated" style="width: 45px;display: initial;" alt="Usuarios">
+                </a>
 
-                        <a href="javascript:borrarVariosUser()" style="display: none;" id="trashUsers"><img class="imgAdmin" src="img/trash.svg" alt="Delete users" width='30' height='30'></a>
-                        <a class='edit-button' href='javascript:openUserForm()' id="NoImage" title='Editar' margin='50px'><img class="imgAdmin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
+                <a id="admin_a" href='javascript:userDisab_mapEnab()'>
+                    <img class="admin_img" src="img/map_Admin_button.png" id="button_map_filter" style="" alt="Parcelas">
+                    <img class="admin_img" src="img/map_Admin_button_ACTIVED.png" id="button_map_filter_activated" style="width: 45px;display: none;" alt="Usuarios">
+                </a>
 
-                        <a class='add-button' href='javascript:openUseraddForm()' title='Añadir' margin='50px'><img class="imgAdmin" src='img/add.PNG' width='30' height='30' /></a>
-                    </div>
-                </div>
-                <div id="tabAdmin" style="overflow-y: hidden;">
-
-                    <table class="adminTable">
-                        <tbody id="users">
-
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-            <select id="select-css-users">
-
-                <option selected="selected">Seleccione usuario...</option>
-
-            </select>
-
-            <script>
-                // "text" es la id del objeto donde se muestran los datos
-                ViewUsersList.prepare("users", "select-css-users");
-                // Se inicializa el controlador
-                UsersController.init();
-            </script>
-
-            <div id="tab_and_head_admin">
-                <div id="div_h2Admin">
-                    <h2>PARCELAS: </h2>
-                    <div id="div_h2AdminButtons">
-
-                        <a class='delete-button' title='BORRAR' margin='50px' href="javascript:showCheckboxAdminAllPlots()"><img class="imgAdmin" src='img/delete.png' width='30' height='30' id="deletePlots" /></a>
-                        <a href="javascript:borrarVariosPlot()" style="display: none;" id="trashPlots"><img class="imgAdmin" src="img/trash.svg" alt="Delete plots"></a>
-                        <a class='edit-button' href='javascript:openFieldForm()' id="NoImage" title='Editar' margin='50px'><img class="imgAdmin" src='img/edit.PNG' width='30' height='30' class='NoImage' /></a>
-
-                        <a class='add-button' href='javascript:openFieldaddForm()' title='AÑADIR' margin='50px'><img class="imgAdmin" src='img/add.PNG' width='30' height='30' /></a>
-                    </div>
-                </div>
-
-
-                <div id="tabAdmin" style="overflow-y: hidden;">
-
-                    <table class="adminTable">
-                        <tbody id="fields">
-
-                        </tbody>
-                    </table>
-
+            </form>
+            <div class="input-group" id="search_pc" style="">
+                <!--Barra de busqueda PC-->
+                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;height: 45;">
+                <div class="input-group-append">
+                    <button class="btn" type="button" style="background-color: #AC859C;height: 45px;"><img class="admin_img" src="img/search.svg" style="height: 35px;" alt=""></button>
                 </div>
             </div>
-            <select id="select-css-fields">
+            <div id="div_add_del" style="">
+                <!--BOTONES AÑADIR ELIMINAR-->
+                <button class="buttons_Add_del" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;">Añadir Cliente</button>
+                <button class="buttons_Add_del" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%; display: none;">Añadir Parcela</button>
+                <button class="buttons_Add_del" style="">Eliminar</button>
+            </div>
+        </div>
 
-                <option selected="selected">Seleccione parcela...</option>
+        <div class="input-group" id="search_mobile">
+            <!--Barra de busqueda movil-->
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 30px;">
+            <div class="input-group-append">
+                <button class="btn" type="button" style="background-color: #AC859C; width: 50px; height: 30px;"><img class="admin_img_search" src="img/search.svg" alt="" style="width: 25px; justify-content: center;"></button>
+            </div>
+        </div>
 
-            </select>
+        <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
+        <div>
+            <!-- EMPIEZA POP UP AÑADIR PARCELA -->
 
-            <script>
-                // "text" es la id del objeto donde se muestran los datos
-                ViewAllPlotsList.prepare("fields", "select-css-fields");
-                // Se inicializa el controlador
-                AllPlotsController.init();
-            </script>
-
-            <div class="form-popup" id="fieldForm" style="border-radius: 15px;margin-left: 10px;">
+            <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container">
-                    <div style="display: flex;   justify-content: flex-end;">
+                    <div>
 
-                        <a href='javascript:closeFieldForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+                        <a id="admin_a" href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
 
                     </div>
                     <label for="name"><b>Nombre</b></label>
@@ -156,67 +161,45 @@
                     <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
                 </form>
             </div>
-            <div class="form-popup" id="fieldAddForm" style="border-radius: 15px;margin-left: 10px;">
-                <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir(event)" id="formField">
-                    <div style="display: flex;   justify-content: flex-end;">
 
-                        <a href='javascript:closeFieldaddForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+            <script>
+                /* ESTO DEBERIA ESTAR DENTRO DEL ARCHIVO POP UP MANAGER PERO NO SE EXACTAMENTE QUE HAY EN ESE ARCHIVO */
+                function openForm() {
+                    document.getElementById("myForm").style.display = "flex";
+                    document.getElementById("myForm").style.flex.flow = "row";
+                }
 
-                    </div>
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                    location.reload();
+                }
 
-                    <label for="name"><b>Nombre</b></label>
-                    <input type="text" name="name" placeholder="Nombre de la parcela" required>
+            </script>
+            <!-- Acaba POP UP        ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
 
-                    <input type="text" name="latitude" placeholder="Latitud" required>
+            <!-- TABLA ADMIN -->
+            <table class="table" id="admin_table">
 
-                    <input type="text" name="longitude" placeholder="Longitud" required>
+                <tbody id="fields">
+                    <tr>
+                        <th scope="row">
+                            <img src="img/user.svg" alt="Usuario" style="width: 15px;height: 15px;"></th>
+                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Mark</a> </td>
+                        <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img" src="img/edit.PNG" alt="Editar" style=""></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"> <img src="img/mapi.png" alt="Parcela" style="width: 15px;height: 15px;"></th>
+                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Parcela del parguela de Mark</a>
 
-                    <button type="submit" class="btn">Crear parcela</button>
-                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-                </form>
-                <div id="error_msg">Vuelva a introducir los datos.</div>
+                        </td>
+                        <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img " src="img/edit.PNG" alt="Editar"></a></td>
 
-            </div>
-            <div class="form-popup" id="userForm" style="border-radius: 15px;margin-left: 10px;">
-                <form action="/action_page.php" class="form-container">
-                    <div style="display: flex;   justify-content: flex-end;">
 
-                        <a href='javascript:closeUserForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+                    </tr>
+                </tbody>
+            </table>
 
-                    </div>
-
-                    <input type="text" name="name" placeholder="Nombre" required>
-                    <input type="text" name="surname" placeholder="Apellido">
-                    <input type="text" name="email" placeholder="Correo" required>
-                    <input type="password" name="pass" placeholder="Contraseña" required>
-
-                    <button type="submit" class="btn">Modificar usuario</button>
-                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-                </form>
-            </div>
-            <div class="form-popup" id="useraddForm" style="border-radius: 15px;margin-left: 10px;">
-                <form action="/action_page.php" class="form-container" method="POST" onsubmit="anyadir_usuario(event)" id="formUser">
-                    <div style="display: flex;   justify-content: flex-end;">
-
-                        <a href='javascript:closeUseraddForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-
-                    </div>
-                    <input type="text" name="name" placeholder="Nombre" required>
-                    <input type="text" name="surname" placeholder="Apellido">
-                    <input type="text" name="email" placeholder="Correo" required>
-                    <input type="password" name="pass" placeholder="Contraseña" required>
-
-                    <select id="rol" name="rolList">
-            <option value="1">Cliente</option>
-            <option value="3">Cliente-Admin</option>
-            <option value="4">Técnico</option>
-            </select>
-
-                    <button type="submit" class="btn">Crear usuario</button>
-                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-                </form>
-                <div id="error_msg">Vuelva a introducir los datos.</div>
-            </div>
+            <!-- ACABA TABLA -->
         </div>
     </div>
     <!-- Scripts -->
@@ -227,6 +210,16 @@
     <script src="js/navbar.js"></script>
     <script src="js/checkbox_list.js"></script>
     <script src="js/add.js"></script>
+    <script src="js/admin.js">
+    </script>
+    <script src="js/plots_list.js"></script>
+    <script>
+        // "text" es la id del objeto donde se muestran los datos
+        ViewPlotsList.prepare("fields");
+        // Se inicializa el controlador
+        PlotsController.init();
+
+    </script>
 </body>
 
 </html>

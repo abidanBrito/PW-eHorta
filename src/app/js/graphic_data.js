@@ -1,14 +1,48 @@
+/* ----------------------------------------------------------------
+*   AUTHOR:         Luis Belloch
+*   FILE:           graphic_data.js
+*   DATE:           14/04/2020
+*   STATE:          WIP
+*  ---------------------------------------------------------------- */ 
+
+//Abrir mapa
+function openMap() {
+    console.log("Opening map");
+    // Open the map and close the graph
+    let graph = document.getElementById("app");
+    graph.style.display = "none";
+    let map = document.getElementById("map");
+    map.style.display = "block";
+}
+
+//Cerrar mapa
+function closeMap() {
+    console.log("Closing map");
+    // Open the graph and close the map
+    let graph = document.getElementById("app");
+    graph.style.display = "block";
+    let map = document.getElementById("map");
+    map.style.display = "none";
+}
+
 //Obtener las medidas del servidor
 fetch('../api/v1.0/measurements').then(function (r) {
     return r.json();
 }).then(function (j) {
+    
     // Get selected position
-    let probe = document.getElementById('selectedProbe');
+    let probe = document.getElementById('selected-probe');
     let id = parseInt(probe.textContent);
+    console.log("Current position: " + id);
     
     // Get start and end dates
-    let startDate = document.getElementById('startDate').value;
-    let endDate = document.getElementById('endDate').value;
+    let startDate = document.getElementById('start-date').value;
+    let endDate = document.getElementById('end-date').value;
+    
+    // Close map in mobile mode when a probe is selected
+    if(window.innerWidth <= 775 && id >= 0) {
+        closeMap();
+    }
     
     dataProcess(j, id, startDate, endDate);
     
@@ -21,8 +55,6 @@ function dataProcess(data, positionId, startDate, endDate) {
         if (a.datetime > b.datetime) return 1;
         return 0;
     });
-
-    console.log(positionId);
     
     // Default dates
     if(endDate == "") {
@@ -35,8 +67,7 @@ function dataProcess(data, positionId, startDate, endDate) {
         endDate = today;
     }
     
-    console.log(startDate);
-    console.log(endDate);
+    console.log("Dates: " + startDate + " | " + endDate);
     
     // filter only the data from de selected position
     let posData = [];
@@ -166,11 +197,15 @@ var opciones = {
         yAxes: [{
             //los datos se apilan y se suman entre ellos
             stacked: false
+        }],
+        xAxes: [{
+                ticks: {
+                    display: false //this will remove only the label
+                }
         }]
     },
     legend: {
-        position: 'bottom',
-        align: 'center',
+        display: false
     },
     title: {
         display: false

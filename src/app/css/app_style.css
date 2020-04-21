@@ -1,0 +1,1160 @@
+/* ----------------------------------------------------------------
+*   AUTHOR:         Luis Belloch, Daniel Burruchaga, Pablo Enguix, Jorge Grau
+*   FILE:           app_style.css
+*   DATE:           14/04/2020
+*   STATE:          WIP
+*  ---------------------------------------------------------------- */
+
+/* ------------------ */
+
+/* ------------------ */
+
+
+/* -- ADMIN.HTML -- */
+
+
+/* ------------------ */
+
+
+/* ADMIN PAGE.html */
+.pagina {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 75px;
+
+}
+
+/*Admin Imgages*/
+
+.admin_img {
+    width: 45px;
+    margin-left: 2px;
+}
+
+/*Admin edit button*/
+
+.edit_button {
+    visibility: hidden;
+    cursor: none;
+    justify-content: flex-end;
+}
+
+.edit_button_img {
+
+    width: 30px;
+}
+
+
+#buttons_div {
+    display: flex;
+}
+
+/*Buttons add / delete*/
+.buttons_Add_del {
+    height: 25px;
+    width: 115px;
+    justify-content: flex-end;
+    align-self: center;
+
+    background-color: #CEAD3C;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+
+
+}
+.buttons_Add_del:hover {
+    color: white;
+
+}
+.delete-button {
+    display: inline;
+}
+.delete-button:active input {
+    visibility: visible;
+}
+
+
+/*Admin Search*/
+
+input-group {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+
+#search_mobile {
+    display: none;
+}
+
+#search_pc {
+    display: flex;
+    min-width: 250px;
+
+}
+
+#form_filter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-right: 20px;
+
+}
+
+
+/*Admin Table*/
+
+
+#admin_table {
+    border: 1px solid #ccc;
+    padding: 0;
+    margin-top: 5px;
+    height: auto;
+    margin-right: 500px;
+
+
+}
+
+#admin_table tr {
+    background-color: #f8f8f8;
+    padding: .35em;
+}
+
+#admin_table th,
+#admin_table td {
+    padding: .625em;
+    border: none;
+}
+
+#admin_table input {
+    visibility: hidden;
+}
+
+
+#admin_table tr:focus-within {
+    background: rgba(179, 147, 162, 0.8);
+}
+
+#admin_table tr:focus-within .edit_button {
+    opacity: 0.7;
+    visibility: visible;
+    cursor: pointer;
+
+}
+
+#admin_table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/*Buttons Div*/
+#buttons_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Add/delete Buttons Div*/
+
+#div_add_del {
+
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-left: 20px;
+    align-self: auto;
+}
+
+#admin_p { /* Admin paragraph */
+
+    margin-right: 10px;
+    font-weight: bold;
+    margin-right: 5px;
+
+}
+
+#admin_a {/* Admin link */
+    color: black;
+    text-decoration: none;
+}
+
+#admin_h2 { /* Admin h2 */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/*----------------------------------- ADMIN Mobile version --------------------------------------*/
+
+@media (max-width: 48rem) {
+       .pagina {
+        display: flex;
+        flex-direction: column;
+           margin-left: 0.2em;
+        margin-right: 0.2em;
+    }
+
+    #div_add_del {
+        display: flex;
+        flex-direction: row;
+        margin-left: 3px;
+        margin-bottom: 10px;
+    }
+/*Admin Search Mobile*/
+
+    #form_filter {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0px;
+
+    }
+
+    #search_mobile {
+        display: flex;
+    }
+
+    #search_pc {
+        display: none;
+    }
+
+    /*Admin Button Mobile*/
+
+    .edit_button {
+        visibility: hidden;
+        cursor: none;
+    } 
+    .buttons_Add_del {
+        margin-bottom: 5px;
+        font-size: 12px;
+        width: 7em;
+    }
+        /*Admin Table Mobile*/
+
+
+    #admin_table tr:active .edit_button {
+        opacity: 0.7;
+        visibility: visible;
+        cursor: pointer;
+
+    }
+
+    .content_row:active {
+        background: rgba(179, 147, 162, 0.8);
+    }
+
+   
+/* Admin paragraph */
+    #admin_p {
+        font-size: 15px;
+    }
+}
+
+    /*Resoluciones mas bajas */
+
+@media (max-width: 339px) {
+
+    #div_add_del {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    #admin_p {  /* Admin paragraph */
+
+        margin-bottom: 0px;
+    }
+
+    #form_filter { /* Admin Search */
+
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+
+    }
+
+    .buttons_Add_del { /* Admin Buttons Add/delete */
+
+        margin-bottom: 5px;
+        font-size: 12px;
+        width: 80px;
+    }
+}
+
+
+/* -- APP.HTML -- */
+
+
+/* ------------------ */
+
+
+/* ------------------ */
+
+
+/* -- Variables -- */
+
+
+/* ------------------ */
+
+:root {
+    --principal-color: #664B58;
+}
+
+/* Graph zone */
+#app {
+    display: block;
+    flex-direction: row;
+    margin-left: 4em;
+    margin-top: 1em;
+    margin-right: 4em;
+}
+
+/* Top region with map and plot list */
+#map-table {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-left: 4em;
+    margin-top: 5.25em;
+    margin-right: 4em;
+}
+
+/* Google map */
+#map {
+    width: 100em;
+    height: 25em;
+    box-shadow: 0px 0px 5px 1px #959595;
+    border-radius: 10px;
+    margin-right: 2em;
+}
+
+/* ------------------ */
+
+
+/* -- Graphs -- */
+
+
+/* ------------------ */
+
+/* Los selectores de fechas tienen un orden distinto en movil y ordenador */
+#desktop-controls {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* Hidden in desktop mode */
+#dates-mobile {
+    display: none;
+}
+
+/* Date selectors father */
+#dates {
+    display: block;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Date selectors */
+#dates input {
+    font-size: 21px;
+    width: 143px;
+    height: 68px;
+    text-align: center;
+    border: 0;
+    border-bottom: 3px solid grey;
+    background-color: transparent;
+}
+
+#dates input:focus {
+    border-color: mediumpurple;
+}
+
+/* Date selectors separator */
+.bar {
+    width: 3px;
+    height: 40px;
+    margin: 10px;
+    background-color: black;
+}
+
+/* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
+/* Botones de medidas en ordenador */
+#measurements {
+    display: block;
+    width: 100%;
+    display: flex;
+    margin-top: 6px;
+    margin-left: 100px;
+    margin-right: 150px;
+    justify-content: space-between;
+}
+
+/* Botones de medidas en móvil */
+#measurements-mobile {
+    display: none;
+}
+
+/* Incluye icono y texto */
+.measure-btn {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid #757575;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Icons inside the buttons */
+.measure-btn img {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 75%;
+    height: 75%;
+}
+
+/* Father containing text and a number given from map.js */
+#position-number {
+    display: flex;
+    margin-bottom: 1em;
+    flex-direction: row;
+}
+
+/* Chart.js container */
+.chart-container {
+    width: 100%;
+    height: 500px;
+}
+
+/* Hidden in desktop mode */
+#select-css {
+    display: none;
+}
+
+/* Plot names from plots_list.js */
+.td-user a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/**/
+
+
+/*User tables*/
+
+
+/**/
+
+.tab-head-user {
+    display: flex;
+    flex-direction: column
+}
+
+/* User name father */
+#username {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+/* User name itself */
+#username h2 {
+    font-size: 22px;
+    display: flex;
+    align-self: flex-start;
+}
+
+/* user-table father */
+#tab {
+    overflow-y: scroll;
+    min-width: 200px;
+    display: flex;
+    align-self: center;
+    width: 300px;
+    height: 370px;
+    margin-left: 2em;
+    margin-right: 2em;
+    overflow-x: hidden;
+}
+
+/* where plots are shown from plots_list.js */
+.user-table {
+    /* border: 1px solid #ccc;*/
+    /* padding: 0; */
+    margin: 5px;
+    height: auto;
+}
+
+/* Table elements from plots_list */
+/* ------------------------------ */
+.user-table tr {
+    background-color: #f8f8f8;
+    padding: .35em;
+}
+
+.user-table th,
+.user-table td {
+    padding: .625em;
+    border: none;
+}
+
+.user-table tr:hover .edit-button {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
+
+.content-row:hover {
+    background: rgba(179, 147, 162, 0.8);
+}
+
+.user-table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.delete-button {
+    display: inline;
+}
+
+.delete-button:active input {
+    visibility: visible;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+/* =========================POPUP========================= */
+
+.form-popup {
+    display: none;
+    flex-flow: column;
+    position: inline;
+    z-index: 9;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    padding: 10px;
+    align-items: center;
+    margin-right: 5px;
+    background-color: white;
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: 1px;
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+
+/* cuando presionas input */
+
+.form-container input[type=text]:focus {
+    background-color: #f1f1f1;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: var(--principal-color);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.form-container a {
+    justify-content: flex-end;
+}
+
+.form-popup img {
+    width: 40px;
+    height: 40px;
+}
+
+/* =========================POPUP========================= */
+
+.form-popup {
+    display: none;
+    flex-flow: column;
+    position: inline;
+    z-index: 9;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    padding: 10px;
+    align-items: center;
+    margin-right: 5px;
+    background-color: white;
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: 1px;
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+
+/* cuando presionas input */
+
+.form-container input[type=text]:focus {
+    background-color: #f1f1f1;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #664b58;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.form-container a {
+    justify-content: flex-end;
+}
+
+.form-popup img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*-----------------------------------Mobile version--------------------------------------*/
+
+@media (max-width: 48rem) {
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #map {
+        display: none;
+        width: 100%;
+        height: 550px;
+        margin-top: 10px;
+    }
+
+    #app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    #dates {
+        margin-bottom: 5px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #dates input {
+        font-size: 12px;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+    }
+
+    #dates input:focus {
+        border-color: #664B58;
+    }
+
+    #dates #open-map {
+        width: 60px;
+        height: 30px;
+        margin-left: auto;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: transparent;
+    }
+
+    #dates #open-map img {
+        width: 42px;
+        height: 33px;
+    }
+
+    .bar {
+        width: 3px;
+        margin: 10px;
+        height: 20px;
+        background-color: black;
+    }
+
+
+    #positionNumber {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 13px;
+        display: flex;
+        flex-direction: row;
+        color: #333333;
+
+    }
+
+    .chart-container {
+        width: 100%;
+        height: 430px;
+    }
+
+    /*botones medidas*/
+
+    #measurements {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .measure-btn {
+        width: 41px;
+        height: 41px;
+        border-radius: 100%;
+        border: 1px solid #757575;
+    }
+
+    .measure-btn img {
+        width: 33px;
+        height: 33px;
+    }
+
+    /*general*/
+
+    #map-table {
+        flex-direction: column;
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 3em;
+    }
+
+    /*----------------------------------------*/
+    #select-css {
+        display: block;
+        font-size: 16px;
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
+        color: #444;
+        line-height: 1.3;
+        padding: .4em 1.4em .3em .8em;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 10px;
+        border: 1px solid #aaa;
+        box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
+        border-radius: .3em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        /*quitar la flecha por defecto*/
+        appearance: none;
+        background-color: #fff;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+    }
+
+    #select-css::-ms-expand {
+        display: none;
+    }
+
+    #select-css:hover {
+        border-color: #888;
+    }
+
+    #select-css:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        /*color azul para sombra*/
+        color: #222;
+        outline: none;
+    }
+
+    #select-css option {
+        font-weight: normal;
+    }
+
+    /*-----------------------------------*/
+    /*see other fields*/
+    .menu {
+        width: 20rem;
+        height: 11.9375rem;
+    }
+
+    .menu img {
+        display: inline-block;
+    }
+
+    .menu strong {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .menu ul {
+        display: none;
+        max-height: 6.9375rem;
+    }
+
+    /*Date filter*/
+    .dates {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .dates input {
+        font-size: 0.73rem;
+    }
+
+    /*Graph*/
+    .data {
+        width: 20rem;
+        height: 11.9375rem;
+    }
+
+    /*buttons*/
+    #button {
+        width: 20rem;
+        height: 11.9375rem;
+    }
+
+    #button .buttons {
+        width: 2.3125rem;
+        height: 2.3125rem;
+    }
+
+    #button img {
+        width: 1.6875rem;
+        height: 1.6875rem;
+        margin: 0 auto;
+    }
+
+    /*-------------------------*/
+    /*POPUP*/
+    /*-------------------------*/
+    .form-popup img {
+        width: 40px;
+        height: 40px;
+        margin-left: 10em;
+    }
+
+    /*-----------------------------------Mobile version--------------------------------------*/
+
+    @media (max-width: 48rem) {
+
+        /* Bienvenido */
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Mapa de posiciones grande */
+        #map {
+            width: 100%;
+            height: 550px;
+            margin-top: 10px;
+        }
+
+        /* tabla de parcelas, solo escritorio */
+        #tab {
+            display: none;
+        }
+
+        /* controles de escritorio */
+        #desktop-controls {
+            display: none;
+        }
+
+        /* Gráfica y botones de medidas */
+        #app {
+            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        /* selectores de fechas escritorio */
+        #dates {
+            display: none;
+        }
+
+        /* padre de los selectores en movil */
+        #dates-mobile {
+            display: block;
+            margin-bottom: 5px;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* los selectores en movil */
+        #dates-mobile input {
+            font-size: 12px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            border: 0;
+            border-bottom: 3px solid grey;
+            background-color: transparent;
+        }
+
+        #dates-mobile input:focus {
+            border-color: var(--principal-color);
+        }
+
+        /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
+        #dates-mobile #open-map {
+            display: block;
+            width: 60px;
+            height: 30px;
+            margin-left: auto;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+        /* el icono del boton de abrir y cerrar el mapa */
+        #dates-mobile #open-map img {
+            width: 42px;
+            height: 33px;
+        }
+
+        /* barra de separación de los selectores de fechas */
+        .bar {
+            width: 3px;
+            margin: 10px;
+            height: 20px;
+            background-color: black;
+        }
+
+        /* posicion seleccionada */
+        #positionNumber {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            display: flex;
+            flex-direction: row;
+            color: #333333;
+
+        }
+
+        /* chart.js */
+        .chart-container {
+            width: 100%;
+            height: 430px;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        /*botones medidas*/
+
+        #measurements-mobile {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .measure-btn {
+            width: 41px;
+            height: 41px;
+            border-radius: 100%;
+            border: 1px solid #757575;
+            background-color: transparent;
+        }
+
+        .measure-btn img {
+            width: 33px;
+            height: 33px;
+        }
+
+        /*general*/
+
+        #map-table {
+            flex-direction: column;
+            margin-left: 2em;
+            margin-right: 2em;
+            margin-top: 3em;
+        }
+
+        /* Selector de campos en movil */
+        /*----------------------------------------*/
+        #select-css {
+            display: block;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            font-weight: 400;
+            color: #444;
+            line-height: 1.3;
+            padding: .4em 1.4em .3em .8em;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
+            border-radius: .3em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            /*quitar la flecha por defecto*/
+            appearance: none;
+            background-color: #fff;
+            /* flecha pequeña */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+            background-repeat: no-repeat, repeat;
+            background-position: right .7em top 50%, 0 0;
+            background-size: .65em auto, 100%;
+        }
+
+        #select-css::-ms-expand {
+            display: none;
+        }
+
+        #select-css:hover {
+            border-color: #888;
+        }
+
+        #select-css:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+            box-shadow: 0 0 0 3px -moz-mac-focusring;
+            /*color azul para sombra*/
+            color: #222;
+            outline: none;
+        }
+
+        #select-css option {
+            font-weight: normal;
+        }
+
+        /*-----------------------------------*/
+        /*see other fields*/
+        .menu {
+            width: 20rem;
+            height: 11.9375rem;
+        }
+
+        .menu img {
+            display: inline-block;
+        }
+
+        .menu strong {
+            font-size: 1.2rem;
+            padding: 0;
+        }
+
+        .menu ul {
+            display: none;
+            max-height: 6.9375rem;
+        }
+
+        /*Date filter*/
+        .dates {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .dates input {
+            font-size: 0.73rem;
+        }
+
+        /*Graph*/
+        .data {
+            width: 20rem;
+            height: 11.9375rem;
+        }
+
+        /*buttons*/
+        #button {
+            width: 20rem;
+            height: 11.9375rem;
+        }
+
+        #button .buttons {
+            width: 2.3125rem;
+            height: 2.3125rem;
+        }
+
+        #button img {
+            width: 1.6875rem;
+            height: 1.6875rem;
+            margin: 0 auto;
+        }
+
+
+}

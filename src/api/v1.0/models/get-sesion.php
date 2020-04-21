@@ -1,4 +1,7 @@
 <?php
-require_once 'acceso.php';
-session_start();
+// Fire up a session (or resume an existing one)
+require_once 'access.php';
+
+// Successful HTTP request
 $http_code = 200;
+?>

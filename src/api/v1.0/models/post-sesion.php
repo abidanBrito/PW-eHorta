@@ -20,7 +20,7 @@ if((isset($_POST['pass']) && $_POST['pass'] !== '') && (isset($_POST['user']) &&
         $_SESSION["user_name"]=$array_sql["name"];
         $_SESSION["user_roleId"]=$array_sql["roleId"];
         
-        array_push($salida, $array_sql["roleId"]);
+        array_push($output, $array_sql["roleId"]);
         $http_code = 200;   // All good            
     }
     else {
