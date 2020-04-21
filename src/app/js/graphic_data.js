@@ -25,6 +25,22 @@ function closeMap() {
     map.style.display = "none";
 }
 
+// Measurement buttons behaviour
+function activateButton(btn) {
+    if(btn.className == "measure-btn") {
+        let activeButtons = document.getElementsByClassName("measure-btn-active");
+        console.log("Active buttons: " + activeButtons.length);
+        activeButtons.className = "measure-btn";
+        btn.className = "measure-btn-active";
+    }
+    
+}
+
+// Recoger qué botón de medidas está activado
+function getPressedButton() {
+    
+}
+
 //Obtener las medidas del servidor
 fetch('../api/v1.0/measurements').then(function (r) {
     return r.json();
@@ -42,6 +58,9 @@ fetch('../api/v1.0/measurements').then(function (r) {
     // Close map in mobile mode when a probe is selected
     if(window.innerWidth <= 775 && id >= 0) {
         closeMap();
+    }
+    if(id >= 0) {
+        
     }
     
     dataProcess(j, id, startDate, endDate);
