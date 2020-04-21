@@ -10,6 +10,18 @@
 /* ------------------ */
 
 
+/* -- Variables -- */
+
+
+/* ------------------ */
+
+:root {
+    --principal-color: #664B58;
+}
+
+/* ------------------ */
+
+
 /* -- ADMIN.HTML -- */
 
 
@@ -288,6 +300,7 @@ input-group {
     }
 }
 
+/* ------------------ */
 
 /* -- APP.HTML -- */
 
@@ -295,20 +308,9 @@ input-group {
 /* ------------------ */
 
 
-/* ------------------ */
-
-
-/* -- Variables -- */
-
-
-/* ------------------ */
-
-:root {
-    --principal-color: #664B58;
-}
-
 /* Graph zone */
 #app {
+    /*For bugfixing when switching between desktop and mobile*/
     display: block;
     flex-direction: row;
     margin-left: 4em;
@@ -328,8 +330,8 @@ input-group {
 
 /* Google map */
 #map {
-    width: 100em;
-    height: 25em;
+    width: 935px;
+    height: 333px;
     box-shadow: 0px 0px 5px 1px #959595;
     border-radius: 10px;
     margin-right: 2em;
@@ -447,14 +449,14 @@ input-group {
 /* Father containing text and a number given from map.js */
 #position-number {
     display: flex;
-    margin-bottom: 1em;
+    margin-top: 1em;
     flex-direction: row;
 }
 
 /* Chart.js container */
 .chart-container {
     width: 100%;
-    height: 500px;
+    height: 420px;
 }
 
 /* Hidden in desktop mode */
@@ -491,7 +493,7 @@ input-group {
 
 /* User name itself */
 #username h2 {
-    font-size: 22px;
+    font-size: 24px;
     display: flex;
     align-self: flex-start;
 }
@@ -502,8 +504,8 @@ input-group {
     min-width: 200px;
     display: flex;
     align-self: center;
-    width: 300px;
-    height: 370px;
+    width: 259px;
+    height: 303px;
     margin-left: 2em;
     margin-right: 2em;
     overflow-x: hidden;
@@ -785,10 +787,14 @@ td a {
     /*-----------------------------------Mobile version--------------------------------------*/
 
     @media (max-width: 48rem) {
+        /* Hide scrollbar */
+        body {
+          overflow: hidden; /* Hide scrollbars */
+        }
 
         /* Bienvenido */
         h2 {
-            margin-top: 20px;
+            margin-top: 10px;
             margin-bottom: 10px;
         }
 
