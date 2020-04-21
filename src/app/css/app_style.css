@@ -307,6 +307,10 @@ input-group {
 
 /* ------------------ */
 
+/* Hide scrollbar */
+.main {
+    overflow: hidden; /* Hide scrollbars */
+}
 
 /* Graph zone */
 #app {
@@ -453,10 +457,10 @@ input-group {
     flex-direction: row;
 }
 
-/* Chart.js container */
+/* Chart.js container desktop */
 .chart-container {
     width: 100%;
-    height: 420px;
+    height: 360px;
 }
 
 /* Hidden in desktop mode */
@@ -784,11 +788,11 @@ td a {
         margin-left: 10em;
     }
 
-    /*-----------------------------------Mobile version--------------------------------------*/
+    /*-------------------------------App Mobile version--------------------------------------*/
 
     @media (max-width: 48rem) {
         /* Hide scrollbar */
-        body {
+        .main {
           overflow: hidden; /* Hide scrollbars */
         }
 
