@@ -52,7 +52,7 @@ let ViewAllPlotsList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
             
-            this.text.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empresa">' + "<input type='checkbox' style='margin:5px; class='nocheckbox' name='checkPlots' value='" + `${plot.id}` + "'><a class='links_usuarios' 'id='user_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "</td></tr>"
+            this.text.innerHTML += "<tr class='content_row'>" + '<td  data-label="Empresa">' + "<input type='checkbox' style='margin:5px; name='checkPlots' data-ide='" + `${plot.id}` + "'><a class='links_usuarios' 'id='user_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "</td></tr>"
             
             this.selector.innerHTML += "<option value=" + '"' + `${plot.id}` + '"' + ">" + `${plot.name}` + "</option>";
         })
