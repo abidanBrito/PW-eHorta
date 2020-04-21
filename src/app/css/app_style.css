@@ -7,6 +7,287 @@
 
 /* ------------------ */
 
+/* ------------------ */
+
+
+/* -- ADMIN.HTML -- */
+
+
+/* ------------------ */
+
+
+/* ADMIN PAGE.html */
+.pagina {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 75px;
+
+}
+
+/*Admin Imgages*/
+
+.admin_img {
+    width: 45px;
+    margin-left: 2px;
+}
+
+/*Admin edit button*/
+
+.edit_button {
+    visibility: hidden;
+    cursor: none;
+    justify-content: flex-end;
+}
+
+.edit_button_img {
+
+    width: 30px;
+}
+
+
+#buttons_div {
+    display: flex;
+}
+
+/*Buttons add / delete*/
+.buttons_Add_del {
+    height: 25px;
+    width: 115px;
+    justify-content: flex-end;
+    align-self: center;
+
+    background-color: #CEAD3C;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+
+
+}
+.buttons_Add_del:hover {
+    color: white;
+
+}
+.delete-button {
+    display: inline;
+}
+.delete-button:active input {
+    visibility: visible;
+}
+
+
+/*Admin Search*/
+
+input-group {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+
+#search_mobile {
+    display: none;
+}
+
+#search_pc {
+    display: flex;
+    min-width: 250px;
+
+}
+
+#form_filter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-right: 20px;
+
+}
+
+
+/*Admin Table*/
+
+
+#admin_table {
+    border: 1px solid #ccc;
+    padding: 0;
+    margin-top: 5px;
+    height: auto;
+    margin-right: 500px;
+
+
+}
+
+#admin_table tr {
+    background-color: #f8f8f8;
+    padding: .35em;
+}
+
+#admin_table th,
+#admin_table td {
+    padding: .625em;
+    border: none;
+}
+
+#admin_table input {
+    visibility: hidden;
+}
+
+
+#admin_table tr:focus-within {
+    background: rgba(179, 147, 162, 0.8);
+}
+
+#admin_table tr:focus-within .edit_button {
+    opacity: 0.7;
+    visibility: visible;
+    cursor: pointer;
+
+}
+
+#admin_table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/*Buttons Div*/
+#buttons_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+/* Add/delete Buttons Div*/
+
+#div_add_del {
+
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-left: 20px;
+    align-self: auto;
+}
+
+#admin_p { /* Admin paragraph */
+
+    margin-right: 10px;
+    font-weight: bold;
+    margin-right: 5px;
+
+}
+
+#admin_a {/* Admin link */
+    color: black;
+    text-decoration: none;
+}
+
+#admin_h2 { /* Admin h2 */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/*----------------------------------- ADMIN Mobile version --------------------------------------*/
+
+@media (max-width: 48rem) {
+       .pagina {
+        display: flex;
+        flex-direction: column;
+           margin-left: 0.2em;
+        margin-right: 0.2em;
+    }
+
+    #div_add_del {
+        display: flex;
+        flex-direction: row;
+        margin-left: 3px;
+        margin-bottom: 10px;
+    }
+/*Admin Search Mobile*/
+
+    #form_filter {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0px;
+
+    }
+
+    #search_mobile {
+        display: flex;
+    }
+
+    #search_pc {
+        display: none;
+    }
+
+    /*Admin Button Mobile*/
+
+    .edit_button {
+        visibility: hidden;
+        cursor: none;
+    } 
+    .buttons_Add_del {
+        margin-bottom: 5px;
+        font-size: 12px;
+        width: 7em;
+    }
+        /*Admin Table Mobile*/
+
+
+    #admin_table tr:active .edit_button {
+        opacity: 0.7;
+        visibility: visible;
+        cursor: pointer;
+
+    }
+
+    .content_row:active {
+        background: rgba(179, 147, 162, 0.8);
+    }
+
+   
+/* Admin paragraph */
+    #admin_p {
+        font-size: 15px;
+    }
+}
+
+    /*Resoluciones mas bajas */
+
+@media (max-width: 339px) {
+
+    #div_add_del {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    #admin_p {  /* Admin paragraph */
+
+        margin-bottom: 0px;
+    }
+
+    #form_filter { /* Admin Search */
+
+        display: flex;
+        flex-direction: column;
+        margin-right: 0px;
+
+    }
+
+    .buttons_Add_del { /* Admin Buttons Add/delete */
+
+        margin-bottom: 5px;
+        font-size: 12px;
+        width: 80px;
+    }
+}
+
 
 /* -- APP.HTML -- */
 
@@ -332,287 +613,6 @@ td a {
 .form-popup img {
     width: 40px;
     height: 40px;
-}
-
-/* ------------------ */
-
-
-/* -- ADMIN.HTML -- */
-
-
-/* ------------------ */
-
-
-/* ADMIN PAGE.html */
-.pagina {
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 75px;
-
-}
-
-/*Admin Imgages*/
-
-.admin_img {
-    width: 45px;
-    margin-left: 2px;
-}
-
-/*Admin edit button*/
-
-.edit_button {
-    visibility: hidden;
-    cursor: none;
-    justify-content: flex-end;
-}
-
-.edit_button_img {
-
-    width: 30px;
-}
-
-
-#buttons_div {
-    display: flex;
-}
-
-/*Buttons add / delete*/
-.buttons_Add_del {
-    height: 25px;
-    width: 115px;
-    justify-content: flex-end;
-    align-self: center;
-
-    background-color: #CEAD3C;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 15px;
-    cursor: pointer;
-
-
-}
-.buttons_Add_del:hover {
-    color: white;
-
-}
-.delete-button {
-    display: inline;
-}
-.delete-button:active input {
-    visibility: visible;
-}
-
-
-/*Admin Search*/
-
-input-group {
-    margin-left: 20px;
-    margin-right: 20px;
-
-}
-
-
-#search_mobile {
-    display: none;
-}
-
-#search_pc {
-    display: flex;
-    min-width: 250px;
-
-}
-
-#form_filter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    margin-right: 20px;
-
-}
-
-
-/*Admin Table*/
-
-
-#admin_table {
-    border: 1px solid #ccc;
-    padding: 0;
-    margin-top: 5px;
-    height: auto;
-    margin-right: 500px;
-
-
-}
-
-#admin_table tr {
-    background-color: #f8f8f8;
-    padding: .35em;
-}
-
-#admin_table th,
-#admin_table td {
-    padding: .625em;
-    border: none;
-}
-
-#admin_table input {
-    visibility: hidden;
-}
-
-
-#admin_table tr:focus-within {
-    background: rgba(179, 147, 162, 0.8);
-}
-
-#admin_table tr:focus-within .edit_button {
-    opacity: 0.7;
-    visibility: visible;
-    cursor: pointer;
-
-}
-
-#admin_table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-/*Buttons Div*/
-#buttons_div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-/* Add/delete Buttons Div*/
-
-#div_add_del {
-
-    display: flex;
-    align-self: center;
-    flex-direction: row;
-    margin-left: 20px;
-    align-self: auto;
-}
-
-#admin_p { /* Admin paragraph */
-
-    margin-right: 10px;
-    font-weight: bold;
-    margin-right: 5px;
-
-}
-
-#admin_a {/* Admin link */
-    color: black;
-    text-decoration: none;
-}
-
-#admin_h2 { /* Admin h2 */
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-
-/*----------------------------------- ADMIN Mobile version --------------------------------------*/
-
-@media (max-width: 48rem) {
-       .pagina {
-        display: flex;
-        flex-direction: column;
-           margin-left: 0.2em;
-        margin-right: 0.2em;
-    }
-
-    #div_add_del {
-        display: flex;
-        flex-direction: row;
-        margin-left: 3px;
-        margin-bottom: 10px;
-    }
-/*Admin Search Mobile*/
-
-    #form_filter {
-        display: flex;
-        flex-direction: row;
-        margin-right: 0px;
-
-    }
-
-    #search_mobile {
-        display: flex;
-    }
-
-    #search_pc {
-        display: none;
-    }
-
-    /*Admin Button Mobile*/
-
-    .edit_button {
-        visibility: hidden;
-        cursor: none;
-    } 
-    .buttons_Add_del {
-        margin-bottom: 5px;
-        font-size: 12px;
-        width: 7em;
-    }
-        /*Admin Table Mobile*/
-
-
-    #admin_table tr:active .edit_button {
-        opacity: 0.7;
-        visibility: visible;
-        cursor: pointer;
-
-    }
-
-    .content_row:active {
-        background: rgba(179, 147, 162, 0.8);
-    }
-
-   
-/* Admin paragraph */
-    #admin_p {
-        font-size: 15px;
-    }
-}
-
-    /*Resoluciones mas bajas */
-
-@media (max-width: 339px) {
-
-    #div_add_del {
-        display: flex;
-        flex-direction: column;
-        margin-left: 0px;
-        margin-bottom: 10px;
-    }
-
-    #admin_p {  /* Admin paragraph */
-
-        margin-bottom: 0px;
-    }
-
-    #form_filter { /* Admin Search */
-
-        display: flex;
-        flex-direction: column;
-        margin-right: 0px;
-
-    }
-
-    .buttons_Add_del { /* Admin Buttons Add/delete */
-
-        margin-bottom: 5px;
-        font-size: 12px;
-        width: 80px;
-    }
 }
 
 /* =========================POPUP========================= */
@@ -1157,4 +1157,4 @@ input-group {
         }
 
 
-    }
+}
