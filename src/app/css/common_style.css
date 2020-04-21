@@ -688,14 +688,21 @@ h3 {
 /* Main (section) content */
 .main-contact {
    height: 95%;
+<<<<<<< HEAD
 display: flex;
 justify-content: space-around;
 margin-top: 40px;
+=======
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+>>>>>>> develop
 }
 
 /* Contact container (tlf, email and address) */
 .contact-details {
     display: flex;
+<<<<<<< HEAD
 flex-direction: column;
 align-items: center;
 margin-right: 20px;
@@ -712,15 +719,40 @@ margin-bottom: 50px;
 font-weight: bold;
 margin-bottom: 50px;
 text-align: center;
+=======
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    color: gray;
+    height: 450px;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Pequeño texto de relleno */
+.contact-details p {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+>>>>>>> develop
 }
 
 /* Tlf and email containers */
 #tlf,
 #email {
     display: flex;
+<<<<<<< HEAD
 align-items: center;
 font-size: 1.5rem;
 margin: 5px;
+=======
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 5px;
+>>>>>>> develop
 }
 
 /* Tlf and email icons */
@@ -740,6 +772,7 @@ margin: 5px;
 /* Map container (Google Maps) */
 #map-contact {
    height: 73%;
+<<<<<<< HEAD
 width: 100%;
 border-radius: 10px;
 box-shadow: 0px 0px 8px 1px #959595;
@@ -748,6 +781,16 @@ margin-right: 40px;
 /* Direccion */
 .direction-contact {
    text-align: center;
+=======
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 1px #959595;
+    margin-right: 40px;
+}
+/* Direccion */
+.direction-contact {
+    text-align: center;
+>>>>>>> develop
     width: 89%;
 }
 /* Tamaño de la letra de direccion */
@@ -767,6 +810,14 @@ margin-right: 40px;
     .main-contact {
         flex-direction: column;
         align-items: center;
+<<<<<<< HEAD
+=======
+    }
+
+.contact-details p {
+        margin: 0px;
+        height: auto;
+>>>>>>> develop
     }
 
 .contact-details p {
@@ -789,7 +840,11 @@ margin-right: 40px;
     /* Tlf and email icons */
     #tlf img,
     #email img {
+<<<<<<< HEAD
        max-width: 1.5rem;
+=======
+        max-width: 1.5rem;
+>>>>>>> develop
         margin-right: 10px;
     }
 
@@ -808,6 +863,7 @@ margin-right: 40px;
         margin-top: 0px;
         box-shadow: 0px 0px 5px 1px #959595;
     }
+<<<<<<< HEAD
     .direction-contact {
  font-size: 20px;
     text-align: center;
@@ -821,6 +877,24 @@ margin-right: 40px;
 .email {
     font-size: 1.5rem;
 }
+=======
+
+    .direction-contact {
+        font-size: 20px;
+        text-align: center;
+        margin: 20px;
+        width: 70%;
+    }
+
+    .direction {
+        font-size: 20px;
+    }
+
+    .number,
+    .email {
+        font-size: 1.5rem;
+    }
+>>>>>>> develop
 }
 
 @media screen and (max-width: 550px) {
@@ -858,6 +932,29 @@ margin-right: 40px;
         border-radius: 5px;
         box-shadow: 0px 0px 5px 1px #959595;
         margin-right: 0px;
+<<<<<<< HEAD
+=======
+    }
+
+    .direction-contact{
+        width: 260px;
+        font-size: 12px;
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .contact-details {
+        margin: 0px
+    }
+
+    .direction {
+        font-size: 12px;
+    }
+
+    .number,
+    .email {
+        font-size: 1.2rem;
+>>>>>>> develop
     }
     .direction-contact{
     width: 260px;

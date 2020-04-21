@@ -49,12 +49,11 @@ Posee:
     <title>Document</title>
     <script src="js/restringir_acceso_admin.js"></script>
     <script src="js/delete-sesion.js"></script>
-    <script src="js/all_plots_list.js"></script>
-    <script src="js/users_list.js"></script>
+    <!--<script src="js/admin.js"></script>-->
     <script src="js/pop-manager.js"></script>
 </head>
 
-<body>
+<body class="admin_page">
     <!-- Top bar (navigation menu) -->
     <header>
         <!-- Corporative brand -->
@@ -64,7 +63,7 @@ Posee:
 
         <nav class="navbar">
             <!-- Navigation menu -->
-            <ul class="navbar-links">
+            <ul class="navbar-links" style="margin-bottom: 0;">
                 <li>
                     <a href="../index.html" id="navbar-contact">Inicio</a>
                 </li>
@@ -89,7 +88,7 @@ Posee:
         </nav>
     </header>
 
-    <div class="pagina">
+    <div class="page">
         <!--EMPIEZA LA PAGINA DE ADMIN-->
 
         <h2 id="admin_h2">Bienvenido Admin</h2>
@@ -116,7 +115,7 @@ Posee:
             </form>
             <div class="input-group" id="search_pc" style="">
                 <!--Barra de busqueda PC-->
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;height: 45;">
+                <input type="text" id="searchInput" onkeyup="javascript:filterFunction()" class="form-control" placeholder="Buscar..." aria-label="" aria-describedby="basic-addon1" style="text-align: center;height: 45;">
                 <div class="input-group-append">
                     <button class="btn" type="button" style="background-color: #AC859C;height: 45px;"><img class="admin_img" src="img/search.svg" style="height: 35px;" alt=""></button>
                 </div>
@@ -125,15 +124,15 @@ Posee:
                 <!--BOTONES AÑADIR ELIMINAR-->
                 <button class="buttons_Add_del" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;">Añadir Cliente</button>
                 <button class="buttons_Add_del" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%; display: none;">Añadir Parcela</button>
-                <button class="buttons_Add_del" style="">Eliminar</button>
+                <button class="buttons_Add_del" onclick="deleteAdmin()" style="">Eliminar</button>
             </div>
         </div>
 
         <div class="input-group" id="search_mobile">
             <!--Barra de busqueda movil-->
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 30px;">
+            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;">
             <div class="input-group-append">
-                <button class="btn" type="button" style="background-color: #AC859C; width: 50px; height: 30px;"><img class="admin_img_search" src="img/search.svg" alt="" style="width: 25px; justify-content: center;"></button>
+                <button class="btn" type="button" style="background-color: #AC859C"><img class="admin_img" src="img/search.svg" alt=""></button>
             </div>
         </div>
 
@@ -145,7 +144,7 @@ Posee:
                 <form action="/action_page.php" class="form-container">
                     <div>
 
-                        <a id="admin_a" href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
+                        <a class="admin_a" href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
 
                     </div>
                     <label for="name"><b>Nombre</b></label>
@@ -173,53 +172,29 @@ Posee:
                     document.getElementById("myForm").style.display = "none";
                     location.reload();
                 }
-
             </script>
-            <!-- Acaba POP UP        ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
+            <!-- Acaba POP UP -->
+            <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
 
             <!-- TABLA ADMIN -->
-            <table class="table" id="admin_table">
-
-                <tbody id="fields">
-                    <tr>
-                        <th scope="row">
-                            <img src="img/user.svg" alt="Usuario" style="width: 15px;height: 15px;"></th>
-                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Mark</a> </td>
-                        <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img" src="img/edit.PNG" alt="Editar" style=""></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> <img src="img/mapi.png" alt="Parcela" style="width: 15px;height: 15px;"></th>
-                        <td style="display: flex;justify-content: center;"><a id="admin_a" href="#">Parcela del parguela de Mark</a>
-
-                        </td>
-                        <td> <a id="admin_a" class="edit_button " href="#EDITAR" style=""><img class="edit_button_img " src="img/edit.PNG" alt="Editar"></a></td>
-
-
-                    </tr>
-                </tbody>
+            <table id="admin_table" class="table">
             </table>
-
             <!-- ACABA TABLA -->
+            <script src="js/users_list.js"></script>
+            <script>
+                ViewUsersList.prepare("admin_table");
+                // Se inicializa el controlador
+                UsersController.init();
+            </script>
+            <script src="js/all_plots_list.js"></script>
         </div>
     </div>
     <!-- Scripts -->
     <script src="js/pop-manager.js"></script>
     <script src="js/delete.js"></script>
-
-
     <script src="js/navbar.js"></script>
-    <script src="js/checkbox_list.js"></script>
     <script src="js/add.js"></script>
-    <script src="js/admin.js">
-    </script>
-    <script src="js/plots_list.js"></script>
-    <script>
-        // "text" es la id del objeto donde se muestran los datos
-        ViewPlotsList.prepare("fields");
-        // Se inicializa el controlador
-        PlotsController.init();
-
-    </script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>
