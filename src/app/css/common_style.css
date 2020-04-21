@@ -682,16 +682,15 @@ h3 {
     letter-spacing: 3px;
     font-size: 36px;
     text-align: center;
-    margin-top: 95px;
+    margin-top: 85px;
 }
 
 /* Main (section) content */
 .main-contact {
-    height: calc(100vh - 90px - 93px);
+   height: 95%;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    padding: 80px;
+    margin-top: 40px;
 }
 
 /* Contact container (tlf, email and address) */
@@ -699,14 +698,21 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 700px;
     margin-right: 20px;
     font-size: 1.2rem;
     color: gray;
+    height: 450px;
+    align-self: center;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
+/* Pequeño texto de relleno */
 .contact-details p {
-    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 /* Tlf and email containers */
@@ -715,13 +721,13 @@ h3 {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    margin: 20px;
+    margin: 5px;
 }
 
 /* Tlf and email icons */
 #tlf img,
 #email img {
-    max-width: 1.5rem;
+    max-width: 2rem;
     margin-right: 20px;
 }
 
@@ -734,25 +740,45 @@ h3 {
 
 /* Map container (Google Maps) */
 #map-contact {
-    height: 450px;
-    width: 750px;
+   height: 73%;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 1px #959595;
+    margin-right: 40px;
+}
+/* Direccion */
+.direction-contact {
+    text-align: center;
+    width: 89%;
+}
+/* Tamaño de la letra de direccion */
+.direction {
+    font-size: 22px;
+}
+/* Tamaño de la letra del numero telefonico y el email */
+.number,
+.email {
+    font-size: 2rem;
 }
 
 /* -- MEDIA QUERYS -- */
+/* El primer media query reduce un poco los tamaños */
 @media screen and (max-width: 740px) {
     /* Main (section) content */
     .main-contact {
         flex-direction: column;
         align-items: center;
-        padding: 40px;
+    }
+
+.contact-details p {
+        margin: 0px;
+        height: auto;
     }
 
     /* Page title */
     .h1-contact {
         font-size: 2rem;
-        margin-top: 85px;
+        margin-top: 65px;
     }
 
     /* Tlf and email containers */
@@ -764,7 +790,7 @@ h3 {
     /* Tlf and email icons */
     #tlf img,
     #email img {
-        max-width: 1.2rem;
+        max-width: 1.5rem;
         margin-right: 10px;
     }
 
@@ -775,11 +801,87 @@ h3 {
 
     /* Map container (Google Maps) */
     #map-contact {
-        height: 280px;
-        width: 280px;
-        margin-top: 20px;
+        height: 100%;
+        width: 95%;
+        border-radius: 5px;
+        margin-bottom: 110px;
+        margin-right: 0px;
+        margin-top: 0px;
+        box-shadow: 0px 0px 5px 1px #959595;
+    }
+
+    .direction-contact {
+        font-size: 20px;
+        text-align: center;
+        margin: 20px;
+        width: 70%;
+    }
+
+    .direction {
+        font-size: 20px;
+    }
+
+    .number,
+    .email {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-details p {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    h1-contact {
+        font-size: 2rem;
+        margin-top: 70px;
+    }
+
+    #tlf,
+    #email {
+        font-size: 1.2rem;
+    }
+
+    #tlf img,
+    #email img {
+        max-width: 1.2rem;
+        margin-right: 10px;
+    }
+
+    #map-contact {
+        height: 100%;
+        width: 95%;
+        margin-bottom: 115px;
         border-radius: 5px;
         box-shadow: 0px 0px 5px 1px #959595;
+        margin-right: 0px;
+    }
+
+    .direction-contact{
+        width: 260px;
+        font-size: 12px;
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .contact-details {
+        margin: 0px
+    }
+
+    .direction {
+        font-size: 12px;
+    }
+
+    .number,
+    .email {
+        font-size: 1.2rem;
     }
 }
 /* ------------------------------------------------------------------------------------------- */
