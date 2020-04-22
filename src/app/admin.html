@@ -23,9 +23,7 @@ Posee:
     La opción de editar se visualiza al costado derecho del nombre, desde el cual se podrá
     editar el nombre, coordenadas. 
     
-    Al hacer click en un cliente debe ir a su panel_Hero respectivo.¿?
-    Al hacer click en una parcela debe ir a su panel_Hero respectivo.¿?
-     
+
 -->
 
 
@@ -88,7 +86,7 @@ Posee:
     </header>
 
     <div class="page">
-        <!--EMPIEZA LA PAGINA DE ADMIN-->
+        <!-- Start Admin Page-->
 
         <h2 id="admin_h2">Bienvenido Admin</h2>
         <div id="buttons_div">
@@ -99,7 +97,7 @@ Posee:
 
                 <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
 -->
-                <!--FILTRO CLIENTES / PARCELAS-->
+                <!--Customer / plot filter-->
 
                 <a id="admin_a" href='javascript:userEnab_mapDisab()'>
                     <img class="admin_img" src="img/user_Admin_button.png" id="button_user_filter" style="display: none;" alt="Usuarios">
@@ -113,7 +111,7 @@ Posee:
 
             </form>
             <div class="input-group" id="search_pc" style="">
-                <!--Barra de busqueda PC-->
+                <!-- Search PC-->
                 <input type="text" id="searchInput" onkeyup="javascript:filterFunction()" class="form-control" placeholder="Buscar..." aria-label="" aria-describedby="basic-addon1" style="text-align: center;height: 45;">
                 <div class="input-group-append">
                     <button class="btn" type="button" style="background-color: #AC859C;height: 45px;"><img class="admin_img" src="img/search.svg" style="height: 35px;" alt=""></button>
@@ -121,7 +119,7 @@ Posee:
             </div>
 
             <div id="div_add_del" style="">
-                <!--BOTONES AÑADIR ELIMINAR (WIP)-->
+                <!--Add/ Delete buttons-->
                 <button class="buttons_Add_del WIP-feature" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;">Añadir Cliente</button>
                 <button class="buttons_Add_del WIP-feature" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%; display: none;">Añadir Parcela</button>
                 <button class="buttons_Add_del" onclick="deleteAdmin()" style="">Eliminar</button>
@@ -129,16 +127,15 @@ Posee:
         </div>
 
         <div class="input-group" id="search_mobile">
-            <!--Barra de busqueda movil-->
-            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center;">
+            <!--Search Mobile-->
+            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="height:40px; text-align: center;">
             <div class="input-group-append">
-                <button class="btn" type="button" style="background-color: #AC859C"><img class="admin_img" src="img/search.svg" alt=""></button>
+                <button class="btn" type="button" style="height:40px;background-color: #AC859C"><img id="search_img_mobile" src="img/search.svg" alt=""></button>
             </div>
         </div>
 
-        <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
         <div>
-            <!-- EMPIEZA POP UP AÑADIR PARCELA -->
+            <!-- START POP UP  -->
 
             <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
                 <form action="/action_page.php" class="form-container">
@@ -173,13 +170,12 @@ Posee:
                     location.reload();
                 }
             </script>
-            <!-- Acaba POP UP -->
-            <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
+            <!-- Finish POP UP -->
 
-            <!-- TABLA ADMIN -->
+            <!-- Admin Table-->
             <table id="admin_table" class="table">
             </table>
-            <!-- ACABA TABLA -->
+            <!-- Finish Admin TABLA -->
             <script src="js/users_list.js"></script>
             <script>
                 ViewUsersList.prepare("admin_table");
