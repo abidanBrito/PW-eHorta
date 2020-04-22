@@ -132,6 +132,10 @@ function drawTerrain(map, selectedPlotID = null) {
                 polygon.getPath().getArray().forEach(function (vertex) {
                     bounds.extend(vertex);
                 });
+                
+                polygon.addListener('click', function () {
+                    centerPlot(`${plot.id}`);
+                });
             });
         });
 }
@@ -159,10 +163,10 @@ function showPositions(selectedPlot, map) {
                 });
 
                 marker.addListener('click', function () {
-                // Selected marker (probe)
-                document.getElementById('selected-probe').innerHTML = this.title;
-                // Update the graph
-                refreshGraphScript();
+                    // Selected marker (probe)
+                    document.getElementById('selected-probe').innerHTML = this.title;
+                    // Update the graph
+                    refreshGraphScript();
                 });
             }
         })
