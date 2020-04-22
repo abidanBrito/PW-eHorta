@@ -687,30 +687,29 @@ h3 {
 
 /* Main (section) content */
 .main-contact {
-    height: 95%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+height: 75%;
+display: flex;
+justify-content: space-around;
+margin-top: 40px;
+margin-bottom: 40px;
 }
 
 /* Contact container (tlf, email and address) */
 .contact-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 20px;
-    font-size: 1.2rem;
-    color: gray;
-    height: 450px;
-    align-self: center;
-    width: 100%;
-    margin-bottom: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 20px;
+font-size: 1.2rem;
+color: gray;
+height: auto;
+align-self: center;
+width: 100%;
 }
 
 /* Pequeño texto de relleno */
 .contact-details p {
     font-size: 17px;
-    font-weight: bold;
     margin-bottom: 50px;
     text-align: center;
 }
@@ -740,11 +739,11 @@ h3 {
 
 /* Map container (Google Maps) */
 #map-contact {
-   height: 73%;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px 1px #959595;
-    margin-right: 40px;
+   height: 100%;
+width: 100%;
+border-radius: 10px;
+box-shadow: 0px 0px 8px 1px #959595;
+margin-right: 40px;
 }
 /* Direccion */
 .direction-contact {
