@@ -5,7 +5,6 @@
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */
 
-/* ------------------ */
 
 /* ------------------ */
 
@@ -19,6 +18,14 @@
     --principal-color: #664B58;
 }
 
+.WIP-feature {
+    visibility: hidden;
+}
+
+
+/* ------------------ */
+
+
 /* ------------------ */
 
 
@@ -26,6 +33,9 @@
 
 
 /* ------------------ */
+
+
+/* ADMIN PAGE.html */
 
 .admin_page {
     overflow-y: hidden;
@@ -135,16 +145,16 @@ input-group {
     border: none;
 }
 
+#admin_table td[data-label="Empresa"] {
+    text-align: center;
+}
+
 #admin_table input {
     visibility: hidden;
 }
 
 #admin_table tr:hover {
     background: rgba(179, 147, 162, 0.8);
-}
-
-#admin_table tr:hover {
-    opacity: 0.7;
     visibility: visible;
     cursor: pointer;
 }
@@ -257,19 +267,18 @@ input-group {
     }
 }
 
+
 /* ------------------ */
+
 
 /* -- APP.HTML -- */
 
 
 /* ------------------ */
 
-/* Hide scrollbar */
-.main {
-    overflow: hidden; /* Hide scrollbars */
-}
 
 /* Graph zone */
+
 #app {
     /*For bugfixing when switching between desktop and mobile*/
     display: block;
@@ -279,7 +288,9 @@ input-group {
     margin-right: 4em;
 }
 
+
 /* Top region with map and plot list */
+
 #map-table {
     display: flex;
     flex-direction: row-reverse;
@@ -289,14 +300,17 @@ input-group {
     margin-right: 4em;
 }
 
+
 /* Google map */
+
 #map {
-    width: 100%;
+    width: 935px;
     height: 333px;
     box-shadow: 0px 0px 5px 1px #959595;
     border-radius: 10px;
     margin-right: 2em;
 }
+
 
 /* ------------------ */
 
@@ -306,18 +320,24 @@ input-group {
 
 /* ------------------ */
 
+
 /* Los selectores de fechas tienen un orden distinto en movil y ordenador */
+
 #desktop-controls {
     display: flex;
     margin-bottom: 20px;
 }
 
+
 /* Hidden in desktop mode */
+
 #dates-mobile {
     display: none;
 }
 
+
 /* Date selectors father */
+
 #dates {
     display: block;
     margin-bottom: 5px;
@@ -325,7 +345,9 @@ input-group {
     align-items: center;
 }
 
+
 /* Date selectors */
+
 #dates input {
     font-size: 21px;
     width: 143px;
@@ -340,7 +362,9 @@ input-group {
     border-color: mediumpurple;
 }
 
+
 /* Date selectors separator */
+
 .bar {
     width: 3px;
     height: 40px;
@@ -348,8 +372,12 @@ input-group {
     background-color: black;
 }
 
+
 /* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
+
+
 /* Botones de medidas en ordenador */
+
 #measurements {
     display: block;
     width: 100%;
@@ -360,12 +388,16 @@ input-group {
     justify-content: space-between;
 }
 
+
 /* Botones de medidas en móvil */
+
 #measurements-mobile {
     display: none;
 }
 
+
 /* Incluye icono y texto */
+
 .measure-btn {
     width: 43px;
     height: 43px;
@@ -378,7 +410,9 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
+
 /* Icons inside the buttons */
+
 .measure-btn img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -386,7 +420,9 @@ input-group {
     height: 75%;
 }
 
+
 /* Cuando el botón está activado */
+
 .measure-btn-active {
     width: 43px;
     height: 43px;
@@ -399,7 +435,9 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
+
 /* Icons inside the active button */
+
 .measure-btn-active img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -407,25 +445,33 @@ input-group {
     height: 75%;
 }
 
+
 /* Father containing text and a number given from map.js */
+
 #position-number {
     display: flex;
     margin-top: 1em;
     flex-direction: row;
 }
 
-/* Chart.js container desktop */
+
+/* Chart.js container */
+
 .chart-container {
     width: 100%;
-    height: 360px;
+    height: 420px;
 }
 
+
 /* Hidden in desktop mode */
+
 #select-css {
     display: none;
 }
 
+
 /* Plot names from plots_list.js */
+
 .td-user a {
     text-decoration: none;
     color: black;
@@ -445,21 +491,27 @@ input-group {
     flex-direction: column
 }
 
+
 /* User name father */
+
 #username {
     display: flex;
     flex-direction: row;
     align-self: center;
 }
 
+
 /* User name itself */
+
 #username h2 {
     font-size: 24px;
     display: flex;
     align-self: flex-start;
 }
 
+
 /* user-table father */
+
 #tab {
     overflow-y: scroll;
     min-width: 200px;
@@ -472,7 +524,9 @@ input-group {
     overflow-x: hidden;
 }
 
+
 /* where plots are shown from plots_list.js */
+
 .user-table {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
@@ -480,8 +534,12 @@ input-group {
     height: auto;
 }
 
+
 /* Table elements from plots_list */
+
+
 /* ------------------------------ */
+
 .user-table tr {
     background-color: #f8f8f8;
     padding: .35em;
@@ -521,6 +579,7 @@ td a {
     text-decoration: none;
     color: black;
 }
+
 
 /* =========================POPUP========================= */
 
@@ -598,6 +657,7 @@ td a {
     width: 40px;
     height: 40px;
 }
+
 
 /* =========================POPUP========================= */
 
@@ -680,62 +740,50 @@ td a {
 /*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 48rem) {
-    
-
     /*-----------------------------------*/
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
-
     .menu img {
         display: inline-block;
     }
-
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
-
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
-
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
-
     .dates input {
         font-size: 0.73rem;
     }
-
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
-
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
-
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
     }
-
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
-
     /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
@@ -744,46 +792,32 @@ td a {
         height: 40px;
         margin-left: 10em;
     }
-}
-    /* In case the page is less high than 900px */
-    /* Should be removed once made fully responsive */ 
-    @media (max-height: 899px) {
-        .main {
-            overflow: visible;
-        }
-    }
-
-    /*-------------------------------App Mobile version--------------------------------------*/
-
+    /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 48rem) {
         /* Hide scrollbar */
-        .main {
-          overflow: hidden; /* Hide scrollbars */
+        body {
+            overflow: hidden;
+            /* Hide scrollbars */
         }
-
         /* Bienvenido */
         h2 {
             margin-top: 10px;
             margin-bottom: 10px;
         }
-
         /* Mapa de posiciones grande */
         #map {
             width: 100%;
             height: 550px;
             margin-top: 10px;
         }
-
         /* tabla de parcelas, solo escritorio */
         #tab {
             display: none;
         }
-
         /* controles de escritorio */
         #desktop-controls {
             display: none;
         }
-
         /* Gráfica y botones de medidas */
         #app {
             display: flex;
@@ -793,12 +827,10 @@ td a {
             margin-left: 2em;
             margin-right: 2em;
         }
-
         /* selectores de fechas escritorio */
         #dates {
             display: none;
         }
-
         /* padre de los selectores en movil */
         #dates-mobile {
             display: block;
@@ -807,7 +839,6 @@ td a {
             display: flex;
             flex-direction: row;
         }
-
         /* los selectores en movil */
         #dates-mobile input {
             font-size: 12px;
@@ -818,11 +849,9 @@ td a {
             border-bottom: 3px solid grey;
             background-color: transparent;
         }
-
         #dates-mobile input:focus {
             border-color: var(--principal-color);
         }
-
         /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
         #dates-mobile #open-map {
             display: block;
@@ -833,13 +862,11 @@ td a {
             border-radius: 5px;
             background-color: transparent;
         }
-
         /* el icono del boton de abrir y cerrar el mapa */
         #dates-mobile #open-map img {
             width: 42px;
             height: 33px;
         }
-
         /* barra de separación de los selectores de fechas */
         .bar {
             width: 3px;
@@ -847,7 +874,6 @@ td a {
             height: 20px;
             background-color: black;
         }
-
         /* posicion seleccionada */
         #positionNumber {
             margin-top: 5px;
@@ -856,9 +882,7 @@ td a {
             display: flex;
             flex-direction: row;
             color: #333333;
-
         }
-
         /* chart.js */
         .chart-container {
             width: 100%;
@@ -866,15 +890,12 @@ td a {
             margin-top: 1em;
             margin-bottom: 1em;
         }
-
         /*botones medidas*/
-
         #measurements-mobile {
             width: 100%;
             display: flex;
             justify-content: space-between;
         }
-        
         .measure-btn {
             width: 41px;
             height: 41px;
@@ -882,7 +903,6 @@ td a {
             border: 1px solid #757575;
             background-color: transparent;
         }
-        
         /*active buttons*/
         .measure-btn-active {
             width: 41px;
@@ -891,16 +911,13 @@ td a {
             border: 1px solid blue;
             background-color: transparent;
         }
-        
         /*general*/
-
         #map-table {
             flex-direction: column;
             margin-left: 2em;
             margin-right: 2em;
             margin-top: 3em;
         }
-
         /* Selector de campos en movil */
         /*----------------------------------------*/
         #select-css {
@@ -928,15 +945,12 @@ td a {
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
         }
-
         #select-css::-ms-expand {
             display: none;
         }
-
         #select-css:hover {
             border-color: #888;
         }
-
         #select-css:focus {
             border-color: #aaa;
             box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
@@ -945,64 +959,52 @@ td a {
             color: #222;
             outline: none;
         }
-
         #select-css option {
             font-weight: normal;
         }
-
         /*-----------------------------------*/
         /*see other fields*/
         .menu {
             width: 20rem;
             height: 11.9375rem;
         }
-
         .menu img {
             display: inline-block;
         }
-
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
         }
-
         .menu ul {
             display: none;
             max-height: 6.9375rem;
         }
-
         /*Date filter*/
         .dates {
             font-size: 1rem;
             margin-bottom: 5px;
         }
-
         .dates input {
             font-size: 0.73rem;
         }
-
         /*Graph*/
         .data {
             width: 20rem;
             height: 11.9375rem;
         }
-
         /*buttons*/
         #button {
             width: 20rem;
             height: 11.9375rem;
         }
-
         #button .buttons {
             width: 2.3125rem;
             height: 2.3125rem;
         }
-
         #button img {
             width: 1.6875rem;
             height: 1.6875rem;
             margin: 0 auto;
         }
-
-
+    }
 }

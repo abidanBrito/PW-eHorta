@@ -30,7 +30,7 @@ let ViewUsersList = {
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
             // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
 
-            tbody.innerHTML += "<tr class='content_row admintr' ><td><img src='img/user.svg' alt='Usuario' style='width: 15px;height: 15px;'><td  data-label='Empresa' name='user'><input type='checkbox' name='checkUsers' style='margin:5px;' value='" + `${user.id}` + "' /><a class='links_usuarios' 'id='user_" + `${user.id}` + "'>" + `${user.name}` + '</td><td></a>' + "</a></td></tr>";
+            tbody.innerHTML += "<tr class='content_row admintr' ><td><img src='img/user.svg' alt='Usuario' style='width: 15px;height: 15px;'><td data-label='Empresa' name='user'><input type='checkbox' name='checkUsers' style='margin:5px;' value='" + `${user.id}` + "' /><a class='links_usuarios' 'id='user_" + `${user.id}` + "'>" + `${user.name}` + '</td><td></a>' + "</a></td></tr>";
         })
     }
 };
