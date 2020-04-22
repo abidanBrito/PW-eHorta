@@ -54,7 +54,7 @@ function deleteAdmin() {
 }
 
 function borrarVariosPlot() {
-    let url = '../api/v1.0/deletePlot';
+    let url = '../api/v1.0/delete-plot';
     let conf = confirm("¿Está seguro que quiere borrar las parcelas seleccionadas? Esta acción no se puede revertir");
     //Se buscan todos los checkbox y se borran aquellas parcelas que tengan el checkbox activado
     if (conf == true) {
@@ -73,7 +73,7 @@ function borrarVariosPlot() {
 }
 
 function borrarVariosUser() {
-    let url = '../api/v1.0/deleteUser';
+    let url = '../api/v1.0/delete-user';
     let conf = confirm("¿Está seguro que quiere borrar los usuarios seleccionados? Esta acción no se puede revertir");
     //Se buscan todos los checkbox y se borran aquellos usuarios que tengan el checkbox activado
     if (conf == true) {
