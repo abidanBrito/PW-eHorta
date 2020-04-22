@@ -8,9 +8,9 @@
 
 // Database access credentials
 $serverName = "localhost";
-$userName = "root";
-$password = "";
-$dbName = "users_db";
+$userName = "abricla_admin";
+$password = "_MT9PzKPte,qT~5h";
+$dbName = "abricla_users_db";
 
 // Establish connection
 $conn = mysqli_connect($serverName, $userName, $password, $dbName);
