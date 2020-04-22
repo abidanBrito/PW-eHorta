@@ -52,7 +52,7 @@
 
 .admin_img {
     width: 45px;
-    margin-left: 2px;
+    margin-left: 15px;
 }
 
 
@@ -194,12 +194,12 @@ input-group {
 
 /*----------------------------------- ADMIN Mobile version --------------------------------------*/
 
-@media (max-width: 48rem) {
+@media screen and (max-width: 740px) {
     .page {
         display: flex;
         flex-direction: column;
-        margin-left: 0.2em;
-        margin-right: 0.2em;
+        margin-left:2em;
+        margin-right: 2em;
     }
     #div_add_del {
         display: flex;
@@ -223,6 +223,7 @@ input-group {
     }
     #search_pc {
         display: none;
+        margin-left: 20px;
     }
     /*Admin Table Mobile*/
     #admin_table tr:active {
@@ -237,12 +238,23 @@ input-group {
     #admin_p {
         font-size: 15px;
     }
+
+    /*Admin Images*/
+    .admin_img {
+        width: 45px;
+        margin-left: 10px;
+    }
+    #search_img_mobile{
+        width:35px;
+        margin-top: -5px;
+    }
+
 }
 
 
 /*Resoluciones mas bajas */
 
-@media (max-width: 339px) {
+@media (max-width: 300px) {
     #div_add_del {
         display: flex;
         flex-direction: column;
