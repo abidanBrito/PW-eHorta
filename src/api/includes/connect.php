@@ -6,9 +6,11 @@
 *   STATE:          DONE
 *  ---------------------------------------------------------------- */ 
 
-    // Crear la conexión
-    $conn = mysqli_connect($serverNombre, $userNombre, $password, $dbNombre);
-    mysqli_query($conn, 'SET NAMES utf8');
+// Database access credentials
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$dbName = "users_db";
 
 // Establish connection
 $conn = mysqli_connect($serverName, $userName, $password, $dbName);

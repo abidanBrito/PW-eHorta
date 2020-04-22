@@ -81,40 +81,16 @@
                     <label for="name"><b>Nombre</b></label>
                     <input type="text" placeholder="Nombre parcela" name="name">
 
-                    <a href='javascript:closeFieldsaddForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-                </div>
-                
-                
-                <div class="div_pop_up">
-                <table>
+                    <label for="coordenada-X"><b>Coordenada-X</b></label>
+                    <input type="text" placeholder="Coordenada-X" name="coordenada-X">
 
-                    <thead>
-                        <tr>
-                            <!-- <th scope="col">rewrt</th>*/-->
-                            <!---especifica que son columnas--->
+                    <label for="coordenada-Y"><b>Coordenada-Y</b></label>
+                    <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
 
-
-                        </tr>
-                    </thead>
-                    <tbody id="pop">
-
-                    </tbody>
-                </table>
+                    <button type="submit" class="btn">Aplicar</button>
+                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
+                </form>
             </div>
-        <script src="js/all_plots_list.js"></script>
-        <script>
-            // "text" es la id del objeto donde se muestran los datos
-            ViewAllPlotsList.prepare("pop","");
-            // Se inicializa el controlador
-            AllPlotsController.init();
-        </script>
-                
-                
-                
-                <button type="submit" class="btn">Aplicar</button>
-                <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-            </form>
-        </div>
 
             <!-- Acaba POP UP  -->
 
