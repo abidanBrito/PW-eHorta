@@ -5,6 +5,7 @@
 *   STATE:          WIP
 *   ---------------------------------------------------------------- */
 
+// It initializes a google maps instance and draws all user fields(plots).
 function initMap() {
     // Initial map settings
     let options = {
@@ -40,10 +41,7 @@ function initMap() {
     refreshGraphScript();
 }
 
-/**
- *
- * @param selectedPlot
- */
+// It updates the map by centering it around the selected field(plot).
 function centerPlot(selectedPlot) {
     fetch('../api/v1.0/plots').then(function (plots) {
         return plots.json();
@@ -83,7 +81,6 @@ function centerPlot(selectedPlot) {
             streetViewControl: false
         };
 
-
         // Apply new settings to the map
         let map = new google.maps.Map(document.getElementById('map'), options);
 
@@ -95,13 +92,9 @@ function centerPlot(selectedPlot) {
     });
 }
 
-/**
- *
- * @param map
- * @param selectedPlotID
- */
+// It draws all fields (polygons) in orange, and the selected field in blue
 function drawTerrain(map, selectedPlotID = null) {
-
+    // Get fields from database
     fetch('../api/v1.0/polygons')
         .then(function (response) {
             // Error checking
@@ -113,8 +106,10 @@ function drawTerrain(map, selectedPlotID = null) {
             }
         })
         .then(function (plotJson) {
+            // Create new bounds object
             let bounds = new google.maps.LatLngBounds();
             plotJson.forEach((plot) => {
+                // Default polygon configuration
                 let polygon = new google.maps.Polygon({
                     paths: JSON.parse(plot.plotPath),
                     strokeColor: '#ff8000',
@@ -125,14 +120,15 @@ function drawTerrain(map, selectedPlotID = null) {
                     map: map
                 });
 
+                // Draw the selected polygon in blue
                 if(selectedPlotID !== null) {
-
                     if (plot.id == selectedPlotID) {
                         polygon.strokeColor = '#00a5ff';
                         polygon.fillColor = '#00a5ff';
                     };
                 }
 
+                // Extend the bounds to fit, based on the given vertices
                 polygon.getPath().getArray().forEach(function (vertex) {
                     bounds.extend(vertex);
                 });
@@ -140,14 +136,15 @@ function drawTerrain(map, selectedPlotID = null) {
         });
 }
 
+// It draws all probe markers
 function showPositions(selectedPlot, map) {
-    // Recoge todas las posiciones de la base de datos
+    // Gets all positions from database
     fetch('../api/v1.0/positions').then(function (data) {
         return data.json();
     }).then(function (dataJson) {
         let plotPositions = [];
 
-        // Guarda en un array las posiciones de la parcela seleccionada y los muestra como marcadores
+        // Store all positions of the selected field in an array and show them as markers
         dataJson.forEach((pos) => {
             if (`${pos.plot}` == selectedPlot.id) {
                 plotPositions.push(pos);
@@ -158,14 +155,14 @@ function showPositions(selectedPlot, map) {
                     position: newPos,
                     map: map,
                     animation: google.maps.Animation.DROP,
-                    title: `${pos.id}`,
+                    title: `${pos.id}`
                 });
 
                 marker.addListener('click', function () {
-                    // Pone el marcador en marcado
-                    document.getElementById('selected-probe').innerHTML = this.title;
-                    // Refresca la gráfica
-                    refreshGraphScript();
+                // Selected marker (probe)
+                document.getElementById('selected-probe').innerHTML = this.title;
+                // Update the graph
+                refreshGraphScript();
                 });
             }
         })
@@ -174,11 +171,10 @@ function showPositions(selectedPlot, map) {
     })
 }
 
+// It updates the graph that lies underneath the map
 function refreshGraphScript() {
     let script = document.createElement("script");
     script.src = 'js/graphic-data.js';
-    console.log("Script created");
-
     document.head.appendChild(script);
     script.parentNode.removeChild(script);
-}
+ }
