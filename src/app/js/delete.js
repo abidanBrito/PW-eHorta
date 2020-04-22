@@ -62,7 +62,7 @@ function deletePlots() {
         for (let i = 0; i < 10000; i++) {
             if (input[i].getAttribute('type') == "checkbox") {
                 if (input[i].checked == true) {
-                    borrar(input[i].value, url)
+                    deleteUsersPlots(input[i].value, url)
                 }
             }
         }
@@ -81,7 +81,7 @@ function deleteUser() {
         for (let i = 0; i < 10000; i++) {
             if (input[i].getAttribute('type') == "checkbox") {
                 if (input[i].checked == true) {
-                    borrar(input[i].value, url)
+                    deleteUsersPlots(input[i].value, url)
                 }
             }
         }
