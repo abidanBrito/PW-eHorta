@@ -159,14 +159,11 @@ function showPositions(selectedPlot, map) {
                     map: map,
                     animation: google.maps.Animation.DROP,
                     title: `${pos.id}`,
-                    url: '#app'
                 });
 
                 marker.addListener('click', function () {
                     // Pone el marcador en marcado
                     document.getElementById('selected-probe').innerHTML = this.title;
-                    // Mueve la página a la sección de app
-                    window.location.href = this.url;
                     // Refresca la gráfica
                     refreshGraphScript();
                 });
