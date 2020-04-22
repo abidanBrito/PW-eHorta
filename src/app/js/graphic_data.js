@@ -29,44 +29,78 @@ function closeMap() {
 function activateButton(btn) {
     if(btn.className == "measure-btn") {
         let activeButtons = document.getElementsByClassName("measure-btn-active");
-        console.log("Active buttons: " + activeButtons.length);
-        activeButtons.className = "measure-btn";
+        let i;
+        for (i = 0; i < activeButtons.length; i++) {
+            activeButtons[i].className = "measure-btn";
+        } 
         btn.className = "measure-btn-active";
     }
-    
+    filterMeasurements(btn);
 }
 
-// Recoger qué botón de medidas está activado
-function getPressedButton() {
+// Recoger qué botón de medidas está activado y devuelve el índice correspondiente
+// 0 Humedad
+// 1 Tempertaura
+// 2 Luminosidad
+// 3 Precipitación
+// 4 Salinidad
+function filterMeasurements(btn) {
+    if(btn.id == "mobile-btn-hum" || btn.id == "desktop-btn-hum") {
+        updateFilter(0)
+    }
+    if(btn.id == "mobile-btn-tem" || btn.id == "desktop-btn-tem") {
+        updateFilter(1)
+    }
+    if(btn.id == "mobile-btn-lum" || btn.id == "desktop-btn-lum") {
+        updateFilter(2)
+    }
+    if(btn.id == "mobile-btn-rai" || btn.id == "desktop-btn-rai") {
+        updateFilter(3)
+    }
+    if(btn.id == "mobile-btn-sal" || btn.id == "desktop-btn-sal") {
+        updateFilter(4)
+    }
+}
+
+// Actualiza el filtro de datos
+function updateFilter(dataType) {
+    console.log("Data type: " + dataType);
+    // Se muestra solo el dato deseado
+    for(let i = 0; i < 5; i++) {
+        datos.datasets[i].hidden = true;
+    }
+    datos.datasets[dataType].hidden = false;
     
+    CrearGrafica();
 }
 
 //Obtener las medidas del servidor
-fetch('../api/v1.0/measurements').then(function (r) {
-    return r.json();
-}).then(function (j) {
+function getMeasurements() {
+    fetch('../api/v1.0/measurements').then(function (r) {
+        return r.json();
+    }).then(function (j) {
     
-    // Get selected position
-    let probe = document.getElementById('selected-probe');
-    let id = parseInt(probe.textContent);
-    console.log("Current position: " + id);
+        // Get selected position
+        let probe = document.getElementById('selected-probe');
+        let id = parseInt(probe.textContent);
+        console.log("Current position: " + id);
     
-    // Get start and end dates
-    let startDate = document.getElementById('start-date').value;
-    let endDate = document.getElementById('end-date').value;
+        // Get start and end dates
+        let startDate = document.getElementById('start-date').value;
+        let endDate = document.getElementById('end-date').value;
     
-    // Close map in mobile mode when a probe is selected
-    if(window.innerWidth <= 775 && id >= 0) {
-        closeMap();
-    }
-    if(id >= 0) {
-        
-    }
+        // Close map in mobile mode when a probe is selected
+        if(window.innerWidth <= 775 && id >= 0) {
+            closeMap();
+        }
     
-    dataProcess(j, id, startDate, endDate);
+        dataProcess(j, id, startDate, endDate);
     
-});
+    });
+}
 
+
+// Asocia los datos a los medidores de la gráfica
 function dataProcess(data, positionId, startDate, endDate) {
     console.log("Graphic started");
     data = data.sort(function (a, b) {
@@ -127,86 +161,93 @@ function dataProcess(data, positionId, startDate, endDate) {
     });
     // asignamos los datos
     datos.labels = times;
-    datos.datasets[0].data = salinity;
-    datos.datasets[1].data = salinity;
-    datos.datasets[2].data = humidity;
-    datos.datasets[3].data = luminosity;
-    datos.datasets[4].data = temperature;
+    datos.datasets[0].data = humidity;
+    datos.datasets[1].data = temperature;
+    datos.datasets[2].data = luminosity;
+    datos.datasets[3].data = rain;
+    datos.datasets[4].data = salinity;
+    
+    updateFilter(0);
     
     CrearGrafica();
 }
 
 var datos = {
-    // 0 = salinity
-    // 1 = rain
-    // 2 = humidty
-    // 3 = luminosity
-    // 4 = temperature
+    // 0 = humidity
+    // 1 = temperature
+    // 2 = luminosity
+    // 3 = rainfall
+    // 4 = salinity
     datasets: [
         {
-            label: 'Salinidad',
+            label: '%',
             data: [],
-            fill: false,
-            backgroundColor: 'rgba(156, 157, 181, 0.6)',
-            borderColor: 'rgb(156, 157, 181)',
+            fill: true,
             //lineas rectas
             lineTension: 0,
+            //colores
+            backgroundColor: 'rgb(0, 157, 217, 0.5)',
             //tipo de punto
             pointStyle: 'circle',
             //tamaño del punto
             pointRadius: 10,
+            hidden: true
         },
         {
-            label: 'Lluvia',
+            label: 'ºC',
             data: [],
-            fill: false,
-            backgroundColor: 'rgba(26, 29, 112, 0.6)',
-            borderColor: 'rgb(26, 29, 112)',
+            fill: true,
             //lineas rectas
             lineTension: 0,
+            //colores
+            backgroundColor: 'rgb(0, 157, 217, 0.5)',
             //tipo de punto
             pointStyle: 'circle',
             //tamaño del punto
             pointRadius: 10,
+            hidden: true
         },
         {
-            label: 'Humedad',
+            label: '%',
             data: [],
-            fill: false,
-            backgroundColor: 'rgba(38, 47, 255, 0.6)',
-            borderColor: 'rgb(38, 47, 255)',
+            fill: true,
             //lineas rectas
             lineTension: 0,
+            //colores
+            backgroundColor: 'rgb(0, 157, 217, 0.5)',
             //tipo de punto
             pointStyle: 'circle',
             //tamaño del punto
             pointRadius: 10,
+            hidden: true
         },
         {
-            label: 'Luminosidad',
+            label: 'L/m2',
             data: [],
-            fill: false,
-            backgroundColor: 'rgba(247, 181, 0, 0.6)',
-            borderColor: 'rgb(247, 181, 0)',
+            fill: true,
             //lineas rectas
             lineTension: 0,
+            //colores
+            backgroundColor: 'rgb(0, 157, 217, 0.5)',
             //tipo de punto
             pointStyle: 'circle',
             //tamaño del punto
             pointRadius: 10,
+            hidden: true
         },
         {
-            label: 'Temperatura',
+            label: 'g/L',
             data: [],
-            fill: false,
-            backgroundColor: 'rgba(247, 70, 0, 0.6)',
-            borderColor: 'rgb(247, 70, 0)',
+            fill: true,
             //lineas rectas
             lineTension: 0,
+            //colores
+            backgroundColor: 'rgb(0, 157, 217, 0.5)',
             //tipo de punto
             pointStyle: 'circle',
             //tamaño del punto
             pointRadius: 10,
+            hidden: true
         },
     ]
 };
@@ -215,13 +256,30 @@ var opciones = {
     scales: {
         yAxes: [{
             //los datos se apilan y se suman entre ellos
-            stacked: false
+            stacked: false,
+            ticks: {
+                // Pone la magnitud correspondiente en el eje Y
+                callback: function(value, index, values) {
+                    for(let i = 0; i < 5; i++) {
+                        if(datos.datasets[i].hidden != true) {
+                            return (value + datos.datasets[i].label);
+                        }
+                    }
+                }
+            }
         }],
         xAxes: [{
-                ticks: {
-                    display: false //this will remove only the label
-                }
+            ticks: {
+                display: false //this will remove only the label
+            }
         }]
+    },
+    layout: {
+        padding: {
+            // To prevent data circles to be cut
+            top: 20,
+            right: 20
+        }
     },
     legend: {
         display: false
@@ -241,7 +299,7 @@ var opciones = {
     maintainAspectRatio: false
     
 };
-
+/* Crea la gráfica */
 function CrearGrafica() {
     let ctx = document.getElementById('chart');
     let chart = new Chart(ctx, {
@@ -251,3 +309,8 @@ function CrearGrafica() {
     });
     chart.update();
 }
+
+// ------------------------------
+// main()
+// ------------------------------
+getMeasurements();
