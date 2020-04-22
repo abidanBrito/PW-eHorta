@@ -1,4 +1,4 @@
-function borrar(i, url) {
+function deleteUsersPlots(i, url) {
     let formData = new FormData();
     formData.append("id", i)
     fetch(url, {
@@ -46,14 +46,14 @@ function deleteAdmin() {
         }
         // Llama a la función correspondiente
         if (td.getAttribute("name") == "user") {
-            borrarVariosUser();
+            deleteUsers();
         } else {
-            borrarVariosPlot();
+            deletePlots();
         }
     }
 }
 
-function borrarVariosPlot() {
+function deletePlots() {
     let url = '../api/v1.0/delete-plot';
     let conf = confirm("¿Está seguro que quiere borrar las parcelas seleccionadas? Esta acción no se puede revertir");
     //Se buscan todos los checkbox y se borran aquellas parcelas que tengan el checkbox activado
@@ -72,7 +72,7 @@ function borrarVariosPlot() {
     }
 }
 
-function borrarVariosUser() {
+function deleteUser() {
     let url = '../api/v1.0/delete-user';
     let conf = confirm("¿Está seguro que quiere borrar los usuarios seleccionados? Esta acción no se puede revertir");
     //Se buscan todos los checkbox y se borran aquellos usuarios que tengan el checkbox activado
