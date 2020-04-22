@@ -1,9 +1,9 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Abidan Brito Clavijo
-*   FILE:           map_contact.js
-*   DATE:           16/03/2020
-*   STATE:          DONE
-*  ---------------------------------------------------------------- */
+ *   AUTHOR:         Abidan Brito Clavijo
+ *   FILE:           map_contact.js
+ *   DATE:           16/03/2020
+ *   STATE:          DONE
+ *  ---------------------------------------------------------------- */
 
 let map;
 let infoWindow;
@@ -20,7 +20,7 @@ function initMap() {
 
     // Center map around EPSG
     let map = new google.maps.Map(
-        document.getElementById('mapContact'), {
+        document.getElementById('map-contact'), {
             zoom: 18,
             tilt: 0,
             center: epsg,
