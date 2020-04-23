@@ -37,12 +37,14 @@
                         <a href="#">Inicio</a>
                         <div id="current-page"></div>
                     </li>
-                    <li>
-                        <a href="app/about.html">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="app/faqs.html">FAQs</a>
-                    </li>
+                    <!--
+                        <li>
+                            <a href="app/about.html">Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="app/faqs.html">FAQs</a>
+                        </li>
+                    -->
                     <li>
                         <a href="app/contact.html" id="navbar-contact">Contacto</a>
                     </li>
@@ -68,9 +70,10 @@
         <!-- Welcome section -->
         <section id="showcase" class="section-index" role="banner">
             <img src="app/img/plant_image.png" alt="Plant image">
-            <div>
+            <div id="banner">
                 <h1>e-Horta</h1>
-                <p>¡La agricultura del futuro ha llegado!</p>
+                <p id="banner-slogan">¡La agricultura del futuro ha llegado!</p>
+                <p id="banner-description">Controla tus cultivos desde cualquier lugar. Aumenta la producción, reduce costes y tiempos.</p>
                 <div id="cta-button">
                     <a class="button" href="#services">Conócenos</a>
                 </div>
@@ -79,18 +82,18 @@
 
         <main id="services" class="main-index">
             <h2>¿Qué ofrecemos?</h2>
-            <p id="slogan01" class="hide">¡Disfruta de una gran variedad de funcionalidades!</p>
+            <p id="slogan01">¡Disfruta de una gran variedad de funcionalidades!</p>
 
             <div id="services-content">
                 <div id="benefits">
                     <article>
                         <h3>Multifunción</h3>
-                        <p>Gráficas, tratamientos antiplagas, notificaciones, cultivo hidropónico, ...</p>
+                        <p>Gráficas, geolocalización, selección de parcelas, notificaciones, ...</p>
                         <img src="app/img/services/simple.svg" alt="Blank image">
                     </article>
                     <article>
                         <h3>Rápido</h3>
-                        <p>Revisa los datos desde nuestra aplicación en cualquier momento.</p>
+                        <p>Revisa los datos en tiempo real en cualquier momento.</p>
                         <img src="app/img/services/speed.svg" alt="Blank image">
                     </article>
                     <article>
@@ -111,8 +114,8 @@
         </main>
 
         <section class="section-index" id="datalogger">
-            <h2>Datalogger</h2>
-            <p id="slogan02" class="hide">¡Control total sobre tus cultivos!</p>
+            <h2>¿Qué medimos?</h2>
+            <p id="slogan02">¡Recopilamos datos de muchas magnitudes!</p>
 
             <div class="magnitudes">
                 <div>
@@ -137,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="hide">
+                <div>
                     <div class="boxes">
                         <img src="app/img/datalogger/barometric_pressure.svg" alt="">
                         <h3>Presión</h3>
@@ -165,8 +168,8 @@
         </section>
 
         <section class="section-index" id="reviews">
-            <h2>Reseñas</h2>
-            <p id="slogan03" class="hide">¡Descubre la opinión de nuestros usuarios!</p>
+            <h2>Opiniones</h2>
+            <p id="slogan03">¡Descubre la opinión de nuestros usuarios!</p>
 
             <div id="reviews-container">
                 <div class="user-review">
@@ -186,7 +189,7 @@
                 <div class="user-review">
                     <div class="user">
                         <img src="app/img/users_profiles/activista.png" alt="Usuario 03">
-                        <p>María Jesús Blanco</p>
+                        <p>María Blanco González</p>
                     </div>
                     <p class="review">"Gracias a esta app puedo gestionar mis tierras desde cualquier sitio."</p>
                 </div>
