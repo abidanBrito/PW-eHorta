@@ -28,7 +28,11 @@ const navSlider = () => {
         navBarLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
+                document.getElementById("button_admin_search").style.display = "initial";
+
             } else {
+                document.getElementById("button_admin_search").style.display = "none";
+
                 link.style.animation = `navbarLinkFade 0.5s ease forwards ${index / 6 + 0.2}s`;
             }
         });

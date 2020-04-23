@@ -1,8 +1,8 @@
-<!-- 
+<!--
     AUTHOR: DANIEL BURRUCHAGA SOLA
     FILE: admin.html
     DATE: 16/04/20
-    STATE: DONE 
+    STATE: DONE
 
 
 
@@ -11,49 +11,48 @@ puede añadir nuev@s de estos dos y eliminar estos.
 
 Posee:
     Dos links que harán la funcion de filtrado de la busqueda entre dividiendo entre parcelas
-    y clientes. 
+    y clientes.
 
     Un buscador con un botón de "submit" desde el cual se procederá con la busqueda.
-    
-    Dos botones, Añadir / Eliminar 
+
+    Dos botones, Añadir / Eliminar
          Al hacer click en Añadir se abrirá un pop Up con un selector de cliente/ parcela y dependiendo cual esté activo visualizará la opción de añadir de uno u otro respectivamente.
          Al hacer click en Eliminar se visualizarán las checkbox para permitir eliminar varias opciones de una.
-    
-     
+
+
     La opción de editar se visualiza al costado derecho del nombre, desde el cual se podrá
-    editar el nombre, coordenadas. 
-    
+    editar el nombre, coordenadas.
+
     Al hacer click en un cliente debe ir a su panel_Hero respectivo.¿?
     Al hacer click en una parcela debe ir a su panel_Hero respectivo.¿?
-     
+
 -->
 
 
 <!DOCTYPE html>
 <html lang="es">
 
-<head><head>
+<head>
     <!-- Default character set -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!--BootsTrap 4-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!--CSS Link-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!--Css Link-->
 
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
 
 
-    <title>Document</title>
-    <script src="js/restringir_acceso_admin.js"></script>
-    <script src="js/delete_sesion.js"></script>
+    <title>Admin</title>
+    <!--script src="js/restringir_acceso_admin.js"></script--->
+    <script src="js/delete-sesion.js"></script>
 </head>
 
 <body class="admin_page">
@@ -68,13 +67,13 @@ Posee:
             <!-- Navigation menu -->
             <ul class="navbar-links" style="margin-bottom: 0;">
                 <!--
-                    <li>
-                        <a href="#">Notificaciones</a>
-                    </li>
-                    <li>
-                        <a href="#">Mi cuenta</a>
-                    </li>
-                -->
+                <li>
+                    <a href="#">Notificaciones</a>
+                </li>
+                <li>
+                    <a href="#">Mi cuenta</a>
+                </li>
+            -->
                 <li>
                     <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
                 </li>
@@ -91,19 +90,20 @@ Posee:
     </header>
 
     <div class="page">
-        <!--EMPIEZA LA PAGINA DE ADMIN-->
+        <!-- Start Admin Page-->
 
         <h2 id="admin_h2">Bienvenido Admin</h2>
         <div id="buttons_div">
             <form id="form_filter" style="">
-                <p id="admin_p" style="">Gestionar</p>
+                <!--p id="admin_p" style=""></p>-->
 
-                <!--<input type="image" id="button_user_filter" href='javascript:userEnab_mapDisab()' style="display: none;"src="img/user_Admin_button_ACTIVATED.png" alt="Submit" width="45" height="">
+                <!-- Filtro mediante inputs
+            <input type="image" id="button_user_filter" href='javascript:userEnab_mapDisab()' style="display: none;"src="img/user_Admin_button_ACTIVATED.png" alt="Submit" width="45" height="">
 
-                <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
+            <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
 -->
-                <!--FILTRO CLIENTES / PARCELAS-->
 
+                <!--Customer / plot filter-->
                 <a id="admin_a" href='javascript:userEnab_mapDisab()'>
                     <img class="admin_img" src="img/user_Admin_button.png" id="button_user_filter" style="display: none;" alt="Usuarios">
                     <img class="admin_img" src="img/user_Admin_button_ACTIVATED.png" id="button_user_filter_activated" style="width: 45px;display: initial;" alt="Usuarios">
@@ -115,85 +115,66 @@ Posee:
                 </a>
 
             </form>
+            <!-- Search PC-->
+
             <div class="input-group" id="search_pc" style="">
-                <!--Barra de busqueda PC-->
-                <input type="text" id="searchInput" onkeyup="javascript:filterFunction()" class="form-control" placeholder="Buscar..." aria-label="" aria-describedby="basic-addon1" style="text-align: center;height: 45;">
+            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px;">
                 <div class="input-group-append">
-                    <button class="btn" type="button" style="background-color: #AC859C;height: 45px;"><img class="admin_img" src="img/search.svg" style="height: 35px;" alt=""></button>
+                    <button class="btn" type="button" style="background-color: #AC859C;height: 40px;"><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
                 </div>
             </div>
-
             <div id="div_add_del" style="">
-                <!--BOTONES AÑADIR ELIMINAR (WIP)-->
-                <button class="buttons_Add_del WIP-feature" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;">Añadir Cliente</button>
-                <button class="buttons_Add_del WIP-feature" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%; display: none;">Añadir Parcela</button>
-                <button class="buttons_Add_del WIP-feature" onclick="deleteAdmin()" style="">Eliminar</button>
+                <!--Add/ Delete buttons-->
+                <button class="buttons_Add_del" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;display: none;">Añadir</button>
+                <!--Add customer button-->
+
+                <button class="buttons_Add_del" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%;visibility: hidden; ">Añadir</button>
+                <!--Add plot button-->
+                <button class="buttons_Add_del" onclick="deleteAdmin()" style="visibility: hidden;">Eliminar</button>
+                <!--Delete -->
             </div>
         </div>
 
         <div class="input-group" id="search_mobile">
-            <!--Barra de busqueda movil-->
-            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="height: 45px; text-align: center;">
+            <!--Search Mobile-->
+            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px;">
             <div class="input-group-append">
-                <button class="btn" type="button" style="background-color: #AC859C; height: 45px;"><img style="height: 35px;" class="admin_img" src="img/search.svg" alt=""></button>
+                <button class="btn" id="button_admin_search"type="button" style="background-color: #AC859C;height: 40px; "><img id="search_img" src="img/search.svg" style="" alt="Submit"></button>
             </div>
         </div>
 
-        <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
         <div>
-            <!-- EMPIEZA POP UP AÑADIR PARCELA -->
+            <!-- Admin Table -- NORMAL SOLO PARA PRUEBAS
+          <table id="admin_table" class="table">
+          </table>
 
-            <div class="form-popup" id="myForm" style="border-radius: 15px;margin-left: 10px;">
-                <form action="/action_page.php" class="form-container">
-                    <div>
-
-                        <a class="admin_a" href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-
-                    </div>
-                    <label for="name"><b>Nombre</b></label>
-                    <input type="text" placeholder="Nombre parcela" name="name">
-
-                    <label for="coordenada-X"><b>Coordenada-X</b></label>
-                    <input type="text" placeholder="Coordenada-X" name="coordenada-X">
-
-                    <label for="coordenada-Y"><b>Coordenada-Y</b></label>
-                    <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
-
-                    <button type="submit" class="btn">Aplicar</button>
-                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-                </form>
-            </div>
-
-            <script>
-                /* ESTO DEBERIA ESTAR DENTRO DEL ARCHIVO POP UP MANAGER PERO NO SE EXACTAMENTE QUE HAY EN ESE ARCHIVO */
-                function openForm() {
-                    document.getElementById("myForm").style.display = "flex";
-                    document.getElementById("myForm").style.flex.flow = "row";
-                }
-
-                function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                    location.reload();
-                }
-            </script>
-            <!-- Acaba POP UP -->
-            <!-- ESTO ES PARA PRUEBAS DEVOLVER A NORMAL -->
-
-            <!-- TABLA ADMIN -->
+             <! TABLA ADMIN -->
             <table id="admin_table" class="table">
+                <tr class='content_row' style='' name='plot'>
+                    <td data-label='Empresa' name='plot'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='admin_a' 'id=' user_${plot.id}>${plot.name}<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'>Buchus</a></a></td>
+                </tr>
+                    <tr class='content_row' style='' name='plot'>
+                    <td data-label='Empresa' name='plot'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='admin_a' 'id=' user_${plot.id}>${plot.name}<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'>Mark</a></a></td>
+                </tr>
             </table>
             <!-- ACABA TABLA -->
+
+
+            <!-- finish Admin Table -->
             <script src="js/users_list.js"></script>
             <script>
                 ViewUsersList.prepare("admin_table");
                 // Se inicializa el controlador
                 UsersController.init();
+
             </script>
             <script src="js/all_plots_list.js"></script>
         </div>
     </div>
     <!-- Scripts -->
-    <script src="js/delete.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
     <script src="js/add.js"></script>
     <script src="js/search.js"></script>

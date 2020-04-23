@@ -79,6 +79,7 @@
 /*Buttons add / delete*/
 
 .buttons_Add_del {
+    visibility: hidden;
     height: 25px;
     width: 115px;
     justify-content: flex-end;
@@ -92,6 +93,7 @@
     font-size: 16px;
     border-radius: 15px;
     cursor: pointer;
+
 }
 
 .buttons_Add_del:hover {
@@ -141,7 +143,7 @@ input-group {
 
 #admin_table th,
 #admin_table td {
-    padding: .625em;
+    padding: .35em;
     border: none;
 }
 
@@ -153,7 +155,7 @@ input-group {
     visibility: hidden;
 }
 
-#admin_table tr:hover {
+#admin_table tr:focus-within {
     background: rgba(179, 147, 162, 0.8);
     visibility: visible;
     cursor: pointer;
@@ -164,24 +166,19 @@ input-group {
     letter-spacing: .1em;
     text-transform: uppercase;
 }
+/*Table links => names in table */
+#admin_table a{
+        color: black;
+    text-decoration: none;
+}
 
-
-/* Admin paragraphs */
+/* Admin paragraphs 
 
 #admin_p {
     margin-right: 10px;
     font-weight: bold;
     margin-right: 5px;
 }
-
-
-/* Admin links */
-
-#admin_a {
-    color: black;
-    text-decoration: none;
-}
-
 
 /* Welcome text */
 
@@ -198,42 +195,52 @@ input-group {
     .page {
         display: flex;
         flex-direction: column;
-        margin-left:2em;
+        margin-left: 2em;
         margin-right: 2em;
     }
+
     #div_add_del {
         display: flex;
         flex-direction: row;
         margin-left: 3px;
         margin-bottom: 10px;
     }
+
     .buttons_Add_del {
+        visibility: hidden;
+
         margin-bottom: 5px;
         font-size: 12px;
         width: 7em;
     }
+
     /*Admin Search Mobile*/
     #form_filter {
         display: flex;
         flex-direction: row;
         margin-right: 0px;
     }
+
     #search_mobile {
         display: flex;
     }
+
     #search_pc {
         display: none;
         margin-left: 20px;
     }
+
     /*Admin Table Mobile*/
     #admin_table tr:active {
         opacity: 0.7;
         visibility: visible;
         cursor: pointer;
     }
+
     .content_row:active {
         background: rgba(179, 147, 162, 0.8);
     }
+
     /* Admin paragraph */
     #admin_p {
         font-size: 15px;
@@ -242,11 +249,13 @@ input-group {
     /*Admin Images*/
     .admin_img {
         width: 45px;
-        margin-left: 10px;
+        margin-left: 20px;
     }
-    #search_img_mobile{
-        width:35px;
+
+    #search_img {
+        width: 30px;
         margin-top: -5px;
+        height: 30px;
     }
 
 }
@@ -261,16 +270,19 @@ input-group {
         margin-left: 0px;
         margin-bottom: 10px;
     }
+
     .buttons_Add_del {
         /* Admin Buttons Add/delete */
         margin-bottom: 5px;
         font-size: 12px;
         width: 80px;
     }
+
     #admin_p {
         /* Admin paragraph */
         margin-bottom: 0px;
     }
+
     #form_filter {
         /* Admin Search */
         display: flex;
@@ -342,7 +354,7 @@ input-group {
 
 
 /* Hidden in desktop mode */
-#open-map,
+
 #dates-mobile {
     display: none;
 }
@@ -462,6 +474,7 @@ input-group {
 
 #position-number {
     display: flex;
+    margin-top: 1em;
     flex-direction: row;
 }
 
@@ -524,6 +537,7 @@ input-group {
 /* user-table father */
 
 #tab {
+    overflow-y: scroll;
     min-width: 200px;
     display: flex;
     align-self: center;
@@ -532,10 +546,6 @@ input-group {
     margin-left: 2em;
     margin-right: 2em;
     overflow-x: hidden;
-}
-
-#tab::-webkit-scrollbar {
-    display: none;
 }
 
 
@@ -754,50 +764,61 @@ td a {
 /*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 48rem) {
+
     /*-----------------------------------*/
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
+
     .menu img {
         display: inline-block;
     }
+
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
+
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
+
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
+
     .dates input {
         font-size: 0.73rem;
     }
+
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
+
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
+
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
     }
+
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
+
     /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
@@ -806,32 +827,39 @@ td a {
         height: 40px;
         margin-left: 10em;
     }
+
     /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 48rem) {
+
         /* Hide scrollbar */
         body {
             overflow: hidden;
             /* Hide scrollbars */
         }
+
         /* Bienvenido */
-        #username h2 {
-            margin-top: 15px;
-            margin-bottom: 15px;
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
+
         /* Mapa de posiciones grande */
         #map {
             width: 100%;
             height: 550px;
             margin-top: 10px;
         }
+
         /* tabla de parcelas, solo escritorio */
         #tab {
             display: none;
         }
+
         /* controles de escritorio */
         #desktop-controls {
             display: none;
         }
+
         /* Gráfica y botones de medidas */
         #app {
             display: flex;
@@ -840,12 +868,13 @@ td a {
             justify-content: center;
             margin-left: 2em;
             margin-right: 2em;
-            margin-top: 0;
         }
+
         /* selectores de fechas escritorio */
         #dates {
             display: none;
         }
+
         /* padre de los selectores en movil */
         #dates-mobile {
             display: block;
@@ -854,6 +883,7 @@ td a {
             display: flex;
             flex-direction: row;
         }
+
         /* los selectores en movil */
         #dates-mobile input {
             font-size: 12px;
@@ -864,37 +894,28 @@ td a {
             border-bottom: 3px solid grey;
             background-color: transparent;
         }
+
         #dates-mobile input:focus {
             border-color: var(--principal-color);
         }
+
         /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
-        #open-map {
+        #dates-mobile #open-map {
             display: block;
-        }
-        
-        #open-map button {
-            width: 100%;
-            height: 32px;
-            background-color: transparent;
-            display: flex;
+            width: 60px;
+            height: 30px;
+            margin-left: auto;
             border: 1px solid black;
-            margin-top: 10px;
-            margin-bottom: 5px;
             border-radius: 5px;
-            align-items: center;
-            justify-content: center;
+            background-color: transparent;
         }
-        
-        #open-map button span {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-        }
+
         /* el icono del boton de abrir y cerrar el mapa */
-        #open-map img {
+        #dates-mobile #open-map img {
             width: 42px;
             height: 33px;
-            padding-top: 2px;
         }
+
         /* barra de separación de los selectores de fechas */
         .bar {
             width: 3px;
@@ -902,6 +923,7 @@ td a {
             height: 20px;
             background-color: black;
         }
+
         /* posicion seleccionada */
         #positionNumber {
             margin-top: 5px;
@@ -911,19 +933,22 @@ td a {
             flex-direction: row;
             color: #333333;
         }
+
         /* chart.js */
         .chart-container {
             width: 100%;
             height: 430px;
+            margin-top: 1em;
             margin-bottom: 1em;
         }
+
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
-            margin-top: 30px;
             display: flex;
             justify-content: space-between;
         }
+
         .measure-btn {
             width: 41px;
             height: 41px;
@@ -931,6 +956,7 @@ td a {
             border: 1px solid #757575;
             background-color: transparent;
         }
+
         /*active buttons*/
         .measure-btn-active {
             width: 41px;
@@ -939,6 +965,7 @@ td a {
             border: 1px solid blue;
             background-color: transparent;
         }
+
         /*general*/
         #map-table {
             flex-direction: column;
@@ -946,6 +973,7 @@ td a {
             margin-right: 2em;
             margin-top: 3em;
         }
+
         /* Selector de campos en movil */
         /*----------------------------------------*/
         #select-css {
@@ -960,6 +988,7 @@ td a {
             box-sizing: border-box;
             margin-top: 10px;
             border: 1px solid #aaa;
+            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
             border-radius: .3em;
             -moz-appearance: none;
             -webkit-appearance: none;
@@ -972,12 +1001,15 @@ td a {
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
         }
+
         #select-css::-ms-expand {
             display: none;
         }
+
         #select-css:hover {
             border-color: #888;
         }
+
         #select-css:focus {
             border-color: #aaa;
             box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
@@ -986,48 +1018,59 @@ td a {
             color: #222;
             outline: none;
         }
+
         #select-css option {
             font-weight: normal;
         }
+
         /*-----------------------------------*/
         /*see other fields*/
         .menu {
             width: 20rem;
             height: 11.9375rem;
         }
+
         .menu img {
             display: inline-block;
         }
+
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
         }
+
         .menu ul {
             display: none;
             max-height: 6.9375rem;
         }
+
         /*Date filter*/
         .dates {
             font-size: 1rem;
             margin-bottom: 5px;
         }
+
         .dates input {
             font-size: 0.73rem;
         }
+
         /*Graph*/
         .data {
             width: 20rem;
             height: 11.9375rem;
         }
+
         /*buttons*/
         #button {
             width: 20rem;
             height: 11.9375rem;
         }
+
         #button .buttons {
             width: 2.3125rem;
             height: 2.3125rem;
         }
+
         #button img {
             width: 1.6875rem;
             height: 1.6875rem;
