@@ -59,7 +59,7 @@ let AllPlotsController = {
             for (let i = 0; i < tr.length; i++) {
                 tr[i].style.display = "table-row";
             }
-        }, 20);
+        }, 200);
     }
 };
 
