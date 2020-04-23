@@ -524,7 +524,6 @@ input-group {
 /* user-table father */
 
 #tab {
-    overflow-y: scroll;
     min-width: 200px;
     display: flex;
     align-self: center;
@@ -533,6 +532,10 @@ input-group {
     margin-left: 2em;
     margin-right: 2em;
     overflow-x: hidden;
+}
+
+#tab::-webkit-scrollbar {
+    display: none;
 }
 
 
