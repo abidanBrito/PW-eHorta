@@ -399,7 +399,12 @@ h3 {
 
 /* Get in touch button */
 #cta-contact {
-    margin: 45px auto;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+#cta-contact a {
+    font-size: 1.5rem;
 }
 
 /* Magnitudes section (¿Qué medimos?) */
@@ -413,9 +418,9 @@ h3 {
 /* Magnitudes container (parent) */
 .magnitudes {
     height: 80%;
-    width: 80%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -427,10 +432,10 @@ h3 {
 
 /* Magnitude button containers */
 .boxes {
-    width: 210px;
-    height: 150px;
+    width: 230px;
+    height: 140px;
     border-radius: 15px;
-    box-shadow: 0px 0px 8px 1px #959595;
+    box-shadow: 0 0 8px 1px #959595;
     padding: 10px;
     margin-top: 120px;
     margin-bottom: 120px;
@@ -443,7 +448,7 @@ h3 {
 
 /* Magnitude icons */
 .boxes img {
-    max-height: 60%;
+    max-height: 50%;
     padding: 3px;
 }
 
@@ -478,15 +483,15 @@ h3 {
     align-items: center;
     width: 100%;
     height: 120px;
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
 }
 
 /* User profile picture */
 .user img {
-    max-height: 100%;
+    max-height: 80%;
     margin-right: 20px;
     border: 2px solid #9e51b8;
-    border-radius: 35px;
+    border-radius: 25px;
 }
 
 /* User profile name */
@@ -607,7 +612,10 @@ h3 {
     
     /* Get in touch button */
     #cta-contact {
-        margin: 10px auto;
+        margin: 1rem auto;
+    }
+
+    #cta-contact a {
         font-size: 14px;
     }
 
@@ -620,7 +628,8 @@ h3 {
     }
 
     /* Magnitudes subcontainer (child) */
-    .magnitudes div {
+    .magnitudes > div {
+        width: 97%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -629,15 +638,23 @@ h3 {
     .magnitudes div div {
         flex-direction: column;
     }
+    
+    /* Section title top margin */
+    #services,
+    #datalogger {
+        padding-top: 70px;
+    }
 
     /* Magnitude titles */
     #datalogger h3 {
-        font-size: 13px;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        margin: 0;
     }
 
     /* Magnitude button containers */
     .boxes {
-        width: 120px;
+        width: 130px;
         height: 100px;
         border-radius: 12px;
         box-shadow: 0px 0px 5px 1px #959595;
@@ -651,11 +668,14 @@ h3 {
         padding: 3px;
     }
 
+    #reviews {
+        padding-top: 1.7rem;
+    }
     /* Container with user reviews (x3) */
     #reviews-container {
         height: auto;
         margin: auto;
-        padding: 1.25rem 0 0;
+        padding: 0.8rem 0 0;
         flex-direction: column;
         justify-content: space-around;
     }
@@ -669,13 +689,13 @@ h3 {
 
     /* User profile container */
     .user {
-        height: 60px;
-        margin-bottom: 20px;
+        height: 70px;
+        margin-bottom: 0.6rem;
     }
 
     /* User profile picture */
     .user img {
-        border-radius: 25px;
+        border-radius: 1rem;
     }
 
     /* User profile name */
