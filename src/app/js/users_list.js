@@ -11,6 +11,11 @@ let UsersModel = {
             this.data = jsonData;
             // Se representa
             ViewUsersList.represent(data);
+        }).then(function() {
+            let tr = document.getElementsByTagName("tr");
+            for (let i = 0; i < tr.length; i++) {
+                tr[i].style.display = "table-row";
+            }
         })
     }
 };
@@ -51,12 +56,6 @@ let UsersController = {
     init: function() {
         this.model.controller = this;
         this.model.load();
-        setTimeout(() => {
-            let tr = document.getElementsByTagName("tr");
-            for (let i = 0; i < tr.length; i++) {
-                tr[i].style.display = "table-row";
-            }
-        }, 200);
     }
 };
 
