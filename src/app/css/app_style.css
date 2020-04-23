@@ -342,7 +342,7 @@ input-group {
 
 
 /* Hidden in desktop mode */
-
+#open-map,
 #dates-mobile {
     display: none;
 }
@@ -462,7 +462,6 @@ input-group {
 
 #position-number {
     display: flex;
-    margin-top: 1em;
     flex-direction: row;
 }
 
@@ -812,9 +811,9 @@ td a {
             /* Hide scrollbars */
         }
         /* Bienvenido */
-        h2 {
-            margin-top: 10px;
-            margin-bottom: 10px;
+        #username h2 {
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
         /* Mapa de posiciones grande */
         #map {
@@ -838,6 +837,7 @@ td a {
             justify-content: center;
             margin-left: 2em;
             margin-right: 2em;
+            margin-top: 0;
         }
         /* selectores de fechas escritorio */
         #dates {
@@ -865,19 +865,32 @@ td a {
             border-color: var(--principal-color);
         }
         /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
-        #dates-mobile #open-map {
+        #open-map {
             display: block;
-            width: 60px;
-            height: 30px;
-            margin-left: auto;
-            border: 1px solid black;
-            border-radius: 5px;
+        }
+        
+        #open-map button {
+            width: 100%;
+            height: 32px;
             background-color: transparent;
+            display: flex;
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #open-map button span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
         }
         /* el icono del boton de abrir y cerrar el mapa */
-        #dates-mobile #open-map img {
+        #open-map img {
             width: 42px;
             height: 33px;
+            padding-top: 2px;
         }
         /* barra de separación de los selectores de fechas */
         .bar {
@@ -899,12 +912,12 @@ td a {
         .chart-container {
             width: 100%;
             height: 430px;
-            margin-top: 1em;
             margin-bottom: 1em;
         }
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
         }
@@ -944,7 +957,6 @@ td a {
             box-sizing: border-box;
             margin-top: 10px;
             border: 1px solid #aaa;
-            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
             border-radius: .3em;
             -moz-appearance: none;
             -webkit-appearance: none;
