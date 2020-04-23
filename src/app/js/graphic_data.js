@@ -334,4 +334,15 @@ function CrearGrafica() {
 // ------------------------------
 // main()
 // ------------------------------
+// Get Humidity button and mark it active as default
+if(window.innerWidth <= 775) {
+    // Mobile
+    let humidity = document.getElementById("mobile-btn-hum");
+    activateMobileButton(humidity);
+} else {
+    // Desktop
+    let humidity = document.getElementById("desktop-btn-hum");
+    activateDesktopButton(humidity);
+}
+
 getMeasurements();
