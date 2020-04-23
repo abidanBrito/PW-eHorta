@@ -1,3 +1,11 @@
+/* ----------------------------------------------------------------
+ *   AUTHOR:        .... 
+ *   FILE:           edit.js
+ *   DATE:           09/04/2020
+ *   STATE:          DONE
+ *  ---------------------------------------------------------------- */
+
+/* delete function for users plot*/
 function deleteUsersPlots(i, url) {
     let formData = new FormData();
     formData.append("id", i)
@@ -5,12 +13,14 @@ function deleteUsersPlots(i, url) {
         method: 'post',
         credentials: "same-origin",
         body: formData
-    }).then(function(respuesta) {
+    }).then(function (respuesta) {
         if (respuesta.status == 200) {
             location.reload();
         }
     });
 }
+
+/* delete function for checkbox and then delete clicked checkbox*/
 
 function showCheckbox() {
     let input = document.getElementsByTagName('input');
@@ -23,12 +33,12 @@ function showCheckbox() {
 }
 
 function deleteAdmin() {
-    //Función para el botón de admin, el cual muestra los checkbox y, si ya están mostrados, llama a las funciones de borrar
+    // Function for the admin button, which shows the checkboxes and, if they are already shown, calls the delete functions    
     let input = document.getElementsByTagName('input')
     let checkbox = [];
 
     for (let i = 0; i < input.length; i++) {
-        //Recoge todos los checkbox
+        //Check Clicked checkboxes
         if (input[i].getAttribute('type') == 'checkbox') {
             checkbox.push(input[i])
         }
@@ -36,21 +46,22 @@ function deleteAdmin() {
     if (checkbox[0].style.visibility == "") {
         showCheckbox();
     } else {
-        //Recoge todas las filas de la tabla
+
+        // Collect all the rows of the table
         let tr = document.getElementsByTagName("tr");
         let td;
 
-        //Recoge aquellas donde está la información que nos interesa
-        for (let i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-        }
-        // Llama a la función correspondiente
-        if (td.getAttribute("name") == "user") {
-            deleteUsers();
-        } else {
-            deletePlots();
-        }
+
+        // Collect those where the information that interests us is        for (let i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
     }
+   //filter for delete users or plots
+    if (td.getAttribute("name") == "user") {
+        deleteUsers();
+    } else {
+        deletePlots();
+    }
+}
 }
 
 function deletePlots() {

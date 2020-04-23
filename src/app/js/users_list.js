@@ -1,17 +1,25 @@
+/* ----------------------------------------------------------------
+ *   AUTHOR:         Pablo Enguix   Daniel Burruchaga 
+ *   FILE:           users_list.js
+ *   DATE:           01/04/2020
+ *   STATE:          DONE
+ *  ---------------------------------------------------------------- */
+
+/*Model for users*/
 let UsersModel = {
     data: [],
     controller: {},
     credentials: "same-origin",
-    load: function() {
-        fetch('../api/v1.0/users').then(function(answer) {
+    load: function () {
+        fetch('../api/v1.0/users').then(function (answer) {
             // Aqui se envia la url a la api para tener los datos y se pasan a JSON
             return answer.json();
-        }).then(function(jsonData) {
+        }).then(function (jsonData) {
             //console.log(jsonData);
             this.data = jsonData;
             // Se representa
             ViewUsersList.represent(data);
-        }).then(function() {
+        }).then(function () {
             let tr = document.getElementsByTagName("tr");
             for (let i = 0; i < tr.length; i++) {
                 tr[i].style.display = "table-row";
@@ -20,14 +28,15 @@ let UsersModel = {
     }
 };
 
+/*View User in table*/
 let ViewUsersList = {
     table: {},
     selector: {},
-    prepare: function(tableId, selectId) {
+    prepare: function (tableId, selectId) {
         this.table = document.getElementById(tableId);
         this.selector = document.getElementById(selectId);
     },
-    represent: function(data) {
+    represent: function (data) {
         this.table.innerHTML += "<tbody></tbody>"
         let tbody = this.table.getElementsByTagName('tbody')[0];
         // Esto recorre cada campo recibido y hace la misma accion para cada uno
@@ -40,6 +49,7 @@ let ViewUsersList = {
     }
 };
 
+/*Check checkbox for delete*/
 function showCheckboxAdminClients() {
     //Busca todos los inputs y mira si se tienen name=checkUsers
     let input = document.getElementsByTagName("input")
@@ -53,7 +63,7 @@ function showCheckboxAdminClients() {
 let UsersController = {
     model: UsersModel,
     view: ViewUsersList,
-    init: function() {
+    init: function () {
         this.model.controller = this;
         this.model.load();
     }
