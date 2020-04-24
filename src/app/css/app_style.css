@@ -1,19 +1,14 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Luis Belloch, Daniel Burruchaga, Pablo Enguix, Jorge Grau
+*   AUTHOR:         Luis Belloch, Daniel Burruchaga, Pablo Enguix,
+*                   Jorge Grau, Abidán Brito
 *   FILE:           app_style.css
-*   DATE:           14/04/2020
+*   DATE:           24/04/2020
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */
 
-
 /* ------------------ */
-
-
 /* -- Variables -- */
-
-
 /* ------------------ */
-
 :root {
     --principal-color: #664B58;
 }
@@ -21,22 +16,13 @@
 .WIP-feature {
     visibility: hidden;
 }
-
-
 /* ------------------ */
 
 
 /* ------------------ */
-
-
 /* -- ADMIN.HTML -- */
-
-
 /* ------------------ */
-
-
 /* ADMIN PAGE.html */
-
 .admin_page {
     overflow-y: hidden;
 }
@@ -47,26 +33,20 @@
     margin-top: 75px;
 }
 
-
 /*Admin Images*/
-
 .admin_img {
     width: 45px;
     margin-left: 15px;
 }
 
-
 /*Admin filter buttons container*/
-
 #buttons_div {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 
-
 /* Add/delete users/plots buttons container */
-
 #div_add_del {
     display: flex;
     align-self: center;
@@ -75,11 +55,8 @@
     align-self: auto;
 }
 
-
 /*Buttons add / delete*/
-
 .buttons_Add_del {
-    visibility: hidden;
     height: 25px;
     width: 115px;
     justify-content: flex-end;
@@ -93,16 +70,13 @@
     font-size: 16px;
     border-radius: 15px;
     cursor: pointer;
-
 }
 
 .buttons_Add_del:hover {
     color: white;
 }
 
-
 /*Admin Search*/
-
 input-group {
     margin-left: 20px;
     margin-right: 20px;
@@ -124,9 +98,7 @@ input-group {
     margin-right: 20px;
 }
 
-
 /* Users/plots table */
-
 #admin_table {
     border: 1px solid #ccc;
     padding: 0;
@@ -166,14 +138,8 @@ input-group {
     letter-spacing: .1em;
     text-transform: uppercase;
 }
-/*Table links => names in table */
-#admin_table a{
-        color: black;
-    text-decoration: none;
-}
 
-/* Admin paragraphs 
-
+/* Admin paragraphs */
 #admin_p {
     margin-right: 10px;
     font-weight: bold;
@@ -181,7 +147,6 @@ input-group {
 }
 
 /* Welcome text */
-
 #admin_h2 {
     display: flex;
     text-align: center;
@@ -190,7 +155,6 @@ input-group {
 
 
 /*----------------------------------- ADMIN Mobile version --------------------------------------*/
-
 @media screen and (max-width: 740px) {
     .page {
         display: flex;
@@ -207,8 +171,6 @@ input-group {
     }
 
     .buttons_Add_del {
-        visibility: hidden;
-
         margin-bottom: 5px;
         font-size: 12px;
         width: 7em;
@@ -240,7 +202,7 @@ input-group {
     .content_row:active {
         background: rgba(179, 147, 162, 0.8);
     }
-
+    
     /* Admin paragraph */
     #admin_p {
         font-size: 15px;
@@ -254,15 +216,13 @@ input-group {
 
     #search_img {
         width: 30px;
-        margin-top: -5px;
         height: 30px;
+        margin-top: -5px;
     }
 
 }
 
-
 /*Resoluciones mas bajas */
-
 @media (max-width: 300px) {
     #div_add_del {
         display: flex;
@@ -291,18 +251,10 @@ input-group {
     }
 }
 
-
 /* ------------------ */
-
-
 /* -- APP.HTML -- */
-
-
 /* ------------------ */
-
-
 /* Graph zone */
-
 #app {
     /*For bugfixing when switching between desktop and mobile*/
     display: block;
@@ -312,9 +264,7 @@ input-group {
     margin-right: 4em;
 }
 
-
 /* Top region with map and plot list */
-
 #map-table {
     display: flex;
     flex-direction: row-reverse;
@@ -324,9 +274,7 @@ input-group {
     margin-right: 4em;
 }
 
-
 /* Google map */
-
 #map {
     width: 100%;
     height: 333px;
@@ -337,31 +285,21 @@ input-group {
 
 
 /* ------------------ */
-
-
 /* -- Graphs -- */
-
-
 /* ------------------ */
-
-
 /* Los selectores de fechas tienen un orden distinto en movil y ordenador */
-
 #desktop-controls {
     display: flex;
     margin-bottom: 20px;
 }
 
-
 /* Hidden in desktop mode */
-
+#open-map,
 #dates-mobile {
     display: none;
 }
 
-
 /* Date selectors father */
-
 #dates {
     display: block;
     margin-bottom: 5px;
@@ -369,9 +307,7 @@ input-group {
     align-items: center;
 }
 
-
 /* Date selectors */
-
 #dates input {
     font-size: 21px;
     width: 143px;
@@ -386,9 +322,7 @@ input-group {
     border-color: mediumpurple;
 }
 
-
 /* Date selectors separator */
-
 .bar {
     width: 3px;
     height: 40px;
@@ -396,12 +330,8 @@ input-group {
     background-color: black;
 }
 
-
 /* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
-
-
 /* Botones de medidas en ordenador */
-
 #measurements {
     display: block;
     width: 100%;
@@ -412,16 +342,12 @@ input-group {
     justify-content: space-between;
 }
 
-
 /* Botones de medidas en móvil */
-
 #measurements-mobile {
     display: none;
 }
 
-
 /* Incluye icono y texto */
-
 .measure-btn {
     width: 43px;
     height: 43px;
@@ -434,9 +360,7 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
-
 /* Icons inside the buttons */
-
 .measure-btn img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -444,9 +368,7 @@ input-group {
     height: 75%;
 }
 
-
 /* Cuando el botón está activado */
-
 .measure-btn-active {
     width: 43px;
     height: 43px;
@@ -459,9 +381,7 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
-
 /* Icons inside the active button */
-
 .measure-btn-active img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -469,75 +389,52 @@ input-group {
     height: 75%;
 }
 
-
 /* Father containing text and a number given from map.js */
-
 #position-number {
     display: flex;
-    margin-top: 1em;
     flex-direction: row;
 }
 
-
 /* Chart.js container */
-
 .chart-container {
     width: 100%;
     height: 420px;
 }
 
-
 /* Hidden in desktop mode */
-
 #select-css {
     display: none;
 }
 
-
 /* Plot names from plots_list.js */
-
 .td-user a {
     text-decoration: none;
     color: black;
 }
 
 
-/**/
-
-
 /*User tables*/
-
-
-/**/
-
 .tab-head-user {
     display: flex;
     flex-direction: column
 }
 
-
 /* User name father */
-
 #username {
     display: flex;
     flex-direction: row;
     align-self: center;
 }
 
-
 /* User name itself */
-
 #username h2 {
     font-size: 24px;
     display: flex;
     align-self: flex-start;
 }
 
-
 /* user-table father */
-
 #tab {
-    overflow-y: scroll;
     min-width: 200px;
     display: flex;
     align-self: center;
@@ -548,9 +445,11 @@ input-group {
     overflow-x: hidden;
 }
 
+#tab::-webkit-scrollbar {
+    display: none;
+}
 
 /* where plots are shown from plots_list.js */
-
 .user-table {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
@@ -560,10 +459,7 @@ input-group {
 
 
 /* Table elements from plots_list */
-
-
 /* ------------------------------ */
-
 .user-table tr {
     background-color: #f8f8f8;
     padding: .35em;
@@ -604,9 +500,7 @@ td a {
     color: black;
 }
 
-
 /* =========================POPUP========================= */
-
 .form-popup {
     display: none;
     flex-flow: column;
@@ -626,9 +520,7 @@ td a {
     border-radius: 10px;
 }
 
-
 /* Full-width input fields */
-
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -638,9 +530,7 @@ td a {
     background: #f1f1f1;
 }
 
-
 /* cuando presionas input */
-
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -658,16 +548,12 @@ td a {
     opacity: 0.8;
 }
 
-
 /* Add a red background color to the cancel button */
-
 .form-container .cancel {
     background-color: red;
 }
 
-
 /* Add some hover effects to buttons */
-
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -684,7 +570,6 @@ td a {
 
 
 /* =========================POPUP========================= */
-
 .form-popup {
     display: none;
     flex-flow: column;
@@ -704,9 +589,7 @@ td a {
     border-radius: 10px;
 }
 
-
 /* Full-width input fields */
-
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -716,9 +599,7 @@ td a {
     background: #f1f1f1;
 }
 
-
 /* cuando presionas input */
-
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -736,16 +617,12 @@ td a {
     opacity: 0.8;
 }
 
-
 /* Add a red background color to the cancel button */
-
 .form-container .cancel {
     background-color: red;
 }
 
-
 /* Add some hover effects to buttons */
-
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -762,9 +639,7 @@ td a {
 
 
 /*-----------------------------------Mobile version--------------------------------------*/
-
 @media (max-width: 48rem) {
-
     /*-----------------------------------*/
     /*see other fields*/
     .menu {
@@ -807,7 +682,7 @@ td a {
         width: 20rem;
         height: 11.9375rem;
     }
-
+    
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
@@ -830,17 +705,15 @@ td a {
 
     /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 48rem) {
-
         /* Hide scrollbar */
         body {
             overflow: hidden;
-            /* Hide scrollbars */
         }
 
         /* Bienvenido */
-        h2 {
-            margin-top: 10px;
-            margin-bottom: 10px;
+        #username h2 {
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         /* Mapa de posiciones grande */
@@ -868,6 +741,7 @@ td a {
             justify-content: center;
             margin-left: 2em;
             margin-right: 2em;
+            margin-top: 0;
         }
 
         /* selectores de fechas escritorio */
@@ -900,20 +774,33 @@ td a {
         }
 
         /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
-        #dates-mobile #open-map {
+        #open-map {
             display: block;
-            width: 60px;
-            height: 30px;
-            margin-left: auto;
-            border: 1px solid black;
-            border-radius: 5px;
+        }
+        
+        #open-map button {
+            width: 100%;
+            height: 32px;
             background-color: transparent;
+            display: flex;
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #open-map button span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
         }
 
         /* el icono del boton de abrir y cerrar el mapa */
-        #dates-mobile #open-map img {
+        #open-map img {
             width: 42px;
             height: 33px;
+            padding-top: 2px;
         }
 
         /* barra de separación de los selectores de fechas */
@@ -938,13 +825,13 @@ td a {
         .chart-container {
             width: 100%;
             height: 430px;
-            margin-top: 1em;
             margin-bottom: 1em;
         }
 
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
         }
@@ -988,7 +875,6 @@ td a {
             box-sizing: border-box;
             margin-top: 10px;
             border: 1px solid #aaa;
-            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .03);
             border-radius: .3em;
             -moz-appearance: none;
             -webkit-appearance: none;
@@ -1033,7 +919,7 @@ td a {
         .menu img {
             display: inline-block;
         }
-
+        
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
