@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2020 a las 12:11:06
+-- Tiempo de generación: 06-05-2020 a las 22:10:47
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -71,7 +71,7 @@ INSERT INTO `measurements` (`id`, `position`, `datetime`, `salinity`, `rain`, `h
 
 CREATE TABLE `notes` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
   `note` varchar(240) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -79,8 +79,23 @@ CREATE TABLE `notes` (
 -- Volcado de datos para la tabla `notes`
 --
 
-INSERT INTO `notes` (`id`, `user_id`, `note`) VALUES
-(2, 1, 'Nota Test');
+INSERT INTO `notes` (`id`, `user`, `note`) VALUES
+(2, 1, 'Nota Test'),
+(4, 1, 'Testeo 2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `plot` int(11) NOT NULL,
+  `magnitude` varchar(20) NOT NULL,
+  `day` datetime NOT NULL,
+  `danger` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -92,24 +107,19 @@ CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `longitude` double NOT NULL,
-  `latitude` double NOT NULL,
-  `salinity_threshold` double NOT NULL,
-  `rain_threshold` double NOT NULL,
-  `humidity_threshold` double NOT NULL,
-  `luminosity_threshold` double NOT NULL,
-  `temperature_threshold` double NOT NULL
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`, `salinity_threshold`, `rain_threshold`, `humidity_threshold`, `luminosity_threshold`, `temperature_threshold`) VALUES
-(1, 'Naranjos Paterna', -0.441465, 39.497875, 0, 0, 0, 0, 0),
-(2, 'Manzanos Bétera', -0.470384, 39.593231, 0, 0, 0, 0, 0),
-(3, 'Gavia de Isidro', -14.019314, 28.494176, 0, 0, 0, 0, 0),
-(4, 'Gavia de Guzmán', -14.019035, 28.493408, 0, 0, 0, 0, 0),
-(5, 'Granja Norte', 0, -0.470384, 0, 0, 0, 0, 0);
+INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
+(1, 'Naranjos Paterna', -0.441465, 39.497875),
+(2, 'Manzanos Bétera', -0.470384, 39.593231),
+(3, 'Gavia de Isidro', -14.019314, 28.494176),
+(4, 'Gavia de Guzmán', -14.019035, 28.493408),
+(5, 'Granja Norte', 0, -0.470384);
 
 -- --------------------------------------------------------
 
@@ -176,6 +186,20 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 (2, 'admin'),
 (3, 'cliente-admin'),
 (4, 'tecnico');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `thresholds`
+--
+
+CREATE TABLE `thresholds` (
+  `id` int(11) NOT NULL,
+  `plot` int(11) NOT NULL,
+  `magnitude` varchar(20) NOT NULL,
+  `min` int(11) NOT NULL,
+  `max` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -271,6 +295,7 @@ INSERT INTO `vertex` (`id`, `plot`, `latitude`, `longitude`) VALUES
 --
 ALTER TABLE `measurements`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mesurements` (`salinity`,`rain`,`humidity`,`luminosity`,`temperature`),
   ADD KEY `pos` (`position`);
 
 --
@@ -278,7 +303,14 @@ ALTER TABLE `measurements`
 --
 ALTER TABLE `notes`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_id` (`user_id`);
+  ADD UNIQUE KEY `user` (`user`,`note`) USING BTREE;
+
+--
+-- Indices de la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plot` (`plot`,`magnitude`,`day`,`danger`) USING BTREE;
 
 --
 -- Indices de la tabla `plots`
@@ -305,6 +337,13 @@ ALTER TABLE `probes`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plot` (`plot`,`magnitude`,`min`,`max`);
 
 --
 -- Indices de la tabla `users`
@@ -341,7 +380,13 @@ ALTER TABLE `measurements`
 -- AUTO_INCREMENT de la tabla `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `plots`
@@ -368,6 +413,12 @@ ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
@@ -387,7 +438,13 @@ ALTER TABLE `measurements`
 -- Filtros para la tabla `notes`
 --
 ALTER TABLE `notes`
-  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `positions`
@@ -400,6 +457,12 @@ ALTER TABLE `positions`
 --
 ALTER TABLE `probes`
   ADD CONSTRAINT `id` FOREIGN KEY (`position`) REFERENCES `positions` (`id`);
+
+--
+-- Filtros para la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  ADD CONSTRAINT `thresholds_ibfk_1` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`
