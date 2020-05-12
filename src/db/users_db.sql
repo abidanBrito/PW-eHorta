@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-03-2020 a las 18:44:00
+-- Tiempo de generación: 12-05-2020 a las 10:39:44
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -39,6 +39,10 @@ CREATE TABLE `measurements` (
   `temperature` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `measurements`
+--
+
 INSERT INTO `measurements` (`id`, `position`, `datetime`, `salinity`, `rain`, `humidity`, `luminosity`, `temperature`) VALUES
 (1, 3, '2020-03-22 10:39:41', 56, 5, 68, 72, 23),
 (2, 3, '2020-03-22 12:00:24', 47, 4, 61, 84, 25),
@@ -62,6 +66,40 @@ INSERT INTO `measurements` (`id`, `position`, `datetime`, `salinity`, `rain`, `h
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `note` varchar(240) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `notes`
+--
+
+INSERT INTO `notes` (`id`, `user`, `note`) VALUES
+(2, 1, 'Nota Test'),
+(4, 1, 'Testeo 2');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `plot` int(11) NOT NULL,
+  `magnitude` varchar(20) NOT NULL,
+  `day` datetime NOT NULL,
+  `danger` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `plots`
 --
 
@@ -69,19 +107,20 @@ CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `longitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `latitude` double NOT NULL,
+  `codmun` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
-(1, 'Naranjos Paterna', -0.441465, 39.497875),
-(2, 'Manzanos Bétera', -0.470384, 39.593231),
-(3, 'Gavia de Isidro', -14.019314, 28.494176),
-(4, 'Gavia de Guzmán', -14.019035, 28.493408),
-(5, 'Granja Norte', 0, -0.470384);
+INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`, `codmun`) VALUES
+(1, 'Naranjos Paterna', -0.441465, 39.497875, 46190),
+(2, 'Manzanos Bétera', -0.470384, 39.593231, 46070),
+(3, 'Gavia de Isidro', -14.019314, 28.494176, 35003),
+(4, 'Gavia de Guzmán', -14.019035, 28.493408, 35003),
+(5, 'Granja Norte', 0, -0.470384, 0);
 
 -- --------------------------------------------------------
 
@@ -106,7 +145,7 @@ INSERT INTO `positions` (`id`, `plot`, `longitude`, `latitude`) VALUES
 (3, 3, -14.019314, 28.494176),
 (4, 3, -14.019035, 28.494189),
 (5, 3, -14.019532, 28.494001),
-(6, 4, -14.018762,  28.493647),
+(6, 4, -14.018762, 28.493647),
 (7, 4, -14.019035, 28.493408);
 
 -- --------------------------------------------------------
@@ -148,6 +187,20 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 (2, 'admin'),
 (3, 'cliente-admin'),
 (4, 'tecnico');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `thresholds`
+--
+
+CREATE TABLE `thresholds` (
+  `id` int(11) NOT NULL,
+  `plot` int(11) NOT NULL,
+  `magnitude` varchar(20) NOT NULL,
+  `min` int(11) NOT NULL,
+  `max` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -197,11 +250,11 @@ CREATE TABLE `users-plots` (
 --
 
 INSERT INTO `users-plots` (`user`, `plot`) VALUES
+(6, 5),
 (9, 1),
 (9, 2),
 (10, 3),
-(10, 4),
-(6, 5);
+(10, 4);
 
 -- --------------------------------------------------------
 
@@ -217,32 +270,48 @@ CREATE TABLE `vertex` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `users-plots`
+-- Volcado de datos para la tabla `vertex`
 --
 
 INSERT INTO `vertex` (`id`, `plot`, `latitude`, `longitude`) VALUES
--- Gavia #1
 (1, 3, 28.494207, -14.019575),
-(2, 3, 28.494080, -14.019704),
+(2, 3, 28.49408, -14.019704),
 (3, 3, 28.493858, -14.019565),
-(4, 3, 28.494056, -14.019270),
+(4, 3, 28.494056, -14.01927),
 (5, 3, 28.494216, -14.018916),
 (6, 3, 28.494433, -14.019011),
-
--- Gavia #2
 (7, 4, 28.492835, -14.019104),
 (8, 4, 28.493288, -14.018895),
-(3, 4, 28.493618, -14.018600),
+(3, 4, 28.493618, -14.0186),
 (10, 4, 28.493773, -14.018755),
 (11, 4, 28.493537, -14.019318),
-(12, 4, 28.493480, -14.019356);
+(12, 4, 28.49348, -14.019356);
+
+--
+-- Índices para tablas volcadas
+--
 
 --
 -- Indices de la tabla `measurements`
 --
 ALTER TABLE `measurements`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mesurements` (`salinity`,`rain`,`humidity`,`luminosity`,`temperature`),
   ADD KEY `pos` (`position`);
+
+--
+-- Indices de la tabla `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `user` (`user`,`note`) USING BTREE;
+
+--
+-- Indices de la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plot` (`plot`,`magnitude`,`day`,`danger`) USING BTREE;
 
 --
 -- Indices de la tabla `plots`
@@ -271,6 +340,13 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `plot` (`plot`,`magnitude`,`min`,`max`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -281,6 +357,7 @@ ALTER TABLE `users`
 -- Indices de la tabla `users-plots`
 --
 ALTER TABLE `users-plots`
+  ADD UNIQUE KEY `user` (`user`,`plot`),
   ADD KEY `plot_set` (`plot`),
   ADD KEY `user_set` (`user`);
 
@@ -298,6 +375,18 @@ ALTER TABLE `vertex`
 -- AUTO_INCREMENT de la tabla `measurements`
 --
 ALTER TABLE `measurements`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `notifications`
+--
+ALTER TABLE `notifications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -310,7 +399,7 @@ ALTER TABLE `plots`
 -- AUTO_INCREMENT de la tabla `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `probes`
@@ -325,10 +414,16 @@ ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
@@ -339,6 +434,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `measurements`
   ADD CONSTRAINT `pos` FOREIGN KEY (`position`) REFERENCES `positions` (`id`);
+
+--
+-- Filtros para la tabla `notes`
+--
+ALTER TABLE `notes`
+  ADD CONSTRAINT `notes_ibfk_1` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `positions`
@@ -353,6 +460,12 @@ ALTER TABLE `probes`
   ADD CONSTRAINT `id` FOREIGN KEY (`position`) REFERENCES `positions` (`id`);
 
 --
+-- Filtros para la tabla `thresholds`
+--
+ALTER TABLE `thresholds`
+  ADD CONSTRAINT `thresholds_ibfk_1` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
@@ -362,8 +475,8 @@ ALTER TABLE `users`
 -- Filtros para la tabla `users-plots`
 --
 ALTER TABLE `users-plots`
-  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`),
-  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `plot_set` FOREIGN KEY (`plot`) REFERENCES `plots` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_set` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vertex`
