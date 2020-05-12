@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Default character set -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <!-- Internet Explorer Compatibility Layer enabled -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Stylesheet and favicon -->
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/app_style.css">
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>e-Horta | El Tiempo</title>
+    <!--<script src="js/restringir_acceso.js"></script>-->
+    <script src="js/delete_sesion.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+   
+   <!-- Top bar (navigation menu) -->
+    <header>
+        <!-- Corporative brand -->
+        <a id="logo" class="white-filter" href="../index.html">
+            <img src="img/logo_v2.svg" alt="LOGO">
+        </a>
+
+        <nav class="navbar">
+            <!-- Navigation menu -->
+            <ul class="navbar-links">
+                <!--
+                    <li>
+                        <a href="#">Notificaciones</a>
+                    </li>
+                    <li>
+                        <a href="#">Mi cuenta</a>
+                    </li>
+                -->
+                <li>
+                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" id="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <h1 class="titleWeather">Predicción meteorológica</h1>
+
+    <script src="js/currWeather.js"></script>
+    <script>
+        startWeatherPrediction();
+    </script>
+    
+    <section id="predictionsContainer">
+        <!-- Tajetas con las predicciones -->
+    </section>
+    
+</body>
+</html>
