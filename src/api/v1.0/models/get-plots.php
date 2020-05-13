@@ -6,7 +6,7 @@ require_once 'access.php';
 $user = $_SESSION["user_id"];
 
 // Define SQL query
-$sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`, `plots`.`id` FROM `plots` INNER JOIN `users-plots` WHERE `plots`.`id` = `users-plots`.`plot` AND `users-plots`.`user` = $user";
+$sql = "SELECT `plots`.`name`, `plots`.`longitude`, `plots`.`latitude`, `plots`.`id`, `plots`.`codmun` FROM `plots` INNER JOIN `users-plots` WHERE `plots`.`id` = `users-plots`.`plot` AND `users-plots`.`user` = $user";
 
 // Send SQL query to the active database
 $res = mysqli_query($conn, $sql);
