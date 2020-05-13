@@ -15,26 +15,30 @@ function startWeatherPrediction() {
             return answer.json();
         }).then(function(jsonData) {
         
-        console.log(jsonData);
-        
         let uniquePlots = [];
         // filtro para buscar codigos de municipio repetidos
         for(plot of jsonData) {
-            let rep = 0;
-            for(let i = 0; i < jsonData.length; i++) {
-                if(plot.codmun == jsonData[i].codmun) {
-                    rep++;
-                }
-            } // for
-            if(rep < 2) {
+            if(contains(plot.codmun, uniquePlots) == false) {
                 uniquePlots.push(plot.codmun);
-            } // if
+            }
         } // for
         for(let i = 0; i < uniquePlots.length; i++) {
             sendRequest(uniquePlots[i]);
         } // for
     }) // then
 } // ()
+// ----------------------------------------------------------------
+// T, [T] -> contains() -> T/F
+// Returns true if the element is in the list and false if not
+// ----------------------------------------------------------------
+function contains(input, list) {
+    for(let i = 0; i < list.length; i++) {
+        if(input == list[i]) {
+            return true;
+        }
+    } // for
+    return false;
+}
 
 // ----------------------------------------------------------------
 // T -> sendRequest()
