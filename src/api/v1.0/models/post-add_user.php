@@ -1,12 +1,12 @@
 <?php
 
-    if((isset($_POST['name']) && $_POST['name'] !== '' )&&(isset($_POST['email']) && $_POST['email'] !== '' )&&(isset($_POST['pass']) && $_POST['pass'] !== '' )){
+    if((isset($_POST['name']) && $_POST['name'] !== '' )&&(isset($_POST['surname']) && $_POST['surname'] !== '' )&&(isset($_POST['email']) && $_POST['email'] !== '' )&&(isset($_POST['pass']) && $_POST['pass'] !== '' )&&(isset($_POST['role']) && $_POST['role'] !== '' )){
        
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $email = $_POST['email'];
         $pass = $_POST['pass'];
-        $rol = $_POST['rolList'];
+        $rol = $_POST['role'];
         
         session_start();
         $id_user = $_SESSION["user_id"];

@@ -9,17 +9,17 @@ let AllPlotsModel = {
     data: [],
     controller: {},
     credentials: "same-origin",
-    load: function () {
-        fetch('../api/v1.0/plots_all').then(function (answer) {
+    load: function() {
+        fetch('../api/v1.0/plots_all').then(function(answer) {
 
             // Here the url is sent to the api to have the data and they are passed to JSON      
             return answer.json();
-        }).then(function (jsonData) {
+        }).then(function(jsonData) {
             //console.log('TODOS ' + jsonData);
             this.data = jsonData;
             // Represent it
             ViewAllPlotsList.represent(data)
-        }).then(function () {
+        }).then(function() {
             let tr = document.getElementsByTagName("tr");
             for (let i = 0; i < tr.length; i++) {
                 tr[i].style.display = "table-row";
@@ -31,13 +31,13 @@ let AllPlotsModel = {
 let ViewAllPlotsList = {
     text: {},
     selector: {},
-    prepare: function (tableId, selectId) {
+    prepare: function(tableId, selectId) {
         this.text = document.getElementById(tableId);
         if (selectId != "") {
             this.selector = document.getElementById(selectId);
         }
     },
-    represent: function (data) {
+    represent: function(data) {
         // This goes through each received field and does the same action for each one
         this.text.innerHTML += "<tbody></tbody>";
         let tbody = this.text.getElementsByTagName('tbody')[0];
@@ -48,6 +48,9 @@ let ViewAllPlotsList = {
 
             tbody.innerHTML += "<tr class='content_row admintr' style='display:none;' name='plot'><td><img src='img/mapi.png' alt='Parcela' style='width: 15px;height: 15px;'></td><td data-label='Empresa' name='plot'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='links_usuarios' 'id='user_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'></a></td></tr>"
         })
+        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 1].style.borderBottom = "none";
+        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 2].style.borderBottom = "none";
+        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 3].style.borderBottom = "none";
     }
 };
 
@@ -65,7 +68,7 @@ function showCheckboxAdminAllPlots() {
 let AllPlotsController = {
     model: AllPlotsModel,
     view: ViewAllPlotsList,
-    init: function () {
+    init: function() {
         this.model.controller = this;
         this.model.load();
     }
@@ -75,18 +78,19 @@ function userDisab_mapEnab() {
 
 
     // Change the plots button from white to purple
-    document.getElementById("button_user_filter").style.display = "initial";
-    document.getElementById("button_user_filter_activated").style.display = "none";
-
+    document.getElementById("plot_form").style.color = "rgb(224, 169, 66)";
 
     // Reverse last process for plots 
-    document.getElementById("button_map_filter").style.display = "none";
-    document.getElementById("button_map_filter_activated").style.display = "initial";
+    document.getElementById("user_form").style.color = "gray";
 
     //Change add button
     document.getElementById("button_Add_customer").style.display = "none";
     document.getElementById("button_Add_plot").style.display = "initial";
 
+    //Comprueba si el formulario de añadir campo está abierto, y si lo está lo oculta
+    if (document.getElementById("divAddUser").classList.contains("show")) {
+        document.getElementById("button_Add_customer").click()
+    }
 
     // The parcels table is created, destroying the users table
     let table = document.getElementById("admin_table");

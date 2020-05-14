@@ -6,9 +6,15 @@
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */
 
+
 /* ------------------ */
+
+
 /* -- Variables -- */
+
+
 /* ------------------ */
+
 :root {
     --principal-color: #664B58;
 }
@@ -16,16 +22,21 @@
 .WIP-feature {
     visibility: hidden;
 }
+
+
 /* ------------------ */
 
 
 /* ------------------ */
-/* -- ADMIN.HTML -- */
+
+
+/* --- ADMIN.HTML --- */
+
+
 /* ------------------ */
-/* ADMIN PAGE.html */
-.admin_page {
-    overflow-y: hidden;
-}
+
+
+/*   ADMIN PAGE.html  */
 
 .page {
     margin-left: 15%;
@@ -33,32 +44,42 @@
     margin-top: 75px;
 }
 
+
 /*Admin Images*/
+
 .admin_img {
     width: 45px;
     margin-left: 15px;
 }
 
+
 /*Admin filter buttons container*/
+
 #buttons_div {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: space-around;
+    color: gray;
+    margin: 0px auto 20px auto;
+    width: 100%;
+    font-size: 23px;
 }
+
 
 /* Add/delete users/plots buttons container */
+
 #div_add_del {
     display: flex;
-    align-self: center;
     flex-direction: row;
     margin-left: 20px;
-    align-self: auto;
+    justify-content: space-between;
 }
 
+
 /*Buttons add / delete*/
+
 .buttons_Add_del {
-    height: 25px;
-    width: 115px;
+    height: 34px;
+    width: 123px;
     justify-content: flex-end;
     align-self: center;
     background-color: #CEAD3C;
@@ -68,7 +89,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 15px;
+    border-radius: 70px;
     cursor: pointer;
 }
 
@@ -76,10 +97,123 @@
     color: white;
 }
 
+
+/* Add users/plots accordion style */
+
+.collapse.show {
+    display: flex;
+}
+
+#divAddUser,
+#divAddPlot {
+    margin: 15px;
+}
+
+#addUser,
+#addPlot,
+#preview {
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: white;
+    padding: 0px 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#addUser .close,
+#addPlot .close {
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 5px;
+}
+
+#addUser h4,
+#addPlot h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#addPlot input {
+    width: 320px;
+    height: 25px;
+    font-size: 1rem;
+    margin: 5px 0px 0px 2.5px;
+}
+
+#addPlot #div-polygons,
+#addPlot #div-probes,
+#addPlot .addVertex {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#addPlot .polygons,
+#addPlot .probes {
+    width: 140px;
+}
+
+#addPlot .addVertex {
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+#addPlot .counter {
+    color: gray;
+}
+
+.plot-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.plot-buttons button {
+    border: none;
+    box-shadow: none;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+}
+
+#selectRole {
+    display: block;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.3;
+    padding: .4em 1.4em .3em .8em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 1px solid #aaa;
+    border-radius: .3em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*quitar la flecha por defecto*/
+    appearance: none;
+    background-color: #fff;
+    /* flecha pequeña */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+
 /*Admin Search*/
+
 input-group {
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 #search_mobile {
@@ -91,16 +225,25 @@ input-group {
     min-width: 250px;
 }
 
-#form_filter {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    margin-right: 20px;
+#buttons_div .admin_a {
+    text-decoration: none;
+    cursor: pointer;
 }
 
+#user_form {
+    color: rgb(224, 169, 66);
+}
+
+#plot_form {
+    color: gray;
+}
+
+
 /* Users/plots table */
+
 #admin_table {
     border: 1px solid #ccc;
+    background-color: #f8f8f8;
     padding: 0;
     margin-top: 5px;
     margin-right: 500px;
@@ -108,8 +251,7 @@ input-group {
 }
 
 #admin_table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding: .35em;
 }
 
@@ -139,14 +281,18 @@ input-group {
     text-transform: uppercase;
 }
 
+
 /* Admin paragraphs */
+
 #admin_p {
     margin-right: 10px;
     font-weight: bold;
     margin-right: 5px;
 }
 
+
 /* Welcome text */
+
 #admin_h2 {
     display: flex;
     text-align: center;
@@ -155,74 +301,134 @@ input-group {
 
 
 /*----------------------------------- ADMIN Mobile version --------------------------------------*/
+
 @media screen and (max-width: 740px) {
+    .admin_page {
+        overflow: scroll;
+    }
     .page {
         display: flex;
         flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
     }
-
     #div_add_del {
         display: flex;
         flex-direction: row;
         margin-left: 3px;
         margin-bottom: 10px;
     }
-
     .buttons_Add_del {
         margin-bottom: 5px;
-        font-size: 12px;
-        width: 7em;
+        font-size: 18px;
     }
-
     /*Admin Search Mobile*/
-    #form_filter {
-        display: flex;
-        flex-direction: row;
-        margin-right: 0px;
-    }
-
     #search_mobile {
         display: flex;
+        background-color: #fff;
+        border: 1px solid gray;
+        padding-right: 5px;
+        border-radius: 10px;
     }
-
+    #search_mobile input {
+        border: none;
+        background: none;
+    }
     #search_pc {
         display: none;
         margin-left: 20px;
     }
-
     /*Admin Table Mobile*/
+    #admin_table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        border-collapse: separate !important;
+        border-radius: 15px;
+        border-spacing: 0;
+        background-color: #fff;
+    }
+    #admin_table td {
+        border-bottom: 1px solid #ccc;
+    }
     #admin_table tr:active {
         opacity: 0.7;
         visibility: visible;
         cursor: pointer;
     }
-
     .content_row:active {
         background: rgba(179, 147, 162, 0.8);
     }
-
     /* Admin paragraph */
     #admin_p {
         font-size: 15px;
     }
-
     /*Admin Images*/
     .admin_img {
         width: 45px;
         margin-left: 20px;
     }
-
     #search_img {
         width: 30px;
         height: 30px;
-        margin-top: -5px;
+        margin: auto;
     }
-
+    /*Admin popups*/
+    #divAddUser,
+    #divAddPlot {
+        margin: 15px auto;
+    }
+    #addUser,
+    #addPlot {
+        width: 280px;
+        padding: 0px 10px 10px 10px;
+    }
+    #preview {
+        width: 280px;
+        padding: 0px 10px 0px 0px;
+    }
+    #addUser input,
+    #addPlot input {
+        width: 260px;
+        font-size: 1rem;
+    }
+    #addPlot #div-polygons,
+    #addPlot #div-probes {
+        flex-direction: column;
+        align-items: center;
+    }
+    #addPlot .polygons,
+    #addPlot .probes {
+        width: 200px;
+    }
+    .sondas {
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+    }
+    #addMap {
+        width: 278px;
+        height: 407px;
+        border-radius: 20px;
+    }
+    .undo {
+        width: 24px;
+        height: 24px;
+        opacity: 0.5;
+        margin: 5px 20px;
+        display: flex;
+        cursor: pointer;
+    }
+    .plot-buttons button {
+        font-size: 12px;
+    }
+    .plot-buttons .button {
+        padding: 7px 0.5rem;
+    }
 }
 
+
 /*Resoluciones mas bajas */
+
 @media (max-width: 300px) {
     #div_add_del {
         display: flex;
@@ -230,19 +436,16 @@ input-group {
         margin-left: 0px;
         margin-bottom: 10px;
     }
-
     .buttons_Add_del {
         /* Admin Buttons Add/delete */
         margin-bottom: 5px;
         font-size: 12px;
         width: 80px;
     }
-
     #admin_p {
         /* Admin paragraph */
         margin-bottom: 0px;
     }
-
     #form_filter {
         /* Admin Search */
         display: flex;
@@ -251,10 +454,18 @@ input-group {
     }
 }
 
+
 /* ------------------ */
+
+
 /* -- APP.HTML -- */
+
+
 /* ------------------ */
+
+
 /* Graph zone */
+
 #app {
     /*For bugfixing when switching between desktop and mobile*/
     display: block;
@@ -264,7 +475,9 @@ input-group {
     margin-right: 4em;
 }
 
+
 /* Top region with map and plot list */
+
 #map-table {
     display: flex;
     flex-direction: row-reverse;
@@ -274,7 +487,9 @@ input-group {
     margin-right: 4em;
 }
 
-/* Google map */
+
+/* Google maps, user and map for adding plots */
+
 #map {
     width: 100%;
     height: 333px;
@@ -285,21 +500,32 @@ input-group {
 
 
 /* ------------------ */
+
+
 /* -- Graphs -- */
+
+
 /* ------------------ */
+
+
 /* Los selectores de fechas tienen un orden distinto en movil y ordenador */
+
 #desktop-controls {
     display: flex;
     margin-bottom: 20px;
 }
 
+
 /* Hidden in desktop mode */
+
 #open-map,
 #dates-mobile {
     display: none;
 }
 
+
 /* Date selectors father */
+
 #dates {
     display: block;
     margin-bottom: 5px;
@@ -307,7 +533,9 @@ input-group {
     align-items: center;
 }
 
+
 /* Date selectors */
+
 #dates input {
     font-size: 21px;
     width: 143px;
@@ -322,7 +550,9 @@ input-group {
     border-color: mediumpurple;
 }
 
+
 /* Date selectors separator */
+
 .bar {
     width: 3px;
     height: 40px;
@@ -330,8 +560,12 @@ input-group {
     background-color: black;
 }
 
+
 /* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
+
+
 /* Botones de medidas en ordenador */
+
 #measurements {
     display: block;
     width: 100%;
@@ -342,12 +576,16 @@ input-group {
     justify-content: space-between;
 }
 
+
 /* Botones de medidas en móvil */
+
 #measurements-mobile {
     display: none;
 }
 
+
 /* Incluye icono y texto */
+
 .measure-btn {
     width: 43px;
     height: 43px;
@@ -360,7 +598,9 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
+
 /* Icons inside the buttons */
+
 .measure-btn img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -368,7 +608,9 @@ input-group {
     height: 75%;
 }
 
+
 /* Cuando el botón está activado */
+
 .measure-btn-active {
     width: 43px;
     height: 43px;
@@ -381,7 +623,9 @@ input-group {
     font-family: 'Roboto', sans-serif;
 }
 
+
 /* Icons inside the active button */
+
 .measure-btn-active img {
     margin-top: 5px;
     margin-bottom: 10px;
@@ -389,24 +633,32 @@ input-group {
     height: 75%;
 }
 
+
 /* Father containing text and a number given from map.js */
+
 #position-number {
     display: flex;
     flex-direction: row;
 }
 
+
 /* Chart.js container */
+
 .chart-container {
     width: 100%;
     height: 420px;
 }
 
+
 /* Hidden in desktop mode */
+
 #select-css {
     display: none;
 }
 
+
 /* Plot names from plots_list.js */
+
 .td-user a {
     text-decoration: none;
     color: black;
@@ -414,26 +666,33 @@ input-group {
 
 
 /*User tables*/
+
 .tab-head-user {
     display: flex;
     flex-direction: column
 }
 
+
 /* User name father */
+
 #username {
     display: flex;
     flex-direction: row;
     align-self: center;
 }
 
+
 /* User name itself */
+
 #username h2 {
     font-size: 24px;
     display: flex;
     align-self: flex-start;
 }
 
+
 /* user-table father */
+
 #tab {
     min-width: 200px;
     display: flex;
@@ -449,7 +708,9 @@ input-group {
     display: none;
 }
 
+
 /* where plots are shown from plots_list.js */
+
 .user-table {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
@@ -459,7 +720,10 @@ input-group {
 
 
 /* Table elements from plots_list */
+
+
 /* ------------------------------ */
+
 .user-table tr {
     background-color: #f8f8f8;
     padding: .35em;
@@ -500,7 +764,9 @@ td a {
     color: black;
 }
 
+
 /* =========================POPUP========================= */
+
 .form-popup {
     display: none;
     flex-flow: column;
@@ -520,7 +786,9 @@ td a {
     border-radius: 10px;
 }
 
+
 /* Full-width input fields */
+
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -530,7 +798,9 @@ td a {
     background: #f1f1f1;
 }
 
+
 /* cuando presionas input */
+
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -548,12 +818,16 @@ td a {
     opacity: 0.8;
 }
 
+
 /* Add a red background color to the cancel button */
+
 .form-container .cancel {
     background-color: red;
 }
 
+
 /* Add some hover effects to buttons */
+
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -570,6 +844,7 @@ td a {
 
 
 /* =========================POPUP========================= */
+
 .form-popup {
     display: none;
     flex-flow: column;
@@ -589,7 +864,9 @@ td a {
     border-radius: 10px;
 }
 
+
 /* Full-width input fields */
+
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -599,7 +876,9 @@ td a {
     background: #f1f1f1;
 }
 
+
 /* cuando presionas input */
+
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -617,12 +896,16 @@ td a {
     opacity: 0.8;
 }
 
+
 /* Add a red background color to the cancel button */
+
 .form-container .cancel {
     background-color: red;
 }
 
+
 /* Add some hover effects to buttons */
+
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -639,6 +922,7 @@ td a {
 
 
 /*-----------------------------------Mobile version--------------------------------------*/
+
 @media (max-width: 740px) {
     /*-----------------------------------*/
     /*see other fields*/
@@ -646,54 +930,44 @@ td a {
         width: 20rem;
         height: 11.9375rem;
     }
-
     .menu img {
         display: inline-block;
     }
-
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
-
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
-
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
-
     .dates input {
         font-size: 0.73rem;
     }
-
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
-
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
-
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
     }
-
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
-
     /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
@@ -702,37 +976,31 @@ td a {
         height: 40px;
         margin-left: 10em;
     }
-
     /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 740px) {
         /* Hide scrollbar */
         body {
             overflow: hidden;
         }
-
         /* Bienvenido */
         #username h2 {
             margin-top: 15px;
             margin-bottom: 15px;
         }
-
         /* Mapa de posiciones grande */
         #map {
             width: 100%;
             height: 550px;
             margin-top: 10px;
         }
-
         /* tabla de parcelas, solo escritorio */
         #tab {
             display: none;
         }
-
         /* controles de escritorio */
         #desktop-controls {
             display: none;
         }
-
         /* Gráfica y botones de medidas */
         #app {
             display: flex;
@@ -743,12 +1011,10 @@ td a {
             margin-right: 2em;
             margin-top: 0;
         }
-
         /* selectores de fechas escritorio */
         #dates {
             display: none;
         }
-
         /* padre de los selectores en movil */
         #dates-mobile {
             display: block;
@@ -757,7 +1023,6 @@ td a {
             display: flex;
             flex-direction: row;
         }
-
         /* los selectores en movil */
         #dates-mobile input {
             font-size: 12px;
@@ -768,16 +1033,13 @@ td a {
             border-bottom: 3px solid grey;
             background-color: transparent;
         }
-
         #dates-mobile input:focus {
             border-color: var(--principal-color);
         }
-
         /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
         #open-map {
             display: block;
         }
-
         #open-map button {
             width: 100%;
             height: 32px;
@@ -790,19 +1052,16 @@ td a {
             align-items: center;
             justify-content: center;
         }
-
         #open-map button span {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
         }
-
         /* el icono del boton de abrir y cerrar el mapa */
         #open-map img {
             width: 42px;
             height: 33px;
             padding-top: 2px;
         }
-
         /* barra de separación de los selectores de fechas */
         .bar {
             width: 3px;
@@ -810,7 +1069,6 @@ td a {
             height: 20px;
             background-color: black;
         }
-
         /* posicion seleccionada */
         #positionNumber {
             margin-top: 5px;
@@ -820,14 +1078,12 @@ td a {
             flex-direction: row;
             color: #333333;
         }
-
         /* chart.js */
         .chart-container {
             width: 100%;
             height: 430px;
             margin-bottom: 1em;
         }
-
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
@@ -835,7 +1091,6 @@ td a {
             display: flex;
             justify-content: space-between;
         }
-
         .measure-btn {
             width: 41px;
             height: 41px;
@@ -843,7 +1098,6 @@ td a {
             border: 1px solid #757575;
             background-color: transparent;
         }
-
         /*active buttons*/
         .measure-btn-active {
             width: 41px;
@@ -852,7 +1106,6 @@ td a {
             border: 1px solid blue;
             background-color: transparent;
         }
-
         /*general*/
         #map-table {
             flex-direction: column;
@@ -860,7 +1113,6 @@ td a {
             margin-right: 2em;
             margin-top: 3em;
         }
-
         /* Selector de campos en movil */
         /*----------------------------------------*/
         #select-css {
@@ -887,15 +1139,12 @@ td a {
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
         }
-
         #select-css::-ms-expand {
             display: none;
         }
-
         #select-css:hover {
             border-color: #888;
         }
-
         #select-css:focus {
             border-color: #aaa;
             box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
@@ -904,59 +1153,48 @@ td a {
             color: #222;
             outline: none;
         }
-
         #select-css option {
             font-weight: normal;
         }
-
         /*-----------------------------------*/
         /*see other fields*/
         .menu {
             width: 20rem;
             height: 11.9375rem;
         }
-
         .menu img {
             display: inline-block;
         }
-
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
         }
-
         .menu ul {
             display: none;
             max-height: 6.9375rem;
         }
-
         /*Date filter*/
         .dates {
             font-size: 1rem;
             margin-bottom: 5px;
         }
-
         .dates input {
             font-size: 0.73rem;
         }
-
         /*Graph*/
         .data {
             width: 20rem;
             height: 11.9375rem;
         }
-
         /*buttons*/
         #button {
             width: 20rem;
             height: 11.9375rem;
         }
-
         #button .buttons {
             width: 2.3125rem;
             height: 2.3125rem;
         }
-
         #button img {
             width: 1.6875rem;
             height: 1.6875rem;
@@ -965,20 +1203,25 @@ td a {
     }
 }
 
+
 /* ------------------ */
+
+
 /* -- WEATHER.HTML -- */
+
+
 /* ------------------ */
+
 
 /*-----------------------------------Mobile version--------------------------------------*/
-@media (max-width: 740px) {
 
+@media (max-width: 740px) {
     .titleWeather {
         margin-top: 5rem;
         font-size: 27px;
         margin-bottom: 2rem;
         text-align: center;
     }
-
     #predictionsContainer {
         margin: 1rem;
     }
@@ -998,7 +1241,7 @@ td a {
     }
     /* Presented in a row of data columns */
     .todayData {
-        display:flex;
+        display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
@@ -1042,12 +1285,10 @@ td a {
         font-size: 12px;
         color: #333333;
     }
-
     .weatherPredictions img {
         width: 27px;
         margin: 0.5rem;
     }
-
     /* Mañana */
     .tomorrowPrediction {
         display: flex;

@@ -49,10 +49,14 @@ Posee:
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
 
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/all.min.css">
 
     <title>Admin</title>
-    <!--script src="js/restringir_acceso_admin.js"></script--->
-    <script src="js/delete-sesion.js"></script>
+    <script src="js/restringir_acceso_admin.js"></script>
+    <script src="js/delete_sesion.js"></script>
+
+
 </head>
 
 <body class="admin_page">
@@ -94,82 +98,114 @@ Posee:
 
         <h2 id="admin_h2">Bienvenido Admin</h2>
         <div id="buttons_div">
-            <form id="form_filter" style="">
-                <!--p id="admin_p" style=""></p>-->
+            <!--Customer / plot filter-->
+            <a id="user_form" class="admin_a" href='javascript:userEnab_mapDisab()'>Usuarios</a>
+            <span> | </span>
+            <a id="plot_form" class="admin_a" href='javascript:userDisab_mapEnab()'>Parcelas</a>
+        </div>
 
-                <!-- Filtro mediante inputs
-            <input type="image" id="button_user_filter" href='javascript:userEnab_mapDisab()' style="display: none;"src="img/user_Admin_button_ACTIVATED.png" alt="Submit" width="45" height="">
+        <!-- Search PC-->
 
-            <input type="image" id="button_user_filter_activated" href='javascript:userEnab_mapDisab()' src="img/user_Admin_button.png" alt="Submit" width="45" height="">
--->
+        <div class="input-group" id="search_pc">
+            <input type="text" id="searchInput" onkeyup="javascript:filterFunction()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px;">
+            <button id="searchButton" class="btn" type="button"><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
+        </div>
+        <div id="div_add_del">
+            <!--Add/ Delete buttons-->
+            <button class="buttons_Add_del" data-toggle="collapse" data-target="#divAddUser" aria-expanded="false" aria-controls="divAddUser" id="button_Add_customer" style="margin-right: 2%;display: initial;">Añadir</button>
+            <!--Add customer button-->
 
-                <!--Customer / plot filter-->
-                <a id="admin_a" href='javascript:userEnab_mapDisab()'>
-                    <img class="admin_img" src="img/user_Admin_button.png" id="button_user_filter" style="display: none;" alt="Usuarios">
-                    <img class="admin_img" src="img/user_Admin_button_ACTIVATED.png" id="button_user_filter_activated" style="width: 45px;display: initial;" alt="Usuarios">
-                </a>
+            <button class="buttons_Add_del" data-toggle="collapse" data-target="#divAddPlot" aria-expanded="false" aria-controls="divAddPlot" id="button_Add_plot" style="margin-right: 2%;display: none; ">Añadir</button>
+            <!--Add plot button-->
+            <button class="buttons_Add_del" onclick="deleteAdmin()">Eliminar</button>
+            <!--Delete -->
 
-                <a id="admin_a" href='javascript:userDisab_mapEnab()'>
-                    <img class="admin_img" src="img/map_Admin_button.png" id="button_map_filter" style="" alt="Parcelas">
-                    <img class="admin_img" src="img/map_Admin_button_ACTIVED.png" id="button_map_filter_activated" style="width: 45px;display: none;" alt="Usuarios">
-                </a>
+        </div>
+        <!--Search Mobile-->
+        <div class="input-group" id="search_mobile">
+            <input type="text" id="searchInputMobile" onkeyup="filterFunctionMobile()" class="form-control search_mobile" placeholder="Búsqueda" onchange="value = ">
+            <i class="fas fa-search searchIcon" style="font-size: 1.5rem; margin: auto 0;"></i>
+        </div>
+    </div>
 
-            </form>
-            <!-- Search PC-->
-
-            <div class="input-group" id="search_pc" style="">
-            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px;">
-                <div class="input-group-append">
-                    <button class="btn" type="button" style="background-color: #AC859C;height: 40px;"><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
+    <div>
+        <div class="collapse" id="divAddUser">
+            <div id="addUser">
+                <p class="close" onclick="javasctipt:document.getElementById('button_Add_customer').click()">X</p>
+                <h4>Añadir usuario</h4>
+                <form id="formUser">
+                    <input required type="text" class="input-login" placeholder="Nombre">
+                    <input required type="text" class="input-login" placeholder="Apellidos">
+                    <input required type="text" class="input-login" placeholder="Correo">
+                    <input required type="text" class="input-login" placeholder="Contraseña">
+                    <select required id="selectRole" name="role">
+                            <option value="0">Seleccionar rol...</option>
+                            <option value="1">Usuario</option>
+                            <option value="2">Administrador</option>
+                            <option value="3">Cliente-administrador</option>
+                            <option value="4">Personal técnico</option>
+                    </select>
+                </form>
+                <button class="button" onclick="add_user()">Añadir cliente</button>
+            </div>
+        </div>
+        <div class="collapse" id="divAddPlot">
+            <div id="addPlot">
+                <p class="close" onclick="javascript:document.getElementById('button_Add_plot').click()">X</p>
+                <h4>Añadir parcela</h4>
+                <p><strong>DETALLES DE LA PARCELA</strong></p>
+                <input required name="plotName" type="text" class="input-login" placeholder="Nombre de la parcela">
+                <div id="div-polygons">
+                    <input type="text" class="polygons input-login" name="latitud" placeholder="Latitud">
+                    <input type="text" class="polygons input-login" name="longitud" placeholder="Longitud">
+                </div>
+                <div class="addVertex" name="div-polygons">
+                    <p class="add" style="cursor: pointer;" onclick="addCoord('div-polygons')">Añadir vértice</p>
+                    <p class="counter">Vértices: 0</p>
+                </div>
+                <p class="sondas"><strong>Sondas</strong></p>
+                <div id="div-probes">
+                    <input type="text" class="probes input-login" name="latitud" placeholder="Latitud">
+                    <input type="text" class="probes input-login" name="longitud" placeholder="Longitud">
+                </div>
+                <div class="addVertex" name="div-probes">
+                    <p class="add" style="cursor: pointer;" onclick="addCoord('div-probes')">Añadir sonda</p>
+                    <p class="counter">Sondas: <span>0</span></p>
+                </div>
+                <div class="plot-buttons">
+                    <button class="button" type="submit" onclick="updateMap()">Vista previa</button>
+                    <button class="button" type="submit" type="submit" onclick="addPlot()">Añadir parcela</button>
                 </div>
             </div>
-            <div id="div_add_del" style="">
-                <!--Add/ Delete buttons-->
-                <button class="buttons_Add_del" id="button_Add_customer" onclick="openForm()" style="margin-right: 2%;display: none;">Añadir</button>
-                <!--Add customer button-->
-
-                <button class="buttons_Add_del" id="button_Add_plot" onclick="openForm()" style="margin-right: 2%;visibility: hidden; ">Añadir</button>
-                <!--Add plot button-->
-                <button class="buttons_Add_del" onclick="deleteAdmin()" style="visibility: hidden;">Eliminar</button>
-                <!--Delete -->
+            <script src="js/addMap.js"></script>
+            <div id="preview" style="display: none;">
+                <img src="img/back.svg" class="undo" alt="Undo" onclick="closeMap()">
+                <div id="addMap">
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
+                    </script>
+                </div>
             </div>
         </div>
 
-        <div class="input-group" id="search_mobile">
-            <!--Search Mobile-->
-            <input type="text" id="searchInputMobile" onkeyup="javascript:filterFunctionMobile()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px;">
-            <div class="input-group-append">
-                <button class="btn" id="button_admin_search"type="button" style="background-color: #AC859C;height: 40px; "><img id="search_img" src="img/search.svg" style="" alt="Submit"></button>
-            </div>
-        </div>
-
-        <div>
-            <!-- Admin Table -- NORMAL SOLO PARA PRUEBAS
-          <table id="admin_table" class="table">
-          </table>
-
-             <! TABLA ADMIN -->
-            <table id="admin_table" class="table">
-                <tr class='content_row' style='' name='plot'>
-                    <td data-label='Empresa' name='plot'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='admin_a' 'id=' user_${plot.id}>${plot.name}<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'>Buchus</a></a></td>
-                </tr>
-                    <tr class='content_row' style='' name='plot'>
-                    <td data-label='Empresa' name='plot'><input type='checkbox' style='margin:5px;' name='checkPlots' value='" + `${plot.id}` + "'><a class='admin_a' 'id=' user_${plot.id}>${plot.name}<a class='edit-button' href='javascript:openFieldForm()' title='Editar' margin='50px'>Mark</a></a></td>
-                </tr>
-            </table>
-            <!-- ACABA TABLA -->
 
 
-            <!-- finish Admin Table -->
-            <script src="js/users_list.js"></script>
-            <script>
-                ViewUsersList.prepare("admin_table");
-                // Se inicializa el controlador
-                UsersController.init();
 
-            </script>
-            <script src="js/all_plots_list.js"></script>
-        </div>
+        <!-- TABLA ADMIN -->
+        <table id="admin_table" class="table">
+
+        </table>
+        <!-- ACABA TABLA -->
+
+
+        <!-- finish Admin Table -->
+        <script src="js/users_list.js"></script>
+        <script>
+            ViewUsersList.prepare("admin_table");
+            // Se inicializa el controlador
+            UsersController.init();
+        </script>
+        <script src="js/all_plots_list.js"></script>
+    </div>
     </div>
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -178,6 +214,7 @@ Posee:
     <script src="js/navbar.js"></script>
     <script src="js/add.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/delete.js"></script>
 </body>
 
 </html>
