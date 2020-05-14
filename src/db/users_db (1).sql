@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2020 a las 10:39:44
+-- Tiempo de generación: 11-05-2020 a las 13:09:16
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -107,20 +107,19 @@ CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `longitude` double NOT NULL,
-  `latitude` double NOT NULL,
-  `codmun` int(11) NOT NULL
+  `latitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`, `codmun`) VALUES
-(1, 'Naranjos Paterna', -0.441465, 39.497875, 46190),
-(2, 'Manzanos Bétera', -0.470384, 39.593231, 46070),
-(3, 'Gavia de Isidro', -14.019314, 28.494176, 35003),
-(4, 'Gavia de Guzmán', -14.019035, 28.493408, 35003),
-(5, 'Granja Norte', 0, -0.470384, 0);
+INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
+(1, 'Naranjos Paterna', -0.441465, 39.497875),
+(2, 'Manzanos Bétera', -0.470384, 39.593231),
+(3, 'Gavia de Isidro', -14.019314, 28.494176),
+(4, 'Gavia de Guzmán', -14.019035, 28.493408),
+(5, 'Granja Norte', 0, -0.470384);
 
 -- --------------------------------------------------------
 
@@ -202,8 +201,10 @@ CREATE TABLE `thresholds` (
   `max` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-  
+--
+-- Volcado de datos para la tabla `thresholds`
+--
+
 INSERT INTO `thresholds` (`id`, `plot`, `magnitude`, `min`, `max`) VALUES
 
 (1, 1, "salinity", 1, 1),
@@ -235,6 +236,9 @@ INSERT INTO `thresholds` (`id`, `plot`, `magnitude`, `min`, `max`) VALUES
 (23, 5, "humidity", 5, 5),
 (24, 5, "luminosity", 5, 5),
 (25, 5, "temperature", 5, 5);
+
+
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `users`
@@ -376,7 +380,7 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `thresholds`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `plot` (`plot`,`magnitude`,`min`,`max`);
+  ADD UNIQUE KEY `plot` (`plot`,`magnitude`) USING BTREE;
 
 --
 -- Indices de la tabla `users`
@@ -449,7 +453,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `thresholds`
 --
 ALTER TABLE `thresholds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

@@ -1,0 +1,195 @@
+<!--
+    AUTHOR: DANIEL BURRUCHAGA SOLA
+    FILE: thresholds.html
+    DATE: 16/04/20
+    STATE: DONE
+
+Se trata de realizar la pagina de cofiguración de umbrales.
+
+thresholds.html poder ajustar los umbrales para habilitar una notificación con la explicación de que medida no está dentro del umbral prefijado.
+
+Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar los umbrales de máximo / mínimo de cada medida.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Default character set -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+
+    <!-- Internet Explorer Compatibility Layer enabled -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--BootsTrap 4-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/common_style.css">
+    <link rel="stylesheet" type="text/css" href="css/app_style.css">
+ 
+
+    <title>Config. Umbrales</title>
+
+</head>
+
+<body class="">
+
+    <!-- Top bar (navigation menu) -->
+    <header>
+        <!-- Corporative brand -->
+        <a id="logo" class="white-filter" href="../index.html">
+            <img src="img/logo_v2.svg" alt="LOGO">
+        </a>
+
+        <nav class="navbar">
+            <!-- Navigation menu -->
+            <ul class="navbar-links" style="margin-bottom: 0;">
+                <li>
+                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" id="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page" style="">
+        <!-- Start ThresHold Page-->
+
+        <h2 id="threshold_h2">Configuración de Umbrales</h2>
+
+        <div id="table_edit" style=" ">
+            <div id="search_and_table" style="">
+                <!-- Search PC-->
+
+                <div class="input-group" id="search_pc" style="margin-bottom: 15px; ">
+                    <input type="text" id="searchInput" onkeyup="javascript:filterFunctionThreshold()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px; width: 100px;">
+                    <div class="input-group-append">
+                        <button class="btn" type="button" style="background-color: #AC859C;height: 40px;"><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
+                    </div>
+                </div>
+
+                <!-- TABLA  <-->
+                <div id="div_table">
+
+                    <table id="threshold_table" class="table" style="">
+                        <tr class='content_row' style='' name='plot'>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!---Form threshold-->
+            <form id="threshold_form" class="form-container" style="">
+                <img id="threshold_close_img" src="img/close.png" style="" onclick="close_form_thresholdLoad()" alt="Close">
+
+                <h3 id="h3_edit_threshold">Editar Umbrales</h3>
+                <h3 id="plot_name_form"></h3>
+
+                <div class="div_inputs">
+
+                    <div class="threshold_divimg" style="">
+                        <img Class="threshold_img" src="img/datalogger/humidity.svg" alt="" style="">
+                        <p class="threshold_p">Humedad</p>
+                    </div>
+
+                    <label class="threshold_labelMax" for="maxHumedity"><b>Máx:</b></label>
+                    <input id="maxHumedity" type="text" placeholder="%" name="maxHumedity">
+
+                    <label for="minHumedity" class="threshold_labelMin"><b>Mín:</b></label>
+                    <input id="minHumedity" type="text" placeholder="%" name="minHumedity">
+                </div>
+
+                <div class="div_inputs">
+
+                    <div class="threshold_divimg">
+                        <img src="img/datalogger/temperature.svg" alt="" Class="threshold_img">
+                        <p class="threshold_p">Temperatura</p>
+                    </div>
+
+                    <label for="maxTemperature" class="threshold_labelMax"><b>Máx:</b></label>
+                    <input id="maxTemperature" type="text" placeholder="ºC" name="maxTemperature">
+
+                    <label for="minTemperature" class="threshold_labelMin"><b>Mín:</b></label>
+                    <input id="minTemperature" type="text" placeholder="ºC" name="minTemperature">
+                </div>
+
+                <div class="div_inputs">
+
+                    <div class="threshold_divimg">
+
+                        <img src="img/datalogger/luminosity.svg" alt="" Class="threshold_img">
+                        <p class="threshold_p">Luminosidad</p>
+                    </div>
+
+                    <label for="maxLuminosity" class="threshold_labelMax"><b>Máx:</b></label>
+                    <input id="maxLuminosity" type="text" placeholder="%" name="maxLuminosity">
+
+                    <label for="minLuminosity" class="threshold_labelMin"><b>Mín:</b></label>
+                    <input id="minLuminosity" type="text" placeholder="%" name="minLuminosity">
+                </div>
+
+                <div class="div_inputs">
+
+                    <div class="threshold_divimg">
+
+                        <img src="img/datalogger/rainfall.svg" alt="" Class="threshold_img">
+                        <p class="threshold_p">Precipitación</p>
+                    </div>
+
+                    <label for="maxPrecipitation" class="threshold_labelMax"><b>Máx:</b></label>
+                    <input id="maxPrecipitation" type="text" placeholder="mm3" name="maxPrecipitation">
+
+                    <label for="minPrecipitation" class="threshold_labelMin"><b>Mín:</b></label>
+                    <input id="minPrecipitation" type="text" placeholder=mm3 name="minPrecipitation">
+                </div>
+
+                <div class="div_inputs">
+
+                    <div class="threshold_divimg">
+                        <img src="img/datalogger/salinity.svg" alt="" Class="threshold_img">
+                        <p class="threshold_p">Salinidad</p>
+                    </div>
+
+                    <label for="maxSalinity" class="threshold_labelMax"><b>Máx:</b></label>
+                    <input id="maxSalinity" type="text" placeholder="%" name="maxSalinity">
+
+                    <label for="minSalinity" class="threshold_labelMin"><b>Mín:</b></label>
+                    <input id="minSalinity" type="text" placeholder="%" name="minSalinity">
+                    <input id="threshold_id_plot" type="text" placeholder="" name="id" style="display:none;">
+                </div>
+
+                <button id="btn_submit_threshold" type="submit" class="login-button">Aplicar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/threshold_plots_list.js"></script>
+    <script>
+        //===============================================================================================
+        let table = document.getElementById("threshold_table");
+        table.removeChild(table.getElementsByTagName("tbody")[0])
+        ViewAllPlotsList.prepare("threshold_table");
+        AllPlotsController.init();
+    //================================================================================================
+
+    </script>
+    <script src="js/navbar.js"></script>
+    <script src="js/threshold.js"></script>
+    <script src="js/add.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/restringir_acceso.js"></script>
+    <script src="js/delete-sesion.js"></script>
+
+</body>
+
+</html>

@@ -23,7 +23,6 @@
     visibility: hidden;
 }
 
-
 /* ------------------ */
 
 
@@ -1304,3 +1303,255 @@ td a {
         margin-bottom: 0.5rem;
     }
 }
+
+
+/* ------------------ */
+
+
+/* ------------------ */
+
+
+/* --- Threshold.HTML --- */
+
+
+/* ------------------ */
+
+
+/*   Threshold PAGE.html  */
+         /* Style for Threshold*/
+
+        /*Title H Form threshold*/
+        #plot_name_form {
+            margin-bottom: 25px;
+        }
+
+        #threshold_close_img {
+            height: 45px;
+            place-self: flex-end;
+            display: none;
+            cursor: pointer;
+        }
+
+        #h3_edit_thresholds {
+            font-size: 1.9rem;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            margin-top: 25px;
+            display: block;
+
+        }
+
+        #threshold_h2 {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        #threshold_table tr td {
+            border-left: none;
+            border-right: none;
+            text-align: center;
+
+        }
+
+        /*Form threshold*/
+
+        .form-container {
+            min-width: 420px;
+            display: flex;
+            flex-flow: column;
+            width: 450px;
+            align-items: center;
+            background-color: white;
+            border: 3px solid #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .form-container input[type=text] {
+            width: 85px;
+            height: 25px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: 1px;
+            border-radius: 2px;
+            background: #f1f1f1;
+            text-align: center;
+            margin-left: 5px;
+        }
+
+        /* when click input */
+        .form-container input[type=text]:focus {
+            background-color: #f1f1f1;
+            outline: none;
+        }
+
+        /*Search + Table + Form Div*/
+        #table_edit{
+            display: flex;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        /* Search and table div*/
+        #search_and_table{
+            display: flex;
+            flex-direction: column;
+            height: 550px;
+            width: 500px;
+            margin-right: 25px;
+        }
+
+        #div_table{
+            border: 1px solid #ccc;
+            height: 500px;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+
+        .div_inputs {
+            display: flex;
+            flex-direction: row;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        /*img measures and paragraph*/
+        .threshold_divimg {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .threshold_img {
+            width: 25px;
+        }
+
+        .threshold_labelMax {
+            margin-left: 50px;
+            margin-top: 7px;
+        }
+
+
+        .threshold_labelMin {
+            margin-left: 25px;
+            margin-top: 7px;
+        }
+
+
+        .plot_threshold:hover {
+            text-decoration: none;
+            color: black;
+        }
+
+        #threshold_table tr:focus-within {
+            background: #D7BCD1;
+            visibility: visible;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 740px) {
+
+            .threshold_labelMax b {
+                font-size: 0.8rem;
+            }
+
+            .threshold_labelMin b {
+                font-size: 0.8rem;
+            }
+
+            .div_inputs {
+                display: flex;
+                flex-direction: row;
+                margin-left: 25px;
+                margin-right: 25px;
+                margin-bottom: 15px;
+            }
+
+            #plot_name_form {
+                margin-bottom: 25px;
+            }
+
+            #h3_edit_threshold {
+                margin-top: 0px;
+            }
+
+            .threshold_labelMax {
+                margin-left: 20px;
+            }
+
+            .threshold_labelMin {
+                margin-left: 10px;
+            }
+
+            .form-container {
+                display: none;
+                flex-flow: column;
+                min-width: 450px;
+                width: 250px;
+                height: auto;
+                align-items: center;
+                background-color: white;
+                border: 3px solid #f1f1f1;
+                border-radius: 10px;
+            }
+
+            /* Full-width input fields */
+            .form-container input[type=text] {
+                width: 55px;
+                height: 25px;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: 1px;
+                border-radius: 2px;
+                background: #f1f1f1;
+                text-align: center;
+                margin-left: 5px;
+            }
+
+            #threshold_close_img {
+                display: block;
+            }
+
+            #table_edit {
+                display: flex;
+                margin-top: 5px;
+            }
+
+            #search_and_table {
+                display: flex;
+                flex-direction: column;
+                height: 550px;
+                width: 500px;
+                margin-right: 0px;
+            }
+
+         
+
+            .page {
+                display: flex;
+                flex-direction: column;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+
+            #threshold_table tr {
+
+                height: 40px;
+                text-align: center;
+
+            }
+
+            #search_pc {
+                display: flex;
+                margin: 0px;
+            }
+
+
+            .threshold_p {
+                font-size: 12px;
+            }
+        }
