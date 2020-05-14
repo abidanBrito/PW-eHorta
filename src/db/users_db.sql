@@ -202,8 +202,10 @@ CREATE TABLE `thresholds` (
   `max` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-  
+--
+-- Volcado de datos para la tabla `thresholds`
+--
+
 INSERT INTO `thresholds` (`id`, `plot`, `magnitude`, `min`, `max`) VALUES
 
 (1, 1, "salinity", 1, 1),
@@ -235,6 +237,9 @@ INSERT INTO `thresholds` (`id`, `plot`, `magnitude`, `min`, `max`) VALUES
 (23, 5, "humidity", 5, 5),
 (24, 5, "luminosity", 5, 5),
 (25, 5, "temperature", 5, 5);
+
+
+-- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `users`
