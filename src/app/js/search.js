@@ -1,3 +1,9 @@
+/* ----------------------------------------------------------------
+ *   AUTHOR:        Pablo Enguix   Daniel Burruchaga 
+ *   FILE:           all_plots_list.js
+ *   DATE:           07/04/2020
+ *   STATE:          DONE
+ *  ---------------------------------------------------------------- */
 function filterFunction() {
     let input, filter, table, tr, td, i, txtValue, tdUser, tdPlot;
     //Recogemos el valor de la barra de búsqueda
