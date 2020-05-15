@@ -202,14 +202,13 @@ header {
 /* ------------------- */
 /* Button template */
 .button {
-    text-transform: uppercase;
     text-align: center;
     text-decoration: none;
     letter-spacing: 1px;
     font-weight: bold;
     border-radius: 1.5rem;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
-    padding: 7px 1.25rem;
+    padding: 0.5rem 2rem;
     margin: 1.25rem;
     background-color: rgb(224, 169, 66);
     color: #121212;
@@ -380,6 +379,7 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 /* Specific service (What is it we offer?) */
@@ -393,7 +393,7 @@ h3 {
 
 /* Service icon */
 #benefits article img {
-    margin: 40px;
+    margin: 1rem;
     height: 100px;
 }
 
@@ -418,7 +418,7 @@ h3 {
 /* Magnitudes container (parent) */
 .magnitudes {
     height: 80%;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -432,10 +432,10 @@ h3 {
 
 /* Magnitude button containers */
 .boxes {
-    width: 230px;
+    width: 210px;
     height: 140px;
     border-radius: 15px;
-    box-shadow: 0 0 8px 1px #959595;
+    border: 1px solid #959595;
     padding: 10px;
     margin-top: 120px;
     margin-bottom: 120px;
@@ -605,9 +605,12 @@ h3 {
 
     /* Service icon */
     #benefits article img {
-        margin-top: 15px;
-        margin-bottom: 30px;
+        margin: 5px;
         height: 40px;
+    }
+
+    #benefits article {
+        margin-bottom: 2.25rem;
     }
     
     /* Get in touch button */
@@ -615,8 +618,9 @@ h3 {
         margin: 1rem auto;
     }
 
-    #cta-contact a {
-        font-size: 14px;
+    #cta-contact .button {
+        font-size: 1.25rem;
+        margin: 2.75rem 0 0;
     }
 
     /* Magnitudes container (parent) */
@@ -657,7 +661,6 @@ h3 {
         width: 130px;
         height: 100px;
         border-radius: 12px;
-        box-shadow: 0px 0px 5px 1px #959595;
         margin: 10px;
         letter-spacing: 1px;
     }
@@ -858,9 +861,7 @@ h3 {
         height: 100%;
         width: 95%;
         border-radius: 5px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
+        margin: 0;
         box-shadow: 0px 0px 5px 1px #959595;
     }
 
@@ -911,11 +912,9 @@ h3 {
 
     #map-contact {
         height: 100%;
-        width: 95%;
+        width: 100%;
         border-radius: 5px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
+        margin-bottom: 0;
         box-shadow: 0px 0px 5px 1px #959595;
     }
     
@@ -1015,16 +1014,15 @@ h3 {
 }
 
 .login-button {
-    width: 250px;
-    height: 40px;
-    text-transform: uppercase;
+    color: #121212;
+    background-color: rgb(224, 169, 66);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+    font-weight: bold;
     text-align: center;
     letter-spacing: 1px;
-    background-color: rgb(224, 169, 66);
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+    padding: 0.5rem 6rem;
+    margin: 1.25rem;
     border: none;
     cursor: pointer;
     border-radius: 100px;
@@ -1094,16 +1092,15 @@ h3 {
     }
     
     .login-button {
-        width: 230px;
-        height: 40px;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: 1px;
+        color: #121212;
         background-color: rgb(224, 169, 66);
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
         font-size: 1.25rem;
         font-weight: bold;
-        margin-top: 1.25rem;
-        margin-bottom: 0.3rem;
+        text-align: center;
+        letter-spacing: 1px;
+        padding: 0.5rem 5rem;
+        margin: 1.25rem;
         border: none;
         cursor: pointer;
         border-radius: 100px;
