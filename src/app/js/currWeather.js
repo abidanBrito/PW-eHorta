@@ -3,7 +3,7 @@
 *   FILE:           currWeather.js
 *   DATE:           05/05/2020
 *   STATE:          WIP
-*  ---------------------------------------------------------------- */ 
+*  ---------------------------------------------------------------- */
 
 // ----------------------------------------------------------------
 // startWeatherPrediction() -> [T]
@@ -14,7 +14,7 @@ function startWeatherPrediction() {
             // Aqui se envia la url a la api para tener los datos y se pasan a JSON
             return answer.json();
         }).then(function(jsonData) {
-        
+
         let uniquePlots = [];
         // filtro para buscar codigos de municipio repetidos
         for(plot of jsonData) {
@@ -46,10 +46,10 @@ function contains(input, list) {
 // ----------------------------------------------------------------
 
 function sendRequest(code) {
-    
+
     // en data estaran los datos a enviar
     var data = null;
-    
+
     // se prepara el objeto XML y se configura
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -60,19 +60,19 @@ function sendRequest(code) {
             readTextFile(this.responseText);
         }
     });
-    
+
     // se prepara el objeto a enviar
     xhr.open("GET", "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/" + code + "?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzLmJlbGxvY2htYXJ0aW5lekBnbWFpbC5jb20iLCJqdGkiOiI3MTRkYzA3My0xNDNjLTQyZjMtYjdkMS1hZWMyMGZlMzA2NDEiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTU4ODUyMzY2MCwidXNlcklkIjoiNzE0ZGMwNzMtMTQzYy00MmYzLWI3ZDEtYWVjMjBmZTMwNjQxIiwicm9sZSI6IiJ9.swVtn6pOlDS4maJ6n2Uv7J_RTDxdv88-w3gYTDymZC4");
     // se preparan las cabeceras
     xhr.setRequestHeader("cache-control", "no-cache");
     // se envia
     xhr.send(data);
-    
+
 } // ()
 
 // ----------------------------------------------------------------
 // T -> readTextFile() -> T
-// Recibe la respuesta de la BD de AEMET, lee el archivo de "datos" 
+// Recibe la respuesta de la BD de AEMET, lee el archivo de "datos"
 // que recibe en JSON y muestra en consola los datos completos
 // ----------------------------------------------------------------
 
@@ -82,10 +82,10 @@ function readTextFile(response) {
 
     // el elemento datos del json es el que nos interesa
     let file = response.datos;
-    
+
     // aqui se guardan los datos recibidos del archivo datos
     var data;
-    
+
     // se crea la consulta al enlace que viene en datos
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, true);
@@ -111,17 +111,17 @@ function readTextFile(response) {
 // Recibe el texto con los datos, lo convierte en JSON y lo maqueta
 // ----------------------------------------------------------------
 function showData(data) {
-    
+
     let dataJson = JSON.parse(data);
     console.log(dataJson);
-    
+
     // Aqui se crearan las tarjetas de predicciones
     let container = document.getElementById("predictionsContainer");
-    
+
     // Se analiza el json y se establecen los datos a mostrar
     // Nombre del municipio
     let locationName = dataJson[0].nombre;
-    
+
     // Elige el icono para el dia
     // >= 11 es nublado y < 11 es soleado
     let weatherStates = dataJson[0].prediccion.dia[0].estadoCielo;
@@ -141,7 +141,7 @@ function showData(data) {
     } else {
         iconToday = "img/datalogger/luminosity.svg";
     }
-    
+
     // Establece la temperatura actual
     let temperatures = dataJson[0].prediccion.dia[0].temperatura;
     let temperature = temperatures[0].value;
@@ -152,7 +152,7 @@ function showData(data) {
             break;
         }
     } // for
-    
+
     //Establece la precipitacion maxima estimada
     let dayRainfall = dataJson[0].prediccion.dia[0].precipitacion;
     let totalRainfall = 0;
@@ -163,7 +163,7 @@ function showData(data) {
         }
     } // for
     totalRainfall = totalRainfall.toFixed(2);
-    
+
     // Establece las temperaturas maxima y minima
     let maxTemperature = temperatures[0].value;
     for(let i = 0; i < temperatures.length; i++) {
@@ -171,14 +171,14 @@ function showData(data) {
             maxTemperature = temperatures[i].value;
         }
     } // for
-    
+
     let minTemperature = temperatures[0].value;
     for(let i = 0; i < temperatures.length; i++) {
         if(temperatures[i].value < minTemperature) {
             minTemperature = temperatures[i].value;
         }
     } // for
-    
+
     //Establece la probabilidad de precipitacion
     let rainfallProb = dataJson[0].prediccion.dia[0].probPrecipitacion;
     let maxRainfallProb = 0;
@@ -187,7 +187,7 @@ function showData(data) {
             maxRainfallProb = rainfallProb[i].value;
         }
     } // for
-    
+
     // Se establecen los estados de las predicciones de los dos proximos dias
     // >= 11 es nublado y < 11 es soleado
     let weatherStatesTomorrow = dataJson[0].prediccion.dia[1].estadoCielo;
@@ -205,7 +205,7 @@ function showData(data) {
     } else {
         iconTomorrow = "img/datalogger/luminosity.svg";
     }
-    
+
     let weatherStatesAfter = dataJson[0].prediccion.dia[1].estadoCielo;
     let weatherStateAfter = weatherStatesAfter[0].value;
     for(let i = 0; i < weatherStatesAfter.length; i++) {
@@ -221,7 +221,7 @@ function showData(data) {
     } else {
         iconAfter = "img/datalogger/luminosity.svg";
     }
-    
+
     // Toma la temperatura minima y maxima de mañana y pasado
     let temperaturesTomorrow = dataJson[0].prediccion.dia[1].temperatura;
     let maxTemperatureTomorrow = temperaturesTomorrow[0].value;
@@ -236,7 +236,7 @@ function showData(data) {
             minTemperatureTomorrow = temperaturesTomorrow[i].value;
         }
     } // for
-    
+
     let temperaturesAfter = dataJson[0].prediccion.dia[2].temperatura;
     let maxTemperatureAfter = temperaturesAfter[0].value;
     for(let i = 0; i < temperaturesAfter.length; i++) {
@@ -250,7 +250,7 @@ function showData(data) {
             minTemperatureAfter = temperaturesAfter[i].value;
         }
     } // for
-    
+
     // Se crea la tarjeta en el container
     /* ESTRUCTURA
     <section id="predictionsContainer">
@@ -282,18 +282,22 @@ function showData(data) {
                     <img class="afterIcon" src="">
                     <div class="afterTemp">12|21ºC</div>
                 </div>
-                
+
             </section>
         </section>
     </section>
     */
-    container.innerHTML += 
-        '<section class="container">' + 
-        '<div class="predictionLocation">' + locationName + '</div><section class="todayData"><img class="todayIcon" src="' + iconToday + '"><div class="secondDataColumn"><div class="predictionTemperature"><img src="img/datalogger/temperature.svg">' + temperature + ' ºC</div><div class="predictionRainfall"><img src="img/datalogger/rainfall.svg">' + totalRainfall + ' L/m2</div></div>' + 
-        '<div class="thirdDataColumn"><div class="maxTemperature">MAX: ' + maxTemperature + 'ºC</div><div class="minTemperature">MIN: ' + minTemperature + 'ºC</div><div class="rainfallProbability">PROB: ' + maxRainfallProb + '%</div>' +   
+    container.innerHTML +=
+        '<section class="container">' +
+        '<div class="predictionLocation">' + locationName + '</div><section class="todayData"><img class="todayIcon" src="' + iconToday + '"><div class="secondDataColumn"><div class="predictionTemperature"><img src="img/datalogger/temperature.svg">' + temperature + ' ºC</div><div class="predictionRainfall"><img src="img/datalogger/rainfall.svg">' + totalRainfall + ' L/m2</div></div>' +
+        '<div class="thirdDataColumn"><div class="maxTemperature">MAX: ' + maxTemperature + 'ºC</div><div class="minTemperature">MIN: ' + minTemperature + 'ºC</div><div class="rainfallProbability">PROB: ' + maxRainfallProb + '%</div>' +
         '</div>' +
-        '</section><div class="weatherSeparator"></div>' + 
+        '</section><div class="weatherSeparator"></div>' +
         '<section class="weatherPredictions"><div class="tomorrowPrediction"><div class="tomorrowDay">Mañana</div><img src="' + iconTomorrow + '"><div class="tomorrowTemp">' + maxTemperatureTomorrow + '|' + minTemperatureTomorrow + 'ºC</div></div><div class="afterPrediction"><div class="afterDay">Pasado mañana</div><img src="' + iconAfter + '"><div class="afterTemp">' + minTemperatureAfter + '|' + maxTemperatureAfter + 'ºC</div></div>'
         +
         '</section></section>';
 }
+//
+// main()
+//
+startWeatherPrediction();
