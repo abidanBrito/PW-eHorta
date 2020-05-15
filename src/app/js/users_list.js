@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:         Pablo Enguix   Daniel Burruchaga 
+ *   AUTHOR:         Pablo Enguix, Daniel Burruchaga 
  *   FILE:           users_list.js
  *   DATE:           01/04/2020
  *   STATE:          DONE

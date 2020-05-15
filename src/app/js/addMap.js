@@ -1,3 +1,10 @@
+/* ----------------------------------------------------------------
+ *   AUTHOR:         Pablo Enguix
+ *   FILE:           addMap.js
+ *   DATE:           14/05/2020
+ *   STATE:          DONE
+ *  ---------------------------------------------------------------- */
+
 function updateMap() {
     document.getElementById("addPlot").style.display = "none";
     document.getElementById("preview").style.display = "block";
@@ -52,6 +59,7 @@ function initMap() {
 
 }
 
+// This function creates a polygon with the inputs of general info of plots
 function addPlots(map) {
 
     let input = document.getElementsByName("polygons");
@@ -79,6 +87,7 @@ function addPlots(map) {
     centerPlot();
 }
 
+// This function adds a probe with the inputs of probes info
 function addProbes(map) {
 
     let input = document.getElementsByName("probe");
@@ -94,7 +103,7 @@ function addProbes(map) {
 
 }
 
-
+// This function centers the map in the plot
 function centerPlot(plot) {
     let center = {
         lat: null,
@@ -136,5 +145,6 @@ function centerPlot(plot) {
         streetViewControl: false
     };
     let map = new google.maps.Map(document.getElementById('addMap'), options);
+    addPlots(map);
     addProbes(map);
 }

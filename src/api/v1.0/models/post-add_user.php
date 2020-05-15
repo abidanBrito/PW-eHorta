@@ -1,5 +1,12 @@
 <?php
 
+/* ----------------------------------------------------------------
+*   AUTHOR:         Pablo Enguix
+*   FILE:           post-add_user.php
+*   DATE:           14/05/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */ 
+
     if((isset($_POST['name']) && $_POST['name'] !== '' )&&(isset($_POST['surname']) && $_POST['surname'] !== '' )&&(isset($_POST['email']) && $_POST['email'] !== '' )&&(isset($_POST['pass']) && $_POST['pass'] !== '' )&&(isset($_POST['role']) && $_POST['role'] !== '' )){
        
         $name = $_POST['name'];
@@ -16,13 +23,7 @@
         $res = mysqli_query($conn, $sql);
         if(mysqli_num_rows($res)==0){
             $ins = "INSERT INTO `users`(`id`, `name`, `surname`, `email`, `password`, `roleId`) VALUES (NULL,'$name','$surname','$email','$pass' ,$rol)";
-            mysqli_query($conn, $ins);        
-            /*
-            $last_id = mysqli_insert_id($conn);
-            $ins = "INSERT INTO `users-plots`(`user`, `plot`) VALUES ($id_user,$last_id)";
-            mysqli_query($conn, $ins);
-            */
-            
+            mysqli_query($conn, $ins);         
             $http_code = 200;   //Todo okey            
         }else{
             $http_code = 401;   // Unauthorized

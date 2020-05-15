@@ -1,4 +1,12 @@
+
 <?php
+
+/* ----------------------------------------------------------------
+*   AUTHOR:         Pablo Enguix
+*   FILE:           post-add_fields.php
+*   DATE:           14/05/2020
+*   STATE:          DONE
+*  ---------------------------------------------------------------- */ 
 
     if( (isset($_POST['name']) && $_POST['name'] !== '' )&&
         (isset($_POST['centerLat']) && $_POST['centerLat'] !== '' )&&
@@ -19,19 +27,16 @@
         
         $res = mysqli_query($conn, $id_plot);
         if(mysqli_num_rows($res)==0){
+            // Inserts the general information for the plot
             $plot = "INSERT INTO `plots`(`id`, `name`, `latitude`, `longitude`) VALUES (NULL,'$name',$centerLat,$centerLng)";
             mysqli_query($conn, $plot);          
             
-            /*
-            $last_id = mysqli_insert_id($conn);
-            $ins = "INSERT INTO `users-plots`(`user`, `plot`) VALUES ($id_user,$last_id)";
-            mysqli_query($conn, $ins);
-            */
             if ($conn->query($sql) === TRUE) {
                 $allLats = $_POST["allLats"];
                 $allLngs = $_POST["allLngs"];
                 $plotID = "SELECT LAST `id` FROM `plots`";
-                for ($i=0; $i < sizeof($allLats); $i++) { 
+                for ($i=0; $i < sizeof($allLats); $i++) {
+                    // Inserts the plot polygon
                     $pos = "INSERT INTO `vertex` (`id`, `plot`, `latitude`, `longitude`) VALUES (NULL, '$plotID', '$allLats[i]', '$allLngs[i]')";
                     mysqli_query($conn, $pos);
                     if ($conn->query($pos) === FALSE) {
@@ -45,11 +50,13 @@
                     $probeLngs = $_POST["probeLngs"];
 
                     for ($i=0; $i < sizeof($probeLats); $i++) { 
+                        // Inserts the plot positions for the probes
                         $pos = "INSERT INTO `positions` (`id`, `plot`, `latitude`, `longitude`) VALUES (NULL, '$plotID', '$probleLats[i]', '$probeLngs[i]')";
                     mysqli_query($conn, $pos);
                     if ($conn->query($pos) === TRUE) {
                         $lastPos = "SELECT LAST `id` FROM `positions`";
                         mysqli_query($conn, $lastPos);
+                        // Inserts the plot probes
                         $probe = "INSERT INTO `probe` (`position`, `serial`) VALUES ($lastPos, NULL)";
                         mysqli_query($conn, $probe);
                         if ($conn->query($probe) === FALSE) {
