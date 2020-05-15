@@ -1210,7 +1210,93 @@ td a {
 
 
 /* ------------------ */
-
+.titleWeather {
+        margin-top: 5rem;
+        font-size: 27px;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    #predictionsContainer {
+        margin: 1rem;
+    }
+    /* Contains the full card */
+    .container {
+        background-color: #EACDDB;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+        padding-top: 0.3rem;
+        margin-top: 1rem;
+    }
+    /* Location name "card title" */
+    .predictionLocation {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    /* Presented in a row of data columns */
+    .todayData {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 0.3rem;
+        color: #333333;
+    }
+    /* First column */
+    .todayData .todayIcon {
+        width: 50px;
+        margin-left: 1.7rem;
+    }
+    /* Second column */
+    .todayData .secondDataColumn {
+        display: flex;
+        flex-direction: column;
+    }
+    /* To separate text a bit, make it more readable */
+    .todayData .secondDataColumn .predictionTemperature,
+    .todayData .secondDataColumn .predictionRainfall {
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+    /* Icons sizes and separation from text */
+    .todayData .secondDataColumn img {
+        width: 21px;
+        margin-right: 0.2rem;
+    }
+    /* Divisor bar between today prediction and future */
+    .weatherSeparator {
+        width: auto;
+        height: 1px;
+        background-color: #f8f8f8;
+    }
+    .weatherPredictions {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 12px;
+        color: #333333;
+    }
+    .weatherPredictions img {
+        width: 27px;
+        margin: 0.5rem;
+    }
+    /* Mañana */
+    .tomorrowPrediction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    /* Pasado */
+    .afterPrediction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
 
 /*-----------------------------------Mobile version--------------------------------------*/
 
