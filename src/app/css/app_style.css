@@ -1538,6 +1538,7 @@ td a {
             visibility: visible;
             cursor: pointer;
         }
+/*----------------------------------- Threshold Mobile version --------------------------------------*/
 
         @media screen and (max-width: 740px) {
 
@@ -1576,7 +1577,7 @@ td a {
             .form-container {
                 display: none;
                 flex-flow: column;
-                min-width: 450px;
+                min-width: 350px;
                 width: 250px;
                 height: auto;
                 align-items: center;
