@@ -158,10 +158,11 @@ function showData(data) {
     let totalRainfall = 0;
     for(let i = 0; i < dayRainfall.length; i++) {
         // Sometimes letters appear instead of numbers
-        if(parseInt(dayRainfall[i].value) >= 0) {
+        if(parseFloat(dayRainfall[i].value) >= 0) {
             totalRainfall += parseFloat(dayRainfall[i].value);
         }
     } // for
+    totalRainfall = totalRainfall.toFixed(2);
     
     // Establece las temperaturas maxima y minima
     let maxTemperature = temperatures[0].value;
