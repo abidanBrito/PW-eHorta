@@ -31,15 +31,16 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="stylesheet" type="text/css" href="css/app_style.css">
- 
+    <style>
+       
+
+    </style>
 
     <title>Config. Umbrales</title>
 
 </head>
 
 <body class="">
-
-    <!-- Top bar (navigation menu) -->
     <header>
         <!-- Corporative brand -->
         <a id="logo" class="white-filter" href="../index.html">
@@ -48,17 +49,17 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
 
         <nav class="navbar">
             <!-- Navigation menu -->
-            <ul class="navbar-links" style="margin-bottom: 0;">
+            <ul class="navbar-links">
+                <!--
+                    <li>
+                        <a href="#">Notificaciones</a>
+                    </li>
+                    -->
                 <li>
-                    <a href="#">Gráfica</a>
-                </li>
-                <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="#">Mi cuenta</a>
                     <div id="current-page"></div>
                 </li>
-                <li>
-                    <a href="weather.html">El Tiempo</a>
-                </li>
+
                 <li>
                     <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
                 </li>
@@ -85,7 +86,7 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
                 <div class="input-group" id="search_pc" style="margin-bottom: 15px; ">
                     <input type="text" id="searchInput" onkeyup="javascript:filterFunctionThreshold()" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" style="text-align: center; height: 40px; width: 100px;">
                     <div class="input-group-append">
-                        <button class="btn" type="button" style="background-color: #AC859C;height: 40px;"><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
+                        <button class="threshold_btn_search" type="button" style=""><img id="" src="img/search.svg" style="height: 30px;" alt="Submit"></button>
                     </div>
                 </div>
 
@@ -98,12 +99,11 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
                     </table>
                 </div>
             </div>
-            <!---Form threshold-->
+            <!---Form threshold 2.1rem font h3-->
             <form id="threshold_form" class="form-container" style="">
                 <img id="threshold_close_img" src="img/close.png" style="" onclick="close_form_thresholdLoad()" alt="Close">
 
-                <h3 id="h3_edit_threshold">Editar Umbrales</h3>
-                <h3 id="plot_name_form"></h3>
+                <h3 style="font-size:2.1rem; margin-top:25px;" id="plot_name_form"></h3>
 
                 <div class="div_inputs">
 
@@ -178,7 +178,8 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
                     <input id="threshold_id_plot" type="text" placeholder="" name="id" style="display:none;">
                 </div>
 
-                <button id="btn_submit_threshold" type="submit" class="login-button">Aplicar</button>
+                <button id="btn_submit_threshold" type="submit" class="login-button" style="margin-bottom: 10px;">Aplicar</button>
+                <p id="p_ok" style="display:none;">Se ha actualizado correctamente.</p>
             </form>
         </div>
     </div>
@@ -190,7 +191,7 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
         table.removeChild(table.getElementsByTagName("tbody")[0])
         ViewAllPlotsList.prepare("threshold_table");
         AllPlotsController.init();
-    //================================================================================================
+        //================================================================================================
 
     </script>
     <script src="js/navbar.js"></script>
@@ -198,7 +199,7 @@ Consta de una tabla donde poder filtrar cada campo y al seleccionar poder fijar 
     <script src="js/add.js"></script>
     <script src="js/search.js"></script>
     <script src="js/restringir_acceso.js"></script>
-    <script src="js/delete-sesion.js"></script>
+    <script src="js/delete_sesion.js"></script>
 
 </body>
 

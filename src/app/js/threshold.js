@@ -104,7 +104,7 @@ function close_form_thresholdOpen() {
         document.getElementById("threshold_h2").style.display = "none";
     } else {
 
-        document.getElementById("threshold_form").style.display = "flex";
+       // document.getElementById("threshold_form").style.display = "flex";
         document.getElementById("search_and_table").style.display = "flex";
         document.getElementById("threshold_h2").style.display = "flex";
     }
@@ -114,6 +114,7 @@ function close_form_thresholdOpen() {
 
 function charge_thresholds_values(id) {
     close_form_thresholdOpen();
+        document.getElementById("p_ok").style.display = "none";
 
 
     let AllThresholds = {
@@ -198,9 +199,8 @@ document.getElementById('btn_submit_threshold').addEventListener('click', functi
         body: data
     }).then(function (respuesta) {
         if (respuesta.status == 200) {
-            //console.log("SE HA ACTUALIZADO BBDD");
+        document.getElementById("p_ok").style.display = "flex";
         } else {
-            //document.getElementById("").style.display = "";
         }
     })
 

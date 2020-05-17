@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:        Pablo Enguix   Daniel Burruchaga 
+ *   AUTHOR:        Pablo Enguix  Daniel Burruchaga 
  *   FILE:           all_plots_list.js
  *   DATE:           07/04/2020
  *   STATE:          DONE

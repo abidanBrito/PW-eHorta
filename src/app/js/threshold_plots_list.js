@@ -10,7 +10,7 @@ let AllPlotsModel = {
     controller: {},
     credentials: "same-origin",
     load: function () {
-        fetch('../api/v1.0/plots_all').then(function (answer) {
+        fetch('../api/v1.0/plots').then(function (answer) {
 
             // Here the url is sent to the api to have the data and they are passed to JSON      
             return answer.json();
