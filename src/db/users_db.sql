@@ -107,7 +107,8 @@ CREATE TABLE `plots` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `longitude` double NOT NULL,
-  `latitude` double NOT NULL
+  `latitude` double NOT NULL,
+  `codmun` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -119,7 +120,7 @@ INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`, `codmun`) VALUES
 (2, 'Manzanos Bétera', -0.470384, 39.593231, 46070),
 (3, 'Gavia de Isidro', -14.019314, 28.494176, 35003),
 (4, 'Gavia de Guzmán', -14.019035, 28.493408, 35003),
-(5, 'Granja Norte', 0, -0.470384, 0);
+(5, 'Granja Norte', -14.01532, -0.470384, 46190);
 
 -- --------------------------------------------------------
 
