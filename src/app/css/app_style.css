@@ -184,7 +184,6 @@
 #selectRole {
     display: block;
     font-size: 16px;
-    font-family: 'Arial', sans-serif;
     font-weight: 400;
     color: #444;
     line-height: 1.3;
@@ -594,7 +593,6 @@ input-group {
     border-radius: 100%;
     border: 1px solid #757575;
     background-color: transparent;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -619,7 +617,7 @@ input-group {
     border-radius: 100%;
     border: 1px solid blue;
     background-color: transparent;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 
@@ -1052,7 +1050,6 @@ td a {
             justify-content: center;
         }
         #open-map button span {
-            font-family: 'Roboto', sans-serif;
             font-size: 18px;
         }
         /* el icono del boton de abrir y cerrar el mapa */
@@ -1117,23 +1114,22 @@ td a {
         #select-css {
             display: block;
             font-size: 16px;
-            font-family: 'Arial', sans-serif;
             font-weight: 400;
-            color: #444;
+            color: #000000;
             line-height: 1.3;
             padding: .4em 1.4em .3em .8em;
             width: 100%;
             box-sizing: border-box;
-            margin-top: 10px;
-            border: 1px solid #aaa;
+            margin: 10px auto 0 auto;
+            border: 1px solid #DDDDDD;
             border-radius: .3em;
             -moz-appearance: none;
             -webkit-appearance: none;
             /*quitar la flecha por defecto*/
             appearance: none;
-            background-color: #fff;
+            background-color: #ffffff;
             /* flecha pequeña */
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
             background-repeat: no-repeat, repeat;
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
@@ -1210,183 +1206,171 @@ td a {
 
 
 /* ------------------ */
+
+#weather-background {
+    background-color: #f8f8f8;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100%;
+}
+/* titulo */
 .titleWeather {
-        margin-top: 5rem;
-        font-size: 27px;
-        margin-bottom: 2rem;
-        text-align: center;
+    margin-top: 4rem;
+    font-size: 38px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+/* Selector de campos en movil */
+/*----------------------------------------*/
+#select-weather {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.3;
+    padding: .4em 1.4em .3em .8em;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 10px auto 0 auto;
+    border: 1px solid #DDDDDD;
+    border-radius: .3em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*quitar la flecha por defecto*/
+    appearance: none;
+    background-color: #ffffff;
+    /* flecha pequeña */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+#select-weather::-ms-expand {
+    display: none;
+}
+#select-weather:hover {
+    border-color: #888;
+}
+#select-weather:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    /*color azul para sombra*/
+    color: #222;
+    outline: none;
+}
+#select-weather option {
+    font-weight: normal;
+}
+#predictions-container {
+    background-color: #333333;
+    border-radius: 5px;
+    height: 510px;
+    width: 50%;
+    padding: 0.3rem;
+    color: #DDDDDD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 34px auto 0 auto;
+}
+/* Presented in a row of data columns */
+.day-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 1rem;
+    color: #DDDDDD;
+}
+/* First column */
+.first-data-column {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.first-data-column .day-icon {
+    width: 58px;
+}
+/* The day shown */
+.day-text {
+
+    margin-left: 1rem;
+
+}
+/* Second column */
+.day-data .second-data-column {
+    display: flex;
+    flex-direction: column;
+}
+/* To separate text a bit, make it more readable */
+.day-data .second-data-column .prediction-temperature,
+.day-data .second-data-column .prediction-rainfall {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+/* Icons sizes and separation from text */
+.day-data .second-data-column img {
+    width: 29px;
+    margin-right: 0.2rem;
+}
+
+/* Third column */
+.misc-data {
+    line-height: 26px;
+}
+/* Divisor bar between today prediction and future */
+.weather-separator {
+    width: 85%;
+    min-height: 1px;
+    align-self: center;
+    background-color: #f8f8f8;
+}
+
+/* Timestamp text on the bottom-right corner */
+.timestamp {
+    font-size: 0.75rem;
+    color: #DDDDDD;
+    align-self: flex-end;
+}
+
+#weather-footer {
+    margin: 0;
+    background-color: #DFDFDF;
+    color: #000000;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* For very small screens we enable overflow */
+@media (max-height: 740px) {
+    body {
+        overflow: auto;
     }
-    #predictionsContainer {
-        margin: 1rem;
-    }
-    /* Contains the full card */
-    .container {
-        background-color: #EACDDB;
-        border-radius: 5px;
-        height: auto;
-        width: auto;
-        padding-top: 0.3rem;
-        margin-top: 1rem;
-    }
-    /* Location name "card title" */
-    .predictionLocation {
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-    /* Presented in a row of data columns */
-    .todayData {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 0.3rem;
-        color: #333333;
-    }
-    /* First column */
-    .todayData .todayIcon {
-        width: 50px;
-        margin-left: 1.7rem;
-    }
-    /* Second column */
-    .todayData .secondDataColumn {
-        display: flex;
-        flex-direction: column;
-    }
-    /* To separate text a bit, make it more readable */
-    .todayData .secondDataColumn .predictionTemperature,
-    .todayData .secondDataColumn .predictionRainfall {
-        display: flex;
-        align-items: center;
-        margin-top: 0.5rem;
-    }
-    /* Icons sizes and separation from text */
-    .todayData .secondDataColumn img {
-        width: 21px;
-        margin-right: 0.2rem;
-    }
-    /* Divisor bar between today prediction and future */
-    .weatherSeparator {
-        width: auto;
-        height: 1px;
-        background-color: #f8f8f8;
-    }
-    .weatherPredictions {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 12px;
-        color: #333333;
-    }
-    .weatherPredictions img {
-        width: 27px;
-        margin: 0.5rem;
-    }
-    /* Mañana */
-    .tomorrowPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
-    /* Pasado */
-    .afterPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
+}
 
 /*-----------------------------------Mobile version--------------------------------------*/
-
 @media (max-width: 740px) {
-    .titleWeather {
-        margin-top: 5rem;
-        font-size: 27px;
-        margin-bottom: 2rem;
-        text-align: center;
+    
+    .weather-container {
+        
     }
-    #predictionsContainer {
-        margin: 1rem;
+    
+    #predictions-container {
+        width: 100%;
     }
-    /* Contains the full card */
-    .container {
-        background-color: #EACDDB;
-        border-radius: 5px;
-        height: auto;
-        width: auto;
-        padding-top: 0.3rem;
-        margin-top: 1rem;
-    }
-    /* Location name "card title" */
-    .predictionLocation {
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-    /* Presented in a row of data columns */
-    .todayData {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 0.3rem;
-        color: #333333;
-    }
-    /* First column */
-    .todayData .todayIcon {
-        width: 50px;
-        margin-left: 1.7rem;
-    }
-    /* Second column */
-    .todayData .secondDataColumn {
-        display: flex;
-        flex-direction: column;
-    }
-    /* To separate text a bit, make it more readable */
-    .todayData .secondDataColumn .predictionTemperature,
-    .todayData .secondDataColumn .predictionRainfall {
-        display: flex;
-        align-items: center;
-        margin-top: 0.5rem;
-    }
-    /* Icons sizes and separation from text */
-    .todayData .secondDataColumn img {
-        width: 21px;
-        margin-right: 0.2rem;
-    }
-    /* Divisor bar between today prediction and future */
-    .weatherSeparator {
-        width: auto;
-        height: 1px;
-        background-color: #f8f8f8;
-    }
-    .weatherPredictions {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 12px;
-        color: #333333;
-    }
-    .weatherPredictions img {
-        width: 27px;
-        margin: 0.5rem;
-    }
-    /* Mañana */
-    .tomorrowPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
-    /* Pasado */
-    .afterPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
+    
+    #select-weather {
+        width: 100%;
     }
 }
 
