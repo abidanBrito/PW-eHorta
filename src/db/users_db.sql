@@ -114,12 +114,12 @@ CREATE TABLE `plots` (
 -- Volcado de datos para la tabla `plots`
 --
 
-INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`) VALUES
-(1, 'Naranjos Paterna', -0.441465, 39.497875),
-(2, 'Manzanos Bétera', -0.470384, 39.593231),
-(3, 'Gavia de Isidro', -14.019314, 28.494176),
-(4, 'Gavia de Guzmán', -14.019035, 28.493408),
-(5, 'Granja Norte', 0, -0.470384);
+INSERT INTO `plots` (`id`, `name`, `longitude`, `latitude`, `codmun`) VALUES
+(1, 'Naranjos Paterna', -0.441465, 39.497875, 46190),
+(2, 'Manzanos Bétera', -0.470384, 39.593231, 46070),
+(3, 'Gavia de Isidro', -14.019314, 28.494176, 35003),
+(4, 'Gavia de Guzmán', -14.019035, 28.493408, 35003),
+(5, 'Granja Norte', 0, -0.470384, 0);
 
 -- --------------------------------------------------------
 
