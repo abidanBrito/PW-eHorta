@@ -1622,3 +1622,627 @@ td a {
                 font-size: 12px;
             }
         }
+
+  /* -------------------------- */
+ /*  -  notifications.HTML  -  */
+/* -------------------------- */
+
+/* ---- Ajustes basicos ---- */
+    
+    .fields-alertas{
+        display: none;
+    }
+    
+    .volver-alertas{
+        display: none;
+        border: 0px;
+        background-color: #333333;;
+        color: #DDDDDD;
+        justify-content: center;
+        align-content: center;
+        height: auto;
+        align-self: center;
+        width: 30px;
+        font-size: 25px;
+    }
+    
+    .filtros-alertas{
+        display: none;
+    }
+    
+    .select-alertas option{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        background-color: #DDD;
+        color: #333;
+    }
+    
+    .tab-alertas,
+    .alertas-table{
+        display: none;
+    }
+    
+/* ---- Titulo de notificaciones ---- */
+    
+    .h2-alertas{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .header-alerta{
+        width: 100%;
+        height: auto;
+        background-color: #F8F8F8;
+    }
+    
+    .subheader-alertas{
+        height: 15vh;
+    }
+    
+    .title-alertas{
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 45px;
+    }
+    
+    .umbrales-alertas{
+        font-size: 20px;
+        margin: auto;
+        width: 93%; 
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+        width: 700px;
+        height: 94vh;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 13px;
+        margin-left: 5px;
+        color: #DDDDDD;
+        font-size: 22px;
+    }
+    
+    .select-alertas{
+        font-size: 22px;
+        width: 70%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+        margin-top: 10px;
+    }  
+    
+    .mediciones{
+        width: 100%;
+        height: 8vh;
+        background-color: beige;
+    }
+    
+    .dates-alert input {
+        font-size: 22px;
+        width: 70%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+}
+    
+    .dates-alert{
+	    margin: 150px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 22px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: 0px;
+}
+    
+    
+    .titulo-alertas{
+        margin-top: 20px;
+    }
+    
+    .campos-alerta{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 10%;
+        font-size: 22px;
+    }
+    
+    .botones-alertas{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+    }
+    
+    .boton-alertas{
+        border: 0px solid;
+        width: 70%;
+        align-self: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        color: #F9F9F9;
+        background-color: #3D96E8;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .measurements-buttons-alert {
+  list-style-type: none;
+}
+
+    .pulsadores {
+      display: inline-block;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .buttons-label {
+      border: 1px solid #DDDDDD;
+      padding: 10px;
+      display: flex;
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #DDDDDD;
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+        justify-content: center;
+    }
+
+    .buttons-label::before {
+      background-color: white;
+      color: white;
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      border: 1px solid grey;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 28px;
+      transition-duration: 0.4s;
+      transform: scale(0);
+    }
+
+    .buttons-label img {
+      width: 50px;
+      transition-duration: 0.2s;
+      transform-origin: 50% 50%;
+    }
+
+    :checked+.buttons-label {
+      border-color: #DDDDDD;
+    }
+
+    :checked+.buttons-label::before {
+      content: "✓";
+      background-color: grey;
+      transform: scale(1);
+    }
+
+    :checked+.buttons-label img {
+      transform: scale(0.9);
+        border-radius: 10px;
+    }
+    
+    .date-selector-notifications{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    .measurements-buttons-alert{
+        width: 100%;
+        display: flex;
+        margin-top: 6px;
+        justify-content: space-around;
+        font-size: 12px;
+    }
+    
+    .images-alert{
+        width: 25px;
+    }
+    
+/* ---- Alertas ---- */
+    .body-alertas{
+        width: 100%;
+        height: 80vh;
+        background-color: #F8F8F8;
+        overflow: auto;
+    }
+    
+    .alertas-bloque{
+        background-color: #F8F8F8;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    
+    .bloque-alert{
+        background-color: #F8F8F8;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .notificacion-alert{
+        background-color: white;
+        border: 2px solid #DDDDDD;
+        border-radius: 200px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;  
+        padding: 10px;
+        margin: 10px;
+        width: 83%;
+        padding: 20px;
+        font-size: 16px;
+        align-items: center;
+    }
+    
+    .main-alertas{
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .secciones-alertas{
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: 45.4px;
+        background-color: #F8F8F8;
+    }
+    
+    .fecha{
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .day{
+        font-size: 2rem;
+    }
+    
+  /* ----------------------------------------- */
+ /*  -  Fin de notifications.HTML desktop  -  */
+/* ----------------------------------------- */
+    
+  /* --------------------------------- */
+ /*  -  notifications.HTML tablet  -  */
+/* --------------------------------- */    
+    
+    @media screen and (max-width: 850px) {
+        
+/* ---- Ajustes basicos ---- */
+    
+    .filtros-alertas{
+        display: flex;
+        border: 0px solid blue;
+        border-radius: 30px;
+        width: 10rem;
+        padding: 5px;
+        justify-content: center;
+        background: none;
+        font-weight: bold;
+        font-size: 22px;
+
+    }
+        
+    .volver-alertas{
+        display: flex;
+        height: 20px;
+        align-self: center;
+        justify-content: flex-end;
+        font-size: 40px;
+        margin-left: 10px;
+    }
+    
+    #filterField{
+        display: none;
+    }
+        
+/* ---- Titulo de notificaciones ---- */
+    
+    .header-alerta{
+        flex-direction: column;
+    }
+        
+    .subheader-alertas{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        
+    .ajustes-alertas{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+        
+    .h2-alertas{
+            justify-content: space-between;
+            margin-bottom: 15px;
+            margin-right: 18%;
+    }
+        
+    .title-alertas{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }    
+    
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+            width: 96%;
+            margin: auto;
+            background-color: #333333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: #DDDDDD;
+            height: 94vh;
+            margin-top: 1.2vh;
+            font-size: 24px;
+        }
+        
+    .dates-alert input {
+        font-size: 24px;
+        width: 60%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+        margin-top: 10px;
+}
+
+    .dates-alert{
+	    margin-bottom: 5px;
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
+        font-size: 25px;
+}
+        
+    .buttons-label{
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+        }
+        
+    .buttons-label::before {
+            background-color: #F8F8F8;
+            color: white;
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            border: 1px solid grey;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 28px;
+            transition-duration: 0.4s;
+            transform: scale(0);
+            }
+        
+    .select-alertas{
+            margin-bottom: 0px;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        
+    .campos-alerta{
+            margin: 0px;
+            height: 70px;
+            font-size: 25px;
+        }
+         
+    .images-alert{
+            width: 35px;
+            }
+       
+    .medida{
+            font-weight: bold;
+            }
+        
+    .boton-alertas{
+            border: 0px solid;
+            width: 60%;
+            align-self: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            color: #F9F9F9;
+            background-color: #3D96E8;
+            font-size: 25px;
+            font-weight: bold;
+            }
+    
+/* ---- Alertas ---- */           
+        
+    .bloque-alert{
+        width: 100%;
+        margin-bottom: 20px
+    }
+       
+    .notificacion-alert{
+        width: 95%;
+        height: 3.4rem;
+        font-size: 25px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        padding: 35px;
+        padding-left: 25px; 
+    }
+        
+}
+    
+  /* ---------------------------------------- */
+ /*  -  Fin de notifications.HTML tablet  -  */
+/* ---------------------------------------- */
+    
+  /* ------------------------------- */
+ /*  -  notifications.HTML base  -  */
+/* ------------------------------- */
+        
+    @media screen and (max-width: 550px) {
+        
+/* ---- Ajustes basicos ---- */
+
+
+    
+/* ---- Titulo de notificaciones ---- */
+    
+    .h2-alertas{
+            justify-content: space-between;
+            margin-right: 5%;
+            font-size: 2px;
+
+        }
+        
+    .umbrales-alertas{
+            font-size: 16px;
+            width: 9rem;
+            justify-content: center;
+            margin: 0px;
+        }
+        
+    .ajustes-alertas{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    
+    .filtros-alertas{
+            display: flex;
+            width: 6rem;
+            font-size: 16px;
+            }
+        
+    .subheader-alertas{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+            font-size: 14px;
+            height: 91.2vh;
+            }
+        
+    .volver-alertas{
+        height: 20px;
+        align-self: center;
+        font-size: 25px;
+        margin-left: 10px;
+        width: 15px;
+        }
+        
+    .buttons-label{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        }
+        
+    .select-alertas{
+        margin-bottom: 0px;
+        margin-top: 20px;
+        }
+        
+    .campos-alerta{
+        margin: 0px;
+        height: 70px;
+        }
+        
+    .images-alert{
+        width: 22px;
+        }
+        
+    .medida{
+        font-weight: bold;
+        }
+        
+    .boton-alertas{
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 18px;
+        }    
+    
+/* ---- Alertas ---- */ 
+    
+    .bloque-alert{
+        width: 100%;
+        margin-bottom: 20px
+     }
+        
+    .notificacion-alert{
+        width: 95%;
+        height: 3.4rem;
+        font-size: 14px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        padding: 20px;
+        padding-left: 5px;
+    }
+    
+}
+    
+  /* ---------------------------------- */
+ /*  - Fin notifications.HTML base  -  */
+/* ---------------------------------- */
