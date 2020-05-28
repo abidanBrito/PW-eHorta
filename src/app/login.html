@@ -4,7 +4,7 @@
 *    DATE:           13/03/2020
 *    STATE:          DONE
 *    ---------------------------------------------------------------- -->
- 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,8 +17,12 @@
     <!-- Stylesheet and favicon -->
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
     <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>e-Horta | Iniciar sesión</title>
 </head>
 
@@ -64,15 +68,17 @@
         </header>
 
         <main class="box-login">
-            <h1 class="h1-login">INICIAR SESIÓN</h1>
-            <label class="label-login">Introduce tus credenciales para acceder a tu perfil</label>
+            <h1 class="h1-login">Iniciar sesión</h1>
+            <label class="label-login">¡Hola de nuevo!</label>
 
             <form method="POST" onsubmit="enviar(event)" id="form-credentials">
-                <input class="input-login" type="text" name="user" placeholder="Usuario" required>
-                <input class="input-login" type="password" name="pass" placeholder="Contraseña" required>
+                <input class="input-login" type="text" name="user" placeholder="&#xf0e0;   E-mail" required>
+                <input class="input-login" type="password" name="pass" placeholder="&#xf023;   Contraseña" required>
                 <button type="submit" class="login-button">Entrar</button>
             </form>
+            <h4 class="h4-login">¿Olvidaste tu contraseña? <a href="#" class="contact-us">Pulsa aquí.</a></h4>
             <div id="error-msg">ERROR AL INICIAR SESIÓN</div>
+
 
             <!-- Contact link -->
             <h4 class="h4-login">¿Aún no eres cliente? <a href="contact.html" class="contact-us">Ponte en contacto.</a></h4>
