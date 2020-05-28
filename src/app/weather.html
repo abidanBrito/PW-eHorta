@@ -58,26 +58,30 @@
             </div>
         </nav>
     </header>
+    <h1 class="titleWeather">El Tiempo</h1>
     
     <section id="weather-background">
-        <section class="weather-container">
-            <h1 class="titleWeather">El Tiempo</h1>
+        <div class="weather-container">
 
             <select id="select-weather" onchange="location = 'javascript:showData('+this.value+')'"></select>
 
-            <section id="predictions-container">
+            <div id="predictions-container">
                 <!-- Tajetas con las predicciones -->
-            </section>
-        </section>
+            </div>
+        </div>
+        <div class="weather-chart-container">
+            <canvas id="chart" name="gráfica de medidas de hoy"></canvas>
+        </div>
     </section>
+    
     <section id="weather-footer">
         Información elaborada por la Agencia Estatal de Meteorología
     </section>
 
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
-    <script src="js/currWeather.js"></script>
-    <script src="js/weatherMap.js"></script>
+    <script src="js/curr_weather.js"></script>
+    <script src="js/graphic_weather.js"></script>
 
 </body>
 </html>
