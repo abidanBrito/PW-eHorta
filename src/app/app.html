@@ -36,7 +36,10 @@
                     <a href="weather.html">El Tiempo</a>
                 </li>
                 <li>
-                    <a href="notifications.html">Notificaciones</a>
+                    <a href="alerts.html">Alertas</a>
+                </li>
+                <li>
+                    <a href="threshold.html">Umbrales</a>
                 </li>
                 <li>
                     <a href="app.html">Gráficas</a>
@@ -64,11 +67,13 @@
                 <h2>Bienvenido [user]</h2>
                 
             </div>
-            <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
-
-                <option selected="#" disable selected hidden>Seleccione parcela...</option>
-
-            </select>
+            <!--
+                <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
+    
+                    <option selected="#" disable selected hidden>Seleccione parcela...</option>
+    
+                </select>
+            -->
             <!-- EMPIEZA POP UP AÑADIR PARCELA -->
 
             <div class="form-popup" id="my-form" style="border-radius: 15px;margin-left: 10px;">
@@ -117,7 +122,7 @@
         </script>
 
 
-        <section id="map">
+        <section id="map" class="map">
             <script src="js/map.js"></script>
             <script src="js/delete.js"></script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>

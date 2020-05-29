@@ -6,9 +6,15 @@
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */
 
+
 /* ------------------ */
+
+
 /* -- Variables -- */
+
+
 /* ------------------ */
+
 :root {
     --principal-color: #664B58;
 }
@@ -16,13 +22,21 @@
 .WIP-feature {
     visibility: hidden;
 }
+
 /* ------------------ */
 
 
 /* ------------------ */
+
+
 /* --- ADMIN.HTML --- */
+
+
 /* ------------------ */
+
+
 /*   ADMIN PAGE.html  */
+
 .page {
     margin-left: 15%;
     margin-right: 15%;
@@ -31,6 +45,7 @@
 
 
 /*Admin Images*/
+
 .admin_img {
     width: 45px;
     margin-left: 15px;
@@ -38,6 +53,7 @@
 
 
 /*Admin filter buttons container*/
+
 #buttons_div {
     display: flex;
     justify-content: space-around;
@@ -47,7 +63,9 @@
     font-size: 23px;
 }
 
+
 /* Add/delete users/plots buttons container */
+
 #div_add_del {
     display: flex;
     flex-direction: row;
@@ -55,7 +73,9 @@
     justify-content: space-between;
 }
 
+
 /*Buttons add / delete*/
+
 .buttons_Add_del {
     height: 34px;
     width: 123px;
@@ -76,7 +96,9 @@
     color: white;
 }
 
+
 /* Add users/plots accordion style */
+
 .collapse.show {
     display: flex;
 }
@@ -183,7 +205,9 @@
     background-size: .65em auto, 100%;
 }
 
+
 /*Admin Search*/
+
 input-group {
     margin-left: 20px;
     margin-right: 20px;
@@ -212,7 +236,9 @@ input-group {
     color: gray;
 }
 
+
 /* Users/plots table */
+
 #admin_table {
     border: 1px solid #ccc;
     background-color: #f8f8f8;
@@ -278,26 +304,22 @@ input-group {
     .admin_page {
         overflow: scroll;
     }
-
     .page {
         display: flex;
         flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
     }
-
     #div_add_del {
         display: flex;
         flex-direction: row;
         margin-left: 3px;
         margin-bottom: 10px;
     }
-
     .buttons_Add_del {
         margin-bottom: 5px;
         font-size: 18px;
     }
-
     /*Admin Search Mobile*/
     #search_mobile {
         display: flex;
@@ -306,17 +328,14 @@ input-group {
         padding-right: 5px;
         border-radius: 10px;
     }
-
     #search_mobile input {
         border: none;
         background: none;
     }
-
     #search_pc {
         display: none;
         margin-left: 20px;
     }
-
     /*Admin Table Mobile*/
     #admin_table {
         margin-left: auto;
@@ -327,83 +346,68 @@ input-group {
         border-spacing: 0;
         background-color: #fff;
     }
-
     #admin_table td {
         border-bottom: 1px solid #ccc;
     }
-
     #admin_table tr:active {
         opacity: 0.7;
         visibility: visible;
         cursor: pointer;
     }
-
     .content_row:active {
         background: rgba(179, 147, 162, 0.8);
     }
-
     /* Admin paragraph */
     #admin_p {
         font-size: 15px;
     }
-
     /*Admin Images*/
     .admin_img {
         width: 45px;
         margin-left: 20px;
     }
-
     #search_img {
         width: 30px;
         height: 30px;
         margin: auto;
     }
-
     /*Admin popups*/
     #divAddUser,
     #divAddPlot {
         margin: 15px auto;
     }
-
     #addUser,
     #addPlot {
         width: 280px;
         padding: 0px 10px 10px 10px;
     }
-
     #preview {
         width: 280px;
         padding: 0px 10px 0px 0px;
     }
-
     #addUser input,
     #addPlot input {
         width: 260px;
         font-size: 1rem;
     }
-
     #addPlot #div-polygons,
     #addPlot #div-probes {
         flex-direction: column;
         align-items: center;
     }
-
     #addPlot .polygons,
     #addPlot .probes {
         width: 200px;
     }
-
     .sondas {
         margin-top: 2.5rem;
         margin-bottom: 0;
     }
-
     #addMap {
         width: 278px;
         height: 407px;
         border-radius: 20px;
     }
-
     .undo {
         width: 24px;
         height: 24px;
@@ -412,11 +416,9 @@ input-group {
         display: flex;
         cursor: pointer;
     }
-
     .plot-buttons button {
         font-size: 12px;
     }
-
     .plot-buttons .button {
         padding: 7px 0.5rem;
     }
@@ -432,19 +434,16 @@ input-group {
         margin-left: 0px;
         margin-bottom: 10px;
     }
-
     .buttons_Add_del {
         /* Admin Buttons Add/delete */
         margin-bottom: 5px;
         font-size: 12px;
         width: 80px;
     }
-
     #admin_p {
         /* Admin paragraph */
         margin-bottom: 0px;
     }
-
     #form_filter {
         /* Admin Search */
         display: flex;
@@ -488,32 +487,38 @@ input-group {
 
 
 /* Google maps, user and map for adding plots */
-
 #map {
-    width: 100%;
-    height: 333px;
-    box-shadow: 0px 0px 5px 1px #959595;
-    border-radius: 10px;
-    margin-right: 2em;
+    width: 100vw;
 }
 
 
 /* ------------------ */
+
+
 /* -- Graphs -- */
+
+
 /* ------------------ */
+
+
 /* Los selectores de fechas tienen un orden distinto en movil y ordenador */
+
 #desktop-controls {
     display: flex;
     margin-bottom: 20px;
 }
 
+
 /* Hidden in desktop mode */
+
 #open-map,
 #dates-mobile {
     display: none;
 }
 
+
 /* Date selectors father */
+
 #dates {
     display: block;
     margin-bottom: 5px;
@@ -521,7 +526,9 @@ input-group {
     align-items: center;
 }
 
+
 /* Date selectors */
+
 #dates input {
     font-size: 21px;
     width: 143px;
@@ -536,7 +543,9 @@ input-group {
     border-color: mediumpurple;
 }
 
+
 /* Date selectors separator */
+
 .bar {
     width: 3px;
     height: 40px;
@@ -549,6 +558,7 @@ input-group {
 
 
 /* Botones de medidas en ordenador */
+
 #measurements {
     display: block;
     width: 100%;
@@ -906,61 +916,50 @@ td a {
 /*-----------------------------------Mobile version--------------------------------------*/
 
 @media (max-width: 740px) {
-
     /*-----------------------------------*/
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
-
     .menu img {
         display: inline-block;
     }
-
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
-
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
-
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
-
     .dates input {
         font-size: 0.73rem;
     }
-
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
-
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
-
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
     }
-
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
-
     /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
@@ -969,15 +968,12 @@ td a {
         height: 40px;
         margin-left: 10em;
     }
-
     /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 740px) {
-
         /* Hide scrollbar */
         body {
             overflow: hidden;
         }
-
         /* Bienvenido */
         #username h2 {
             margin-top: 15px;
@@ -1069,7 +1065,6 @@ td a {
             height: 33px;
             padding-top: 2px;
         }
-
         /* barra de separación de los selectores de fechas */
         .bar {
             width: 3px;
@@ -1077,7 +1072,6 @@ td a {
             height: 20px;
             background-color: black;
         }
-
         /* posicion seleccionada */
         #positionNumber {
             margin-top: 5px;
@@ -1087,14 +1081,12 @@ td a {
             flex-direction: row;
             color: #333333;
         }
-
         /* chart.js */
         .chart-container {
             width: 100%;
             height: 430px;
             margin-bottom: 1em;
         }
-
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
@@ -1102,7 +1094,6 @@ td a {
             display: flex;
             justify-content: space-between;
         }
-
         .measure-btn {
             width: 41px;
             height: 41px;
@@ -1110,7 +1101,6 @@ td a {
             border: 1px solid #757575;
             background-color: transparent;
         }
-
         /*active buttons*/
         .measure-btn-active {
             width: 41px;
@@ -1119,110 +1109,51 @@ td a {
             border: 1px solid blue;
             background-color: transparent;
         }
-
         /*general*/
         #map-table {
             flex-direction: column;
-            margin-left: 2em;
-            margin-right: 2em;
-            margin-top: 3em;
-        }
-<<<<<<< Updated upstream
-
-=======
-        
-        /*----------------------------------------*/
->>>>>>> Stashed changes
-        /* Selector de campos en movil */
-        /*----------------------------------------*/
-        #select-css {
-            display: block;
-            border-radius: 10px;
-            height: 40px;
+            height: 100%;
             width: 100%;
-            padding-right: 30px;
-            font-size: 16px;
-            color: #333333;
-            border: 1px solid #DDDDDD;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            background:#ffffff url("../img/triangle.svg") no-repeat;
-            background-position: right 5px top 50%;
         }
-
-        #select-css::-ms-expand {
-            display: none;
-        }
-
-<<<<<<< Updated upstream
-        #select-css:hover {
-            border-color: #888;
-        }
-
-        #select-css:focus {
-            border-color: #aaa;
-            box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-            box-shadow: 0 0 0 3px -moz-mac-focusring;
-            /*color azul para sombra*/
-            color: #222;
-            outline: none;
-        }
-
-=======
->>>>>>> Stashed changes
-        #select-css option {
-            font-weight: normal;
-        }
-
         /*-----------------------------------*/
-
         /*see other fields*/
         .menu {
             width: 20rem;
             height: 11.9375rem;
         }
-
         .menu img {
             display: inline-block;
         }
-
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
         }
-
         .menu ul {
             display: none;
             max-height: 6.9375rem;
         }
-
         /*Date filter*/
         .dates {
             font-size: 1rem;
             margin-bottom: 5px;
         }
-
         .dates input {
             font-size: 0.73rem;
         }
-
         /*Graph*/
         .data {
             width: 20rem;
             height: 11.9375rem;
         }
-
         /*buttons*/
         #button {
             width: 20rem;
             height: 11.9375rem;
         }
-
         #button .buttons {
             width: 2.3125rem;
             height: 2.3125rem;
         }
-
         #button img {
             width: 1.6875rem;
             height: 1.6875rem;
@@ -1256,36 +1187,6 @@ td a {
 
 /* titulo */
 .titleWeather {
-<<<<<<< HEAD
-    margin-top: 5rem;
-    font-size: 27px;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-#predictionsContainer {
-    margin: 1rem;
-}
-
-/* Contains the full card */
-.container {
-    background-color: #EACDDB;
-    border-radius: 5px;
-    height: auto;
-    width: auto;
-    padding-top: 0.3rem;
-    margin-top: 1rem;
-}
-
-/* Location name "card title" */
-.predictionLocation {
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-/* Presented in a row of data columns */
-.todayData {
-=======
     margin-top: 4rem;
     font-size: 38px;
     margin-bottom: 9px;
@@ -1308,11 +1209,9 @@ td a {
     background:#ffffff url("../img/triangle.svg") no-repeat;
     background-position: right 5px top 50%;
 }
-
 #select-weather::-ms-expand {
     display: none;
 }
-
 #select-weather option {
     font-weight: normal;
 }
@@ -1331,32 +1230,10 @@ td a {
 }
 /* Presented in a row of data columns */
 .day-data {
->>>>>>> develop
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-<<<<<<< HEAD
-    margin-bottom: 0.3rem;
-    color: #333333;
-}
-
-/* First column */
-.todayData .todayIcon {
-    width: 50px;
-    margin-left: 1.7rem;
-}
-
-/* Second column */
-.todayData .secondDataColumn {
-    display: flex;
-    flex-direction: column;
-}
-
-/* To separate text a bit, make it more readable */
-.todayData .secondDataColumn .predictionTemperature,
-.todayData .secondDataColumn .predictionRainfall {
-=======
     margin-left: 1rem;
     color: #DDDDDD;
 }
@@ -1383,56 +1260,10 @@ td a {
 /* To separate text a bit, make it more readable */
 .day-data .second-data-column .prediction-temperature,
 .day-data .second-data-column .prediction-rainfall {
->>>>>>> develop
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
 }
-<<<<<<< HEAD
-
-/* Icons sizes and separation from text */
-.todayData .secondDataColumn img {
-    width: 21px;
-    margin-right: 0.2rem;
-}
-
-/* Divisor bar between today prediction and future */
-.weatherSeparator {
-    width: auto;
-    height: 1px;
-    background-color: #f8f8f8;
-}
-
-.weatherPredictions {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 12px;
-    color: #333333;
-}
-
-.weatherPredictions img {
-    width: 27px;
-    margin: 0.5rem;
-}
-
-/* Mañana */
-.tomorrowPrediction {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-/* Pasado */
-.afterPrediction {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0.5rem;
-=======
 /* Icons sizes and separation from text */
 .day-data .second-data-column img {
     width: 29px;
@@ -1481,112 +1312,10 @@ td a {
     body {
         overflow: auto;
     }
->>>>>>> develop
 }
 
 /*-----------------------------------Mobile version--------------------------------------*/
 @media (max-width: 740px) {
-<<<<<<< HEAD
-    .titleWeather {
-        margin-top: 5rem;
-        font-size: 27px;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-
-    #predictionsContainer {
-        margin: 1rem;
-    }
-
-    /* Contains the full card */
-    .container {
-        background-color: #EACDDB;
-        border-radius: 5px;
-        height: auto;
-        width: auto;
-        padding-top: 0.3rem;
-        margin-top: 1rem;
-    }
-
-    /* Location name "card title" */
-    .predictionLocation {
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Presented in a row of data columns */
-    .todayData {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 0.3rem;
-        color: #333333;
-    }
-
-    /* First column */
-    .todayData .todayIcon {
-        width: 50px;
-        margin-left: 1.7rem;
-    }
-
-    /* Second column */
-    .todayData .secondDataColumn {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* To separate text a bit, make it more readable */
-    .todayData .secondDataColumn .predictionTemperature,
-    .todayData .secondDataColumn .predictionRainfall {
-        display: flex;
-        align-items: center;
-        margin-top: 0.5rem;
-    }
-
-    /* Icons sizes and separation from text */
-    .todayData .secondDataColumn img {
-        width: 21px;
-        margin-right: 0.2rem;
-    }
-
-    /* Divisor bar between today prediction and future */
-    .weatherSeparator {
-        width: auto;
-        height: 1px;
-        background-color: #f8f8f8;
-    }
-
-    .weatherPredictions {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 12px;
-        color: #333333;
-    }
-
-    .weatherPredictions img {
-        width: 27px;
-        margin: 0.5rem;
-    }
-
-    /* Mañana */
-    .tomorrowPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Pasado */
-    .afterPrediction {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 0.5rem;
-=======
     
     .weather-container {
         width: 100%;
@@ -1602,21 +1331,15 @@ td a {
     
     .weather-chart-container {
         display: none;
->>>>>>> develop
     }
 }
-
 /* ------------------ */
 
 
 /* ------------------ */
-
-
+/* ------------------ */
 /* --- Threshold.HTML --- */
-
-
 /* ------------------ */
-
 
 /*   Threshold PAGE.html  */
 /* Style for Threshold*/
@@ -1788,7 +1511,6 @@ td a {
     width: 100%;
     height: 550px;
     box-shadow: 0px 0px 5px 1px #959595;
-    border-radius: 10px;
     margin-right: 2em;
 }
 
@@ -1950,317 +1672,322 @@ td a {
 /* -------------------------- */
 
 /* ---- Ajustes basicos ---- */
-    
-    .fields-alertas{
-        display: none;
-    }
-    
-    .volver-alertas{
-        display: none;
-        border: 0px;
-        background-color: #333333;;
-        color: #DDDDDD;
-        justify-content: center;
-        align-content: center;
-        height: auto;
-        align-self: center;
-        width: 30px;
-        font-size: 25px;
-    }
-    
-    .filtros-alertas{
-        display: none;
-    }
-    
-    .select-alertas option{
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-        background-color: #DDD;
-        color: #333;
-    }
-    
-    .tab-alertas,
-    .alertas-table{
-        display: none;
-    }
+#alertas-base-button{
+    display: none;
+}
+
+#alertas-desktop-button{
+    display: block;
+}  
+
+.volver-alertas{
+    display: none;
+    border: 0px;
+    background-color: #333333;;
+    color: #DDDDDD;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    align-self: center;
+    width: 30px;
+    font-size: 25px;
+}
+
+.filtros-alertas{
+    display: none;
+}
+
+.select-alertas option{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #DDD;
+    color: #333;
+}
+
+.tab-alertas,
+.alertas-table{
+    display: none;
+}
     
 /* ---- Titulo de notificaciones ---- */
     
-    .h2-alertas{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    
-    .header-alerta{
-        width: 100%;
-        height: auto;
-        background-color: #F8F8F8;
-    }
-    
-    .subheader-alertas{
-        height: 15vh;
-    }
-    
-    .title-alertas{
-        text-align: center;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        font-size: 45px;
-    }
-    
-    .umbrales-alertas{
-        font-size: 20px;
-        margin: auto;
-        width: 93%; 
-        justify-content: flex-end;
-        display: flex;
-    }
-    
+.h2-alertas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header-alerta{
+    width: 100%;
+    height: auto;
+    background-color: #F8F8F8;
+}
+
+.subheader-alertas{
+    height: 15vh;
+}
+
+.title-alertas{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 45px;
+}
+
+.umbrales-alertas{
+    font-size: 20px;
+    margin: auto;
+    width: 93%; 
+    justify-content: flex-end;
+    display: flex;
+    text-decoration: none;
+    color: #808080;
+}
+
 /* ---- Filtrado ---- */
     
-    .seccion-filtro-alerta{
-        width: 700px;
-        height: 94vh;
-        background-color: #333333;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;
-        border: 1px solid black;
-        border-radius: 10px;
-        margin-top: 13px;
-        margin-left: 5px;
-        color: #DDDDDD;
-        font-size: 22px;
-    }
-    
-    .select-alertas{
-        font-size: 22px;
-        width: 70%;
-        height: 60px;
-        text-align: center;
-        border: 0;
-        border-bottom: 3px solid grey;
-        background-color: transparent;
-        color: #DDDDDD;
-        margin-top: 10px;
-    }  
-    
-    .mediciones{
-        width: 100%;
-        height: 8vh;
-        background-color: beige;
-    }
-    
-    .dates-alert input {
-        font-size: 22px;
-        width: 70%;
-        height: 60px;
-        text-align: center;
-        border: 0;
-        border-bottom: 3px solid grey;
-        background-color: transparent;
-        color: #DDDDDD;
-}
-    
-    .dates-alert{
-	    margin: 150px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        font-size: 22px;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin: 0px;
-}
-    
-    
-    .titulo-alertas{
-        margin-top: 20px;
-    }
-    
-    .campos-alerta{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 10%;
-        font-size: 22px;
-    }
-    
-    .botones-alertas{
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        font-size: 22px;
-    }
-    
-    .boton-alertas{
-        border: 0px solid;
-        width: 70%;
-        align-self: center;
-        margin-bottom: 20px;
-        padding: 10px;
-        border-radius: 20px;
-        color: #F9F9F9;
-        background-color: #3D96E8;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    
-    .measurements-buttons-alert {
-  list-style-type: none;
+.seccion-filtro-alerta{
+    width: 700px;
+    height: 94vh;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-left: 5px;
+    color: #DDDDDD;
+    font-size: 22px;
 }
 
-    .pulsadores {
-      display: inline-block;
-    }
+.select-alertas{
+    font-size: 22px;
+    width: 70%;
+    height: 60px;
+    text-align: center;
+    border: 0;
+    border-bottom: 3px solid grey;
+    background-color: transparent;
+    color: #DDDDDD;
+    margin-top: 10px;
+}  
 
-    input[type="checkbox"] {
-      display: none;
-    }
+.mediciones{
+    width: 100%;
+    height: 8vh;
+    background-color: beige;
+}
 
-    .buttons-label {
-      border: 1px solid #DDDDDD;
-      padding: 10px;
-      display: flex;
-      position: relative;
-      margin: 10px;
-      cursor: pointer;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      background-color: #DDDDDD;
-        border-radius: 20px;
-        width: 70%;
-        height: 70%;
-        justify-content: center;
-    }
-
-    .buttons-label::before {
-      background-color: white;
-      color: white;
-      content: " ";
-      display: block;
-      border-radius: 50%;
-      border: 1px solid grey;
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      width: 25px;
-      height: 25px;
-      text-align: center;
-      line-height: 28px;
-      transition-duration: 0.4s;
-      transform: scale(0);
-    }
-
-    .buttons-label img {
-      width: 50px;
-      transition-duration: 0.2s;
-      transform-origin: 50% 50%;
-    }
-
-    :checked+.buttons-label {
-      border-color: #DDDDDD;
-    }
-
-    :checked+.buttons-label::before {
-      content: "✓";
-      background-color: grey;
-      transform: scale(1);
-    }
-
-    :checked+.buttons-label img {
-      transform: scale(0.9);
-        border-radius: 10px;
-    }
+.dates-alert input {
+    font-size: 22px;
+    width: 70%;
+    height: 60px;
+    text-align: center;
+    border: 0;
+    border-bottom: 3px solid grey;
+    background-color: transparent;
+    color: #DDDDDD;
+}
     
-    .date-selector-notifications{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-    }
-    
-    .measurements-buttons-alert{
-        width: 100%;
-        display: flex;
-        margin-top: 6px;
-        justify-content: space-around;
-        font-size: 12px;
-    }
-    
-    .images-alert{
-        width: 25px;
-    }
+.dates-alert{
+    margin: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 22px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: 0px;
+}
+
+
+.titulo-alertas{
+    margin-top: 20px;
+}
+
+.campos-alerta{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 10%;
+    font-size: 22px;
+}
+
+.botones-alertas{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+}
+
+.boton-alertas{
+    border: 0px solid;
+    width: 70%;
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    color: #F9F9F9;
+    background-color: #3D96E8;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.measurements-buttons-alert {
+list-style-type: none;
+}
+
+.pulsadores {
+    display: inline-block;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.buttons-label {
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #DDDDDD;
+    border-radius: 20px;
+    width: 70%;
+    height: 70%;
+    justify-content: center;
+}
+
+.buttons-label::before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+
+.buttons-label img {
+    width: 50px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+}
+
+:checked+.buttons-label {
+    border-color: #DDDDDD;
+}
+
+:checked+.buttons-label::before {
+    content: "✓";
+    background-color: grey;
+    transform: scale(1);
+}
+
+:checked+.buttons-label img {
+    transform: scale(0.9);
+    border-radius: 10px;
+}
+
+.date-selector-notifications{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.measurements-buttons-alert{
+    width: 100%;
+    display: flex;
+    margin-top: 6px;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.images-alert{
+    width: 25px;
+}
     
 /* ---- Alertas ---- */
-    .body-alertas{
-        width: 100%;
-        height: 80vh;
-        background-color: #F8F8F8;
-        overflow: auto;
-    }
-    
-    .alertas-bloque{
-        background-color: #F8F8F8;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: auto;
-    }
-    
-    .bloque-alert{
-        background-color: #F8F8F8;
-        width: 50%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .notificacion-alert{
-        background-color: white;
-        border: 2px solid #DDDDDD;
-        border-radius: 200px;
-        display: flex;
-        justify-content: space-between;
-        text-align: center;  
-        padding: 10px;
-        margin: 10px;
-        width: 83%;
-        padding: 20px;
-        font-size: 16px;
-        align-items: center;
-    }
-    
-    .main-alertas{
-        height: auto;
-        overflow: hidden;
-    }
-    
-    .secciones-alertas{
-        display: flex;
-        width: 100%;
-        height: auto;
-        margin-top: 45.4px;
-        background-color: #F8F8F8;
-    }
-    
-    .fecha{
-        flex-direction: column;
-        display: flex;
-    }
-    
-    .day{
-        font-size: 2rem;
-    }
+.body-alertas{
+    width: 100%;
+    height: 80vh;
+    background-color: #F8F8F8;
+    overflow: auto;
+}
+
+.alertas-bloque{
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.bloque-alert{
+    background-color: #F8F8F8;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notificacion-alert{
+    background-color: white;
+    border: 2px solid #DDDDDD;
+    border-radius: 200px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;  
+    padding: 10px;
+    margin: 10px;
+    width: 83%;
+    padding: 20px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.main-alertas{
+    height: auto;
+    overflow: hidden;
+}
+
+.secciones-alertas{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 45.4px;
+    background-color: #F8F8F8;
+}
+
+.fecha{
+    flex-direction: column;
+    display: flex;
+}
+
+.day{
+    font-size: 2rem;
+}
     
   /* ----------------------------------------- */
  /*  -  Fin de notifications.HTML desktop  -  */
@@ -2273,7 +2000,14 @@ td a {
     @media screen and (max-width: 850px) {
         
 /* ---- Ajustes basicos ---- */
-    
+    #alertas-base-button{
+        display: block;
+    }
+
+    #alertas-desktop-button{
+        display: none;
+    }
+
     .filtros-alertas{
         display: flex;
         border: 0px solid blue;
@@ -2568,4 +2302,3 @@ td a {
   /* ---------------------------------- */
  /*  - Fin notifications.HTML base  -  */
 /* ---------------------------------- */
->>>>>>> develop

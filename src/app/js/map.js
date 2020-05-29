@@ -157,16 +157,14 @@ function drawTerrain(map, selectedPlotID = null) {
                 });
 
                 polygon.addListener('click', function () {
-                    //Open Threshold
+                    // Open Threshold
                     if (threshold_Form) {
-
                         charge_thresholds_values(`${plot.id}`);
+                    } 
 
-                    } else {
+                    else {
                         centerPlot(`${plot.id}`);
-
                     }
-
                 });
             });
         });
