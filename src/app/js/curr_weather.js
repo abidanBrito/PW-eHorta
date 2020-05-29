@@ -30,6 +30,8 @@ function startWeatherPrediction() {
         
         // Siempre se queda el primero del selector seleccionado
         showData(uniquePlots[0]);
+        // La grafica se inicia con el mismo
+        startGraph(uniquePlots[0]);
         
     })
 } // ()
@@ -493,19 +495,19 @@ async function showData(code) {
             '<div class="day-text">Hoy</div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" src="' + iconToday + '">'+
+                    '<img class="day-icon white-filter" alt="tiempo de hoy" src="' + iconToday + '">'+
                     temperature + ' ºC'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
-                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<img src="img/datalogger/temperature.svg" class="white-filter" alt="temperatura de hoy">' +
                         '<span class="max-min-temp">' +
                             maxTemperature + ' ºC<br>' +
                             minTemperature + ' ºC' +
                         '</span>' +
                     '</div>'+
                     '<div class="prediction-rainfall">'+
-                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de hoy">'+
                         totalRainfall +'L/m2'+
                     '</div>'+
                 '</div>'+
@@ -521,19 +523,19 @@ async function showData(code) {
             '<div class="day-text">Mañana</div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" src="' + iconTomorrow + '">'+
+                    '<img class="day-icon white-filter" alt="tiempo de mañana" src="' + iconTomorrow + '">'+
                     temperatureTomorrow + ' ºC'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
-                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<img src="img/datalogger/temperature.svg" class="white-filter" alt="temperatura de mañana">' +
                         '<span class="max-min-temp">' +
                             maxTemperatureTomorrow + ' ºC<br>' +
                             minTemperatureTomorrow + ' ºC' +
                         '</span>' +
                     '</div>'+
                     '<div class="prediction-rainfall">'+
-                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de mañana">'+
                         totalRainfallTomorrow +'L/m2'+
                     '</div>'+
                 '</div>'+
@@ -549,19 +551,19 @@ async function showData(code) {
             '<div class="day-text">Pasado mañana</div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" src="' + iconAfter + '">'+
+                    '<img class="day-icon white-filter" alt="tiempo de pasado mañana" src="' + iconAfter + '">'+
                     temperatureAfter + ' ºC'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
-                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<img src="img/datalogger/temperature.svg" class="white-filter" alt="temperatura de pasado mañana">' +
                         '<span class="max-min-temp">' +
                             maxTemperatureAfter + ' ºC<br>' +
                             minTemperatureAfter + ' ºC' +
                         '</span>' +
                     '</div>'+
                     '<div class="prediction-rainfall">'+
-                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de pasado mañana">'+
                         totalRainfallAfter +'L/m2'+
                     '</div>'+
                 '</div>'+
