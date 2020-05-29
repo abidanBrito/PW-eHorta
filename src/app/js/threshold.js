@@ -2,11 +2,10 @@
  *   AUTHOR:        Daniel Burruchaga Sola 
  *   FILE:           thresholds.js
  *   DATE:           07/04/2020
- *   STATE:          DONE
+ *   STATE:          WIP
  *  ---------------------------------------------------------------- */
 
-//console.log("SCRIPT Funciona");
-//Init data
+//Init data for charge the first 
 
 let ThresholdsInit = {
     data: [],
@@ -18,10 +17,10 @@ let ThresholdsInit = {
         }).then(function (jsonData) {
             //console.log(jsonData);    
             this.data = jsonData;
-                
+
             // Filter by id 
             let filteredData = jsonData.filter(function (thresholds) {
-                return (thresholds.plot == 1);
+                return (thresholds.plot == 4);
             });
             // Filter by measure 
             let filteredRain = filteredData.filter(function (recor) {
@@ -66,56 +65,26 @@ let ThresholdsInit = {
 };
 
 ThresholdsInit.load();
+//****  CLICK ON A LINK FOR CLOSE ***==============================================================
 
-// Scripts for adaptative View
+function close(){
 
-function close_form_thresholdLoad() {
-    if (screen.width < 740) {
-        location.reload();
-        document.getElementById("thresholds_form").style.display = "none";
-        document.getElementById("search_and_table").style.display = "flex";
-        document.getElementById("threshold_h2").style.display = "flex";
-    } else {
-        location.reload();
-        document.getElementById("thresholds_form").style.display = "flex";
-        document.getElementById("search_and_table").style.display = "flex";
-        document.getElementById("threshold_h2").style.display = "flex";
-    }
-}
-
-function close_form_thresholdClose() {
-    if (screen.width < 745) {
-
-        document.getElementById("thresholds_form").style.display = "none";
-        document.getElementById("search_and_table").style.display = "flex";
-        document.getElementById("threshold_h2").style.display = "flex";
-    } else {
-
-        document.getElementById("thresholds_form").style.display = "flex";
-        document.getElementById("search_and_table").style.display = "flex";
-        document.getElementById("threshold_h2").style.display = "flex";
-    }
-}
-
-function close_form_thresholdOpen() {
-    if (screen.width < 745) {
-        document.getElementById("threshold_form").style.display = "flex";
-        document.getElementById("search_and_table").style.display = "none";
-        document.getElementById("threshold_h2").style.display = "none";
-    } else {
-
-       // document.getElementById("threshold_form").style.display = "flex";
-        document.getElementById("search_and_table").style.display = "flex";
-        document.getElementById("threshold_h2").style.display = "flex";
-    }
+        document.getElementById("threshold_form").style.display = "none";
+     
+        document.getElementById("map").style.display = "flex";
+   
 }
 
 //****  CLICK ON A LINK OF TABLE ***==============================================================
 
 function charge_thresholds_values(id) {
-    close_form_thresholdOpen();
-        document.getElementById("p_ok").style.display = "none";
+            document.getElementById("p_ok").style.display = "none";
 
+    if (screen.width < 745) {
+
+        document.getElementById("threshold_form").style.display = "flex";
+        document.getElementById("map").style.display = "none";
+    }
 
     let AllThresholds = {
         data: [],
@@ -127,9 +96,9 @@ function charge_thresholds_values(id) {
             }).then(function (jsonData) {
                 console.log(jsonData);
                 this.data = jsonData;
-                
+
                 //Filter Data by plot
-                
+
                 let filteredData = jsonData.filter(function (thresholds) {
                     return (thresholds.plot == id);
                 });
@@ -155,7 +124,7 @@ function charge_thresholds_values(id) {
                     return (recor.magnitude == "salinity");
                 });
 
-               // console.log(plotName[0].name);
+                // console.log(plotName[0].name);
                 //View data
                 document.getElementById("plot_name_form").innerHTML = plotName[0].name;
 
@@ -184,12 +153,9 @@ function charge_thresholds_values(id) {
 let formulario = document.getElementById('threshold_form');
 document.getElementById('btn_submit_threshold').addEventListener('click', function (e) {
     //console.log("CLICK ON SUBMIT");
-     // evitar que envie parametros by url
+    // evitar que envie parametros by url
     e.preventDefault();
     let data = new FormData(formulario);
-
-    //console.log(data);
-
     //console.log("SE ENVÍA EL OBJETO: ");
 
     //SEND DATA TO BBDD
@@ -199,13 +165,9 @@ document.getElementById('btn_submit_threshold').addEventListener('click', functi
         body: data
     }).then(function (respuesta) {
         if (respuesta.status == 200) {
-        document.getElementById("p_ok").style.display = "flex";
-        } else {
-        }
+            document.getElementById("p_ok").style.display = "flex";
+        } else {}
     })
 
 });
-//=========================================================================================//
-
-
 //=========================================================================================//

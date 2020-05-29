@@ -32,24 +32,21 @@
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
-                <!--
-                    <li>
-                        <a href="#">Notificaciones</a>
-                    </li>
-                    -->
-                    <li>
-                        <a href="#">Gráfica</a>
-                    </li>
-                    <li>
-                        <a href="threshold.html">Umbrales</a>
-                    </li>
-                    <li>
-                        <a href="weather.html">El Tiempo</a>
-                        <div id="current-page"></div>
-                    </li>
-                    <li>
-                        <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
-                    </li>
+
+                <li>
+                    <a href="weather.html">El Tiempo</a>
+                    <div id="current-page"></div>
+                </li>
+                <li>
+                    <a href="notifications.html">Notificaciones</a>
+                </li>
+                <li>
+                    <a href="app.html">Mi cuenta</a>
+                </li>
+
+                <li>
+                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                </li>
             </ul>
             <div class="navbar-right">
                 <!-- Mobile menu icon -->
@@ -61,17 +58,30 @@
             </div>
         </nav>
     </header>
+    <h1 class="titleWeather">El Tiempo</h1>
+    
+    <section id="weather-background">
+        <div class="weather-container">
 
-    <h1 class="titleWeather">Predicción meteorológica</h1>
+            <select id="select-weather" onchange="location = 'javascript:showData('+this.value+')'"></select>
 
-    <script src="js/currWeather.js"></script>
-
-    <section id="predictionsContainer">
-        <!-- Tajetas con las predicciones -->
+            <div id="predictions-container">
+                <!-- Tajetas con las predicciones -->
+            </div>
+        </div>
+        <div class="weather-chart-container">
+            <canvas id="chart" name="gráfica de medidas de hoy"></canvas>
+        </div>
+    </section>
+    
+    <section id="weather-footer">
+        Información elaborada por la Agencia Estatal de Meteorología
     </section>
 
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
+    <script src="js/curr_weather.js"></script>
+    <script src="js/graphic_weather.js"></script>
 
 </body>
 </html>

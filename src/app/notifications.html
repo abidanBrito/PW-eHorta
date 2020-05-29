@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang=es>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width = device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/app_style.css">
+    <script src="js/restringir_acceso.js"></script>
+    <script src="js/delete_sesion.js"></script>
+    
+<title>Notificaciones</title>
+
+
+
+</head>
+<body class="main-alertas">
+<header>
+        <!-- Corporative brand -->
+        <a id="logo" class="white-filter" href="../index.html">
+            <img src="img/logo_v2.svg" alt="LOGO">
+        </a>
+
+        <nav class="navbar">
+            <!-- Navigation menu -->
+            <ul class="navbar-links">
+
+                <li>
+                    <a href="weather.html">El Tiempo</a>
+                    
+                </li>
+                <li>
+                    <a href="notifications.htm">Notificaciones</a>
+                    <div id="current-page"></div>
+                </li>
+                <li>
+                    <a href="app.html">Mi cuenta</a>
+                </li>
+
+                <li>
+                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <!-- Mobile menu icon -->
+                <div class="menu-icon" id="menu-toggle">
+                    <div class="line-top"></div>
+                    <div class="line-mid"></div>
+                    <div class="line-bot"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="secciones-alertas">
+   <form class="seccion-filtro-alerta" id="filterField" method="POST" onsubmit="filtrar(event)">
+    <div class="titulo-alertas">
+       <div class="h2-alertas">
+           <button class="volver-alertas"  onclick="closeFilter()"><i class="fas fa-chevron-left"></i> </button> 
+           <h2>Opciones de filtrado</h2>
+       </div>
+        <label>Selecione el campo que desea visualizar</label>
+        
+      </div>
+      
+    <div class="campos-alerta">
+        <label>Campo</label>
+        <div id="tab-alertas">
+                <table class="alertas-table">
+
+                    <thead>
+                        <tr>
+                            <!-- <th scope="col">rewrt</th>*/-->
+                            <!---especifica que son columnas--->
+                        </tr>
+                    </thead>
+                    <tbody id="fields-alertas">
+
+                    </tbody>
+                </table>
+        </div>
+        <select id="select-alertas" class="select-alertas" name='campo'>
+               
+                <option selected="#" disable selected hidden>Seleccione parcela...</option>
+
+        </select>
+    </div>
+        <script src="js/plots_list.js"></script>
+        <script>
+            // "text" es la id del objeto donde se muestran los datos
+            ViewPlotsList.prepare("fields-alertas", "select-alertas");
+            // Se inicializa el controlador
+            PlotsController.init();
+        </script>
+      
+      
+   
+       
+        <div class="dates-alert">
+            <label>Dia/Mes/Año</label>
+            <div class="date-selector-notifications">
+                <input name='fecha' id='start-date' placeholder="Fecha inicio" type="date">
+            </div>
+        </div>
+       
+        
+       
+     
+    <div class="botones-alertas">
+        <label>Mediciones</label>
+            <ul class="measurements-buttons-alert">
+                
+                <li class="pulsadores"><input type="checkbox" id="humidity" name="humidity">
+                <label class="buttons-label" for="humidity"><img src="img/datalogger/humidity.svg" alt="botón humedad"></label>
+                </li>
+                
+                <li class="pulsadores"><input type="checkbox" id="temperature" name="temperature">
+                <label class="buttons-label" for="temperature"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></label>
+                </li>
+                
+                <li class="pulsadores"><input type="checkbox" id="luminosity" name="luminosity">
+                <label class="buttons-label" for="luminosity"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></label>
+                </li>
+                
+                <li class="pulsadores"><input type="checkbox" id="rainfall" name="rainfall">
+                <label class="buttons-label" for="rainfall"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></label>
+                </li>
+                
+                <li class="pulsadores"><input type="checkbox" id="salinity" name="salinity">
+                <label class="buttons-label" for="salinity"><img src="img/datalogger/salinity.svg" alt="botón salinidad"></label>
+                </li>
+                
+            </ul>
+      </div> 
+       
+       
+       <button class="boton-alertas" type="submit">Aceptar</button>
+   </form> 
+   <div class="header-alerta" id="alert-block">
+   <div class="subheader-alertas">
+       <h1 class="title-alertas">Alertas</h1>
+       <div class="ajustes-alertas">
+         <button class="filtros-alertas" onclick="openFilter()">Filtros</button>
+          <label class="umbrales-alertas">Ajustar umbrales</label> 
+       </div>
+        
+        </div>
+    <div class="body-alertas">
+        <div class="alertas-bloque" id="alertas-bloque-dinamico">
+       <script src="js/notifications.js"></script>
+        <script>
+            // "text" es la id del objeto donde se muestran los datos
+            ViewAlertsList.prepare("alertas-bloque-dinamico");
+            // Se inicializa el controlador
+            AlertsController.init();
+        </script>
+   </div>
+    </div>   
+   </div>
+</div>
+
+
+<!-- carga archivo JS -->
+<script src="js/navbar.js"></script>
+    <script src="https://kit.fontawesome.com/9cd7b9d5a0.js" crossorigin="anonymous"></script>
+</body>
+</html>

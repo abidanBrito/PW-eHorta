@@ -1,15 +1,18 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez
-*   FILE:           map.js
-*   DATE:           25/03/2020
-*   STATE:          WIP
-*   ---------------------------------------------------------------- */
+ *   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez , Daniel Burruchaga (threshold)
+ *   FILE:           map.js
+ *   DATE:           25/03/2020
+ *   STATE:          WIP
+ *   ---------------------------------------------------------------- */
 
 // It initializes a google maps instance and draws all user fields(plots).
 function initMap() {
     // Initial map settings
     let options = {
-        center: {lat: 28.493408, lng: -14.019035}, // Map center coordinates
+        center: {
+            lat: 28.493408,
+            lng: -14.019035
+        }, // Map center coordinates
         zoom: 17,
         tilt: 0,
         mapTypeId: 'satellite',
@@ -17,13 +20,17 @@ function initMap() {
             // Hide museums, monuments, etc.
             {
                 featureType: 'poi',
-                stylers: [{visibility: 'off'}]
+                stylers: [{
+                    visibility: 'off'
+                }]
             },
 
             // Hide stations, bus stops, etc.
             {
                 featureType: 'transit',
-                stylers: [{visibility: 'off'}]
+                stylers: [{
+                    visibility: 'off'
+                }]
             }
         ],
         rotateControl: false,
@@ -55,25 +62,33 @@ function centerPlot(selectedPlot) {
         });
         let lati = parseFloat(rightPlot.latitude);
         let long = parseFloat(rightPlot.longitude);
+
         console.log(lati + "," + long)
 
         // New map settings (centered around the field)
         let options = {
             zoom: 18,
             tilt: 0,
-            center: {lat: lati, lng: long},
+            center: {
+                lat: lati,
+                lng: long
+            },
             mapTypeId: 'satellite',
             styles: [
                 // Hide museums, monuments, etc.
                 {
                     featureType: 'poi',
-                    stylers: [{visibility: "off"}]
+                    stylers: [{
+                        visibility: "off"
+                    }]
                 },
 
                 // Hide stations, bus stops, etc.
                 {
                     featureType: 'transit',
-                    stylers: [{visibility: "off"}]
+                    stylers: [{
+                        visibility: "off"
+                    }]
                 }
             ],
             rotateControl: false,
@@ -89,19 +104,27 @@ function centerPlot(selectedPlot) {
 
         // Draw field polygons
         drawTerrain(map, rightPlot.id);
+
     });
 }
 
 // It draws all fields (polygons) in orange, and the selected field in blue
 function drawTerrain(map, selectedPlotID = null) {
+
+    let threshold_Form = document.getElementById('threshold_form');
+
+    if (threshold_Form != null) threshold_bool = true;
+    else {
+        console.log("Esto hace que las modificaciones para threshold no afecten a App")
+    }
+
     // Get fields from database
     fetch('../api/v1.0/polygons')
         .then(function (response) {
             // Error checking
             if (response.ok) {
                 return response.json();
-            }
-            else {
+            } else {
                 alert('Something went wrong fetching!');
             }
         })
@@ -121,7 +144,7 @@ function drawTerrain(map, selectedPlotID = null) {
                 });
 
                 // Draw the selected polygon in blue
-                if(selectedPlotID !== null) {
+                if (selectedPlotID !== null) {
                     if (plot.id == selectedPlotID) {
                         polygon.strokeColor = '#00a5ff';
                         polygon.fillColor = '#00a5ff';
@@ -132,9 +155,18 @@ function drawTerrain(map, selectedPlotID = null) {
                 polygon.getPath().getArray().forEach(function (vertex) {
                     bounds.extend(vertex);
                 });
-                
+
                 polygon.addListener('click', function () {
-                    centerPlot(`${plot.id}`);
+                    //Open Threshold
+                    if (threshold_Form) {
+
+                        charge_thresholds_values(`${plot.id}`);
+
+                    } else {
+                        centerPlot(`${plot.id}`);
+
+                    }
+
                 });
             });
         });
@@ -181,4 +213,4 @@ function refreshGraphScript() {
     script.src = 'js/graphic-data.js';
     document.head.appendChild(script);
     script.parentNode.removeChild(script);
- }
+}

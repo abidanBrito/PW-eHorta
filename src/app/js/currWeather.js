@@ -13,7 +13,7 @@ function startWeatherPrediction() {
     fetch('../api/v1.0/plots').then(function(answer) {
             // Aqui se envia la url a la api para tener los datos y se pasan a JSON
             return answer.json();
-        }).then(function(jsonData) {
+        }).then(async function(jsonData) {
 
         let uniquePlots = [];
         // filtro para buscar codigos de municipio repetidos
@@ -22,11 +22,18 @@ function startWeatherPrediction() {
                 uniquePlots.push(plot.codmun);
             }
         } // for
-        for(let i = 0; i < uniquePlots.length; i++) {
-            sendRequest(uniquePlots[i]);
-        } // for
-    }) // then
+        
+        // Pasa cada codigo de municipio y lo añade al selector
+        for(plotCode of uniquePlots) {
+            await addOption(plotCode);
+        }
+        
+        // Siempre se queda el primero del selector seleccionado
+        showData(uniquePlots[0]);
+        
+    })
 } // ()
+
 // ----------------------------------------------------------------
 // T, [T] -> contains() -> T/F
 // Returns true if the element is in the list and false if not
@@ -42,32 +49,33 @@ function contains(input, list) {
 
 // ----------------------------------------------------------------
 // T -> sendRequest()
-// Recibe el codigo de municipio y envía la consulta a AEMET
+// Recibe el codigo de municipio y envía la consulta a AEMET.
 // ----------------------------------------------------------------
 
 function sendRequest(code) {
 
-    // en data estaran los datos a enviar
-    var data = null;
+    return new Promise(resolve => {
+        // en data estaran los datos a enviar
+        let data = null;
 
-    // se prepara el objeto XML y se configura
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+        // se prepara el objeto XML y se configura
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
-    // cuando se hayan recibido los datos, los envia a readTextFile()
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            readTextFile(this.responseText);
-        }
+        // cuando se hayan recibido los datos, los envia a readTextFile()
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                resolve(this.responseText);
+            }
+        });
+
+        // se prepara el objeto a enviar
+        xhr.open("GET", "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/" + code + "?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzLmJlbGxvY2htYXJ0aW5lekBnbWFpbC5jb20iLCJqdGkiOiI3MTRkYzA3My0xNDNjLTQyZjMtYjdkMS1hZWMyMGZlMzA2NDEiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTU4ODUyMzY2MCwidXNlcklkIjoiNzE0ZGMwNzMtMTQzYy00MmYzLWI3ZDEtYWVjMjBmZTMwNjQxIiwicm9sZSI6IiJ9.swVtn6pOlDS4maJ6n2Uv7J_RTDxdv88-w3gYTDymZC4");
+        // se preparan las cabeceras
+        xhr.setRequestHeader("cache-control", "no-cache");
+        // se envia
+        xhr.send(data);
     });
-
-    // se prepara el objeto a enviar
-    xhr.open("GET", "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/horaria/" + code + "?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsdWlzLmJlbGxvY2htYXJ0aW5lekBnbWFpbC5jb20iLCJqdGkiOiI3MTRkYzA3My0xNDNjLTQyZjMtYjdkMS1hZWMyMGZlMzA2NDEiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTU4ODUyMzY2MCwidXNlcklkIjoiNzE0ZGMwNzMtMTQzYy00MmYzLWI3ZDEtYWVjMjBmZTMwNjQxIiwicm9sZSI6IiJ9.swVtn6pOlDS4maJ6n2Uv7J_RTDxdv88-w3gYTDymZC4");
-    // se preparan las cabeceras
-    xhr.setRequestHeader("cache-control", "no-cache");
-    // se envia
-    xhr.send(data);
-
 } // ()
 
 // ----------------------------------------------------------------
@@ -77,51 +85,93 @@ function sendRequest(code) {
 // ----------------------------------------------------------------
 
 function readTextFile(response) {
-    // convierte a json el texto recibido para poder analizarlo mejor
-    response = JSON.parse(response);
+    
+    return new Promise(resolve => {
+        // convierte a json el texto recibido para poder analizarlo mejor
+        response = JSON.parse(response);
 
-    // el elemento datos del json es el que nos interesa
-    let file = response.datos;
+        // el elemento datos del json es el que nos interesa
+        let file = response.datos;
 
-    // aqui se guardan los datos recibidos del archivo datos
-    var data;
+        // aqui se guardan los datos recibidos del archivo datos
+        let data;
 
-    // se crea la consulta al enlace que viene en datos
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, true);
-    // cuando se han leido los datos, se asignan de forma asincrona a "data" como objeto JSON para poder analizarlo mejor
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
+        // se crea la consulta al enlace que viene en datos
+        let rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, true);
+        // cuando se han leido los datos, se asignan de forma asincrona a "data" como objeto JSON para poder analizarlo mejor
+        rawFile.onreadystatechange = function ()
         {
-            if(rawFile.status === 200 || rawFile.status == 0)
+            if(rawFile.readyState === 4)
             {
-                var allText = rawFile.responseText;
-                data = allText;
-                // Envia los datos recibidos para mostrar
-                showData(data);
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    let allText = rawFile.responseText;
+                    data = allText;
+                    // Separa si es para mostrar o para el selector
+                    resolve(data);
+                }
             }
         }
-    }
-    rawFile.send(null);
+        rawFile.send(null);
+    });
+} // ()
+
+// ----------------------------------------------------------------
+// T -> addOption()
+// Recibe el texto con los datos, lo convierte en JSON y lo añade al selector
+// ----------------------------------------------------------------
+async function addOption(code) {
+    
+    let response = await sendRequest(code);
+    
+    let data = await readTextFile(response)
+    
+    let dataJson = JSON.parse(data);
+    
+    let selector = document.getElementById("select-weather");
+    
+    // Se analiza el json y se establecen los datos a mostrar
+    // Nombre del municipio y su provincia
+    let locationName = dataJson[0].nombre;
+    let provinceName = dataJson[0].provincia;
+    
+    // Fecha y hora de las medidas tomadas
+    let measuresTimestamp = dataJson[0].elaborado;
+    
+    selector.innerHTML += '<option name="' + locationName + ' (' + provinceName + ')' + '" value="' + code + '">' + locationName + ' (' + provinceName + ')' + "</option>";
+    
+    return;
 }
 
 // ----------------------------------------------------------------
 // T -> showData()
 // Recibe el texto con los datos, lo convierte en JSON y lo maqueta
 // ----------------------------------------------------------------
-function showData(data) {
+async function showData(code) {
+    
+    let response = await sendRequest(code);
+    
+    let data = await readTextFile(response)
 
     let dataJson = JSON.parse(data);
     console.log(dataJson);
 
     // Aqui se crearan las tarjetas de predicciones
-    let container = document.getElementById("predictionsContainer");
+    let container = document.getElementById("predictions-container");
 
     // Se analiza el json y se establecen los datos a mostrar
-    // Nombre del municipio
+    // Nombre del municipio y su provincia
     let locationName = dataJson[0].nombre;
+    let provinceName = dataJson[0].provincia;
+    
+    // Fecha y hora de las medidas tomadas
+    let measuresTimestamp = dataJson[0].elaborado;
 
+    // --------------------------------------------------
+    /* TODAY */
+    // --------------------------------------------------
+    
     // Elige el icono para el dia
     // >= 11 es nublado y < 11 es soleado
     let weatherStates = dataJson[0].prediccion.dia[0].estadoCielo;
@@ -162,7 +212,7 @@ function showData(data) {
             totalRainfall += parseFloat(dayRainfall[i].value);
         }
     } // for
-    totalRainfall = totalRainfall.toFixed(2);
+    totalRainfall = totalRainfall.toFixed(0);
 
     // Establece las temperaturas maxima y minima
     let maxTemperature = temperatures[0].value;
@@ -187,6 +237,29 @@ function showData(data) {
             maxRainfallProb = rainfallProb[i].value;
         }
     } // for
+    
+    // Los valores de viento estan alternados en los indices pares. Averiguamos la racha maxima
+    let wind = dataJson[0].prediccion.dia[0].vientoAndRachaMax;
+    let maxWind = 0;
+    for(let i = 0; i < wind.length; i++) {
+        if(i%2 == 0) {
+            if(wind[i].velocidad[0] > maxWind) {
+            maxWind = wind[i].velocidad[0];
+            }
+        }
+    } // for
+    
+    // De la humedad averiguamos su valor medio
+    let humidity = dataJson[0].prediccion.dia[0].humedadRelativa;
+    let totalHum = 0;
+    for(let i = 0; i < humidity.length; i++) {
+        totalHum += parseFloat(humidity[i].value);
+    } // for
+    let avgHum = (totalHum/(humidity.length)).toFixed(0);
+    
+    // --------------------------------------------------
+    /* TOMORROW */
+    // --------------------------------------------------
 
     // Se establecen los estados de las predicciones de los dos proximos dias
     // >= 11 es nublado y < 11 es soleado
@@ -206,22 +279,6 @@ function showData(data) {
         iconTomorrow = "img/datalogger/luminosity.svg";
     }
 
-    let weatherStatesAfter = dataJson[0].prediccion.dia[1].estadoCielo;
-    let weatherStateAfter = weatherStatesAfter[0].value;
-    for(let i = 0; i < weatherStatesAfter.length; i++) {
-        // Si encuentra la franja horaria correcta o si llega al final
-        if(weatherStatesAfter[i].periodo >= hour || i == weatherStatesAfter.length - 1) {
-            weatherStateAfter = parseInt(weatherStatesAfter[i].value);
-            break;
-        }
-    } // for
-    let iconAfter = "";
-    if(parseInt(weatherStateTomorrow.value) >= 11) {
-        iconAfter = "img/datalogger/rainfall.svg";
-    } else {
-        iconAfter = "img/datalogger/luminosity.svg";
-    }
-
     // Toma la temperatura minima y maxima de mañana y pasado
     let temperaturesTomorrow = dataJson[0].prediccion.dia[1].temperatura;
     let maxTemperatureTomorrow = temperaturesTomorrow[0].value;
@@ -236,7 +293,78 @@ function showData(data) {
             minTemperatureTomorrow = temperaturesTomorrow[i].value;
         }
     } // for
+    // Establece la temperatura de mañana a esta hora
+    let temperatureTomorrow = temperaturesTomorrow[0].value;
+    for(let i = 0; i < temperatures.length; i++) {
+        // Si encuentra la franja horaria correcta o si llega al final
+        if(temperaturesTomorrow[i].periodo >= hour || i == temperaturesTomorrow.length - 1) {
+            temperatureTomorrow = temperaturesTomorrow[i].value;
+            break;
+        }
+    } // for
+    
+    //Establece la precipitacion maxima estimada
+    let tomorrowRainfall = dataJson[0].prediccion.dia[1].precipitacion;
+    let totalRainfallTomorrow = 0;
+    for(let i = 0; i < tomorrowRainfall.length; i++) {
+        // Sometimes letters appear instead of numbers
+        if(parseFloat(tomorrowRainfall[i].value) >= 0) {
+            totalRainfallTomorrow += parseFloat(tomorrowRainfall[i].value);
+        }
+    } // for
+    totalRainfallTomorrow = totalRainfallTomorrow.toFixed(0);
+    
+    //Establece la probabilidad de precipitacion
+    let rainfallProbTomorrow = dataJson[0].prediccion.dia[1].probPrecipitacion;
+    let maxRainfallProbTomorrow = 0;
+    for(let i = 0; i < rainfallProbTomorrow.length; i++) {
+        if(rainfallProbTomorrow[i].value > maxRainfallProbTomorrow) {
+            maxRainfallProbTomorrow = rainfallProbTomorrow[i].value;
+        }
+    } // for
+    
+    // Los valores de viento estan alternados en los indices pares. Averiguamos la racha maxima
+    let windTomorrow = dataJson[0].prediccion.dia[1].vientoAndRachaMax;
+    let maxWindTomorrow = 0;
+    for(let i = 0; i < windTomorrow.length; i++) {
+        if(i%2 == 0) {
+            if(windTomorrow[i].velocidad[0] > maxWindTomorrow) {
+            maxWindTomorrow = windTomorrow[i].velocidad[0];
+            }
+        }
+    } // for
+    
+    // De la humedad averiguamos su valor medio
+    let humidityTomorrow = dataJson[0].prediccion.dia[1].humedadRelativa;
+    let totalHumTomorrow = 0;
+    for(let i = 0; i < humidityTomorrow.length; i++) {
+        totalHumTomorrow += parseFloat(humidityTomorrow[i].value);
+    } // for
+    let avgHumTomorrow = (totalHumTomorrow/(humidityTomorrow.length)).toFixed(0);
+    
+    // --------------------------------------------------
+    /* AFTER */
+    // --------------------------------------------------
+    
+    // Se establecen los estados de las predicciones de los dos proximos dias
+    // >= 11 es nublado y < 11 es soleado
+    let weatherStatesAfter = dataJson[0].prediccion.dia[2].estadoCielo;
+    let weatherStateAfter = weatherStatesAfter[0].value;
+    for(let i = 0; i < weatherStatesAfter.length; i++) {
+        // Si encuentra la franja horaria correcta o si llega al final
+        if(weatherStatesAfter[i].periodo >= hour || i == weatherStatesAfter.length - 1) {
+            weatherStateAfter = parseInt(weatherStatesAfter[i].value);
+            break;
+        }
+    } // for
+    let iconAfter = "";
+    if(parseInt(weatherStateAfter.value) >= 11) {
+        iconAfter = "img/datalogger/rainfall.svg";
+    } else {
+        iconAfter = "img/datalogger/luminosity.svg";
+    }
 
+    // Toma la temperatura minima y maxima de mañana y pasado
     let temperaturesAfter = dataJson[0].prediccion.dia[2].temperatura;
     let maxTemperatureAfter = temperaturesAfter[0].value;
     for(let i = 0; i < temperaturesAfter.length; i++) {
@@ -250,53 +378,204 @@ function showData(data) {
             minTemperatureAfter = temperaturesAfter[i].value;
         }
     } // for
+    // Establece la temperatura de mañana a esta hora
+    let temperatureAfter = temperaturesAfter[0].value;
+    for(let i = 0; i < temperatures.length; i++) {
+        // Si encuentra la franja horaria correcta o si llega al final
+        if(temperaturesAfter[i].periodo >= hour || i == temperaturesAfter.length - 1) {
+            temperatureAfter = temperaturesAfter[i].value;
+            break;
+        }
+    } // for
+    
+    //Establece la precipitacion maxima estimada
+    let AfterRainfall = dataJson[0].prediccion.dia[2].precipitacion;
+    let totalRainfallAfter = 0;
+    for(let i = 0; i < AfterRainfall.length; i++) {
+        // Sometimes letters appear instead of numbers
+        if(parseFloat(AfterRainfall[i].value) >= 0) {
+            totalRainfallAfter += parseFloat(AfterRainfall[i].value);
+        }
+    } // for
+    totalRainfallAfter = totalRainfallAfter.toFixed(0);
+    
+    //Establece la probabilidad de precipitacion
+    let rainfallProbAfter = dataJson[0].prediccion.dia[2].probPrecipitacion;
+    let maxRainfallProbAfter = 0;
+    for(let i = 0; i < rainfallProbAfter.length; i++) {
+        if(rainfallProbAfter[i].value > maxRainfallProbAfter) {
+            maxRainfallProbAfter = rainfallProbAfter[i].value;
+        }
+    } // for
+    
+    // Los valores de viento estan alternados en los indices pares. Averiguamos la racha maxima
+    let windAfter = dataJson[0].prediccion.dia[2].vientoAndRachaMax;
+    let maxWindAfter = 0;
+    for(let i = 0; i < windAfter.length; i++) {
+        if(i%2 == 0) {
+            if(windAfter[i].velocidad[0] > maxWindAfter) {
+            maxWindAfter = windAfter[i].velocidad[0];
+            }
+        }
+    } // for
+    
+    // De la humedad averiguamos su valor medio
+    let humidityAfter = dataJson[0].prediccion.dia[2].humedadRelativa;
+    let totalHumAfter = 0;
+    for(let i = 0; i < humidityAfter.length; i++) {
+        totalHumAfter += parseFloat(humidityAfter[i].value);
+    } // for
+    let avgHumAfter = (totalHumAfter/(humidityAfter.length)).toFixed(0);
+    
 
     // Se crea la tarjeta en el container
     /* ESTRUCTURA
-    <section id="predictionsContainer">
-        <!-- Tajetas con las predicciones -->
-        <section class="container">
-            <div class="predictionLocation">Ademuz</div>
-            <section class="todayData">
-                <img class="todayIcon" src="img/datalogger/luminosity.svg">
-                <div class="secondDataColumn">
-                    <div class="predictionTemperature">
-                        <img src="img/datalogger/temperature.svg">11 ºC
+    <section class="predictions-container">
+        <div class="prediction-location">Valencia (Valencia)</div>
+            <div class="weather-separator"></div>
+            <section class="day-data">
+                <div class="first-data-column>
+                    <img class="day-icon white-filter" src="img/datalogger/luminosity.svg">
+                    
+                </div>
+                <div class="second-data-column">
+                    <div class="prediction-temperature">
+                        <img src="img/datalogger/temperature.svg" class="white-filter">
                     </div>
-                    <div class="predictionRainfall">
-                        <img src="img/datalogger/rainfall.svg">0 L/m2</div></div><div class="thirdDataColumn">
-                    <div class="maxTemperature">MAX: 9ºC</div>
-                    <div class="minTemperature">MIN: 10ºC</div>
-                    <div class="rainfallProbability">PROB: 55%</div>
+                    <div class="prediction-rainfall">
+                        <img src="img/datalogger/rainfall.svg" class="white-filter">
+                    </div>
+                </div>
+                <div class="third-data-column">
+                    <div class="max-temperature-today">max: 9ºC</div>
+                    <div class="min-temperature-today">min: 10ºC</div>
+                    <div class="rainfall-probability-today">prob: 55%</div>
                 </div>
             </section>
-            <div class="weatherSeparator"></div>
-            <section class="weatherPredictions">
-                <div class="tomorrowPrediction">
-                    <div class="tomorrowDay">Mañana</div>
-                    <img class="tomorrowIcon" src="">
-                    <div class="tomorrowTemp">12|21ºC</div>
+            <div class="weather-separator"></div>
+            <section class="day-data">
+                <img class="day-icon white-filter" src="img/datalogger/luminosity.svg">
+                <div class="second-data-column">
+                    <div class="prediction-temperature">
+                        <img src="img/datalogger/temperature.svg" class="white-filter">
+                    </div>
+                    <div class="prediction-rainfall">
+                        <img src="img/datalogger/rainfall.svg" class="white-filter">
+                    </div>
                 </div>
-                <div class="afterPrediction">
-                    <div class="afterDay">Mañana</div>
-                    <img class="afterIcon" src="">
-                    <div class="afterTemp">12|21ºC</div>
+                <div class="third-data-column">
+                    <div class="max-temperature-today">max: 9ºC</div>
+                    <div class="min-temperature-today">min: 10ºC</div>
+                    <div class="rainfall-probability-today">prob: 55%</div>
                 </div>
-
             </section>
-        </section>
+            <div class="weather-separator"></div>
+            <section class="day-data">
+                <img class="day-icon white-filter" src="img/datalogger/luminosity.svg">
+                <div class="second-data-column">
+                    <div class="prediction-temperature">
+                        <img src="img/datalogger/temperature.svg" class="white-filter">
+                    </div>
+                    <div class="prediction-rainfall">
+                        <img src="img/datalogger/rainfall.svg" class="white-filter">
+                    </div>
+                </div>
+                <div class="third-data-column">
+                    <div class="max-temperature-today">max: 9ºC</div>
+                    <div class="min-temperature-today">min: 10ºC</div>
+                    <div class="rainfall-probability-today">prob: 55%</div>
+                </div>
+            </section>
+            <div class="timestamp"></div>
     </section>
     */
-    container.innerHTML +=
-        '<section class="container">' +
-        '<div class="predictionLocation">' + locationName + '</div><section class="todayData"><img class="todayIcon" src="' + iconToday + '"><div class="secondDataColumn"><div class="predictionTemperature"><img src="img/datalogger/temperature.svg">' + temperature + ' ºC</div><div class="predictionRainfall"><img src="img/datalogger/rainfall.svg">' + totalRainfall + ' L/m2</div></div>' +
-        '<div class="thirdDataColumn"><div class="maxTemperature">MAX: ' + maxTemperature + 'ºC</div><div class="minTemperature">MIN: ' + minTemperature + 'ºC</div><div class="rainfallProbability">PROB: ' + maxRainfallProb + '%</div>' +
-        '</div>' +
-        '</section><div class="weatherSeparator"></div>' +
-        '<section class="weatherPredictions"><div class="tomorrowPrediction"><div class="tomorrowDay">Mañana</div><img src="' + iconTomorrow + '"><div class="tomorrowTemp">' + maxTemperatureTomorrow + '|' + minTemperatureTomorrow + 'ºC</div></div><div class="afterPrediction"><div class="afterDay">Pasado mañana</div><img src="' + iconAfter + '"><div class="afterTemp">' + minTemperatureAfter + '|' + maxTemperatureAfter + 'ºC</div></div>'
-        +
-        '</section></section>';
+    container.innerHTML =
+            '<div class="day-text">Hoy</div>'+
+            '<section class="day-data">'+
+                '<div class="first-data-column">'+
+                    '<img class="day-icon white-filter" src="' + iconToday + '">'+
+                    temperature + ' ºC'+
+                '</div>' +
+                '<div class="second-data-column">'+
+                    '<div class="prediction-temperature">'+
+                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<span class="max-min-temp">' +
+                            maxTemperature + ' ºC<br>' +
+                            minTemperature + ' ºC' +
+                        '</span>' +
+                    '</div>'+
+                    '<div class="prediction-rainfall">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        totalRainfall +'L/m2'+
+                    '</div>'+
+                '</div>'+
+                '<div class="third-data-column">'+
+                    '<div class="misc-data">prob: ' +           
+                        maxRainfallProb + '%<br>'+
+                    'viento: ' + maxWind + ' km/h<br>' +
+                    'humedad: '+ avgHum + '%<br>' +
+                    '</div>' +
+                '</div>'+
+            '</section>'+
+            '<div class="weather-separator"></div>' + 
+            '<div class="day-text">Mañana</div>'+
+            '<section class="day-data">'+
+                '<div class="first-data-column">'+
+                    '<img class="day-icon white-filter" src="' + iconTomorrow + '">'+
+                    temperatureTomorrow + ' ºC'+
+                '</div>' +
+                '<div class="second-data-column">'+
+                    '<div class="prediction-temperature">'+
+                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<span class="max-min-temp">' +
+                            maxTemperatureTomorrow + ' ºC<br>' +
+                            minTemperatureTomorrow + ' ºC' +
+                        '</span>' +
+                    '</div>'+
+                    '<div class="prediction-rainfall">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        totalRainfallTomorrow +'L/m2'+
+                    '</div>'+
+                '</div>'+
+                '<div class="third-data-column">'+
+                    '<div class="misc-data">prob: ' +           
+                        maxRainfallProbTomorrow + '%<br>'+
+                    'viento: ' + maxWindTomorrow + ' km/h<br>' +
+                    'humedad: '+ avgHumTomorrow + '%<br>' +
+                    '</div>' +
+                '</div>'+
+            '</section>'+
+            '<div class="weather-separator"></div>' + 
+            '<div class="day-text">Pasado mañana</div>'+
+            '<section class="day-data">'+
+                '<div class="first-data-column">'+
+                    '<img class="day-icon white-filter" src="' + iconAfter + '">'+
+                    temperatureAfter + ' ºC'+
+                '</div>' +
+                '<div class="second-data-column">'+
+                    '<div class="prediction-temperature">'+
+                        '<img src="img/datalogger/temperature.svg" class="white-filter">' +
+                        '<span class="max-min-temp">' +
+                            maxTemperatureAfter + ' ºC<br>' +
+                            minTemperatureAfter + ' ºC' +
+                        '</span>' +
+                    '</div>'+
+                    '<div class="prediction-rainfall">'+
+                        '<img src="img/datalogger/rainfall.svg" class="white-filter">'+
+                        totalRainfallAfter +'L/m2'+
+                    '</div>'+
+                '</div>'+
+                '<div class="third-data-column">'+
+                    '<div class="misc-data">prob: ' +           
+                        maxRainfallProbAfter + '%<br>'+
+                    'viento: ' + maxWindAfter + ' km/h<br>' +
+                    'humedad: '+ avgHumAfter + '%<br>' +
+                    '</div>' +
+                '</div>'+
+            '</section>'+
+        '<div class="timestamp">' + measuresTimestamp + '</div>';
 }
+
 //
 // main()
 //

@@ -184,7 +184,6 @@
 #selectRole {
     display: block;
     font-size: 16px;
-    font-family: 'Arial', sans-serif;
     font-weight: 400;
     color: #444;
     line-height: 1.3;
@@ -621,7 +620,6 @@ input-group {
     border-radius: 100%;
     border: 1px solid #757575;
     background-color: transparent;
-    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -646,7 +644,7 @@ input-group {
     border-radius: 100%;
     border: 1px solid blue;
     background-color: transparent;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 
@@ -1029,7 +1027,7 @@ td a {
         }
 
         /* Mapa de posiciones grande */
-        #map {
+        .map {
             width: 100%;
             height: 550px;
             margin-top: 10px;
@@ -1104,7 +1102,6 @@ td a {
         }
 
         #open-map button span {
-            font-family: 'Roboto', sans-serif;
             font-size: 18px;
         }
 
@@ -1178,23 +1175,22 @@ td a {
         #select-css {
             display: block;
             font-size: 16px;
-            font-family: 'Arial', sans-serif;
             font-weight: 400;
-            color: #444;
+            color: #000000;
             line-height: 1.3;
             padding: .4em 1.4em .3em .8em;
             width: 100%;
             box-sizing: border-box;
-            margin-top: 10px;
-            border: 1px solid #aaa;
+            margin: 10px auto 0 auto;
+            border: 1px solid #DDDDDD;
             border-radius: .3em;
             -moz-appearance: none;
             -webkit-appearance: none;
             /*quitar la flecha por defecto*/
             appearance: none;
-            background-color: #fff;
+            background-color: #ffffff;
             /* flecha pequeña */
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
             background-repeat: no-repeat, repeat;
             background-position: right .7em top 50%, 0 0;
             background-size: .65em auto, 100%;
@@ -1285,7 +1281,24 @@ td a {
 
 
 /* ------------------ */
+
+#weather-background {
+    background-color: #f8f8f8;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 620px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-container {
+    width: 49%;
+}
+
+/* titulo */
 .titleWeather {
+<<<<<<< HEAD
     margin-top: 5rem;
     font-size: 27px;
     margin-bottom: 2rem;
@@ -1314,10 +1327,56 @@ td a {
 
 /* Presented in a row of data columns */
 .todayData {
+=======
+    margin-top: 4rem;
+    font-size: 38px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+/*----------------------------------------*/
+/* Selector de campos en movil */
+/*----------------------------------------*/
+#select-weather {
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    padding-right: 30px;
+    font-size: 16px;
+    color: #333333;
+    border: 1px solid #DDDDDD;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background:#ffffff url("../img/triangle.svg") no-repeat;
+    background-position: right 5px top 50%;
+}
+#select-weather::-ms-expand {
+    display: none;
+}
+#select-weather option {
+    font-weight: normal;
+}
+
+#predictions-container {
+    background-color: #333333;
+    border-radius: 10px;
+    height: 510px;
+    width: 100%;
+    padding: 0.3rem;
+    color: #DDDDDD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 34px auto 0 auto;
+}
+/* Presented in a row of data columns */
+.day-data {
+>>>>>>> develop
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+<<<<<<< HEAD
     margin-bottom: 0.3rem;
     color: #333333;
 }
@@ -1337,10 +1396,39 @@ td a {
 /* To separate text a bit, make it more readable */
 .todayData .secondDataColumn .predictionTemperature,
 .todayData .secondDataColumn .predictionRainfall {
+=======
+    margin-left: 1rem;
+    color: #DDDDDD;
+}
+/* First column */
+.first-data-column {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.first-data-column .day-icon {
+    width: 58px;
+}
+/* The day shown */
+.day-text {
+
+    margin-left: 1rem;
+
+}
+/* Second column */
+.day-data .second-data-column {
+    display: flex;
+    flex-direction: column;
+}
+/* To separate text a bit, make it more readable */
+.day-data .second-data-column .prediction-temperature,
+.day-data .second-data-column .prediction-rainfall {
+>>>>>>> develop
     display: flex;
     align-items: center;
     margin-top: 0.5rem;
 }
+<<<<<<< HEAD
 
 /* Icons sizes and separation from text */
 .todayData .secondDataColumn img {
@@ -1384,11 +1472,61 @@ td a {
     flex-direction: column;
     align-items: center;
     margin-bottom: 0.5rem;
+=======
+/* Icons sizes and separation from text */
+.day-data .second-data-column img {
+    width: 29px;
+    margin-right: 0.2rem;
+}
+
+/* Third column */
+.misc-data {
+    line-height: 26px;
+}
+/* Divisor bar between today prediction and future */
+.weather-separator {
+    width: 85%;
+    min-height: 1px;
+    align-self: center;
+    background-color: #f8f8f8;
+}
+
+/* Timestamp text on the bottom-right corner */
+.timestamp {
+    font-size: 0.75rem;
+    color: #DDDDDD;
+    align-self: flex-end;
+}
+
+.weather-chart-container {
+    width: 49%;
+}
+
+#weather-footer {
+    margin: 0;
+    background-color: #DFDFDF;
+    color: #000000;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* For very small screens we enable overflow */
+@media (max-height: 740px) {
+    body {
+        overflow: auto;
+    }
+>>>>>>> develop
 }
 
 /*-----------------------------------Mobile version--------------------------------------*/
-
 @media (max-width: 740px) {
+<<<<<<< HEAD
     .titleWeather {
         margin-top: 5rem;
         font-size: 27px;
@@ -1488,9 +1626,25 @@ td a {
         flex-direction: column;
         align-items: center;
         margin-bottom: 0.5rem;
+=======
+    
+    .weather-container {
+        width: 100%;
+    }
+    
+    #predictions-container {
+        width: 100%;
+    }
+    
+    #select-weather {
+        width: 100%;
+    }
+    
+    .weather-chart-container {
+        display: none;
+>>>>>>> develop
     }
 }
-
 
 /* ------------------ */
 
@@ -1525,7 +1679,10 @@ td a {
 }
 
 #plot_name_form {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    font-size: 2.1rem;
+    color: #DDDDDD;
+
 }
 
 #threshold_close_img {
@@ -1567,9 +1724,10 @@ td a {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: white;
+    background-color: #333333;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
+    
 }
 
 .form-container input[type=text] {
@@ -1581,7 +1739,9 @@ td a {
     border-radius: 2px;
     background: #f1f1f1;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 35px;
+    margin-right: 15px;
+
 }
 
 /* when click input */
@@ -1617,6 +1777,7 @@ td a {
     display: flex;
     flex-direction: row;
     margin-left: 25px;
+    margin-bottom: 15px;
     margin-right: 25px;
 }
 
@@ -1634,14 +1795,16 @@ td a {
 }
 
 .threshold_labelMax {
-    margin-left: 50px;
+    margin-left: 95px;
     margin-top: 7px;
+    color: #DDDD;
 }
 
 
 .threshold_labelMin {
-    margin-left: 25px;
+    margin-left: 100px;
     margin-top: 7px;
+    color: #DDDD;
 }
 
 
@@ -1656,16 +1819,74 @@ td a {
     cursor: pointer;
 }
 
+.threshold_p {
+    color: #DDDD;
+
+}
+
+.mapthres {
+    width: 100%;
+    height: 550px;
+    box-shadow: 0px 0px 5px 1px #959595;
+    border-radius: 10px;
+    margin-right: 2em;
+}
+
+#mapthresDiv {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-left: 4em;
+    margin-top: 2em;
+    margin-right: 4em;
+    height: 550px;
+}
+#p_ok{
+    display:none;
+    color:#d3d3d3;
+}
 /*----------------------------------- Threshold Mobile version --------------------------------------*/
 
 @media screen and (max-width: 740px) {
+    .form-container input {
+        margin-left: 20px;
+    }
+
+    .threshold_divimg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50px;
+        margin-right: 0px;
+    }
+
+    /* Mapa de posiciones grande */
+    .mapthres {
+        width: 100%;
+        height: 100%;
+        margin-right: 0em;
+
+    }
+
+    #mapthresDiv {
+        margin-top: 0em;
+        height: 610px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
 
     .threshold_labelMax b {
+        margin-left: 90px;
         font-size: 0.8rem;
     }
 
     .threshold_labelMin b {
         font-size: 0.8rem;
+                margin-left: 55px;
+
     }
 
     .div_inputs {
@@ -1678,6 +1899,8 @@ td a {
 
     #plot_name_form {
         margin-bottom: 25px;
+        font-size: 2.1rem;
+        margin-top: 5px;
     }
 
     #h3_edit_threshold {
@@ -1695,13 +1918,14 @@ td a {
     .form-container {
         display: none;
         flex-flow: column;
-        min-width: 350px;
+        min-width: 360px;
         width: 250px;
         height: auto;
         align-items: center;
-        background-color: white;
+        background-color: #333333;
         border: 3px solid #f1f1f1;
         border-radius: 10px;
+        margin-left: 5px;
     }
 
     /* Full-width input fields */
@@ -1714,7 +1938,7 @@ td a {
         border-radius: 2px;
         background: #f1f1f1;
         text-align: center;
-        margin-left: 5px;
+        margin-left: 40px;
     }
 
     #threshold_close_img {
@@ -1760,3 +1984,628 @@ td a {
         font-size: 12px;
     }
 }
+
+  /* -------------------------- */
+ /*  -  notifications.HTML  -  */
+/* -------------------------- */
+
+/* ---- Ajustes basicos ---- */
+    
+    .fields-alertas{
+        display: none;
+    }
+    
+    .volver-alertas{
+        display: none;
+        border: 0px;
+        background-color: #333333;;
+        color: #DDDDDD;
+        justify-content: center;
+        align-content: center;
+        height: auto;
+        align-self: center;
+        width: 30px;
+        font-size: 25px;
+    }
+    
+    .filtros-alertas{
+        display: none;
+    }
+    
+    .select-alertas option{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        background-color: #DDD;
+        color: #333;
+    }
+    
+    .tab-alertas,
+    .alertas-table{
+        display: none;
+    }
+    
+/* ---- Titulo de notificaciones ---- */
+    
+    .h2-alertas{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .header-alerta{
+        width: 100%;
+        height: auto;
+        background-color: #F8F8F8;
+    }
+    
+    .subheader-alertas{
+        height: 15vh;
+    }
+    
+    .title-alertas{
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 45px;
+    }
+    
+    .umbrales-alertas{
+        font-size: 20px;
+        margin: auto;
+        width: 93%; 
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+        width: 700px;
+        height: 94vh;
+        background-color: #333333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 13px;
+        margin-left: 5px;
+        color: #DDDDDD;
+        font-size: 22px;
+    }
+    
+    .select-alertas{
+        font-size: 22px;
+        width: 70%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+        margin-top: 10px;
+    }  
+    
+    .mediciones{
+        width: 100%;
+        height: 8vh;
+        background-color: beige;
+    }
+    
+    .dates-alert input {
+        font-size: 22px;
+        width: 70%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+}
+    
+    .dates-alert{
+	    margin: 150px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 22px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin: 0px;
+}
+    
+    
+    .titulo-alertas{
+        margin-top: 20px;
+    }
+    
+    .campos-alerta{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 10%;
+        font-size: 22px;
+    }
+    
+    .botones-alertas{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+    }
+    
+    .boton-alertas{
+        border: 0px solid;
+        width: 70%;
+        align-self: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        color: #F9F9F9;
+        background-color: #3D96E8;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .measurements-buttons-alert {
+  list-style-type: none;
+}
+
+    .pulsadores {
+      display: inline-block;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .buttons-label {
+      border: 1px solid #DDDDDD;
+      padding: 10px;
+      display: flex;
+      position: relative;
+      margin: 10px;
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: #DDDDDD;
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+        justify-content: center;
+    }
+
+    .buttons-label::before {
+      background-color: white;
+      color: white;
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      border: 1px solid grey;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 28px;
+      transition-duration: 0.4s;
+      transform: scale(0);
+    }
+
+    .buttons-label img {
+      width: 50px;
+      transition-duration: 0.2s;
+      transform-origin: 50% 50%;
+    }
+
+    :checked+.buttons-label {
+      border-color: #DDDDDD;
+    }
+
+    :checked+.buttons-label::before {
+      content: "✓";
+      background-color: grey;
+      transform: scale(1);
+    }
+
+    :checked+.buttons-label img {
+      transform: scale(0.9);
+        border-radius: 10px;
+    }
+    
+    .date-selector-notifications{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    
+    .measurements-buttons-alert{
+        width: 100%;
+        display: flex;
+        margin-top: 6px;
+        justify-content: space-around;
+        font-size: 12px;
+    }
+    
+    .images-alert{
+        width: 25px;
+    }
+    
+/* ---- Alertas ---- */
+    .body-alertas{
+        width: 100%;
+        height: 80vh;
+        background-color: #F8F8F8;
+        overflow: auto;
+    }
+    
+    .alertas-bloque{
+        background-color: #F8F8F8;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+    }
+    
+    .bloque-alert{
+        background-color: #F8F8F8;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .notificacion-alert{
+        background-color: white;
+        border: 2px solid #DDDDDD;
+        border-radius: 200px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;  
+        padding: 10px;
+        margin: 10px;
+        width: 83%;
+        padding: 20px;
+        font-size: 16px;
+        align-items: center;
+    }
+    
+    .main-alertas{
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .secciones-alertas{
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: 45.4px;
+        background-color: #F8F8F8;
+    }
+    
+    .fecha{
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .day{
+        font-size: 2rem;
+    }
+    
+  /* ----------------------------------------- */
+ /*  -  Fin de notifications.HTML desktop  -  */
+/* ----------------------------------------- */
+    
+  /* --------------------------------- */
+ /*  -  notifications.HTML tablet  -  */
+/* --------------------------------- */    
+    
+    @media screen and (max-width: 850px) {
+        
+/* ---- Ajustes basicos ---- */
+    
+    .filtros-alertas{
+        display: flex;
+        border: 0px solid blue;
+        border-radius: 30px;
+        width: 10rem;
+        padding: 5px;
+        justify-content: center;
+        background: none;
+        font-weight: bold;
+        font-size: 22px;
+
+    }
+        
+    .volver-alertas{
+        display: flex;
+        height: 20px;
+        align-self: center;
+        justify-content: flex-end;
+        font-size: 40px;
+        margin-left: 10px;
+    }
+    
+    #filterField{
+        display: none;
+    }
+        
+/* ---- Titulo de notificaciones ---- */
+    
+    .header-alerta{
+        flex-direction: column;
+    }
+        
+    .subheader-alertas{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        
+    .ajustes-alertas{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
+            }
+        
+    .h2-alertas{
+            justify-content: space-between;
+            margin-bottom: 15px;
+            margin-right: 18%;
+    }
+        
+    .title-alertas{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }    
+    
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+            width: 96%;
+            margin: auto;
+            background-color: #333333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            color: #DDDDDD;
+            height: 94vh;
+            margin-top: 1.2vh;
+            font-size: 24px;
+        }
+        
+    .dates-alert input {
+        font-size: 24px;
+        width: 60%;
+        height: 60px;
+        text-align: center;
+        border: 0;
+        border-bottom: 3px solid grey;
+        background-color: transparent;
+        color: #DDDDDD;
+        margin-top: 10px;
+}
+
+    .dates-alert{
+	    margin-bottom: 5px;
+	    display: flex;
+	    align-items: center;
+	    flex-direction: column;
+        font-size: 25px;
+}
+        
+    .buttons-label{
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+        }
+        
+    .buttons-label::before {
+            background-color: #F8F8F8;
+            color: white;
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            border: 1px solid grey;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 28px;
+            transition-duration: 0.4s;
+            transform: scale(0);
+            }
+        
+    .select-alertas{
+            margin-bottom: 0px;
+            margin-top: 20px;
+            font-size: 22px;
+        }
+        
+    .campos-alerta{
+            margin: 0px;
+            height: 70px;
+            font-size: 25px;
+        }
+         
+    .images-alert{
+            width: 35px;
+            }
+       
+    .medida{
+            font-weight: bold;
+            }
+        
+    .boton-alertas{
+            border: 0px solid;
+            width: 60%;
+            align-self: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 40px;
+            color: #F9F9F9;
+            background-color: #3D96E8;
+            font-size: 25px;
+            font-weight: bold;
+            }
+    
+/* ---- Alertas ---- */           
+        
+    .bloque-alert{
+        width: 100%;
+        margin-bottom: 20px
+    }
+       
+    .notificacion-alert{
+        width: 95%;
+        height: 3.4rem;
+        font-size: 25px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        padding: 35px;
+        padding-left: 25px; 
+    }
+        
+}
+    
+  /* ---------------------------------------- */
+ /*  -  Fin de notifications.HTML tablet  -  */
+/* ---------------------------------------- */
+    
+  /* ------------------------------- */
+ /*  -  notifications.HTML base  -  */
+/* ------------------------------- */
+        
+    @media screen and (max-width: 550px) {
+        
+/* ---- Ajustes basicos ---- */
+
+
+    
+/* ---- Titulo de notificaciones ---- */
+    
+    .h2-alertas{
+            justify-content: space-between;
+            margin-right: 5%;
+            font-size: 2px;
+
+        }
+        
+    .umbrales-alertas{
+            font-size: 16px;
+            width: 9rem;
+            justify-content: center;
+            margin: 0px;
+        }
+        
+    .ajustes-alertas{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    
+    .filtros-alertas{
+            display: flex;
+            width: 6rem;
+            font-size: 16px;
+            }
+        
+    .subheader-alertas{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        
+/* ---- Filtrado ---- */
+    
+    .seccion-filtro-alerta{
+            font-size: 14px;
+            height: 91.2vh;
+            }
+        
+    .volver-alertas{
+        height: 20px;
+        align-self: center;
+        font-size: 25px;
+        margin-left: 10px;
+        width: 15px;
+        }
+        
+    .buttons-label{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        }
+        
+    .select-alertas{
+        margin-bottom: 0px;
+        margin-top: 20px;
+        }
+        
+    .campos-alerta{
+        margin: 0px;
+        height: 70px;
+        }
+        
+    .images-alert{
+        width: 22px;
+        }
+        
+    .medida{
+        font-weight: bold;
+        }
+        
+    .boton-alertas{
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 18px;
+        }    
+    
+/* ---- Alertas ---- */ 
+    
+    .bloque-alert{
+        width: 100%;
+        margin-bottom: 20px
+     }
+        
+    .notificacion-alert{
+        width: 95%;
+        height: 3.4rem;
+        font-size: 14px;
+        align-items: center;
+        display: flex;
+        text-align: center;
+        padding: 20px;
+        padding-left: 5px;
+    }
+    
+}
+    
+  /* ---------------------------------- */
+ /*  - Fin notifications.HTML base  -  */
+/* ---------------------------------- */
+>>>>>>> develop
