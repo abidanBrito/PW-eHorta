@@ -1158,15 +1158,6 @@ select:-webkit-autofill:focus {
     letter-spacing: 1px;
 }
 
-/* Visual separator (line) */
-.separator {
-    width: 40%;
-    height: 2px;
-    background-color: grey;
-    margin-bottom: 25px;
-    margin-top: 10px;
-}
-
 /* Link to contact page */
 .contact-us {
     color: #b2b2b2;
