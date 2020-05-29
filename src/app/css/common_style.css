@@ -1,19 +1,13 @@
 /* ----------------------------------------------------------------
 *   AUTHOR:         Abidan Brito, Luis Belloch, Jorge Grau
 *   FILE:           common_style.css
-*   DATE:           16/04/2020
+*   DATE:           28/05/2020
 *   STATE:          DONE
 *  ---------------------------------------------------------------- */
 
-
 /* --------------------------- */
-
-
 /* -- INITIAL CONFIGURATION -- */
-
-
 /* --------------------------- */
-
 * {
     margin: 0px;
     padding: 0px;
@@ -24,6 +18,7 @@ html,
 body {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    color: #333333;
     background-color: #f8f8f8;
     /* Smooth scrolling & section snapping */
     scrollbar-color: gray rgb(30, 30, 30);
@@ -33,17 +28,9 @@ body {
 }
 
 
-/* ------------------------------------------------------------------------------------------- */
-
-
 /* ------------- */
-
-
 /* -- TOP BAR -- */
-
-
 /* ------------- */
-
 header {
     position: fixed;
     top: 0;
@@ -54,59 +41,49 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 20px;
 }
 
 #logo img {
     display: flex;
-    width: 2rem;
+    width: 1.5rem;
+    margin-left: 1.25rem;
 }
 
-
 /* Navigation menu */
-
 .navbar {
     display: flex;
     overflow: hidden;
+    margin-right: 1.25rem;
 }
 
-
 /* Menu list */
-
 .navbar-links {
     display: flex;
     list-style: none;
     align-items: center;
 }
 
-
 /* Menu items */
-
 .navbar-links li {
-    padding-left: 3rem;
+    padding-left: 5rem;
 }
 
-
 /* Menu items (links) */
-
 .navbar-links li a {
     display: block;
     text-decoration: none;
     font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 3px;
+    font-weight: 500;
+    letter-spacing: 2px;
     color: #dddddd;
 }
 
 .navbar-links li a:hover,
 .navbar-links li a a:active {
-    color: rgb(224, 169, 66);
+    color: #3D96E8;
 }
 
-
 /* Navbar icons container (login and burger) */
-
 .navbar-right {
     display: none;
     align-items: center;
@@ -115,31 +92,33 @@ header {
 #login-icon img {
     display: flex;
     height: 1rem;
-    margin-right: 1rem;
 }
 
 .menu-icon div {
     width: 24px;
     height: 2px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 1.25rem;
     cursor: pointer;
     background-color: #dddddd;
     transition: all 0.25s ease;
 }
 
 
+/* ------------------ */
 /* -- MEDIA QUERYS -- */
-
-
+/* ------------------ */
 /* NOTE(abi): Ground truth for testing -> Samsung Galaxy S9 */
-
 @media screen and (max-width: 740px) {
     body {
         min-height: 550px;
         /* Hide scrollbars */
         overflow-x: hidden;
     }
+    
+    .navbar {
+        margin-right: 0;
+    }
+
     /* Menu list */
     .navbar-links {
         position: absolute;
@@ -153,33 +132,39 @@ header {
         background-color: #333333;
         transform: translateX(100%);
     }
+
     /* Menu items */
     .navbar-links li {
         opacity: 0;
         padding: 0;
         margin: 1.5rem;
     }
+
     /* Menu items (links) */
     .navbar-links li a {
         font-size: 18px;
     }
+
     #login-link {
         display: none;
     }
+
     /* Navbar icons container (login and burger) */
     .navbar-right {
         display: flex;
         margin: 0px;
         padding: 0px;
     }
+
     #login-icon {
         display: block;
     }
 }
 
 
-/* Control classes */
-
+/* --------------------- */
+/* -- CONTROL CLASSES -- */
+/* --------------------- */
 .navbar-active {
     z-index: 1;
     transform: translateX(0%);
@@ -192,121 +177,107 @@ header {
 }
 
 
+/* ---------------- */
+/* -- ANIMATIONS -- */
+/* ---------------- */
 /* Menu item fade-in animation */
-
 @keyframes navbarLinkFade {
     from {
         opacity: 0;
         transform: translateX(50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
-
 /* -- Burger transformation animation -- */
-
-
 /* Rotate top line -45 degrees */
-
 .menu-toggle .line-top {
     transform: rotate(-45deg) translate(-5px, 5px);
 }
 
-
 /* Rotate top line 45 degrees */
-
 .menu-toggle .line-bot {
     transform: rotate(45deg) translate(-5px, -5px);
 }
 
-
 /* Hide middle line */
-
 .menu-toggle .line-mid {
     opacity: 0;
 }
 
 
-/* ------------------------------------------------------------------------------------------- */
-
-
 /* ------------------- */
-
-
 /* -- MISCELLANEOUS -- */
-
-
 /* ------------------- */
-
-
 /* Button template */
-
 .button {
+    display: inline-block;
     text-align: center;
     text-decoration: none;
-    letter-spacing: 1px;
-    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-weight: 500;
     border-radius: 1.5rem;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
-    padding: 0.5rem 2rem;
+    padding: .5rem 0;
+    min-width: 230px;
     margin: 1.25rem;
-    background-color: rgb(224, 169, 66);
-    color: #121212;
+    background-color: #3D96E8;
+    color: #f9f9f9;
 }
 
+/* Page separator */
+.page-separator {
+    background: #dfdfdf;
+    height: .8rem;
+    width: 100%;
+}
 
 /* Footer template */
-
 .footer {
+    height: 37px;
     width: 100%;
-    height: 45px;
-    background-color: rgb(80, 80, 80);
-    letter-spacing: 2px;
-    color: #dddddd;
-    padding: 15px;
+    background: #dfdfdf;
+    color: #333333;
     text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
 }
 
-
 /* Current page line marker */
-
 #current-page {
-    width: 75%;
+    width: 80%;
     margin: 0 auto;
     height: 1px;
     background-color: #dddddd;
 }
 
-
 /* White-ish color filter */
-
 .white-filter {
     filter: invert(76%) sepia(69%) saturate(4%) hue-rotate(35deg) brightness(101%) contrast(98%);
 }
 
-
-/* ------------------------------------------------------------------------------------------- */
+.black-filter {
+    filter: invert(16%) sepia(0%) saturate(0%) hue-rotate(262deg) brightness(92%) contrast(86%);
+}
 
 
 /* ---------------- */
-
-
 /* -- index.html -- */
-
-
 /* ---------------- */
-
+/* ------------------------------------------------------------------------------------------- */
 .container-index {
     height: 100%;
     width: 100%;
 }
 
-
 /* -- SECTIONS -- */
-
 .main-index,
 .section-index {
     width: 100%;
@@ -315,105 +286,93 @@ header {
     padding: 45px;
 }
 
-
 /* Welcome screen section container (banner) */
-
 #showcase {
-    background-image: url(../img/plant_background.png);
+    background: #333333;
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding-top: 90px;
 }
 
-
 /* Plant image */
-
 #showcase img {
-    max-height: 628px;
+    flex: 0 0 150px;
+    margin-bottom: 2rem;
 }
 
-
-/* Banner subcontainer (text + CTA) */
-
-#showcase div {
-    width: 700px;
+/* Container */
+#showcase .container {
+    display: flex;
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
 }
 
-
-/* Brand name */
-
-#showcase h1 {
-    font-size: 90px;
-    letter-spacing: 3px;
-    color: #dddddd;
+/* Banner subcontainer */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
-/* Service slogan */
-
-#banner-slogan {
+/* Slogan */
+#banner h1 {
     font-size: 2.25rem;
+    font-weight: normal;
+    letter-spacing: 3px;
     color: #dddddd;
     margin: 1rem 0;
 }
 
+#banner h1 {
+    font-size: 3rem;
+}
 
 /* Service description */
-
 #banner-description {
     font-size: 1.25rem;
-    color: #dddddd;
-    width: 80%;
+    color: #a8a8a8;
+    margin-bottom: 6rem;
 }
-
 
 /* CTA */
-
 #cta-button .button {
-    font-size: 1.5rem;
-    margin: 3.5rem 0;
+    font-size: 1.25rem;
+    min-width: 265px;
 }
 
-
 /* Section titles */
-
 h2 {
     font-size: 3.125rem;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 12px;
 }
 
-
 /* Secondary titles */
-
 h3 {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.3rem;
+    font-weight: normal;
     letter-spacing: 1px;
     margin-bottom: 7px;
 }
 
-
 /* Section descriptive texts */
-
 #slogan01,
 #slogan02,
 #slogan03 {
     font-size: 1.5rem;
+    color: #808080;
 }
 
-
 /* -- SCROLL DOWN INDICATORS -- */
-
 #scroll-down02 {
     position: absolute;
     top: 190vh;
@@ -430,9 +389,7 @@ h3 {
     transform: rotate(180deg);
 }
 
-
 /* Scroll down arrow icons */
-
 #scroll-down01 img,
 #scroll-down02 img,
 #scroll-down03 img,
@@ -440,82 +397,76 @@ h3 {
     width: 3rem;
 }
 
-
 /* Services section (¿Qué ofrecemos?) */
-
 #services {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 90px;
+    padding-top: 72px;
 }
-
 
 /* Services container ('benefits' subcontainer + CTA) */
-
 #services-content {
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    height: 80%;
+    height: 70%;
 }
 
-
 /* Services subcontainer */
-
 #benefits {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 90%;
 }
-
 
 /* Specific service (What is it we offer?) */
-
 #benefits article {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 280px;
+    width: 33%;
 }
-
 
 /* Service icon */
-
 #benefits article img {
-    margin: 1rem;
-    height: 100px;
+    margin-right: 1rem;
+    height: 77px;
 }
 
+/* Benefit subcontainer */
+.benefit-text {
+    width: 265px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* Benefit names */
+.benefit-text h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
 
 /* Get in touch button */
-
-#cta-contact {
-    margin: 0 auto;
-    margin-top: 80px;
+#cta-contact .button {
+    font-size: 1.25rem;
+    min-width: 265px;
 }
-
-#cta-contact a {
-    font-size: 1.5rem;
-}
-
 
 /* Magnitudes section (¿Qué medimos?) */
-
 #datalogger {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 90px;
+    padding: 0;
+    padding-top: 72px;
 }
 
-
 /* Magnitudes container (parent) */
-
 .magnitudes {
     height: 80%;
     width: 90%;
@@ -524,22 +475,16 @@ h3 {
     align-items: center;
 }
 
-
 /* Magnitude subcontainer (child) */
-
 .magnitudes div {
     flex-direction: column;
     justify-content: space-around;
 }
 
-
 /* Magnitude button containers */
-
 .boxes {
     width: 210px;
-    height: 140px;
-    border-radius: 15px;
-    border: 1px solid #959595;
+    height: 115px;
     padding: 10px;
     margin-top: 120px;
     margin-bottom: 120px;
@@ -550,27 +495,22 @@ h3 {
     letter-spacing: 1px;
 }
 
-
 /* Magnitude icons */
-
 .boxes img {
     max-height: 50%;
     padding: 3px;
 }
 
-
 /* User reviews section (Opiniones) */
-
 #reviews {
-    height: calc(100vh - 90px);
+    height: calc(100vh - 75px);
+    padding-top: 34px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 /* Container with user reviews (x3) */
-
 #reviews-container {
     height: 100%;
     width: 100%;
@@ -579,120 +519,137 @@ h3 {
     align-items: center;
 }
 
-
 /* User review (subcontainer) */
-
 .user-review {
     display: flex;
-    height: 40%;
-    flex-direction: column;
-    align-items: center;
+    width: 33%;
+    justify-content: center;
 }
 
+/* User profile picture */
+.user-review img {
+    max-height: 90px;
+    max-width: 90px;
+    margin-right: 1rem;
+    border-radius: 1.25rem;
+}
 
 /* User profile container */
-
 .user {
     display: flex;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
+    width: 225px;
     height: 120px;
     margin-bottom: 0.5rem;
 }
 
-
-/* User profile picture */
-
-.user img {
-    max-height: 80%;
-    margin-right: 20px;
-    border: 2px solid #9e51b8;
-    border-radius: 25px;
-}
-
-
 /* User profile name */
-
-.user p {
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 1px;
+.user .name {
+    font-weight: 500;
+    font-size: 18px;
 }
-
 
 /* Quoted review */
-
 .review {
-    width: 370px;
-    color: gray;
-    font-size: 20px;
+    width: 100%;
+    color: #808080;
+    font-size: 1rem;
     font-style: italic;
     text-align: justify;
 }
 
+/* Footer (Copyright notice) */
+#copy {
+    font-size: 14px;
+}
 
+
+/* ------------------ */
 /* -- MEDIA QUERYS -- */
-
+/* ------------------ */
 @media screen and (max-width: 740px) {
     .main-index,
     .section-index {
         padding: 20px;
     }
+
     /* Welcome screen section container (banner) */
     #showcase {
-        flex-direction: column-reverse;
-        justify-content: flex-end;
-        background-image: none;
-        background-color: #272b25;
-        padding-top: 80px;
+        flex-direction: column;
+        padding-top: 25px;
     }
-    /* Banner subcontainer (text + CTA) */
+
+    /* Container */
+    #showcase .container {
+        width: 700px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    /* Slogan */
+    #banner h1 {
+        width: 50%;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        letter-spacing: 0.5px;
+    }
+
     #banner {
-        padding: 50px;
-        margin-top: 2rem;
+        order: -1;
     }
-    /* Brand name */
-    #showcase h1 {
-        font-size: 45px;
-        letter-spacing: 3px;
-    }
-    /* Service slogan */
-    #banner-slogan {
-        font-size: 1.25rem;
-        margin: 0.8rem 0;
-    }
+
     /* Service description */
     #banner-description {
-        font-size: 12px;
-        width: 50%;
+        width: 45%;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        margin: 0;
     }
-    /* Plant image */
+
+    /* Product logotype */
     #showcase img {
-        max-height: 250px;
+        max-height: 230px;
+        order: 0;
     }
+
     /* CTA */
     #cta-button .button {
-        font-size: 1.25rem;
-        margin: 2.75rem 0 0;
+        font-size: 1rem;
+        min-width: 230px;
+        margin: 0;
     }
+
     /* Section titles */
     h2 {
         font-size: 2.2rem;
     }
+
     /* Secondary titles */
     h3 {
         font-size: 1.25rem;
     }
+
     /* Section descriptive texts */
     #slogan01,
     #slogan02,
     #slogan03 {
-        font-size: 0.9rem;
+        width: 300px;
+        font-size: 1rem;
+        text-align: center;
     }
+
+    #slogan01 {
+        margin: 0;
+    }
+
     /* Scroll down indicator (last section) */
     #scroll-down04 {
         top: 379vh;
     }
+
     /* Scroll down arrow icons */
     #scroll-down01 img,
     #scroll-down02 img,
@@ -700,39 +657,59 @@ h3 {
     #scroll-down04 img {
         width: 2rem;
     }
+
     /* Services container ('benefits' subcontainer + CTA) */
     #services-content {
         height: 100%;
     }
+
     /* Services subcontainer */
     #benefits {
         flex-direction: column;
-        margin-top: 10px;
+        justify-content: space-between;
         margin-bottom: 0;
+        height: 65%;
     }
+
+    #benefits article {
+        align-items: flex-start;
+        margin: 1.5rem 0;
+        width: 280px;
+    }
+
     /* Service icon */
     #benefits article img {
-        margin: 5px;
-        height: 40px;
+        margin-right: 1rem;
+        width: 67px;
+        height: 67px;
     }
-    #benefits article {
-        margin-bottom: 2.25rem;
+
+    /* Benefit subcontainer */
+    .benefit-text {
+        width: 265px;
+        font-size: 14px;
     }
+
+    /* Benefit names */
+    .benefit-text h3 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
     /* Get in touch button */
-    #cta-contact {
-        margin: 1rem auto;
-    }
     #cta-contact .button {
-        font-size: 1.25rem;
-        margin: 2.75rem 0 0;
+        font-size: 1rem;
+        margin-top: .8rem;
     }
+
     /* Magnitudes container (parent) */
     .magnitudes {
         width: 340px;
-        height: 100%;
+        height: 85%;
         flex-direction: column;
-        margin-top: 15px;
+        padding: 1rem;
     }
+
     /* Magnitudes subcontainer (child) */
     .magnitudes>div {
         width: 97%;
@@ -740,93 +717,96 @@ h3 {
         flex-direction: row;
         justify-content: space-around;
     }
+
     .magnitudes div div {
         flex-direction: column;
     }
+
     /* Section title top margin */
     #services,
-    #datalogger {
-        padding-top: 70px;
+    #datalogger{
+        padding-top: 72px;
     }
+
     /* Magnitude titles */
     #datalogger h3 {
-        font-size: 0.9rem;
+        font-size: 14px;
         letter-spacing: 0.5px;
         margin: 0;
     }
+
     /* Magnitude button containers */
     .boxes {
         width: 130px;
         height: 100px;
-        border-radius: 12px;
-        margin: 10px;
+        margin: 0;
         letter-spacing: 1px;
     }
+
     /* Magnitude icons */
     .boxes img {
-        height: 40px;
+        height: 37px;
         padding: 3px;
     }
-    #reviews {
-        padding-top: 1.7rem;
-    }
+    
     /* Container with user reviews (x3) */
     #reviews-container {
-        height: auto;
-        margin: auto;
-        padding: 0.8rem 0 0;
         flex-direction: column;
-        justify-content: space-around;
     }
+
     /* User review (subcontainer) */
     .user-review {
-        width: 260px;
+        width: 280px;
         justify-content: flex-end;
         margin: 1.25rem 0;
     }
+
     /* User profile container */
     .user {
         height: 70px;
         margin-bottom: 0.6rem;
     }
+
     /* User profile picture */
-    .user img {
+    .user-review img {
+        max-height: 67px;
+        max-width: 67px;
         border-radius: 1rem;
     }
+
     /* User profile name */
-    .user p {
+    .user .name {
+        font-size: 1rem;
+    }
+
+    /* Quoted review */
+    .user .review {
+        width: 100%;
         font-size: 14px;
     }
-    /* Quoted review */
-    .review {
-        width: 100%;
-        font-size: 16px;
+
+    /* Footer (Copyright notice) */
+    #copy {
+        font-size: 12px;
     }
+
     .hide {
         display: none;
     }
 }
-
-
 /* ------------------------------------------------------------------------------------------- */
 
 
 /* ------------------ */
-
-
 /* -- contact.html -- */
-
-
 /* ------------------ */
-
+/* ------------------------------------------------------------------------------------------- */
 .container-contact {
     height: 100%;
     overflow: hidden;
 }
 
-
 /* Page title */
-
 .h1-contact {
     letter-spacing: 3px;
     font-size: 36px;
@@ -834,9 +814,7 @@ h3 {
     margin-top: 85px;
 }
 
-
 /* Main (section) content */
-
 .main-contact {
     height: 76%;
     display: flex;
@@ -845,9 +823,7 @@ h3 {
     margin-bottom: 40px;
 }
 
-
 /* Contact container (tlf, email and address) */
-
 .contact-details {
     display: flex;
     flex-direction: column;
@@ -860,9 +836,7 @@ h3 {
     width: 100%;
 }
 
-
 /* Pequeño texto de relleno */
-
 .contact-details p {
     font-size: 1.4rem;
     margin-bottom: 50px;
@@ -870,9 +844,7 @@ h3 {
     font-weight: bold;
 }
 
-
 /* Tlf and email containers */
-
 #tlf,
 #email {
     display: flex;
@@ -881,18 +853,14 @@ h3 {
     margin: 5px;
 }
 
-
 /* Tlf and email icons */
-
 #tlf img,
 #email img {
     max-width: 2rem;
     margin-right: 20px;
 }
 
-
 /* Tlf and email links */
-
 #tlf a,
 #email a {
     color: #3D96E8;
@@ -900,9 +868,7 @@ h3 {
     font-weight: bolder !important;
 }
 
-
 /* Map container (Google Maps) */
-
 #map-contact {
     height: 100%;
     width: 100%;
@@ -912,36 +878,29 @@ h3 {
     margin-bottom: 40px;
 }
 
-
 /* Direccion */
-
 .direction-contact {
     text-align: center;
     width: 89%;
 }
 
-
 /* Tamaño de la letra de direccion */
-
 .direction {
     font-weight: normal;
     font-size: 28px;
 }
 
-
 /* Tamaño de la letra del numero telefonico y el email */
-
 .number,
 .email {
     font-size: 2.5rem;
 }
 
 
+/* ------------------ */
 /* -- MEDIA QUERYS -- */
-
-
+/* ------------------ */
 /* El primer media query reduce un poco los tamaños */
-
 @media screen and (max-width: 740px) {
     /* Main (section) content */
     .main-contact {
@@ -951,10 +910,12 @@ h3 {
         margin-top: 40px;
         margin-bottom: 10px;
     }
+
     .contact-details p {
         margin: 0px;
         height: auto;
     }
+
     /* Page title */
     .h1-contact {
         font-size: 38px;
@@ -963,11 +924,13 @@ h3 {
         font-weight: 800;
         color: #333333;
     }
+
     /* Tlf and email containers */
     #tlf,
     #email {
         font-size: 1.2rem;
     }
+
     /* Tlf and email icons */
     #tlf img,
     #email img {
@@ -975,25 +938,30 @@ h3 {
         height: 1.9rem;
         margin-right: 10px;
     }
+
     /* Contact container (tlf, email and address) */
     .contact-details {
         margin-bottom: 40px;
     }
+
     /* Map container (Google Maps) */
     #map-contact {
         height: 100%;
         width: 95%;
         margin: 0;
     }
+
     .direction-contact {
         font-size: 20px;
         text-align: center;
         margin: 20px;
         width: 70%;
     }
+    
     .direction {
         font-size: 20px;
     }
+
     .number,
     .email {
         font-size: 1.5rem;
@@ -1005,10 +973,12 @@ h3 {
         flex-direction: column;
         align-items: center;
     }
+
     .main-contact aside {
         margin-left: 4rem;
         align-items: flex-start;
     }
+
     .contact-details p {
         font-size: 14px;
         font-weight: bold;
@@ -1017,20 +987,24 @@ h3 {
         margin-bottom: 20px;
         text-align: left;
     }
+
     h1-contact {
         font-size: 2rem;
         margin-top: 70px;
     }
+
     #tlf,
     #email {
         font-size: 1.2rem;
     }
+
     #tlf img,
     #email img {
         width: 1.9rem;
         height: 1.9rem;
         margin-right: 10px;
     }
+
     #map-contact {
         border-radius: 0;
         box-shadow: none;
@@ -1038,36 +1012,34 @@ h3 {
         width: 100%;
         margin-bottom: 0;
     }
+
     .direction-contact {
         width: 260px;
         font-size: 12px;
         text-align: center;
         margin: 20px;
     }
+
     .contact-details {
         margin: 0px
     }
+
     .direction {
         font-size: 12px;
     }
+
     .number,
     .email {
         font-size: 1.125rem;
     }
 }
-
-
 /* ------------------------------------------------------------------------------------------- */
 
 
 /* ---------------- */
-
-
 /* -- login.html -- */
-
-
 /* ---------------- */
-
+/* ------------------------------------------------------------------------------------------- */
 .container-login {
     background-color: #333333;
     margin: 0;
@@ -1079,9 +1051,7 @@ h3 {
     font-family: 'Poppins', sans-serif;
 }
 
-
 /* Main content */
-
 .box-login {
     width: 500px;
     height: calc(100vh - 45px);
@@ -1094,9 +1064,7 @@ h3 {
     text-align: center;
 }
 
-
 /* Page title */
-
 .h1-login {
     color: #f8f8f8;
     font-size: 40px;
@@ -1105,9 +1073,7 @@ h3 {
     font-weight: 900;
 }
 
-
 /* Get in touch text */
-
 .h4-login {
     color: #b2b2b2;
     font-weight: normal;
@@ -1115,9 +1081,7 @@ h3 {
     margin-top: 10px;
 }
 
-
 /* Page description text */
-
 .label-login {
     color: #646464;
     font-size: 18px;
@@ -1125,9 +1089,7 @@ h3 {
     margin-bottom: 40px;
 }
 
-
 /* Credentials input form */
-
 input:-internal-autofill-selected {
     background-color: transparent !important;
     color: -internal-light-dark-color(#f8f8f8, #333333) !important;
@@ -1162,9 +1124,7 @@ select:-webkit-autofill:focus {
     border-color: #f8f8f8;
 }
 
-
 /* Unathorized access (wrong input) */
-
 .input-login:error {
     border-color: red;
 }
@@ -1184,9 +1144,7 @@ select:-webkit-autofill:focus {
     border-radius: 100px;
 }
 
-
 /* Wrong input information message */
-
 #error-msg {
     width: 300px;
     height: 35px;
@@ -1200,9 +1158,7 @@ select:-webkit-autofill:focus {
     letter-spacing: 1px;
 }
 
-
 /* Visual separator (line) */
-
 .separator {
     width: 40%;
     height: 2px;
@@ -1211,9 +1167,7 @@ select:-webkit-autofill:focus {
     margin-top: 10px;
 }
 
-
 /* Link to contact page */
-
 .contact-us {
     color: #b2b2b2;
     font-weight: bold;
@@ -1223,34 +1177,41 @@ select:-webkit-autofill:focus {
 }
 
 
+/* ------------------- */
 /* -- MEDIA QUERYS -- */
-
+/* ------------------ */
 @media screen and (max-width: 740px) {
     .container-login {
         background-image: none;
     }
+
     /* Main content */
     .box-login {
         width: 300px;
     }
+
     /* Page title */
     .h1-login {
         font-size: 2rem;
     }
+
     /* Get in touch text */
     .h4-login {
         font-size: 12px;
     }
+
     /* Page description text */
     .label-login {
         font-size: 1rem;
         width: 200px;
     }
+
     /* Credentials input form */
     .input-login {
         width: 252px;
         margin-bottom: 0.5rem;
     }
+
     .login-button {
         color: #f8f8f8;
         background-color: #3D96E8;
@@ -1266,16 +1227,16 @@ select:-webkit-autofill:focus {
         cursor: pointer;
         border-radius: 100px;
     }
+
     /* Visual separator (line) */
     .separator {
         width: 230px;
         margin: 0.5rem;
     }
+
     /* Link to contact page */
     .contact-us {
         font-size: 12px;
     }
 }
-
-
 /* ------------------------------------------------------------------------------------------- */
