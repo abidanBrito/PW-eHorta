@@ -11,8 +11,6 @@ function openMap() {
     // Open the map and close the graph
     let graph = document.getElementById("app");
     graph.style.display = "none";
-    let selector = document.getElementById("select-css");
-    selector.style.display = "block";
     let map = document.getElementById("map");
     map.style.display = "block";
 }
@@ -23,8 +21,6 @@ function closeMap() {
     // Open the graph and close the map
     let graph = document.getElementById("app");
     graph.style.display = "block";
-    let selector = document.getElementById("select-css");
-    selector.style.display = "none";
     let map = document.getElementById("map");
     map.style.display = "none";
 }

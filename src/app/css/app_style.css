@@ -677,9 +677,10 @@ input-group {
 /* User name itself */
 
 #username h2 {
-    font-size: 24px;
+    font-size: 20px;
     display: flex;
     align-self: flex-start;
+    margin-left: 2rem;
 }
 
 
@@ -976,6 +977,8 @@ td a {
         }
         /* Bienvenido */
         #username h2 {
+            font-size: 24px;
+            width: 100%;
             margin-top: 15px;
             margin-bottom: 15px;
         }
@@ -983,8 +986,10 @@ td a {
         /* Mapa de posiciones grande */
         .map {
             width: 100%;
-            height: 550px;
-            margin-top: 10px;
+            height: 80%;
+            position: sticky;
+            padding-top: 1rem;
+            bottom: 0;
         }
 
         /* tabla de parcelas, solo escritorio */
@@ -1114,6 +1119,7 @@ td a {
             flex-direction: column;
             height: 100%;
             width: 100%;
+            margin: 0;
         }
         /*-----------------------------------*/
         /*see other fields*/
