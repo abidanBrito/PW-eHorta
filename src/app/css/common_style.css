@@ -405,10 +405,6 @@ h3 {
     padding-top: 72px;
 }
 
-#slogan01 {
-    margin-bottom: 9.5rem;
-}
-
 /* Services container ('benefits' subcontainer + CTA) */
 #services-content {
     display: flex;
@@ -416,7 +412,7 @@ h3 {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 30%;
+    height: 70%;
 }
 
 /* Services subcontainer */
@@ -424,8 +420,8 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 2rem;
     width: 100%;
+    height: 90%;
 }
 
 /* Specific service (What is it we offer?) */
@@ -672,6 +668,7 @@ h3 {
         flex-direction: column;
         justify-content: space-between;
         margin-bottom: 0;
+        height: 65%;
     }
 
     #benefits article {
