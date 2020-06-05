@@ -30,8 +30,8 @@ function startWeatherPrediction() {
         
         // Siempre se queda el primero del selector seleccionado
         showData(uniquePlots[0]);
-        // La grafica se inicia con el mismo
-        startGraph(uniquePlots[0]);
+        // La grafica se inicia con el mismo en la temperatura como base
+        showTemperature(uniquePlots[0]);
         
     })
 } // ()

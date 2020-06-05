@@ -16,7 +16,8 @@
 /* ------------------ */
 
 :root {
-    --principal-color: #664B58;
+    --principal-color: #333333;
+    --secondary-color: #DDDDDD;
 }
 
 .WIP-feature {
@@ -1084,7 +1085,7 @@ td a {
             font-size: 13px;
             display: flex;
             flex-direction: row;
-            color: #333333;
+            color: var(--principal-color);
         }
         /* chart.js */
         .chart-container {
@@ -1182,13 +1183,14 @@ td a {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
-    height: 620px;
+    height: 80%;
     display: flex;
     justify-content: space-between;
 }
 
 .weather-container {
     width: 49%;
+    height: 100%;
 }
 
 /* titulo */
@@ -1208,8 +1210,8 @@ td a {
     width: 100%;
     padding-right: 30px;
     font-size: 16px;
-    color: #333333;
-    border: 1px solid #DDDDDD;
+    color: var(--principal-color);
+    border: 1px solid var(--secondary-color);
     -moz-appearance: none;
     -webkit-appearance: none;
     background:#ffffff url("../img/triangle.svg") no-repeat;
@@ -1223,16 +1225,16 @@ td a {
 }
 
 #predictions-container {
-    background-color: #333333;
+    background-color: var(--principal-color);
     border-radius: 10px;
-    height: 510px;
     width: 100%;
+    height: 90%;
     padding: 0.3rem;
-    color: #DDDDDD;
+    color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 34px auto 0 auto;
+    margin: 20px auto 0 auto;
 }
 /* Presented in a row of data columns */
 .day-data {
@@ -1241,7 +1243,7 @@ td a {
     align-items: center;
     justify-content: space-around;
     margin-left: 1rem;
-    color: #DDDDDD;
+    color: var(--secondary-color);
 }
 /* First column */
 .first-data-column {
@@ -1255,7 +1257,7 @@ td a {
 /* The day shown */
 .day-text {
 
-    margin-left: 1rem;
+    margin-left: 10%;
 
 }
 /* Second column */
@@ -1291,12 +1293,45 @@ td a {
 /* Timestamp text on the bottom-right corner */
 .timestamp {
     font-size: 0.75rem;
-    color: #DDDDDD;
+    color: var(--secondary-color);
     align-self: flex-end;
 }
 
-.weather-chart-container {
+/* Canvas chart and button container */
+.chart-buttons-container {
+    height: 100%;
     width: 49%;
+}
+
+/* chart canvas container */
+#weather-chart-container {
+    width: 100%;
+    height: 90%;
+}
+
+/* Buttons container */
+.weather-buttons-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+}
+
+/* Button chart when active */
+.weather-button-active {
+    border: 2px solid #333333;
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Inactive buttons */
+.weather-button {
+    border: 2px solid #DDDDDD;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 #weather-footer {
@@ -1335,9 +1370,10 @@ td a {
         width: 100%;
     }
     
-    .weather-chart-container {
+    .chart-buttons-container {
         display: none;
     }
+    
 }
 /* ------------------ */
 
@@ -1370,7 +1406,7 @@ td a {
 #plot_name_form {
     margin-bottom: 10px;
     font-size: 2.1rem;
-    color: #DDDDDD;
+    color: var(--secondary-color);
 
 }
 
@@ -1413,7 +1449,7 @@ td a {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: #333333;
+    background-color: var(--principal-color);
     border: 3px solid #f1f1f1;
     border-radius: 10px;
     
@@ -1610,7 +1646,7 @@ td a {
         width: 250px;
         height: auto;
         align-items: center;
-        background-color: #333333;
+        background-color: var(--principal-color);
         border: 3px solid #f1f1f1;
         border-radius: 10px;
         margin-left: 5px;
@@ -1689,8 +1725,8 @@ td a {
 .volver-alertas{
     display: none;
     border: 0px;
-    background-color: #333333;;
-    color: #DDDDDD;
+    background-color: var(--principal-color);;
+    color: var(--secondary-color);
     justify-content: center;
     align-content: center;
     height: auto;
@@ -1756,7 +1792,7 @@ td a {
 .seccion-filtro-alerta{
     width: 700px;
     height: 94vh;
-    background-color: #333333;
+    background-color: var(--principal-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1765,7 +1801,7 @@ td a {
     border-radius: 10px;
     margin-top: 13px;
     margin-left: 5px;
-    color: #DDDDDD;
+    color: var(--secondary-color);
     font-size: 22px;
 }
 
@@ -1777,7 +1813,7 @@ td a {
     border: 0;
     border-bottom: 3px solid grey;
     background-color: transparent;
-    color: #DDDDDD;
+    color: var(--secondary-color);
     margin-top: 10px;
 }  
 
@@ -1795,7 +1831,7 @@ td a {
     border: 0;
     border-bottom: 3px solid grey;
     background-color: transparent;
-    color: #DDDDDD;
+    color: var(--secondary-color);
 }
     
 .dates-alert{
@@ -1856,7 +1892,7 @@ input[type="checkbox"] {
 }
 
 .buttons-label {
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--secondary-color);
     padding: 10px;
     display: flex;
     position: relative;
@@ -1868,7 +1904,7 @@ input[type="checkbox"] {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #DDDDDD;
+    background-color: var(--secondary-color);
     border-radius: 20px;
     width: 70%;
     height: 70%;
@@ -1900,7 +1936,7 @@ input[type="checkbox"] {
 }
 
 :checked+.buttons-label {
-    border-color: #DDDDDD;
+    border-color: var(--secondary-color);
 }
 
 :checked+.buttons-label::before {
@@ -1960,7 +1996,7 @@ input[type="checkbox"] {
 
 .notificacion-alert{
     background-color: white;
-    border: 2px solid #DDDDDD;
+    border: 2px solid var(--secondary-color);
     border-radius: 200px;
     display: flex;
     justify-content: space-between;
@@ -2078,14 +2114,14 @@ input[type="checkbox"] {
     .seccion-filtro-alerta{
             width: 96%;
             margin: auto;
-            background-color: #333333;
+            background-color: var(--principal-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             text-align: center;
             border: 1px solid black;
             border-radius: 10px;
-            color: #DDDDDD;
+            color: var(--secondary-color);
             height: 94vh;
             margin-top: 1.2vh;
             font-size: 24px;
@@ -2099,7 +2135,7 @@ input[type="checkbox"] {
         border: 0;
         border-bottom: 3px solid grey;
         background-color: transparent;
-        color: #DDDDDD;
+        color: var(--secondary-color);
         margin-top: 10px;
 }
 
