@@ -8,12 +8,17 @@
 // It initializes a google maps instance and draws all user fields(plots).
 function initMap() {
     // Initial map settings
+    let zoomLevel = 17; 
+    if (window.innerWidth < 740) {
+        zoomLevel = 18;
+    }
     let options = {
         center: {
             lat: 28.493408,
             lng: -14.019035
         }, // Map center coordinates
-        zoom: 17,
+
+        zoom: zoomLevel,
         tilt: 0,
         mapTypeId: 'satellite',
         styles: [
@@ -35,6 +40,7 @@ function initMap() {
         ],
         rotateControl: false,
         mapTypeControl: false,
+        fullscreenControl: false,
         streetViewControl: false
     };
 
@@ -93,6 +99,7 @@ function centerPlot(selectedPlot) {
             ],
             rotateControl: false,
             mapTypeControl: false,
+            fullscreenControl: false,
             streetViewControl: false
         };
 
@@ -163,6 +170,9 @@ function drawTerrain(map, selectedPlotID = null) {
                     } 
 
                     else {
+                        // Update helper text
+                        let actionDescription = document.getElementById("actionText");
+                        actionDescription.textContent = 'Seleccione una sonda o campo';
                         centerPlot(`${plot.id}`);
                     }
                 });
@@ -185,16 +195,21 @@ function showPositions(selectedPlot, map) {
                 // Se guarda la posición
                 let newPos = new google.maps.LatLng(`${pos.latitude}`, `${pos.longitude}`)
                 // Se crean los marcadores
+                let iconURL = 'https://i.ibb.co/Wc92F9w/pin.png';
                 let marker = new google.maps.Marker({
                     position: newPos,
                     map: map,
                     animation: google.maps.Animation.DROP,
+                    icon: iconURL,
                     title: `${pos.id}`
                 });
 
                 marker.addListener('click', function () {
                     // Selected marker (probe)
                     document.getElementById('selected-probe').innerHTML = this.title;
+
+                    // Hide informative floating panel
+                    document.getElementById('map-floating-panel').style.display = 'none';
                     // Update the graph
                     refreshGraphScript();
                 });
