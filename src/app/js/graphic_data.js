@@ -13,6 +13,10 @@ function openMap() {
     graph.style.display = "none";
     let map = document.getElementById("map");
     map.style.display = "block";
+    
+    // Show informative floating panel
+    const panel = document.getElementById('map-floating-panel').style.display = 'flex';
+    console.log(panel);
 }
 
 //Cerrar mapa
