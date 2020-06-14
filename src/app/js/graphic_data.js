@@ -8,6 +8,7 @@
 //Abrir mapa
 function openMap() {
     console.log("Opening map");
+
     // Open the map and close the graph
     let graph = document.getElementById("app");
     graph.style.display = "none";
@@ -22,25 +23,24 @@ function openMap() {
 //Cerrar mapa
 function closeMap() {
     console.log("Closing map");
+    
     // Open the graph and close the map
     let graph = document.getElementById("app");
     graph.style.display = "block";
+
     let map = document.getElementById("map");
     map.style.display = "none";
 }
 
 // Measurement buttons behaviour
-function activateMobileButton(btn) {
-
-    if(btn.className == "measure-btn") {
-        let activeButtons = document.getElementsByClassName("measure-btn-active");
-        console.log(activeButtons);
-        let i;
-        for (i = 1; i < activeButtons.length; i++) {
-            activeButtons[i].className = "measure-btn";
-        }
+function toggleButton(btn) {
+    if(btn.className == "measure-btn-active") {
+        btn.className = "measure-btn";
+    }
+    else {
         btn.className = "measure-btn-active";
     }
+
     filterMeasurements(btn);
 }
 
@@ -335,6 +335,7 @@ function CrearGrafica() {
 // main()
 // ------------------------------
 // Get Humidity button and mark it active as default
+/*
 if(window.innerWidth <= 775) {
     // Mobile
     let humidity = document.getElementById("mobile-btn-hum");
@@ -344,5 +345,6 @@ if(window.innerWidth <= 775) {
     let humidity = document.getElementById("desktop-btn-hum");
     activateDesktopButton(humidity);
 }
+*/
 
 getMeasurements();

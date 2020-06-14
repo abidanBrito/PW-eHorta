@@ -142,19 +142,19 @@ function drawTerrain(map, selectedPlotID = null) {
                 // Default polygon configuration
                 let polygon = new google.maps.Polygon({
                     paths: JSON.parse(plot.plotPath),
-                    strokeColor: '#ff8000',
+                    strokeColor: '#fc852f',
                     strokeOpacity: 0.8,
-                    strokeWeight: 2.5,
-                    fillColor: '#ff8000',
-                    fillOpacity: 0.35,
+                    strokeWeight: 2.25,
+                    fillColor: '#fc852f',
+                    fillOpacity: 0.3,
                     map: map
                 });
 
                 // Draw the selected polygon in blue
                 if (selectedPlotID !== null) {
                     if (plot.id == selectedPlotID) {
-                        polygon.strokeColor = '#00a5ff';
-                        polygon.fillColor = '#00a5ff';
+                        polygon.strokeColor = '#2fbffc';
+                        polygon.fillColor = '#2fbffc';
                     };
                 }
 
@@ -192,8 +192,10 @@ function showPositions(selectedPlot, map) {
         dataJson.forEach((pos) => {
             if (`${pos.plot}` == selectedPlot.id) {
                 plotPositions.push(pos);
+                
                 // Se guarda la posición
                 let newPos = new google.maps.LatLng(`${pos.latitude}`, `${pos.longitude}`)
+                
                 // Se crean los marcadores
                 let iconURL = 'https://i.ibb.co/Wc92F9w/pin.png';
                 let marker = new google.maps.Marker({

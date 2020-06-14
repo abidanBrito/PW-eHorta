@@ -102,11 +102,12 @@
     </div>
 
     <!------------------------>
-    <div id="app">
-       <div id="go-back" onclick="openMap();">
+    <main id="app">
         <!-- Boton para abrir el mapa -->
-            <p>Volver</p>        
-       </div>
+        <div class="options">
+            <a class="go-back" onclick="openMap();"><p>Volver</p></a>
+            <a class="compare-probes" onclick=""><p>Comparar</p></a>      
+        </div>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
         <div id="position-number">
             <h2>Sonda <span id="selected-probe"></span></h2>
@@ -136,24 +137,74 @@
             
             <!-- Botones movil -->
             <div id="measurements">
-                <button id="desktop-btn-hum" class="measure-btn-active" onclick="activateDesktopButton(this)"><img src="img/datalogger/humidity.svg" alt="botón humedad">Humedad</button>
-                <button id="desktop-btn-tem" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/temperature.svg" alt="botón temperatura">Temperatura</button>
-                <button id="desktop-btn-lum" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad">Luminosidad</button>
-                <button id="desktop-btn-rai" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/rainfall.svg" alt="botón lluvia">Precipitación</button>
-                <button id="desktop-btn-sal" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/salinity.svg" alt="botón salinidad">Salinidad</button>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-hum" class="measure-btn-active" onclick="toggleButton(this)">
+                        <img src="img/datalogger/humidity.svg" alt="botón humedad">
+                    </button>
+                    <p>Humedad (%)</p>                    
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-tem" class="measure-btn-active" onclick="toggleButton(this)">
+                        <img src="img/datalogger/temperature.svg" alt="botón temperatura">
+                    </button>
+                    <p>Temperatura (º C)</p>
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-lum" class="measure-btn-active" onclick="toggleButton(this)">
+                        <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
+                    </button>
+                    <p>Luminosidad (%)</p>                   
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-rai" class="measure-btn-active" onclick="toggleButton(this)">
+                        <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
+                    </button>
+                    <p>Precipitaciones (mm)</p>
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-sal" class="measure-btn-active" onclick="toggleButton(this)">
+                        <img src="img/datalogger/salinity.svg" alt="botón salinidad">
+                    </button>
+                    <p>Salinidad (g/L)</p>
+                </div>
             </div>
         </section>
             
         <!-- Botones movil -->
         <div id="measurements-mobile">
-            <button id="mobile-btn-hum" class="measure-btn-active" onclick="activateMobileButton(this)"><img src="img/datalogger/humidity.svg" alt="botón humedad"></button>
-            <button id="mobile-btn-tem" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></button>
-            <button id="mobile-btn-lum" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></button>
-            <button id="mobile-btn-rai" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></button>
-            <button id="mobile-btn-sal" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/salinity.svg" alt="botón salinidad"></button>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-hum" class="measure-btn-active" onclick="toggleButton(this)">
+                    <img src="img/datalogger/humidity.svg" alt="botón humedad">
+                </button>
+                <p>%</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-tem" class="measure-btn-active" onclick="toggleButton(this)">
+                    <img src="img/datalogger/temperature.svg" alt="botón temperatura">
+                </button>
+                <p>º C</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-lum" class="measure-btn-active" onclick="toggleButton(this)">
+                    <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
+                </button>
+                <p>%</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-rai" class="measure-btn-active" onclick="toggleButton(this)">
+                    <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
+                </button>
+                <p>mm</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-sal" class="measure-btn-active" onclick="toggleButton(this)">
+                    <img src="img/datalogger/salinity.svg" alt="botón salinidad">
+                </button>
+                <p>g/L</p>
+            </div>
         </div>
-        
-    </div>
+    </main>
+
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
     <script src="js/delete.js"></script>

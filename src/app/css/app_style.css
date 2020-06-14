@@ -460,8 +460,29 @@ input-group {
     margin-right: 4em;
 }
 
-#app #go-back p::before {
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.go-back,
+.compare-probes {
+    display: flex;
+    align-items: center;
+}
+
+.go-back::before {
     content: "\f053";
+    font-family: "iconos";
+    color: #333333;
+    font-size: .9rem;
+    position: relative;
+    margin-right: .5rem;
+}
+
+.compare-probes::before {
+    content: "\f362";
     font-family: "iconos";
     color: #333333;
     font-size: .9rem;
@@ -522,7 +543,6 @@ input-group {
 }
 
 /* Hidden in desktop mode */
-#go-back,
 #dates-mobile {
     display: none;
     cursor: pointer;
@@ -565,9 +585,8 @@ input-group {
     display: block;
     width: 100%;
     display: flex;
-    margin-top: 6px;
-    margin-left: 100px;
-    margin-right: 150px;
+    margin-top: 5px;
+    margin-left: 5rem;
     justify-content: space-between;
 }
 
@@ -576,10 +595,22 @@ input-group {
     display: none;
 }
 
+.measurement-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.measurement-btn-container p {
+    font-size: 14px;
+    color: #808080;
+    margin-top: .25rem;
+}
+
 /* Incluye icono y texto */
 .measure-btn {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -589,29 +620,22 @@ input-group {
 }
 
 /* Icons inside the buttons */
-.measure-btn img {
-    width: 75%;
-    height: 75%;
+.measure-btn img,
+.measure-btn-active img {
+    width: 70%;
+    height: 70%;
 }
 
 /* Cuando el botón está activado */
 .measure-btn-active {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 100%;
     border: 2px solid rgb(36, 126, 187);
     background-color: transparent;
-}
-
-/* Icons inside the active button */
-.measure-btn-active img {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 75%;
-    height: 75%;
 }
 
 /* Father containing text and a number given from map.js */
@@ -625,7 +649,7 @@ input-group {
     font-size: 1.75rem;
     font-weight: 500;
     letter-spacing: 1px;
-    margin: .75rem 0 0 0;
+    margin: 1rem 0;
 }
 
 
@@ -1004,7 +1028,7 @@ td a {
             width: 100%;
             justify-content: center;
             align-items: center;
-            margin: 1rem 0;
+            margin-bottom: .8rem;
         }
 
         /* los selectores en movil */
@@ -1020,11 +1044,6 @@ td a {
 
         #dates-mobile input:focus {
             border-color: var(--principal-color);
-        }
-
-        /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
-        #go-back {
-            display: inline;
         }
 
         /* barra de separación de los selectores de fechas */
@@ -1055,10 +1074,16 @@ td a {
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
-            margin-top: 30px;
+            margin: 1rem 0;
             display: flex;
             justify-content: space-between;
         }
+
+        /* Ditch the box outline */
+        .measure-btn:focus,
+        .measure-btn-active:focus {
+            outline: none;
+        } 
 
         .measure-btn {
             width: 41px;
