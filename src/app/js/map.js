@@ -225,7 +225,7 @@ function showPositions(selectedPlot, map) {
 // It updates the graph that lies underneath the map
 function refreshGraphScript() {
     let script = document.createElement("script");
-    script.src = 'js/graphic-data.js';
+    script.src = 'js/graph_panel_hero.js';
     document.head.appendChild(script);
     script.parentNode.removeChild(script);
 }
