@@ -8,13 +8,17 @@
 // Measurement buttons behaviour
 function activateWeatherButton(btn) {
 
+    // Si el boton que ha llamado la funcion es un class="weather-button" ejecuta lo siguiente
     if(btn.className == "weather-button") {
+        // busca el boton activado
         let activeButtons = document.getElementsByClassName("weather-button-active");
         console.log(activeButtons);
         let i;
+        // desactiva el boton
         for (i = 0; i < activeButtons.length; i++) {
             activeButtons[i].className = "weather-button";
         }
+        // activa el boton que ha llamado la funcion
         btn.className = "weather-button-active";
     }
 }
@@ -31,7 +35,7 @@ async function getData() {
     let code = await selector.options[selector.selectedIndex].value;
     // Envia el codigo a curr_weather.js
     let response = await sendRequest(code);
-    
+    // Llama a la funcion de curr_weather.js que devuelve un texto con los datos
     let data = await readTextFile(response);
     
     let dataJson = JSON.parse(data);
@@ -40,39 +44,48 @@ async function getData() {
 }
 
 // ----------------------------------------------------------------
-// showTemperature()
+// ----------------------------------------------------------------
+// TODAS LAS FUNCIONES show....() TIENEN LA MISMA ESTRUCTURA
+// Todas modifican los datos de los objetos Opciones y Datos, mas abajo
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
+
+// ----------------------------------------------------------------
+// Object -> showTemperature()
 // muestra la temperatura en la grafica
 // ----------------------------------------------------------------
 async function showTemperature(button) {
     
+    // Llama a la funcion para activar el boton que ha llamado la funcion
     activateWeatherButton(button);
-    
+    // Espera hasta recibir los datos de la funcion getData()
     let dataJson = await getData();
-    
+    // Guarda los datos de temperatura y los organiza
     let tempValues = [];
     let temperatures = dataJson[0].prediccion.dia[0].temperatura;
     for(let i = 0; i < temperatures.length; i++) {
         tempValues.push(temperatures[i].value);
     } // for
-    
+    // Toma las horas de las medidas y las organiza para el eje X
     let hours = [];
     for(let i = 0; i < temperatures.length; i++) {
         hours.push(temperatures[i].periodo + "h");
     } // for
-    
+    // Pone los datos de temperatura en el eje Y
     datos.datasets[0].data = tempValues;
     
     console.log(tempValues);
-    
+    // Pone los datos de horas en el eje X
     datos.labels = hours;
-    
+    // Pone la etiqueta de la medida a los datos
     datos.datasets[0].label = "ºC";
-    
+    // Crea la gráfica con los datos dados
     CrearGrafica();
 }
 
 // ----------------------------------------------------------------
-// showRainfall()
+// Object -> showRainfall()
 // muestra la lluvia en la grafica
 // ----------------------------------------------------------------
 async function showRainfall(button) {
@@ -161,6 +174,9 @@ async function showWind(button) {
     CrearGrafica();
 }
 
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
 let datos = {
     datasets: [
         {
@@ -214,15 +230,18 @@ var opciones = {
     
 };
 
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
+
 function CrearGrafica() {
-    // Borra el canvas anterior y crea uno nuevo
+    // Borra el canvas anterior y crea uno nuevo para limpiar la cache de la grafica y evitar algunos bugs
     let oldCanvas = document.getElementById('chart');
     oldCanvas.remove();
     let fatherContainer = document.getElementById('weather-chart-container');
     fatherContainer.innerHTML += '<canvas id="chart" name="gráfica de medidas de hoy"></canvas>'
-    
+    // Se recoge el ctx que es la grafica nueva
     let ctx = document.getElementById('chart');
-    
+    // Se crea la grafica estableciendo sus datos
     let miGrafica = new Chart(ctx, {
         type: 'line',
         data: datos,
