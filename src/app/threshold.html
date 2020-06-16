@@ -11,9 +11,20 @@
     <!-- Stylesheet and favicon -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" href="css/common_style.css">
-    <link rel="stylesheet" href="css/app_style.css">
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <style>
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+    </script>
+
+    <link rel="stylesheet" href="css/app_style.css">
+
+
     <title>e-Horta</title>
     <script src="js/restringir_acceso.js"></script>
     <script src="js/delete_sesion.js"></script>
@@ -32,18 +43,18 @@
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
+                <!--
+                    <li>
+                        <a href="#">Notificaciones</a>
+                    </li>
+                    -->
                 <li>
-                    <a href="weather.html">El Tiempo</a>
-                </li>
-                <li>
-                    <a href="alerts.html">Alertas</a>
-                </li>
-                <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="#">Mi cuenta</a>
                     <div id="current-page"></div>
                 </li>
+
                 <li>
-                    <a href="app.html">Gráficas</a>
+                    <a href="weather.html">El Tiempo</a>
                 </li>
                 <li>
                     <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
@@ -60,7 +71,8 @@
         </nav>
     </header>
     <div>
-        <h2 style="margin-top: 75px; text-align: center;">Umbrales</h2>
+        <h2 id="title_threshold" style="">Umbrales</h2>
+        <p id="selection_plot_p" style="">(Seleccione una parcela del mapa)</p>
         <div id="mapthresDiv" style="">
 
 
@@ -69,103 +81,130 @@
                     <!-- user será el nombre del usuario de la sesion -->
                 </div>
 
-
-
             </div>
 
             <!---Form threshold 2.1rem font h3-->
-            <form id="threshold_form" class="form-container" style="">
-               <a id="threshold_close_img" href="javascript:close()">
-                <img id="threshold_close_img" src="img/close.png" alt="Close"></a>
-                
-                
-                
-                
-                
-                
+            <form id="threshold_form" class="form-container" style="display: none;">
+                <input type="text" id="threshold_id_plot" name="threshold_id_plot" style="display: none;" />
+                <a id="threshold_close" href="javascript:close()" style="">
+                    <img id="" src="img/down-arrow.svg" alt="Close"></a>
 
-                <h3 style=" " id="plot_name_form"></h3>
-                <div>
-                    <label class="threshold_labelMax" for="maxHumedity"><b>Máx:</b></label>
-
-                    <label for="minHumedity" class="threshold_labelMin"><b>Mín:</b></label>
-                </div>
-                <div class="div_inputs" style="  border-bottom: 2px solid #DDDDDD;">
-
-                    <div class="threshold_divimg" style="">
-                        <img Class="threshold_img" src="img/datalogger/humidity_2.svg" alt="" style="">
-                        <p class="threshold_p">Humedad</p>
-                    </div>
-
-                    <input id="maxHumedity" type="text" placeholder="%" name="maxHumedity">
-
-                    <input id="minHumedity" type="text" placeholder="%" name="minHumedity">
-
-                </div>
-                <div class="div_inputs" style="  border-bottom: 2px solid #DDDDDD;">
-
-                    <div class="threshold_divimg">
-                        <img src="img/datalogger/temperature_2.svg" alt="" Class="threshold_img" style="width: 15px;">
-                        <p class="threshold_p">Temperatura</p>
-                    </div>
-
-                    <input id="maxTemperature" type="text" placeholder="ºC" name="maxTemperature">
-
-                    <input id="minTemperature" type="text" placeholder="ºC" name="minTemperature">
-                </div>
-
-                <div class="div_inputs" style="  border-bottom: 2px solid #DDDDDD;">
-
+                <h3 style="" id="plot_name_form"></h3>
+           
+                <div class="div_inputs" style="">
+                    <input type="text" id="minHumedity" class="minInput" name="minHumedity" style="" />
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/luminosity_2.svg" alt="" Class="threshold_img">
-                        <p class="threshold_p">Luminosidad</p>
+                        <img src="img/datalogger/humidity.svg" id="humidity_black" alt="Humedad" Class="threshold_img">
+                        <img src="img/datalogger/humidity_2.svg" id="humidity_white" alt="Humedad" Class="threshold_img">
                     </div>
 
-                    <input id="maxLuminosity" type="text" placeholder="%" name="maxLuminosity">
+                    <p>
+                        <label for="amount0" style="margin-left:20px;" class="p_threshold">Humedad (%)</label>
+                        <input type="text" id="maxHumedity" name="maxHumedity" style="" />
+                    </p>
+                </div>
+                <div id="slider-range0" class="slider-rangeAll"></div>
 
-                    <input id="minLuminosity" type="text" placeholder="%" name="minLuminosity">
+
+
+
+                <div class="div_inputs" style="">
+                    <input type="text" id="minTemperature" class="minInput" name="minTemperature" style="" />
+                    <div class="threshold_divimg">
+
+                        <img src="img/datalogger/temperature_2.svg" id="temperature_white"alt="Temperatura" Class="threshold_img" style="width: 15px;">
+                        <img src="img/datalogger/temperature.svg" id="temperature_black"alt="Temperatura" Class="threshold_img" style="width: 25px;">
+                    </div>
+                    <p>
+                        <label for="amount1" class="p_threshold">Temperatura (ºC)</label>
+                        <input type="text" id="maxTemperature" name="maxTemperature" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
+                    </p>
                 </div>
 
-                <div class="div_inputs" style="  border-bottom: 2px solid #DDDDDD;">
+                <div id="slider-range1" class="slider-rangeAll" ></div>
+
+
+
+
+                <div class="div_inputs" style="">
+                    <input type="text" id="minLuminosity" class="minInput" name="minLuminosity" style="" />
+                    <div class="threshold_divimg">
+
+                        <img src="img/datalogger/luminosity.svg" id="luminosity_black" alt="Luminosidad" Class="threshold_img">
+                        <img src="img/datalogger/luminosity_2.svg" id="luminosity_white" alt="Luminosidad" Class="threshold_img">
+                    </div>
+                    <p>
+                        <label for="maxLum" class="p_threshold">Luminosidad (%)</label>
+                        <input type="text" id="maxLuminosity" name="maxLuminosity" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
+                    </p>
+                </div>
+                <div id="slider-range2" class="slider-rangeAll"></div>
+
+
+
+
+
+                <div class="div_inputs" style="">
+                    <input type="text" id="minPrecipitation" class="minInput" name="minPrecipitation" style="" />
 
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/rainfall_2.svg" alt="" Class="threshold_img">
-                        <p class="threshold_p">Precipitación</p>
+                        <img src="img/datalogger/rainfall.svg" alt="Precipitación" id="rainfall_black"Class="threshold_img">
+                        <img src="img/datalogger/rainfall_2.svg" alt="Precipitación" id="rainfall_white"Class="threshold_img">
                     </div>
-
-                    <input id="maxPrecipitation" type="text" placeholder="mm3" name="maxPrecipitation">
-
-                    <input id="minPrecipitation" type="text" placeholder=mm3 name="minPrecipitation">
+                    <p>
+                        <label for="amount3" class="p_threshold">Precipitación (%)</label>
+                        <input type="text" id="maxPrecipitation" name="maxPrecipitation" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
+                    </p>
                 </div>
-                <div class="div_inputs" style="margin-bottom: 2px;">
+                <div id="slider-range3" class="slider-rangeAll" ></div>
+
+
+
+
+
+                <div class="div_inputs" style="">
+                    <input type="text" id="minSalinity" class="minInput" name="minSalinity" style="" />
 
                     <div class="threshold_divimg">
-                        <img src="img/datalogger/salinity_2.svg" alt="" Class="threshold_img">
-                        <p class="threshold_p">Salinidad</p>
+
+                        <img src="img/datalogger/salinity_2.svg" id="salinity_white"alt="Salinidad" Class="threshold_img">
+                        <img src="img/datalogger/salinity.svg" id="salinity_black"alt="Salinidad" Class="threshold_img">
                     </div>
-
-                    <input id="maxSalinity" type="text" placeholder="%" name="maxSalinity">
-
-                    <input id="minSalinity" type="text" placeholder="%" name="minSalinity">
+                    <p>
+                        <label for="amount4" class="p_threshold" style="margin-left: 20px;">Salinidad (%)</label>
+                        <input type="text" id="maxSalinity" name="maxSalinity" style="" />
+                        <!--eSTO SOLO PARA MOVIL LO DEL MARGIN LEFT  -->
+                    </p>
                 </div>
+                <div id="slider-range4" class="slider-rangeAll" ></div>
 
-                <button id="btn_submit_threshold" type="submit" class="login-button" style="margin-top: 5px;">Aplicar</button>
+
+
+                <button id="btn_submit_threshold" type="submit" class="login-button" style="">Aplicar</button>
                 <p id="p_ok" style="">Se ha actualizado correctamente.</p>
             </form>
-
-            <section id="map" class="mapthres" style="">
-                <script src="js/map.js"></script>
-                <script src="js/delete.js"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
-                </script>
-
+            <section id="section_maptresh" style="">
+                <div id="cont_mobile_title" style="">
+                    <h2 id="title_threshold" class="tittlethreshold"style="display: flex;">Umbrales</h2>
+                   
+                    <p id="selection_plot_p" class="subtitlethreshold"style="">(Seleccione una parcela del mapa)</p>
+                </div>
+                <section id="map" class="mapthres" style="">
+                    <script src="js/map.js"></script>
+                    <script src="js/delete.js"></script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
+                    </script>
+                </section>
             </section>
         </div>
     </div>
-<script>
-</script>
+    <script>
+    
+
+    </script>
+
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
     <script src="js/pop-manager.js"></script>

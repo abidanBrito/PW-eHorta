@@ -48,6 +48,10 @@ header {
     align-items: center;
 }
 
+#logo:focus {
+    outline: none;
+}
+
 #logo img {
     display: flex;
     width: 1.5rem;
@@ -95,15 +99,21 @@ header {
     align-items: center;
 }
 
+#login-icon {
+    outline: none;
+}
+
 #login-icon img {
     display: flex;
     height: 1rem;
+    margin-right: 1.25rem;
 }
 
 .menu-icon div {
-    width: 24px;
+    width: 22px;
     height: 2px;
-    margin: 5px 1.25rem;
+    margin: 5px 0;
+    margin-right: 1.25rem;
     cursor: pointer;
     background-color: #dddddd;
     transition: all 0.25s ease;
@@ -112,10 +122,11 @@ header {
 #lang-selector {
     position: absolute;
     right: 0;
-    background: #333333;
+    background: #242424;
     z-index: 1300;
     top: 2rem;
     display: none;
+    border-radius: .3rem;
 }
 
 /* Lang selector (links) */
@@ -130,8 +141,18 @@ header {
 }
 
 #globe-icon {
-    margin-left: 5rem;
-    align-self: center;
+    display: flex;
+    align-items: center;
+    height: 1rem;
+}
+
+#globe-icon:focus {
+    outline: none;
+}
+
+#globe-icon img {
+    height: 100%;
+    margin: 0 1.25rem;
 }
 
 #lang-selector a:hover,
@@ -176,7 +197,7 @@ header {
     }
     
     #lang-selector {
-        right: 10%;
+        right: 5%;
     }
 
     /* Menu items (links) */
@@ -211,7 +232,7 @@ header {
     overflow-y: hidden;
 }
 
-.login-hide {
+.hide-icon {
     opacity: 0;
 }
 

@@ -22,7 +22,269 @@
 /* ------------------ */
 /* --- ADMIN.HTML --- */
 /* ------------------ */
+.admin_page .collapse.show {
+    display: block;
+}
 
+.admin_page p {
+    margin: 0;
+}
+
+.admin_page .arriba {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin_page .arriba i {
+    color: #333333;
+}
+
+.admin_page .user-info,
+.admin_page #createUser {
+    width: 300px;
+    flex-direction: column;
+    background-color: #333333;
+    border-radius: 15px;
+    color: #f8f8f8;
+    padding: 7px 15px;
+    margin: auto;
+}
+
+.admin_page .user-info {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.admin_page #createUser .newUserData {
+    width: 252px;
+    margin: 0 auto;
+}
+
+.admin_page .general_info {
+    width: 275px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin_page .user-data {
+    width: inherit;
+}
+
+.admin_page .options {
+    display: flex;
+}
+
+.admin_page .options i {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.admin_page .input-group {
+    background-color: #f8f8f8;
+    margin: 1rem auto;
+}
+
+.admin_page .editUser,
+.admin_page .moreInfo {
+    margin-top: 10px;
+    flex-direction: column;
+    margin: auto;
+}
+
+.admin_page .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 270px;
+    margin-bottom: 1.25rem;
+}
+
+.admin_page .editUser .editData,
+.admin_page .moreInfo .plots,
+.admin_page .createPlot,
+.admin_page .previewMap {
+    flex-direction: column;
+    margin: auto;
+    width: 252px;
+}
+
+.admin_page input {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.admin_page h3 {
+    margin: 0 auto;
+}
+
+.admin_page .fa-angle-left {
+    font-size: 1.5rem;
+}
+
+.admin_page .roleId,
+.admin_page .admin_page #newUserRoleId {
+    background-color: #dddddd;
+    color: #333333;
+    width: 252px;
+}
+
+.admin_page .moreInfo p {
+    margin-bottom: 1rem;
+}
+
+.admin_page .moreInfo button {
+    border: none;
+    box-shadow: none;
+    min-width: fit-content;
+    width: 93px;
+    padding: 2px;
+    margin: 0;
+    margin-bottom: 0.8rem;
+}
+
+.admin_page .plots,
+.admin_page .allPlots {
+    height: 108.8px;
+    overflow: scroll;
+}
+
+.admin_page .plots table,
+.admin_page .allPlots table {
+    width: 224px;
+    margin: auto;
+    background-color: #dddddd;
+    text-align: center;
+    color: #333333;
+}
+
+.admin_page .plots table tr,
+.admin_page .allPlots table tr {
+    border: 1px solid #333333;
+    font-size: 18px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.admin_page .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 252px;
+    margin-top: 5px;
+}
+
+.admin_page .button {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.admin_page button {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 252px !important;
+    min-width: 0 !important;
+    width: 96px;
+    font-size: 13px;
+    padding: 4px;
+}
+
+.admin_page input[type="checkbox"] {
+    display: initial;
+}
+
+.admin_page input[name="latitude"],
+.admin_page input[name="longitude"] {
+    width: 108px;
+}
+
+.admin_page .polygonInfo,
+.admin_page .probeInfo,
+.admin_page .addVertex,
+.admin_page .addProbe {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin_page .vertexPlotList,
+.admin_page .vertexProbeList {
+    width: 252px;
+}
+
+.admin_page .vertexPlotList input[name="latitude"],
+.admin_page .vertexProbeList input[name="latitude"] {
+    margin-right: 36px;
+}
+
+.admin_page .addVertex,
+.admin_page .addProbe {
+    flex-direction: row-reverse;
+}
+
+.admin_page .plotForm {
+    width: 252px;
+    margin: auto;
+}
+
+.admin_page input:focus {
+    outline: none;
+    color: #dddddd;
+    border-color: #dddddd;
+}
+
+.admin_page .input-login {
+    height: 37px;
+}
+
+.admin_page .createPlotTitles {
+    display: flex;
+    justify-content: center;
+}
+
+.admin_page .addVertex {
+    margin-bottom: 1rem;
+}
+
+.admin_page .addVertex button,
+.admin_page .addProbe button,
+.admin_page .createPlot .buttons button {
+    background-color: transparent;
+    color: #3D96E8;
+    border: 1px solid #3D96E8 !important;
+    border-radius: 1.5rem;
+}
+
+.admin_page .undo-changes {
+    padding-top: 4px;
+    color: #a0a0a0;
+}
+
+.admin_page .counter {
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.admin_page .createPlotTitles {
+    color: #f8f8f8;
+}
+
+.admin_page .addMap {
+    width: 270px;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid wheat;
+}
+
+.admin_page #createUser .title {
+    margin-top: 1rem;
+}
+
+.admin_page hr {
+    border: 1px solid #808080;
+}
 /*   ADMIN PAGE.html  */
 .page {
     margin-left: 15%;
