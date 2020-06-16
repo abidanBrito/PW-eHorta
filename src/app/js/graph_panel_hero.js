@@ -4,6 +4,9 @@
 *   DATE:           15/06/2020
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */ 
+//
+// TODO: Date selectors reset placerholder and date value.
+//
 
 // ----------------------------------------------------------------
 // Global settings for the chart
@@ -23,7 +26,6 @@ var chartData = {
             pointRadius: 3,
             hidden: false
         },
-
         // Temperature
         {
             label: 'ºC',
@@ -36,7 +38,6 @@ var chartData = {
             pointRadius: 3,
             hidden: false
         },
-
         // Luminosity
         {
             label: '%',
@@ -49,7 +50,6 @@ var chartData = {
             pointRadius: 3,
             hidden: false
         },
-
         // Rainfall
         {
             label: 'mm',
@@ -62,7 +62,6 @@ var chartData = {
             pointRadius: 3,
             hidden: false
         },
-
         // Salinity
         {
             label: 'g/L',
@@ -92,13 +91,15 @@ var chartOptions = {
                 fontSize: 10
             },
             gridLines: {
-                lineWidth: 1,
-                drawBorder: true
+                lineWidth: 1
             }
         }],
         xAxes: [{
             ticks: {
                 display: false
+            },
+            gridLines: {
+                lineWidth: 0
             }
         }]
     },
@@ -107,8 +108,8 @@ var chartOptions = {
     },
     layout: {
         padding: {
-            top: 10,
-            right: 10
+            top: 5,
+            right: 5
         }
     },
     title: {
@@ -120,6 +121,9 @@ var chartOptions = {
         titleAlign: 'center',
         bodyFontColor: '#ddd'
     },
+    hover: {
+        animationDuration: 0,
+    },
     defaultFontFamily: 'Poppins',
     defaultFontColor: '#333333',
     responsive: true,
@@ -129,7 +133,7 @@ var chartOptions = {
 // ----------------------------------------------------------------
 // Create a new ChartJS graph at the start
 // ----------------------------------------------------------------
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart').getContext("2d");
 var chart = new Chart(ctx, {
     type: 'line',
     data: chartData,
@@ -164,9 +168,8 @@ function drawGraph() {
                 }   
         
                 processData(data, probeID, startDate, endDate);
+                chart.update();
             });
-            
-            chart.update();
         }
         catch(err) {
             throw Error(err);
@@ -193,11 +196,8 @@ function processData(data, probeID, startDate, endDate) {
     if (endDate == "") {
         endDate = getCurrentDate();
     }
-    
-    console.log("Dates: " + startDate + " | " + endDate);
-    
+        
     const filteredData = filterDataStream(data, probeID, startDate, endDate);
-    console.log(filteredData);
 
     // Parse and assign the filtered data to the chart datasets
     buildDatasets(filteredData);
@@ -224,8 +224,9 @@ function getCurrentDate() {
 // ----------------------------------------------------------------
 function filterDataStream(data, probeID, startDate, endDate) {
     let filteredData = data.filter((probe) => {
-        if (probe.position == probeID && (probe.datetime > startDate || 
-            startDate == "") && probe.datetime < endDate) {
+        if ((startDate == "" && probe.position == probeID) || 
+            (probe.position == probeID && probe.datetime >= startDate && 
+            probe.datetime <= endDate)) {
             return true;
         }
 
@@ -240,17 +241,17 @@ function buildDatasets(data) {
     chartData.datasets.forEach((set) => {
         set.data = [];
     });
-
-    let myLabels = [];
+    
+    chartData.labels = [];
     data.forEach((dataJson) => {
+        //console.log(dataJson)
+        chartData.labels.push(dataJson.datetime);
         chartData.datasets[0].data.push(parseFloat(dataJson.humidity));
         chartData.datasets[1].data.push(parseFloat(dataJson.temperature));
         chartData.datasets[2].data.push(parseFloat(dataJson.luminosity));
         chartData.datasets[3].data.push(parseFloat(dataJson.rain));
         chartData.datasets[4].data.push(parseFloat(dataJson.salinity));
-        myLabels.push = dataJson.datetime;
     });
-    chartData.labels = myLabels;
 }
 
 function updateGraph(btn) {    

@@ -202,7 +202,7 @@ function showPositions(selectedPlot, map) {
                     icon: iconURL,
                     title: `${pos.id}`
                 });
-
+                
                 marker.addListener('click', function () {
                     // Selected marker (probe)
                     document.getElementById('selected-probe').innerHTML = this.title;
@@ -214,6 +214,10 @@ function showPositions(selectedPlot, map) {
                 });
             }
         })
+
+        plotPositions.forEach((pos) => {
+            console.log(pos.id);
+        });
     })
 }
 

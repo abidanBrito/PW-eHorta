@@ -117,23 +117,21 @@
         <section id="dates-mobile">
             <input id="start-date" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <div class="bar"></div>
-            <input id="end-date" placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+            <input id="end-date" placeholder="Fecha final" type="text" onfocus="(this.type='date')">
         </section>
-        
-        <!--script src="js/date_selector.js"></script-->
-
+    
         <!-- Gráfica -->
-        <div class="chart-container">
+        <div id="chart-container">
             <canvas id="myChart" name="gráfica de magnitudes"></canvas>
         </div>
         
         <section id="desktop-controls">
         <!-- Selectores de fechas desktop-->
-            <!--div id="dates">
-                <input id="date-selector" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <div id="dates">
+                <input id="start-date-desktop" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
                 <div class="bar"></div>
-                <input id="date-selector" placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-            </!--div>
+                <input id="start-date-desktop" placeholder="Fecha final" type="text" onfocus="(this.type='date')">
+            </div>
             
             <!-- Botones movil -->
             <div id="measurements">
