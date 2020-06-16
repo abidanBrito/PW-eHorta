@@ -27,36 +27,31 @@
         <!-- Top bar -->
         <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="../index.html">
+            <a id="logo" class="white-filter" href="index.html">
                 <img src="img/logo_v2.svg" alt="LOGO">
             </a>
             <nav class="navbar">
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
-                        <a href="../index.html">Inicio</a>
+                        <a href="../index.html"><span class="lang" id="home">Inicio</span></a>
                     </li>
-                    <!--
-                        <li>
-                            <a href="about.html">Nosotros</a>
-                        </li>
-                        <li>
-                            <a href="faqs.html">FAQs</a>
-                        </li>
-                    -->
                     <li>
-                        <a href="#">Contacto</a>
+                        <a href="about.html"><span class="lang" id="about">Nosotros</span></a>
+                    </li>
+                    <li>
+                        <a href="faqs.html"><span class="lang" id="faq">FAQs</span></a>
+                    </li>
+                    <li>
+                        <a href="contact.html" id="navbar-contact"><span class="lang" id="contact">Contacto</span></a>
                         <div id="current-page"></div>
                     </li>
                     <li>
-                        <a href="login.html" id="login-link">Iniciar sesión</a>
+                        <a href="login.html" id="login-link"><span class="lang" id="login">Iniciar sesión</span></a>
                     </li>
                 </ul>
+                <a id="globe-icon" href="#"><img class="white-filter" src="img/globe.svg" alt="idioma"></a>
                 <div class="navbar-right">
-                    <!-- Login icon -->
-                    <a id="login-icon" class="white-filter" href="login.html">
-                        <img src="img/user.svg" alt="LOGIN">
-                    </a>
                     <!-- Mobile menu icon -->
                     <div class="menu-icon" id="menu-toggle">
                         <div class="line-top"></div>
@@ -65,9 +60,14 @@
                     </div>
                 </div>
             </nav>
+            <div id="lang-selector">
+                <a class="translate" onclick="translate(this.id)" id="es" href="#">Español</a>
+                <a class="translate" onclick="translate(this.id)" id="en" href="#">English</a>
+                <a class="translate" onclick="translate(this.id)" id="val" href="#">Valencià</a>
+            </div>
         </header>
 
-        <h1 class="h1-contact">Contacto</h1>
+        <h1 class="h1-contact"><span class="lang" id="contact">Contacto</span></h1>
         <main class="main-contact">
             <aside class="contact-details">
                 <!-- Tlf number link -->
@@ -77,7 +77,7 @@
                         <h3 class="number">(+34) 633 94 04 82</h3>
                     </a>
                 </div>
-                <p>Te atendemos de lunes a viernes de 8:00 a 16:00 h.</p>
+                <p><span class="lang" id="attend">Te atendemos de lunes a viernes de 8:00 a 16:00 h.</span></p>
 
                 <!-- Email address link -->
                 <div id="email">
@@ -86,7 +86,7 @@
                         <h3 class="email">gti.ehorta@gmail.com</h3>
                     </a>
                 </div>
-                <p>Haznos llegar tus dudas e inquietudes.</p>
+                <p><span class="lang" id="doubts">Haznos llegar tus dudas e inquietudes.</span></p>
             </aside>
             <!-- Map container (Google Maps) -->
             <div id="map-contact"></div>
@@ -96,6 +96,7 @@
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
     <script src="js/map_contact.js"></script>
+    <script src="js/localization.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap"></script>
 </body>
 
