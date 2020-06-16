@@ -105,7 +105,7 @@
     <main id="app">
         <!-- Boton para abrir el mapa -->
         <div class="options">
-            <a class="go-back" onclick="openMap();"><p>Volver</p></a>
+            <a class="go-back" onclick="drawMap();"><p>Volver</p></a>
             <a class="compare-probes" onclick=""><p>Comparar</p></a>      
         </div>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
@@ -115,54 +115,54 @@
 
         <!-- Selectores de fechas móvil-->
         <section id="dates-mobile">
-            <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <input id="start-date" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
             <div class="bar"></div>
-            <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+            <input id="end-date" placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
         </section>
         
-        <script src="js/date_selector.js"></script>
+        <!--script src="js/date_selector.js"></script-->
 
         <!-- Gráfica -->
         <div class="chart-container">
-            <canvas id="myChart"></canvas>
+            <canvas id="myChart" name="gráfica de magnitudes"></canvas>
         </div>
         
         <section id="desktop-controls">
         <!-- Selectores de fechas desktop-->
-            <div id="dates">
-                <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <!--div id="dates">
+                <input id="date-selector" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
                 <div class="bar"></div>
-                <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-            </div>
+                <input id="date-selector" placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+            </!--div>
             
             <!-- Botones movil -->
             <div id="measurements">
                 <div class="measurement-btn-container">
-                    <button id="desktop-btn-hum" class="measure-btn-active" onclick="toggleButton(this)">
+                    <button id="desktop-btn-hum" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/humidity.svg" alt="botón humedad">
                     </button>
                     <p>Humedad (%)</p>                    
                 </div>
                 <div class="measurement-btn-container">
-                    <button id="desktop-btn-tem" class="measure-btn-active" onclick="toggleButton(this)">
+                    <button id="desktop-btn-tem" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/temperature.svg" alt="botón temperatura">
                     </button>
                     <p>Temperatura (º C)</p>
                 </div>
                 <div class="measurement-btn-container">
-                    <button id="desktop-btn-lum" class="measure-btn-active" onclick="toggleButton(this)">
+                    <button id="desktop-btn-lum" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
                     </button>
                     <p>Luminosidad (%)</p>                   
                 </div>
                 <div class="measurement-btn-container">
-                    <button id="desktop-btn-rai" class="measure-btn-active" onclick="toggleButton(this)">
+                    <button id="desktop-btn-rai" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
                     </button>
                     <p>Precipitaciones (mm)</p>
                 </div>
                 <div class="measurement-btn-container">
-                    <button id="desktop-btn-sal" class="measure-btn-active" onclick="toggleButton(this)">
+                    <button id="desktop-btn-sal" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/salinity.svg" alt="botón salinidad">
                     </button>
                     <p>Salinidad (g/L)</p>
@@ -173,31 +173,31 @@
         <!-- Botones movil -->
         <div id="measurements-mobile">
             <div class="measurement-btn-container">
-                <button id="mobile-btn-hum" class="measure-btn-active" onclick="toggleButton(this)">
+                <button id="mobile-btn-hum" class="measure-btn" onclick="toggleButton(this);">
                     <img src="img/datalogger/humidity.svg" alt="botón humedad">
                 </button>
                 <p>%</p>
             </div>
             <div class="measurement-btn-container">
-                <button id="mobile-btn-tem" class="measure-btn-active" onclick="toggleButton(this)">
+                <button id="mobile-btn-tem" class="measure-btn" onclick="toggleButton(this);">
                     <img src="img/datalogger/temperature.svg" alt="botón temperatura">
                 </button>
                 <p>º C</p>
             </div>
             <div class="measurement-btn-container">
-                <button id="mobile-btn-lum" class="measure-btn-active" onclick="toggleButton(this)">
+                <button id="mobile-btn-lum" class="measure-btn" onclick="toggleButton(this);">
                     <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
                 </button>
                 <p>%</p>
             </div>
             <div class="measurement-btn-container">
-                <button id="mobile-btn-rai" class="measure-btn-active" onclick="toggleButton(this)">
+                <button id="mobile-btn-rai" class="measure-btn" onclick="toggleButton(this);">
                     <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
                 </button>
                 <p>mm</p>
             </div>
             <div class="measurement-btn-container">
-                <button id="mobile-btn-sal" class="measure-btn-active" onclick="toggleButton(this)">
+                <button id="mobile-btn-sal" class="measure-btn" onclick="toggleButton(this);">
                     <img src="img/datalogger/salinity.svg" alt="botón salinidad">
                 </button>
                 <p>g/L</p>

@@ -1,5 +1,6 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez , Daniel Burruchaga (threshold)
+ *   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez, 
+ *                   Daniel Burruchaga (threshold)
  *   FILE:           map.js
  *   DATE:           25/03/2020
  *   STATE:          WIP
@@ -69,8 +70,6 @@ function centerPlot(selectedPlot) {
         let lati = parseFloat(rightPlot.latitude);
         let long = parseFloat(rightPlot.longitude);
 
-        console.log(lati + "," + long)
-
         // New map settings (centered around the field)
         let options = {
             zoom: 18,
@@ -117,12 +116,10 @@ function centerPlot(selectedPlot) {
 
 // It draws all fields (polygons) in orange, and the selected field in blue
 function drawTerrain(map, selectedPlotID = null) {
-
-    let threshold_Form = document.getElementById('threshold_form');
-
-    if (threshold_Form != null) threshold_bool = true;
-    else {
-        console.log("Esto hace que las modificaciones para threshold no afecten a App")
+    // Unique to threshold page, no changes are made on the panel hero
+    let thresholdForm = document.getElementById('threshold_form');
+    if (thresholdForm != null)  {
+        threshold_bool = true;
     }
 
     // Get fields from database
@@ -165,7 +162,7 @@ function drawTerrain(map, selectedPlotID = null) {
 
                 polygon.addListener('click', function () {
                     // Open Threshold
-                    if (threshold_Form) {
+                    if (thresholdForm) {
                         charge_thresholds_values(`${plot.id}`);
                     } 
 
@@ -217,8 +214,6 @@ function showPositions(selectedPlot, map) {
                 });
             }
         })
-
-        console.log(plotPositions);
     })
 }
 
