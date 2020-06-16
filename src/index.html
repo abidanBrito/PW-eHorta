@@ -34,29 +34,24 @@
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
-                        <a href="#">Inicio</a>
+                        <a href="#"><span class="lang" id="home">Inicio</span></a>
                         <div id="current-page"></div>
                     </li>
-                    <!--
-                        <li>
-                            <a href="app/about.html">Nosotros</a>
-                        </li>
-                        <li>
-                            <a href="app/faqs.html">FAQs</a>
-                        </li>
-                    -->
                     <li>
-                        <a href="app/contact.html" id="navbar-contact">Contacto</a>
+                        <a href="app/about.html"><span class="lang" id="about">Nosotros</span></a>
                     </li>
                     <li>
-                        <a href="app/login.html" id="login-link">Iniciar sesión</a>
+                        <a href="app/faqs.html"><span class="lang" id="faq">FAQs</span></a>
+                    </li>
+                    <li>
+                        <a href="app/contact.html" id="navbar-contact"><span class="lang" id="contact">Contacto</span></a>
+                    </li>
+                    <li>
+                        <a href="app/login.html" id="login-link"><span class="lang" id="login">Iniciar sesión</span></a>
                     </li>
                 </ul>
+                <a id="globe-icon" href="#"><img class="white-filter" src="app/img/globe.svg" alt="idioma"></a>
                 <div class="navbar-right">
-                    <!-- Login icon -->
-                    <a id="login-icon" class="white-filter" href="app/login.html">
-                        <img src="app/img/user.svg" alt="LOGIN">
-                    </a>
                     <!-- Mobile menu icon -->
                     <div class="menu-icon" id="menu-toggle">
                         <div class="line-top"></div>
@@ -65,6 +60,11 @@
                     </div>
                 </div>
             </nav>
+            <div id="lang-selector">
+                <a class="translate" onclick="translate(this)" id="es" href="#">ES</a>
+                <a class="translate" onclick="translate(this)" id="en" href="#">EN</a>
+                <a class="translate" onclick="translate(this)" id="val" href="#">VAL</a>
+            </div>
         </header>
 
         <!-- Welcome section -->
@@ -72,97 +72,97 @@
             <div class="container">
                 <img src="app/img/product_logo.svg" alt="Plant image">
                 <div id="banner">
-                    <h1>La agricultura del futuro ha llegado</h1>
-                    <p id="banner-description">Reduce costes y tiempos de producción, aumenta la cosecha.</p>
+                    <h1><span class="lang" id="slogan">La agricultura del futuro ha llegado</span></h1>
+                    <p id="banner-description"><span class="lang" id="costs">Reduce costes y tiempos de producción, aumenta la cosecha.</span></p>
                 </div>
                 <div id="cta-button">
-                    <a class="button" href="#services">Conócenos</a>
+                    <a class="button" href="#services"><span class="lang" id="know_us">Conócenos</span></a>
                 </div>
             </div>
         </section>
         <div class="page-separator"></div>
 
         <main id="services" class="main-index">
-            <h2>Ofrecemos</h2>
-            <p id="slogan01">Descubre las capacidades de nuestra aplicación</p>
+            <h2><span class="lang" id="offer">Ofrecemos</span></h2>
+            <p id="slogan01"><span class="lang" id="capacities">Descubre las capacidades de nuestra aplicación</span></p>
 
             <div id="services-content">
                 <div id="benefits">
                     <article>
                         <img class="black-filter" src="app/img/services/gear.svg" alt="Blank image">
                         <div class="benefit-text">
-                            <h3>Multifunción</h3>
-                            <p>Gráficas, alertas, umbrales, sondas geolocalizadas y mucho más.</p>
+                            <h3><span class="lang" id="multifunction">Multifunción</span></h3>
+                            <p><span class="lang" id="multifunction_txt">Gráficas, alertas, umbrales, sondas geolocalizadas y mucho más.</span></p>
                         </div>
                     </article>
                     <article>
                         <img class="black-filter" src="app/img/services/speed.svg" alt="Blank image">
                         <div class="benefit-text">
-                            <h3>Rápido</h3>
-                            <p>Revisa los datos en tiempo real en cualquier momento.</p>
+                            <h3><span class="lang" id="fast">Rápido</span></h3>
+                            <p><span class="lang" id="fast_txt">Revisa los datos en tiempo real en cualquier momento.</span></p>
                         </div>
                     </article>
                     <article>
                         <img class="black-filter" src="app/img/services/devices.svg" alt="Blank image">
                         <div class="benefit-text">
-                            <h3>Multiplataforma</h3>
-                            <p>Accede a la aplicación desde cualquier plataforma.</p>
+                            <h3><span class="lang" id="multiplatform">Multiplataforma</span></h3>
+                            <p><span class="lang" id="multiplatform_txt">Accede a la aplicación desde cualquier plataforma.</span></p>
                         </div>
                     </article>
                 </div>
                 <div id="cta-contact">
-                    <a class="button" href="app/contact.html">Ponte en contacto</a>
+                    <a class="button" href="app/contact.html"><span class="lang" id="contact_us">Ponte en contacto</span></a>
                 </div>
             </div>
         </main>
         <div class="page-separator"></div>
 
         <section class="section-index" id="datalogger">
-            <h2>Medimos</h2>
-            <p id="slogan02">Recopilamos datos de muchas magnitudes</p>
+            <h2><span class="lang" id="measure">Medimos</span></h2>
+            <p id="slogan02"><span class="lang" id="measure_txt">Recopilamos datos de muchas magnitudes</span></p>
 
             <div class="magnitudes">
                 <div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/temperature.svg" alt="">
-                        <h3>Temperatura</h3>
+                        <h3><span class="lang" id="temperature">Temperatura</span></h3>
                     </div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/luminosity.svg" alt="">
-                        <h3>Luminosidad</h3>
+                        <h3><span class="lang" id="luminosity">Luminosidad</span></h3>
                     </div>
                 </div>
 
                 <div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/salinity.svg" alt="">
-                        <h3>Salinidad</h3>
+                        <h3><span class="lang" id="salinity">Salinidad</span></h3>
                     </div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/humidity.svg" alt="">
-                        <h3>Humedad</h3>
+                        <h3><span class="lang" id="humidity">Humedad</span></h3>
                     </div>
                 </div>
 
                 <div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/barometric_pressure.svg" alt="">
-                        <h3>Presión</h3>
+                        <h3><span class="lang" id="preassure">Presión</span></h3>
                     </div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/rainfall.svg" alt="">
-                        <h3>Precipitaciones</h3>
+                        <h3><span class="lang" id="precipitation">Precipitación</span></h3>
                     </div>
                 </div>
 
                 <div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/gps.svg" alt="">
-                        <h3>GPS</h3>
+                        <h3><span class="lang" id="gps">GPS</span></h3>
                     </div>
                     <div class="boxes">
                         <img class="black-filter" src="app/img/datalogger/antitheft.svg" alt="">
-                        <h3>Antirrobo</h3>
+                        <h3><span class="lang" id="anti_theft">Antirrobo</span></h3>
                     </div>
                 </div>
             </div>
@@ -170,29 +170,29 @@
         <div class="page-separator"></div>
 
         <section class="section-index" id="reviews">
-            <h2>Opiniones</h2>
-            <p id="slogan03">Descubre la opinión de nuestros usuarios</p>
+            <h2><span class="lang" id="reviews_title">Opiniones</span></h2>
+            <p id="slogan03"><span class="lang" id="reviews_txt">Descubre la opinión de nuestros usuarios</span></p>
 
             <div id="reviews-container">
                 <div class="user-review">
                     <img src="app/img/users_profiles/jubilado.png" alt="Usuario 01">
                     <div class="user">
                         <p class="name">Matías Pérez Nieto</p>
-                        <p class="review">"Ahorra muchas horas de trabajo, optimizando las técnicas de cultivo."</p>
+                        <p class="review"><span class="lang" id="review_1">"Ahorra muchas horas de trabajo, optimizando las técnicas de cultivo."</span></p>
                     </div>
                 </div>
                 <div class="user-review">
                     <img src="app/img/users_profiles/autonomo.png" alt="Usuario 02">
                     <div class="user">
                         <p class="name">Joaquín Armas Sosa</p>
-                        <p class="review">"¡Todo un acierto! En un año ha mejorado la producción un 15%."</p>
+                        <p class="review"><span class="lang" id="review_2">"¡Todo un acierto! En un año ha mejorado la producción un 15%."</span></p>
                     </div>
                 </div>
                 <div class="user-review">
                     <img src="app/img/users_profiles/activista.png" alt="Usuario 03">
                     <div class="user">
                         <p class="name">María Blanco González</p>
-                        <p class="review">"Ahora puedo gestionar mis tierras desde cualquier sitio con e-Horta."</p>
+                        <p class="review"><span class="lang" id="review_3">"Ahora puedo gestionar mis tierras desde cualquier sitio con e-Horta."</span></p>
                     </div>
                 </div>
             </div>
@@ -207,6 +207,7 @@
 
     <!-- Scripts -->
     <script src="app/js/navbar.js"></script>
+    <script src="app/js/localization.js"></script>
 </body>
 
 </html>

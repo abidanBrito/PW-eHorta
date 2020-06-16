@@ -66,11 +66,12 @@ header {
 /* Menu items */
 .navbar-links li {
     padding-left: 5rem;
+    position: relative;
 }
 
 /* Menu items (links) */
 .navbar-links li a {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -103,6 +104,35 @@ header {
     transition: all 0.25s ease;
 }
 
+#lang-selector {
+    position: absolute;
+    right: 0;
+    background: #333333;
+    z-index: 1300;
+    top: 2rem;
+    display: none;
+}
+
+/* Lang selector (links) */
+#lang-selector a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #dddddd;
+    margin: 10px;
+}
+
+#globe-icon {
+    margin-left: 5rem;
+    align-self: center;
+}
+
+#lang-selector a:hover,
+#lang-selector a:active {
+    color: #3D96E8;
+}
 
 /* ------------------ */
 /* -- MEDIA QUERYS -- */
@@ -138,6 +168,10 @@ header {
         opacity: 0;
         padding: 0;
         margin: 1.5rem;
+    }
+    
+    #lang-selector {
+        right: 10%;
     }
 
     /* Menu items (links) */
