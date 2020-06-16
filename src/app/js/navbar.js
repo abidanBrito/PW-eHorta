@@ -10,6 +10,7 @@ const navSlider = () => {
     const navBar = document.querySelector('.navbar-links');
     const navBarLinks = document.querySelectorAll('.navbar-links li');
     const loginIcon = document.querySelector('#login-icon');
+    const globeIcon = document.querySelector('#globe-icon');
 
     // Get current page
     let path = window.location.pathname;
@@ -20,9 +21,12 @@ const navSlider = () => {
         navBar.classList.toggle('navbar-active');
 
         // Hide login icon
-        if (page != 'login.html' && page != 'app.html' && page != 'admin.html' && page != 'weather.html' && page != 'alerts.html' && page != 'threshold.html') {
-            loginIcon.classList.toggle('login-hide');
+        if (page != 'login.html' && page != 'app.html' 
+        && page != 'admin.html' && page != 'weather.html' 
+        && page != 'alerts.html' && page != 'threshold.html') {
+            loginIcon.classList.toggle('hide-icon');
         }
+        globeIcon.classList.toggle('hide-icon');
 
         // Links fade in animation
         navBarLinks.forEach((link, index) => {
