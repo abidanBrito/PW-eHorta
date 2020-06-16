@@ -52,8 +52,17 @@ var arrLang = {
         reviews_txt : "Discover our users opinions",
         review_1 : '"It reduces work hours, optimizing farming techniques."',
         review_2 : '"A wise choice! In a year I have improved production a 15%"',
-        review_3 : '"Now I can manage my fields from anywhere with e-Horta."'
-        
+        review_3 : '"Now I can manage my fields from anywhere with e-Horta."',
+        // Contacto
+        attend : "We are available monday to friday from 8:00 AM to 4:00 PM.",
+        doubts : "Tell us your doubts and questions.",
+        // Login
+        hello : "Hello there!",
+        log_in : "Access",
+        forgot : "Don't remember your password? ",
+        click : "Click here.",
+        still_not : "Still not a client? ",
+        password : "Password"
     },
     'es' : {
         // El Tiempo
@@ -101,7 +110,18 @@ var arrLang = {
         reviews_txt : "Descubre la opinión de nuestros usuarios",
         review_1 : '"Ahorra muchas horas de trabajo, optimizando las técnicas de cultivo."',
         review_2 : '"¡Todo un acierto! En un año ha mejorado la producción un 15%."',
-        review_3 : '"Ahora puedo gestionar mis tierras desde cualquier sitio con e-Horta."'
+        review_3 : '"Ahora puedo gestionar mis tierras desde cualquier sitio con e-Horta."',
+        // Contacto
+        attend : "Te atendemos de lunes a viernes de 8:00 a 16:00 h.",
+        doubts : "Haznos llegar tus dudas e inquietudes.",
+        // Login
+        hello : "¡Hola de nuevo!",
+        log_in : "Entrar",
+        forgot : "¿Olvidaste tu contraseña? ",
+        click : "Pulsa aquí.",
+        still_not : "¿Aún no eres cliente? ",
+        password : "Contraseña"
+        
     },
     'val' : {
         // El Tiempo
@@ -149,14 +169,23 @@ var arrLang = {
         reviews_txt : "Descobrix les opinions dels nostres usuaris",
         review_1 : '"Estalvia moltes hores de treball, optimisant les tècniques de cultiu."',
         review_2 : '"Tot un encert! En un any ha millorat la producció un 15%."',
-        review_3 : '"Ara puc gestionar els meus camps des de qualsevol lloc en e-Horta."'
+        review_3 : '"Ara puc gestionar els meus camps des de qualsevol lloc en e-Horta."',
+        // Contacto
+        attend : "T'atenem de dilluns a divendres de 8:00 a 16:00 h.",
+        doubts : "Fes-nos aplegar els teus dubtes i inquietuts.",
+        // Login
+        hello : "Benvingut!",
+        log_in : "Accedir",
+        forgot : "No recordes la teua contrasenya? ",
+        click : "Pulsa ací.",
+        still_not : "Encara no eres client? ",
+        password : "Contrasenya"
         
     }
 };
 
-function translate(btn) {
+function translate(lang) {
     // lang will be its id, which is the language chosen
-    let lang = btn.id
     // searches for all items with class="lang" and changes its text to the one associated within their "key" to the variable arrLang
     let texts = document.getElementsByClassName('lang')
     Array.prototype.forEach.call(texts, item => {
@@ -166,6 +195,9 @@ function translate(btn) {
     // Cierra el tooltip
     const tooltip = document.getElementById('lang-selector');
     tooltip.style.display = "none";
+    
+    // Define el idioma en el almacenamiento local
+    localStorage.setItem("lang", lang);
 }
 
 function prepare() {
@@ -180,6 +212,9 @@ function prepare() {
             tooltip.style.display = "none";
         }
     };
+    // Sets the language page to the stored one
+    let lang = localStorage.getItem("lang");
+    translate(lang);
 }
 
 prepare();
