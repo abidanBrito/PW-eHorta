@@ -1,5 +1,6 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez , Daniel Burruchaga (threshold)
+ *   AUTHOR:         Abidan Brito Clavijo, Luis Belloch Martinez, 
+ *                   Daniel Burruchaga (threshold)
  *   FILE:           map.js
  *   DATE:           25/03/2020
  *   STATE:          WIP
@@ -8,12 +9,17 @@
 // It initializes a google maps instance and draws all user fields(plots).
 function initMap() {
     // Initial map settings
+    let zoomLevel = 17; 
+    if (window.innerWidth < 740) {
+        zoomLevel = 18;
+    }
     let options = {
         center: {
             lat: 28.493408,
             lng: -14.019035
         }, // Map center coordinates
-        zoom: 17,
+
+        zoom: zoomLevel,
         tilt: 0,
         mapTypeId: 'satellite',
         styles: [
@@ -35,6 +41,7 @@ function initMap() {
         ],
         rotateControl: false,
         mapTypeControl: false,
+        fullscreenControl: false,
         streetViewControl: false
     };
 
@@ -62,8 +69,6 @@ function centerPlot(selectedPlot) {
         });
         let lati = parseFloat(rightPlot.latitude);
         let long = parseFloat(rightPlot.longitude);
-
-        console.log(lati + "," + long)
 
         // New map settings (centered around the field)
         let options = {
@@ -93,6 +98,7 @@ function centerPlot(selectedPlot) {
             ],
             rotateControl: false,
             mapTypeControl: false,
+            fullscreenControl: false,
             streetViewControl: false
         };
 
@@ -110,12 +116,10 @@ function centerPlot(selectedPlot) {
 
 // It draws all fields (polygons) in orange, and the selected field in blue
 function drawTerrain(map, selectedPlotID = null) {
-
-    let threshold_Form = document.getElementById('threshold_form');
-
-    if (threshold_Form != null) threshold_bool = true;
-    else {
-        console.log("Esto hace que las modificaciones para threshold no afecten a App")
+    // Unique to threshold page, no changes are made on the panel hero
+    let thresholdForm = document.getElementById('threshold_form');
+    if (thresholdForm != null)  {
+        threshold_bool = true;
     }
 
     // Get fields from database
@@ -135,19 +139,19 @@ function drawTerrain(map, selectedPlotID = null) {
                 // Default polygon configuration
                 let polygon = new google.maps.Polygon({
                     paths: JSON.parse(plot.plotPath),
-                    strokeColor: '#ff8000',
+                    strokeColor: '#fc852f',
                     strokeOpacity: 0.8,
-                    strokeWeight: 2.5,
-                    fillColor: '#ff8000',
-                    fillOpacity: 0.35,
+                    strokeWeight: 2.25,
+                    fillColor: '#fc852f',
+                    fillOpacity: 0.3,
                     map: map
                 });
 
                 // Draw the selected polygon in blue
                 if (selectedPlotID !== null) {
                     if (plot.id == selectedPlotID) {
-                        polygon.strokeColor = '#00a5ff';
-                        polygon.fillColor = '#00a5ff';
+                        polygon.strokeColor = '#2fbffc';
+                        polygon.fillColor = '#2fbffc';
                     };
                 }
 
@@ -158,11 +162,14 @@ function drawTerrain(map, selectedPlotID = null) {
 
                 polygon.addListener('click', function () {
                     // Open Threshold
-                    if (threshold_Form) {
+                    if (thresholdForm) {
                         charge_thresholds_values(`${plot.id}`);
                     } 
 
                     else {
+                        // Update helper text
+                        let actionDescription = document.getElementById("actionText");
+                        actionDescription.textContent = 'Seleccione una sonda o campo';
                         centerPlot(`${plot.id}`);
                     }
                 });
@@ -182,33 +189,42 @@ function showPositions(selectedPlot, map) {
         dataJson.forEach((pos) => {
             if (`${pos.plot}` == selectedPlot.id) {
                 plotPositions.push(pos);
+                
                 // Se guarda la posición
                 let newPos = new google.maps.LatLng(`${pos.latitude}`, `${pos.longitude}`)
+                
                 // Se crean los marcadores
+                let iconURL = 'https://i.ibb.co/Wc92F9w/pin.png';
                 let marker = new google.maps.Marker({
                     position: newPos,
                     map: map,
                     animation: google.maps.Animation.DROP,
+                    icon: iconURL,
                     title: `${pos.id}`
                 });
-
+                
                 marker.addListener('click', function () {
                     // Selected marker (probe)
                     document.getElementById('selected-probe').innerHTML = this.title;
+
+                    // Hide informative floating panel
+                    document.getElementById('map-floating-panel').style.display = 'none';
                     // Update the graph
                     refreshGraphScript();
                 });
             }
         })
 
-        console.log(plotPositions);
+        plotPositions.forEach((pos) => {
+            console.log(pos.id);
+        });
     })
 }
 
 // It updates the graph that lies underneath the map
 function refreshGraphScript() {
     let script = document.createElement("script");
-    script.src = 'js/graphic-data.js';
+    script.src = 'js/graph_panel_hero.js';
     document.head.appendChild(script);
     script.parentNode.removeChild(script);
 }
