@@ -1387,9 +1387,19 @@ td a {
 /* ------------------ */
 
 
+
 /* ------------------ */
-/* - Threshold.HTML - */
+
+
 /* ------------------ */
+
+
+/* --- Threshold.HTML --- */
+
+
+/* ------------------ */
+
+
 /*   Threshold PAGE.html  */
 /* Style for Threshold*/
 
@@ -1413,7 +1423,7 @@ td a {
 #plot_name_form {
     margin-bottom: 10px;
     font-size: 2.1rem;
-    color: var(--secondary-color);
+    color: #B7B7B7;
 
 }
 
@@ -1449,16 +1459,17 @@ td a {
 }
 
 /*Form threshold*/
+
 .form-container {
     min-width: 500px;
     height: 550px;
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: var(--principal-color);
+    background-color: #333333;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
-    
+
 }
 
 .form-container input[type=text] {
@@ -1470,7 +1481,7 @@ td a {
     border-radius: 2px;
     background: #f1f1f1;
     text-align: center;
-    margin-left: 35px;
+    margin-left: 0px;
     margin-right: 15px;
 
 }
@@ -1481,7 +1492,7 @@ td a {
     outline: none;
 }
 
-/* Search + Table + Form Div*/
+/*Search + Table + Form Div*/
 #table_edit {
     display: flex;
     margin-top: 20px;
@@ -1508,21 +1519,22 @@ td a {
     display: flex;
     flex-direction: row;
     margin-left: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     margin-right: 25px;
 }
 
-/* img measures and paragraph */
+/*img measures and paragraph*/
 .threshold_divimg {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50px;
-    margin-left: 25px;
+    margin-left: 0px;
 }
 
 .threshold_img {
     width: 25px;
+    margin-left: 5px;
 }
 
 .threshold_labelMax {
@@ -1559,6 +1571,7 @@ td a {
     width: 100%;
     height: 550px;
     box-shadow: 0px 0px 5px 1px #959595;
+    border-radius: 10px;
     margin-right: 2em;
 }
 
@@ -1572,13 +1585,166 @@ td a {
     height: 550px;
 }
 
-#p_ok{
-    display:none;
-    color:#d3d3d3;
+.p_threshold {
+    color: #B7B7B7;
+}
+
+#p_ok {
+    display: none;
+    color: #B7B7B7;
+}
+
+#selection_plot_p {
+    text-align: center;
+}
+
+#title_threshold {
+    margin-top: 75px;
+    text-align: center;
+}
+
+#btn_submit_threshold {
+    margin-top: 5px;
+}
+
+.ui-slider-range {
+    background: #3D96E8;
+}
+
+.ui-slider-horizontal {
+    height: .38em;
+    margin-bottom: 15px;
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 17px;
+    height: 1em;
+    cursor: default;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+    border-radius: 7px;
+}
+
+.ui-widget-content {
+    border: 0px;
+    background: #919191;
+    margin-right: 20px;
+}
+
+#section_maptresh {
+    margin-right: 0em;
+    border-radius: 0px;
+    height: 113%;
+    width: 100%;
+    margin-right: 20px;
+}
+
+#cont_mobile_title {
+    display: flex;
+    position: absolute;
+    top: 45px;
+    z-index: 2;
+    width: 100%;
+    height: 100px;
+    background: black;
+    opacity: 0.5;
+}
+
+.tittlethreshold {
+    display: flex;
+    top: -70px;
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+    left: 100px;
+    color: white;
+}
+
+.subtitlethreshold {
+    top: 100px;
+    position: fixed;
+    left: 55px;
+    color: white;
+}
+
+#threshold_close {
+    margin-top: 45px;
+    width: 20px;
+    transform: rotate(90deg);
+    margin-right: 67%;
+}
+
+#maxSalinity {
+    border: 0;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+#maxHumedity {
+    border: 0;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.slider-rangeAll {
+    width: 300px;
 }
 
 /*----------------------------------- Threshold Mobile version --------------------------------------*/
+
 @media screen and (max-width: 740px) {
+    #maxHumedity {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin-left: 35px;
+    }
+
+    #maxSalinity {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin-left: 35px;
+    }
+
+    /*.form-container input[type="text"] {}*/
+
+    .minInput {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin: 0px;
+        margin-bottom: 15px;
+    }
+
+    #plot_name_form {
+        margin-bottom: 10px;
+        font-size: 2.1rem;
+        color: #333333;
+
+    }
+
+    .p_threshold {
+        color: #333333;
+        margin-left: 10px;
+    }
+
+    #title_threshold {
+        display: none;
+    }
+
+    #btn_submit_threshold {
+        margin-top: 25px;
+    }
+
     .form-container input {
         margin-left: 20px;
     }
@@ -1593,8 +1759,11 @@ td a {
 
     /* Mapa de posiciones grande */
     .mapthres {
+        margin-right: 0em;
+        margin-top: 25px;
+        border-radius: 0px;
+        height: 113%;
         width: 100%;
-        height: 100%;
         margin-right: 0em;
 
     }
@@ -1616,16 +1785,16 @@ td a {
 
     .threshold_labelMin b {
         font-size: 0.8rem;
-                margin-left: 55px;
+        margin-left: 55px;
 
     }
 
     .div_inputs {
         display: flex;
         flex-direction: row;
-        margin-left: 25px;
+        margin-left: 0px;
         margin-right: 25px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     #plot_name_form {
@@ -1649,11 +1818,11 @@ td a {
     .form-container {
         display: none;
         flex-flow: column;
-        min-width: 360px;
-        width: 250px;
-        height: auto;
+        /*min-width: 360px;
+        width: 250px;*/
+        height: 120%;
         align-items: center;
-        background-color: var(--principal-color);
+        background-color: #F8F8F8;
         border: 3px solid #f1f1f1;
         border-radius: 10px;
         margin-left: 5px;
@@ -1670,6 +1839,8 @@ td a {
         background: #f1f1f1;
         text-align: center;
         margin-left: 40px;
+        margin: 0px;
+        margin-bottom: 15px;
     }
 
     #threshold_close_img {
@@ -1688,6 +1859,8 @@ td a {
         width: 500px;
         margin-right: 0px;
     }
+
+
 
     .page {
         display: flex;
@@ -1708,10 +1881,12 @@ td a {
         margin: 0px;
     }
 
+
     .threshold_p {
         font-size: 12px;
     }
 }
+
 
 /* -------------------------- */
 /*  -  notifications.HTML  -  */

@@ -4,53 +4,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width = device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/common_style.css">
-    <link rel="stylesheet" href="css/app_style.css">
-    <script src="js/restringir_acceso.js"></script>
-    <script src="js/delete_sesion.js"></script>
+<link rel="stylesheet" href="css/app_style.css">
+<script src="js/restringir_acceso.js"></script>
+<script src="js/delete_sesion.js"></script>
+<!--BootsTrap 4-->
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     
 <title>Notificaciones</title>
 
+<style>
+    
+        .ajustes-alertas{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    
+        .body-alertas {
+            width: 100%;
+            height: 80vh;
+            background-color: #F8F8F8;
+            overflow: auto;
+            margin-top: 20px;
+        }
+    
+        label{
+            margin: 0px;
+        }
+    
+        .MaxMin{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .alert_container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+            flex-direction: column;
+        }
+         .alert_div{
+            background-color: none;
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .alert_span{
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            background-color: #333333;
+            width: 100%;
+            justify-content: space-between;
+            font-size: 20px;
+            margin: 0px;
+            color: #DDDDDD;
+            border-radius: 5px;
+            padding: .5rem;
 
+        }
+        
+        .alert_variable{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .alert_p{
+            margin: .5rem;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+        }
+        
+        .collapse{
+            width: 60%;
+        }
+        
+        .collapsing{
+            width: 100%;
+            padding: .5rem;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background-color: #DDDDDD;
+            border-radius: 5px;
+        }
+        
+        .collapse.alert_message.show{
+            width: 100%;
+            padding: .5rem;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background-color: #DDDDDD;
+            border-radius: 5px;
+        }
+        
+        
+    @media screen and (max-width: 720px) {
+        
+        .alert_p{
+            margin: .5rem;
+            font-size: 15px;
+        }
+        
+        .collapse.alert_message.show{
+            width: 100%;
+            padding: 1rem;
+            font-size: 15px;
+        }
+    }
+        
+    </style>
 
 </head>
 <body class="main-alertas">
+<!-- Top bar (navigation menu) -->
 <header>
-        <!-- Corporative brand -->
-        <a id="logo" class="white-filter" href="../index.html">
-            <img src="img/logo_v2.svg" alt="LOGO">
-        </a>
+    <!-- Corporative brand -->
+    <a id="logo" class="white-filter" href="../index.html">
+        <img src="img/logo_v2.svg" alt="LOGO">
+    </a>
 
-        <nav class="navbar">
-            <!-- Navigation menu -->
-            <ul class="navbar-links">
-                <li>
-                    <a href="weather.html">El Tiempo</a>
-                </li>
-                <li>
-                    <a href="alerts.html">Alertas</a>
-                    <div id="current-page"></div>
-                </li>
-                <li>
-                    <a href="threshold.html">Umbrales</a>
-                </li>
-                <li>
-                    <a href="app.html">Gráficas</a>
-                </li>
-                <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
-                </li>
-            </ul>
-            <div class="navbar-right">
-                <!-- Mobile menu icon -->
-                <div class="menu-icon" id="menu-toggle">
-                    <div class="line-top"></div>
-                    <div class="line-mid"></div>
-                    <div class="line-bot"></div>
-                </div>
+    <nav class="navbar">
+        <!-- Navigation menu -->
+        <ul class="navbar-links">
+            <li>
+                <a href="weather.html">El Tiempo</a>
+            </li>
+            <li>
+                <a href="alerts.html">Alertas</a>
+                <div id="current-page"></div>
+            </li>
+            <li>
+                <a href="threshold.html">Umbrales</a>
+            </li>
+            <li>
+                <a href="app.html">Gráficas</a>
+            </li>
+            <li>
+                <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <!-- Mobile menu icon -->
+            <div class="menu-icon" id="menu-toggle">
+                <div class="line-top"></div>
+                <div class="line-mid"></div>
+                <div class="line-bot"></div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 <div class="secciones-alertas">
    <form class="seccion-filtro-alerta" id="filterField" method="POST" onsubmit="filtrar(event)">
     <div class="titulo-alertas">
@@ -139,14 +255,12 @@
    <div class="subheader-alertas">
        <h1 class="title-alertas">Alertas</h1>
        <div class="ajustes-alertas">
-         <button class="filtros-alertas" onclick="openFilter()">Filtros</button>
-          <a class="umbrales-alertas" href="threshold.html">Ajustar umbrales</a> 
+         <button class="filtros-alertas" onclick="openFilter()"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItNCAwIDM5MyAzOTMuOTkwMDMiIHdpZHRoPSI1MTJweCI+PHBhdGggZD0ibTM2OC4zMTI1IDBoLTM1MS4yNjE3MTljLTYuMTk1MzEyLS4wMTE3MTg4LTExLjg3NSAzLjQ0OTIxOS0xNC43MDcwMzEgOC45NjA5MzgtMi44NzEwOTQgNS41ODU5MzctMi4zNjcxODc1IDEyLjMxMjUgMS4zMDA3ODEgMTcuNDE0MDYybDEyOC42ODc1IDE4MS4yODEyNWMuMDQyOTY5LjA2MjUuMDg5ODQ0LjEyMTA5NC4xMzI4MTMuMTgzNTk0IDQuNjc1NzgxIDYuMzEyNSA3LjIwMzEyNSAxMy45NTcwMzEgNy4yMTg3NSAyMS44MTY0MDZ2MTQ3Ljc5Njg3NWMtLjAyNzM0NCA0LjM3ODkwNiAxLjY5MTQwNiA4LjU4MjAzMSA0Ljc3NzM0NCAxMS42ODc1IDMuMDg1OTM3IDMuMTA1NDY5IDcuMjgxMjUgNC44NDc2NTYgMTEuNjU2MjUgNC44NDc2NTYgMi4yMjY1NjIgMCA0LjQyNTc4MS0uNDQ1MzEyIDYuNDgwNDY4LTEuMjk2ODc1bDcyLjMxMjUtMjcuNTc0MjE4YzYuNDgwNDY5LTEuOTc2NTYzIDEwLjc4MTI1LTguMDg5ODQ0IDEwLjc4MTI1LTE1LjQ1MzEyNnYtMTIwLjAwNzgxMmMuMDExNzE5LTcuODU1NDY5IDIuNTQyOTY5LTE1LjUwMzkwNiA3LjIxNDg0NC0yMS44MTY0MDYuMDQyOTY5LS4wNjI1LjA4OTg0NC0uMTIxMDk0LjEzMjgxMi0uMTgzNTk0bDEyOC42ODM1OTQtMTgxLjI4OTA2MmMzLjY2Nzk2OS01LjA5NzY1NyA0LjE3MTg3NS0xMS44MjAzMTMgMS4zMDA3ODItMTcuNDA2MjUtMi44MzIwMzItNS41MTE3MTktOC41MTE3MTktOC45NzI2NTY4LTE0LjcxMDkzOC04Ljk2MDkzOHptLTEzMS41MzEyNSAxOTUuOTkyMTg4Yy03LjE4NzUgOS43NTM5MDYtMTEuMDc0MjE5IDIxLjU0Njg3NC0xMS4wOTc2NTYgMzMuNjY0MDYydjExNy41NzgxMjVsLTY2IDI1LjE2NDA2M3YtMTQyLjc0MjE4OGMtLjAyMzQzOC0xMi4xMTcxODgtMy45MTAxNTYtMjMuOTEwMTU2LTExLjEwMTU2My0zMy42NjQwNjJsLTEyNC45MzM1OTMtMTc1Ljk5MjE4OGgzMzguMDcwMzEyem0wIDAiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4K" class="images-alert" /></button>
        </div>
-        
         </div>
     <div class="body-alertas">
         <div class="alertas-bloque" id="alertas-bloque-dinamico">
-       <script src="js/notifications.js"></script>
+        <script src="js/notifications.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
             ViewAlertsList.prepare("alertas-bloque-dinamico");
@@ -159,8 +273,11 @@
 </div>
 
 
-<!-- carga archivo JS -->
-<script src="js/navbar.js"></script>
+    <!-- carga archivo JS -->
+    <script src="js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/9cd7b9d5a0.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
