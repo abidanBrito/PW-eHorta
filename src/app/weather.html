@@ -28,27 +28,27 @@
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
         </a>
-
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="weather.html">El Tiempo</a>
+                    <a href="weather.html"><span class="lang" id="weather">El Tiempo</span></a>
                     <div id="current-page"></div>
                 </li>
                 <li>
-                    <a href="alerts.html">Alertas</a>
+                    <a href="alerts.html"><span class="lang" id="alerts">Alertas</span></a>
                 </li>
                 <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="threshold.html"><span class="lang" id="thresholds">Umbrales</span></a>
                 </li>
                 <li>
-                    <a href="app.html">Gráficas</a>
+                    <a href="app.html"><span class="lang" id="graph">Gráficas</span></a>
                 </li>
                 <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                    <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
+            <a id="globe-icon" href="#"><img class="white-filter" src="img/globe.svg" alt="idioma"></a>
             <div class="navbar-right">
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
@@ -58,8 +58,15 @@
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="translate(this)" id="es" href="#">ES</a>
+            <a class="translate" onclick="translate(this)" id="en" href="#">EN</a>
+            <a class="translate" onclick="translate(this)" id="val" href="#">VAL</a>
+        </div>
+        
     </header>
-    <h1 class="titleWeather">El Tiempo</h1>
+    
+    <h1 class="titleWeather"><span class="lang" id="weather">El Tiempo</span></h1>
     
     <section id="weather-background">
         <div class="weather-container">
@@ -86,13 +93,16 @@
     </section>
     
     <section id="weather-footer">
+        <span class="lang" id="aemet">
         Información elaborada por la Agencia Estatal de Meteorología
+        </span>
     </section>
 
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
     <script src="js/curr_weather.js"></script>
     <script src="js/graphic_weather.js"></script>
+    <script src="js/localization.js"></script>
 
 </body>
 </html>

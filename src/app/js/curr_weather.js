@@ -2,7 +2,7 @@
 *   AUTHOR:         Luis Belloch
 *   FILE:           currWeather.js
 *   DATE:           05/05/2020
-*   STATE:          WIP
+*   STATE:          DONE
 *  ---------------------------------------------------------------- */
 
 // ----------------------------------------------------------------
@@ -492,7 +492,7 @@ async function showData(code) {
     </section>
     */
     container.innerHTML =
-            '<div class="day-text">Hoy</div>'+
+            '<div class="day-text"><span class="lang" id="today">Hoy</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de hoy" src="' + iconToday + '">'+
@@ -508,19 +508,19 @@ async function showData(code) {
                     '</div>'+
                     '<div class="prediction-rainfall">'+
                         '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de hoy">'+
-                        totalRainfall +'L/m2'+
+                        totalRainfall +' mm'+
                     '</div>'+
                 '</div>'+
                 '<div class="third-data-column">'+
-                    '<div class="misc-data">prob: ' +           
+                    '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProb + '%<br>'+
-                    'viento: ' + maxWind + ' km/h<br>' +
-                    'humedad: '+ avgHum + '%<br>' +
+                    '<span class="lang" id="wind">viento</span>: ' + maxWind + ' km/h<br>' +
+                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHum + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
             '<div class="weather-separator"></div>' + 
-            '<div class="day-text">Mañana</div>'+
+            '<div class="day-text"><span class="lang" id="tomorrow">Mañana</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de mañana" src="' + iconTomorrow + '">'+
@@ -536,19 +536,19 @@ async function showData(code) {
                     '</div>'+
                     '<div class="prediction-rainfall">'+
                         '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de mañana">'+
-                        totalRainfallTomorrow +'L/m2'+
+                        totalRainfallTomorrow +' mm'+
                     '</div>'+
                 '</div>'+
                 '<div class="third-data-column">'+
-                    '<div class="misc-data">prob: ' +           
+                    '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProbTomorrow + '%<br>'+
-                    'viento: ' + maxWindTomorrow + ' km/h<br>' +
-                    'humedad: '+ avgHumTomorrow + '%<br>' +
+                    '<span class="lang" id="wind">viento</span>: ' + maxWindTomorrow + ' km/h<br>' +
+                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHumTomorrow + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
             '<div class="weather-separator"></div>' + 
-            '<div class="day-text">Pasado mañana</div>'+
+            '<div class="day-text"><span class="lang" id="after_tomorrow">Pasado Mañana</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de pasado mañana" src="' + iconAfter + '">'+
@@ -564,14 +564,14 @@ async function showData(code) {
                     '</div>'+
                     '<div class="prediction-rainfall">'+
                         '<img src="img/datalogger/rainfall.svg" class="white-filter" alt="lluvia de pasado mañana">'+
-                        totalRainfallAfter +'L/m2'+
+                        totalRainfallAfter +' mm'+
                     '</div>'+
                 '</div>'+
                 '<div class="third-data-column">'+
-                    '<div class="misc-data">prob: ' +           
+                    '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProbAfter + '%<br>'+
-                    'viento: ' + maxWindAfter + ' km/h<br>' +
-                    'humedad: '+ avgHumAfter + '%<br>' +
+                    '<span class="lang" id="wind">viento</span>: ' + maxWindAfter + ' km/h<br>' +
+                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHumAfter + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
