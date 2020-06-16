@@ -33,35 +33,32 @@ let ViewUsersList = {
     table: {},
     selector: {},
     prepare: function(tableId, selectId) {
-        this.table = document.getElementById(tableId);
+        this.usersList = document.getElementById(tableId);
         this.selector = document.getElementById(selectId);
     },
     represent: function(data) {
-        this.table.innerHTML += "<tbody></tbody>"
-        let tbody = this.table.getElementsByTagName('tbody')[0];
         // Esto recorre cada campo recibido y hace la misma accion para cada uno
         data.forEach((user) => {
+            let role = 0;
+            if (`${user.roleId}` == 1) {
+                role = "Usuario";
+            }
+            if (`${user.roleId}` == 2) {
+                role = "Administrador";
+            }
+            if (`${user.roleId}` == 3) {
+                role = "Cliente-administrador";
+            }
+            if (`${user.roleId}` == 4) {
+                role = "Técnico";
+            }
+            let vertex = 'vertex';
+            let probe = 'probe';
             // plot es cada campo y tienen los parametros (name, longitude, latitude) y se escriben como `${plot.name}` para mostrarlo.
-            // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";
-
-            tbody.innerHTML += "<tr class='content_row admintr' ><td><img src='img/user.svg' alt='Usuario' style='width: 15px;height: 15px;'><td data-label='Empresa' name='user'><input type='checkbox' name='checkUsers' style='margin:5px;' value='" + `${user.id}` + "' /><a class='links_usuarios' 'id='user_" + `${user.id}` + "' name ='" + `${user.name}` + "'>" + `${user.name}` + '</td><td></a>' + "</a></td></tr>";
+            // Para concatenar texto se pone un + => "Nombre del campo: " + `${plot.name}` + "<br>";¡
+            this.usersList.innerHTML += "<div id='user" + `${user.id}` + "-info' class='user-info'><div class='general_info'><div class='user-data'><p style='margin:12px auto;' data-toggle='collapse' data-target='#moreInfo" + `${user.id}` + "' aria-expanded='false' aria-controls='moreInfo" + `${user.id}` + "'>" + `${user.email}` + "</p></div><div class='options'><img src='img/edit.svg' data-toggle='collapse' data-target='#editUser" + `${user.id}` + "' aria-expanded='false' aria-controls='editUser" + `${user.id}` + "' style='width:18px;'><img src='img/close.svg' width='14px' style='margin:auto; margin-left:4px;'  onclick='deleteUser(" + `${user.id}` + ")'></i></div></div><div class='collapse' id='moreInfo" + `${user.id}` + "' class='moreInfo'><hr size='1'><p>" + `${user.name}` + " " + `${user.surname}` + "</p><p>" + role + "</p><button class='button' data-toggle='collapse' data-target='#moreInfo" + `${user.id}` + ", #plotList" + `${user.id}` + "' aria-expanded='false' aria-controls='editUser" + `${user.id}` + ", plotList" + `${user.id}` + "' style='margin-left:auto;'>Mis parcelas</button></div><div class='collapse' id='plotList" + `${user.id}` + "' class='plotList'><hr size='1'><div class='title'><i class='fas fa-angle-left' data-toggle='collapse' data-target='#plotList" + `${user.id}` + "' aria-expanded='false' aria-controls='plotList" + `${user.id}` + "'></i><h3>Parcelas de " + `${user.name}` + "</h3></div><div class='plots'><table id='plotTable" + `${user.id}` + "'><tbody></tbody></table></div><div class='buttons'><button class='button' style='width: 223px; margin-left:auto; margin-right:auto;' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #plotList" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot" + `${user.id}` + ", plotList" + `${user.id}` + "'>Nueva parcela</button></div></div><div class='createPlot collapse' id='createPlot" + `${user.id}` + "'><hr size='1'><div class='title'><i class='fas fa-angle-left' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #plotList" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot" + `${user.id}` + ", plotList" + `${user.id}` + "'></i><h3>Nueva parcela</h3></div><div class='plotForm'><div><input class='input-login' type='text' name='plotName' placeholder='Nombre de la parcela' required><span class='counter'>Vértices</span><div class='polygonInfo'><input class='input-login' type='text' name='latitude' placeholder='Latitud' required><input class='input-login' type='text' name='longitude' placeholder='Longitud' required></div><div class='addVertex'><button onclick='addCoord(" + `${user.id}` + ", \"" + vertex + "\")'>Añadir punto</button><span class='undo-changes'>Vértices: 0 (mín:3)</span></div></div><div><span class='createPlotTitles'>Datos de las sondas</span><span class='counter'>Sondas</span><div class='probeInfo'><input class='input-login' type='text' name='latitude' placeholder='Latitud' required><input class='input-login' type='text' name='longitude' placeholder='Longitud' required></div><div class='addProbe'><button onclick='addCoord(" + `${user.id}` + ", \"" + probe + "\")'>Añadir sonda</button> <span class='undo-changes'>Sondas: 0 (mín:1)</span></div></div></div><span class='counter'>Opciones</span><div class='buttons'><button class='button' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #previewMap" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot, previewMap'>Vista previa</button><button class='button' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #vertexList" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot, vertexList'>Coordenadas</button></div><button class='button' style='width:252px; margin-top:0;'>Crear</button></div><div id='vertexList" + `${user.id}` + "' class='collapse'><hr size='1'><div class='title'><i class='fas fa-angle-left' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #vertexList" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot" + `${user.id}` + "'></i><h3>Lista de coordenadas</h3></div><span>Puntos de la parcela</span><div class='vertexPlotList'></div><span>Sondas</span><div class='vertexProbeList'></div></div><div class='collapse' id='previewMap" + `${user.id}` + "' class='previewMap'><hr size='1'><div class='title'><i class='fas fa-angle-left' data-toggle='collapse' data-target='#createPlot" + `${user.id}` + ", #previewMap" + `${user.id}` + "' aria-expanded='false' aria-controls='createPlot" + `${user.id}` + ", previewMap" + `${user.id}` + "'></i><h3>Vista previa</h3></div><div class='addMap' id='addMap" + `${user.id}` + "'></div></div><div class='collapse' id='editUser" + `${user.id}` + "'><hr size='1'><div class='title'><i class='fas fa-angle-left' data-toggle='collapse' data-target='#editUser" + `${user.id}` + "' aria-expanded='false' aria-controls='editUser" + `${user.id}` + "'></i><h3>Editar usuario</h3></div><div class='editData'><input class='input-login' type='text' name='userName' placeholder='Nombre' value='" + `${user.name}` + "' required><input class='input-login' type='text' name='userSurname' placeholder='Apellidos' value='" + `${user.surname}` + "' required><input class='input-login' type='text' name='userEmail' placeholder='Correo electrónico' value='" + `${user.email}` + "' required><input class='input-login' type='text' name='userPassword' placeholder='Contraseña' value='" + `${user.password}` + "' required><select name='roleId' id='role" + `${user.id}` + "Id' class='roleId' value='" + `${user.roleId}` + "' onchange='value=this.value'><option>Rol</option><option>----------------------------------------------</option><option value='1'>Cliente</option><option value='2'>Administrador</option><option value='3'>Cliente-administrador</option><option value='4'>Técnico</option></select><button type='button' class='button editUserButton' style='width: 252px; margin: 20px auto;'>Aplicar cambios</button></div></div></div>"
         })
 
-        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 1].style.borderBottom = "none";
-        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 2].style.borderBottom = "none";
-        document.getElementsByTagName("td")[document.getElementsByTagName("td").length - 3].style.borderBottom = "none";
-
-    }
-};
-
-/*Check checkbox for delete*/
-function showCheckboxAdminClients() {
-    //Busca todos los inputs y mira si se tienen name=checkUsers
-    let input = document.getElementsByTagName("input")
-    for (let i = 0; i < input.length; i++) {
-        if (input[i].name == "checkUsers") {
-            input[i].style.visibility = "visible";
-        }
     }
 };
 
@@ -73,28 +70,3 @@ let UsersController = {
         this.model.load();
     }
 };
-
-function userEnab_mapDisab() {
-
-    //Cambia de color gris a amarillo el texto de usuario
-    document.getElementById("user_form").style.color = "rgb(224, 169, 66)";
-
-    //Proceso inverso para el de parcelas
-    document.getElementById("plot_form").style.color = "gray";
-
-    //Cambia el botón de añadir
-    document.getElementById("button_Add_customer").style.display = "initial";
-    document.getElementById("button_Add_plot").style.display = "none";
-
-    //Comprueba si el formulario de añadir campo está abierto, y si lo está lo oculta
-    if (document.getElementById("divAddPlot").classList.contains("show")) {
-        document.getElementById("button_Add_plot").click()
-    }
-
-    //Se crea la tabla de usuarios, destruyendo la de parcelas
-    let table = document.getElementById("admin_table");
-    table.removeChild(table.getElementsByTagName("tbody")[0])
-    table.innerHTML == "<tbody></tbody>";
-    ViewUsersList.prepare("admin_table");
-    UsersController.init();
-}
