@@ -101,6 +101,10 @@
     margin-bottom: 1.25rem;
 }
 
+.admin_page #searchInput:focus {
+    color: #333333;
+}
+
 .admin_page .editUser .editData,
 .admin_page .moreInfo .plots,
 .admin_page .createPlot,
