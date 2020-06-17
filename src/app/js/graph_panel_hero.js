@@ -121,9 +121,9 @@ var chartOptions = {
         titleAlign: 'center',
         bodyFontColor: '#ddd'
     },
-    hover: {
-        animationDuration: 0,
-    },
+    animation: {
+        duration: 0
+    },    
     defaultFontFamily: 'Poppins',
     defaultFontColor: '#333333',
     responsive: true,
@@ -166,7 +166,7 @@ function drawGraph() {
                     const graph = document.getElementById("app");
                     graph.style.display = "block";        
                 }   
-        
+
                 processData(data, probeID, startDate, endDate);
                 chart.update();
             });
@@ -224,7 +224,7 @@ function getCurrentDate() {
 // ----------------------------------------------------------------
 function filterDataStream(data, probeID, startDate, endDate) {
     let filteredData = data.filter((probe) => {
-        if ((startDate == "" && probe.position == probeID) || 
+        if ((startDate == "" && endDate == "" && probe.position == probeID) || 
             (probe.position == probeID && probe.datetime >= startDate && 
             probe.datetime <= endDate)) {
             return true;
