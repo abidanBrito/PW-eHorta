@@ -1520,6 +1520,11 @@ td a {
     color: var(--secondary-color);
 }
 
+/* Day text */
+.day-text:hover {
+    cursor: pointer;
+}
+
 /* First column */
 .first-data-column {
     display: flex;
