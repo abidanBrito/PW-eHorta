@@ -495,8 +495,8 @@ async function showData(code) {
             '<div class="day-text"><span class="lang" id="today">Hoy</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" alt="tiempo de hoy" src="' + iconToday + '">'+
-                    temperature + ' ºC'+
+                    '<img class="day-icon white-filter" alt="tiempo de hoy" src="' + iconToday + '"><span class="curr-temp">'+
+                    temperature + ' ºC</span>'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
@@ -523,8 +523,8 @@ async function showData(code) {
             '<div class="day-text"><span class="lang" id="tomorrow">Mañana</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" alt="tiempo de mañana" src="' + iconTomorrow + '">'+
-                    temperatureTomorrow + ' ºC'+
+                    '<img class="day-icon white-filter" alt="tiempo de mañana" src="' + iconTomorrow + '"><span class="curr-temp">'+
+                    temperatureTomorrow + ' ºC</span>'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
@@ -551,8 +551,8 @@ async function showData(code) {
             '<div class="day-text"><span class="lang" id="after_tomorrow">Pasado Mañana</span></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
-                    '<img class="day-icon white-filter" alt="tiempo de pasado mañana" src="' + iconAfter + '">'+
-                    temperatureAfter + ' ºC'+
+                    '<img class="day-icon white-filter" alt="tiempo de pasado mañana" src="' + iconAfter + '"><span class="curr-temp">'+
+                    temperatureAfter + ' ºC</span>'+
                 '</div>' +
                 '<div class="second-data-column">'+
                     '<div class="prediction-temperature">'+
@@ -576,6 +576,9 @@ async function showData(code) {
                 '</div>'+
             '</section>'+
         '<div class="timestamp">' + measuresTimestamp + '</div>';
+    
+    // Translate new added 
+    prepareTranslation();
 }
 
 //

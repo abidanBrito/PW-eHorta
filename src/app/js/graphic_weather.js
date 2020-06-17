@@ -12,7 +12,6 @@ function activateWeatherButton(btn) {
     if(btn.className == "weather-button") {
         // busca el boton activado
         let activeButtons = document.getElementsByClassName("weather-button-active");
-        console.log(activeButtons);
         let i;
         // desactiva el boton
         for (i = 0; i < activeButtons.length; i++) {
@@ -75,7 +74,6 @@ async function showTemperature(button) {
     // Pone los datos de temperatura en el eje Y
     datos.datasets[0].data = tempValues;
     
-    console.log(tempValues);
     // Pone los datos de horas en el eje X
     datos.labels = hours;
     // Pone la etiqueta de la medida a los datos
@@ -153,16 +151,20 @@ async function showWind(button) {
     activateWeatherButton(button);
     
     let dataJson = await getData();
-    
+    // Los valores de viento estan en indices pares
     let windValues = [];
     let wind = dataJson[0].prediccion.dia[0].vientoAndRachaMax;
     for(let i = 0; i < wind.length; i++) {
-        windValues.push(wind[i].value);
+        if(i%2 == 0) {
+            windValues.push(wind[i].velocidad[0]);
+        }
     } // for
     
     let hours = [];
     for(let i = 0; i < wind.length; i++) {
-        hours.push(wind[i].periodo + "h");
+        if(i%2 == 0) {
+            hours.push(wind[i].periodo + "h");
+        }
     } // for
     
     datos.datasets[0].data = windValues;

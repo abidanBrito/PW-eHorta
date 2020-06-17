@@ -1523,6 +1523,11 @@ td a {
     align-content: center;
 }
 
+.first-data-column .curr-temp {
+    margin-top: 0.75rem;
+    align-self: center;
+}
+
 .first-data-column .day-icon {
     width: 58px;
 }
@@ -1551,6 +1556,7 @@ td a {
 /* Icons sizes and separation from text */
 .day-data .second-data-column img {
     width: 29px;
+    height: 29px;
     margin-right: 0.2rem;
 }
 

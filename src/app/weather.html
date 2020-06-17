@@ -48,8 +48,11 @@
                     <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
-            <a id="globe-icon" href="#"><img class="white-filter" src="img/globe.svg" alt="idioma"></a>
             <div class="navbar-right">
+                <!-- Globe icon -->
+                <div id="globe-icon">
+                    <img class="white-filter" src="img/globe.svg" alt="idioma">
+                </div>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -58,6 +61,11 @@
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+            <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+            <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+        </div>
         <div id="lang-selector">
             <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
             <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>

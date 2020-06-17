@@ -193,7 +193,7 @@ function changeLang(lang) {
 }
 
 // Called when page reloaded to translate everything
-function prepare() {
+function prepareTranslation() {
     const button = document.getElementById('globe-icon');
     const tooltip = document.getElementById('lang-selector');
     tooltip.style.display = "none";
@@ -234,4 +234,4 @@ function translate(lang) {
 }
 
 // Start page
-prepare();
+prepareTranslation();
