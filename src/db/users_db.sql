@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2020 a las 18:31:28
+-- Tiempo de generación: 16-06-2020 a las 20:58:42
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -209,29 +209,31 @@ CREATE TABLE `thresholds` (
 INSERT INTO `thresholds` (`id`, `plot`, `magnitude`, `min`, `max`) VALUES
 (635, 5, 'humidity', 0, 30),
 (636, 5, 'temperature', 0, 0),
-(637, 5, 'rain', 0, 0),
-(638, 5, 'luminosity', 0, 0),
-(639, 5, 'salinity', 0, 0),
-(645, 2, 'humidity', 0, 3443535),
-(646, 2, 'temperature', 0, 5342),
-(647, 2, 'rain', 0, 0),
+(637, 5, 'rain', 0, 30),
+(638, 5, 'luminosity', 0, 20),
+(639, 5, 'salinity', 0, 50),
+(645, 2, 'humidity', 0, 34),
+(646, 2, 'temperature', 0, 50),
+(647, 2, 'rain', 0, 50),
 (648, 2, 'luminosity', 0, 20),
-(649, 2, 'salinity', 0, 0),
-(815, 1, 'humidity', 1, 1),
-(816, 1, 'temperature', 1, 1),
-(817, 1, 'rain', 1, 1),
-(818, 1, 'luminosity', 1, 1),
-(819, 1, 'salinity', 1, 1),
-(830, 3, 'humidity', 0, 9999),
-(831, 3, 'temperature', 0, 20),
-(832, 3, 'rain', 0, 0),
-(833, 3, 'luminosity', 0, 0),
-(834, 3, 'salinity', 0, 0),
-(835, 4, 'humidity', 4, 564654),
-(836, 4, 'temperature', 4, 4),
-(837, 4, 'rain', 4, 4),
-(838, 4, 'luminosity', 4, 4),
-(839, 4, 'salinity', 4, 4);
+(649, 2, 'salinity', 0, 10),
+(815, 1, 'humidity', 1, 30),
+(816, 1, 'temperature', 1, 100),
+(817, 1, 'rain', 1, 20),
+(818, 1, 'luminosity', 1, 10),
+(819, 1, 'salinity', 1, 50),
+(915, 1, '2', 1, 20),
+(966, 2, '3', 4, 52),
+(1676, 4, 'humidity', 28, 65),
+(1677, 4, 'temperature', 19, 80),
+(1678, 4, 'rain', 45, 85),
+(1679, 4, 'luminosity', 33, 72),
+(1680, 4, 'salinity', 14, 63),
+(1706, 3, 'humidity', 26, 72),
+(1707, 3, 'temperature', 14, 82),
+(1708, 3, 'rain', 7, 75),
+(1709, 3, 'luminosity', 13, 54),
+(1710, 3, 'salinity', 7, 63);
 
 -- --------------------------------------------------------
 
@@ -448,7 +450,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `thresholds`
 --
 ALTER TABLE `thresholds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=840;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1711;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
