@@ -65,9 +65,9 @@
                 </div>
             </nav>
             <div id="lang-selector">
-                <a class="translate" onclick="translate(this.id)" id="es" href="#">Español</a>
-                <a class="translate" onclick="translate(this.id)" id="en" href="#">English</a>
-                <a class="translate" onclick="translate(this.id)" id="val" href="#">Valencià</a>
+                <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+                <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+                <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
             </div>
         </header>
 
@@ -76,12 +76,13 @@
             <label class="label-login"><span class="lang" id="hello">¡Hola de nuevo!</span></label>
 
             <form method="POST" onsubmit="enviar(event)" id="form-credentials">
+               <!-- Luis: password placeholder is completed from localization.js -->
                 <input class="input-login" type="text" name="user" placeholder="&#xf0e0;   E-mail" required>
-                <input class="input-login" type="password" name="pass" placeholder="&#xf023;   Contraseña" required>
+                <input class="input-login" type="password" name="pass" id="password" placeholder="&#xf023;    " required>
                 <button type="submit" class="login-button"><span class="lang" id="log_in">Entrar</span></button>
             </form>
             <h4 class="h4-login"><span class="lang" id="forgot">¿Olvidaste tu contraseña?</span><a href="#" class="contact-us"><span class="lang" id="click">Pulsa aquí.</span></a></h4>
-            <div id="error-msg">ERROR AL INICIAR SESIÓN</div>
+            <div id="error-msg"><span class="lang" id="login_error">ERROR AL INICIAR SESIÓN</span></div>
 
 
             <!-- Contact link -->
