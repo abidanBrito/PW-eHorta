@@ -12,7 +12,7 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" href="css/common_style.css">
     <!-- Google Fonts - Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <style>
@@ -31,7 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 </head>
 
-<body class="main" style="display: none;">
+<body class="main" style="display: none; height: auto;">
     <!-- Top bar (navigation menu) -->
     <header>
         <!-- Corporative brand -->
@@ -86,16 +86,19 @@
             <!---Form threshold 2.1rem font h3-->
             <form id="threshold_form" class="form-container" style="display: none;">
                 <input type="text" id="threshold_id_plot" name="threshold_id_plot" style="display: none;" />
-                <a id="threshold_close" class="go-back" href="javascript:close()"><p>Volver</p></a>
+                <a id="threshold_close" class="go-back" href="javascript:close()">
+                    <p>Volver</p>
+                </a>
 
                 <h2 style="" id="plot_name_form"></h2>
-           
+
                 <div class="div_inputs" style="">
                     <input type="text" id="minHumedity" class="minInput" name="minHumedity" style="" />
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/humidity.svg" id="humidity_black" alt="Humedad" Class="threshold_img">
-                        <img src="img/datalogger/humidity_2.svg" id="humidity_white" alt="Humedad" Class="threshold_img">
+                        <img src="img/datalogger/humidity.svg" id="humidity_black"  Class="threshold_img">
+                        <img src="img/datalogger/humidity_2.svg" id="humidity_white"  Class="threshold_img">
+
                     </div>
 
                     <p>
@@ -110,10 +113,11 @@
 
                 <div class="div_inputs" style="">
                     <input type="text" id="minTemperature" class="minInput" name="minTemperature" style="" />
-                    <div class="threshold_divimg">
+                    <div class="threshold_divimg" style="width: 40px;">
 
-                        <img src="img/datalogger/temperature_2.svg" id="temperature_white"alt="Temperatura" Class="threshold_img" style="width: 15px;">
-                        <img src="img/datalogger/temperature.svg" id="temperature_black"alt="Temperatura" Class="threshold_img" style="width: 25px;">
+                        <img src="img/datalogger/temperature_2.svg" id="temperature_white" Class="threshold_img" style="width: 15px;">
+                        <img src="img/datalogger/temperature.svg" id="temperature_black"  Class="threshold_img" style="width: 25px;">
+
                     </div>
                     <p>
                         <label for="amount1" class="p_threshold">Temperatura (ºC)</label>
@@ -121,7 +125,7 @@
                     </p>
                 </div>
 
-                <div id="slider-range1" class="slider-rangeAll" ></div>
+                <div id="slider-range1" class="slider-rangeAll"></div>
 
 
 
@@ -130,8 +134,9 @@
                     <input type="text" id="minLuminosity" class="minInput" name="minLuminosity" style="" />
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/luminosity.svg" id="luminosity_black" alt="Luminosidad" Class="threshold_img">
-                        <img src="img/datalogger/luminosity_2.svg" id="luminosity_white" alt="Luminosidad" Class="threshold_img">
+                        <img src="img/datalogger/luminosity.svg" id="luminosity_black" Class="threshold_img">
+                        <img src="img/datalogger/luminosity_2.svg" id="luminosity_white" Class="threshold_img">
+
                     </div>
                     <p>
                         <label for="maxLum" class="p_threshold">Luminosidad (%)</label>
@@ -144,39 +149,39 @@
 
 
 
-                <div class="div_inputs" style="">
-                    <input type="text" id="minPrecipitation" class="minInput" name="minPrecipitation" style="" />
+                <div class="div_inputs" >
+                    <input type="text" id="minPrecipitation" class="minInput" name="minPrecipitation"  />
 
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/rainfall.svg" alt="Precipitación" id="rainfall_black"Class="threshold_img">
-                        <img src="img/datalogger/rainfall_2.svg" alt="Precipitación" id="rainfall_white"Class="threshold_img">
+                        <img src="img/datalogger/rainfall.svg" id="rainfall_black" Class="threshold_img">
+                        <img src="img/datalogger/rainfall_2.svg" id="rainfall_white" Class="threshold_img">
                     </div>
                     <p>
-                        <label for="amount3" class="p_threshold">Precipitación (%)</label>
-                        <input type="text" id="maxPrecipitation" name="maxPrecipitation" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
+                        <label for="amount3" style="margin-left: 5px; margin-right: 5px;" class="p_threshold">Precipitación (mm)</label>
+                        <input type="text" id="maxPrecipitation" name="maxPrecipitation" />
                     </p>
                 </div>
-                <div id="slider-range3" class="slider-rangeAll" ></div>
+                <div id="slider-range3" class="slider-rangeAll"></div>
 
 
 
 
 
-                <div class="div_inputs" style="">
-                    <input type="text" id="minSalinity" class="minInput" name="minSalinity" style="" />
+                <div class="div_inputs" >
+                    <input type="text" id="minSalinity" class="minInput" name="minSalinity" />
 
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/salinity.svg" id="salinity_white" alt="Salinidad" class="threshold_img white-filter">
-                    </div>
+                        <img src="img/datalogger/salinity_2.svg" id="salinity_white"  Class="threshold_img">
+                        <img src="img/datalogger/salinity.svg" id="salinity_black"  Class="threshold_img"> </div>
                     <p>
-                        <label for="amount4" class="p_threshold" style="margin-left: 20px;">Salinidad (%)</label>
+                        <label for="amount4" class="p_threshold" style="margin-left: 20px;">Salinidad (g/l)</label>
                         <input type="text" id="maxSalinity" name="maxSalinity" style="" />
                         <!--eSTO SOLO PARA MOVIL LO DEL MARGIN LEFT  -->
                     </p>
                 </div>
-                <div id="slider-range4" class="slider-rangeAll" ></div>
+                <div id="slider-range4" class="slider-rangeAll"></div>
 
 
 
@@ -188,7 +193,7 @@
                     <div id="map-floating-panel">
                         <p id="actionText">Umbrales<br><span>Seleccione una parcela</span></p>
                     </div>
-                    <section id="map" class="mapthres">
+                    <section id="map" class="mapthres" style="height: 550px; width: 100%;">
                         <script src="js/map.js"></script>
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
                         </script>
@@ -197,9 +202,7 @@
             </section>
         </div>
     </div>
-    <script>
-    
-    </script>
+
 
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
