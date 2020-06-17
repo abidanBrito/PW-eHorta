@@ -95,8 +95,13 @@ header {
 
 /* Navbar icons container (login and burger) */
 .navbar-right {
-    display: none;
+    display: flex;
     align-items: center;
+}
+
+#menu-toggle,
+#login-icon {
+    display: none;
 }
 
 #login-icon {
@@ -121,10 +126,10 @@ header {
 
 #lang-selector {
     position: absolute;
-    right: 0;
+    top: 40px;
+    right: 1.2rem;
     background: #242424;
     z-index: 1300;
-    top: 2rem;
     display: none;
     border-radius: .3rem;
 }
@@ -152,7 +157,7 @@ header {
 
 #globe-icon img {
     height: 100%;
-    margin: 0 1.25rem;
+    margin: 0 0 0 5rem;
 }
 
 #lang-selector a:hover,
@@ -197,7 +202,8 @@ header {
     }
     
     #lang-selector {
-        right: 5%;
+        right: 1.2rem;
+        top: 40px;
     }
 
     /* Menu items (links) */
@@ -215,9 +221,17 @@ header {
         margin: 0px;
         padding: 0px;
     }
+    
+    #menu-toggle {
+        display: block;
+    }
 
     #login-icon {
         display: block;
+    }
+
+    #globe-icon img {
+        margin: 0 1.25rem;
     }
 }
 
