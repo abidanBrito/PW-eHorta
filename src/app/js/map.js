@@ -117,8 +117,8 @@ function centerPlot(selectedPlot) {
 // It draws all fields (polygons) in orange, and the selected field in blue
 function drawTerrain(map, selectedPlotID = null) {
     // Unique to threshold page, no changes are made on the panel hero
-    let thresholdForm = document.getElementById('threshold_form');
-    if (thresholdForm != null)  {
+    let threshold_Form = document.getElementById('threshold_form');
+    if (threshold_Form != null)  {
         threshold_bool = true;
     }
 
@@ -162,7 +162,7 @@ function drawTerrain(map, selectedPlotID = null) {
 
                 polygon.addListener('click', function () {
                     // Open Threshold
-                    if (thresholdForm) {
+                    if (threshold_Form) {
                         charge_thresholds_values(`${plot.id}`);
                     } 
 
