@@ -5,21 +5,15 @@
  *   STATE:          DONE
  *  ---------------------------------------------------------------- */
 
-function addPlotPage() {
-    let plotName = document.getElementsByTagName("input").namedItem("plotName").value;
-
-    window.location = "addPlot.html?" + plotName;
-}
-
 /*Add user function */
 function add_user() {
     let user = new FormData()
-    let input = document.getElementById("formUser").getElementsByTagName("input");
-    user.append("name", input[0].value)
-    user.append("surname", input[1].value)
-    user.append("email", input[2].value)
-    user.append("pass", input[3].value)
-    user.append("role", document.getElementById("selectRole").value)
+    let input = document.getElementById("createUser").getElementsByTagName("div")[1].getElementsByTagName("input");
+    user.append("name", input[0].value);
+    user.append("surname", input[1].value);
+    user.append("email", input[2].value);
+    user.append("pass", input[3].value);
+    user.append("role", document.getElementById("newUserRoleId").value);
 
     fetch('../api/v1.0/add_user', {
         method: 'post',
@@ -27,9 +21,11 @@ function add_user() {
         body: user
     }).then(function(respuesta) {
         if (respuesta.status == 200) {
-            //location.href = "javascript:window.history.back();" //clicked page
+            alert("Usuario añadido correctamente. Haga click en Aceptar para recargar la página");
+            location.reload();
         } else {
-            // document.getElementById("error_msg").style.display = "block";
+            alert("Ha habido un error. Vuelva a intentarlo más tarde");
+            location.reload();
         }
     })
 }
@@ -39,31 +35,36 @@ var longitudes = [];
 var counterVertex = 0;
 var counterProbes = 0;
 
-function addCoord(typeCoord) {
-    let div = document.getElementById(typeCoord);
-    let input = div.getElementsByTagName("input");
-    console.log(parseFloat(input[0].value))
-    console.log(parseFloat(input[1].value))
+function addCoord(userId, typeCoord) {
+    let div = document.getElementById("createPlot" + userId).getElementsByTagName("div")[1];
+
+    let coordDiv;
+    let counter;
+    let listDiv;
+    if (typeCoord == "vertex") {
+        coordDiv = div.getElementsByTagName("div")[1];
+        counter = div.getElementsByTagName("div")[2].getElementsByTagName("span")[0];
+        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[18].getElementsByTagName("div")[1];
+    } else {
+        coordDiv = div.getElementsByTagName("div")[4];
+        counter = div.getElementsByTagName("div")[5].getElementsByTagName("span")[0];
+        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[18].getElementsByTagName("div")[2];
+    }
+
+    let input = coordDiv.getElementsByTagName("input");
+
     if (isNaN(parseFloat(input[0].value)) || isNaN(parseFloat(input[1].value))) {
         alert("No puede haber un campo vacío")
     } else {
-        for (let i = 0; i < input.length; i++) {
-            let add = document.getElementsByName(typeCoord)[0];
-            add.onclick = function() {
-                if (typeCoord == "div-polygons") {
-                    counterVertex++;
-                    add.getElementsByTagName("p")[1].innerHTML = "Vértices: " + counterVertex;
-                } else {
-                    counterProbes++;
-                    add.getElementsByTagName("p")[1].innerHTML = "Sondas: " + counterProbes
-                }
-            }
-            if (i % 2 == 0) {
-                latitudes.push(parseFloat(input[i].value));
-            } else {
-                longitudes.push(parseFloat(input[i].value))
-            }
-            div.innerHTML = "<input type='text' class='polygons input-login' placeholder='Latitud'><input type='text' class='polygons input-login' placeholder='Longitud'>";
+        listDiv.innerHTML += "<input class='input-login' type='text' name='latitude' placeholder='Latitud' value='" + input[0].value + "' required><input class='input-login' type='text' name='longitude' placeholder='Longitud' value='" + input[1].value + "' required>";
+
+        coordDiv.innerHTML = "<input class='input-login' type='text' name='latitude' placeholder='Latitud' required><input class='input-login' type='text' name='longitude' placeholder='Longitud' required>";
+        if (typeCoord == "vertex") {
+            counterVertex++;
+            counter.innerHTML = "Vértices: " + counterVertex + " (mín:3)";
+        } else {
+            counterProbes++;
+            counter.innerHTML = "Sondas: " + counterProbes + " (mín:1)";
         }
     }
 }

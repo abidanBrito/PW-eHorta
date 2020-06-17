@@ -11,24 +11,34 @@ function filterFunction() {
     // Lo convertimos a mayúsculas para que no importen 
     filter = input.value.toUpperCase();
     // Recogemos la tabla de la que vamos a buscar y filtrar los datos
-    table = document.getElementById("admin_table");
+    table = document.getElementById("usersList");
     // Cogemos cada elemento que tiene la tabla
-    tr = table.getElementsByTagName("tr");
+    tr = table.getElementsByClassName("user-info");
     for (i = 0; i < tr.length; i++) {
         //Miramos en su primer td (en el primero está el nombre y en el segundo el botón de editar)
-        td = tr[i].getElementsByTagName("td")[1];
-        tdUser = tr[0].getElementsByTagName("td")[1].getAttribute("name");
-        tdPlot = tr[tr.length - 2].getElementsByTagName("td")[1].getAttribute("name");
+        td = tr[i].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("p")[0];
+        email = tr[i].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("p")[1];
         if (td) {
             // Miramos el texto que contiene ese td
             txtValue = td.innerText;
             //Pasamos ese texto a mayúsculas para que no importen y miramos si se encuentra (si no se encuentra desaparece)
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "table-row";
+                tr[i].style.display = "flex";
             } else {
                 tr[i].style.display = "none";
             }
         }
+        if (email) {
+            // Miramos el texto que contiene ese td
+            txtValue = email.innerText;
+            //Pasamos ese texto a mayúsculas para que no importen y miramos si se encuentra (si no se encuentra desaparece)
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "flex";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+
     }
 }
 

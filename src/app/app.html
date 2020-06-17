@@ -1,3 +1,9 @@
+<!-- ----------------------------------------------------------------
+*    AUTHOR:         Abidan Brito Clavijo
+*    FILE:           app.html
+*    DATE:           13/06/2020
+*    STATE:          WIP
+*    ---------------------------------------------------------------- -->
 <!DOCTYPE html>
 
 <html lang="es">
@@ -12,11 +18,9 @@
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" href="css/common_style.css">
     <link rel="stylesheet" href="css/app_style.css">
-    <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
     <title>e-Horta</title>
-    <script src="js/restringir_acceso.js"></script>
-    <script src="js/delete_sesion.js"></script>
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 </head>
@@ -28,7 +32,6 @@
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
         </a>
-
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
@@ -62,44 +65,8 @@
 
     <div id="map-table">
         <div id="tab-head-user">
-            <div id="username">
-               <!-- user será el nombre del usuario de la sesion -->
-                <h2>Bienvenido camarada</h2>
-                
-            </div>
-            <!--
-                <select id="select-css" onchange="location = 'javascript:centerPlot('+this.value+')'">
-    
-                    <option selected="#" disable selected hidden>Seleccione parcela...</option>
-    
-                </select>
-            -->
-            <!-- EMPIEZA POP UP AÑADIR PARCELA -->
-
-            <div class="form-popup" id="my-form" style="border-radius: 15px;margin-left: 10px;">
-                <form action="/action_page.php" class="form-container">
-                    <div>
-                        <a href='javascript:closeForm()' id="button_close_pop" style="display: flex;align-content: flex-end;"><img src="img/close.png" alt="Cerrar"></a>
-                    </div>
-                    <label for="name"><b>Nombre</b></label>
-                    <input type="text" placeholder="Nombre parcela" name="name">
-
-                    <label for="coordenada-X"><b>Coordenada-X</b></label>
-                    <input type="text" placeholder="Coordenada-X" name="coordenada-X">
-
-                    <label for="coordenada-Y"><b>Coordenada-Y</b></label>
-                    <input type="text" placeholder="Coordenada-Y" name="coordenada-Y">
-
-                    <button type="submit" class="btn">Aplicar</button>
-                    <!--button type="button" class="btn cancel" onclick="closeForm()">Close</button-->
-                </form>
-            </div>
-
-            <!-- Acaba POP UP  -->
-
             <div id="tab">
                 <table class="user-table">
-
                     <thead>
                         <tr>
                             <!-- <th scope="col">rewrt</th>*/-->
@@ -107,7 +74,6 @@
                         </tr>
                     </thead>
                     <tbody id="fields">
-
                     </tbody>
                 </table>
             </div>
@@ -121,76 +87,126 @@
             PlotsController.init();
         </script>
 
-
-        <section id="map" class="map">
-            <script src="js/map.js"></script>
-            <script src="js/delete.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
-            </script>
-        </section>
-
+        <article id="map-container">
+            <div id="map-floating-panel">
+                <p id="actionText">Seleccione un campo</p>
+            </div>
+            <section id="map" class="map">
+                <script src="js/map.js"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
+                </script>
+            </section>
+        </article>
     </div>
 
     <!------------------------>
-    <!------------------------>
-    <div id="app">
-       <section  id="open-map" >
+    <main id="app">
         <!-- Boton para abrir el mapa -->
-            <button onclick="openMap()"><img src="img/mapa.svg" alt="icono mapa"><span>Volver al mapa</span></button>
-            
-       </section>
-        <!-- Selectores de fechas móvil-->
-        <section id="dates-mobile">
-            <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
-            <div class="bar"></div>
-            <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
-            
-        </section>
-        <script src="js/date_selector.js"></script>
+        <div class="options">
+            <a class="go-back" onclick="drawMap();"><p>Volver</p></a>
+            <a class="compare-probes" onclick=""><p>Comparar</p></a>      
+        </div>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
         <div id="position-number">
-            <span>Sonda: </span>
-            <span id="selected-probe"></span>
+            <h2>Sonda <span id="selected-probe"></span></h2>
         </div>
 
+        <!-- Selectores de fechas móvil-->
+        <section id="dates-mobile">
+            <input id="start-date" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+            <div class="bar"></div>
+            <input id="end-date" placeholder="Fecha final" type="text" onfocus="(this.type='date')">
+        </section>
+    
         <!-- Gráfica -->
-        <div class="chart-container">
-            <canvas id="chart"></canvas>
+        <div id="chart-container">
+            <canvas id="myChart" name="gráfica de magnitudes"></canvas>
         </div>
         
         <section id="desktop-controls">
         <!-- Selectores de fechas desktop-->
             <div id="dates">
-                <input id='start-date' placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
+                <input id="start-date-desktop" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">
                 <div class="bar"></div>
-                <input id='end-date' placeholder="Fecha final" class="textbox-n" type="text" onfocus="(this.type='date')">
+                <input id="start-date-desktop" placeholder="Fecha final" type="text" onfocus="(this.type='date')">
             </div>
             
             <!-- Botones movil -->
             <div id="measurements">
-                <button id="desktop-btn-hum" class="measure-btn-active" onclick="activateDesktopButton(this)"><img src="img/datalogger/humidity.svg" alt="botón humedad">Humedad</button>
-                <button id="desktop-btn-tem" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/temperature.svg" alt="botón temperatura">Temperatura</button>
-                <button id="desktop-btn-lum" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad">Luminosidad</button>
-                <button id="desktop-btn-rai" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/rainfall.svg" alt="botón lluvia">Precipitación</button>
-                <button id="desktop-btn-sal" class="measure-btn" onclick="activateDesktopButton(this)"><img src="img/datalogger/salinity.svg" alt="botón salinidad">Salinidad</button>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-hum" class="measure-btn" onclick="toggleButton(this);">
+                        <img src="img/datalogger/humidity.svg" alt="botón humedad">
+                    </button>
+                    <p>Humedad (%)</p>                    
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-tem" class="measure-btn" onclick="toggleButton(this);">
+                        <img src="img/datalogger/temperature.svg" alt="botón temperatura">
+                    </button>
+                    <p>Temperatura (º C)</p>
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-lum" class="measure-btn" onclick="toggleButton(this);">
+                        <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
+                    </button>
+                    <p>Luminosidad (%)</p>                   
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-rai" class="measure-btn" onclick="toggleButton(this);">
+                        <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
+                    </button>
+                    <p>Precipitaciones (mm)</p>
+                </div>
+                <div class="measurement-btn-container">
+                    <button id="desktop-btn-sal" class="measure-btn" onclick="toggleButton(this);">
+                        <img src="img/datalogger/salinity.svg" alt="botón salinidad">
+                    </button>
+                    <p>Salinidad (g/L)</p>
+                </div>
             </div>
         </section>
             
         <!-- Botones movil -->
         <div id="measurements-mobile">
-            <button id="mobile-btn-hum" class="measure-btn-active" onclick="activateMobileButton(this)"><img src="img/datalogger/humidity.svg" alt="botón humedad"></button>
-            <button id="mobile-btn-tem" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/temperature.svg" alt="botón temperatura"></button>
-            <button id="mobile-btn-lum" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/luminosity.svg" alt="botón luminosidad"></button>
-            <button id="mobile-btn-rai" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/rainfall.svg" alt="botón lluvia"></button>
-            <button id="mobile-btn-sal" class="measure-btn" onclick="activateMobileButton(this)"><img src="img/datalogger/salinity.svg" alt="botón salinidad"></button>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-hum" class="measure-btn" onclick="toggleButton(this);">
+                    <img src="img/datalogger/humidity.svg" alt="botón humedad">
+                </button>
+                <p>%</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-tem" class="measure-btn" onclick="toggleButton(this);">
+                    <img src="img/datalogger/temperature.svg" alt="botón temperatura">
+                </button>
+                <p>º C</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-lum" class="measure-btn" onclick="toggleButton(this);">
+                    <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
+                </button>
+                <p>%</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-rai" class="measure-btn" onclick="toggleButton(this);">
+                    <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
+                </button>
+                <p>mm</p>
+            </div>
+            <div class="measurement-btn-container">
+                <button id="mobile-btn-sal" class="measure-btn" onclick="toggleButton(this);">
+                    <img src="img/datalogger/salinity.svg" alt="botón salinidad">
+                </button>
+                <p>g/L</p>
+            </div>
         </div>
-        
-    </div>
+    </main>
+
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
-    <script src="js/pop-manager.js"></script>
     <script src="js/delete.js"></script>
     <script src="js/checkbox_list.js"></script>
+    <script src="js/restringir_acceso.js"></script>
+    <script src="js/delete_sesion.js"></script>
 </body>
 
 </html>

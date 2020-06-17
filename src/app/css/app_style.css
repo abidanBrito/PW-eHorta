@@ -1,20 +1,14 @@
 /* ----------------------------------------------------------------
-*   AUTHOR:         Luis Belloch, Daniel Burruchaga, Pablo Enguix,
-*                   Jorge Grau, Abidán Brito
+*   AUTHOR:         Luis Belloch, Abidán Brito, Pablo Enguix,
+*                   Jorge Grau, Daniel Burruchaga
 *   FILE:           app_style.css
-*   DATE:           24/04/2020
+*   DATE:           13/06/2020
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */
 
-
 /* ------------------ */
-
-
 /* -- Variables -- */
-
-
 /* ------------------ */
-
 :root {
     --principal-color: #333333;
     --secondary-color: #DDDDDD;
@@ -25,36 +19,286 @@
 }
 
 /* ------------------ */
-
-
 /* ------------------ */
-
-
 /* --- ADMIN.HTML --- */
-
-
 /* ------------------ */
+.admin_page .collapse.show {
+    display: block;
+}
 
+.admin_page p {
+    margin: 0;
+}
 
+.admin_page .arriba {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin_page .arriba i {
+    color: #333333;
+}
+
+.admin_page .user-info,
+.admin_page #createUser {
+    width: 300px;
+    flex-direction: column;
+    background-color: #333333;
+    border-radius: 15px;
+    color: #f8f8f8;
+    padding: 7px 15px;
+    margin: auto;
+}
+
+.admin_page .user-info {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.admin_page #createUser .newUserData {
+    width: 252px;
+    margin: 0 auto;
+}
+
+.admin_page .general_info {
+    width: 275px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.admin_page .user-data {
+    width: inherit;
+}
+
+.admin_page .options {
+    display: flex;
+}
+
+.admin_page .options i {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.admin_page .input-group {
+    background-color: #f8f8f8;
+    margin: 1rem auto;
+}
+
+.admin_page .editUser,
+.admin_page .moreInfo {
+    margin-top: 10px;
+    flex-direction: column;
+    margin: auto;
+}
+
+.admin_page .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 270px;
+    margin-bottom: 1.25rem;
+}
+
+.admin_page .editUser .editData,
+.admin_page .moreInfo .plots,
+.admin_page .createPlot,
+.admin_page .previewMap {
+    flex-direction: column;
+    margin: auto;
+    width: 252px;
+}
+
+.admin_page input {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.admin_page h3 {
+    margin: 0 auto;
+}
+
+.admin_page .fa-angle-left {
+    font-size: 1.5rem;
+}
+
+.admin_page .roleId,
+.admin_page .admin_page #newUserRoleId {
+    background-color: #dddddd;
+    color: #333333;
+    width: 252px;
+}
+
+.admin_page .moreInfo p {
+    margin-bottom: 1rem;
+}
+
+.admin_page .moreInfo button {
+    border: none;
+    box-shadow: none;
+    min-width: fit-content;
+    width: 93px;
+    padding: 2px;
+    margin: 0;
+    margin-bottom: 0.8rem;
+}
+
+.admin_page .plots,
+.admin_page .allPlots {
+    height: 108.8px;
+    overflow: scroll;
+}
+
+.admin_page .plots table,
+.admin_page .allPlots table {
+    width: 224px;
+    margin: auto;
+    background-color: #dddddd;
+    text-align: center;
+    color: #333333;
+}
+
+.admin_page .plots table tr,
+.admin_page .allPlots table tr {
+    border: 1px solid #333333;
+    font-size: 18px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.admin_page .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 252px;
+    margin-top: 5px;
+}
+
+.admin_page .button {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.admin_page button {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 252px !important;
+    min-width: 0 !important;
+    width: 96px;
+    font-size: 13px;
+    padding: 4px;
+}
+
+.admin_page input[type="checkbox"] {
+    display: initial;
+}
+
+.admin_page input[name="latitude"],
+.admin_page input[name="longitude"] {
+    width: 108px;
+}
+
+.admin_page .polygonInfo,
+.admin_page .probeInfo,
+.admin_page .addVertex,
+.admin_page .addProbe {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin_page .vertexPlotList,
+.admin_page .vertexProbeList {
+    width: 252px;
+}
+
+.admin_page .vertexPlotList input[name="latitude"],
+.admin_page .vertexProbeList input[name="latitude"] {
+    margin-right: 36px;
+}
+
+.admin_page .addVertex,
+.admin_page .addProbe {
+    flex-direction: row-reverse;
+}
+
+.admin_page .plotForm {
+    width: 252px;
+    margin: auto;
+}
+
+.admin_page input:focus {
+    outline: none;
+    color: #dddddd;
+    border-color: #dddddd;
+}
+
+.admin_page .input-login {
+    height: 37px;
+}
+
+.admin_page .createPlotTitles {
+    display: flex;
+    justify-content: center;
+}
+
+.admin_page .addVertex {
+    margin-bottom: 1rem;
+}
+
+.admin_page .addVertex button,
+.admin_page .addProbe button,
+.admin_page .createPlot .buttons button {
+    background-color: transparent;
+    color: #3D96E8;
+    border: 1px solid #3D96E8 !important;
+    border-radius: 1.5rem;
+}
+
+.admin_page .undo-changes {
+    padding-top: 4px;
+    color: #a0a0a0;
+}
+
+.admin_page .counter {
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.admin_page .createPlotTitles {
+    color: #f8f8f8;
+}
+
+.admin_page .addMap {
+    width: 270px;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid wheat;
+}
+
+.admin_page #createUser .title {
+    margin-top: 1rem;
+}
+
+.admin_page hr {
+    border: 1px solid #808080;
+}
 /*   ADMIN PAGE.html  */
-
 .page {
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 75px;
 }
 
-
 /*Admin Images*/
-
 .admin_img {
     width: 45px;
     margin-left: 15px;
 }
 
-
 /*Admin filter buttons container*/
-
 #buttons_div {
     display: flex;
     justify-content: space-around;
@@ -66,7 +310,6 @@
 
 
 /* Add/delete users/plots buttons container */
-
 #div_add_del {
     display: flex;
     flex-direction: row;
@@ -74,9 +317,7 @@
     justify-content: space-between;
 }
 
-
 /*Buttons add / delete*/
-
 .buttons_Add_del {
     height: 34px;
     width: 123px;
@@ -97,9 +338,7 @@
     color: white;
 }
 
-
 /* Add users/plots accordion style */
-
 .collapse.show {
     display: flex;
 }
@@ -206,9 +445,7 @@
     background-size: .65em auto, 100%;
 }
 
-
 /*Admin Search*/
-
 input-group {
     margin-left: 20px;
     margin-right: 20px;
@@ -239,7 +476,6 @@ input-group {
 
 
 /* Users/plots table */
-
 #admin_table {
     border: 1px solid #ccc;
     background-color: #f8f8f8;
@@ -280,47 +516,45 @@ input-group {
     text-transform: uppercase;
 }
 
-
 /* Admin paragraphs */
-
 #admin_p {
     margin-right: 10px;
     font-weight: bold;
     margin-right: 5px;
 }
 
-
 /* Welcome text */
-
 #admin_h2 {
     display: flex;
     text-align: center;
     justify-content: center;
 }
 
-
 /*----------------------------------- ADMIN Mobile version --------------------------------------*/
-
 @media screen and (max-width: 740px) {
     .admin_page {
         overflow: scroll;
     }
+
     .page {
         display: flex;
         flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
     }
+
     #div_add_del {
         display: flex;
         flex-direction: row;
         margin-left: 3px;
         margin-bottom: 10px;
     }
+
     .buttons_Add_del {
         margin-bottom: 5px;
         font-size: 18px;
     }
+
     /*Admin Search Mobile*/
     #search_mobile {
         display: flex;
@@ -329,14 +563,17 @@ input-group {
         padding-right: 5px;
         border-radius: 10px;
     }
+
     #search_mobile input {
         border: none;
         background: none;
     }
+
     #search_pc {
         display: none;
         margin-left: 20px;
     }
+
     /*Admin Table Mobile*/
     #admin_table {
         margin-left: auto;
@@ -347,68 +584,83 @@ input-group {
         border-spacing: 0;
         background-color: #fff;
     }
+
     #admin_table td {
         border-bottom: 1px solid #ccc;
     }
+
     #admin_table tr:active {
         opacity: 0.7;
         visibility: visible;
         cursor: pointer;
     }
+
     .content_row:active {
         background: rgba(179, 147, 162, 0.8);
     }
+
     /* Admin paragraph */
     #admin_p {
         font-size: 15px;
     }
+
     /*Admin Images*/
     .admin_img {
         width: 45px;
         margin-left: 20px;
     }
+
     #search_img {
         width: 30px;
         height: 30px;
         margin: auto;
     }
+
     /*Admin popups*/
     #divAddUser,
     #divAddPlot {
         margin: 15px auto;
     }
+
     #addUser,
     #addPlot {
         width: 280px;
         padding: 0px 10px 10px 10px;
     }
+
     #preview {
         width: 280px;
         padding: 0px 10px 0px 0px;
     }
+
     #addUser input,
     #addPlot input {
         width: 260px;
         font-size: 1rem;
     }
+
     #addPlot #div-polygons,
     #addPlot #div-probes {
         flex-direction: column;
         align-items: center;
     }
+    
     #addPlot .polygons,
     #addPlot .probes {
         width: 200px;
     }
+
     .sondas {
         margin-top: 2.5rem;
         margin-bottom: 0;
     }
+
     #addMap {
         width: 278px;
         height: 407px;
         border-radius: 20px;
     }
+
     .undo {
         width: 24px;
         height: 24px;
@@ -417,17 +669,17 @@ input-group {
         display: flex;
         cursor: pointer;
     }
+
     .plot-buttons button {
         font-size: 12px;
     }
+
     .plot-buttons .button {
         padding: 7px 0.5rem;
     }
 }
 
-
 /*Resoluciones mas bajas */
-
 @media (max-width: 300px) {
     #div_add_del {
         display: flex;
@@ -435,16 +687,19 @@ input-group {
         margin-left: 0px;
         margin-bottom: 10px;
     }
+
     .buttons_Add_del {
         /* Admin Buttons Add/delete */
         margin-bottom: 5px;
         font-size: 12px;
         width: 80px;
     }
+
     #admin_p {
         /* Admin paragraph */
         margin-bottom: 0px;
     }
+
     #form_filter {
         /* Admin Search */
         display: flex;
@@ -455,16 +710,9 @@ input-group {
 
 
 /* ------------------ */
-
-
 /* -- APP.HTML -- */
-
-
 /* ------------------ */
-
-
 /* Graph zone */
-
 #app {
     /*For bugfixing when switching between desktop and mobile*/
     display: block;
@@ -474,9 +722,40 @@ input-group {
     margin-right: 4em;
 }
 
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.go-back,
+.compare-probes {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.go-back::before {
+    content: "\f053";
+    font-family: "iconos";
+    color: #333333;
+    font-size: .9rem;
+    position: relative;
+    margin-right: .5rem;
+}
+
+.compare-probes::before {
+    content: "\f362";
+    font-family: "iconos";
+    color: #333333;
+    font-size: .9rem;
+    position: relative;
+    margin-right: .5rem;
+}
 
 /* Top region with map and plot list */
-
 #map-table {
     display: flex;
     flex-direction: row-reverse;
@@ -486,40 +765,59 @@ input-group {
     margin-right: 4em;
 }
 
+#map-container {
+    margin-left: 9em;
+}
 
 /* Google maps, user and map for adding plots */
 #map {
-    width: 100vw;
+    width: 80vw;
+    height: 300px;
 }
 
+#map-floating-panel {
+    width: 80vw;
+    height: 50px;
+    position: fixed;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);    
+    color: #dddddd;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map-floating-panel p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    z-index: 2;
+    margin: 0;
+    width: 70%;
+}
+
+#map-floating-panel p span {
+    font-size: 1.1rem;
+}
 
 /* ------------------ */
-
-
 /* -- Graphs -- */
-
-
 /* ------------------ */
-
 
 /* Los selectores de fechas tienen un orden distinto en movil y ordenador */
-
 #desktop-controls {
     display: flex;
     margin-bottom: 20px;
 }
 
-
 /* Hidden in desktop mode */
-
-#open-map,
 #dates-mobile {
     display: none;
+    cursor: pointer;
 }
 
-
 /* Date selectors father */
-
 #dates {
     display: block;
     margin-bottom: 5px;
@@ -527,9 +825,7 @@ input-group {
     align-items: center;
 }
 
-
 /* Date selectors */
-
 #dates input {
     font-size: 21px;
     width: 143px;
@@ -544,139 +840,121 @@ input-group {
     border-color: mediumpurple;
 }
 
-
 /* Date selectors separator */
-
 .bar {
     width: 3px;
     height: 40px;
-    margin: 10px;
-    background-color: black;
+    margin: 0 2rem;
+    background: #808080;
 }
 
-
 /* Los botones de medidas se separan en dos partes, yaq que tienen una dispoción diferente en movil y ordenador */
-
-
 /* Botones de medidas en ordenador */
-
 #measurements {
     display: block;
     width: 100%;
     display: flex;
-    margin-top: 6px;
-    margin-left: 100px;
-    margin-right: 150px;
+    margin-top: 5px;
+    margin-left: 5rem;
     justify-content: space-between;
 }
 
-
 /* Botones de medidas en móvil */
-
 #measurements-mobile {
     display: none;
 }
 
+.measurement-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.measurement-btn-container p {
+    font-size: 14px;
+    color: #808080;
+    margin-top: .25rem;
+}
 
 /* Incluye icono y texto */
-
 .measure-btn {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 1px solid #757575;
+    border: 2px solid #757575;
     background-color: transparent;
 }
-
 
 /* Icons inside the buttons */
-
-.measure-btn img {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 75%;
-    height: 75%;
+.measure-btn img,
+.measure-btn-active img {
+    width: 70%;
+    height: 70%;
 }
-
 
 /* Cuando el botón está activado */
-
 .measure-btn-active {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 1px solid blue;
+    border: 2px solid #757575;
     background-color: transparent;
-    
 }
-
-
-/* Icons inside the active button */
-
-.measure-btn-active img {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 75%;
-    height: 75%;
-}
-
 
 /* Father containing text and a number given from map.js */
-
 #position-number {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+
+#position-number h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 1rem 0;
 }
 
 
 /* Chart.js container */
-
-.chart-container {
+#chart-container {
     width: 100%;
-    height: 420px;
+    height: 58.5vh;
+    margin: .2rem 0;
+    margin-left: -10px;
 }
 
-
 /* Hidden in desktop mode */
-
 #select-css {
     display: none;
 }
 
-
 /* Plot names from plots_list.js */
-
 .td-user a {
     text-decoration: none;
     color: black;
 }
 
-
 /*User tables*/
-
 .tab-head-user {
     display: flex;
     flex-direction: column
 }
 
-
 /* User name father */
-
 #username {
     display: flex;
     flex-direction: row;
     align-self: center;
 }
 
-
 /* User name itself */
-
 #username h2 {
     font-size: 20px;
     display: flex;
@@ -684,9 +962,7 @@ input-group {
     margin-left: 2rem;
 }
 
-
 /* user-table father */
-
 #tab {
     min-width: 200px;
     display: flex;
@@ -702,9 +978,7 @@ input-group {
     display: none;
 }
 
-
 /* where plots are shown from plots_list.js */
-
 .user-table {
     /* border: 1px solid #ccc;*/
     /* padding: 0; */
@@ -714,10 +988,7 @@ input-group {
 
 
 /* Table elements from plots_list */
-
-
 /* ------------------------------ */
-
 .user-table tr {
     background-color: #f8f8f8;
     padding: .35em;
@@ -760,7 +1031,6 @@ td a {
 
 
 /* =========================POPUP========================= */
-
 .form-popup {
     display: none;
     flex-flow: column;
@@ -780,9 +1050,7 @@ td a {
     border-radius: 10px;
 }
 
-
 /* Full-width input fields */
-
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -792,9 +1060,7 @@ td a {
     background: #f1f1f1;
 }
 
-
 /* cuando presionas input */
-
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -812,16 +1078,13 @@ td a {
     opacity: 0.8;
 }
 
-
 /* Add a red background color to the cancel button */
-
 .form-container .cancel {
     background-color: red;
 }
 
 
 /* Add some hover effects to buttons */
-
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -835,8 +1098,6 @@ td a {
     width: 40px;
     height: 40px;
 }
-
-
 /* =========================POPUP========================= */
 
 .form-popup {
@@ -854,13 +1115,9 @@ td a {
     align-items: center;
     margin-right: 5px;
     background-color: white;
-    border: 3px solid #f1f1f1;
-    border-radius: 10px;
 }
 
-
 /* Full-width input fields */
-
 .form-container input[type=text] {
     width: 100%;
     padding: 15px;
@@ -870,9 +1127,7 @@ td a {
     background: #f1f1f1;
 }
 
-
 /* cuando presionas input */
-
 .form-container input[type=text]:focus {
     background-color: #f1f1f1;
     outline: none;
@@ -890,16 +1145,12 @@ td a {
     opacity: 0.8;
 }
 
-
 /* Add a red background color to the cancel button */
-
 .form-container .cancel {
     background-color: red;
 }
 
-
 /* Add some hover effects to buttons */
-
 .form-container .btn:hover,
 .open-button:hover {
     opacity: 1;
@@ -916,52 +1167,66 @@ td a {
 
 
 /*-----------------------------------Mobile version--------------------------------------*/
-
 @media (max-width: 740px) {
     /*-----------------------------------*/
+    .go-back,
+    .compare-probes {
+        display: flex;
+    }
+
     /*see other fields*/
     .menu {
         width: 20rem;
         height: 11.9375rem;
     }
+
     .menu img {
         display: inline-block;
     }
+
     .menu strong {
         font-size: 1.2rem;
         padding: 0;
     }
+
     .menu ul {
         display: none;
         max-height: 6.9375rem;
     }
+
     /*Date filter*/
     .dates {
         font-size: 1rem;
         margin-bottom: 5px;
     }
+
     .dates input {
         font-size: 0.73rem;
     }
+
     /*Graph*/
     .data {
         width: 20rem;
         height: 11.9375rem;
     }
+
     /*buttons*/
     #button {
         width: 20rem;
         height: 11.9375rem;
     }
+
     #button .buttons {
         width: 2.3125rem;
         height: 2.3125rem;
     }
+    
     #button img {
         width: 1.6875rem;
         height: 1.6875rem;
         margin: 0 auto;
     }
+
     /*-------------------------*/
     /*POPUP*/
     /*-------------------------*/
@@ -970,23 +1235,35 @@ td a {
         height: 40px;
         margin-left: 10em;
     }
+
     /*-----------------------------------Mobile version--------------------------------------*/
     @media (max-width: 740px) {
         /* Hide scrollbar */
         body {
             overflow: hidden;
         }
+
         /* Bienvenido */
         #username h2 {
             font-size: 24px;
             width: 100%;
             margin-top: 15px;
             margin-bottom: 15px;
+        }   
+
+        #map-container {
+            margin: 0;
+        }
+
+        #map-floating-panel {
+            top: 45px;
+            height: 95px;
+            width: 100vw;
         }
 
         /* Mapa de posiciones grande */
-        .map {
-            width: 100%;
+        #map {
+            width: 100vw;
             height: 80%;
             position: sticky;
             padding-top: 1rem;
@@ -1009,9 +1286,9 @@ td a {
             display: none;
             flex-direction: column;
             justify-content: center;
-            margin-left: 2em;
-            margin-right: 2em;
-            margin-top: 0;
+            margin-left: 1.75rem;
+            margin-right: 1.75rem;
+            margin-top: 4rem;
         }
 
         /* selectores de fechas escritorio */
@@ -1021,11 +1298,11 @@ td a {
 
         /* padre de los selectores en movil */
         #dates-mobile {
-            display: block;
-            margin-bottom: 5px;
-            align-items: center;
             display: flex;
-            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: .8rem;
         }
 
         /* los selectores en movil */
@@ -1043,41 +1320,14 @@ td a {
             border-color: var(--principal-color);
         }
 
-        /* botón para abrir y cerrar el mapa en movil, tiene un icono dentro */
-        #open-map {
-            display: block;
-        }
-
-        #open-map button {
-            width: 100%;
-            height: 32px;
-            background-color: transparent;
-            display: flex;
-            border: 1px solid black;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #open-map button span {
-            font-size: 18px;
-        }
-
-        /* el icono del boton de abrir y cerrar el mapa */
-        #open-map img {
-            width: 42px;
-            height: 33px;
-            padding-top: 2px;
-        }
         /* barra de separación de los selectores de fechas */
         .bar {
-            width: 3px;
-            margin: 10px;
+            width: 2px;
+            margin: 0 1.5rem;
             height: 20px;
-            background-color: black;
+            background-color: #808080;
         }
+
         /* posicion seleccionada */
         #positionNumber {
             margin-top: 5px;
@@ -1087,80 +1337,103 @@ td a {
             flex-direction: row;
             color: var(--principal-color);
         }
+
         /* chart.js */
-        .chart-container {
-            width: 100%;
-            height: 430px;
+        #chart-container {
             margin-bottom: 1em;
         }
+
         /*botones medidas*/
         #measurements-mobile {
             width: 100%;
-            margin-top: 30px;
+            margin: 1rem 0;
             display: flex;
             justify-content: space-between;
         }
+
+        /* Ditch the box outline */
+        .measure-btn:focus,
+        .measure-btn-active:focus {
+            outline: none;
+        } 
+
         .measure-btn {
             width: 41px;
             height: 41px;
             border-radius: 100%;
-            border: 1px solid #757575;
             background-color: transparent;
         }
+
         /*active buttons*/
         .measure-btn-active {
             width: 41px;
             height: 41px;
             border-radius: 100%;
-            border: 1px solid blue;
             background-color: transparent;
         }
+
         /*general*/
         #map-table {
             flex-direction: column;
-            height: 100%;
             width: 100%;
             margin: 0;
         }
+
+        #map {
+            height: calc(100vh - 45px);
+            position: absolute;
+            top: 45px;
+        }
+
         /*-----------------------------------*/
+        
         /*see other fields*/
         .menu {
             width: 20rem;
             height: 11.9375rem;
         }
+
         .menu img {
             display: inline-block;
         }
+
         .menu strong {
             font-size: 1.2rem;
             padding: 0;
         }
+
         .menu ul {
             display: none;
             max-height: 6.9375rem;
         }
+
         /*Date filter*/
         .dates {
             font-size: 1rem;
             margin-bottom: 5px;
         }
+
         .dates input {
             font-size: 0.73rem;
         }
+
         /*Graph*/
         .data {
             width: 20rem;
             height: 11.9375rem;
         }
+
         /*buttons*/
         #button {
             width: 20rem;
             height: 11.9375rem;
         }
+
         #button .buttons {
             width: 2.3125rem;
             height: 2.3125rem;
         }
+
         #button img {
             width: 1.6875rem;
             height: 1.6875rem;
@@ -1169,15 +1442,9 @@ td a {
     }
 }
 
-
 /* ------------------ */
-
-
 /* -- WEATHER.HTML -- */
-
-
 /* ------------------ */
-
 #weather-background {
     background-color: #f8f8f8;
     width: 100%;
@@ -1217,9 +1484,11 @@ td a {
     background:#ffffff url("../img/triangle.svg") no-repeat;
     background-position: right 5px top 50%;
 }
+
 #select-weather::-ms-expand {
     display: none;
 }
+
 #select-weather option {
     font-weight: normal;
 }
@@ -1236,6 +1505,7 @@ td a {
     justify-content: space-around;
     margin: 20px auto 0 auto;
 }
+
 /* Presented in a row of data columns */
 .day-data {
     display: flex;
@@ -1245,26 +1515,31 @@ td a {
     margin-left: 1rem;
     color: var(--secondary-color);
 }
+
 /* First column */
 .first-data-column {
     display: flex;
     flex-direction: column;
     align-content: center;
 }
+
 .first-data-column .day-icon {
     width: 58px;
 }
+
 /* The day shown */
 .day-text {
 
     margin-left: 10%;
 
 }
+
 /* Second column */
 .day-data .second-data-column {
     display: flex;
     flex-direction: column;
 }
+
 /* To separate text a bit, make it more readable */
 .day-data .second-data-column .prediction-temperature,
 .day-data .second-data-column .prediction-rainfall {
@@ -1272,6 +1547,7 @@ td a {
     align-items: center;
     margin-top: 0.5rem;
 }
+
 /* Icons sizes and separation from text */
 .day-data .second-data-column img {
     width: 29px;
@@ -1282,6 +1558,7 @@ td a {
 .misc-data {
     line-height: 26px;
 }
+
 /* Divisor bar between today prediction and future */
 .weather-separator {
     width: 85%;
@@ -1349,11 +1626,11 @@ td a {
 }
 
 /* For very small screens we enable overflow */
-@media (max-height: 740px) {
+/* @media (max-height: 740px) {
     body {
         overflow: auto;
     }
-}
+} */
 
 /*-----------------------------------Mobile version--------------------------------------*/
 @media (max-width: 740px) {
@@ -1376,6 +1653,7 @@ td a {
     
 }
 /* ------------------ */
+
 
 
 /* ------------------ */
@@ -1406,16 +1684,10 @@ td a {
 #plot_name_form {
     margin-bottom: 10px;
     font-size: 2.1rem;
-    color: var(--secondary-color);
+    color: #B7B7B7;
 
 }
 
-#threshold_close_img {
-    height: 45px;
-    place-self: flex-end;
-    display: none;
-    cursor: pointer;
-}
 
 #h3_edit_thresholds {
     font-size: 1.9rem;
@@ -1449,10 +1721,9 @@ td a {
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: var(--principal-color);
+    background-color: #333333;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
-    
 }
 
 .form-container input[type=text] {
@@ -1464,7 +1735,7 @@ td a {
     border-radius: 2px;
     background: #f1f1f1;
     text-align: center;
-    margin-left: 35px;
+    margin-left: 0px;
     margin-right: 15px;
 
 }
@@ -1502,7 +1773,7 @@ td a {
     display: flex;
     flex-direction: row;
     margin-left: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     margin-right: 25px;
 }
 
@@ -1512,11 +1783,12 @@ td a {
     flex-direction: column;
     align-items: center;
     width: 50px;
-    margin-left: 25px;
+    margin-left: 0px;
 }
 
 .threshold_img {
     width: 25px;
+    margin-left: 5px;
 }
 
 .threshold_labelMax {
@@ -1550,10 +1822,13 @@ td a {
 }
 
 .mapthres {
+    /*
     width: 100%;
     height: 550px;
     box-shadow: 0px 0px 5px 1px #959595;
+    border-radius: 10px;
     margin-right: 2em;
+    */
 }
 
 #mapthresDiv {
@@ -1565,13 +1840,146 @@ td a {
     margin-right: 4em;
     height: 550px;
 }
-#p_ok{
-    display:none;
-    color:#d3d3d3;
+
+.p_threshold {
+    color: #B7B7B7;
 }
+
+#p_ok {
+    display: none;
+    color: #B7B7B7;
+}
+
+#selection_plot_p {
+    text-align: center;
+}
+
+#title_threshold {
+    margin-top: 75px;
+    text-align: center;
+}
+
+#btn_submit_threshold {
+    margin-top: 5px;
+}
+
+.ui-slider-range {
+    background: #3D96E8;
+}
+
+.ui-slider-horizontal {
+    height: .38em;
+    margin-bottom: 15px;
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 17px;
+    height: 1em;
+    cursor: default;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+    border-radius: 7px;
+}
+
+.ui-widget-content {
+    border: 0px;
+    background: #919191;
+    margin-right: 20px;
+}
+
+#section_maptresh {
+    height: 100%;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.tittlethreshold {
+    display: flex;
+    top: -70px;
+    z-index: 2;
+    position: absolute;
+    text-align: center;
+    left: 100px;
+    color: white;
+}
+
+.subtitlethreshold {
+    top: 100px;
+    position: fixed;
+    left: 55px;
+    color: white;
+}
+
+#threshold_close {
+    margin-top: 50px;
+    position: absolute;
+    left: 28px;
+}
+
+#maxSalinity {
+    border: 0;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+#maxHumedity {
+    border: 0;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.slider-rangeAll {
+    width: 300px;
+}
+
 /*----------------------------------- Threshold Mobile version --------------------------------------*/
 
 @media screen and (max-width: 740px) {
+    #maxHumedity {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin-left: 35px;
+    }
+
+    #maxSalinity {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin-left: 35px;
+    }
+
+    /*.form-container input[type="text"] {}*/
+
+    .minInput {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+        margin: 0px;
+        margin-bottom: 15px;
+    }
+
+    .p_threshold {
+        color: #333333;
+        margin-left: 10px;
+    }
+
+    #title_threshold {
+        display: none;
+    }
+
+    #btn_submit_threshold {
+        margin-top: 25px;
+    }
+
     .form-container input {
         margin-left: 20px;
     }
@@ -1586,20 +1994,20 @@ td a {
 
     /* Mapa de posiciones grande */
     .mapthres {
-        width: 100%;
-        height: 100%;
-        margin-right: 0em;
-
+        width: 100vw;
+        height: 80%;
+        position: sticky;
+        padding-top: 1rem;
+        margin-top: 0;
+        bottom: 0;
     }
 
     #mapthresDiv {
-        margin-top: 0em;
+        margin: 0;
         height: 610px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        margin-left: 1px;
-        margin-right: 1px;
     }
 
     .threshold_labelMax b {
@@ -1609,22 +2017,25 @@ td a {
 
     .threshold_labelMin b {
         font-size: 0.8rem;
-                margin-left: 55px;
+        margin-left: 55px;
 
     }
 
     .div_inputs {
         display: flex;
         flex-direction: row;
-        margin-left: 25px;
+        margin-left: 0px;
         margin-right: 25px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     #plot_name_form {
+        color: #333;
         margin-bottom: 25px;
-        font-size: 2.1rem;
-        margin-top: 5px;
+        margin-top: 90px;
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: 1px;
     }
 
     #h3_edit_threshold {
@@ -1642,13 +2053,13 @@ td a {
     .form-container {
         display: none;
         flex-flow: column;
-        min-width: 360px;
-        width: 250px;
-        height: auto;
+        /*min-width: 360px;
+        width: 250px;*/
+        height: 120%;
         align-items: center;
-        background-color: var(--principal-color);
-        border: 3px solid #f1f1f1;
-        border-radius: 10px;
+        background-color: #F8F8F8;
+        border: 0;
+        border-radius: 0;
         margin-left: 5px;
     }
 
@@ -1663,10 +2074,8 @@ td a {
         background: #f1f1f1;
         text-align: center;
         margin-left: 40px;
-    }
-
-    #threshold_close_img {
-        display: block;
+        margin: 0px;
+        margin-bottom: 15px;
     }
 
     #table_edit {
@@ -1709,10 +2118,10 @@ td a {
     }
 }
 
-  /* -------------------------- */
- /*  -  notifications.HTML  -  */
-/* -------------------------- */
 
+/* -------------------------- */
+/*  -  notifications.HTML  -  */
+/* -------------------------- */
 /* ---- Ajustes basicos ---- */
 #alertas-base-button{
     display: none;
@@ -1753,7 +2162,6 @@ td a {
 }
     
 /* ---- Titulo de notificaciones ---- */
-    
 .h2-alertas{
     display: flex;
     flex-direction: row;
@@ -1788,8 +2196,7 @@ td a {
 }
 
 /* ---- Filtrado ---- */
-    
-.seccion-filtro-alerta{
+.seccion-filtro-alerta {
     width: 700px;
     height: 94vh;
     background-color: var(--principal-color);
@@ -1805,7 +2212,7 @@ td a {
     font-size: 22px;
 }
 
-.select-alertas{
+.select-alertas {
     font-size: 22px;
     width: 70%;
     height: 60px;
@@ -1817,7 +2224,7 @@ td a {
     margin-top: 10px;
 }  
 
-.mediciones{
+.mediciones {
     width: 100%;
     height: 8vh;
     background-color: beige;
@@ -1834,7 +2241,7 @@ td a {
     color: var(--secondary-color);
 }
     
-.dates-alert{
+.dates-alert {
     margin: 150px;
     display: flex;
     align-items: center;
@@ -1846,11 +2253,11 @@ td a {
 }
 
 
-.titulo-alertas{
+.titulo-alertas {
     margin-top: 20px;
 }
 
-.campos-alerta{
+.campos-alerta {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -1859,14 +2266,14 @@ td a {
     font-size: 22px;
 }
 
-.botones-alertas{
+.botones-alertas {
     align-items: center;
     display: flex;
     flex-direction: column;
     font-size: 22px;
 }
 
-.boton-alertas{
+.boton-alertas {
     border: 0px solid;
     width: 70%;
     align-self: center;
@@ -1950,13 +2357,13 @@ input[type="checkbox"] {
     border-radius: 10px;
 }
 
-.date-selector-notifications{
+.date-selector-notifications {
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
 
-.measurements-buttons-alert{
+.measurements-buttons-alert {
     width: 100%;
     display: flex;
     margin-top: 6px;
@@ -1964,19 +2371,19 @@ input[type="checkbox"] {
     font-size: 12px;
 }
 
-.images-alert{
+.images-alert {
     width: 25px;
 }
     
 /* ---- Alertas ---- */
-.body-alertas{
+.body-alertas {
     width: 100%;
     height: 80vh;
     background-color: #F8F8F8;
     overflow: auto;
 }
 
-.alertas-bloque{
+.alertas-bloque {
     background-color: #F8F8F8;
     display: flex;
     flex-direction: row;
@@ -1984,7 +2391,7 @@ input[type="checkbox"] {
     height: auto;
 }
 
-.bloque-alert{
+.bloque-alert {
     background-color: #F8F8F8;
     width: 50%;
     height: 50%;
@@ -1994,7 +2401,7 @@ input[type="checkbox"] {
     justify-content: center;
 }
 
-.notificacion-alert{
+.notificacion-alert {
     background-color: white;
     border: 2px solid var(--secondary-color);
     border-radius: 200px;
@@ -2009,12 +2416,12 @@ input[type="checkbox"] {
     align-items: center;
 }
 
-.main-alertas{
+.main-alertas {
     height: auto;
     overflow: hidden;
 }
 
-.secciones-alertas{
+.secciones-alertas {
     display: flex;
     width: 100%;
     height: auto;
@@ -2022,35 +2429,30 @@ input[type="checkbox"] {
     background-color: #F8F8F8;
 }
 
-.fecha{
+.fecha {
     flex-direction: column;
     display: flex;
 }
 
-.day{
+.day {
     font-size: 2rem;
 }
+
     
-  /* ----------------------------------------- */
- /*  -  Fin de notifications.HTML desktop  -  */
-/* ----------------------------------------- */
-    
-  /* --------------------------------- */
- /*  -  notifications.HTML tablet  -  */
+/* --------------------------------- */
+/*  -  notifications.HTML tablet  -  */
 /* --------------------------------- */    
-    
-    @media screen and (max-width: 850px) {
-        
-/* ---- Ajustes basicos ---- */
-    #alertas-base-button{
+@media screen and (max-width: 850px) {
+    /* ---- Ajustes basicos ---- */
+    #alertas-base-button {
         display: block;
     }
 
-    #alertas-desktop-button{
+    #alertas-desktop-button {
         display: none;
     }
 
-    .filtros-alertas{
+    .filtros-alertas {
         display: flex;
         border: 0px solid blue;
         border-radius: 30px;
@@ -2063,7 +2465,7 @@ input[type="checkbox"] {
 
     }
         
-    .volver-alertas{
+    .volver-alertas {
         display: flex;
         height: 20px;
         align-self: center;
@@ -2072,60 +2474,58 @@ input[type="checkbox"] {
         margin-left: 10px;
     }
     
-    #filterField{
+    #filterField {
         display: none;
     }
         
-/* ---- Titulo de notificaciones ---- */
-    
-    .header-alerta{
+    /* ---- Titulo de notificaciones ---- */
+    .header-alerta {
         flex-direction: column;
     }
         
-    .subheader-alertas{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
+    .subheader-alertas {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
             
-        }
-        
-    .ajustes-alertas{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-left: 10px;
-            margin-right: 10px;
-            }
-        
-    .h2-alertas{
-            justify-content: space-between;
-            margin-bottom: 15px;
-            margin-right: 18%;
     }
         
-    .title-alertas{
+    .ajustes-alertas {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+        
+    .h2-alertas {
+        justify-content: space-between;
+        margin-bottom: 15px;
+        margin-right: 18%;
+    }
+        
+    .title-alertas {
         margin-top: 10px;
         margin-bottom: 10px;
     }    
     
-/* ---- Filtrado ---- */
-    
-    .seccion-filtro-alerta{
-            width: 96%;
-            margin: auto;
-            background-color: var(--principal-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-            border: 1px solid black;
-            border-radius: 10px;
-            color: var(--secondary-color);
-            height: 94vh;
-            margin-top: 1.2vh;
-            font-size: 24px;
-        }
+    /* ---- Filtrado ---- */
+    .seccion-filtro-alerta {
+        width: 96%;
+        margin: auto;
+        background-color: var(--principal-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: var(--secondary-color);
+        height: 94vh;
+        margin-top: 1.2vh;
+        font-size: 24px;
+    }
         
     .dates-alert input {
         font-size: 24px;
@@ -2137,81 +2537,80 @@ input[type="checkbox"] {
         background-color: transparent;
         color: var(--secondary-color);
         margin-top: 10px;
-}
+    }
 
-    .dates-alert{
+    .dates-alert {
 	    margin-bottom: 5px;
 	    display: flex;
 	    align-items: center;
 	    flex-direction: column;
         font-size: 25px;
-}
+    }
         
-    .buttons-label{
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-        }
+    .buttons-label {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
         
     .buttons-label::before {
-            background-color: #F8F8F8;
-            color: white;
-            content: " ";
-            display: block;
-            border-radius: 50%;
-            border: 1px solid grey;
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 28px;
-            transition-duration: 0.4s;
-            transform: scale(0);
-            }
+        background-color: #F8F8F8;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        border: 1px solid grey;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+    }
         
-    .select-alertas{
-            margin-bottom: 0px;
-            margin-top: 20px;
-            font-size: 22px;
-        }
+    .select-alertas {
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-size: 22px;
+    }
         
-    .campos-alerta{
-            margin: 0px;
-            height: 70px;
-            font-size: 25px;
-        }
+    .campos-alerta {
+        margin: 0px;
+        height: 70px;
+        font-size: 25px;
+    }
          
-    .images-alert{
-            width: 35px;
-            }
+    .images-alert {
+        width: 35px;
+    }
        
-    .medida{
-            font-weight: bold;
-            }
+    .medida {
+        font-weight: bold;
+    }
         
-    .boton-alertas{
-            border: 0px solid;
-            width: 60%;
-            align-self: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 40px;
-            color: #F9F9F9;
-            background-color: #3D96E8;
-            font-size: 25px;
-            font-weight: bold;
-            }
+    .boton-alertas {
+        border: 0px solid;
+        width: 60%;
+        align-self: center;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 40px;
+        color: #F9F9F9;
+        background-color: #3D96E8;
+        font-size: 25px;
+        font-weight: bold;
+    }
     
-/* ---- Alertas ---- */           
-        
-    .bloque-alert{
+    /* ---- Alertas ---- */           
+    .bloque-alert {
         width: 100%;
         margin-bottom: 20px
     }
        
-    .notificacion-alert{
+    .notificacion-alert {
         width: 95%;
         height: 3.4rem;
         font-size: 25px;
@@ -2220,115 +2619,101 @@ input[type="checkbox"] {
         text-align: center;
         padding: 35px;
         padding-left: 25px; 
+    }     
+}
+
+/* ------------------------------- */
+/*  -  notifications.HTML base  -  */
+/* ------------------------------- */
+@media screen and (max-width: 550px) {    
+    /* ---- Ajustes basicos ---- */
+    /* ---- Titulo de notificaciones ---- */
+    .h2-alertas {
+        justify-content: space-between;
+        margin-right: 5%;
+        font-size: 2px;
+
     }
         
-}
+    .umbrales-alertas {
+        font-size: 16px;
+        width: 9rem;
+        justify-content: center;
+        margin: 0px;
+    }
+        
+    .ajustes-alertas {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
     
-  /* ---------------------------------------- */
- /*  -  Fin de notifications.HTML tablet  -  */
-/* ---------------------------------------- */
-    
-  /* ------------------------------- */
- /*  -  notifications.HTML base  -  */
-/* ------------------------------- */
+    .filtros-alertas {
+        display: flex;
+        width: 6rem;
+        font-size: 16px;
+    }
         
-    @media screen and (max-width: 550px) {
+    .subheader-alertas {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
         
-/* ---- Ajustes basicos ---- */
-
-
-    
-/* ---- Titulo de notificaciones ---- */
-    
-    .h2-alertas{
-            justify-content: space-between;
-            margin-right: 5%;
-            font-size: 2px;
-
-        }
+    /* ---- Filtrado ---- */
+    .seccion-filtro-alerta {
+        font-size: 14px;
+        height: 91.2vh;
+    }
         
-    .umbrales-alertas{
-            font-size: 16px;
-            width: 9rem;
-            justify-content: center;
-            margin: 0px;
-        }
-        
-    .ajustes-alertas{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-    
-    .filtros-alertas{
-            display: flex;
-            width: 6rem;
-            font-size: 16px;
-            }
-        
-    .subheader-alertas{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            
-        }
-        
-/* ---- Filtrado ---- */
-    
-    .seccion-filtro-alerta{
-            font-size: 14px;
-            height: 91.2vh;
-            }
-        
-    .volver-alertas{
+    .volver-alertas {
         height: 20px;
         align-self: center;
         font-size: 25px;
         margin-left: 10px;
         width: 15px;
-        }
+    }
         
-    .buttons-label{
+    .buttons-label {
         width: 50px;
         height: 50px;
         border-radius: 10px;
-        }
+    }
         
-    .select-alertas{
+    .select-alertas {
         margin-bottom: 0px;
         margin-top: 20px;
-        }
+    }
         
-    .campos-alerta{
+    .campos-alerta {
         margin: 0px;
         height: 70px;
-        }
+    }
         
-    .images-alert{
+    .images-alert {
         width: 22px;
-        }
+    }
         
-    .medida{
+    .medida {
         font-weight: bold;
-        }
+    }
         
-    .boton-alertas{
+    .boton-alertas {
         margin-bottom: 10px;
         padding: 10px;
         font-size: 18px;
-        }    
+    }    
     
-/* ---- Alertas ---- */ 
-    
-    .bloque-alert{
+    /* ---- Alertas ---- */ 
+    .bloque-alert {
         width: 100%;
         margin-bottom: 20px
-     }
+    }
         
-    .notificacion-alert{
+    .notificacion-alert {
         width: 95%;
         height: 3.4rem;
         font-size: 14px;
@@ -2337,10 +2722,5 @@ input[type="checkbox"] {
         text-align: center;
         padding: 20px;
         padding-left: 5px;
-    }
-    
+    }   
 }
-    
-  /* ---------------------------------- */
- /*  - Fin notifications.HTML base  -  */
-/* ---------------------------------- */

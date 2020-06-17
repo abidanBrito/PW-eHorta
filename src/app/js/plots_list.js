@@ -37,7 +37,7 @@ let ViewPlotsList = {
 
             this.table.innerHTML += "<tr class='content_row'><td class='tdUser' data-label='Empres'><a class='links_parcelas' href='javascript:centerPlot(" + `${plot.id}` + ")'id='plot_" + `${plot.id}` + "'>" + `${plot.name}` + '</td><td></a>' + "</td></tr>"
 
-            this.selector.innerHTML += "<option name='" + `${plot.id}` + "' value='" + `${plot.id}` + "'>" + `${plot.name}` + "</option>";
+            //this.selector.innerHTML += "<option name='" + `${plot.id}` + "' value='" + `${plot.id}` + "'>" + `${plot.name}` + "</option>";
         })
     }
 };

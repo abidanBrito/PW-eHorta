@@ -27,6 +27,11 @@ body {
     scroll-snap-type: y mandatory;
 }
 
+/* Load fonts */
+@font-face {
+    font-family: "iconos";
+    src: url("../fonts/Font\ Awesome\ 5\ Free-Solid-900.otf");
+}
 
 /* ------------- */
 /* -- TOP BAR -- */
@@ -34,13 +39,17 @@ body {
 header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 3;
     min-width: 100%;
     height: 45px;
     background-color: #333333;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#logo:focus {
+    outline: none;
 }
 
 #logo img {
@@ -86,19 +95,30 @@ header {
 
 /* Navbar icons container (login and burger) */
 .navbar-right {
-    display: none;
+    display: flex;
     align-items: center;
+}
+
+#menu-toggle,
+#login-icon {
+    display: none;
+}
+
+#login-icon {
+    outline: none;
 }
 
 #login-icon img {
     display: flex;
     height: 1rem;
+    margin-right: 1.25rem;
 }
 
 .menu-icon div {
-    width: 24px;
+    width: 22px;
     height: 2px;
-    margin: 5px 1.25rem;
+    margin: 5px 0;
+    margin-right: 1.25rem;
     cursor: pointer;
     background-color: #dddddd;
     transition: all 0.25s ease;
@@ -106,11 +126,12 @@ header {
 
 #lang-selector {
     position: absolute;
-    right: 0;
     background: #dddddd;
+    right: 0;
     z-index: 1300;
     top: 45px;
     display: none;
+    border-radius: .3rem;
 }
 
 /* Lang selector (links) */
@@ -125,12 +146,20 @@ header {
 }
 /* Opens lang selector when clicked */
 #globe-icon {
-    margin-left: 5rem;
-    align-self: center;
+    display: flex;
+    align-items: center;
+    height: 1rem;
 }
 
 #globe-icon:hover {
     cursor: pointer;
+}
+#globe-icon:focus {
+    outline: none;
+}
+#globe-icon img {
+    height: 100%;
+    margin: 0 0 0 5rem;
 }
 
 #lang-selector a:hover,
@@ -175,7 +204,8 @@ header {
     }
     
     #lang-selector {
-        right: 10%;
+        right: 1.2rem;
+        top: 40px;
     }
 
     /* Menu items (links) */
@@ -193,9 +223,17 @@ header {
         margin: 0px;
         padding: 0px;
     }
+    
+    #menu-toggle {
+        display: block;
+    }
 
     #login-icon {
         display: block;
+    }
+
+    #globe-icon img {
+        margin: 0 1.25rem;
     }
 }
 
@@ -210,7 +248,7 @@ header {
     overflow-y: hidden;
 }
 
-.login-hide {
+.hide-icon {
     opacity: 0;
 }
 
@@ -304,7 +342,6 @@ header {
 .black-filter {
     filter: invert(16%) sepia(0%) saturate(0%) hue-rotate(262deg) brightness(92%) contrast(86%);
 }
-
 
 /* ---------------- */
 /* -- index.html -- */
@@ -1089,7 +1126,6 @@ h3 {
     position: fixed;
     overflow-y: scroll;
     overflow: hidden;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* Main content */
