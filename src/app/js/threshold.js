@@ -137,65 +137,55 @@ CALL TO INITIALIZE
 
 function colorFilter(){
     if (screen.width < 745) {
-    
         document.getElementById("temperature_white").style.display = "none";
         document.getElementById("temperature_black").style.display = "flex";
     
-     document.getElementById("luminosity_white").style.display = "none";
+        document.getElementById("luminosity_white").style.display = "none";
         document.getElementById("luminosity_black").style.display = "flex";
     
-     document.getElementById("rainfall_white").style.display = "none";
+        document.getElementById("rainfall_white").style.display = "none";
         document.getElementById("rainfall_black").style.display = "flex";
     
-     document.getElementById("salinity_white").style.display = "none";
+        document.getElementById("salinity_white").style.display = "none";
         document.getElementById("salinity_black").style.display = "flex";
     
-     document.getElementById("humidity_white").style.display = "none";
+        document.getElementById("humidity_white").style.display = "none";
         document.getElementById("humidity_black").style.display = "flex";
-
     }
-else{
-    document.getElementById("temperature_white").style.display = "flex";
+    else {
+        document.getElementById("temperature_white").style.display = "flex";
         document.getElementById("temperature_black").style.display = "none";
-    
-     document.getElementById("luminosity_white").style.display = "flex";
+        
+        document.getElementById("luminosity_white").style.display = "flex";
         document.getElementById("luminosity_black").style.display = "none";
-    
-     document.getElementById("rainfall_white").style.display = "flex";
+        
+        document.getElementById("rainfall_white").style.display = "flex";
         document.getElementById("rainfall_black").style.display = "none";
-    
-     document.getElementById("salinity_white").style.display = "flex";
+        
+        document.getElementById("salinity_white").style.display = "flex";
         document.getElementById("salinity_black").style.display = "none";
-    
-     document.getElementById("humidity_white").style.display = "flex";
-        document.getElementById("humidity_black").style.display = "none";
-    
-
-}
+        
+        document.getElementById("humidity_white").style.display = "flex";
+        document.getElementById("humidity_black").style.display = "none"
+    }
 }
 if (screen.width < 745) {
-        document.getElementById("map").style.position = "static";
-    }
-else{
-        document.getElementById("cont_mobile_title").style.display = "none";
-
+        document.getElementById("map").style.position = "absolute";
 }
-function close() {
 
+function close() {
+    document.getElementById("map-container").style.display = "block";
     document.getElementById("threshold_form").style.display = "none";
     document.getElementById("map").style.display = "flex";
-    document.getElementById("cont_mobile_title").style.display = "flex";
-
 }
+
 //===============================================================
 //****  CLICK ON PLOT***==============================================================
-
 function charge_thresholds_values(id) {
     document.getElementById("p_ok").style.display = "none";
 
     if (screen.width < 745) {
-        document.getElementById("map").style.marginTop = "45px";
-        document.getElementById("cont_mobile_title").style.display = "none";
+        document.getElementById("map-container").style.display = "none";
         document.getElementById("threshold_form").style.display = "flex";
         document.getElementById("map").style.display = "none";
         document.getElementById("threshold_close").style.display = "flex";

@@ -11,8 +11,8 @@
     <!-- Stylesheet and favicon -->
     <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" href="css/common_style.css">
-    <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <style>
@@ -27,7 +27,6 @@
 
     <title>e-Horta</title>
     <script src="js/restringir_acceso.js"></script>
-    <script src="js/delete_sesion.js"></script>
     <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 </head>
@@ -39,22 +38,21 @@
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
         </a>
-
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
-                <!--
-                    <li>
-                        <a href="#">Notificaciones</a>
-                    </li>
-                    -->
-                <li>
-                    <a href="#">Mi cuenta</a>
-                    <div id="current-page"></div>
-                </li>
-
                 <li>
                     <a href="weather.html">El Tiempo</a>
+                </li>
+                <li>
+                    <a href="alerts.html">Alertas</a>
+                </li>
+                <li>
+                    <a href="threshold.html">Umbrales</a>
+                    <div id="current-page"></div>
+                </li>
+                <li>
+                    <a href="app.html">Gráficas</a>
                 </li>
                 <li>
                     <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
@@ -70,8 +68,10 @@
             </div>
         </nav>
     </header>
+
     <div>
-        <h2 id="title_threshold" style="">Umbrales</h2>
+        <!--  -->
+        <h1 id="title_threshold" style="">Umbrales</h1>
         <p id="selection_plot_p" style="">(Seleccione una parcela del mapa)</p>
         <div id="mapthresDiv" style="">
 
@@ -86,10 +86,9 @@
             <!---Form threshold 2.1rem font h3-->
             <form id="threshold_form" class="form-container" style="display: none;">
                 <input type="text" id="threshold_id_plot" name="threshold_id_plot" style="display: none;" />
-                <a id="threshold_close" href="javascript:close()" style="">
-                    <img id="" src="img/down-arrow.svg" alt="Close"></a>
+                <a id="threshold_close" class="go-back" href="javascript:close()"><p>Volver</p></a>
 
-                <h3 style="" id="plot_name_form"></h3>
+                <h2 style="" id="plot_name_form"></h2>
            
                 <div class="div_inputs" style="">
                     <input type="text" id="minHumedity" class="minInput" name="minHumedity" style="" />
@@ -169,8 +168,7 @@
 
                     <div class="threshold_divimg">
 
-                        <img src="img/datalogger/salinity_2.svg" id="salinity_white"alt="Salinidad" Class="threshold_img">
-                        <img src="img/datalogger/salinity.svg" id="salinity_black"alt="Salinidad" Class="threshold_img">
+                        <img src="img/datalogger/salinity.svg" id="salinity_white" alt="Salinidad" class="threshold_img white-filter">
                     </div>
                     <p>
                         <label for="amount4" class="p_threshold" style="margin-left: 20px;">Salinidad (%)</label>
@@ -185,31 +183,26 @@
                 <button id="btn_submit_threshold" type="submit" class="login-button" style="">Aplicar</button>
                 <p id="p_ok" style="">Se ha actualizado correctamente.</p>
             </form>
-            <section id="section_maptresh" style="">
-                <div id="cont_mobile_title" style="">
-                    <h2 id="title_threshold" class="tittlethreshold"style="display: flex;">Umbrales</h2>
-                   
-                    <p id="selection_plot_p" class="subtitlethreshold"style="">(Seleccione una parcela del mapa)</p>
-                </div>
-                <section id="map" class="mapthres" style="">
-                    <script src="js/map.js"></script>
-                    <script src="js/delete.js"></script>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
-                    </script>
-                </section>
+            <section id="section_maptresh">
+                <article id="map-container">
+                    <div id="map-floating-panel">
+                        <p id="actionText">Umbrales<br><span>Seleccione una parcela</span></p>
+                    </div>
+                    <section id="map" class="mapthres">
+                        <script src="js/map.js"></script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAkvbXtoyr0W_VfFkc9OH4MjBvYNcwy4&callback=initMap" async defer>
+                        </script>
+                    </section>
+                </article>
             </section>
         </div>
     </div>
     <script>
     
-
     </script>
 
     <!-- Scripts -->
     <script src="js/navbar.js"></script>
-    <script src="js/pop-manager.js"></script>
-    <script src="js/delete.js"></script>
-    <script src="js/checkbox_list.js"></script>
     <script src="js/threshold.js"></script>
 
 </body>

@@ -733,6 +733,8 @@ input-group {
     display: none;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
+    color: #333;
 }
 
 .go-back::before {
@@ -793,6 +795,10 @@ input-group {
     z-index: 2;
     margin: 0;
     width: 70%;
+}
+
+#map-floating-panel p span {
+    font-size: 1.1rem;
 }
 
 /* ------------------ */
@@ -921,6 +927,7 @@ input-group {
     width: 100%;
     height: 58.5vh;
     margin: .2rem 0;
+    margin-left: -10px;
 }
 
 /* Hidden in desktop mode */
@@ -1108,8 +1115,6 @@ td a {
     align-items: center;
     margin-right: 5px;
     background-color: white;
-    border: 3px solid #f1f1f1;
-    border-radius: 10px;
 }
 
 /* Full-width input fields */
@@ -1379,6 +1384,7 @@ td a {
             position: absolute;
             top: 45px;
         }
+
         /*-----------------------------------*/
         
         /*see other fields*/
@@ -1620,11 +1626,11 @@ td a {
 }
 
 /* For very small screens we enable overflow */
-@media (max-height: 740px) {
+/* @media (max-height: 740px) {
     body {
         overflow: auto;
     }
-}
+} */
 
 /*-----------------------------------Mobile version--------------------------------------*/
 @media (max-width: 740px) {
@@ -1651,16 +1657,9 @@ td a {
 
 
 /* ------------------ */
-
-
 /* ------------------ */
-
-
 /* --- Threshold.HTML --- */
-
-
 /* ------------------ */
-
 
 /*   Threshold PAGE.html  */
 /* Style for Threshold*/
@@ -1689,12 +1688,6 @@ td a {
 
 }
 
-#threshold_close_img {
-    height: 45px;
-    place-self: flex-end;
-    display: none;
-    cursor: pointer;
-}
 
 #h3_edit_thresholds {
     font-size: 1.9rem;
@@ -1731,7 +1724,6 @@ td a {
     background-color: #333333;
     border: 3px solid #f1f1f1;
     border-radius: 10px;
-
 }
 
 .form-container input[type=text] {
@@ -1830,11 +1822,13 @@ td a {
 }
 
 .mapthres {
+    /*
     width: 100%;
     height: 550px;
     box-shadow: 0px 0px 5px 1px #959595;
     border-radius: 10px;
     margin-right: 2em;
+    */
 }
 
 #mapthresDiv {
@@ -1900,22 +1894,9 @@ td a {
 }
 
 #section_maptresh {
-    margin-right: 0em;
-    border-radius: 0px;
-    height: 113%;
+    height: 100%;
     width: 100%;
     margin-right: 20px;
-}
-
-#cont_mobile_title {
-    display: flex;
-    position: absolute;
-    top: 45px;
-    z-index: 2;
-    width: 100%;
-    height: 100px;
-    background: black;
-    opacity: 0.5;
 }
 
 .tittlethreshold {
@@ -1936,10 +1917,9 @@ td a {
 }
 
 #threshold_close {
-    margin-top: 45px;
-    width: 20px;
-    transform: rotate(90deg);
-    margin-right: 67%;
+    margin-top: 50px;
+    position: absolute;
+    left: 28px;
 }
 
 #maxSalinity {
@@ -1987,13 +1967,6 @@ td a {
         margin-bottom: 15px;
     }
 
-    #plot_name_form {
-        margin-bottom: 10px;
-        font-size: 2.1rem;
-        color: #333333;
-
-    }
-
     .p_threshold {
         color: #333333;
         margin-left: 10px;
@@ -2021,23 +1994,20 @@ td a {
 
     /* Mapa de posiciones grande */
     .mapthres {
-        margin-right: 0em;
-        margin-top: 25px;
-        border-radius: 0px;
-        height: 113%;
-        width: 100%;
-        margin-right: 0em;
-
+        width: 100vw;
+        height: 80%;
+        position: sticky;
+        padding-top: 1rem;
+        margin-top: 0;
+        bottom: 0;
     }
 
     #mapthresDiv {
-        margin-top: 0em;
+        margin: 0;
         height: 610px;
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
-        margin-left: 1px;
-        margin-right: 1px;
     }
 
     .threshold_labelMax b {
@@ -2060,9 +2030,12 @@ td a {
     }
 
     #plot_name_form {
+        color: #333;
         margin-bottom: 25px;
-        font-size: 2.1rem;
-        margin-top: 5px;
+        margin-top: 90px;
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: 1px;
     }
 
     #h3_edit_threshold {
@@ -2085,8 +2058,8 @@ td a {
         height: 120%;
         align-items: center;
         background-color: #F8F8F8;
-        border: 3px solid #f1f1f1;
-        border-radius: 10px;
+        border: 0;
+        border-radius: 0;
         margin-left: 5px;
     }
 
@@ -2103,10 +2076,6 @@ td a {
         margin-left: 40px;
         margin: 0px;
         margin-bottom: 15px;
-    }
-
-    #threshold_close_img {
-        display: block;
     }
 
     #table_edit {
