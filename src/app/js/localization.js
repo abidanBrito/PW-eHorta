@@ -62,7 +62,8 @@ var arrLang = {
         forgot : "Don't remember your password? ",
         click : "Click here.",
         still_not : "Still not a client? ",
-        password : "Password"
+        password : "Password",
+        login_error : "COULD NOT LOGIN"
     },
     'es' : {
         // El Tiempo
@@ -120,7 +121,8 @@ var arrLang = {
         forgot : "¿Olvidaste tu contraseña? ",
         click : "Pulsa aquí.",
         still_not : "¿Aún no eres cliente? ",
-        password : "Contraseña"
+        password : "Contraseña",
+        login_error : "ERROR AL INICIAR SESIÓN"
         
     },
     'val' : {
@@ -139,7 +141,7 @@ var arrLang = {
         humidty : 'humitat',
         // Landing page index
         home : "Inici",
-        about : "Nosatros",
+        about : "Nosaltres",
         faq : "FAQs",
         contact : "Contacte",
         login : "Iniciar sessió",
@@ -179,27 +181,18 @@ var arrLang = {
         forgot : "No recordes la teua contrasenya? ",
         click : "Pulsa ací.",
         still_not : "Encara no eres client? ",
-        password : "Contrasenya"
+        password : "Contrasenya",
+        login_error : "ERROR EN INICIAR SESSIÓ"
         
     }
 };
-
-function translate(lang) {
-    // lang will be its id, which is the language chosen
-    // searches for all items with class="lang" and changes its text to the one associated within their "key" to the variable arrLang
-    let texts = document.getElementsByClassName('lang')
-    Array.prototype.forEach.call(texts, item => {
-        let translation = arrLang[lang]
-        item.innerHTML = translation[item.id]
-    })
-    // Cierra el tooltip
-    const tooltip = document.getElementById('lang-selector');
-    tooltip.style.display = "none";
-    
+// Buttons call this and reload the page
+function changeLang(lang) {
     // Define el idioma en el almacenamiento local
     localStorage.setItem("lang", lang);
 }
 
+// Called when page reloaded to translate everything
 function prepare() {
     const button = document.getElementById('globe-icon');
     const tooltip = document.getElementById('lang-selector');
@@ -212,9 +205,33 @@ function prepare() {
             tooltip.style.display = "none";
         }
     };
+    
     // Sets the language page to the stored one
     let lang = localStorage.getItem("lang");
     translate(lang);
 }
 
+// In a separate function for code clarity
+function translate(lang) {
+    // lang will be its id, which is the language chosen
+    // searches for all items with class="lang" and changes its text to the one associated within their "key" to the variable arrLang
+    let texts = document.getElementsByClassName('lang')
+    let translation = arrLang[lang]
+    Array.prototype.forEach.call(texts, item => {
+        item.innerHTML = translation[item.id]
+    })
+    // Traduce las excepciones como placeholders que no pueden accederse con el metodo anterior
+    let page = window.location.pathname.split("/").pop();
+    if(page == "login.html") {
+        console.log("Changing placeholder");
+        let passwordPlaceholder = document.getElementById("password");
+        passwordPlaceholder.placeholder += translation[passwordPlaceholder.id];
+    }
+    
+    // Cierra el tooltip
+    const tooltip = document.getElementById('lang-selector');
+    tooltip.style.display = "none";
+}
+
+// Start page
 prepare();
