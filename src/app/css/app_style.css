@@ -1663,18 +1663,14 @@ td a {
     
 }
 /* ------------------ */
-
-
-
-/* ------------------ */
 /* ------------------ */
 /* --- Threshold.HTML --- */
+/* ------------------ */
 /* ------------------ */
 
 /*   Threshold PAGE.html  */
 /* Style for Threshold*/
 
-/*Title H Form threshold*/
 .threshold_btn_search {
     font-weight: 400;
     text-align: center;
@@ -1798,7 +1794,6 @@ td a {
 
 .threshold_img {
     width: 25px;
-    margin-left: 5px;
 }
 
 .threshold_labelMax {
@@ -1880,14 +1875,21 @@ td a {
 .ui-slider-horizontal {
     height: .38em;
     margin-bottom: 15px;
+
 }
 
 .ui-slider .ui-slider-handle {
     position: absolute;
     z-index: 2;
-    width: 17px;
-    height: 1em;
+    width: 15px;
+    height: 15px;
     cursor: default;
+    background: #f1f1f1;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top: -4px;
+    border: 0;
 }
 
 .ui-corner-all,
@@ -1947,12 +1949,54 @@ td a {
 }
 
 .slider-rangeAll {
-    width: 300px;
+    width: 390px;
+    margin-bottom: 10px;
+
 }
+
+#humidity_black {
+    width: 20px;
+}
+
+#salinity_black {
+    width: 20px;
+}
+
+
 
 /*----------------------------------- Threshold Mobile version --------------------------------------*/
 
 @media screen and (max-width: 740px) {
+    .slider-rangeAll {
+        width: 325px;
+        margin-bottom: 20px;
+    }
+
+    #maxPrecipitation {
+        border: 0;
+        color: #333333;
+        font-weight: bold;
+    }
+
+    .threshold_img {
+        width: 25px;
+        margin-left: 5px;
+    }
+
+    #p_ok {
+        display: none;
+        color: #333;
+    }
+
+    .ui-slider .ui-slider-handle {
+        position: absolute;
+        z-index: 2;
+        width: 15px;
+        height: 15px;
+        cursor: default;
+        background: #333;
+    }
+
     #maxHumedity {
         border: 0;
         color: #333333;
@@ -1987,7 +2031,7 @@ td a {
     }
 
     #btn_submit_threshold {
-        margin-top: 25px;
+        margin-top: 5px;
     }
 
     .form-container input {
@@ -2032,16 +2076,17 @@ td a {
     }
 
     .div_inputs {
+        margin-top: 25px;
         display: flex;
         flex-direction: row;
         margin-left: 0px;
         margin-right: 25px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     #plot_name_form {
         color: #333;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
         margin-top: 90px;
         font-size: 1.75rem;
         font-weight: 500;
@@ -2085,7 +2130,7 @@ td a {
         text-align: center;
         margin-left: 40px;
         margin: 0px;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
 
     #table_edit {
