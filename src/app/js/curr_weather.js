@@ -492,7 +492,7 @@ async function showData(code) {
     </section>
     */
     container.innerHTML =
-            '<div class="day-text"><span class="lang" id="today">Hoy</span></div>'+
+            '<div class="day-text"><a onclick="changeDay(0)"><span class="lang" id="today">Hoy</span></a></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de hoy" src="' + iconToday + '"><span class="curr-temp">'+
@@ -520,7 +520,7 @@ async function showData(code) {
                 '</div>'+
             '</section>'+
             '<div class="weather-separator"></div>' + 
-            '<div class="day-text"><span class="lang" id="tomorrow">Mañana</span></div>'+
+            '<div class="day-text"><a onclick="changeDay(1)"><span class="lang" id="tomorrow">Mañana</span></a></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de mañana" src="' + iconTomorrow + '"><span class="curr-temp">'+
@@ -548,7 +548,7 @@ async function showData(code) {
                 '</div>'+
             '</section>'+
             '<div class="weather-separator"></div>' + 
-            '<div class="day-text"><span class="lang" id="after_tomorrow">Pasado Mañana</span></div>'+
+            '<div class="day-text"><a onclick="changeDay(2)"><span class="lang" id="after_tomorrow">Pasado Mañana</span></a></div>'+
             '<section class="day-data">'+
                 '<div class="first-data-column">'+
                     '<img class="day-icon white-filter" alt="tiempo de pasado mañana" src="' + iconAfter + '"><span class="curr-temp">'+
@@ -579,6 +579,8 @@ async function showData(code) {
     
     // Translate new added 
     prepareTranslation();
+    // Today is default
+    changeDay(0);
 }
 
 //

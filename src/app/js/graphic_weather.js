@@ -5,6 +5,9 @@
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */ 
 
+// Day measurements are taken from, not the best way but works
+let selectedDay = 0;
+
 // Measurement buttons behaviour
 function activateWeatherButton(btn) {
 
@@ -43,6 +46,30 @@ async function getData() {
 }
 
 // ----------------------------------------------------------------
+// Set the day shown in the graph received from pressing the name and underlines it
+// ----------------------------------------------------------------
+function changeDay(day) {
+    if(day == 0) {
+        document.getElementById("today").style.textDecoration = "underline";
+        document.getElementById("tomorrow").style.textDecoration = "none";
+        document.getElementById("after_tomorrow").style.textDecoration = "none";
+    }
+    if(day == 1) {
+        document.getElementById("today").style.textDecoration = "none";
+        document.getElementById("tomorrow").style.textDecoration = "underline";
+        document.getElementById("after_tomorrow").style.textDecoration = "none";
+    }
+        if(day == 2) {
+        document.getElementById("today").style.textDecoration = "none";
+        document.getElementById("tomorrow").style.textDecoration = "none";
+        document.getElementById("after_tomorrow").style.textDecoration = "underline";
+    }
+    
+    selectedDay = day;
+    showTemperature(document.getElementById("default-button-weather"));
+}
+
+// ----------------------------------------------------------------
 // ----------------------------------------------------------------
 // TODAS LAS FUNCIONES show....() TIENEN LA MISMA ESTRUCTURA
 // Todas modifican los datos de los objetos Opciones y Datos, mas abajo
@@ -62,7 +89,7 @@ async function showTemperature(button) {
     let dataJson = await getData();
     // Guarda los datos de temperatura y los organiza
     let tempValues = [];
-    let temperatures = dataJson[0].prediccion.dia[0].temperatura;
+    let temperatures = dataJson[0].prediccion.dia[selectedDay].temperatura;
     for(let i = 0; i < temperatures.length; i++) {
         tempValues.push(temperatures[i].value);
     } // for
@@ -93,7 +120,7 @@ async function showRainfall(button) {
     let dataJson = await getData();
     
     let rainValues = [];
-    let rainfall = dataJson[0].prediccion.dia[0].precipitacion;
+    let rainfall = dataJson[0].prediccion.dia[selectedDay].precipitacion;
     for(let i = 0; i < rainfall.length; i++) {
         rainValues.push(rainfall[i].value);
     } // for
@@ -123,7 +150,7 @@ async function showHumidity(button) {
     let dataJson = await getData();
     
     let humValues = [];
-    let humidity = dataJson[0].prediccion.dia[0].humedadRelativa;
+    let humidity = dataJson[0].prediccion.dia[selectedDay].humedadRelativa;
     for(let i = 0; i < humidity.length; i++) {
         humValues.push(humidity[i].value);
     } // for
@@ -153,7 +180,7 @@ async function showWind(button) {
     let dataJson = await getData();
     // Los valores de viento estan en indices pares
     let windValues = [];
-    let wind = dataJson[0].prediccion.dia[0].vientoAndRachaMax;
+    let wind = dataJson[0].prediccion.dia[selectedDay].vientoAndRachaMax;
     for(let i = 0; i < wind.length; i++) {
         if(i%2 == 0) {
             windValues.push(wind[i].velocidad[0]);

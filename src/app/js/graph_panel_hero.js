@@ -115,15 +115,17 @@ var chartOptions = {
     title: {
         display: false
     },
+    animation: false,
+    hover: {
+        intersect: false,
+        animationDuration: 0
+    },
     tooltips: {
         backgroundColor: '#333333',
         titleFontColor: '#ddd',
         titleAlign: 'center',
         bodyFontColor: '#ddd'
     },
-    animation: {
-        duration: 0
-    },    
     defaultFontFamily: 'Poppins',
     defaultFontColor: '#333333',
     responsive: true,
@@ -134,7 +136,7 @@ var chartOptions = {
 // Create a new ChartJS graph at the start
 // ----------------------------------------------------------------
 var ctx = document.getElementById('myChart').getContext("2d");
-var chart = new Chart(ctx, {
+window.chart = new Chart(ctx, {
     type: 'line',
     data: chartData,
     options: chartOptions
@@ -168,9 +170,16 @@ function drawGraph() {
                 }   
 
                 processData(data, probeID, startDate, endDate);
-                chart.update();
+                console.log(chart);
+                
+                window.chart.destroy();
+                window.chart = new Chart(ctx, {
+                    type: 'line',
+                    data: chartData,
+                    options: chartOptions
+                }); 
             });
-        }
+        }   
         catch(err) {
             throw Error(err);
         }
@@ -310,7 +319,12 @@ function updateGraph(btn) {
             }
         }
 
-    chart.update();
+    window.chart.destroy();
+    window.chart = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: chartOptions
+    }); 
 }
 
 // ----------------------------------------------------------------
@@ -402,6 +416,8 @@ function drawMap() {
     
     // Draw informative banner on top
     document.getElementById('map-floating-panel').style.display = 'flex';
+
+    window.chart.destroy();
 }
 
 // -------------------------------------------------
