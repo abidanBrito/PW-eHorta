@@ -1,9 +1,9 @@
-<!-- ----------------------------------------------------------------
-*    AUTHOR:         Abidan Brito Clavijo
-*    FILE:           about.html
-*    DATE:           16/04/2020
-*    STATE:          DONE
-*    ---------------------------------------------------------------- -->
+<!--
+    AUTHOR: Jorge Grau Giannakakis
+    FILE: about.html
+    DATE: 16/06/20
+    STATE: DONE
+-->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,16 +18,73 @@
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>e-Horta | Nosotros</title>
+    <style>
+    
+        
+  /* -------------------------- */
+ /*  -      about.HTML      -  */
+/* -------------------------- */
+/* ---- Ajustes basicos ---- */
+        .about_body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+        }
+    
+        .about_h1{
+            margin: .5rem;
+            margin-top: 82px;
+        }
+        
+        .about_image{
+            width: 40%;
+            margin: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about_p_div{    
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            margin: auto;
+            height: 42vh;
+            justify-content: center;
+        }
+        
+        .about_p{
+            margin: .5rem;
+            text-align: center;
+        }
+        
+/* --------------------------------- */
+/*  -  notifications.HTML base  -  */
+/* --------------------------------- */
+    @media screen and (max-width: 720px) {
+/* ---- Ajustes basicos ---- */
+        
+        .about_image{
+            width: 60%;
+            margin: .5rem;
+            
+        }
+        
+        .about_p_div{
+            width: 100%;
+            height: auto;
+        }
+        
+    }
+    
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Top bar -->
-        <header>
+    <!-- Top bar (navigation menu) -->
+   <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="../index.html">
+            <a id="logo" class="white-filter" href="index.html">
                 <img src="img/logo_v2.svg" alt="LOGO">
             </a>
             <nav class="navbar">
@@ -36,13 +93,14 @@
                     <li>
                         <a href="../index.html">Inicio</a>
                     </li>
-                    <li>
-                        <a href="#">Nosotros</a>
-                        <div id="current-page"></div>
-                    </li>
-                    <li>
-                        <a href="faqs.html">FAQs</a>
-                    </li>
+                        <li>
+                            <a href="app/about.html">Nosotros</a>
+                            <div id="current-page"></div>
+                        </li>
+                        <li>
+                            <a href="faqs.html">FAQs</a>
+                        </li>
+                    
                     <li>
                         <a href="contact.html" id="navbar-contact">Contacto</a>
                     </li>
@@ -52,7 +110,7 @@
                 </ul>
                 <div class="navbar-right">
                     <!-- Login icon -->
-                    <a id="login-icon" class="white-filter" href="login.html">
+                    <a id="login-icon" class="white-filter" href="app/login.html">
                         <img src="img/user.svg" alt="LOGIN">
                     </a>
                     <!-- Mobile menu icon -->
@@ -64,15 +122,20 @@
                 </div>
             </nav>
         </header>
-
-        <main style="text-align: center; margin-top: 90px;">
-            <h1 style="font-size: 36px;">¿QUIÉNES SOMOS?</h1>
-            <p style="margin-top: 20px;">Somos un grupo de estudiantes del grado en Tecnologías Interactivas, de la Escuela Superior Politécnica de Gandía. Nuestra misión es...</p>
-        </main>
+    
+    <div class="about_body">
+       
+       <h1 class="about_h1">¿Quiénes somos?</h1>
+       
+       <img src="https://somgandia.com/wp-content/uploads/2020/02/campus-gandia-upv-696x525.jpg" alt="Plant image" class="about_image">
+          
+        <div class="about_p_div">
+        <p class="about_p">El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p>
+       
+       <p class="about_p">El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p>
+       
+       <p class="about_p">El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>   
+        </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="js/navbar.js"></script>
 </body>
-
 </html>
