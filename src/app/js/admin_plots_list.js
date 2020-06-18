@@ -39,3 +39,9 @@ let AdminPlotsController = {
         this.model.load();
     }
 };
+
+// Start here and user_list.js
+ViewUsersList.prepare("usersList");
+// Se inicializa el controlador
+UsersController.init();
+AdminPlotsController.init();

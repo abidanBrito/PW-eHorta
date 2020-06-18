@@ -1,31 +1,8 @@
 <!--
-    AUTHOR: DANIEL BURRUCHAGA SOLA
+    AUTHOR: DANIEL BURRUCHAGA SOLA, Pablo Enguix
     FILE: admin.html
-    DATE: 16/04/20
+    DATE: 16/04/2020
     STATE: DONE
-
-
-
-Admin page, esta página sirve para poder editar los clientes y sus parcelas, también
-puede añadir nuev@s de estos dos y eliminar estos.
-
-Posee:
-    Dos links que harán la funcion de filtrado de la busqueda entre dividiendo entre parcelas
-    y clientes.
-
-    Un buscador con un botón de "submit" desde el cual se procederá con la busqueda.
-
-    Dos botones, Añadir / Eliminar
-         Al hacer click en Añadir se abrirá un pop Up con un selector de cliente/ parcela y dependiendo cual esté activo visualizará la opción de añadir de uno u otro respectivamente.
-         Al hacer click en Eliminar se visualizarán las checkbox para permitir eliminar varias opciones de una.
-
-
-    La opción de editar se visualiza al costado derecho del nombre, desde el cual se podrá
-    editar el nombre, coordenadas.
-
-    Al hacer click en un cliente debe ir a su panel_Hero respectivo.¿?
-    Al hacer click en una parcela debe ir a su panel_Hero respectivo.¿?
-
 -->
 
 
@@ -67,23 +44,32 @@ Posee:
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
         </a>
-
         <nav class="navbar">
             <!-- Navigation menu -->
-            <ul class="navbar-links" style="margin-bottom: 0;">
-                <!--
+            <ul class="navbar-links">
                 <li>
-                    <a href="#">Notificaciones</a>
+                    <a href="weather.html"><span class="lang" id="weather">El Tiempo</span></a>
+                    
                 </li>
                 <li>
-                    <a href="#">Mi cuenta</a>
+                    <a href="alerts.html"><span class="lang" id="alerts">Alertas</span></a>
                 </li>
-            -->
                 <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                    <a href="threshold.html"><span class="lang" id="thresholds">Umbrales</span></a>
+                </li>
+                <li>
+                    <a href="app.html"><span class="lang" id="graph">Gráficas</span></a>
+                    <div id="current-page"></div>
+                </li>
+                <li>
+                    <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
             <div class="navbar-right">
+                <!-- Globe icon -->
+                <div id="globe-icon">
+                    <img class="white-filter" src="img/globe.svg" alt="idioma">
+                </div>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -92,6 +78,12 @@ Posee:
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+            <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+            <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+        </div>
+        
     </header>
 
 
@@ -99,33 +91,33 @@ Posee:
     <div class="page">
         <div class="arriba">
             <i class="fas fa-plus" data-toggle="collapse" data-target="#createUser" aria-expanded="false" aria-controls="createUser"></i>
-            <p>Gestión de usuarios</p>
+            <p><span class="lang" id="manage">Gestión de usuarios</span></p>
         </div>
 
         <div class="input-group" id="search_mobile">
-            <input type="text" id="searchInput" onkeyup="filterFunction()" class="form-control search_mobile" placeholder="Búsqueda" onchange="value = this.value">
+            <input type="text" id="searchInput" onkeyup="filterFunction()" class="form-control search_mobile" onchange="value = this.value">
             <i class="fas fa-search searchIcon" style="font-size: 1.5rem; margin: auto 0;"></i>
         </div>
 
         <div class="collapse" id="createUser">
             <div class="title">
                 <i class="fas fa-angle-left" data-toggle="collapse" data-target="#createUser" aria-expanded="false" aria-controls="createUser"></i>
-                <h3>Nuevo usuario</h3>
+                <h3><span class="lang" id="new_user">Nuevo usuario</span></h3>
             </div>
             <div class="newUserData">
-                <input class="input-login" type="text" name="newUserName" placeholder="Nombre" required>
-                <input class="input-login" type="text" name="newUserSurname" placeholder="Apellidos" required>
-                <input class="input-login" type="text" name="newUserEmail" placeholder="E-mail" required>
-                <input class="input-login" type="text" name="newUserPassword" placeholder="Contraseña" required>
+                <input class="input-login" type="text" name="newUserName" id="name" required>
+                <input class="input-login" type="text" name="newUserSurname" id="surname" required>
+                <input class="input-login" type="text" name="newUserEmail" id="mail" required>
+                <input class="input-login" type="text" name="newUserPassword" id="password" required>
                 <select name="roleId" id="newUserRoleId" onchange="value=this.value" required>
-                    <option disabled >Rol</option>
-                    <option disabled>----------------------------------------------</option>
-                    <option value="1">Cliente</option>
-                    <option value="2">Administrador</option>
-                    <option value="3">Cliente-administrador</option>
-                    <option value="4">Técnico</option>
+                    <option disabled id="role">>Rol</option>
+                    <option disabled id="line">----------------------------------------------</option>
+                    <option value="1" id="Cliente">Cliente</option>
+                    <option value="2" id="Administrador">Administrador</option>
+                    <option value="3" id="Cliente-administrador">Cliente-administrador</option>
+                    <option value="4" id="Técnico">Técnico</option>
                 </select>
-                <button class="button" onclick="add_user()" style="width: 252px; margin-left: 0;">Añadir</button>
+                <button class="button" onclick="add_user()" style="width: 252px; margin-left: 0;"><span class="lang" id="add">Añadir</span></button>
             </div>
         </div>
         <div id="usersList">
@@ -134,21 +126,9 @@ Posee:
     </div>
 
     <!-- Scripts -->
-    <script src="js/admin_plots_list.js"></script>
+    <script src="js/localization.js"></script>
     <script src="js/users_list.js"></script>
-
-    <script>
-        ViewUsersList.prepare("usersList");
-        // Se inicializa el controlador
-        UsersController.init();
-    </script>
-    <script>
-        setTimeout(() => {
-            AdminPlotsController.init();
-
-        }, 1000);
-    </script>
-
+    <script src="js/admin_plots_list.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

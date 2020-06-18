@@ -15,7 +15,7 @@ var arrLang = {
         'about.html' : "e-Horta | About us",
         'access_error.html' : "e-Horta | Access error",
         'admin.html' : "e-Horta | Admin",
-        'alerts.html' : "e-Horta | Alerts",
+        'alerts.html' : "e-Horta | Warnings",
         'app.html' : "e-Horta | Graphs",
         'faqs.html' : "e-Horta | FAQs",
         'threshold.html' : "e-Horta | Thresholds",
@@ -44,7 +44,7 @@ var arrLang = {
         offer : "What we offer",
         capacities : "Discover what our app can do",
         multifunction : "Multifunction",
-        multifunction_txt : "Graphs, alerts, thresholds, geolocalized drones and much more",
+        multifunction_txt : "Graphs, alerts, thresholds, geolocalized probes and much more",
         fast : "Fast",
         fast_txt : "Consult real-time data anytime",
         multiplatform : "Multiplatform",
@@ -75,6 +75,7 @@ var arrLang = {
         click : "Click here.",
         still_not : "Still not a client? ",
         password : "Password",
+        mail : "E-mail",
         login_error : "COULD NOT LOGIN",
         // FAQs
         general : "General",
@@ -99,7 +100,36 @@ var arrLang = {
         cant_find : "Didn't find what you were searching for?",
         // About
         we_are : "Who we are",
-        we_are_txt : "<p class='about_p'>The work team for the realization of this project is formed by a group of first-year GTI students.</p><p class='about_p'>The result is the fruit of trust and commitment that we have all had in carrying it out, assuming responsibility for the tasks we had been assigned and collaborating with each other when problems came up.</p><p class='about_p'>The project that has been carried out is an agricultural management web page, which allows the user to be able to visualize different data easily and quickly, in addition to making comparisons, adjusting thresholds and seeing the weather prediction among other functionalities. This application manages to offer a comfortable and easy to use service for the user.</p>"
+        we_are_txt : "<p class='about_p'>The work team for the realization of this project is formed by a group of first-year GTI students.</p><p class='about_p'>The result is the fruit of trust and commitment that we have all had in carrying it out, assuming responsibility for the tasks we had been assigned and collaborating with each other when problems came up.</p><p class='about_p'>The project that has been carried out is an agricultural management web page, which allows the user to be able to visualize different data easily and quickly, in addition to making comparisons, adjusting thresholds and seeing the weather prediction among other functionalities. This application manages to offer a comfortable and easy to use service for the user.</p>",
+        // Admin
+        manage : "User management",
+        new_user : "New user",
+        name : "Name",
+        surname : "Surname",
+        role : "Role",
+        line : "----------------------------------------------",
+        Cliente : "Client",
+        Administrador : "Admin",
+        'Cliente-administrador' : "Client-Admin",
+        Técnico : "Technician",
+        add : "Add",
+        searchInput : "Search",
+        my_plots : "My plots",
+        plots : "Plots",
+        new_plot : "New plot",
+        vertex : "Vertexes",
+        latitude : "Latitude",
+        longitude : "Longitude",
+        probes : "Probes",
+        // Alerts
+        options_filter : "Filter options",
+        select : "Select a plot to visualize",
+        select_short : "Select a plot...",
+        warnings : "Warnings",
+        accept : "Accept",
+        measurements_t : "Measurements",
+        day : "Day/Week/Year",
+        plot : "Plot"
     },
     'es' : {
         // Pages titles
@@ -170,6 +200,7 @@ var arrLang = {
         click : "Pulsa aquí.",
         still_not : "¿Aún no eres cliente? ",
         password : "Contraseña",
+        mail : "Correo",
         login_error : "ERROR AL INICIAR SESIÓN",
         // FAQs
         general : "General",
@@ -194,7 +225,36 @@ var arrLang = {
         cant_find : "¿No encuentras lo que buscas?",
         // About
         we_are : "¿Quiénes somos?",
-        we_are_txt : "<p class='about_p'>El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p><p class='about_p'>El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p><p class='about_p'>El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>"
+        we_are_txt : "<p class='about_p'>El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p><p class='about_p'>El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p><p class='about_p'>El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>",
+        // Admin
+        manage : "Gestionar usuarios",
+        new_user : "Nuevo cliente",
+        name : "Nombre",
+        surname : "Apellidos",
+        role : "Rol",
+        line : "----------------------------------------------",
+        Cliente : "Cliente",
+        Administrador : "Administrador",
+        'Cliente-administrador' : "Cliente-Administrador",
+        Técnico : "Técnico",
+        add : "Añadir",
+        searchInput : "Buscar",
+        my_plots : "Mis parcelas",
+        plots : "Parcelas",
+        new_plot : "Nueva parcela",
+        vertex : "Vértices",
+        latitude : "Latitud",
+        longitude : "Longitud",
+        probes : "Sondas",
+        // Alerts
+        options_filter : "Opciones de filtrado",
+        select : "Selecione el campo que desea visualizar",
+        select_short : "Seleccione parcela...",
+        warnings : "Alertas",
+        accept : "Aceptar",
+        measurements_t : "Mediciones",
+        day : "Dia/Mes/Año",
+        plot : "Parcela"
         
     },
     'val' : {
@@ -266,6 +326,7 @@ var arrLang = {
         click : "Pulsa ací.",
         still_not : "Encara no eres client? ",
         password : "Contrasenya",
+        mail : "Correu",
         login_error : "ERROR EN INICIAR SESSIÓ",
         // FAQs
         general : "General",
@@ -290,7 +351,36 @@ var arrLang = {
         cant_find : "¿No trobes el que busques?",
         // About
         we_are : "¿Qui som?",
-        we_are_txt : "<p class='about_p'>L'equip de treball d'aquest projecte està format per un grup d'estudiants de primer de GTI.</p><p class='about_p'>El resultat es fruit de la confiança i el compromís de totos en la realització del mateix, assumint la responsabilitat de les tasques assignades i col·laborant entre tots quan hi hagueren problemes.</p><p class='about_p'>El projecte que s'ha realitzat és una pàgina web de gestió agrícola, que permés a l'usuari visualitzar dates de forma senzilla i ràpida, a més de fer comparacións, ajustar umbrals i consultar l'oratge. Esta plicació aconseguix un serveï còmode i fàcil d'usar per a l'usuari.</p>"
+        we_are_txt : "<p class='about_p'>L'equip de treball d'aquest projecte està format per un grup d'estudiants de primer de GTI.</p><p class='about_p'>El resultat es fruit de la confiança i el compromís de totos en la realització del mateix, assumint la responsabilitat de les tasques assignades i col·laborant entre tots quan hi hagueren problemes.</p><p class='about_p'>El projecte que s'ha realitzat és una pàgina web de gestió agrícola, que permés a l'usuari visualitzar dates de forma senzilla i ràpida, a més de fer comparacións, ajustar umbrals i consultar l'oratge. Esta plicació aconseguix un serveï còmode i fàcil d'usar per a l'usuari.</p>",
+        // Admin
+        manage : "Gestionar usuaris",
+        new_user : "Nou client",
+        name : "Nom",
+        surname : "Cognoms",
+        role : "Rol",
+        line : "----------------------------------------------",
+        Cliente : "Client",
+        Administrador : "Administrador",
+        'Cliente-administrador' : "Client-Administrador",
+        Técnico : "Tècnic",
+        add : "Afegir",
+        searchInput : "Buscar",
+        my_plots : "Parcel·les",
+        plots : "Parcel·les",
+        new_plot : "Nova parcel·la",
+        vertex : "Vértices",
+        latitude : "Latitud",
+        longitude : "Longitud",
+        probes : "Sondes",
+        // Alerts
+        options_filter : "Opcions de filtre",
+        select : "Selecione el camp que vol visualitzar",
+        select_short : "Seleccione parcel·la...",
+        warnings : "Alertes",
+        accept : "Acceptar",
+        measurements_t : "Medicions",
+        day : "Dia/Mes/Any",
+        plot : "Parcel·la"
         
     }
 };
@@ -331,14 +421,24 @@ function translate(lang) {
     Array.prototype.forEach.call(texts, item => {
         item.innerHTML = translation[item.id]
     })
-    // Traduce las excepciones como placeholders que no pueden accederse con el metodo anterior
-    let page = window.location.pathname.split("/").pop();
-    if(page == "login.html") {
-        let passwordPlaceholder = document.getElementById("password");
-        passwordPlaceholder.placeholder += translation[passwordPlaceholder.id];
-    }
+
     // Traduce los titulos de las paginas
+    let page = window.location.pathname.split("/").pop();
     document.title = translation[page];
+    
+    // Traduce las excepciones como placeholders que no pueden accederse con el metodo anterior
+    let inputs = document.getElementsByTagName("input");
+    Array.prototype.forEach.call(inputs, item => {
+        if(page == "login.html") {
+            item.placeholder += translation[item.id];
+        } else {
+            item.placeholder = translation[item.id];
+        } 
+    })
+    let options = document.getElementsByTagName("option");
+    Array.prototype.forEach.call(options, item => {
+        item.innerHTML = translation[item.id];
+    })
     
     // Cierra el tooltip
     const tooltip = document.getElementById('lang-selector');
