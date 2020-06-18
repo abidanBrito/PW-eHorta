@@ -1,10 +1,9 @@
-<!-- ----------------------------------------------------------------
-*    AUTHOR:         Abidan Brito Clavijo
-*    FILE:           faqs.html
-*    DATE:           16/04/2020
-*    STATE:          DONE
-*    ---------------------------------------------------------------- -->
-
+<!--
+    AUTHOR: Jorge Grau Giannakakis
+    FILE: faqs.html
+    DATE: 16/06/20
+    STATE: DONE
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,22 +11,348 @@
     <!-- Default character set -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Stylesheet and favicon -->
+
+    <!--BootsTrap 4-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!--Css Link-->
+
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/app_style.css">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | FAQs</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <title>FAQ's</title>
+
+    <style>
+
+        #faq_sondas{
+            font-weight: bold;
+            border-bottom: #3D96E8 solid 2px;
+            font-size: 20px;
+        }
+
+        #faq_aplicacion{
+            font-weight: normal;
+            border-bottom: #3D96E8 solid 0px;
+            font-size: 20px;
+        }
+
+        #faq_servicio{
+            font-weight: normal;
+            border-bottom: #3D96E8 solid 0px;
+            font-size: 20px;
+        }
+
+        #faq_contacto{
+            font-weight: normal;
+            border-bottom: #3D96E8 solid 0px;
+            font-size: 20px;
+        }
+
+        #faq_sondas_preguntas{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #faq_aplicacion_preguntas{
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #faq_servicio_preguntas{
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #faq_contacto_preguntas{
+            display: none;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .faq_h1{
+            letter-spacing: 3px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .faq_container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+            flex-direction: column;
+        }
+
+        .faq_selectables{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq_select{
+            background-color: #F8F8F8;
+            border: none;
+            font-size: 15px;
+        }
+
+        .faq_body{
+            display: flex;
+            margin: auto;
+            margin-top: 85px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            background-color: #F8F8F8;
+            height: auto;
+        }
+
+         .faq_div{
+            background-color: #DADADA;
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faq_span{
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            background-color: none;
+            width: 100%;
+            justify-content: space-between;
+            font-size: 20px;
+            margin: 0px;
+            height: 50px;
+
+        }
+
+        .faq_variable{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .faq_p{
+            margin: .5rem;
+            display: flex;
+            align-self: center;
+            font-size: 18px;
+        }
+
+        .collapse{
+            width: 60%;
+        }
+
+        .collapsing{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1rem;
+            font-size: 15px;
+            padding-top: 0px;
+        }
+
+        .collapse.faq_message.show{
+            width: 100%;
+            padding: 1rem;
+            font-size: 15px;
+            padding-top: 0px;
+        }
+
+        .faq_boton{
+            background-color: #DADADA;
+            border: none;
+            width: 20px;
+            font-size: 25px;
+            margin-right: 5px;
+            color: #333333
+        }
+
+        .faq_boton:focus{
+            outline: 0px;
+            outline: 0px auto -webkit-focus-ring-color;
+        }
+        .faq_select:focus{
+            outline: 0px;
+            outline: 0px auto -webkit-focus-ring-color;
+        }
+
+        .faq_boton.collapsed {
+            transform: rotate(180deg);
+        }
+
+        .faq_info{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            }
+
+        .faq_relleno{
+            width: 85%;
+            text-align: center;
+            margin: 1rem;
+            font-size: 15px;
+        }
+
+        .faq_video{
+            position: relative;
+            width: 75%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+        .faq_video iframe{
+          position: absolute;
+          top:0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .faq_contact{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 90%;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            align-items: center;
+        }
+
+        .faq_contact_p{
+            text-align: center;
+            font-size: 18px;
+            margin: 0px;
+        }
+
+        .faq_contact_button{
+            font-weight: bold;
+            border: 0px;
+            border-radius: 50px;
+            background-color: #3D96E8;
+            color: #F9F9F9;
+            width: 224px;
+            padding: 0px;
+            margin: 0px;
+            margin-top: 20px;
+            font-size: 20px;
+            height: 40px;
+        }
+
+
+    @media screen and (max-width: 720px) {
+
+        #faq_sondas{
+            font-size: 15px;
+        }
+
+        #faq_aplicacion{
+            font-size: 15px;
+        }
+
+        #faq_servicio{
+            font-size: 15px;
+        }
+
+        #faq_contacto{
+            font-size: 15px;
+        }
+
+        .faq_h1{
+            font-size: 30px;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .faq_p{
+            margin: .5rem;
+            font-size: 15px;
+        }
+
+        .faq_span{
+            height: auto;
+        }
+
+        .faq_boton{
+            border: none;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        .collapsing{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: .5rem;
+            font-size: 15px;
+            padding-top: 0px;
+        }
+
+        .collapse.faq_message.show{
+            width: 100%;
+            padding: 1rem;
+            padding-top: .5rem;
+            font-size: 15px;
+            padding-top: 0px;
+        }
+
+        .faq_relleno{
+            width: 85%;
+            text-align: center;
+            margin: 1rem;
+            font-size: 15px;
+        }
+
+        .faq_contact_p{
+            text-align: center;
+            font-size: 14px;
+            margin: 0px;
+        }
+
+        .faq_contact_button{
+            font-weight: bold;
+            border: 0px;
+            border-radius: 50px;
+            background-color: #3D96E8;
+            color: #F9F9F9;
+            width: 170px;
+            padding: 0px;
+            margin: 0px;
+            margin-top: 10px;
+            font-size: 15px;
+            height: 35px;
+        }
+    }
+
+    </style>
+
 </head>
 
 <body>
-    <div class="container">
-        <!-- Top bar -->
-        <header>
+    <!-- Top bar (navigation menu) -->
+   <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="../index.html">
+            <a id="logo" class="white-filter" href="index.html">
                 <img src="img/logo_v2.svg" alt="LOGO">
             </a>
             <nav class="navbar">
@@ -36,13 +361,16 @@
                     <li>
                         <a href="../index.html">Inicio</a>
                     </li>
-                    <li>
-                        <a href="about.html">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQs</a>
-                        <div id="current-page"></div>
-                    </li>
+                    <!--
+                        <li>
+                            <a href="app/about.html">Nosotros</a>
+                        </li>
+                    -->
+                        <li>
+                            <a href="faqs.html">FAQs</a>
+                            <div id="current-page"></div>
+                        </li>
+
                     <li>
                         <a href="contact.html" id="navbar-contact">Contacto</a>
                     </li>
@@ -52,7 +380,7 @@
                 </ul>
                 <div class="navbar-right">
                     <!-- Login icon -->
-                    <a id="login-icon" class="white-filter" href="login.html">
+                    <a id="login-icon" class="white-filter" href="app/login.html">
                         <img src="img/user.svg" alt="LOGIN">
                     </a>
                     <!-- Mobile menu icon -->
@@ -65,14 +393,191 @@
             </nav>
         </header>
 
-        <main style="text-align: center; margin-top: 90px;">
-            <h1 style="font-size: 36px;">PREGUNTAS FRECUENTES</h1>
-            <p style="margin-top: 20px;">Aquí van las preguntas...</p>
-        </main>
+    <div class="faq_body">
+
+       <h1 class="faq_h1">FAQ's</h1>
+
+       <span class="faq_selectables">
+           <button class="faq_select" id="faq_sondas" onclick="faqFilter('faq_sondas')">General</button>
+           <button class="faq_select" id="faq_servicio" onclick="faqFilter('faq_servicio')">Problemas</button>
+           <button class="faq_select" id="faq_contacto" onclick="faqFilter('faq_contacto')">Contacto</button>
+
+       </span>
+
+       <span class="faq_variable" id="faq_sondas_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">¿Qué hace e-Horta?</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#general1" aria-expanded="false" aria-controls="general1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="general1">
+    No es necesario, el servicio se puede contratar independientemente de la cantidad de parcela o hectáreas.
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">Requisitos minimos</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#general2" aria-expanded="false" aria-controls="general2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="general2">
+     ¿Se pueden?
+</div>
+
+   </div>
+       </div>
+       
+       </span>
+
+       <span class="faq_variable" id="faq_servicio_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">¿Como me registro?</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio1" aria-expanded="false" aria-controls="servicio1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio1">
+    Para revisar los datos proporcionados por las sondas y usar la aplicación en general no es necesaria una conexión potente.
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">No puedo acceder</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio2" aria-expanded="false" aria-controls="servicio2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio2">
+      Recarga la página. Si el problema no se ha solucionado, por favor, contacta con el servio técnico.
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">No se muestran las parcelas</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio3" aria-expanded="false" aria-controls="servicio3">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio3">
+     Para añadir una nueva sonda o campo contacte con el servicio técnico.
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">Una de mis sondas no funciona. ¿Qué hago?</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio4" aria-expanded="false" aria-controls="servicio4">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio4">
+    Compruebe que la sonda recibe energía, esto se pude revisar observando el panel solar de la sonda, si esta obstruido o sucio limpie el panel. Si el problema no se ha solucionado contacte con el servicio técnico.
+</div>
+
+   </div>
+       </div>
+
+       </span>
+
+       <span class="faq_variable" id="faq_contacto_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">Tarifas y métodos de pago. Sistema personalizado, metodo de pago. Tarifa.</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#contacto1" aria-expanded="false" aria-controls="contacto1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="contacto1">
+    ¿Cuanto?
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p">Términos de licencia. Polita de privacidad</p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#contacto2" aria-expanded="false" aria-controls="contacto2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="contacto2">
+    ¿Cúales son?
+</div>
+
+   </div>
+
+       </div>
+
+       </span>
+
+       <div class="faq_info">
+           <h3 class="faq_relleno">Puedes ver como funciona la aplicación desde este video</h3>
+           <div class="faq_video">
+               <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+               </iframe>
+           </div>
+
+
+           <span class="faq_contact">
+               <p class="faq_contact_p">¿No encuentras lo que buscas?</p>
+               <button class="faq_contact_button" href="contact.html">Ponte en contacto</button>
+           </span>
+       </div>
+
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/add.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/delete.js"></script>
+    <script src="js/faq.js"></script>
 </body>
 
 </html>
