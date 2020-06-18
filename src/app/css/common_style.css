@@ -70,6 +70,8 @@ header {
     display: flex;
     list-style: none;
     align-items: center;
+    /*Override bootstrap ul margin*/
+    margin-bottom: 0;
 }
 
 /* Menu items */
