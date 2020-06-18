@@ -104,13 +104,16 @@
         <!-- Boton para abrir el mapa -->
         <div class="options">
             <a class="go-back" onclick="drawMap();"><p>Volver</p></a>
-            <a class="compare-probes" onclick=""><p>Comparar</p></a>      
+            <a class="go-back2" onclick="drawGraph();"><p>Volver</p></a>
+            <a class="compare-probes" onclick="drawProbeList()"><p>Comparar</p></a>      
         </div>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
         <div id="position-number">
             <h2>Sonda <span id="selected-probe"></span></h2>
         </div>
 
+        <div id="probe-selector"></div>
+        
         <!-- Selectores de fechas móvil-->
         <section id="dates-mobile">
             <input id="start-date" placeholder="Fecha inicio" type="text" onfocus="(this.type='date')">

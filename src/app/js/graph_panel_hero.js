@@ -4,9 +4,6 @@
 *   DATE:           15/06/2020
 *   STATE:          WIP
 *  ---------------------------------------------------------------- */ 
-//
-// TODO: Date selectors reset placerholder and date value.
-//
 
 // ----------------------------------------------------------------
 // Global settings for the chart
@@ -254,7 +251,6 @@ function buildDatasets(data) {
     
     chartData.labels = [];
     data.forEach((dataJson) => {
-        //console.log(dataJson)
         chartData.labels.push(dataJson.datetime);
         chartData.datasets[0].data.push(parseFloat(dataJson.humidity));
         chartData.datasets[1].data.push(parseFloat(dataJson.temperature));

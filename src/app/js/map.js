@@ -214,10 +214,6 @@ function showPositions(selectedPlot, map) {
                 });
             }
         })
-
-        plotPositions.forEach((pos) => {
-            console.log(pos.id);
-        });
     })
 }
 
