@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------
- *   AUTHOR:         ...
+ *   AUTHOR:         Luis Belloch
  *   FILE:           sesion.js
  *   DATE:           19/02/2020
  *   STATE:          DONE
@@ -17,20 +17,21 @@ function enviar(evento) {
             return answer.json();
         } 
         else {
-            document.getElementById("error-msg").style.display = "block";
+            document.getElementById("error-msg").style.visibility = "visible";
+            return answer.json();
         } 
     }).then(function(jsonData)  {
-            if (jsonData[0] == "1") { /*normal user*/
-                location.href = 'app.html';
-            }
-            if (jsonData[0] == "2") { /*Admin user*/
-                location.href = 'admin.html';
-            }
-            if (jsonData[0] == "3") {  /*.... user*/
-                location.href = 'app.html';
-            }
-            if (jsonData[0] == "4") { /* .... user*/
-                location.href = 'app.html';
-            }
+        if (jsonData[0] == "1") { /*normal user*/
+            location.href = 'app.html';
+        }
+        if (jsonData[0] == "2") { /*Admin user*/
+            location.href = 'admin.html';
+        }
+        if (jsonData[0] == "3") {  /*.... user*/
+            location.href = 'app.html';
+        }
+        if (jsonData[0] == "4") { /* .... user*/
+            location.href = 'app.html';
+        }
     });
 }
