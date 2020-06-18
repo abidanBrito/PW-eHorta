@@ -1,10 +1,9 @@
-<!-- ----------------------------------------------------------------
-*    AUTHOR:         Abidan Brito Clavijo
-*    FILE:           faqs.html
-*    DATE:           16/04/2020
-*    STATE:          DONE
-*    ---------------------------------------------------------------- -->
-
+<!--
+    AUTHOR: Jorge Grau Giannakakis
+    FILE: faqs.html
+    DATE: 16/06/20
+    STATE: DONE
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,20 +11,29 @@
     <!-- Default character set -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+
     <!-- Internet Explorer Compatibility Layer enabled -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Stylesheet and favicon -->
+
+    <!--BootsTrap 4-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!--Css Link-->
+
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/common_style.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <title>e-Horta | FAQs</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <title>FAQ's</title>
+
 </head>
 
 <body>
-    <div class="container">
-        <!-- Top bar -->
-        <header>
+    <!-- Top bar (navigation menu) -->
+   <header>
             <!-- Corporative brand -->
             <a id="logo" class="white-filter" href="../index.html">
                 <img src="img/logo_v2.svg" alt="LOGO">
@@ -34,23 +42,27 @@
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
-                        <a href="../index.html">Inicio</a>
+                        <a href="../index.html"><span class="lang" id="home">Inicio</span></a>
                     </li>
                     <li>
-                        <a href="about.html">Nosotros</a>
+                        <a href="about.html"><span class="lang" id="about">Nosotros</span></a>
                     </li>
                     <li>
-                        <a href="#">FAQs</a>
+                        <a href="faqs.html"><span class="lang" id="faq">FAQs</span></a>
                         <div id="current-page"></div>
                     </li>
                     <li>
-                        <a href="contact.html" id="navbar-contact">Contacto</a>
+                        <a href="contact.html" id="navbar-contact"><span class="lang" id="contact">Contacto</span></a>
                     </li>
                     <li>
-                        <a href="login.html" id="login-link">Iniciar sesión</a>
+                        <a href="login.html" id="login-link"><span class="lang" id="login">Iniciar sesión</span></a>
                     </li>
                 </ul>
                 <div class="navbar-right">
+                     <!-- Globe icon -->
+                    <div id="globe-icon">
+                        <img class="white-filter" src="img/globe.svg" alt="idioma">
+                    </div>
                     <!-- Login icon -->
                     <a id="login-icon" class="white-filter" href="login.html">
                         <img src="img/user.svg" alt="LOGIN">
@@ -63,16 +75,198 @@
                     </div>
                 </div>
             </nav>
+            <div id="lang-selector">
+                <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+                <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+                <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+            </div>
         </header>
 
-        <main style="text-align: center; margin-top: 90px;">
-            <h1 style="font-size: 36px;">PREGUNTAS FRECUENTES</h1>
-            <p style="margin-top: 20px;">Aquí van las preguntas...</p>
-        </main>
+    <div class="faq_body">
+
+       <h1 class="faq_h1">FAQ's</h1>
+
+       <span class="faq_selectables">
+           <button class="faq_select" id="faq_sondas" onclick="faqFilter('faq_sondas')"><span class="lang" id="general">General</span></button>
+           <button class="faq_select" id="faq_servicio" onclick="faqFilter('faq_servicio')"><span class="lang" id="problems">Problemas</span></button>
+           <button class="faq_select" id="faq_contacto" onclick="faqFilter('faq_contacto')"><span class="lang" id="contact">Contacto</span></button>
+
+       </span>
+
+       <span class="faq_variable" id="faq_sondas_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+        <p class="faq_p"><span class="lang" id="faq_1">¿Qué hace e-Horta?</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#general1" aria-expanded="false" aria-controls="general1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="general1">
+   <span class="lang" id="faq_1_t">
+    No es necesario, el servicio se puede contratar independientemente de la cantidad de parcela o hectáreas.
+    </span>
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_2">Requisitos minimos</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#general2" aria-expanded="false" aria-controls="general2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="general2">
+      <span class="lang" id="faq_2_t">¿Se pueden?</span>
+</div>
+
+   </div>
+       </div>
+       
+       </span>
+
+       <span class="faq_variable" id="faq_servicio_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_3">¿Como me registro?</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio1" aria-expanded="false" aria-controls="servicio1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio1">
+      <span class="lang" id="faq_3_t">Para revisar los datos proporcionados por las sondas y usar la aplicación en general no es necesaria una conexión potente.</span>
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_4">No puedo acceder</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio2" aria-expanded="false" aria-controls="servicio2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio2">
+      <span class="lang" id="faq_4_t">Recarga la página. Si el problema no se ha solucionado, por favor, contacta con el servio técnico.</span>
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_5">No se muestran las parcelas</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio3" aria-expanded="false" aria-controls="servicio3">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio3">
+      <span class="lang" id="faq_5_t">Para añadir una nueva sonda o campo contacte con el servicio técnico.</span>
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_6">Una de mis sondas no funciona. ¿Qué hago?</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#servicio4" aria-expanded="false" aria-controls="servicio4">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="servicio4">
+      <span class="lang" id="faq_6_t">Compruebe que la sonda recibe energía, esto se pude revisar observando el panel solar de la sonda, si esta obstruido o sucio limpie el panel. Si el problema no se ha solucionado contacte con el servicio técnico.</span>
+</div>
+
+   </div>
+       </div>
+
+       </span>
+
+       <span class="faq_variable" id="faq_contacto_preguntas">
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_7">Payment methods and rates.</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#contacto1" aria-expanded="false" aria-controls="contacto1">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="contacto1">
+      <span class="lang" id="faq_7_t">¿Cuanto?</span>
+</div>
+
+   </div>
+       </div>
+
+           <div class="faq_container">
+        <div class="faq_div">
+        <span class="faq_span">
+            <p class="faq_p"><span class="lang" id="faq_8">Política de privacidad</span></p>
+        <p  class="faq_p">
+  <button class="fas fa-chevron-up faq_boton collapsed" type="button" data-toggle="collapse" data-target="#contacto2" aria-expanded="false" aria-controls="contacto2">
+  </button>
+</p>
+ </span>
+
+  <div class="collapse faq_message" id="contacto2">
+      <span class="lang" id="faq_8_t">¿Cúales son?</span>
+</div>
+
+   </div>
+
+       </div>
+
+       </span>
+
+       <div class="faq_info">
+           <h3 class="faq_relleno"><span class="lang" id="video">Puedes ver como funciona la aplicación desde este video</span></h3>
+           <div class="faq_video">
+               <iframe src="https://www.youtube.com/embed/9ZZfjYuSfDg">
+               </iframe>
+           </div>
+
+
+           <span class="faq_contact">
+               <p class="faq_contact_p"><span class="lang" id="cant_find">¿No encuentras lo que buscas?</span></p>
+                   <button class="faq_contact_button" href="contact.html"><span class="lang" id="contact_us">Ponte en contacto</span></button>
+           </span>
+       </div>
+
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/localization.js"></script>
 </body>
 
 </html>
