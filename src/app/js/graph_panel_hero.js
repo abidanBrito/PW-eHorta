@@ -170,14 +170,15 @@ function drawGraph() {
                 }   
 
                 processData(data, probeID, startDate, endDate);
-                console.log(chart);
                 
-                window.chart.destroy();
-                window.chart = new Chart(ctx, {
-                    type: 'line',
-                    data: chartData,
-                    options: chartOptions
-                }); 
+                setTimeout(() => {
+                    window.chart.destroy();
+                    window.chart = new Chart(ctx, {
+                        type: 'line',
+                        data: chartData,
+                        options: chartOptions
+                    }); 
+                }, 50);
             });
         }   
         catch(err) {
@@ -270,23 +271,23 @@ function updateGraph(btn) {
             switch (buttonID) {
                 case "mobile-btn-hum":
                 case "desktop-btn-hum":
-                    chart.data.datasets[0].hidden = false;
+                    window.chart.data.datasets[0].hidden = false;
                     break;
                 case "mobile-btn-tem":
                 case "desktop-btn-tem":
-                    chart.data.datasets[1].hidden = false;
+                    window.chart.data.datasets[1].hidden = false;
                     break;
                 case "mobile-btn-lum":
                 case "desktop-btn-lum":
-                    chart.data.datasets[2].hidden = false;
+                    window.chart.data.datasets[2].hidden = false;
                     break;
                 case "mobile-btn-rai":
                 case "desktop-btn-rai":
-                    chart.data.datasets[3].hidden = false;
+                    window.chart.data.datasets[3].hidden = false;
                     break;
                 case "mobile-btn-sal":
                 case "desktop-btn-sal":
-                    chart.data.datasets[4].hidden = false;
+                    window.chart.data.datasets[4].hidden = false;
                     break;
                 default:
                     break;
@@ -296,35 +297,35 @@ function updateGraph(btn) {
             switch (buttonID) {
                 case "mobile-btn-hum":
                 case "desktop-btn-hum":
-                    chart.data.datasets[0].hidden = true;
+                    window.chart.data.datasets[0].hidden = true;
                     break;
                 case "mobile-btn-tem":
                 case "desktop-btn-tem":
-                    chart.data.datasets[1].hidden = true;
+                    window.chart.data.datasets[1].hidden = true;
                     break;
                 case "mobile-btn-lum":
                 case "desktop-btn-lum":
-                    chart.data.datasets[2].hidden = true;
+                    window.chart.data.datasets[2].hidden = true;
                     break;
                 case "mobile-btn-rai":
                 case "desktop-btn-rai":
-                    chart.data.datasets[3].hidden = true;
+                    window.chart.data.datasets[3].hidden = true;
                     break;
                 case "mobile-btn-sal":
                 case "desktop-btn-sal":
-                    chart.data.datasets[4].hidden = true;
+                    window.chart.data.datasets[4].hidden = true;
                     break;
                 default:
                     break;
             }
         }
 
-    window.chart.destroy();
-    window.chart = new Chart(ctx, {
-        type: 'line',
-        data: chartData,
-        options: chartOptions
-    }); 
+        window.chart.destroy();
+        window.chart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: chartOptions
+        }); 
 }
 
 // ----------------------------------------------------------------
@@ -424,8 +425,8 @@ function drawMap() {
 // main()
 // -------------------------------------------------
 // Draw the graph on the screen
-drawGraph();
 enableAllButtons();
+drawGraph();
 
 // Filter displayed data according to input date interval
 document.getElementById('start-date').onchange = () => {
