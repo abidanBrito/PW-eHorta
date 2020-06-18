@@ -70,6 +70,8 @@ header {
     display: flex;
     list-style: none;
     align-items: center;
+    /*Override bootstrap ul margin*/
+    margin-bottom: 0;
 }
 
 /* Menu items */
@@ -1305,6 +1307,366 @@ select:-webkit-autofill:focus {
     /* Link to contact page */
     .contact-us {
         font-size: 12px;
+    }
+}
+
+/* -------------------------- */
+/*  -      about.HTML      -  */
+/* -------------------------- */
+/* ---- Ajustes basicos ---- */
+.about_body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.about_h1{
+    margin: .5rem;
+    margin-top: 82px;
+}
+
+.about_image{
+    width: 40%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.about_p_div{    
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    height: 42vh;
+    justify-content: center;
+}
+
+.about_p{
+    margin: .5rem;
+    text-align: center;
+}
+
+/* --------------------------------- */
+/*  -  about.HTML base  -  */
+/* --------------------------------- */
+@media screen and (max-width: 720px) {
+/* ---- Ajustes basicos ---- */
+
+    .about_image{
+        width: 60%;
+        margin: .5rem;
+
+    }
+
+    .about_p_div{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
+/* ----------------- */
+/*        FAQs       */
+/* ----------------- */
+/* ---- Ajustes basicos ---- */
+#faq_sondas{
+    font-weight: bold;
+    border-bottom: #3D96E8 solid 2px;
+    font-size: 20px;
+}
+
+#faq_servicio{
+    font-weight: normal;
+    border-bottom: #3D96E8 solid 0px;
+    font-size: 20px;
+}
+
+#faq_contacto{
+    font-weight: normal;
+    border-bottom: #3D96E8 solid 0px;
+    font-size: 20px;
+}
+
+#faq_sondas_preguntas{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#faq_servicio_preguntas{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+#faq_contacto_preguntas{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ---- Pagina ---- */
+.faq_h1{
+    letter-spacing: 3px;
+    font-size: 36px;
+    text-align: center;
+}
+
+.faq_container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    flex-direction: column;
+}
+
+.faq_selectables{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.faq_select{
+    background-color: #F8F8F8;
+    border: none;
+    font-size: 15px;
+}
+
+.faq_body{
+    display: flex;
+    margin: auto;
+    margin-top: 85px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8F8;
+    height: auto;
+}
+
+ .faq_div{
+    background-color: #DADADA;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq_span{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    background-color: none;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 0px;
+    height: 50px;
+
+}
+
+.faq_variable{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq_p{
+    margin: .5rem;
+    display: flex;
+    align-self: center;
+    font-size: 18px;
+}
+/* ---- Preguntas ---- */
+.collapse{
+    width: 60%;
+}
+
+.collapsing{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    font-size: 15px;
+    padding-top: 0px;
+}
+
+.collapse.faq_message.show{
+    width: 100%;
+    padding: 1rem;
+    font-size: 15px;
+    padding-top: 0px;
+}
+
+.faq_boton{
+    background-color: #DADADA;
+    border: none;
+    width: 20px;
+    font-size: 25px;
+    margin-right: 5px;
+    color: #333333
+}
+
+.faq_boton:focus{
+    outline: 0px;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.faq_select:focus{
+    outline: 0px;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.faq_boton.collapsed {
+    transform: rotate(180deg);
+}
+/* ---- Video ---- */
+.faq_info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    }
+
+.faq_relleno{
+    width: 85%;
+    text-align: center;
+    margin: 1rem;
+    font-size: 15px;
+}
+
+.faq_video{
+    position: relative;
+    width: 75%;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+.faq_video iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.faq_contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.faq_contact_p{
+    text-align: center;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.faq_contact_button{
+    font-weight: bold;
+    border: 0px;
+    border-radius: 50px;
+    background-color: #3D96E8;
+    color: #F9F9F9;
+    width: 224px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 20px;
+    height: 40px;
+}
+
+/* --------------------------------- */
+/*  -  faqs.HTML base  -  */
+/* --------------------------------- */  
+@media screen and (max-width: 720px) {
+        
+/* ---- Ajustes basicos ---- */
+
+    #faq_sondas{
+        font-size: 15px;
+    }
+
+    #faq_servicio{
+        font-size: 15px;
+    }
+
+    #faq_contacto{
+        font-size: 15px;
+    }
+
+    .faq_h1{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    .faq_p{
+        margin: .5rem;
+        font-size: 15px;
+    }
+
+    .faq_span{
+        height: auto;
+    }
+
+    .faq_boton{
+        border: none;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+/* ---- Preguntas ---- */
+    .collapsing{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: .5rem;
+        font-size: 15px;
+        padding-top: 0px;
+    }
+
+    .collapse.faq_message.show{
+        width: 100%;
+        padding: 1rem;
+        padding-top: .5rem;
+        font-size: 15px;
+        padding-top: 0px;
+    }
+/* ---- Video ---- */
+    .faq_relleno{
+        width: 85%;
+        text-align: center;
+        margin: 1rem;
+        font-size: 15px;
+    }
+
+    .faq_contact_p{
+        text-align: center;
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .faq_contact_button{
+        font-weight: bold;
+        border: 0px;
+        border-radius: 50px;
+        background-color: #3D96E8;
+        color: #F9F9F9;
+        width: 170px;
+        padding: 0px;
+        margin: 0px;
+        margin-top: 10px;
+        font-size: 15px;
+        height: 35px;
     }
 }
 /* ------------------------------------------------------------------------------------------- */

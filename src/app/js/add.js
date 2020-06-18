@@ -35,6 +35,16 @@ var longitudes = [];
 var counterVertex = 0;
 var counterProbes = 0;
 
+var plotID;
+
+fetch('../api/v1.0/plots_all').then(function(answer) {
+
+    return answer.json();
+}).then(function(jsonData) {
+    plotID = jsonData.length + 1;
+    console.log(plotID)
+})
+
 function addCoord(userId, typeCoord) {
     let div = document.getElementById("createPlot" + userId).getElementsByTagName("div")[1];
 
@@ -44,11 +54,11 @@ function addCoord(userId, typeCoord) {
     if (typeCoord == "vertex") {
         coordDiv = div.getElementsByTagName("div")[1];
         counter = div.getElementsByTagName("div")[2].getElementsByTagName("span")[0];
-        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[18].getElementsByTagName("div")[1];
+        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[21];
     } else {
         coordDiv = div.getElementsByTagName("div")[4];
         counter = div.getElementsByTagName("div")[5].getElementsByTagName("span")[0];
-        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[18].getElementsByTagName("div")[2];
+        listDiv = document.getElementById("user" + userId + "-info").getElementsByTagName("div")[22];
     }
 
     let input = coordDiv.getElementsByTagName("input");
@@ -69,124 +79,48 @@ function addCoord(userId, typeCoord) {
     }
 }
 
-function addPlot() {
-    let plot = document.getElementById("addPlot");
-    let input = document.getElementById("div-polygons").getElementsByTagName("input");
+function addPlot(plotFormId, coordsId, userId) {
+    let plotName = document.getElementById(plotFormId).getElementsByTagName("div")[1].getElementsByTagName("div")[0].getElementsByTagName("input")[0].value;
+    let input_plot = document.getElementById(coordsId).getElementsByTagName("div")[1].getElementsByTagName("input");
 
-    latitudes.push(parseFloat(input[0].value));
-    longitudes.push(parseFloat(input[1].value));
-    if (latitudes.length < 3 || longitudes.length < 3) {
+    if (input_plot.length < 6) {
         alert("Un campo no puede tener menos de 3 puntos.")
-        latitudes.pop();
-        longitudes.pop();
     } else {
 
-        let plotData = new FormData();
-        plotData.append("name", plot.getElementsByTagName("input").namedItem("plotName").value);
-
-
-
-        let totalLat = 0;
-        let totalLng = 0;
-
-        totalLat = latitudes.reduce((accumulator, currentValue) => accumulator + currentValue)
-        totalLng = longitudes.reduce((accumulator, currentValue) => accumulator + currentValue)
-
-        totalLat = totalLat / latitudes.length;
-        totalLng = totalLng / longitudes.length;
-
-        plotData.append("centerLat", totalLat);
-        plotData.append("centerLng", totalLng);
-        plotData.append("latitude", latitudes);
-        plotData.append("longitude", longitudes);
-
-        let probes = document.getElementById("div-probes").getElementsByTagName("input");
-        let probeLats = [];
-        let probeLngs = [];
+        let probes = document.getElementById(coordsId).getElementsByTagName("div")[2].getElementsByTagName("input");
 
         for (let i = 0; i < probes.length; i++) {
+            let probeData = new FormData
             if (probes[i].value == "") {
                 alert("Necesita haber una sonda al menos");
-            } else {
-                if (i % 2 == 0) {
-                    probeLats.push(probes[i].value);
-                } else {
-                    probeLngs.push(probes[i].value);
-                }
             }
         }
 
-        plotData.append("probeLats", probeLats);
-        plotData.append("probeLngs", probeLngs);
-
-        console.log(plotData.getAll("name"));
-        console.log("Centro=" + plotData.get("centerLat") + "," + plotData.get("centerLng"));
-        console.log(plotData.getAll("latitude"));
-        console.log(plotData.getAll("longitude"));
-        console.log(plotData.getAll("probeLats"));
-        console.log(plotData.getAll("probeLngs"));
-
+        let plotData = new FormData();
+        plotData.append("name", plotName);
+        plotData.append("centerLat", 0)
+        plotData.append("centerLng", 0)
         fetch('../api/v1.0/add_field', {
             method: 'post',
             credentials: "same-origin",
             body: plotData
-        }).then(function(respuesta) {
-            if (respuesta.status != 200) {
-                document.getElementById("error_msg").style.display = "block";
-            } else {
-
-            }
+        }).then(function() {
+            let userPlotData = new FormData;
+            userPlotData.append("userId", userId);
+            userPlotData.append("plotID", plotID);
+            fetch('../api/v1.0/add_user_plot', {
+                method: 'post',
+                credentials: "same-origin",
+                body: userPlotData
+            }).then(function(respuesta) {
+                console.log(respuesta)
+                if (respuesta.status != 200) {
+                    alert("Ha habido un error al añadir la parcela. Por favor, vuelva a intentarlo más tarde");
+                } else {
+                    alert("Parcela añadida correctamente");
+                    location.reload();
+                }
+            })
         })
     }
 }
-
-
-/* Old version */
-/*Add Event function 
-function anyadir(evento) {
-    evento.preventDefault();
-    fetch('../api/v1.0/add_field', {
-        method: 'post',
-        credentials: "same-origin",
-        body: new FormData(document.getElementById('formField'))
-    }).then(function(respuesta) {
-        if (respuesta.status == 200) {
-            location.href = "javascript:window.history.back();" //clicked page
-        } else {
-            document.getElementById("error_msg").style.display = "block";
-        }
-    })
-}
-
-
-function anyadirVariosFields(evento) {
-    evento.preventDefault();
-    // preventive confirmation
-
-    let conf = confirm("¿Está seguro que quiere añadir las parcelas seleccionadas?");
-    if (conf == true) {
-        // If true, all checked checkboxes are searched
-        let check = document.querySelectorAll("input[type='checkbox']:checked");
-        let tam = check.length;
-        if (tam > 0) {
-            // If the size is greater than 0 they are sent to add
-            for (let i = 0; i < tam; i++) {
-                let formData = new FormData(document.getElementById('fieldAddForm'));
-                formData.append("id", check[i].getAttribute('data-ide'));
-                fetch('../api/v1.0/add_fields', {
-                    method: 'post',
-                    credentials: "same-origin",
-                    body: formData
-                }).then(function(respuesta) {
-                    if (respuesta.status == 200) {
-                        if (i == tam - 1) document.location.href = 'app.html';
-                    }
-                });
-            }
-
-            // If the size is 0 the form is closed  } else closeFieldsaddForm();
-
-        }
-    }
-
-    */

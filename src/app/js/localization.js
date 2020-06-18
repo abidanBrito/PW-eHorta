@@ -17,7 +17,7 @@ var arrLang = {
         'admin.html' : "e-Horta | Admin",
         'alerts.html' : "e-Horta | Alerts",
         'app.html' : "e-Horta | Graphs",
-        'faq.html' : "e-Horta | FAQs",
+        'faqs.html' : "e-Horta | FAQs",
         'threshold.html' : "e-Horta | Thresholds",
         // El Tiempo
         weather : 'Weather',
@@ -75,7 +75,31 @@ var arrLang = {
         click : "Click here.",
         still_not : "Still not a client? ",
         password : "Password",
-        login_error : "COULD NOT LOGIN"
+        login_error : "COULD NOT LOGIN",
+        // FAQs
+        general : "General",
+        problems : "Problems",
+        faq_1 : "What does e-Horta do?",
+        faq_1_t : "e-Horta is a probe management tool. It will receive data from your agricultural probes and show it to you instantly in organised graphs. You can also stablish thresholds and e-Horta will warn you when they are surpassed.",
+        faq_2 : "Minium requirements",
+        faq_2_t : "You only need some probes and internet connection to use e-Horta. It can be accessed from any device and anytime, though the presented information might vary.",
+        faq_3 : "How do I register?",
+        faq_3_t : "Contact us and we will visit your fields to install top-notch agricultural probes, then we will give you an user and password to access the app freely.",
+        faq_4 : "I can't access the app",
+        faq_4_t : "Make sure your credentials are correct or if you don't remember them, press the button below login to restore your password.",
+        faq_5 : "My fields are not showing",
+        faq_5_t : "Reload the page. If the problem persists contact us to get personalized help.",
+        faq_6 : "One of my probes is not working. What should I do?",
+        faq_6_t : "Make sure the probe is powered. If the solar panel is dirty, you can clean it, if its broken or the problem persists contact us to get personalized help.",
+        faq_7 : "Payment methods and rates",
+        faq_7_t : "Payment is negotiated when contracting e-Horta service. It is meant to be a monthly rate of a fixed price per probe.",
+        faq_8 : "Privacy policy",
+        faq_8_t : "We are very concerned about our clients private data. We will not sell it to third party members and it will only be used for this app purposes.",
+        video : "You can see how e-Horta works in this video: ",
+        cant_find : "Didn't find what you were searching for?",
+        // About
+        we_are : "Who we are",
+        we_are_txt : "<p class='about_p'>The work team for the realization of this project is formed by a group of first-year GTI students.</p><p class='about_p'>The result is the fruit of trust and commitment that we have all had in carrying it out, assuming responsibility for the tasks we had been assigned and collaborating with each other when problems came up.</p><p class='about_p'>The project that has been carried out is an agricultural management web page, which allows the user to be able to visualize different data easily and quickly, in addition to making comparisons, adjusting thresholds and seeing the weather prediction among other functionalities. This application manages to offer a comfortable and easy to use service for the user.</p>"
     },
     'es' : {
         // Pages titles
@@ -88,7 +112,7 @@ var arrLang = {
         'admin.html' : "e-Horta | Administrador",
         'alerts.html' : "e-Horta | Alertas",
         'app.html' : "e-Horta | Gráficas",
-        'faq.html' : "e-Horta | Preguntas frecuentes",
+        'faqs.html' : "e-Horta | Preguntas frecuentes",
         'threshold.html' : "e-Horta | Umbrales",
         // El Tiempo
         weather : 'El Tiempo',
@@ -146,7 +170,31 @@ var arrLang = {
         click : "Pulsa aquí.",
         still_not : "¿Aún no eres cliente? ",
         password : "Contraseña",
-        login_error : "ERROR AL INICIAR SESIÓN"
+        login_error : "ERROR AL INICIAR SESIÓN",
+        // FAQs
+        general : "General",
+        problems : "Problemas",
+        faq_1 : "¿Qué hace e-Horta?",
+        faq_1_t : "e-Horta es un servicio de administración de sondas. Recibirá datos de tus sondas agrarias y te los mostrará al instante en cómodas gráficas. Además, puedes establecer umbrales y te avisará cuando no se cumplan.",
+        faq_2 : "Requisitos mínimos",
+        faq_2_t : "Solo necesitas unas cuantas sondas y conexión a Internet para utilizar e-Horta. Puedes acceder desde cualquier dispositivo, aunque la cantidad de información presentada puede variar.",
+        faq_3 : "¿Cómo me registro?",
+        faq_3_t : "Contáctanos y visitaremos tus campos contigo para instalar sondas agrarias de la mejor categoría, entonces te daremos un usuario y contraseña para que puedas acceder a la aplicación cuando quieras.",
+        faq_4 : "No puedo acceder",
+        faq_4_t : "Asegurate de las credenciales son correctas o si no las recuerdas pulsa recuperar contraseña.",
+        faq_5 : "No se muestran mis parcelas",
+        faq_5_t : "Recarga la página. Si el problema no se ha solucionado, por favor, contacta con el servio técnico.",
+        faq_6 : "Una de mis sondas no funciona. ¿Qué hago?",
+        faq_6_t : "Compruebe que la sonda recibe energía, esto se pude revisar observando el panel solar de la sonda, si esta obstruido o sucio limpie el panel. Si el problema no se ha solucionado contacte con el servicio técnico.",
+        faq_7 : "Método de pago y tasas",
+        faq_7_t : "El pago es negociado al contratar los servicio de e-Horta. Será una tasa mensual para el mantenimiento de las sondas a un precio por sonda.",
+        faq_8 : "Política de privacidad",
+        faq_8_t : "Estamos muy preocupados por la privacidad de nuestros clientes. No venderemos tus datos a ningún tercero y solo se usaran para el uso de la aplicación.",
+        video : "Puedes ver como funciona la aplicación desde este video: ",
+        cant_find : "¿No encuentras lo que buscas?",
+        // About
+        we_are : "¿Quiénes somos?",
+        we_are_txt : "<p class='about_p'>El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p><p class='about_p'>El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p><p class='about_p'>El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>"
         
     },
     'val' : {
@@ -160,7 +208,7 @@ var arrLang = {
         'admin.html' : "e-Horta | Administrador",
         'alerts.html' : "e-Horta | Alertes",
         'app.html' : "e-Horta | Gràfiques",
-        'faq.html' : "e-Horta | Preguntes freqüents",
+        'faqs.html' : "e-Horta | Preguntes freqüents",
         'threshold.html' : "e-Horta | Umbrals",
         // El Tiempo
         weather : "L'Oratge",
@@ -218,7 +266,31 @@ var arrLang = {
         click : "Pulsa ací.",
         still_not : "Encara no eres client? ",
         password : "Contrasenya",
-        login_error : "ERROR EN INICIAR SESSIÓ"
+        login_error : "ERROR EN INICIAR SESSIÓ",
+        // FAQs
+        general : "General",
+        problems : "Problemes",
+        faq_1 : "Què fa e-Horta?",
+        faq_1_t : "e-Horta es un serveï d'administració de sondes. Rebrà dates de les teues sondes agràries y te'ls mostrarà al instant en cómodes gràfiques. A més, pots establir umbrals i t'avisarà quan no es complixquen.",
+        faq_2 : "Requisits mínims",
+        faq_2_t : "Només necessitaràs unes sondes i conexió a Internet per a usar e-Horta. Es pot gastar des de qualsevol dispositiu encara que la quantitat de informació mostrada pot variar.",
+        faq_3 : "Com em registre?",
+        faq_3_t : "Contàctans y visitaremes els teus camps contigo per a instalar sondes agràries de la millor categoria, després et donarem un usuari y contrasenya per a que pugues accedir a l'aplicació quan vulgues.",
+        faq_4 : "No puc accedir",
+        faq_4_t : "Assegura't de que les credencials son correctes o si no les recordes prem recuperar contrasenya.",
+        faq_5 : "No es mostren les meues parceles",
+        faq_5_t : "Recarrega la pàgina. Si el problema persistix, contacta amb el serveï tècnic.",
+        faq_6 : "Una de les sondes no funciona. Què faig?",
+        faq_6_t : "Comprova que la sonda rep energia. Si la placa solar està bruta, pots netejar-la. Si el problema persistix, contacta amb el serveï tècnic.",
+        faq_7 : "Métode de pagament y tases",
+        faq_7_t : "El pagament és negocia quan es contracta el serveï. És una tasa mensual dedicada al manteniment de les sondes.",
+        faq_8 : "Política de privacitat",
+        faq_8_t : "Estem preocupats per la privacitat dels nostres usuaris. No es vendràn a tercer i només es gastaràn per al funcionament de l'aplicació.",
+        video : "Pots vore com funciona l'aplicació ací: ",
+        cant_find : "¿No trobes el que busques?",
+        // About
+        we_are : "¿Qui som?",
+        we_are_txt : "<p class='about_p'>L'equip de treball d'aquest projecte està format per un grup d'estudiants de primer de GTI.</p><p class='about_p'>El resultat es fruit de la confiança i el compromís de totos en la realització del mateix, assumint la responsabilitat de les tasques assignades i col·laborant entre tots quan hi hagueren problemes.</p><p class='about_p'>El projecte que s'ha realitzat és una pàgina web de gestió agrícola, que permés a l'usuari visualitzar dates de forma senzilla i ràpida, a més de fer comparacións, ajustar umbrals i consultar l'oratge. Esta plicació aconseguix un serveï còmode i fàcil d'usar per a l'usuari.</p>"
         
     }
 };
