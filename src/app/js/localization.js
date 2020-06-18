@@ -7,6 +7,18 @@
 
 var arrLang = {
     'en' : {
+        // Pages titles
+        'index.html' : "e-Horta | Digital agriculture",
+        'weather.html' : "e-Horta | Weather",
+        'login.html' : "e-Horta | Login",
+        'contact.html' : "e-Horta | Contact us",
+        'about.html' : "e-Horta | About us",
+        'access_error.html' : "e-Horta | Access error",
+        'admin.html' : "e-Horta | Admin",
+        'alerts.html' : "e-Horta | Alerts",
+        'app.html' : "e-Horta | Graphs",
+        'faq.html' : "e-Horta | FAQs",
+        'threshold.html' : "e-Horta | Thresholds",
         // El Tiempo
         weather : 'Weather',
         alerts : 'Alerts',
@@ -66,6 +78,18 @@ var arrLang = {
         login_error : "COULD NOT LOGIN"
     },
     'es' : {
+        // Pages titles
+        'index.html' : "e-Horta | Agricultura digital",
+        'weather.html' : "e-Horta | El Tiempo",
+        'login.html' : "e-Horta | Inciar sesión",
+        'contact.html' : "e-Horta | Contacto",
+        'about.html' : "e-Horta | Nostros",
+        'access_error.html' : "e-Horta | Error de acceso",
+        'admin.html' : "e-Horta | Administrador",
+        'alerts.html' : "e-Horta | Alertas",
+        'app.html' : "e-Horta | Gráficas",
+        'faq.html' : "e-Horta | Preguntas frecuentes",
+        'threshold.html' : "e-Horta | Umbrales",
         // El Tiempo
         weather : 'El Tiempo',
         alerts : 'Alertas',
@@ -126,6 +150,18 @@ var arrLang = {
         
     },
     'val' : {
+        // Pages titles
+        'index.html' : "e-Horta | Agricultura digital",
+        'weather.html' : "e-Horta | El Temps",
+        'login.html' : "e-Horta | Iniciar sessió",
+        'contact.html' : "e-Horta | Contacte",
+        'about.html' : "e-Horta | Nosaltres",
+        'access_error.html' : "e-Horta | Error d'accés",
+        'admin.html' : "e-Horta | Administrador",
+        'alerts.html' : "e-Horta | Alertes",
+        'app.html' : "e-Horta | Gràfiques",
+        'faq.html' : "e-Horta | Preguntes freqüents",
+        'threshold.html' : "e-Horta | Umbrals",
         // El Tiempo
         weather : "L'Oratge",
         alerts : 'Alertes',
@@ -205,9 +241,12 @@ function prepareTranslation() {
             tooltip.style.display = "none";
         }
     };
-    
     // Sets the language page to the stored one
     let lang = localStorage.getItem("lang");
+    // If there is no language stored it puts spanish as default
+    if(localStorage.getItem("lang") === null) {
+        lang = "es"
+    }
     translate(lang);
 }
 
@@ -223,10 +262,11 @@ function translate(lang) {
     // Traduce las excepciones como placeholders que no pueden accederse con el metodo anterior
     let page = window.location.pathname.split("/").pop();
     if(page == "login.html") {
-        console.log("Changing placeholder");
         let passwordPlaceholder = document.getElementById("password");
         passwordPlaceholder.placeholder += translation[passwordPlaceholder.id];
     }
+    // Traduce los titulos de las paginas
+    document.title = translation[page];
     
     // Cierra el tooltip
     const tooltip = document.getElementById('lang-selector');
