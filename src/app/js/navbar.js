@@ -27,10 +27,6 @@ const navSlider = () => {
             loginIcon.classList.toggle('hide-icon');
         }
 
-        if (page == 'index.html' || page == 'contact.html' || page == 'login.html') {
-            globeIcon.classList.toggle('hide-icon');
-        }
-
         // Links fade in animation
         navBarLinks.forEach((link, index) => {
             if (link.style.animation) {

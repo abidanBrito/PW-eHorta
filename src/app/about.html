@@ -20,97 +20,44 @@
     <!-- Google Fonts - Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title>e-Horta | Nosotros</title>
-    <style>
-    
-        
-  /* -------------------------- */
- /*  -      about.HTML      -  */
-/* -------------------------- */
-/* ---- Ajustes basicos ---- */
-        .about_body{
-            display: flex;
-            flex-direction: column;
-            align-items: center;  
-        }
-    
-        .about_h1{
-            margin: .5rem;
-            margin-top: 82px;
-        }
-        
-        .about_image{
-            width: 40%;
-            margin: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .about_p_div{    
-            display: flex;
-            flex-direction: column;
-            width: 70%;
-            margin: auto;
-            height: 42vh;
-            justify-content: center;
-        }
-        
-        .about_p{
-            margin: .5rem;
-            text-align: center;
-        }
-        
-/* --------------------------------- */
-/*  -  notifications.HTML base  -  */
-/* --------------------------------- */
-    @media screen and (max-width: 720px) {
-/* ---- Ajustes basicos ---- */
-        
-        .about_image{
-            width: 60%;
-            margin: .5rem;
-            
-        }
-        
-        .about_p_div{
-            width: 100%;
-            height: auto;
-        }
-        
-    }
-    
-    </style>
+
 </head>
 
 <body>
     <!-- Top bar (navigation menu) -->
    <header>
             <!-- Corporative brand -->
-            <a id="logo" class="white-filter" href="index.html">
+            <a id="logo" class="white-filter" href="../index.html">
                 <img src="img/logo_v2.svg" alt="LOGO">
             </a>
             <nav class="navbar">
                 <!-- Navigation menu -->
                 <ul class="navbar-links">
                     <li>
-                        <a href="../index.html">Inicio</a>
-                    </li>
-                        <li>
-                            <a href="app/about.html">Nosotros</a>
-                            <div id="current-page"></div>
-                        </li>
-                        <li>
-                            <a href="faqs.html">FAQs</a>
-                        </li>
-                    
-                    <li>
-                        <a href="contact.html" id="navbar-contact">Contacto</a>
+                        <a href="../index.html"><span class="lang" id="home">Inicio</span></a>
                     </li>
                     <li>
-                        <a href="login.html" id="login-link">Iniciar sesión</a>
+                        <a href="about.html"><span class="lang" id="about">Nosotros</span></a>
+                        <div id="current-page"></div>
+                    </li>
+                    <li>
+                        <a href="faqs.html"><span class="lang" id="faq">FAQs</span></a>
+                    </li>
+                    <li>
+                        <a href="contact.html" id="navbar-contact"><span class="lang" id="contact">Contacto</span></a>
+                        
+                    </li>
+                    <li>
+                        <a href="login.html" id="login-link"><span class="lang" id="login">Iniciar sesión</span></a>
                     </li>
                 </ul>
                 <div class="navbar-right">
+                     <!-- Globe icon -->
+                    <div id="globe-icon">
+                        <img class="white-filter" src="img/globe.svg" alt="idioma">
+                    </div>
                     <!-- Login icon -->
-                    <a id="login-icon" class="white-filter" href="app/login.html">
+                    <a id="login-icon" class="white-filter" href="login.html">
                         <img src="img/user.svg" alt="LOGIN">
                     </a>
                     <!-- Mobile menu icon -->
@@ -121,21 +68,31 @@
                     </div>
                 </div>
             </nav>
+            <div id="lang-selector">
+                <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+                <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+                <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+            </div>
         </header>
     
     <div class="about_body">
        
-       <h1 class="about_h1">¿Quiénes somos?</h1>
+       <h1 class="about_h1"><span class="lang" id="we_are">¿Quiénes somos?</span></h1>
        
        <img src="https://somgandia.com/wp-content/uploads/2020/02/campus-gandia-upv-696x525.jpg" alt="Plant image" class="about_image">
           
         <div class="about_p_div">
-        <p class="about_p">El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p>
-       
-       <p class="about_p">El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p>
-       
-       <p class="about_p">El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>   
+           <span class="lang" id="we_are_txt">
+            <p class='about_p'>El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p>
+
+           <p class='about_p'>El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p>
+
+           <p class='about_p'>El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>   
+            </span>
         </div>
     </div>
+    
+    <!-- Scripts -->
+    <script src="js/localization.js"></script>
 </body>
 </html>

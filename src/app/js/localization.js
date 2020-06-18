@@ -96,7 +96,10 @@ var arrLang = {
         faq_8 : "Privacy policy",
         faq_8_t : "We are very concerned about our clients private data. We will not sell it to third party members and it will only be used for this app purposes.",
         video : "You can see how e-Horta works in this video: ",
-        cant_find : "Didn't find what you were searching for?"
+        cant_find : "Didn't find what you were searching for?",
+        // About
+        we_are : "Who we are",
+        we_are_txt : "<p class='about_p'>The work team for the realization of this project is formed by a group of first-year GTI students.</p><p class='about_p'>The result is the fruit of trust and commitment that we have all had in carrying it out, assuming responsibility for the tasks we had been assigned and collaborating with each other when problems came up.</p><p class='about_p'>The project that has been carried out is an agricultural management web page, which allows the user to be able to visualize different data easily and quickly, in addition to making comparisons, adjusting thresholds and seeing the weather prediction among other functionalities. This application manages to offer a comfortable and easy to use service for the user.</p>"
     },
     'es' : {
         // Pages titles
@@ -188,7 +191,10 @@ var arrLang = {
         faq_8 : "Política de privacidad",
         faq_8_t : "Estamos muy preocupados por la privacidad de nuestros clientes. No venderemos tus datos a ningún tercero y solo se usaran para el uso de la aplicación.",
         video : "Puedes ver como funciona la aplicación desde este video: ",
-        cant_find : "¿No encuentras lo que buscas?"
+        cant_find : "¿No encuentras lo que buscas?",
+        // About
+        we_are : "¿Quiénes somos?",
+        we_are_txt : "<p class='about_p'>El equipo de trabajo para la realización de este proyecto está formado por un grupo de estudiantes de primer año de GTI.</p><p class='about_p'>El resultado es fruto de la confianza y compromiso que hemos tenido todos en la realización del mismo, asumiendo la responsabilidad de las tareas que teníamos asignadas y colaborando entre todos cuando los problemas salían a flote.</p><p class='about_p'>El proyecto que se ha realizado es el de una página web de gestión agrícola, que permite al usuario poder visualizar diferentes datos de forma sencilla y rápida, además de realizar comparaciones, ajustar umbrales y ver el tiempo entre otras funcionalidades.  Esta aplicación consigue ofrecer un servicio cómodo y fácil de usar para el usuario.</p>"
         
     },
     'val' : {
@@ -281,7 +287,10 @@ var arrLang = {
         faq_8 : "Política de privacitat",
         faq_8_t : "Estem preocupats per la privacitat dels nostres usuaris. No es vendràn a tercer i només es gastaràn per al funcionament de l'aplicació.",
         video : "Pots vore com funciona l'aplicació ací: ",
-        cant_find : "¿No trobes el que busques?"
+        cant_find : "¿No trobes el que busques?",
+        // About
+        we_are : "¿Qui som?",
+        we_are_txt : "<p class='about_p'>L'equip de treball d'aquest projecte està format per un grup d'estudiants de primer de GTI.</p><p class='about_p'>El resultat es fruit de la confiança i el compromís de totos en la realització del mateix, assumint la responsabilitat de les tasques assignades i col·laborant entre tots quan hi hagueren problemes.</p><p class='about_p'>El projecte que s'ha realitzat és una pàgina web de gestió agrícola, que permés a l'usuari visualitzar dates de forma senzilla i ràpida, a més de fer comparacións, ajustar umbrals i consultar l'oratge. Esta plicació aconseguix un serveï còmode i fàcil d'usar per a l'usuari.</p>"
         
     }
 };
