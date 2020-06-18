@@ -62,19 +62,11 @@ function close() {
     document.getElementById("threshold_form").style.display = "none";
     document.getElementById("map").style.display = "flex";
 }
-//======================SLIDER OPTIONS==========================
-$("#ex12c").slider({
-    id: "slider12c",
-    min: 0,
-    max: 10,
-    range: true,
-    value: [3, 7]
-});
 //===============================================================
 //****  CLICK ON PLOT***==============================================================
 function charge_thresholds_values(id) {
     document.getElementById("p_ok").style.display = "none";
-
+//css changes 
     if (screen.width < 745) {
         document.getElementById("map-container").style.display = "none";
         document.getElementById("threshold_form").style.display = "flex";
@@ -85,7 +77,7 @@ function charge_thresholds_values(id) {
         document.getElementById("threshold_close").style.display = "none";
 
     }
-
+//Take threshhold and put on views
     let AllThresholds = {
         data: [],
         controller: {},
@@ -123,8 +115,7 @@ function charge_thresholds_values(id) {
                 let filteredSalinity = filteredData.filter(function (recor) {
                     return (recor.magnitude == "salinity");
                 });
-
-
+			// put dates on view
                 $("#slider-range0").slider({
                     range: true,
                     min: 0,
