@@ -5,54 +5,57 @@
     STATE: DONE
 -->
 
-
 <!DOCTYPE html>
 <html lang=es>
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width = device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/common_style.css">
-    <link rel="stylesheet" href="css/app_style.css">
-    <script src="js/restringir_acceso.js"></script>
-    <script src="js/delete_sesion.js"></script>
-    <!--BootsTrap 4-->
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app_style.css">
+<script src="js/restringir_acceso.js"></script>
+<script src="js/delete_sesion.js"></script>
+<!--BootsTrap 4-->
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     
 <title>Notificaciones</title>
 
+
 </head>
 <body class="main-alertas">
+<!-- Top bar (navigation menu) -->
 <header>
         <!-- Corporative brand -->
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
         </a>
-
         <nav class="navbar">
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="weather.html">El Tiempo</a>
+                    <a href="weather.html"><span class="lang" id="weather">El Tiempo</span></a>
+                    
                 </li>
                 <li>
-                    <a href="alerts.html">Alertas</a>
+                    <a href="alerts.html"><span class="lang" id="alerts">Alertas</span></a>
                     <div id="current-page"></div>
                 </li>
                 <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="threshold.html"><span class="lang" id="thresholds">Umbrales</span></a>
                 </li>
                 <li>
-                    <a href="app.html">Gráficas</a>
+                    <a href="app.html"><span class="lang" id="graph">Gráficas</span></a>
                 </li>
                 <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                    <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
             <div class="navbar-right">
+                <!-- Globe icon -->
+                <div id="globe-icon">
+                    <img class="white-filter" src="img/globe.svg" alt="idioma">
+                </div>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -61,19 +64,26 @@
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+            <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+            <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+        </div>
+        
     </header>
 <div class="secciones-alertas">
    <form class="seccion-filtro-alerta" id="filterField" method="POST" onsubmit="filtrar(event)">
     <div class="titulo-alertas">
        <div class="h2-alertas">
            <button class="volver-alertas"  onclick="closeFilter()"><i class="fas fa-chevron-left"></i> </button> 
-           <h2 class="h2-title-alertas">Opciones de filtrado</h2>
+           <h2><span class="lang" id="options_filter">Opciones de filtrado</span></h2>
        </div>
+        <label class="alert-label"><span class="lang" id="select">Selecione el campo que desea visualizar</span></label>
         
       </div>
       
     <div class="campos-alerta">
-        <label>Campo</label>
+        <label class="alert-label"><span class="lang" id="plot">Campo</span></label>
         <div id="tab-alertas">
                 <table class="alertas-table">
 
@@ -88,10 +98,9 @@
                     </tbody>
                 </table>
         </div>
-        
         <select id="select-alertas" class="select-alertas" name='campo'>
                
-                <option selected="#">Seleccione parcela...</option>
+            <option selected="#" id="select_short" disable selected hidden>Seleccione parcela...</option>
 
         </select>
     </div>
@@ -107,7 +116,7 @@
    
        
         <div class="dates-alert">
-            <label>Dia/Mes/Año</label>
+            <label class="alert-label"><span class="lang" id="day">Dia/Mes/Año</span></label>
             <div class="date-selector-notifications">
                 <input name='fecha' id='start-date' placeholder="Fecha inicio" type="date">
             </div>
@@ -117,7 +126,7 @@
        
      
     <div class="botones-alertas">
-        <label>Mediciones</label>
+        <label class="alert-label"><span class="lang" id="measurements_t">Mediciones</span></label>
             <ul class="measurements-buttons-alert">
                 
                 <li class="pulsadores"><input type="checkbox" id="humidity" name="humidity">
@@ -143,19 +152,19 @@
             </ul>
       </div> 
        
-      <button class="boton-alertas" type="submit" id="alertas-desktop-button">Aceptar</button>
-      <button class="boton-alertas" type="submit" id="alertas-base-button" onclick="closeFilter()">Aceptar</button>
+       <button class="boton-alertas" type="submit" id="alertas-desktop-button"><span class="lang" id="accept">Aceptar</span></button>
+       <button class="boton-alertas" type="submit" id="alertas-base-button" onclick="closeFilter()"><span class="lang" id="accept">Aceptar</span></button>
    </form> 
    <div class="header-alerta" id="alert-block">
    <div class="subheader-alertas">
-       <h1 class="title-alertas">Alertas</h1>
+       <h1 class="title-alertas"><span class="lang" id="warnings">Alertas</span></h1>
        <div class="ajustes-alertas">
          <button class="filtros-alertas" onclick="openFilter()"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSItNCAwIDM5MyAzOTMuOTkwMDMiIHdpZHRoPSI1MTJweCI+PHBhdGggZD0ibTM2OC4zMTI1IDBoLTM1MS4yNjE3MTljLTYuMTk1MzEyLS4wMTE3MTg4LTExLjg3NSAzLjQ0OTIxOS0xNC43MDcwMzEgOC45NjA5MzgtMi44NzEwOTQgNS41ODU5MzctMi4zNjcxODc1IDEyLjMxMjUgMS4zMDA3ODEgMTcuNDE0MDYybDEyOC42ODc1IDE4MS4yODEyNWMuMDQyOTY5LjA2MjUuMDg5ODQ0LjEyMTA5NC4xMzI4MTMuMTgzNTk0IDQuNjc1NzgxIDYuMzEyNSA3LjIwMzEyNSAxMy45NTcwMzEgNy4yMTg3NSAyMS44MTY0MDZ2MTQ3Ljc5Njg3NWMtLjAyNzM0NCA0LjM3ODkwNiAxLjY5MTQwNiA4LjU4MjAzMSA0Ljc3NzM0NCAxMS42ODc1IDMuMDg1OTM3IDMuMTA1NDY5IDcuMjgxMjUgNC44NDc2NTYgMTEuNjU2MjUgNC44NDc2NTYgMi4yMjY1NjIgMCA0LjQyNTc4MS0uNDQ1MzEyIDYuNDgwNDY4LTEuMjk2ODc1bDcyLjMxMjUtMjcuNTc0MjE4YzYuNDgwNDY5LTEuOTc2NTYzIDEwLjc4MTI1LTguMDg5ODQ0IDEwLjc4MTI1LTE1LjQ1MzEyNnYtMTIwLjAwNzgxMmMuMDExNzE5LTcuODU1NDY5IDIuNTQyOTY5LTE1LjUwMzkwNiA3LjIxNDg0NC0yMS44MTY0MDYuMDQyOTY5LS4wNjI1LjA4OTg0NC0uMTIxMDk0LjEzMjgxMi0uMTgzNTk0bDEyOC42ODM1OTQtMTgxLjI4OTA2MmMzLjY2Nzk2OS01LjA5NzY1NyA0LjE3MTg3NS0xMS44MjAzMTMgMS4zMDA3ODItMTcuNDA2MjUtMi44MzIwMzItNS41MTE3MTktOC41MTE3MTktOC45NzI2NTY4LTE0LjcxMDkzOC04Ljk2MDkzOHptLTEzMS41MzEyNSAxOTUuOTkyMTg4Yy03LjE4NzUgOS43NTM5MDYtMTEuMDc0MjE5IDIxLjU0Njg3NC0xMS4wOTc2NTYgMzMuNjY0MDYydjExNy41NzgxMjVsLTY2IDI1LjE2NDA2M3YtMTQyLjc0MjE4OGMtLjAyMzQzOC0xMi4xMTcxODgtMy45MTAxNTYtMjMuOTEwMTU2LTExLjEwMTU2My0zMy42NjQwNjJsLTEyNC45MzM1OTMtMTc1Ljk5MjE4OGgzMzguMDcwMzEyem0wIDAiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4K" class="images-alert" /></button>
        </div>
         </div>
     <div class="body-alertas">
         <div class="alertas-bloque" id="alertas-bloque-dinamico">
-       <script src="js/notifications.js"></script>
+        <script src="js/notifications.js"></script>
         <script>
             // "text" es la id del objeto donde se muestran los datos
             ViewAlertsList.prepare("alertas-bloque-dinamico");
@@ -168,11 +177,12 @@
 </div>
 
 
-<!-- carga archivo JS -->
-<script src="js/navbar.js"></script>
+    <!-- carga archivo JS -->
+    <script src="js/navbar.js"></script>
     <script src="https://kit.fontawesome.com/9cd7b9d5a0.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/localization.js"></script>
 </body>
 </html>
