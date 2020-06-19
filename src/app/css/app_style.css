@@ -104,7 +104,7 @@
 .admin_page .moreInfo {
     margin-top: 10px;
     flex-direction: column;
-    margin: auto;
+    margin-left: .25rem;
 }
 
 .admin_page .title {
@@ -791,8 +791,7 @@ input-group {
 }
 
 .go-back,
-.go-back2,
-.compare-probes {
+.go-back2{
     display: none;
     align-items: center;
     cursor: pointer;
@@ -811,15 +810,14 @@ input-group {
     margin-right: .5rem;
 }
 
-.compare-probes::before {
+/* .compare-probes::before {
     content: "\f362";
     font-family: "iconos";
     color: #333333;
     font-size: .9rem;
     position: relative;
     margin-right: .5rem;
-}
-
+} */
 
 /* Top region with map and plot list */
 
@@ -859,15 +857,14 @@ input-group {
 }
 
 #map-floating-panel p {
-    font-size: 1.5rem;
-    font-weight: 400;
-    z-index: 2;
-    margin: 0;
     width: 70%;
 }
 
 #map-floating-panel p span {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    z-index: 2;
+    margin: 0;
 }
 
 

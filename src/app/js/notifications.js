@@ -74,9 +74,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util = x-notification.max;
                     if(util > 20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     
                     if(fecha == notification.fecha1){
                         SoloAlerta(capa);
@@ -94,9 +94,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util= x - notification.min;
                     if(util < -20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     
                  if(fecha == notification.fecha1){
                         SoloAlerta(capa);
@@ -116,9 +116,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util = x-notification.max;
                     if(util > 20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -135,9 +135,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util= x - notification.min;
                     if(util < -20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                  if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -156,9 +156,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util = x-notification.max;
                     if(util > 20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -177,9 +177,9 @@ let ViewAlertsList = {
                     var z = '%';
                     var util= x - notification.min;
                     if(util < -20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                  if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -198,9 +198,9 @@ let ViewAlertsList = {
                     var z = 'C';
                     var util = x-notification.max;
                     if(util > 20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -217,9 +217,9 @@ let ViewAlertsList = {
                     var z = 'C';
                     var util= x - notification.min;
                     if(util < -20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                  if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -238,9 +238,9 @@ let ViewAlertsList = {
                     var z = 'mm';
                     var util = x-notification.max;
                     if(util > 20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                     if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -257,9 +257,9 @@ let ViewAlertsList = {
                     var z = 'mm';
                     var util= x - notification.min;
                     if(util < -20){
-                        color = "red";
+                        color = "#ED4141";
                     }
-                    else color = "orange";
+                    else color = "#EDA241";
                  if(fecha == notification.fecha1){
                         SoloAlerta(capa);
                     } else {
@@ -278,15 +278,14 @@ let ViewAlertsList = {
                 elemento.innerHTML += "<div class='bloque-alert' id='"+`${fecha}`+"'> </div>";
             }
             
-            // Si es el primer elemento del dia se añade la fecha
             function DiaYAlerta(elemento){
-                elemento.innerHTML +="<h3 class='day'>" + `${notification.fecha1}` + "</h3> <div class='alert_container'><div class='alert_div'><span class='alert_span' type='button' data-toggle='collapse' data-target='#collapseExample" + `${contador_expand}` + "' aria-expanded='false' aria-controls='collapseExample" + `${contador_expand}` + "'><p class='alert_p'><span><img class='images-alert' "+`${y}`+"> <label class='medida' style='color:" + `${color}` + ";'>" + `${x}` + "" + `${z}` + "</label></span> <label>" + `${notification.name}` + "</label> <label>" + `${notification.hora1}` + "</label></p></span><div class='collapse alert_message' id='collapseExample" + `${contador_expand}` + "'><label> min: " + `${notification.min}` + "</label><label>max: " + `${notification.max}` + "</label></div></div></div>";
+                elemento.innerHTML +="<h3 class='day'>" + `${notification.fecha1}` + "</h3> <div class='alert_container'><div class='alert_div'><span class='alert_span' type='button' data-toggle='collapse' data-target='#collapseExample" + `${contador_expand}` + "' aria-expanded='false' aria-controls='collapseExample" + `${contador_expand}` + "'><p class='alert_p'><span><img class='images-alert white-filter' "+`${y}`+"> <label class='medida' style='color:" + `${color}` + ";'>" + `${x}` + "" + `${z}` + "</label></span> <label>" + `${notification.name}` + "</label> <label>" + `${notification.hora1}` + "</label></p></span><div class='collapse alert_message' id='collapseExample" + `${contador_expand}` + "'><label> min: " + `${notification.min}` + "</label><label>max: " + `${notification.max}` + "</label></div></div></div>";
                 y="";
             }
             
             // Si ya existe una alerta del dia no se añade que dia ha ocurrido
             function SoloAlerta(elemento){    
-                elemento.innerHTML +="<div class='alert_container'><div class='alert_div'><span class='alert_span' type='button' data-toggle='collapse' data-target='#collapseExample" + `${contador_expand}` + "' aria-expanded='false' aria-controls='collapseExample" + `${contador_expand}` + "'><p class='alert_p'><span><img class='images-alert' "+`${y}`+"> <label class='medida' style='color:" + `${color}` + ";'>" + `${x}` + "" + `${z}` + "</label></span> <label>" + `${notification.name}` + "</label> <label>" + `${notification.hora1}` + "</label></p></span><div class='collapse alert_message' id='collapseExample" + `${contador_expand}` + "'><label> min: " + `${notification.min}` + "</label><label>max: " + `${notification.max}` + "</label></div></div></div>";
+                elemento.innerHTML +="<div class='alert_container'><div class='alert_div'><span class='alert_span' type='button' data-toggle='collapse' data-target='#collapseExample" + `${contador_expand}` + "' aria-expanded='false' aria-controls='collapseExample" + `${contador_expand}` + "'><p class='alert_p'><span><img class='images-alert white-filter' "+`${y}`+"> <label class='medida' style='color:" + `${color}` + ";'>" + `${x}` + "" + `${z}` + "</label></span> <label>" + `${notification.name}` + "</label> <label>" + `${notification.hora1}` + "</label></p></span><div class='collapse alert_message' id='collapseExample" + `${contador_expand}` + "'><label> min: " + `${notification.min}` + "</label><label>max: " + `${notification.max}` + "</label></div></div></div>";
                 y="";    
             }
             
