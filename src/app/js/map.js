@@ -169,8 +169,10 @@ function drawTerrain(map, selectedPlotID = null) {
                     else {
                         // Update helper text
                         let actionDescription = document.getElementById("actionText");
-                        actionDescription.textContent = 'Seleccione una sonda o campo';
+                        actionDescription.innerHTML = '<span class="lang" id="select_2">Seleccione una sonda o campo</span>';
                         centerPlot(`${plot.id}`);
+                        // Resfresh translation
+                        prepareTranslation();
                     }
                 });
             });

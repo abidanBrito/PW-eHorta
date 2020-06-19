@@ -515,7 +515,7 @@ async function showData(code) {
                     '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProb + '%<br>'+
                     '<span class="lang" id="wind">viento</span>: ' + maxWind + ' km/h<br>' +
-                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHum + '%<br>' +
+                    '<span class="lang" id="humidity_w">humedad</span>: '+ avgHum + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
@@ -543,7 +543,7 @@ async function showData(code) {
                     '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProbTomorrow + '%<br>'+
                     '<span class="lang" id="wind">viento</span>: ' + maxWindTomorrow + ' km/h<br>' +
-                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHumTomorrow + '%<br>' +
+                    '<span class="lang" id="humidity_w">humedad</span>: '+ avgHumTomorrow + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
@@ -571,7 +571,7 @@ async function showData(code) {
                     '<div class="misc-data"><span class="lang" id="prob">prob</span>: ' +           
                         maxRainfallProbAfter + '%<br>'+
                     '<span class="lang" id="wind">viento</span>: ' + maxWindAfter + ' km/h<br>' +
-                    '<span class="lang" id="humidty">vumedad</span>: '+ avgHumAfter + '%<br>' +
+                    '<span class="lang" id="humidity_w">humedad</span>: '+ avgHumAfter + '%<br>' +
                     '</div>' +
                 '</div>'+
             '</section>'+
