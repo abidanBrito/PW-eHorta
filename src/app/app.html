@@ -27,7 +27,7 @@
 
 <body class="main" style="display: none;">
     <!-- Top bar (navigation menu) -->
-    <header>
+     <header>
         <!-- Corporative brand -->
         <a id="logo" class="white-filter" href="../index.html">
             <img src="img/logo_v2.svg" alt="LOGO">
@@ -36,23 +36,28 @@
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="weather.html">El Tiempo</a>
+                    <a href="weather.html"><span class="lang" id="weather">El Tiempo</span></a>
+                    
                 </li>
                 <li>
-                    <a href="alerts.html">Alertas</a>
+                    <a href="alerts.html"><span class="lang" id="alerts">Alertas</span></a>
                 </li>
                 <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="threshold.html"><span class="lang" id="thresholds">Umbrales</span></a>
                 </li>
                 <li>
-                    <a href="app.html">Gráficas</a>
+                    <a href="app.html"><span class="lang" id="graph">Gráficas</span></a>
                     <div id="current-page"></div>
                 </li>
                 <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                    <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
             <div class="navbar-right">
+                <!-- Globe icon -->
+                <div id="globe-icon">
+                    <img class="white-filter" src="img/globe.svg" alt="idioma">
+                </div>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -61,6 +66,12 @@
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+            <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+            <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+        </div>
+        
     </header>
 
     <div id="map-table">
@@ -89,7 +100,7 @@
 
         <article id="map-container">
             <div id="map-floating-panel">
-                <p id="actionText">Seleccione un campo</p>
+                <p id="actionText"><span class="lang" id="select_short">Seleccione un campo</span></p>
             </div>
             <section id="map" class="map">
                 <script src="js/map.js"></script>
@@ -103,13 +114,13 @@
     <main id="app">
         <!-- Boton para abrir el mapa -->
         <div class="options">
-            <a class="go-back" onclick="drawMap();"><p>Volver</p></a>
-            <a class="go-back2" onclick="drawGraph();"><p>Volver</p></a>
-            <a class="compare-probes" onclick="drawProbeList()"><p>Comparar</p></a>      
+            <a class="go-back" onclick="drawMap();"><p><span class="lang" id="back">Volver</span></p></a>
+            <a class="go-back2" onclick="drawGraph();"><p><span class="lang" id="back">Volver</span></p></a>
+            <a class="compare-probes" onclick="drawProbeList()"><p><span class="lang" id="compare">Comparar</span></p></a>      
         </div>
         <!--aqui se pone el id de la posicion seleccionada para recogerlo desde graphic_data.js-->
         <div id="position-number">
-            <h2>Sonda <span id="selected-probe"></span></h2>
+            <h2><span class="lang" id="probe">Sonda</span> <span id="selected-probe"></span></h2>
         </div>
 
         <div id="probe-selector"></div>
@@ -140,31 +151,31 @@
                     <button id="desktop-btn-hum" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/humidity.svg" alt="botón humedad">
                     </button>
-                    <p>Humedad (%)</p>                    
+                    <p><span class="lang" id="humidty">Humedad</span> (%)</p>                    
                 </div>
                 <div class="measurement-btn-container">
                     <button id="desktop-btn-tem" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/temperature.svg" alt="botón temperatura">
                     </button>
-                    <p>Temperatura (º C)</p>
+                    <p><span class="lang" id="temperature">Temperatura</span> (º C)</p>
                 </div>
                 <div class="measurement-btn-container">
                     <button id="desktop-btn-lum" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/luminosity.svg" alt="botón luminosidad">
                     </button>
-                    <p>Luminosidad (%)</p>                   
+                    <p><span class="lang" id="luminosity">Luminosidad</span> (%)</p>                   
                 </div>
                 <div class="measurement-btn-container">
                     <button id="desktop-btn-rai" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/rainfall.svg" alt="botón lluvia">
                     </button>
-                    <p>Precipitaciones (mm)</p>
+                    <p><span class="lang" id="precipitation">Precipitaciones</span> (mm)</p>
                 </div>
                 <div class="measurement-btn-container">
                     <button id="desktop-btn-sal" class="measure-btn" onclick="toggleButton(this);">
                         <img src="img/datalogger/salinity.svg" alt="botón salinidad">
                     </button>
-                    <p>Salinidad (g/L)</p>
+                    <p><span class="lang" id="salinity">Salinidad</span> (g/L)</p>
                 </div>
             </div>
         </section>
@@ -208,6 +219,7 @@
     <script src="js/navbar.js"></script>
     <script src="js/restringir_acceso.js"></script>
     <script src="js/delete_sesion.js"></script>
+    <script src="js/localization.js"></script>
 </body>
 
 </html>

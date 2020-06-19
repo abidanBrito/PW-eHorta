@@ -31,7 +31,7 @@ var arrLang = {
         after_tomorrow : 'After Tomorrow',
         prob : 'prob',
         wind : 'wind',
-        humidty : 'humidity',
+        humidity_w : 'humidity',
         // Landing page index
         home : "Home",
         about : "About us",
@@ -124,12 +124,24 @@ var arrLang = {
         // Alerts
         options_filter : "Filter options",
         select : "Select a plot to visualize",
-        select_short : "Select a plot...",
+        select_short : "Select a plot",
         warnings : "Warnings",
         accept : "Accept",
         measurements_t : "Measurements",
         day : "Day/Week/Year",
-        plot : "Plot"
+        plot : "Plot",
+        // APP
+        back : "Back",
+        compare : "Compare",
+        probe : "Probe",
+        select_2 : "Select a probe or a plot",
+        "start-date" : "Start date",
+        "start-date-desktop" : "Start date",
+        "end-date" : "End date",
+        "end-date-desktop" : "End date",
+        // thresholds
+        apply : "Apply",
+        updated : "Data updated."
     },
     'es' : {
         // Pages titles
@@ -249,12 +261,24 @@ var arrLang = {
         // Alerts
         options_filter : "Opciones de filtrado",
         select : "Selecione el campo que desea visualizar",
-        select_short : "Seleccione parcela...",
+        select_short : "Seleccione un campo",
         warnings : "Alertas",
         accept : "Aceptar",
         measurements_t : "Mediciones",
         day : "Dia/Mes/Año",
-        plot : "Parcela"
+        plot : "Parcela",
+        // APP
+        back : "Volver",
+        compare : "Comparar",
+        probe : "Sonda",
+        select_2 : "Seleccione una sonda o campo",
+        "start-date" : "Fecha inicio",
+        "start-date-desktop" : "Fecha inicio",
+        "end-date" : "Fecha final",
+        "end-date-desktop" : "Fecha final",
+        // thresholds
+        apply : "Aplicar",
+        updated : "Se han actualizado correctamente."
         
     },
     'val' : {
@@ -375,12 +399,24 @@ var arrLang = {
         // Alerts
         options_filter : "Opcions de filtre",
         select : "Selecione el camp que vol visualitzar",
-        select_short : "Seleccione parcel·la...",
+        select_short : "Seleccione un camp",
         warnings : "Alertes",
         accept : "Acceptar",
         measurements_t : "Medicions",
         day : "Dia/Mes/Any",
-        plot : "Parcel·la"
+        plot : "Parcel·la",
+        // APP
+        back : "Tornar",
+        compare : "Comparar",
+        probe : "Sonda",
+        select_2 : "Seleccione una sonda o camp",
+        "start-date" : "Data d'inici",
+        "start-date-desktop" : "Data d'inici",
+        "end-date" : "Data final",
+        "end-date-desktop" : "Data final",
+        // thresholds
+        apply : "Aplicar",
+        updated : "Dates actualisades correctament."
         
     }
 };
@@ -437,7 +473,9 @@ function translate(lang) {
     })
     let options = document.getElementsByTagName("option");
     Array.prototype.forEach.call(options, item => {
-        item.innerHTML = translation[item.id];
+        if(page != 'weather.html') {
+            item.innerHTML = translation[item.id];
+        }
     })
     
     // Cierra el tooltip

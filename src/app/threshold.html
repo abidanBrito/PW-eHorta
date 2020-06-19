@@ -42,23 +42,29 @@
             <!-- Navigation menu -->
             <ul class="navbar-links">
                 <li>
-                    <a href="weather.html">El Tiempo</a>
+                    <a href="weather.html"><span class="lang" id="weather">El Tiempo</span></a>
+                    
                 </li>
                 <li>
-                    <a href="alerts.html">Alertas</a>
+                    <a href="alerts.html"><span class="lang" id="alerts">Alertas</span></a>
                 </li>
                 <li>
-                    <a href="threshold.html">Umbrales</a>
+                    <a href="threshold.html"><span class="lang" id="thresholds">Umbrales</span></a>
                     <div id="current-page"></div>
+
                 </li>
                 <li>
-                    <a href="app.html">Gráficas</a>
+                    <a href="app.html"><span class="lang" id="graph">Gráficas</span></a>
                 </li>
                 <li>
-                    <a onclick="delete_sesion()" href="#">Cerrar sesión</a>
+                    <a onclick="delete_sesion()" href="#"><span class="lang" id="close_session">Cerrar Sesión</span></a>
                 </li>
             </ul>
             <div class="navbar-right">
+                <!-- Globe icon -->
+                <div id="globe-icon">
+                    <img class="white-filter" src="img/globe.svg" alt="idioma">
+                </div>
                 <!-- Mobile menu icon -->
                 <div class="menu-icon" id="menu-toggle">
                     <div class="line-top"></div>
@@ -67,12 +73,18 @@
                 </div>
             </div>
         </nav>
+        <div id="lang-selector">
+            <a class="translate" onclick="changeLang(this.id)" id="es" href="">Español</a>
+            <a class="translate" onclick="changeLang(this.id)" id="en" href="">English</a>
+            <a class="translate" onclick="changeLang(this.id)" id="val" href="">Valencià</a>
+        </div>
+        
     </header>
 
     <div>
         <!--  -->
-        <h1 id="title_threshold" style="">Umbrales</h1>
-        <p id="selection_plot_p" style="">(Seleccione una parcela del mapa)</p>
+        <h1 id="title_threshold" style=""><span class="lang" id="thresholds">Umbrales</span></h1>
+        <p id="selection_plot_p" style=""><span class="lang" id="select_short">(Seleccione una parcela del mapa)</span></p>
         <div id="mapthresDiv" style="">
 
 
@@ -87,7 +99,7 @@
             <form id="threshold_form" class="form-container" style="display: none;">
                 <input type="text" id="threshold_id_plot" name="threshold_id_plot" style="display: none;" />
                 <a id="threshold_close" class="go-back" href="javascript:close()">
-                    <p>Volver</p>
+                    <p><span class="lang" id="back">Volver</span></p>
                 </a>
 
                 <h2 style="" id="plot_name_form"></h2>
@@ -102,7 +114,7 @@
                     </div>
 
                     <p>
-                        <label for="amount0" style="margin-left:20px;" class="p_threshold">Humedad (%)</label>
+                        <label for="amount0" style="margin-left:20px;" class="p_threshold"><span class="lang" id="humidity">Humedad</span> (%)</label>
                         <input type="text" id="maxHumedity" name="maxHumedity" style="" />
                     </p>
                 </div>
@@ -120,7 +132,7 @@
 
                     </div>
                     <p>
-                        <label for="amount1" class="p_threshold">Temperatura (ºC)</label>
+                        <label for="amount1" class="p_threshold"><span class="lang" id="temperature">Temperatura</span> (ºC)</label>
                         <input type="text" id="maxTemperature" name="maxTemperature" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
                     </p>
                 </div>
@@ -139,7 +151,7 @@
 
                     </div>
                     <p>
-                        <label for="maxLum" class="p_threshold">Luminosidad (%)</label>
+                        <label for="maxLum" class="p_threshold"><span class="lang" id="luminosity">Luminosidad</span> (%)</label>
                         <input type="text" id="maxLuminosity" name="maxLuminosity" style="border: 0; color: #333333; font-weight: bold;margin-left: 20px;" />
                     </p>
                 </div>
@@ -158,7 +170,7 @@
                         <img src="img/datalogger/rainfall_2.svg" id="rainfall_white" Class="threshold_img">
                     </div>
                     <p>
-                        <label for="amount3" style="margin-left: 5px; margin-right: 5px;" class="p_threshold">Precipitación (mm)</label>
+                        <label for="amount3" style="margin-left: 5px; margin-right: 5px;" class="p_threshold"><span class="lang" id="precipitation">Precipitaciones</span> (mm)</label>
                         <input type="text" id="maxPrecipitation" name="maxPrecipitation" />
                     </p>
                 </div>
@@ -176,7 +188,7 @@
                         <img src="img/datalogger/salinity_2.svg" id="salinity_white"  Class="threshold_img" style="width: 17px" >
                         <img src="img/datalogger/salinity.svg" id="salinity_black"  Class="threshold_img" style="width: 17px"> </div>
                     <p>
-                        <label for="amount4" class="p_threshold" style="margin-left: 20px;">Salinidad (g/l)</label>
+                        <label for="amount4" class="p_threshold" style="margin-left: 20px;"><span class="lang" id="salinity">Salinidad</span> (g/l)</label>
                         <input type="text" id="maxSalinity" name="maxSalinity" style="" />
                         <!--eSTO SOLO PARA MOVIL LO DEL MARGIN LEFT  -->
                     </p>
@@ -185,13 +197,13 @@
 
 
 
-                <button id="btn_submit_threshold" type="submit" class="login-button" style="">Aplicar</button>
-                <p id="p_ok" style="">Se ha actualizado correctamente.</p>
+                <button id="btn_submit_threshold" type="submit" class="login-button" style=""><span class="lang" id="apply">Aplicar</span></button>
+                <p id="p_ok" style=""><span class="lang" id="updated">Se ha actualizado correctamente.</span></p>
             </form>
             <section id="section_maptresh">
                 <article id="map-container" style="margin-left: 0em;">
                     <div id="map-floating-panel">
-                        <p id="actionText">Umbrales<br><span>Seleccione una parcela</span></p>
+                        <p id="actionText"><span class="lang" id="thresholds">Umbrales</span><br><span class="lang" id="select_short">Seleccione una parcela</span></p>
                     </div>
                     <section id="map" class="mapthres" style="height: 550px; width: 100%;">
                         <script src="js/map.js"></script>
@@ -208,6 +220,7 @@
 	
     <script src="js/navbar.js"></script>
     <script src="js/threshold.js"></script>
+    <script src="js/localization.js"></script>
 
 </body>
 
